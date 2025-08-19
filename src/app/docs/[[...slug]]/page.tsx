@@ -49,7 +49,7 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
         </div>
         <Separator className="my-4 md:my-6" />
-        <div className="prose prose-stone dark:prose-invert max-w-none prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
+        <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
           <ContentComponent />
         </div>
       </div>
