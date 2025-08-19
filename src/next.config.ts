@@ -18,13 +18,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    serverComponentsExternalPackages: [
-      'react',
-      'react-dom',
-      'next-mdx-remote',
-    ],
-  },
 };
 
 export default nextConfig;
