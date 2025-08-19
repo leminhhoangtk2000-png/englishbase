@@ -20,6 +20,8 @@ const navLinks = [
     { href: "/blog", label: "A2 Niveau" },
     { href: "/components", label: "B1 Niveau" },
     { href: "/examples", label: "B2 Niveau" },
+    { href: "/exercises", label: "Bài tập" },
+    { href: "/blog-new", label: "Blog" },
 ];
 
 export function MainNav({ docs = [] }: MainNavProps) {
