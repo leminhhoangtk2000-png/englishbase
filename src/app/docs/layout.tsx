@@ -8,14 +8,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";
-import { type Doc } from "@/types";
+import { type Doc, type NavItem } from "@/types";
 
 interface DocsLayoutProps {
   children: React.ReactNode;
 }
 
 export default async function DocsLayout({ children }: DocsLayoutProps) {
-  const navItems = docsConfig.items;
+  // Omit the 'component' property before passing to client components
+  const navItems: NavItem[] = docsConfig.items.map(item => ({
+    ...item,
+    items: item.items?.map(({ component, ...subItem }) => subItem),
+  }));
+
   const allDocs: Doc[] = docsConfig.items.flatMap(item => item.items ?? []).map(doc => ({
       title: doc.title,
       href: doc.href ?? '',
