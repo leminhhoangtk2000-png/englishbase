@@ -7,17 +7,40 @@ import { Menu, Github } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
+import { DocsTOC } from "./_components/docs-toc";
+import { getTableOfContents } from "@/lib/toc";
 
-export default function DocsLayout({ children }: { children: React.ReactNode }) {
+export default async function DocsLayout({ children }: { children: React.ReactNode }) {
   const navItems = getDocsNavigation();
   const allDocs = getAllDocs();
+  const toc = await getTableOfContents(children);
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 max-w-screen-2xl items-center">
           <div className="mr-4 hidden md:flex">
             <Logo />
+            <nav className="flex items-center gap-6 text-sm ml-6">
+              <Link
+                href="/docs"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Docs
+              </Link>
+              <Link
+                href="#"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Blog
+              </Link>
+              <Link
+                href="#"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Templates
+              </Link>
+            </nav>
           </div>
           <div className="md:hidden">
              <Sheet>
@@ -50,7 +73,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </header>
-      <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+      <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)_200px] lg:gap-10">
         <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
             <ScrollArea className="h-full py-6 pr-6 lg:py-8">
               <SidebarNav items={navItems} />
@@ -59,6 +82,11 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         <main className="relative py-6 lg:py-8">
             {children}
         </main>
+        <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 lg:sticky lg:block">
+          <ScrollArea className="h-full py-6 pr-6 lg:py-8">
+            <DocsTOC toc={toc} />
+          </ScrollArea>
+        </aside>
       </div>
     </div>
   );
