@@ -1,0 +1,21 @@
+---
+title: Project Structure
+description: Understand the layout of the files and folders in this project.
+---
+
+## Key Directories
+
+-   **/src/app**: Contains all the routes, pages, and layouts for the application, following the Next.js App Router structure.
+-   **/src/components**: Shared React components used across the application, including UI components from shadcn/ui.
+-   **/src/content**: This is where all your Markdown (`.md`) and MDX (`.mdx`) documentation files live. The structure of this directory dictates the navigation sidebar.
+-   **/src/lib**: Utility functions and helper scripts. `docs.ts` is responsible for reading your content files.
+-   **/public**: Static assets like images and fonts.
+
+## Content Organization
+
+The sidebar navigation is generated automatically from the file and folder structure inside `/src/content`.
+
+-   A file like `introduction.mdx` becomes a top-level link.
+-   A folder like `/getting-started` creates a collapsible group in the sidebar.
+-   An `index.mdx` file inside a folder (e.g., `/getting-started/index.mdx`) will be used to set the title for the group.
+-   Other files within that folder become links under that group.

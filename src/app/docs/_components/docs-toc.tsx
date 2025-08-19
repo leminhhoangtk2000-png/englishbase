@@ -1,5 +1,6 @@
 "use client"
 
+import * as React from "react"
 import { useMemo } from "react"
 import type { TOC } from "@/lib/toc"
 import { useMounted } from "@/hooks/use-mounted"
