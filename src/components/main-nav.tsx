@@ -16,10 +16,10 @@ interface MainNavProps {
 }
 
 const navLinks = [
-    { href: "/docs", label: "Docs" },
-    { href: "/blog", label: "Blog" },
-    { href: "/components", label: "Components" },
-    { href: "/examples", label: "Examples" },
+    { href: "/docs", label: "A1 Niveau" },
+    { href: "/blog", label: "A2 Niveau" },
+    { href: "/components", label: "B1 Niveau" },
+    { href: "/examples", label: "B2 Niveau" },
 ];
 
 export function MainNav({ docs = [] }: MainNavProps) {
