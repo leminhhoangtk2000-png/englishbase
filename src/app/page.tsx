@@ -2,49 +2,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Search, Layers } from 'lucide-react';
-import { Logo } from '@/components/logo';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { MainNav } from '@/components/main-nav';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex justify-between items-center">
-          <Logo />
-          <div className="flex items-center gap-4">
-            <nav className="hidden md:flex items-center gap-6 text-sm">
-              <Link
-                href="/docs"
-                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                Docs
-              </Link>
-              <Link
-                href="/blog"
-                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/components"
-                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                Components
-              </Link>
-              <Link
-                href="/examples"
-                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                Examples
-              </Link>
-            </nav>
-            <ThemeToggle />
-            <Button asChild>
-              <Link href="/docs/introduction">Get Started</Link>
-            </Button>
-          </div>
-        </div>
-      </header>
+      <MainNav />
 
       <main className="flex-1">
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 md:py-32">
@@ -59,6 +22,11 @@ export default function Home() {
               <Link href="/docs/introduction">
                 <BookOpen className="mr-2 h-5 w-5" />
                 Start Reading
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="https://github.com" target="_blank">
+                View on GitHub
               </Link>
             </Button>
           </div>
