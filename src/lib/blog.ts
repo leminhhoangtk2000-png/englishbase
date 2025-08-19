@@ -8,7 +8,7 @@ interface DocFromParams {
 }
 
 export async function getDocFromParams({ params }: DocFromParams) {
-  const slug = params.slug?.join("/") || "";
+  const slug = params.slug?.join("/") || "introduction";
   const doc = blogConfig.items
     .flatMap((item) => item.items ?? [])
     .find((doc) => doc.href === `/blog/${slug}`);
