@@ -1,3 +1,5 @@
+import { Separator } from "@/components/ui/separator";
+
 export function IntroductionPage() {
   return (
     <>
@@ -6,9 +8,13 @@ export function IntroductionPage() {
         Welcome to DocuNext, a modern documentation template built with Next.js,
         Tailwind CSS, and ShadCN UI. This template is designed to help you
         create beautiful, fast, and accessible documentation websites with ease.
+      </p>
+      <p>
         Whether you&apos;re documenting a small library or a large-scale
         project, DocuNext provides the tools you need to get started quickly.
       </p>
+
+      <Separator className="my-6" />
 
       <h2 id="key-features">Key Features</h2>
       <ul>
@@ -29,6 +35,8 @@ export function IntroductionPage() {
           help users find information quickly.
         </li>
       </ul>
+
+      <Separator className="my-6" />
 
       <h2 id="getting-help">Getting Help</h2>
       <p>

@@ -3,6 +3,7 @@ import { docsConfig } from "@/config/docs";
 import { DocsTOC } from "../_components/docs-toc";
 import React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 
 interface DocPageProps {
   params: {
@@ -49,15 +50,16 @@ export default async function DocPage({ params }: DocPageProps) {
 
   return (
     <div className="flex w-full">
-      <main className="relative py-6 lg:py-8 flex-1">
+      <main className="relative py-6 lg:gap-10 lg:py-8 flex-1">
         <div className="mx-auto w-full min-w-0">
           <div className="space-y-2 mb-8">
-            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">{doc.title}</h1>
+            <h1 className="scroll-m-20 text-4xl font-headline font-bold tracking-tight">{doc.title}</h1>
             {doc.description && (
               <p className="text-lg text-muted-foreground">{doc.description}</p>
             )}
           </div>
-          <div className="prose prose-stone dark:prose-invert max-w-none">
+          <Separator className="my-4 md:my-6" />
+          <div className="prose prose-stone dark:prose-invert max-w-none prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
             <ContentComponent />
           </div>
         </div>
