@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getDocsNavigation, getAllDocs } from "@/lib/docs";
+import { getDocsNavigation, getAllDocs, getTableOfContentsForSlug, type TOC } from "@/lib/docs";
 import { Logo } from "@/components/logo";
 import { SearchCommand } from "@/components/search-command";
 import { Button } from "@/components/ui/button";
@@ -8,12 +8,26 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
 import { DocsTOC } from "./_components/docs-toc";
-import { getTableOfContents } from "@/lib/toc";
+import React from "react";
+import { notFound } from "next/navigation";
 
-export default async function DocsLayout({ children }: { children: React.ReactNode }) {
+interface DocsLayoutProps {
+  children: React.ReactNode;
+  params: {
+    slug: string[];
+  };
+}
+
+export default async function DocsLayout({ children, params }: DocsLayoutProps) {
   const navItems = getDocsNavigation();
   const allDocs = getAllDocs();
-  const toc = await getTableOfContents(children);
+  
+  const slug = params.slug || ["introduction"];
+  const toc = await getTableOfContentsForSlug(slug);
+
+  if (!toc) {
+    notFound();
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -79,10 +93,10 @@ export default async function DocsLayout({ children }: { children: React.ReactNo
               <SidebarNav items={navItems} />
             </ScrollArea>
         </aside>
-        <main className="relative py-6 lg:py-8">
-            {children}
-        </main>
-        <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 lg:sticky lg:block">
+        
+        {children}
+
+        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 lg:sticky lg:block">
           <ScrollArea className="h-full py-6 pr-6 lg:py-8">
             <DocsTOC toc={toc} />
           </ScrollArea>

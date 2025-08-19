@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useMemo } from "react"
-import type { TOC } from "@/lib/toc"
+import type { TOC } from "@/lib/docs"
 import { useMounted } from "@/hooks/use-mounted"
 import { cn } from "@/lib/utils"
 
@@ -25,8 +25,13 @@ export function DocsTOC({ toc }: DocsTOCProps) {
   const activeHeading = useActiveItem(itemIds as string[])
   const mounted = useMounted()
 
-  if (!toc?.items || !mounted) {
-    return null
+  if (!toc?.items?.length || !mounted) {
+    return (
+      <div className="space-y-2">
+        <p className="font-medium">On This Page</p>
+        <p className="text-sm text-muted-foreground">No headings found.</p>
+      </div>
+    )
   }
 
   return (

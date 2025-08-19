@@ -30,15 +30,19 @@ export default async function DocPage({ params }: DocPageProps) {
   const components = useMDXComponents({});
 
   return (
-    <article className="prose prose-stone dark:prose-invert max-w-3xl py-6">
-      <div className="mb-8">
-        <h1 className="font-headline text-4xl font-bold">{doc.frontmatter.title}</h1>
-        {doc.frontmatter.description && (
-          <p className="text-xl text-muted-foreground">{doc.frontmatter.description}</p>
-        )}
+    <main className="relative py-6 lg:py-8">
+      <div className="mx-auto w-full min-w-0">
+        <article className="prose prose-stone dark:prose-invert max-w-3xl py-6">
+          <div className="mb-8">
+            <h1 className="font-headline text-4xl font-bold">{doc.frontmatter.title}</h1>
+            {doc.frontmatter.description && (
+              <p className="text-xl text-muted-foreground">{doc.frontmatter.description}</p>
+            )}
+          </div>
+          <hr className="my-4"/>
+          <MDXRemote source={doc.content} components={components} />
+        </article>
       </div>
-      <hr className="my-4"/>
-      <MDXRemote source={doc.content} components={components} />
-    </article>
+    </main>
   );
 }
