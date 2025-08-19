@@ -5,13 +5,13 @@ export function IntroductionPage() {
     <>
       <h2 id="overview">Overview</h2>
       <p>
-        Welcome to DocuNext, a modern documentation template built with Next.js,
+        Welcome to Deutsch.vn, a modern documentation template built with Next.js,
         Tailwind CSS, and ShadCN UI. This template is designed to help you
         create beautiful, fast, and accessible documentation websites with ease.
       </p>
       <p>
         Whether you&apos;re documenting a small library or a large-scale
-        project, DocuNext provides the tools you need to get started quickly.
+        project, Deutsch.vn provides the tools you need to get started quickly.
       </p>
 
       <Separator className="my-6" />

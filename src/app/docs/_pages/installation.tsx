@@ -5,7 +5,7 @@ export function InstallationPage() {
     <>
       <h2 id="overview">Installation Guide</h2>
       <p>
-        Getting started with DocuNext is simple. You can clone the repository
+        Getting started with Deutsch.vn is simple. You can clone the repository
         and start editing the content right away.
       </p>
 
@@ -13,8 +13,8 @@ export function InstallationPage() {
       <p>
         First, clone the project from GitHub using your preferred method (HTTPS or SSH).
       </p>
-      <CodeBlock value={`git clone https://github.com/your-repo/docunext.git
-cd docunext`} />
+      <CodeBlock value={`git clone https://github.com/your-repo/deutsch-vn.git
+cd deutsch-vn`} />
 
       <h3 id="step-2">Step 2: Install Dependencies</h3>
       <p>
