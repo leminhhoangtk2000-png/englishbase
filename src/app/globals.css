@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  .light {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -46,6 +47,28 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+  }
+
+  .nude {
+    --background: 34 33% 92%; /* Light beige */
+    --foreground: 34 10% 25%; /* Dark brown */
+    --card: 34 33% 88%; /* Slightly darker beige */
+    --card-foreground: 34 10% 25%;
+    --popover: 34 33% 88%;
+    --popover-foreground: 34 10% 25%;
+    --primary: 15 65% 55%; /* Muted orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 34 33% 82%; /* Light grayish beige */
+    --secondary-foreground: 34 10% 25%;
+    --muted: 34 33% 82%;
+    --muted-foreground: 34 10% 45%;
+    --accent: 34 33% 80%;
+    --accent-foreground: 15 65% 55%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 34 33% 80%;
+    --input: 34 33% 80%;
+    --ring: 15 65% 55%;
   }
 }
 

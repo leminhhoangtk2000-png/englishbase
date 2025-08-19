@@ -9,6 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";
 import { type Doc, type NavItem } from "@/types";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface DocsLayoutProps {
   children: React.ReactNode;
@@ -76,6 +77,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
               <SearchCommand docs={allDocs} />
             </div>
             <nav className="flex items-center">
+                <ThemeToggle />
                 <Button variant="ghost" size="icon" asChild>
                     <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
                         <Github className="h-5 w-5" />

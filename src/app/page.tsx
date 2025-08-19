@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Search, Layers } from 'lucide-react';
 import { Logo } from '@/components/logo';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
   return (
@@ -10,29 +11,32 @@ export default function Home() {
       <header className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
           <Logo />
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link
-              href="/docs"
-              className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-            >
-              Docs
-            </Link>
-            <Link
-              href="#"
-              className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-            >
-              Blog
-            </Link>
-            <Link
-              href="#"
-              className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-            >
-              Templates
-            </Link>
-          </nav>
-          <Button asChild>
-            <Link href="/docs/introduction">Get Started</Link>
-          </Button>
+          <div className="flex items-center gap-4">
+            <nav className="hidden md:flex items-center gap-6 text-sm">
+              <Link
+                href="/docs"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Docs
+              </Link>
+              <Link
+                href="#"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Blog
+              </Link>
+              <Link
+                href="#"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Templates
+              </Link>
+            </nav>
+            <ThemeToggle />
+            <Button asChild>
+              <Link href="/docs/introduction">Get Started</Link>
+            </Button>
+          </div>
         </div>
       </header>
 
