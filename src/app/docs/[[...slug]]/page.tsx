@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { docsConfig } from "@/config/docs";
+import { getDocFromParams } from "@/lib/docs";
 import { DocsTOC } from "../_components/docs-toc";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
@@ -8,19 +8,6 @@ interface DocPageProps {
   params: {
     slug: string[];
   };
-}
-
-async function getDocFromParams({ params }: DocPageProps) {
-  const slug = params.slug?.join("/") || "introduction";
-  const doc = docsConfig.items.flatMap(item => item.items ?? []).find(
-    (doc) => doc.href?.endsWith(slug)
-  );
-
-  if (!doc) {
-    return null;
-  }
-
-  return doc;
 }
 
 export default async function DocPage({ params }: DocPageProps) {
@@ -48,7 +35,7 @@ export default async function DocPage({ params }: DocPageProps) {
   };
 
   return (
-    <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:py-8">
+    <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
           <div className="overflow-hidden text-ellipsis whitespace-nowrap">Docs</div>
