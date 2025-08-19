@@ -49,11 +49,16 @@ export default async function DocPage({ params }: DocPageProps) {
   };
 
   return (
-    <div className="flex w-full">
-      <main className="relative py-6 lg:gap-10 lg:py-8 flex-1">
+    <>
+      <main className="relative py-6 lg:py-8 xl:grid xl:grid-cols-[1fr_220px]">
         <div className="mx-auto w-full min-w-0">
-          <div className="space-y-2 mb-8">
-            <h1 className="scroll-m-20 text-4xl font-headline font-bold tracking-tight">{doc.title}</h1>
+          <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+            <div className="overflow-hidden text-ellipsis whitespace-nowrap">Docs</div>
+            <span className="font-medium text-foreground">/</span>
+            <div className="font-medium text-foreground">{doc.title}</div>
+          </div>
+          <div className="space-y-2">
+            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">{doc.title}</h1>
             {doc.description && (
               <p className="text-lg text-muted-foreground">{doc.description}</p>
             )}
@@ -63,12 +68,12 @@ export default async function DocPage({ params }: DocPageProps) {
             <ContentComponent />
           </div>
         </div>
+        <div className="hidden text-sm xl:block">
+          <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-y-auto py-12">
+            <DocsTOC toc={toc} />
+          </div>
+        </div>
       </main>
-      <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 lg:sticky lg:block lg:w-[200px]">
-        <ScrollArea className="h-full py-6 pr-6 lg:py-8">
-          <DocsTOC toc={toc} />
-        </ScrollArea>
-      </aside>
-    </div>
+    </>
   );
 }
