@@ -20,16 +20,22 @@ export default function Home() {
                 Docs
               </Link>
               <Link
-                href="#"
+                href="/blog"
                 className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
               >
                 Blog
               </Link>
               <Link
-                href="#"
+                href="/components"
                 className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
               >
-                Templates
+                Components
+              </Link>
+              <Link
+                href="/examples"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                Examples
               </Link>
             </nav>
             <ThemeToggle />

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { docsConfig } from "@/config/docs";
+import { componentsConfig } from "@/config/components";
 import { Logo } from "@/components/logo";
 import { SearchCommand } from "@/components/search-command";
 import { Button } from "@/components/ui/button";
@@ -17,12 +17,12 @@ interface DocsLayoutProps {
 
 export default async function DocsLayout({ children }: DocsLayoutProps) {
   // Omit the 'component' property before passing to client components
-  const navItems: NavItem[] = docsConfig.items.map(item => ({
+  const navItems: NavItem[] = componentsConfig.items.map(item => ({
     ...item,
     items: item.items?.map(({ component, ...subItem }) => subItem),
   }));
 
-  const allDocs: Doc[] = docsConfig.items.flatMap(item => item.items ?? []).map(doc => ({
+  const allDocs: Doc[] = componentsConfig.items.flatMap(item => item.items ?? []).map(doc => ({
       title: doc.title,
       href: doc.href ?? '',
       content: doc.description ?? '',
@@ -38,7 +38,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
             <nav className="flex items-center gap-6 text-sm ml-6">
               <Link
                 href="/docs"
-                className="font-medium text-foreground/80"
+                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
               >
                 Docs
               </Link>
@@ -50,7 +50,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
               </Link>
               <Link
                 href="/components"
-                className="font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+                className="font-medium text-foreground/80"
               >
                 Components
               </Link>
