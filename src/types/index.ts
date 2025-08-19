@@ -1,9 +1,21 @@
+import type React from 'react';
+
 export type NavItem = {
   title: string;
   href?: string;
   disabled?: boolean;
   external?: boolean;
-  items?: NavItem[];
+  items?: NavItemWithComponent[];
+  description?: string;
+  component?: () => JSX.Element;
+};
+
+export type NavItemWithComponent = NavItem & {
+  component?: () => JSX.Element;
+};
+
+export type DocsConfig = {
+  items: NavItem[];
 };
 
 export type Doc = {

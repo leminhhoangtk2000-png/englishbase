@@ -2,12 +2,12 @@
 
 import * as React from "react"
 import { useMemo } from "react"
-import type { TOC } from "@/lib/docs"
+import type { NavItem } from "@/types"
 import { useMounted } from "@/hooks/use-mounted"
 import { cn } from "@/lib/utils"
 
 interface DocsTOCProps {
-  toc: TOC
+  toc: { items: { title: string; url: string; items?: DocsTOCProps['toc']['items'] }[] }
 }
 
 export function DocsTOC({ toc }: DocsTOCProps) {
@@ -78,7 +78,7 @@ function useActiveItem(itemIds: string[]) {
 }
 
 interface TreeProps {
-  tree: TOC
+  tree: DocsTOCProps['toc']
   level?: number
   activeItem?: string | null
 }
@@ -102,7 +102,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
             </a>
             {item.items?.length ? (
               <Tree
-                tree={item}
+                tree={{ items: item.items }}
                 level={level + 1}
                 activeItem={activeItem}
               />
