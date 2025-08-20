@@ -9,17 +9,17 @@ const testimonials = [
   {
     name: 'Siêu nhân hồng',
     role: 'Thành viên kim cương',
-    quote: 'Đội ngũ mọi người sử dụng rất ý xì!',
+    quote: 'Môi trường học tập ở đây thật tuyệt vời và đầy cảm hứng!',
   },
   {
     name: 'Siêu nhân đỏ',
     role: 'Thành viên bạc',
-    quote: 'Nhờ góp ý một cách rất thật như hifif.',
+    quote: 'Nhờ có Deutsch.vn, mình đã tự tin hơn rất nhiều trên con đường chinh phục tiếng Đức.',
   },
   {
     name: 'Siêu nhân vàng',
     role: 'Người đi đường',
-    quote: 'Chắc mai mốt phải góp ý Ids cho khoa Módal',
+    quote: 'Cộng đồng đã giúp đỡ mình rất nhiều, từ kiến thức đến kinh nghiệm thực tế.',
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Home() {
                 Willkommen bei Deutsch.vn!
               </h1>
               <p className="max-w-xl mx-auto md:mx-0 text-lg md:text-xl text-muted-foreground mb-8">
-                Chúng mình ở đây, với mong muốn có thể xây một cộng đồng tiếng Đức lành mạnh và an toàn.
+                Cùng nhau xây dựng một cộng đồng học tiếng Đức cởi mở, thân thiện và hiệu quả cho người Việt.
               </p>
               <Button size="lg" className="rounded-full px-10 py-6 text-lg font-bold" asChild>
                 <Link href="/docs/introduction">Vào học</Link>
@@ -49,7 +49,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-primary" />
-                  <span>An toàn</span>
+                  <span>Minh bạch</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-primary" />
@@ -76,13 +76,13 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-center md:text-left">
                 <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tight">
-                  Tại đây, chúng ta tạo nên tiếng nói của chính mình!
+                  Nơi mỗi người học đều được lắng nghe và tôn trọng.
                 </h2>
               </div>
               <div className="space-y-4 text-muted-foreground">
-                <p>Mình đã từng là một học sinh, mong muốn kiếm được một nơi an toàn để học tiếng Đức uy tín. Mình cũng đã từng trải qua việc làm hồ sơ tại Việt Nam, không uy tín. Mình đã từng phải ngậm ngùi chịu qua và không thể làm gì hơn.</p>
-                <p>Đó là lý do chúng ta ở đây, tạo nên cộng đồng của chính mình!</p>
-                <p>Nơi mà bạn có quyền đánh giá các đơn vị cung cấp dịch vụ tiếng Đức một cách thẳng thắn và minh bạch.</p>
+                <p>Hành trình học một ngôn ngữ mới luôn có những thử thách. Thấu hiểu điều đó, Deutsch.vn ra đời với mong muốn tạo ra một không gian học tập an toàn và đáng tin cậy.</p>
+                <p>Đây là nơi chúng ta cùng nhau chia sẻ kiến thức, kinh nghiệm và hỗ trợ lẫn nhau trên con đường chinh phục tiếng Đức.</p>
+                <p>Chúng tôi tin rằng sự minh bạch và tinh thần cộng đồng sẽ là nền tảng vững chắc nhất cho sự tiến bộ của mỗi cá nhân.</p>
               </div>
             </div>
           </div>
@@ -91,18 +91,18 @@ export default function Home() {
         {/* Features Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">Bạn mình sẽ làm những gì?</h2>
-            <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">Mục tiêu lớn nhất của Team là có thể giúp các bạn học tiếng Đức một cách thuận lợi nhất! Deutsch.vn có 3 giai đoạn.</p>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">Lộ trình phát triển của chúng ta</h2>
+            <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">Deutsch.vn hướng tới việc hỗ trợ toàn diện cho người học tiếng Đức qua 3 giai đoạn chính.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="text-center shadow-none border rounded-2xl p-4">
                 <CardHeader>
                   <div className="mx-auto w-20 h-20">
                      <Image src="https://placehold.co/80x80.png" alt="Xây dựng nền tảng học tập" width={80} height={80} data-ai-hint="illustration teamwork"/>
                   </div>
-                  <CardTitle className="font-headline mt-4 text-xl">Xây dựng nền tảng học tập</CardTitle>
+                  <CardTitle className="font-headline mt-4 text-xl">Nền tảng học tập miễn phí</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">Sẽ bao gồm xây dựng các bài học theo một cách có hệ thống, cùng các bạn có thể học một cách hoàn toàn miễn phí. Chắc chắn hai bàn tay trắng là những thế hệ ưu tú!</p>
+                  <p className="text-muted-foreground text-sm">Xây dựng hệ thống bài học chất lượng, có hệ thống và hoàn toàn miễn phí, giúp mọi người đều có cơ hội tiếp cận kiến thức một cách dễ dàng.</p>
                 </CardContent>
               </Card>
               <Card className="text-center shadow-none border rounded-2xl p-4">
@@ -110,10 +110,10 @@ export default function Home() {
                   <div className="mx-auto w-20 h-20">
                     <Image src="https://placehold.co/80x80.png" alt="Xây dựng công cụ đánh giá" width={80} height={80} data-ai-hint="illustration community"/>
                   </div>
-                  <CardTitle className="font-headline mt-4 text-xl">Xây dựng công cụ đánh giá</CardTitle>
+                  <CardTitle className="font-headline mt-4 text-xl">Hệ thống đánh giá minh bạch</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">Sẽ phát triển hệ thống review, nơi các bạn có thể đưa ra đánh giá minh bạch, công cụ sẽ phát triển dựa trên học tập trung cái thiện và lộ trình cụ thể.</p>
+                  <p className="text-muted-foreground text-sm">Phát triển một nền tảng review, nơi cộng đồng có thể chia sẻ và tham khảo những đánh giá chân thực về các dịch vụ liên quan đến tiếng Đức.</p>
                 </CardContent>
               </Card>
               <Card className="text-center shadow-none border rounded-2xl p-4">
@@ -121,10 +121,10 @@ export default function Home() {
                   <div className="mx-auto w-20 h-20">
                     <Image src="https://placehold.co/80x80.png" alt="Người đi trước giúp người đi sau" width={80} height={80} data-ai-hint="illustration helping"/>
                   </div>
-                  <CardTitle className="font-headline mt-4 text-xl">Người đi trước giúp người đi sau</CardTitle>
+                  <CardTitle className="font-headline mt-4 text-xl">Kết nối và sẻ chia kinh nghiệm</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">Bọn mình sẽ xây dựng một nền tảng Job, nơi mà các bạn có thể tìm thấy Internship và giúp đỡ các bạn đi sau.</p>
+                  <p className="text-muted-foreground text-sm">Tạo dựng một không gian nơi những người đi trước có thể chia sẻ kinh nghiệm, cơ hội học tập và việc làm cho những người đi sau.</p>
                 </CardContent>
               </Card>
               <Card className="text-center shadow-none border rounded-2xl p-4">
@@ -132,10 +132,10 @@ export default function Home() {
                   <div className="mx-auto w-20 h-20">
                      <Image src="https://placehold.co/80x80.png" alt="Du học an toàn" width={80} height={80} data-ai-hint="illustration shield"/>
                   </div>
-                  <CardTitle className="font-headline mt-4 text-xl">Du học an toàn</CardTitle>
+                  <CardTitle className="font-headline mt-4 text-xl">Hỗ trợ du học an toàn</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">Bọn mình sẽ kết nối với những đơn vị uy tín, có giấy phép và xây dựng một quy trình an toàn thông qua các tiêu chí của mình. Sẽ bảo vệ quyền lợi 2 bên.</p>
+                  <p className="text-muted-foreground text-sm">Kết nối với các đơn vị uy tín, xây dựng một quy trình an toàn và minh bạch để hỗ trợ các bạn trên con đường du học và phát triển sự nghiệp.</p>
                 </CardContent>
               </Card>
             </div>
@@ -160,7 +160,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tight mb-4">
                 Được xây dựng cho người học, bởi những người học.
               </h2>
-              <p className="text-muted-foreground">Bọn mình cố gắng xây dựng trang web như một dự án mở. Mở để các bạn cùng xây dựng và cởi mở nhận góp ý của các bạn.</p>
+              <p className="text-muted-foreground">Chúng tôi tin rằng sức mạnh lớn nhất đến từ cộng đồng. Deutsch.vn là một dự án mở, luôn chào đón sự chung tay xây dựng và những góp ý chân thành từ các bạn.</p>
             </div>
           </div>
         </section>
@@ -168,7 +168,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section className="bg-secondary/50 py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-12">Học viên cũ nói gì về chúng tôi...</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-12">Cộng đồng nói gì về Deutsch.vn...</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
                 <Card key={index} className="text-left rounded-2xl p-6 shadow-sm border">
@@ -198,7 +198,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-6 gap-8 text-sm">
               <div className="col-span-1 md:col-span-2">
                 <h3 className="font-bold text-lg mb-2">Deutsch.VN</h3>
-                <p className="text-muted-foreground mb-4">Chúng mình ở đây, với mong muốn có thể xây một cộng đồng tiếng Đức lành mạnh và an toàn.</p>
+                <p className="text-muted-foreground mb-4">Cùng nhau xây dựng một cộng đồng học tiếng Đức cởi mở, thân thiện và hiệu quả cho người Việt.</p>
                 <div className="flex gap-4">
                   <Link href="#"><Facebook className="w-6 h-6 text-muted-foreground hover:text-primary" /></Link>
                   <Link href="#"><Instagram className="w-6 h-6 text-muted-foreground hover:text-primary" /></Link>
