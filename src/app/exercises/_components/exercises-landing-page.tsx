@@ -38,7 +38,7 @@ const levels = [
 export function ExercisesLandingPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-extrabold font-headline tracking-tight">
           Luyện tập theo trình độ
         </h1>
@@ -47,11 +47,11 @@ export function ExercisesLandingPage() {
         </p>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-20">
         {levels.map((level, index) => (
           <div
             key={level.name}
-            className="grid md:grid-cols-2 gap-8 md:gap-12 items-center"
+            className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-secondary/30 p-8 rounded-2xl shadow-sm"
           >
             <div className={index % 2 === 0 ? 'md:order-1' : 'md:order-2'}>
               <h2 className="text-3xl font-bold font-headline mb-4">{level.name}</h2>
