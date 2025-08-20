@@ -49,7 +49,7 @@ export function ExercisesLandingPage() {
 
       <div className="space-y-20">
         {levels.map((level, index) => (
-          <Card key={level.name} className="overflow-hidden shadow-sm border-border/60">
+          <Card key={level.name} className="overflow-hidden shadow-lg border-border/60 rounded-xl bg-secondary/50">
             <div
               className="grid md:grid-cols-2 gap-8 md:gap-16 items-center"
             >
