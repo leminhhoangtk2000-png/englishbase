@@ -3,6 +3,7 @@ import { getDocFromParams } from "@/lib/exercises";
 import { DocsTOC } from "../_components/docs-toc";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
+import { ExercisesLandingPage } from "../_components/exercises-landing-page";
 
 interface DocPageProps {
   params: {
@@ -11,6 +12,11 @@ interface DocPageProps {
 }
 
 export default async function DocPage({ params }: DocPageProps) {
+  // If there's no slug, it's the exercises's main page.
+  if (!params.slug || params.slug.length === 0) {
+    return <ExercisesLandingPage />;
+  }
+
   const doc = await getDocFromParams({ params });
 
   if (!doc || !doc.component) {
