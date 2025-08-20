@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 
 const levels = [
@@ -49,30 +49,30 @@ export function ExercisesLandingPage() {
 
       <div className="space-y-20">
         {levels.map((level, index) => (
-          <div
-            key={level.name}
-            className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-secondary/30 p-8 rounded-2xl shadow-sm"
-          >
-            <div className={index % 2 === 0 ? 'md:order-1' : 'md:order-2'}>
-              <h2 className="text-3xl font-bold font-headline mb-4">{level.name}</h2>
-              <p className="text-muted-foreground mb-6 text-lg">{level.description}</p>
-              <Button asChild size="lg">
-                <Link href={level.href}>
-                  Bắt đầu luyện tập <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+          <Card key={level.name} className="overflow-hidden shadow-sm border-border/60">
+            <div
+              className="grid md:grid-cols-2 gap-8 md:gap-16 items-center"
+            >
+              <div className={`p-8 md:p-12 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+                <h2 className="text-3xl font-bold font-headline mb-4">{level.name}</h2>
+                <p className="text-muted-foreground mb-6 text-lg">{level.description}</p>
+                <Button asChild size="lg">
+                  <Link href={level.href}>
+                    Bắt đầu luyện tập <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+              <div className={`relative h-64 md:h-full ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                <Image
+                  src={level.image}
+                  alt={`Hình ảnh minh họa cho ${level.name}`}
+                  fill
+                  data-ai-hint={level.data_ai_hint}
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className={index % 2 === 0 ? 'md:order-2' : 'md:order-1'}>
-              <Image
-                src={level.image}
-                alt={`Hình ảnh minh họa cho ${level.name}`}
-                width={600}
-                height={400}
-                data-ai-hint={level.data_ai_hint}
-                className="rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
+          </Card>
         ))}
       </div>
     </div>
