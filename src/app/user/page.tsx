@@ -10,16 +10,21 @@ import * as React from 'react';
 
 const ContributionGraph = () => {
   const [selectedYear, setSelectedYear] = React.useState('2025');
+  const [days, setDays] = React.useState(Array.from({ length: 365 }, () => 0));
 
-  // Dummy data representing contribution levels (0-4)
-  const days = Array.from({ length: 365 }, (_, dayIndex) => {
-    const month = Math.floor(dayIndex / 30);
-    let level = 0;
-    if (month > 1 && Math.random() > 0.4) {
-      level = Math.floor(Math.random() * 4) + 1;
-    }
-    return level;
-  });
+  React.useEffect(() => {
+    // Generate random data only on the client side to avoid hydration mismatch
+    const randomDays = Array.from({ length: 365 }, (_, dayIndex) => {
+      const month = Math.floor(dayIndex / 30);
+      let level = 0;
+      if (month > 1 && Math.random() > 0.4) {
+        level = Math.floor(Math.random() * 4) + 1;
+      }
+      return level;
+    });
+    setDays(randomDays);
+  }, []);
+
 
   const contributionColors = [
     "bg-muted/30", // level 0
