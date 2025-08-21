@@ -4,7 +4,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -12,10 +12,13 @@ import { cn } from "@/lib/utils";
 
 const ContributionGraph = () => {
   const [selectedYear, setSelectedYear] = React.useState('2025');
-  const [days, setDays] = React.useState(Array.from({ length: 371 }, () => 0));
+  const [days, setDays] = React.useState<number[]>([]);
 
   React.useEffect(() => {
-    const randomDays = Array.from({ length: 371 }, () => {
+    // Initialize with all days as 0
+    const initialDays = Array.from({ length: 371 }, () => 0);
+    // Then, generate random activity
+    const randomDays = initialDays.map(() => {
       if (Math.random() > 0.4) {
         return Math.floor(Math.random() * 4) + 1;
       }
@@ -129,7 +132,12 @@ export default function UserPage() {
           </div>
           <p className="text-lg text-muted-foreground mb-4">khoavo261 · he/him</p>
           <Button variant="outline" className="w-full mb-4">Edit profile</Button>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+
+          <p className="text-sm text-foreground mb-4">
+            Software Developer building open-source projects.
+          </p>
+
+          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
             <Link href="#" className="flex items-center gap-1 hover:text-primary">
               <Users className="w-4 h-4" />
               <span className="font-semibold text-foreground">0</span> followers
@@ -138,6 +146,25 @@ export default function UserPage() {
             <Link href="#" className="hover:text-primary">
               <span className="font-semibold text-foreground">2</span> following
             </Link>
+          </div>
+
+          <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4"/>
+                  <span>Vietnam</span>
+              </div>
+               <div className="flex items-center gap-2">
+                  <LinkIcon className="w-4 h-4"/>
+                  <Link href="#" className="hover:text-primary hover:underline">https://portfolio.example.com</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                  <Twitter className="w-4 h-4"/>
+                   <Link href="#" className="hover:text-primary hover:underline">@khoavo_dev</Link>
+              </div>
+               <div className="flex items-center gap-2">
+                  <Linkedin className="w-4 h-4"/>
+                  <Link href="#" className="hover:text-primary hover:underline">linkedin.com/in/khoavo</Link>
+              </div>
           </div>
         </div>
 
