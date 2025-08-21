@@ -63,7 +63,7 @@ export default function CreatePostPage() {
               <Input
                 type="text"
                 placeholder="Tiêu đề bài viết..."
-                className="text-2xl font-bold h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 !text-foreground"
+                className="text-2xl font-bold h-auto p-2"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
