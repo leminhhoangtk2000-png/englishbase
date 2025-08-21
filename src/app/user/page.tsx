@@ -4,12 +4,14 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
 
 function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
@@ -116,6 +118,24 @@ const TimelineItem = ({ icon, children, isLast = false }: { icon: React.ReactNod
     </div>
 );
 
+const blogPosts = [
+  {
+    title: "8 Apps to Use Instead of Doomscrolling on Your iPhone",
+    date: "Aug 20, 2025",
+    status: "published",
+  },
+  {
+    title: "My First Blog Post",
+    date: "Aug 15, 2025",
+    status: "draft",
+  },
+  {
+    title: "A Guide to Component-Based Documentation",
+    date: "Aug 10, 2025",
+    status: "published",
+  },
+];
+
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -177,6 +197,7 @@ export default function UserPage() {
               <TabsTrigger value="write" asChild>
                 <Link href="/blog-new/create">Viết cùng Deutsch.vn</Link>
               </TabsTrigger>
+              <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
             </TabsList>
             <TabsContent value="profile">
               <ContributionGraph />
@@ -258,8 +279,48 @@ export default function UserPage() {
                           </li>
                       </ul>
                   </TimelineItem>
-
               </div>
+            </TabsContent>
+            <TabsContent value="manage-blog">
+              <Card>
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold font-headline">Quản lý bài viết</h2>
+                  <p className="text-muted-foreground mt-1">Xem, chỉnh sửa hoặc xóa các bài viết của bạn.</p>
+                </div>
+                <div className="border-t">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="w-[60%]">Tiêu đề</TableHead>
+                        <TableHead>Ngày đăng</TableHead>
+                        <TableHead>Trạng thái</TableHead>
+                        <TableHead className="text-right">Hành động</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {blogPosts.map((post) => (
+                        <TableRow key={post.title}>
+                          <TableCell className="font-medium">{post.title}</TableCell>
+                          <TableCell>{post.date}</TableCell>
+                          <TableCell>
+                            <Badge variant={post.status === "published" ? "default" : "secondary"}>
+                              {post.status === "published" ? "Đã xuất bản" : "Bản nháp"}
+                            </Badge>
+                          </TableCell>
+                          <TableCell className="text-right">
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Pencil className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive">
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </Card>
             </TabsContent>
           </Tabs>
         </div>
