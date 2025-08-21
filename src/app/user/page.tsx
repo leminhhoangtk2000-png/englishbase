@@ -25,7 +25,7 @@ const ContributionGraph = () => {
 
 
   const contributionColors = [
-    "bg-muted/30", // level 0 (faint)
+    "bg-gray-100 dark:bg-gray-800", // level 0 (faint white/gray)
     "bg-green-500", // level 1
     "bg-green-600", // level 2
     "bg-green-700", // level 3
