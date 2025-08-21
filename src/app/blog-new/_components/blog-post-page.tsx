@@ -462,7 +462,7 @@ function DocPageContent({ title, description, content }: { title: string, descri
         </div>
 
         <div className="flex items-center gap-3 my-6">
-            <Avatar className="h-12 w-12 rounded-lg border-2 border-foreground">
+            <Avatar className="h-12 w-12 rounded-full border-2 border-foreground">
                 <AvatarImage src={authorDetails.avatar} alt={authorDetails.name} />
                 <AvatarFallback>{authorDetails.name.charAt(0)}</AvatarFallback>
             </Avatar>
