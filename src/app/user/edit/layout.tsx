@@ -7,10 +7,6 @@ const sidebarNavItems = [
     title: "Hồ sơ công khai",
     href: "/user/edit",
   },
-  {
-    title: "Thông báo",
-    href: "/user/edit/notifications",
-  },
 ];
 
 interface SettingsLayoutProps {
