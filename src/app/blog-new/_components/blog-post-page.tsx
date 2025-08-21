@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand, PlayCircle, Upload } from "lucide-react";
+import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand, PlayCircle, Upload, PenSquare } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 
@@ -125,7 +125,7 @@ const whoToFollow = [
 function BlogListPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="border-b">
+      <div className="border-b flex justify-between items-center">
         <div className="flex items-center space-x-6 text-sm text-muted-foreground overflow-x-auto pb-3">
           <Link href="#" className="text-foreground font-semibold">+</Link>
           <Link href="#" className="text-foreground font-semibold">For you</Link>
@@ -135,6 +135,12 @@ function BlogListPage() {
           <Link href="#" className="hover:text-foreground">Books</Link>
           <Link href="#" className="hover:text-foreground">Marketing</Link>
         </div>
+        <Button asChild variant="outline">
+          <Link href="/blog-new/create">
+            <PenSquare className="w-4 h-4 mr-2" />
+            Write a story
+          </Link>
+        </Button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
         <div className="lg:col-span-2">
