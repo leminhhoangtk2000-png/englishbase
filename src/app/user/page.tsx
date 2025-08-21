@@ -14,20 +14,18 @@ const ContributionGraph = () => {
 
   React.useEffect(() => {
     // Generate random data only on the client side to avoid hydration mismatch
-    const randomDays = Array.from({ length: 365 }, (_, dayIndex) => {
-      const month = Math.floor(dayIndex / 30);
-      let level = 0;
-      if (month > 1 && Math.random() > 0.4) {
-        level = Math.floor(Math.random() * 4) + 1;
+    const randomDays = Array.from({ length: 365 }, () => {
+      if (Math.random() > 0.4) {
+        return Math.floor(Math.random() * 4) + 1;
       }
-      return level;
+      return 0;
     });
     setDays(randomDays);
   }, []);
 
 
   const contributionColors = [
-    "bg-muted/30", // level 0
+    "bg-muted/30", // level 0 (faint)
     "bg-green-500", // level 1
     "bg-green-600", // level 2
     "bg-green-700", // level 3
