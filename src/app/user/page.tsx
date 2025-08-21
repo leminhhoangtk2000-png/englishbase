@@ -14,7 +14,7 @@ const ContributionGraph = () => {
       // Create some random activity, more likely in recent months
       const month = Math.floor(dayOfYear / 30);
       let level = 0;
-      if (month > 3 && Math.random() > 0.5) {
+      if (month > 1 && Math.random() > 0.4) {
         level = Math.floor(Math.random() * 4) + 1;
       }
       return level;
@@ -23,46 +23,51 @@ const ContributionGraph = () => {
 
   const contributionColors = [
     "bg-muted/30", // level 0
-    "bg-green-800/80", // level 1
-    "bg-green-700/80", // level 2
-    "bg-green-600/80", // level 3
-    "bg-green-500/80", // level 4
+    "bg-green-800", // level 1
+    "bg-green-700", // level 2
+    "bg-green-600", // level 3
+    "bg-green-500", // level 4
   ];
-
-  const months = ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+  
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   return (
     <div className="p-4 border rounded-md">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-sm">203 contributions in the last year</h3>
-        <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="text-xs">Contribution settings</Button>
-            <div className="flex rounded-md border">
-                <Button variant="secondary" size="sm" className="rounded-r-none border-r text-xs h-8">2025</Button>
-                <Button variant="ghost" size="sm" className="rounded-l-none text-xs h-8">2024</Button>
-            </div>
-        </div>
+       <div className="flex justify-between items-center mb-4">
+        <h3 className="text-sm">202 contributions in 2025</h3>
+        <Button variant="outline" size="sm" className="text-xs h-8">Contribution settings</Button>
       </div>
+      
       <div className="relative">
-        <div className="grid grid-cols-53 gap-1 overflow-hidden">
-          {weeks.flat().map((level, index) => (
-            <div
-              key={index}
-              className={`w-2.5 h-2.5 rounded-sm ${contributionColors[level]}`}
-              title={`Contribution level ${level} on day ${index + 1}`}
-            />
-          ))}
+        {/* Month Labels */}
+        <div className="grid grid-cols-53 gap-1" style={{ gridTemplateRows: 'auto' }}>
+            {months.map((month, index) => (
+              <div key={month} className="text-xs text-muted-foreground" style={{ gridColumn: `${index * 4 + 2} / span 4` }}>
+                {month}
+              </div>
+            ))}
         </div>
-        <div className="flex justify-between text-xs text-muted-foreground mt-2 px-[1px] absolute -top-5 w-full">
-            {months.map(month => <span key={month}>{month}</span>)}
-        </div>
-        <div className="absolute -left-6 top-0 flex flex-col text-xs text-muted-foreground gap-[11px]">
-            <span className="mt-[13px]">Mon</span>
-            <span className="mt-[1px]">Wed</span>
-            <span className="mt-[1px]">Fri</span>
+
+        {/* Day Labels and Grid */}
+        <div className="grid grid-cols-[auto_1fr] gap-2 mt-2">
+          <div className="flex flex-col justify-between text-xs text-muted-foreground pr-2">
+            <span>Mon</span>
+            <span>Wed</span>
+            <span>Fri</span>
+          </div>
+          <div className="grid grid-cols-53 gap-1">
+            {weeks.flat().map((level, index) => (
+              <div
+                key={index}
+                className={`w-2.5 h-2.5 rounded-sm ${contributionColors[level]}`}
+                title={`Contribution level ${level} on day ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-      <div className="flex justify-between items-center mt-2 text-xs text-muted-foreground">
+
+      <div className="flex justify-between items-center mt-4 text-xs text-muted-foreground">
         <Link href="#" className="hover:text-primary">Learn how we count contributions</Link>
         <div className="flex items-center gap-1">
           <span>Less</span>
