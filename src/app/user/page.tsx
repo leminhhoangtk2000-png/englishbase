@@ -4,7 +4,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -152,6 +152,31 @@ const savedPosts = [
   },
 ];
 
+const userActivity = [
+    {
+        type: 'completed_exercise',
+        title: 'Bài tập về Thì hiện tại đơn',
+        date: '22 tháng 8',
+        score: '9/10',
+    },
+    {
+        type: 'read_blog',
+        title: '8 Apps to Use Instead of Doomscrolling on Your iPhone',
+        date: '21 tháng 8',
+    },
+    {
+        type: 'read_blog',
+        title: 'A Guide to Component-Based Documentation',
+        date: '20 tháng 8',
+    },
+    {
+        type: 'completed_exercise',
+        title: 'Bài tập về Giới từ',
+        date: '19 tháng 8',
+        score: '7/10',
+    }
+]
+
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -219,83 +244,28 @@ export default function UserPage() {
             <TabsContent value="profile">
               <ContributionGraph />
 
-              <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động đóng góp</h2>
+              <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động</h2>
               <div className="border-t">
                   <div className="text-center text-sm py-3 border-b">
                       Tháng Tám 2025
                   </div>
 
-                  <TimelineItem icon={<GitMerge className="w-4 h-4" />}>
-                      <div className="flex justify-between items-center text-sm mb-2">
-                          <h3 className="font-semibold">Đã tạo 49 commit trong 2 repository</h3>
-                          <GitCommit className="w-4 h-4 text-muted-foreground" />
+                  {userActivity.map((activity, index) => (
+                    <TimelineItem 
+                      key={index} 
+                      icon={activity.type === 'read_blog' ? <BookOpen className="w-4 h-4" /> : <ClipboardCheck className="w-4 h-4" />}
+                      isLast={index === userActivity.length - 1}
+                    >
+                      <div className="flex justify-between items-start text-sm">
+                          <p className="text-muted-foreground">
+                            {activity.type === 'read_blog' ? 'Đã đọc bài viết ' : 'Đã hoàn thành bài tập '}
+                            <Link href="#" className="font-semibold text-foreground hover:underline">{activity.title}</Link>
+                            {activity.score && <span> với số điểm <span className="font-semibold text-foreground">{activity.score}</span></span>}
+                          </p>
+                          <span className="text-muted-foreground flex-shrink-0 ml-4">{activity.date}</span>
                       </div>
-                      <ul className="space-y-1 text-sm">
-                          <li className="flex justify-between items-center">
-                              <Link href="#" className="text-primary hover:underline truncate">khoavo261/Bisflow <span className="text-muted-foreground">25 commit</span></Link>
-                              <div className="w-24 h-2 bg-green-600 rounded-full" />
-                          </li>
-                          <li className="flex justify-between items-center">
-                              <Link href="#" className="text-primary hover:underline truncate">khoavo261/deutschhub <span className="text-muted-foreground">24 commit</span></Link>
-                              <div className="w-24 h-2 bg-green-600 rounded-full" />
-                          </li>
-                      </ul>
-                  </TimelineItem>
-
-                  <TimelineItem icon={<BookMarked className="w-4 h-4" />}>
-                       <div className="flex justify-between items-center text-sm mb-2 text-muted-foreground">
-                          <h3 className="font-normal">Đã tạo repository đầu tiên</h3>
-                          <span>4 tháng 8</span>
-                      </div>
-                      <Card className="p-6 text-center bg-card/50">
-                          <Image src="https://placehold.co/400x200.png" data-ai-hint="space illustration" width={400} height={200} className="mx-auto mb-4 rounded-md" alt="First repository illustration"/>
-                          <p className="font-semibold text-green-400">Repository đầu tiên</p>
-                          <h4 className="font-semibold text-lg"><Link href="#" className="text-primary hover:underline">deutschhub</Link> <span className="text-xs border rounded-full px-2 py-0.5 text-muted-foreground">Riêng tư</span></h4>
-                          <p className="text-xs text-muted-foreground mt-2">Chỉ những người có thể xem khoavo261/deutschhub mới thấy được đóng góp này</p>
-                      </Card>
-                  </TimelineItem>
-
-                  <TimelineItem icon={<GitBranch className="w-4 h-4" />} isLast>
-                      <div className="flex justify-between items-center text-sm mb-2">
-                          <h3 className="font-semibold">Đã tạo 3 repository khác</h3>
-                          <GitCommit className="w-4 h-4 text-muted-foreground" />
-                      </div>
-                       <ul className="space-y-2 text-sm">
-                          <li className="flex justify-between items-center">
-                             <div className="flex items-center gap-2">
-                                  <Lock className="w-4 h-4" />
-                                  <Link href="#" className="text-primary hover:underline">khoavo261/deutsch-vn2</Link>
-                             </div>
-                             <div className="flex items-center gap-2 text-muted-foreground">
-                                  <span className="w-3 h-3 rounded-full bg-blue-400" />
-                                  <span>TypeScript</span>
-                                  <span>20 tháng 8</span>
-                             </div>
-                          </li>
-                          <li className="flex justify-between items-center">
-                             <div className="flex items-center gap-2">
-                                  <Lock className="w-4 h-4" />
-                                  <Link href="#" className="text-primary hover:underline">khoavo261/Bisflow</Link>
-                             </div>
-                             <div className="flex items-center gap-2 text-muted-foreground">
-                                  <span className="w-3 h-3 rounded-full bg-blue-400" />
-                                  <span>TypeScript</span>
-                                  <span>13 tháng 8</span>
-                             </div>
-                          </li>
-                          <li className="flex justify-between items-center">
-                             <div className="flex items-center gap-2">
-                                  <Lock className="w-4 h-4" />
-                                  <Link href="#" className="text-primary hover:underline">khoavo261/DeutscheEcke</Link>
-                             </div>
-                             <div className="flex items-center gap-2 text-muted-foreground">
-                                  <span className="w-3 h-3 rounded-full bg-blue-400" />
-                                  <span>TypeScript</span>
-                                  <span>12 tháng 8</span>
-                             </div>
-                          </li>
-                      </ul>
-                  </TimelineItem>
+                    </TimelineItem>
+                  ))}
               </div>
             </TabsContent>
             <TabsContent value="manage-blog">
