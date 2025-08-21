@@ -283,6 +283,12 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
     const [repliesVisible, setRepliesVisible] = React.useState(false);
     const hasReplies = comment.replies && comment.replies.length > 0;
 
+    const toggleReplies = () => {
+        if (hasReplies) {
+            setRepliesVisible(!repliesVisible);
+        }
+    }
+
     return (
         <div className={level > 0 ? "ml-8" : ""}>
             <div className="flex items-center justify-between">
@@ -306,17 +312,17 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
                     <Hand className="w-5 h-5" />
                     <span>{comment.claps}</span>
                 </div>
-                <div className="flex items-center gap-2 cursor-pointer hover:text-foreground">
+                <div onClick={toggleReplies} className="flex items-center gap-2 cursor-pointer hover:text-foreground">
                     <MessageCircle className="w-4 h-4" />
                     <span>Reply</span>
                 </div>
             </div>
-             {hasReplies && !repliesVisible && (
+             {hasReplies && (
                 <button
-                    onClick={() => setRepliesVisible(true)}
+                    onClick={toggleReplies}
                     className="text-sm font-semibold text-primary mt-3"
                 >
-                    View {comment.replies?.length} repl{comment.replies?.length === 1 ? 'y' : 'ies'}
+                    {repliesVisible ? 'Hide replies' : `View ${comment.replies?.length} repl${comment.replies?.length === 1 ? 'y' : 'ies'}`}
                 </button>
             )}
             {hasReplies && repliesVisible && (
@@ -475,5 +481,3 @@ export default async function Page({ params }: DocPageProps) {
 
   return <DocPageContent doc={doc} />;
 }
-
-    
