@@ -67,6 +67,7 @@ export function ExercisesLandingPage() {
                   src={level.image}
                   alt={`Hình ảnh minh họa cho ${level.name}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   data-ai-hint={level.data_ai_hint}
                   className="object-cover"
                 />

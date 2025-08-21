@@ -30,7 +30,7 @@ export default async function DocPage({ params }: DocPageProps) {
   };
 
   return (
-    <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-12 lg:py-8">
+    <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
           <div className="overflow-hidden text-ellipsis whitespace-nowrap">Blog</div>
