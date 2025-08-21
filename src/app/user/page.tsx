@@ -45,13 +45,13 @@ const ContributionGraph = () => {
         </div>
 
         <div className="flex gap-2">
-          <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
+          <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-6 pb-px">
               <span>Mon</span>
               <span className="invisible md:visible">Wed</span>
               <span>Fri</span>
           </div>
           <div className="flex-1">
-            <div className="flex justify-start gap-3 sm:gap-4 text-xs text-muted-foreground mb-1">
+            <div className="flex justify-between text-xs text-muted-foreground mb-1">
                 {months.map((month) => (
                   <div key={month} className="flex-shrink-0">
                     {month}
