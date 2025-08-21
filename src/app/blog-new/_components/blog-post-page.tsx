@@ -14,6 +14,7 @@ import { type NavItemWithComponent } from "@/types";
 
 interface BlogPostPageProps {
   doc?: NavItemWithComponent;
+  content?: React.ReactNode;
 }
 
 // --- Start of data for the blog list page ---
@@ -287,7 +288,7 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
             setRepliesVisible(!repliesVisible);
         }
     }
-
+    
     const handleReplyClick = () => {
         setIsReplying(!isReplying);
     }
@@ -333,7 +334,7 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
                     </div>
                 </div>
             )}
-            
+
             {hasReplies && repliesVisible && (
                 <div className="mt-4 space-y-6 border-l-2 border-border pl-4">
                     {comment.replies?.map((reply, index) => (
@@ -345,9 +346,7 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
     );
 };
 
-function DocPageContent({ doc }: { doc: NavItemWithComponent }) {
-  const ContentComponent = doc.component;
-
+function DocPageContent({ doc, content }: { doc: NavItemWithComponent, content: React.ReactNode }) {
   return (
     <main className="relative py-6 lg:py-8">
       <div className="mx-auto w-full max-w-3xl px-4">
@@ -395,7 +394,7 @@ function DocPageContent({ doc }: { doc: NavItemWithComponent }) {
         </div>
 
         <div className="prose prose-stone dark:prose-invert max-w-none mx-auto prose-xl font-serif prose-p:leading-8 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-3xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
-          <ContentComponent />
+          {content}
         </div>
         
         <Separator className="my-12" />
@@ -474,9 +473,9 @@ function DocPageContent({ doc }: { doc: NavItemWithComponent }) {
   );
 }
 
-export function BlogPostPage({ doc }: BlogPostPageProps) {
-  if (!doc) {
+export function BlogPostPage({ doc, content }: BlogPostPageProps) {
+  if (!doc || !content) {
     return <BlogListPage />;
   }
-  return <DocPageContent doc={doc} />;
+  return <DocPageContent doc={doc} content={content} />;
 }
