@@ -14,7 +14,6 @@ const ContributionGraph = () => {
   const [days, setDays] = React.useState(Array.from({ length: 371 }, () => 0));
 
   React.useEffect(() => {
-    // Generate random data only on the client side to avoid hydration mismatch
     const randomDays = Array.from({ length: 371 }, () => {
       if (Math.random() > 0.4) {
         return Math.floor(Math.random() * 4) + 1;
@@ -24,17 +23,18 @@ const ContributionGraph = () => {
     setDays(randomDays);
   }, [selectedYear]);
 
-
   const contributionColors = [
-    "bg-gray-100 dark:bg-gray-800", // level 0 (faint white/gray)
-    "bg-green-500", // level 1
-    "bg-green-600", // level 2
-    "bg-green-700", // level 3
-    "bg-green-800", // level 4
+    "bg-gray-100 dark:bg-gray-800",
+    "bg-green-500",
+    "bg-green-600",
+    "bg-green-700",
+    "bg-green-800",
   ];
   
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const years = ['2025', '2024'];
+  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 
   return (
     <div className="flex items-start gap-4">
@@ -45,10 +45,12 @@ const ContributionGraph = () => {
         </div>
 
         <div className="flex gap-2">
-          <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-6 pb-px">
-              <span>Mon</span>
-              <span className="invisible md:visible">Wed</span>
-              <span>Fri</span>
+          <div className="flex flex-col text-xs text-muted-foreground self-stretch pt-6">
+            {weekDays.map((day, index) => (
+              <span key={day} className={cn("h-3", { "invisible": index % 2 !== 0 })}>
+                {day.substring(0,3)}
+              </span>
+            ))}
           </div>
           <div className="flex-1">
             <div className="flex justify-between text-xs text-muted-foreground mb-1">
@@ -62,7 +64,7 @@ const ContributionGraph = () => {
                 {days.map((level, index) => (
                     <div
                         key={index}
-                        className={`w-2 h-2 ${contributionColors[level]}`}
+                        className={cn("w-2 h-2", contributionColors[level])}
                         title={`Contribution level ${level} on day ${index + 1}`}
                     />
                 ))}
@@ -75,7 +77,7 @@ const ContributionGraph = () => {
           <div className="flex items-center gap-1">
             <span>Less</span>
             {contributionColors.map((color, index) => (
-              <div key={index} className={`w-2.5 h-2.5 ${color}`} />
+              <div key={index} className={cn("w-2.5 h-2.5", color)} />
             ))}
             <span>More</span>
           </div>
@@ -87,7 +89,7 @@ const ContributionGraph = () => {
             key={year}
             variant={selectedYear === year ? 'default' : 'ghost'}
             size="sm"
-            className={`h-7 px-3 w-full justify-start text-sm ${selectedYear !== year && 'text-muted-foreground'}`}
+            className={cn('h-7 px-3 w-full justify-start text-sm', {'text-muted-foreground': selectedYear !== year})}
             onClick={() => setSelectedYear(year)}
           >
             {year}
