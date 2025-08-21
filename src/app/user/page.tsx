@@ -44,29 +44,29 @@ const ContributionGraph = () => {
           <Button variant="outline" size="sm" className="text-xs h-7">Contribution settings</Button>
         </div>
 
-        <div>
-          <div className="flex justify-between text-xs text-muted-foreground ml-7 mb-1" style={{ paddingRight: "14px" }}>
-              {months.map((month) => (
-                <div key={month} className="w-[49px] text-left">
-                  {month}
-                </div>
-              ))}
+        <div className="flex gap-2">
+          <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
+              <span>Mon</span>
+              <span className="invisible md:visible">Wed</span>
+              <span>Fri</span>
           </div>
-          <div className="flex gap-2">
-              <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
-                  <span>Mon</span>
-                  <span className="invisible md:visible">Wed</span>
-                  <span>Fri</span>
-              </div>
-              <div className="grid grid-flow-col grid-rows-7 gap-1">
-                  {days.map((level, index) => (
-                      <div
-                          key={index}
-                          className={`w-2 h-2 ${contributionColors[level]}`}
-                          title={`Contribution level ${level} on day ${index + 1}`}
-                      />
-                  ))}
-              </div>
+          <div className="flex-1">
+            <div className="flex justify-start gap-3 sm:gap-4 text-xs text-muted-foreground mb-1">
+                {months.map((month) => (
+                  <div key={month} className="flex-shrink-0">
+                    {month}
+                  </div>
+                ))}
+            </div>
+            <div className="grid grid-flow-col grid-rows-7 gap-1">
+                {days.map((level, index) => (
+                    <div
+                        key={index}
+                        className={`w-2 h-2 ${contributionColors[level]}`}
+                        title={`Contribution level ${level} on day ${index + 1}`}
+                    />
+                ))}
+            </div>
           </div>
         </div>
         
