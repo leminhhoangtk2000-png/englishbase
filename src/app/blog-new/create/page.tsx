@@ -7,11 +7,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { RichTextEditor } from "@/components/rich-text-editor";
+import { Upload } from "lucide-react";
+import Image from "next/image";
 
 export default function CreatePostPage() {
   const router = useRouter();
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
+  const [coverImage, setCoverImage] = React.useState<string | null>(null);
   const [content, setContent] = React.useState(
     "<h2>Đây là tiêu đề H2</h2><p>Viết nội dung của bạn ở đây! Bạn có thể <strong>in đậm</strong>, <em>in nghiêng</em>, và nhiều hơn nữa.</p>"
   );
@@ -23,6 +26,16 @@ export default function CreatePostPage() {
     alert("Bài viết đã được xuất bản! (Demo)");
     router.push("/blog-new");
   };
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      setCoverImage(URL.createObjectURL(file));
+    }
+  };
+
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -37,6 +50,11 @@ export default function CreatePostPage() {
             <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h1:font-headline prose-h1:text-4xl prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
               <h1>{title || "Tiêu đề sẽ hiển thị ở đây"}</h1>
               <p className="lead text-muted-foreground">{description || "Mô tả ngắn sẽ hiển thị ở đây."}</p>
+              {coverImage && (
+                <div className="relative w-full aspect-video my-8 rounded-md overflow-hidden">
+                  <Image src={coverImage} alt="Cover Image" layout="fill" objectFit="cover" />
+                </div>
+              )}
               <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
           </Card>
@@ -74,6 +92,40 @@ export default function CreatePostPage() {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>
+
+            <div className="space-y-2">
+                {coverImage ? (
+                    <div className="relative group">
+                        <Image 
+                            src={coverImage} 
+                            alt="Preview" 
+                            width={800} 
+                            height={450} 
+                            className="w-full h-auto rounded-md object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Button variant="destructive" onClick={() => setCoverImage(null)}>Xóa ảnh</Button>
+                        </div>
+                    </div>
+                ) : (
+                    <div 
+                        className="flex flex-col items-center justify-center p-8 border-2 border-dashed rounded-md cursor-pointer hover:bg-muted/50"
+                        onClick={() => fileInputRef.current?.click()}
+                    >
+                        <Upload className="w-10 h-10 text-muted-foreground mb-4" />
+                        <p className="text-muted-foreground mb-2">Kéo và thả ảnh hoặc GIF vào đây</p>
+                        <Button type="button" variant="outline" size="sm">Chọn ảnh từ máy tính</Button>
+                        <input 
+                            type="file"
+                            ref={fileInputRef}
+                            onChange={handleImageUpload}
+                            accept="image/*,image/gif"
+                            className="hidden"
+                        />
+                    </div>
+                )}
+            </div>
+
             <div className="prose prose-stone dark:prose-invert max-w-none">
                 <RichTextEditor
                     content={content}
