@@ -97,10 +97,10 @@ const TimelineItem = ({ icon, children, isLast = false }: { icon: React.ReactNod
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Left Sidebar */}
         <div className="md:col-span-1">
-          <Avatar className="w-64 h-64 rounded-full border-4 border-card mb-4">
+          <Avatar className="w-full h-auto max-w-[256px] aspect-square rounded-full border-4 border-card mb-4">
             <AvatarImage src="https://placehold.co/256x256.png" data-ai-hint="man portrait" />
             <AvatarFallback>KV</AvatarFallback>
           </Avatar>
