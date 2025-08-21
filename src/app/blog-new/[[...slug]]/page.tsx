@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -275,9 +277,12 @@ const commentsData: CommentData[] = [
             }
         ]
     }
-]
+];
 
 const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number }) => {
+    const [repliesVisible, setRepliesVisible] = React.useState(false);
+    const hasReplies = comment.replies && comment.replies.length > 0;
+
     return (
         <div className={level > 0 ? "ml-8" : ""}>
             <div className="flex items-center justify-between">
@@ -301,14 +306,22 @@ const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number 
                     <Hand className="w-5 h-5" />
                     <span>{comment.claps}</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 cursor-pointer hover:text-foreground">
                     <MessageCircle className="w-4 h-4" />
                     <span>Reply</span>
                 </div>
             </div>
-            {comment.replies && (
+             {hasReplies && !repliesVisible && (
+                <button
+                    onClick={() => setRepliesVisible(true)}
+                    className="text-sm font-semibold text-primary mt-3"
+                >
+                    View {comment.replies?.length} repl{comment.replies?.length === 1 ? 'y' : 'ies'}
+                </button>
+            )}
+            {hasReplies && repliesVisible && (
                 <div className="mt-4 space-y-6 border-l-2 border-border pl-4">
-                    {comment.replies.map((reply, index) => (
+                    {comment.replies?.map((reply, index) => (
                         <Comment key={index} comment={reply} level={level + 1} />
                     ))}
                 </div>
@@ -318,18 +331,32 @@ const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number 
 };
 
 
-export default async function DocPage({ params }: DocPageProps) {
+async function getDoc(params: DocPageProps['params']) {
+    const doc = await getDocFromParams({ params });
+    if (!doc || !doc.component) {
+        notFound();
+    }
+    return doc;
+}
+
+export default function DocPageWrapper({ params }: DocPageProps) {
   // If there's no slug, it's the blog's main page.
   if (!params.slug || params.slug.length === 0) {
     return <BlogListPage />;
   }
+  
+  const [doc, setDoc] = React.useState<Awaited<ReturnType<typeof getDoc>> | null>(null);
 
-  const doc = await getDocFromParams({ params });
+  React.useEffect(() => {
+    getDoc(params).then(setDoc);
+  }, [params]);
 
-  if (!doc || !doc.component) {
-    notFound();
+
+  if (!doc) {
+    // You can return a loading state here
+    return <div>Loading...</div>;
   }
-
+  
   const ContentComponent = doc.component;
 
   return (
