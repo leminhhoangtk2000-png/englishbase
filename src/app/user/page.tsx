@@ -63,7 +63,7 @@ const ContributionGraph = () => {
                       {days.map((level, index) => (
                           <div
                               key={index}
-                              className={`w-2 h-2 rounded-sm ${contributionColors[level]}`}
+                              className={`w-2 h-2 ${contributionColors[level]}`}
                               title={`Contribution level ${level} on day ${index + 1}`}
                           />
                       ))}
@@ -79,7 +79,7 @@ const ContributionGraph = () => {
           <div className="flex items-center gap-1">
             <span>Less</span>
             {contributionColors.map((color, index) => (
-              <div key={index} className={`w-2.5 h-2.5 rounded-sm ${color}`} />
+              <div key={index} className={`w-2.5 h-2.5 ${color}`} />
             ))}
             <span>More</span>
           </div>
