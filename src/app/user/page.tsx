@@ -7,19 +7,14 @@ import Link from 'next/link';
 
 const ContributionGraph = () => {
   // Dummy data representing contribution levels (0-4)
-  const weeks = Array.from({ length: 53 }, (_, weekIndex) =>
-    Array.from({ length: 7 }, (_, dayIndex) => {
-      const dayOfYear = weekIndex * 7 + dayIndex;
-      if (dayOfYear > 365) return 0; // Simple check to not exceed days in a year
-      // Create some random activity, more likely in recent months
-      const month = Math.floor(dayOfYear / 30);
-      let level = 0;
-      if (month > 1 && Math.random() > 0.4) {
-        level = Math.floor(Math.random() * 4) + 1;
-      }
-      return level;
-    })
-  );
+  const days = Array.from({ length: 365 }, (_, dayIndex) => {
+    const month = Math.floor(dayIndex / 30);
+    let level = 0;
+    if (month > 1 && Math.random() > 0.4) {
+      level = Math.floor(Math.random() * 4) + 1;
+    }
+    return level;
+  });
 
   const contributionColors = [
     "bg-muted/30", // level 0
@@ -38,31 +33,33 @@ const ContributionGraph = () => {
         <Button variant="outline" size="sm" className="text-xs h-8">Contribution settings</Button>
       </div>
       
-      <div className="relative">
-        {/* Month Labels */}
-        <div className="grid grid-cols-53 gap-1" style={{ gridTemplateRows: 'auto' }}>
-            {months.map((month, index) => (
-              <div key={month} className="text-xs text-muted-foreground" style={{ gridColumn: `${index * 4 + 2} / span 4` }}>
-                {month}
-              </div>
-            ))}
-        </div>
-
-        {/* Day Labels and Grid */}
-        <div className="grid grid-cols-[auto_1fr] gap-2 mt-2">
-          <div className="flex flex-col justify-between text-xs text-muted-foreground pr-2">
-            <span>Mon</span>
-            <span>Wed</span>
-            <span>Fri</span>
+      <div className="overflow-x-auto">
+        <div className="flex flex-col">
+           {/* Month Labels */}
+          <div className="grid grid-cols-53 gap-1 -mr-2">
+              {months.map((month, index) => (
+                <div key={month} className="text-xs text-muted-foreground col-span-4 text-left first:col-start-2">
+                  {month}
+                </div>
+              ))}
           </div>
-          <div className="grid grid-cols-53 gap-1">
-            {weeks.flat().map((level, index) => (
-              <div
-                key={index}
-                className={`w-2.5 h-2.5 rounded-sm ${contributionColors[level]}`}
-                title={`Contribution level ${level} on day ${index + 1}`}
-              />
-            ))}
+          <div className="flex gap-2 mt-2">
+              {/* Day Labels */}
+              <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
+                  <span>Mon</span>
+                  <span className="invisible md:visible">Wed</span>
+                  <span>Fri</span>
+              </div>
+              {/* Grid */}
+              <div className="grid grid-flow-col grid-rows-7 gap-1">
+                  {days.map((level, index) => (
+                      <div
+                          key={index}
+                          className={`w-2.5 h-2.5 rounded-sm ${contributionColors[level]}`}
+                          title={`Contribution level ${level} on day ${index + 1}`}
+                      />
+                  ))}
+              </div>
           </div>
         </div>
       </div>
