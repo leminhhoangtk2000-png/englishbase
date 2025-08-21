@@ -10,6 +10,7 @@ import Link from 'next/link';
 import * as React from 'react';
 import { cn } from "@/lib/utils";
 
+
 function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
   const [days, setDays] = React.useState<number[]>([]);
@@ -45,8 +46,8 @@ function ContributionGraph() {
           <h3 className="text-base mb-2">202 đóng góp trong năm {selectedYear}</h3>
           <Button variant="outline" size="sm" className="text-xs h-7">Cài đặt đóng góp</Button>
         </div>
-
-        <div className="flex gap-2">
+        
+        <div className="flex gap-3">
           <div className="flex flex-col text-xs text-muted-foreground self-stretch pt-6">
             {weekDays.map((day, index) => (
               <span key={day} className={cn("h-3", { "invisible": index % 2 !== 0 })}>
@@ -54,22 +55,23 @@ function ContributionGraph() {
               </span>
             ))}
           </div>
-          <div className="flex-1">
-            <div className="flex justify-between text-xs text-muted-foreground mb-1">
-                {months.map((month) => (
-                  <div key={month} className="flex-shrink-0">
-                    {month}
-                  </div>
-                ))}
+          
+          <div className="w-full">
+            <div className="flex justify-between text-xs text-muted-foreground mb-1 px-1">
+              {months.map((month) => (
+                <div key={month} className="flex-1 text-center">
+                  {month}
+                </div>
+              ))}
             </div>
             <div className="grid grid-flow-col grid-rows-7 gap-1">
-                {days.map((level, index) => (
-                    <div
-                        key={index}
-                        className={`w-2 h-2 ${contributionColors[level]}`}
-                        title={`Mức độ đóng góp ${level} vào ngày ${index + 1}`}
-                    />
-                ))}
+              {days.map((level, index) => (
+                <div
+                  key={index}
+                  className={`w-2.5 h-2.5 ${contributionColors[level]}`}
+                  title={`Mức độ đóng góp ${level} vào ngày ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -128,7 +130,9 @@ export default function UserPage() {
             <h1 className="text-2xl font-bold">Khoa Võ</h1>
           </div>
           <p className="text-lg text-muted-foreground mb-4">khoavo261</p>
-          <Button variant="outline" className="w-full mb-4">Chỉnh sửa hồ sơ</Button>
+          <Button variant="outline" className="w-full mb-4" asChild>
+            <Link href="/user/edit">Chỉnh sửa hồ sơ</Link>
+          </Button>
           
           <p className="text-sm text-foreground mb-4">
             Lập trình viên phát triển các dự án mã nguồn mở.
