@@ -71,7 +71,7 @@ export default function CreatePostPage() {
             <div>
               <Textarea
                 placeholder="Mô tả ngắn..."
-                className="text-lg h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none"
+                className="text-lg h-auto p-2 resize-none"
                 rows={2}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
