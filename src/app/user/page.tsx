@@ -4,8 +4,11 @@ import { Card } from "@/components/ui/card";
 import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
+import * as React from 'react';
 
 const ContributionGraph = () => {
+  const [selectedYear, setSelectedYear] = React.useState('2025');
+
   // Dummy data representing contribution levels (0-4)
   const days = Array.from({ length: 365 }, (_, dayIndex) => {
     const month = Math.floor(dayIndex / 30);
@@ -25,46 +28,61 @@ const ContributionGraph = () => {
   ];
   
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const years = ['2025', '2024'];
 
   return (
     <div className="p-4 border rounded-md">
-       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-sm">202 contributions in 2025</h3>
-        <Button variant="outline" size="sm" className="text-xs h-8">Contribution settings</Button>
-      </div>
-      
-      <div className="overflow-x-auto">
-        <div className="flex flex-col">
-           {/* Month Labels */}
-          <div className="flex gap-[13px] text-xs text-muted-foreground ml-7 mb-1">
-              {months.map((month) => (
-                <div key={month} className="w-[53px] text-left">
-                  {month}
+       <div className="flex justify-between items-start mb-4">
+        <div className="flex-1">
+          <h3 className="text-base mb-2">202 contributions in {selectedYear}</h3>
+          <div className="relative">
+            {/* Month Labels */}
+            <div className="flex gap-[13px] text-xs text-muted-foreground ml-7 mb-1 absolute -top-5">
+                {months.map((month) => (
+                  <div key={month} className="w-[49px] text-left">
+                    {month}
+                  </div>
+                ))}
+            </div>
+            <div className="flex gap-2">
+                {/* Day Labels */}
+                <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
+                    <span>Mon</span>
+                    <span className="invisible md:visible">Wed</span>
+                    <span>Fri</span>
                 </div>
-              ))}
-          </div>
-          <div className="flex gap-2">
-              {/* Day Labels */}
-              <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
-                  <span>Mon</span>
-                  <span className="invisible md:visible">Wed</span>
-                  <span>Fri</span>
-              </div>
-              {/* Grid */}
-              <div className="grid grid-flow-col grid-rows-7 gap-1">
-                  {days.map((level, index) => (
-                      <div
-                          key={index}
-                          className={`w-2.5 h-2.5 rounded-sm ${contributionColors[level]}`}
-                          title={`Contribution level ${level} on day ${index + 1}`}
-                      />
-                  ))}
-              </div>
+                {/* Grid */}
+                <div className="grid grid-flow-col grid-rows-7 gap-1">
+                    {days.map((level, index) => (
+                        <div
+                            key={index}
+                            className={`w-2 h-2 rounded-sm ${contributionColors[level]}`}
+                            title={`Contribution level ${level} on day ${index + 1}`}
+                        />
+                    ))}
+                </div>
+            </div>
           </div>
         </div>
-      </div>
+        <div className="flex flex-col items-end gap-2 text-sm">
+           <Button variant="outline" size="sm" className="text-xs h-7">Contribution settings</Button>
+           <div className="flex flex-col items-start">
+            {years.map(year => (
+              <Button 
+                key={year}
+                variant={selectedYear === year ? 'default' : 'ghost'}
+                size="sm"
+                className={`h-7 px-3 ${selectedYear !== year && 'text-muted-foreground'}`}
+                onClick={() => setSelectedYear(year)}
+              >
+                {year}
+              </Button>
+            ))}
+           </div>
+        </div>
+       </div>
 
-      <div className="flex justify-between items-center mt-4 text-xs text-muted-foreground">
+      <div className="flex justify-between items-center mt-2 text-xs text-muted-foreground">
         <Link href="#" className="hover:text-primary">Learn how we count contributions</Link>
         <div className="flex items-center gap-1">
           <span>Less</span>
