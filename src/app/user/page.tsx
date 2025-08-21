@@ -290,6 +290,10 @@ export default function UserPage() {
                   <Link href="#" className="hover:text-primary hover:underline">linkedin.com/in/khoavo</Link>
               </div>
           </div>
+
+          <div className="mt-8">
+            <PlatformReview />
+          </div>
         </div>
 
         {/* Right Content */}
@@ -302,7 +306,6 @@ export default function UserPage() {
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
-              <TabsTrigger value="review">Đánh giá nền tảng</TabsTrigger>
             </TabsList>
             <TabsContent value="profile">
               <ContributionGraph />
@@ -418,9 +421,6 @@ export default function UserPage() {
                     </div>
                 </div>
               </Card>
-            </TabsContent>
-            <TabsContent value="review">
-                <PlatformReview />
             </TabsContent>
           </Tabs>
         </div>
