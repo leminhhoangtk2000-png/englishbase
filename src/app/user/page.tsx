@@ -36,14 +36,14 @@ const ContributionGraph = () => {
       <div className="overflow-x-auto">
         <div className="flex flex-col">
            {/* Month Labels */}
-          <div className="grid grid-cols-53 gap-1 -mr-2">
-              {months.map((month, index) => (
-                <div key={month} className="text-xs text-muted-foreground col-span-4 text-left first:col-start-2">
+          <div className="flex gap-[13px] text-xs text-muted-foreground ml-7 mb-1">
+              {months.map((month) => (
+                <div key={month} className="w-[53px] text-left">
                   {month}
                 </div>
               ))}
           </div>
-          <div className="flex gap-2 mt-2">
+          <div className="flex gap-2">
               {/* Day Labels */}
               <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
                   <span>Mon</span>
