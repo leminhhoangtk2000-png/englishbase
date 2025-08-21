@@ -3,7 +3,7 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,6 +13,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
@@ -177,6 +179,66 @@ const userActivity = [
     }
 ]
 
+function PlatformReview() {
+    const [rating, setRating] = React.useState(0);
+    const [hoverRating, setHoverRating] = React.useState(0);
+    const [review, setReview] = React.useState("");
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Handle submission logic here
+        console.log({ rating, review });
+        alert("Cảm ơn bạn đã gửi đánh giá!");
+    };
+
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Đánh giá nền tảng</CardTitle>
+                <CardDescription>
+                    Chúng tôi rất trân trọng những góp ý của bạn để cải thiện Deutsch.vn.
+                </CardDescription>
+            </CardHeader>
+            <form onSubmit={handleSubmit}>
+                <CardContent className="space-y-6">
+                    <div className="space-y-2">
+                        <Label>Bạn xếp hạng chúng tôi thế nào?</Label>
+                        <div className="flex items-center gap-2">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <Star
+                                    key={star}
+                                    className={cn(
+                                        "w-8 h-8 cursor-pointer transition-colors",
+                                        (hoverRating >= star || rating >= star)
+                                            ? "text-yellow-400 fill-yellow-400"
+                                            : "text-muted-foreground/50"
+                                    )}
+                                    onMouseEnter={() => setHoverRating(star)}
+                                    onMouseLeave={() => setHoverRating(0)}
+                                    onClick={() => setRating(star)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="review-text">Nhận xét của bạn</Label>
+                        <Textarea
+                            id="review-text"
+                            placeholder="Hãy cho chúng tôi biết suy nghĩ của bạn..."
+                            value={review}
+                            onChange={(e) => setReview(e.target.value)}
+                            rows={5}
+                        />
+                    </div>
+                </CardContent>
+                <CardFooter>
+                    <Button type="submit" disabled={rating === 0 || review.trim() === ""}>Gửi đánh giá</Button>
+                </CardFooter>
+            </form>
+        </Card>
+    );
+}
+
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -240,6 +302,7 @@ export default function UserPage() {
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
+              <TabsTrigger value="review">Đánh giá nền tảng</TabsTrigger>
             </TabsList>
             <TabsContent value="profile">
               <ContributionGraph />
@@ -355,6 +418,9 @@ export default function UserPage() {
                     </div>
                 </div>
               </Card>
+            </TabsContent>
+            <TabsContent value="review">
+                <PlatformReview />
             </TabsContent>
           </Tabs>
         </div>
