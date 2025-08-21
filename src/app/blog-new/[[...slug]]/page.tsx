@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Mic, PlayCircle } from "lucide-react";
+import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Mic, PlayCircle, Hand } from "lucide-react";
 import { AuthorInfo } from "../_components/author-info";
 
 interface DocPageProps {
@@ -366,7 +366,7 @@ export default async function DocPage({ params }: DocPageProps) {
                         <p className="mt-3 text-muted-foreground">{comment.text}</p>
                         <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3">
                             <div className="flex items-center gap-1">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M11.37.83L12 3.28l.63-2.45h-1.26zM13.92 3.9l.7-2.94c.04-.18.23-.29.4-.25l.26.05c.17.03.29.2.25.38l-.7 2.93-1.9.83zm-3.84 0l-1.9-.83.7-2.94c.04-.18.23-.29.4-.25l.26.05c.17.03.29.2.25.38l-.7 2.93zM20.08 11c.45-.42.72-1.03.72-1.69 0-1.33-1.08-2.41-2.42-2.41-1.33 0-2.41 1.08-2.41 2.41 0 .31.06.6.17.86l-3.2 3.2-3.2-3.2c.1-.26.17-.55.17-.86 0-1.33-1.08-2.41-2.42-2.41-1.33 0-2.41 1.08-2.41 2.41 0 .66.27 1.27.72 1.69C2.18 12.55 1 15.89 1 19.52V20h1.52c0-3.52 2.92-6.38 6.5-6.38s6.5 2.86 6.5 6.38H23v-.48c0-3.63-1.18-6.97-3.92-8.52z" fill="currentColor"></path></svg>
+                                <Hand className="w-5 h-5" />
                                 <span>{comment.claps}</span>
                             </div>
                             <div className="flex items-center gap-2">
