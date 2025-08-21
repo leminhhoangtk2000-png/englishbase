@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand } from "lucide-react";
 import { AuthorInfo } from "../_components/author-info";
+import { Textarea } from "@/components/ui/textarea";
 
 interface DocPageProps {
   params: {
@@ -281,6 +282,7 @@ const commentsData: CommentData[] = [
 
 function Comment({ comment, level = 0 }: { comment: CommentData, level?: number }) {
     const [repliesVisible, setRepliesVisible] = React.useState(false);
+    const [isReplying, setIsReplying] = React.useState(false);
     const hasReplies = comment.replies && comment.replies.length > 0;
 
     const toggleReplies = () => {
@@ -290,8 +292,7 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
     }
 
     const handleReplyClick = () => {
-        // Placeholder for future reply functionality
-        console.log("Replying to comment by", comment.author);
+        setIsReplying(!isReplying);
     }
 
     return (
@@ -325,6 +326,16 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
                 )}
                 <span onClick={handleReplyClick} className="cursor-pointer hover:text-foreground">Reply</span>
             </div>
+            
+            {isReplying && (
+                <div className="mt-4">
+                    <Textarea placeholder={`Replying to ${comment.author}...`} className="mb-2" />
+                    <div className="flex justify-end gap-2">
+                        <Button variant="ghost" size="sm" onClick={() => setIsReplying(false)}>Cancel</Button>
+                        <Button size="sm">Respond</Button>
+                    </div>
+                </div>
+            )}
             
             {hasReplies && repliesVisible && (
                 <div className="mt-4 space-y-6 border-l-2 border-border pl-4">
