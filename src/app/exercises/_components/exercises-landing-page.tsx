@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -74,7 +75,7 @@ export function ExercisesLandingPage() {
               </div>
             </div>
             {index < levels.length - 1 && <Separator className="my-8" />}
-          </ React.Fragment>
+          </React.Fragment>
         ))}
       </div>
     </div>
