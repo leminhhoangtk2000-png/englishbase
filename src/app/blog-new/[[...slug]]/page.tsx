@@ -315,16 +315,10 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
                 <div onClick={toggleReplies} className="flex items-center gap-2 cursor-pointer hover:text-foreground">
                     <MessageCircle className="w-4 h-4" />
                     <span>Reply</span>
+                    {hasReplies && <span className="font-semibold">{comment.replies?.length}</span>}
                 </div>
             </div>
-             {hasReplies && (
-                <button
-                    onClick={toggleReplies}
-                    className="text-sm font-semibold text-primary mt-3"
-                >
-                    {repliesVisible ? 'Hide replies' : `View ${comment.replies?.length} repl${comment.replies?.length === 1 ? 'y' : 'ies'}`}
-                </button>
-            )}
+            
             {hasReplies && repliesVisible && (
                 <div className="mt-4 space-y-6 border-l-2 border-border pl-4">
                     {comment.replies?.map((reply, index) => (
