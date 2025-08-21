@@ -317,13 +317,13 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
                     <Hand className="w-5 h-5" />
                     <span>{comment.claps}</span>
                 </div>
-                <span onClick={handleReplyClick} className="cursor-pointer hover:text-foreground">Reply</span>
                 {hasReplies && (
                     <div onClick={toggleReplies} className="flex items-center gap-2 cursor-pointer hover:text-foreground">
                         <MessageCircle className="w-4 h-4" />
                         <span className="font-semibold">{comment.replies?.length}</span>
                     </div>
                 )}
+                <span onClick={handleReplyClick} className="cursor-pointer hover:text-foreground">Reply</span>
             </div>
             
             {hasReplies && repliesVisible && (
