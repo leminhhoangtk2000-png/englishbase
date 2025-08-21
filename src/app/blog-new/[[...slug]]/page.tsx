@@ -278,10 +278,8 @@ const commentsData: CommentData[] = [
 ]
 
 const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number }) => {
-    const marginLeft = level > 0 ? `${level * 2}rem` : '0';
-
     return (
-        <div style={{ marginLeft }}>
+        <div className={level > 0 ? "ml-8" : ""}>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <Avatar className="h-8 w-8">
@@ -319,6 +317,7 @@ const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number 
     );
 };
 
+
 export default async function DocPage({ params }: DocPageProps) {
   // If there's no slug, it's the blog's main page.
   if (!params.slug || params.slug.length === 0) {
@@ -334,7 +333,7 @@ export default async function DocPage({ params }: DocPageProps) {
   const ContentComponent = doc.component;
 
   return (
-    <main className="relative py-6 lg:py-8 font-serif">
+    <main className="relative py-6 lg:py-8">
       <div className="mx-auto w-full max-w-3xl px-4">
         <div className="flex justify-between items-start mb-4">
             <div className="text-sm">
@@ -362,7 +361,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="space-y-4 mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-center lg:text-5xl font-headline">{doc.title}</h1>
           {doc.description && (
-            <p className="text-xl text-muted-foreground text-center">{doc.description}</p>
+            <p className="text-xl text-muted-foreground text-center font-serif">{doc.description}</p>
           )}
         </div>
 
@@ -379,7 +378,7 @@ export default async function DocPage({ params }: DocPageProps) {
             />
         </div>
 
-        <div className="prose prose-stone dark:prose-invert max-w-none mx-auto text-lg prose-p:leading-8 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
+        <div className="prose prose-stone dark:prose-invert max-w-none mx-auto prose-xl font-serif prose-p:leading-8 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-3xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
           <ContentComponent />
         </div>
         
@@ -409,7 +408,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <Separator className="my-12" />
 
         <div>
-            <h3 className="font-semibold mb-4">More from The Startup and Deutsch.vn</h3>
+            <h3 className="font-semibold mb-4 font-headline">More from The Startup and Deutsch.vn</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-4">
                     <Image 
@@ -422,8 +421,8 @@ export default async function DocPage({ params }: DocPageProps) {
                     />
                     <div className="space-y-2">
                         <p className="text-xs text-muted-foreground">The Startup</p>
-                        <h4 className="font-bold">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
-                        <p className="text-sm text-muted-foreground">The May 12, 2024 iOS update comes with a lot of new things...</p>
+                        <h4 className="font-bold font-headline">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
+                        <p className="text-sm text-muted-foreground font-serif">The May 12, 2024 iOS update comes with a lot of new things...</p>
                         <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
                             <span>May 12</span>
                             <span>·</span>
@@ -443,8 +442,8 @@ export default async function DocPage({ params }: DocPageProps) {
                     />
                     <div className="space-y-2">
                         <p className="text-xs text-muted-foreground">Deutsch.vn</p>
-                        <h4 className="font-bold">The German Case System: A Beginner's Guide</h4>
-                        <p className="text-sm text-muted-foreground">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
+                        <h4 className="font-bold font-headline">The German Case System: A Beginner's Guide</h4>
+                        <p className="text-sm text-muted-foreground font-serif">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
                         <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
                             <span>Aug 21</span>
                             <span>·</span>
