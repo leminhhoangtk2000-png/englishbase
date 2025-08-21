@@ -4,22 +4,26 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Shield, Zap, Star, MapPin, Mail, Youtube, Instagram, Facebook } from 'lucide-react';
 import { MainNav } from '@/components/main-nav';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const testimonials = [
   {
     name: 'Siêu nhân hồng',
     role: 'Thành viên kim cương',
     quote: 'Môi trường học tập ở đây thật tuyệt vời và đầy cảm hứng!',
+    avatar: 'https://placehold.co/48x48.png',
   },
   {
     name: 'Siêu nhân đỏ',
     role: 'Thành viên bạc',
     quote: 'Nhờ có Deutsch.vn, mình đã tự tin hơn rất nhiều trên con đường chinh phục tiếng Đức.',
+    avatar: 'https://placehold.co/48x48.png',
   },
   {
     name: 'Siêu nhân vàng',
     role: 'Người đi đường',
     quote: 'Cộng đồng đã giúp đỡ mình rất nhiều, từ kiến thức đến kinh nghiệm thực tế.',
+    avatar: 'https://placehold.co/48x48.png',
   },
 ];
 
@@ -171,19 +175,20 @@ export default function Home() {
             <h2 className="font-headline text-3xl md:text-4xl font-bold mb-12">Cộng đồng nói gì về Deutsch.vn...</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="text-left rounded-2xl p-6 shadow-sm border">
-                  <CardHeader className="p-0">
-                    <div className="flex items-center mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <CardTitle className="text-lg font-bold">{testimonial.name}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </CardHeader>
-                  <CardContent className="p-0 mt-4">
+                <Card key={index} className="text-left rounded-2xl p-6 shadow-sm border flex flex-col">
+                  <CardContent className="p-0 flex-grow">
                     <p className="text-foreground italic">"{testimonial.quote}"</p>
                   </CardContent>
+                  <CardHeader className="p-0 mt-6 flex flex-row items-center gap-4">
+                    <Avatar>
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <CardTitle className="text-base font-bold">{testimonial.name}</CardTitle>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </CardHeader>
                 </Card>
               ))}
             </div>
