@@ -50,38 +50,40 @@ export default function CreatePostPage() {
       ) : (
         // Editor Mode
         <div className="space-y-6">
-           <div className="flex justify-between items-center">
+           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-bold font-headline">Trình soạn thảo</h1>
             <div className="flex gap-2">
                 <Button variant="outline" onClick={() => setShowPreview(true)}>Xem trước</Button>
                 <Button onClick={handlePublish}>Xuất bản</Button>
             </div>
           </div>
-          <div>
-            <Input
-              type="text"
-              placeholder="Tiêu đề bài viết..."
-              className="text-2xl font-bold h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 !text-foreground bg-card"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
-          <div>
-            <Textarea
-              placeholder="Mô tả ngắn..."
-              className="text-lg h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none bg-card"
-              rows={2}
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-          <div className="prose prose-stone dark:prose-invert max-w-none">
-            <Textarea
-              placeholder="Viết nội dung của bạn ở đây bằng Markdown..."
-              className="min-h-[500px] text-base p-4 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-y bg-card font-mono"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-            />
+          <div className="space-y-4">
+            <div>
+              <Input
+                type="text"
+                placeholder="Tiêu đề bài viết..."
+                className="text-2xl font-bold h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 !text-foreground bg-card"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </div>
+            <div>
+              <Textarea
+                placeholder="Mô tả ngắn..."
+                className="text-lg h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none bg-card"
+                rows={2}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+            <div className="prose prose-stone dark:prose-invert max-w-none">
+              <Textarea
+                placeholder="Viết nội dung của bạn ở đây bằng Markdown..."
+                className="min-h-[500px] text-base p-4 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-y bg-card font-mono"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+            </div>
           </div>
         </div>
       )}
