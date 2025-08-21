@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, Repo } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -95,7 +95,7 @@ export default function UserPage() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Left Sidebar */}
         <div className="md:col-span-1">
-          <Avatar className="w-64 h-64 border-4 border-card mb-4">
+          <Avatar className="w-64 h-64 rounded-full border-4 border-card mb-4">
             <AvatarImage src="https://placehold.co/256x256.png" data-ai-hint="man portrait" />
             <AvatarFallback>KV</AvatarFallback>
           </Avatar>
@@ -151,7 +151,7 @@ export default function UserPage() {
                     </ul>
                 </TimelineItem>
 
-                <TimelineItem icon={<Repo className="w-4 h-4" />}>
+                <TimelineItem icon={<BookMarked className="w-4 h-4" />}>
                      <div className="flex justify-between items-center text-sm mb-2 text-muted-foreground">
                         <h3 className="font-normal">Created their first repository</h3>
                         <span>Aug 4</span>
