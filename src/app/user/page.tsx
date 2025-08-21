@@ -18,10 +18,10 @@ const ContributionGraph = () => {
 
   const contributionColors = [
     "bg-muted/30", // level 0
-    "bg-green-800", // level 1
-    "bg-green-700", // level 2
-    "bg-green-600", // level 3
-    "bg-green-500", // level 4
+    "bg-green-500", // level 1
+    "bg-green-600", // level 2
+    "bg-green-700", // level 3
+    "bg-green-800", // level 4
   ];
   
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
