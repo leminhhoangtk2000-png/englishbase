@@ -135,12 +135,6 @@ function BlogListPage() {
           <Link href="#" className="hover:text-foreground">Books</Link>
           <Link href="#" className="hover:text-foreground">Marketing</Link>
         </div>
-        <Button asChild variant="outline">
-          <Link href="/blog-new/create">
-            <PenSquare className="w-4 h-4 mr-2" />
-            Write a story
-          </Link>
-        </Button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
         <div className="lg:col-span-2">
