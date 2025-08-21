@@ -7,6 +7,10 @@ const sidebarNavItems = [
     title: "Hồ sơ công khai",
     href: "/user/edit",
   },
+  {
+    title: "Webhooks",
+    href: "/user/edit/webhooks",
+  },
 ];
 
 interface SettingsLayoutProps {
