@@ -10,11 +10,11 @@ import * as React from 'react';
 
 const ContributionGraph = () => {
   const [selectedYear, setSelectedYear] = React.useState('2025');
-  const [days, setDays] = React.useState(Array.from({ length: 365 }, () => 0));
+  const [days, setDays] = React.useState(Array.from({ length: 371 }, () => 0));
 
   React.useEffect(() => {
     // Generate random data only on the client side to avoid hydration mismatch
-    const randomDays = Array.from({ length: 365 }, () => {
+    const randomDays = Array.from({ length: 371 }, () => {
       if (Math.random() > 0.4) {
         return Math.floor(Math.random() * 4) + 1;
       }
