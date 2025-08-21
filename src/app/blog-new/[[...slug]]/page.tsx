@@ -385,8 +385,16 @@ export default async function DocPage({ params }: DocPageProps) {
         <div>
             <h3 className="font-semibold mb-4">More from The Startup and Deutsch.vn</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex gap-4">
-                    <div className="flex-1 space-y-2">
+                <div className="flex flex-col gap-4">
+                    <Image 
+                        src="https://placehold.co/600x400.png"
+                        alt="iOS Features"
+                        width={600}
+                        height={400}
+                        data-ai-hint="smartphone interface"
+                        className="object-cover rounded-md w-full"
+                    />
+                    <div className="space-y-2">
                         <p className="text-xs text-muted-foreground">The Startup</p>
                         <h4 className="font-bold">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
                         <p className="text-sm text-muted-foreground">The May 12, 2024 iOS update comes with a lot of new things...</p>
@@ -397,17 +405,17 @@ export default async function DocPage({ params }: DocPageProps) {
                             <Star className="w-4 h-4 ml-2 text-yellow-400 fill-current" />
                         </div>
                     </div>
-                    <Image 
-                        src="https://placehold.co/100x100.png"
-                        alt="iOS Features"
-                        width={100}
-                        height={100}
-                        data-ai-hint="smartphone interface"
-                        className="object-cover rounded-md"
-                    />
                 </div>
-                <div className="flex gap-4">
-                    <div className="flex-1 space-y-2">
+                <div className="flex flex-col gap-4">
+                     <Image 
+                        src="https://placehold.co/600x400.png"
+                        alt="German Case System"
+                        width={600}
+                        height={400}
+                        data-ai-hint="german flag book"
+                        className="object-cover rounded-md w-full"
+                    />
+                    <div className="space-y-2">
                         <p className="text-xs text-muted-foreground">Deutsch.vn</p>
                         <h4 className="font-bold">The German Case System: A Beginner's Guide</h4>
                         <p className="text-sm text-muted-foreground">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
@@ -417,14 +425,6 @@ export default async function DocPage({ params }: DocPageProps) {
                             <span>10 min read</span>
                         </div>
                     </div>
-                    <Image 
-                        src="https://placehold.co/100x100.png"
-                        alt="German Case System"
-                        width={100}
-                        height={100}
-                        data-ai-hint="german flag book"
-                        className="object-cover rounded-md"
-                    />
                 </div>
             </div>
         </div>
