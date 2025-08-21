@@ -7,8 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand } from "lucide-react";
-import { AuthorInfo } from "./author-info";
+import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand, PlayCircle, Upload } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 
 interface BlogPostPageProps {
@@ -242,12 +241,12 @@ function BlogListPage() {
 }
 
 const authorDetails = {
-  name: "Justis Earle",
+  name: "The Useful Tech",
   publication: "The Startup",
   avatar: "https://placehold.co/48x48.png",
   bio: "Writer and illustrator. Follow my newsletter: https://thestartup.info",
-  claps: 240,
-  comments: 177
+  claps: 3500,
+  comments: 117
 };
 
 type CommentData = {
@@ -346,41 +345,89 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
     );
 };
 
+// Custom SVG component for the clapping icon
+const ClapIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="inline-block">
+    <path d="M14.5 19.5V10.75C14.5 10.1977 14.0523 9.75 13.5 9.75H12.75C12.1977 9.75 11.75 10.1977 11.75 10.75V19.5H14.5Z" stroke="currentColor" strokeWidth="1.5"></path>
+    <path d="M9.5 19.5V11.25C9.5 10.6977 9.05228 10.25 8.5 10.25H7.75C7.19772 10.25 6.75 10.6977 6.75 11.25V19.5H9.5Z" stroke="currentColor" strokeWidth="1.5"></path>
+    <path d="M4.5 19.5V12.75C4.5 12.1977 4.05228 11.75 3.5 11.75H2.75C2.19772 11.75 1.75 12.1977 1.75 12.75V19.5H4.5Z" stroke="currentColor" strokeWidth="1.5"></path>
+    <path d="M18.5 10.75C18.5 9.7835 18.1181 8.85537 17.4393 8.17655C16.7605 7.49773 15.8324 7.11578 14.866 7.11578H12.634C11.6676 7.11578 10.7395 7.49773 10.0607 8.17655C9.38186 8.85537 9 9.7835 9 10.75C9 11.4554 9.38928 12.1006 9.99264 12.4437C11.6111 13.3402 14.866 14.5323 14.866 17.3842V19.5H19.25C19.8023 19.5 20.25 19.0523 20.25 18.5V12.75C20.25 11.6196 19.5112 10.75 18.5 10.75Z" stroke="currentColor" strokeWidth="1.5"></path>
+  </svg>
+);
+
+
 function DocPageContent({ title, description, content }: { title: string, description?: string, content: React.ReactNode }) {
+  const [claps, setClaps] = React.useState(authorDetails.claps);
+  const handleClap = () => setClaps(claps + 1);
+
   return (
     <main className="relative py-6 lg:py-8">
       <div className="mx-auto w-full max-w-3xl px-4">
-        <div className="flex justify-between items-start mb-4">
-            <div className="text-sm">
-                <div className="flex items-center">
-                    <Avatar className="h-10 w-10 mr-3">
-                        <AvatarImage src={authorDetails.avatar} alt={authorDetails.name} />
-                        <AvatarFallback>{authorDetails.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <p className="font-semibold">{authorDetails.name} in <span className="text-primary">{authorDetails.publication}</span></p>
-                        <p className="text-muted-foreground">Published on Aug 12 · 7 min read</p>
-                    </div>
-                </div>
+        <div className="space-y-4 mb-8">
+            <Badge variant="outline" className="rounded-full py-1 px-3 border-muted-foreground/50">
+                <Star className="w-4 h-4 mr-2 text-yellow-400 fill-current" />
+                Member-only story
+            </Badge>
+
+            <h1 className="text-4xl font-bold tracking-tight lg:text-5xl font-headline">
+              <span className="box-decoration-clone bg-green-200/50 dark:bg-green-800/50 px-2 leading-[1.5]">
+                {title}
+              </span>
+            </h1>
+
+            {description && (
+                <p className="text-xl text-muted-foreground">{description}</p>
+            )}
+        </div>
+
+        <div className="flex items-center gap-3 my-6">
+            <Avatar className="h-12 w-12 rounded-lg border-2 border-foreground">
+                <AvatarImage src={authorDetails.avatar} alt={authorDetails.name} />
+                <AvatarFallback>{authorDetails.name.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 text-sm">
+                <span className="font-semibold">{authorDetails.name}</span>
+                <Button variant="outline" size="sm" className="rounded-full h-8 mt-1 sm:mt-0">Follow</Button>
             </div>
-            <div className="flex items-center gap-4 text-muted-foreground">
-                <button className="hover:text-foreground"><Linkedin className="w-5 h-5" /></button>
-                <button className="hover:text-foreground"><Twitter className="w-5 h-5" /></button>
-                <button className="hover:text-foreground"><Facebook className="w-5 h-5" /></button>
-                <button className="hover:text-foreground"><LinkIcon className="w-5 h-5" /></button>
+            <div className="text-sm text-muted-foreground ml-auto sm:ml-0">
+                10 min read <span className="mx-1">·</span> Apr 25, 2025
             </div>
         </div>
         
-        <Separator className="my-6" />
+        <Separator className="my-4" />
 
-        <div className="space-y-4 mb-8">
-          <h1 className="text-4xl font-bold tracking-tight text-center lg:text-5xl font-headline">{title}</h1>
-          {description && (
-            <p className="text-xl text-muted-foreground text-center font-serif">{description}</p>
-          )}
+        <div className="flex items-center justify-between text-sm text-muted-foreground py-2">
+            <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="icon" className="h-8 w-8" onClick={handleClap}>
+                         <ClapIcon />
+                    </Button>
+                    <span>{(claps / 1000).toFixed(1)}K</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <MessageCircle className="w-5 h-5" />
+                    </Button>
+                     <span>{authorDetails.comments}</span>
+                </div>
+            </div>
+            <div className="flex items-center gap-2">
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Bookmark className="w-5 h-5" />
+                </Button>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <PlayCircle className="w-5 h-5" />
+                </Button>
+                 <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Upload className="w-5 h-5" />
+                </Button>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <MoreHorizontal className="w-5 h-5" />
+                </Button>
+            </div>
         </div>
-
-        <AuthorInfo author={authorDetails} />
+        
+        <Separator className="mb-8" />
 
         <div className="my-8">
             <Image 
@@ -423,7 +470,7 @@ function DocPageContent({ title, description, content }: { title: string, descri
         <Separator className="my-12" />
 
         <div>
-            <h3 className="font-semibold mb-4 font-headline">More from The Startup and Deutsch.vn</h3>
+            <h3 className="font-semibold mb-4 font-headline">More from The Startup</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-4">
                     <Image 
@@ -435,14 +482,16 @@ function DocPageContent({ title, description, content }: { title: string, descri
                         className="object-cover rounded-md w-full"
                     />
                     <div className="space-y-2">
-                        <p className="text-xs text-muted-foreground">The Startup</p>
+                        <div className="flex items-center gap-2 text-xs">
+                            <Avatar className="h-5 w-5"><AvatarImage src="https://placehold.co/20x20.png" /></Avatar>
+                            <span>The Startup</span>
+                        </div>
                         <h4 className="font-bold font-headline">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
-                        <p className="text-sm text-muted-foreground font-serif">The May 12, 2024 iOS update comes with a lot of new things...</p>
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-1">
                             <span>May 12</span>
-                            <span>·</span>
+                            <span className="text-xl leading-none">·</span>
                             <span>5 min read</span>
-                            <Star className="w-4 h-4 ml-2 text-yellow-400 fill-current" />
+                            <Star className="w-4 h-4 ml-auto text-yellow-400 fill-current" />
                         </div>
                     </div>
                 </div>
@@ -456,12 +505,14 @@ function DocPageContent({ title, description, content }: { title: string, descri
                         className="object-cover rounded-md w-full"
                     />
                     <div className="space-y-2">
-                        <p className="text-xs text-muted-foreground">Deutsch.vn</p>
+                         <div className="flex items-center gap-2 text-xs">
+                            <Avatar className="h-5 w-5"><AvatarImage src="https://placehold.co/20x20.png" /></Avatar>
+                            <span>Deutsch.vn</span>
+                        </div>
                         <h4 className="font-bold font-headline">The German Case System: A Beginner's Guide</h4>
-                        <p className="text-sm text-muted-foreground font-serif">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-1">
                             <span>Aug 21</span>
-                            <span>·</span>
+                             <span className="text-xl leading-none">·</span>
                             <span>10 min read</span>
                         </div>
                     </div>
