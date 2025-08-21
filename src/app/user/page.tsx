@@ -447,7 +447,7 @@ export default function UserPage() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full">Chọn gói</Button>
+                            <Button className="w-full">Hỗ trợ</Button>
                         </CardFooter>
                     </Card>
                      <Card className="flex flex-col border-primary shadow-lg">
@@ -464,7 +464,7 @@ export default function UserPage() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full">Chọn gói</Button>
+                            <Button className="w-full">Hỗ trợ</Button>
                         </CardFooter>
                     </Card>
                      <Card className="flex flex-col">
@@ -481,7 +481,7 @@ export default function UserPage() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                           <Button className="w-full">Chọn gói</Button>
+                           <Button className="w-full">Hỗ trợ</Button>
                         </CardFooter>
                     </Card>
                 </div>
