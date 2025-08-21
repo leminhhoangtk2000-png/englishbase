@@ -193,22 +193,22 @@ function PlatformReview() {
 
     return (
         <Card>
-            <CardHeader>
-                <CardTitle>Đánh giá nền tảng</CardTitle>
-                <CardDescription>
-                    Chúng tôi rất trân trọng những góp ý của bạn để cải thiện Deutsch.vn.
+            <CardHeader className="p-4">
+                <CardTitle className="text-base">Đánh giá nền tảng</CardTitle>
+                <CardDescription className="text-xs">
+                    Những góp ý của bạn sẽ giúp chúng tôi cải thiện.
                 </CardDescription>
             </CardHeader>
             <form onSubmit={handleSubmit}>
-                <CardContent className="space-y-6">
+                <CardContent className="p-4 pt-0 space-y-4">
                     <div className="space-y-2">
-                        <Label>Bạn xếp hạng chúng tôi thế nào?</Label>
-                        <div className="flex items-center gap-2">
+                        <Label className="text-xs">Bạn xếp hạng chúng tôi thế nào?</Label>
+                        <div className="flex items-center gap-1">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Star
                                     key={star}
                                     className={cn(
-                                        "w-8 h-8 cursor-pointer transition-colors",
+                                        "w-6 h-6 cursor-pointer transition-colors",
                                         (hoverRating >= star || rating >= star)
                                             ? "text-yellow-400 fill-yellow-400"
                                             : "text-muted-foreground/50"
@@ -221,18 +221,19 @@ function PlatformReview() {
                         </div>
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="review-text">Nhận xét của bạn</Label>
+                        <Label htmlFor="review-text" className="text-xs">Nhận xét của bạn</Label>
                         <Textarea
                             id="review-text"
                             placeholder="Hãy cho chúng tôi biết suy nghĩ của bạn..."
                             value={review}
                             onChange={(e) => setReview(e.target.value)}
-                            rows={5}
+                            rows={3}
+                            className="text-sm"
                         />
                     </div>
                 </CardContent>
-                <CardFooter>
-                    <Button type="submit" disabled={rating === 0 || review.trim() === ""}>Gửi đánh giá</Button>
+                <CardFooter className="p-4 pt-0">
+                    <Button size="sm" type="submit" disabled={rating === 0 || review.trim() === ""}>Gửi đánh giá</Button>
                 </CardFooter>
             </form>
         </Card>
