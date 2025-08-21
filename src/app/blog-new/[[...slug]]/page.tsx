@@ -26,6 +26,8 @@ export default async function Page({ params }: PageProps) {
   const ContentComponent = doc.component;
   const content = <ContentComponent />;
 
-  // Pass the rendered content (ReactNode) to the client component
-  return <BlogPostPage doc={doc} content={content} />;
+  // Pass only serializable props to the client component
+  const { title, description } = doc;
+
+  return <BlogPostPage title={title} description={description} content={content} />;
 }

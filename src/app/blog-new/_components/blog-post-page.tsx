@@ -10,10 +10,10 @@ import { Button } from "@/components/ui/button";
 import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand } from "lucide-react";
 import { AuthorInfo } from "./author-info";
 import { Textarea } from "@/components/ui/textarea";
-import { type NavItemWithComponent } from "@/types";
 
 interface BlogPostPageProps {
-  doc?: NavItemWithComponent;
+  title?: string;
+  description?: string;
   content?: React.ReactNode;
 }
 
@@ -346,7 +346,7 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
     );
 };
 
-function DocPageContent({ doc, content }: { doc: NavItemWithComponent, content: React.ReactNode }) {
+function DocPageContent({ title, description, content }: { title: string, description?: string, content: React.ReactNode }) {
   return (
     <main className="relative py-6 lg:py-8">
       <div className="mx-auto w-full max-w-3xl px-4">
@@ -374,9 +374,9 @@ function DocPageContent({ doc, content }: { doc: NavItemWithComponent, content: 
         <Separator className="my-6" />
 
         <div className="space-y-4 mb-8">
-          <h1 className="text-4xl font-bold tracking-tight text-center lg:text-5xl font-headline">{doc.title}</h1>
-          {doc.description && (
-            <p className="text-xl text-muted-foreground text-center font-serif">{doc.description}</p>
+          <h1 className="text-4xl font-bold tracking-tight text-center lg:text-5xl font-headline">{title}</h1>
+          {description && (
+            <p className="text-xl text-muted-foreground text-center font-serif">{description}</p>
           )}
         </div>
 
@@ -385,7 +385,7 @@ function DocPageContent({ doc, content }: { doc: NavItemWithComponent, content: 
         <div className="my-8">
             <Image 
                 src="https://placehold.co/800x500.png" 
-                alt={doc.title}
+                alt={title}
                 width={800}
                 height={500}
                 data-ai-hint="colorful illustration"
@@ -473,9 +473,9 @@ function DocPageContent({ doc, content }: { doc: NavItemWithComponent, content: 
   );
 }
 
-export function BlogPostPage({ doc, content }: BlogPostPageProps) {
-  if (!doc || !content) {
+export function BlogPostPage({ title, description, content }: BlogPostPageProps) {
+  if (!title || !content) {
     return <BlogListPage />;
   }
-  return <DocPageContent doc={doc} content={content} />;
+  return <DocPageContent title={title} description={description} content={content} />;
 }
