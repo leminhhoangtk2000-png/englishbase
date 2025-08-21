@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
@@ -33,7 +34,7 @@ export default function CreatePostPage() {
             <h1 className="text-3xl font-bold font-headline">Xem trước bài viết</h1>
             <Button variant="outline" onClick={() => setShowPreview(false)}>Quay lại soạn thảo</Button>
           </div>
-          <div className="border rounded-lg p-6 bg-card min-h-[600px]">
+          <Card className="p-6 min-h-[600px]">
             <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h1:font-headline prose-h1:text-4xl prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
               <h1>{title || "Tiêu đề sẽ hiển thị ở đây"}</h1>
               <p className="lead text-muted-foreground">{description || "Mô tả ngắn sẽ hiển thị ở đây."}</p>
@@ -41,7 +42,7 @@ export default function CreatePostPage() {
                 {content}
               </ReactMarkdown>
             </div>
-          </div>
+          </Card>
            <div className="flex justify-end gap-2">
             <Button variant="outline" onClick={() => setShowPreview(false)}>Quay lại soạn thảo</Button>
             <Button onClick={handlePublish}>Xuất bản</Button>
@@ -57,12 +58,12 @@ export default function CreatePostPage() {
                 <Button onClick={handlePublish}>Xuất bản</Button>
             </div>
           </div>
-          <div className="space-y-4">
+          <Card className="p-4 space-y-4">
             <div>
               <Input
                 type="text"
                 placeholder="Tiêu đề bài viết..."
-                className="text-2xl font-bold h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 !text-foreground bg-card"
+                className="text-2xl font-bold h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 !text-foreground"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -70,7 +71,7 @@ export default function CreatePostPage() {
             <div>
               <Textarea
                 placeholder="Mô tả ngắn..."
-                className="text-lg h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none bg-card"
+                className="text-lg h-auto p-2 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none"
                 rows={2}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -79,12 +80,12 @@ export default function CreatePostPage() {
             <div className="prose prose-stone dark:prose-invert max-w-none">
               <Textarea
                 placeholder="Viết nội dung của bạn ở đây bằng Markdown..."
-                className="min-h-[500px] text-base p-4 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-y bg-card font-mono"
+                className="min-h-[500px] text-base p-4 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-y font-mono"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
             </div>
-          </div>
+          </Card>
         </div>
       )}
     </div>
