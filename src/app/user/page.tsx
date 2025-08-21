@@ -44,7 +44,7 @@ const ContributionGraph = () => {
           <h3 className="text-base mb-2">202 contributions in {selectedYear}</h3>
           <div className="relative">
             {/* Month Labels */}
-            <div className="flex gap-[13px] text-xs text-muted-foreground ml-7 mb-1 absolute -top-5">
+            <div className="flex gap-[13px] text-xs text-muted-foreground ml-7 mb-1">
                 {months.map((month) => (
                   <div key={month} className="w-[49px] text-left">
                     {month}
