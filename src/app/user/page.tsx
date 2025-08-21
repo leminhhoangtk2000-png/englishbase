@@ -5,7 +5,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -492,4 +492,3 @@ export default function UserPage() {
     </div>
   );
 }
-
