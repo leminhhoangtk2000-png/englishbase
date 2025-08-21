@@ -249,22 +249,75 @@ const authorDetails = {
   comments: 177
 };
 
-const commentsData = [
+type CommentData = {
+    author: string;
+    avatar: string;
+    text: string;
+    claps: number;
+    date: string;
+    replies?: CommentData[];
+};
+
+const commentsData: CommentData[] = [
     {
         author: "Carl Cort",
         avatar: "https://placehold.co/32x32.png",
         text: "I used to be a doom-scroller and these apps really helped me to break the habit. Thanks for sharing!",
         claps: 2,
-        date: "2 mo ago"
-    },
-    {
-        author: "J.P. Lamborn",
-        avatar: "https://placehold.co/32x32.png",
-        text: "Great list! I'd also add 'Readwise' to the list. It's a great app for saving and revisiting highlights from articles and books.",
-        claps: 1,
-        date: "1 mo ago"
+        date: "2 mo ago",
+        replies: [
+            {
+                author: "J.P. Lamborn",
+                avatar: "https://placehold.co/32x32.png",
+                text: "Great list! I'd also add 'Readwise' to the list. It's a great app for saving and revisiting highlights from articles and books.",
+                claps: 1,
+                date: "1 mo ago"
+            }
+        ]
     }
 ]
+
+const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number }) => {
+    const marginLeft = level > 0 ? `${level * 2}rem` : '0';
+
+    return (
+        <div style={{ marginLeft }}>
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <Avatar className="h-8 w-8">
+                        <AvatarImage src={comment.avatar} alt={comment.author}/>
+                        <AvatarFallback>{comment.author.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <p className="font-semibold text-sm">{comment.author}</p>
+                        <p className="text-xs text-muted-foreground">{comment.date}</p>
+                    </div>
+                </div>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <MoreHorizontal className="w-4 h-4"/>
+                </Button>
+            </div>
+            <p className="mt-3 text-muted-foreground">{comment.text}</p>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3">
+                <div className="flex items-center gap-1">
+                    <Hand className="w-5 h-5" />
+                    <span>{comment.claps}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Reply</span>
+                </div>
+            </div>
+            {comment.replies && (
+                <div className="mt-4 space-y-6 border-l-2 border-border pl-4">
+                    {comment.replies.map((reply, index) => (
+                        <Comment key={index} comment={reply} level={level + 1} />
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default async function DocPage({ params }: DocPageProps) {
   // If there's no slug, it's the blog's main page.
@@ -347,34 +400,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
             <div className="space-y-6">
                 {commentsData.map((comment, index) => (
-                    <div key={index}>
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                                <Avatar className="h-8 w-8">
-                                    <AvatarImage src={comment.avatar} alt={comment.author}/>
-                                    <AvatarFallback>{comment.author.charAt(0)}</AvatarFallback>
-                                </Avatar>
-                                <div>
-                                    <p className="font-semibold text-sm">{comment.author}</p>
-                                    <p className="text-xs text-muted-foreground">{comment.date}</p>
-                                </div>
-                            </div>
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
-                                <MoreHorizontal className="w-4 h-4"/>
-                            </Button>
-                        </div>
-                        <p className="mt-3 text-muted-foreground">{comment.text}</p>
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3">
-                            <div className="flex items-center gap-1">
-                                <Hand className="w-5 h-5" />
-                                <span>{comment.claps}</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <MessageCircle className="w-4 h-4" />
-                                <span>Reply</span>
-                            </div>
-                        </div>
-                    </div>
+                    <Comment key={index} comment={comment} />
                 ))}
             </div>
              <Button variant="outline" className="rounded-full">Show more responses</Button>
