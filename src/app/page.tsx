@@ -195,7 +195,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-background border-t">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-8 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
               <div className="col-span-1 md:col-span-2">
                 <h3 className="font-bold text-lg mb-2">Deutsch.VN</h3>
                 <p className="text-muted-foreground mb-4">Cùng nhau xây dựng một cộng đồng học tiếng Đức cởi mở, thân thiện và hiệu quả cho người Việt.</p>
@@ -230,14 +230,6 @@ export default function Home() {
                 <h4 className="font-semibold mb-4">Partner</h4>
                 <ul className="space-y-3">
                    <li><Link href="#" className="text-muted-foreground hover:text-primary">Deutsche Ecke</Link></li>
-                </ul>
-              </div>
-
-               <div>
-                <h4 className="font-semibold mb-4">Donate</h4>
-                <ul className="space-y-3">
-                   <li><Link href="#" className="text-muted-foreground hover:text-primary">Deutsch.vn</Link></li>
-                   <li><Link href="#" className="text-muted-foreground hover:text-primary">Nam Vu</Link></li>
                 </ul>
               </div>
             </div>
