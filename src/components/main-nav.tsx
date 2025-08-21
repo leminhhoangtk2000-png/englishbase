@@ -68,12 +68,6 @@ export function MainNav({ docs = [] }: MainNavProps) {
                     </div>
                     <nav className="flex items-center">
                         <ThemeToggle />
-                        <Button variant="ghost" size="icon" asChild>
-                            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-                                <Github className="h-5 w-5" />
-                                <span className="sr-only">GitHub</span>
-                            </Link>
-                        </Button>
                     </nav>
                 </div>
             </div>
