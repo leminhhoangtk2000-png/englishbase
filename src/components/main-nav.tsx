@@ -36,7 +36,7 @@ export function MainNav({ docs = [] }: MainNavProps) {
                     <nav className="flex items-center gap-6 text-sm ml-6">
                         {navLinks.map(({ href, label }) => (
                             <Link
-                                key={href}
+                                key={label}
                                 href={href}
                                 className={cn(
                                     "font-medium transition-colors hover:text-foreground/80",
