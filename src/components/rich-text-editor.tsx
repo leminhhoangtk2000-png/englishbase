@@ -5,7 +5,7 @@ import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
 import { useCallback } from 'react'
-import { Bold, Italic, Strikethrough, Code, Heading1, Heading2, Link as LinkIcon, Image as ImageIcon, Pilcrow } from 'lucide-react'
+import { Bold, Italic, Strikethrough, Code, Heading1, Heading2, Heading3, Heading4, Link as LinkIcon, Image as ImageIcon, Pilcrow, List, ListOrdered } from 'lucide-react'
 import { Toggle } from './ui/toggle'
 import { Separator } from './ui/separator'
 import { Button } from './ui/button'
@@ -43,7 +43,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
   }, [editor])
 
   return (
-    <div className="flex items-center gap-1 p-2 border-b">
+    <div className="flex flex-wrap items-center gap-1 p-2 border-b">
       <Toggle
         size="sm"
         pressed={editor.isActive('bold')}
@@ -80,12 +80,41 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
       >
         <Heading2 className="h-4 w-4" />
       </Toggle>
+       <Toggle
+        size="sm"
+        pressed={editor.isActive('heading', { level: 3 })}
+        onPressedChange={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+      >
+        <Heading3 className="h-4 w-4" />
+      </Toggle>
+       <Toggle
+        size="sm"
+        pressed={editor.isActive('heading', { level: 4 })}
+        onPressedChange={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
+      >
+        <Heading4 className="h-4 w-4" />
+      </Toggle>
       <Toggle
         size="sm"
         pressed={editor.isActive('paragraph')}
         onPressedChange={() => editor.chain().focus().setParagraph().run()}
       >
         <Pilcrow className="h-4 w-4" />
+      </Toggle>
+      <Separator orientation='vertical' className='h-8' />
+       <Toggle
+        size="sm"
+        pressed={editor.isActive('bulletList')}
+        onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
+      >
+        <List className="h-4 w-4" />
+      </Toggle>
+       <Toggle
+        size="sm"
+        pressed={editor.isActive('orderedList')}
+        onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
+      >
+        <ListOrdered className="h-4 w-4" />
       </Toggle>
       <Separator orientation='vertical' className='h-8' />
       <Button
