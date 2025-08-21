@@ -22,6 +22,7 @@ const navLinks = [
     { href: "/examples", label: "B2 Niveau" },
     { href: "/exercises", label: "Bài tập" },
     { href: "/blog-new", label: "Blog" },
+    { href: "/user", label: "User" },
 ];
 
 export function MainNav({ docs = [] }: MainNavProps) {
