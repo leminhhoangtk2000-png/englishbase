@@ -6,15 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { RichTextEditor } from "@/components/rich-text-editor";
 
 export default function CreatePostPage() {
   const router = useRouter();
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [content, setContent] = React.useState(
-    "Viết nội dung của bạn ở đây bằng **Markdown**!\n\n## Đây là tiêu đề H2\n\nBạn có thể thêm ảnh:\n\n![Ảnh minh họa](https://placehold.co/600x400.png)\n\n- Danh sách 1\n- Danh sách 2"
+    "<h2>Đây là tiêu đề H2</h2><p>Viết nội dung của bạn ở đây! Bạn có thể <strong>in đậm</strong>, <em>in nghiêng</em>, và nhiều hơn nữa.</p>"
   );
   const [showPreview, setShowPreview] = React.useState(false);
 
@@ -38,9 +37,7 @@ export default function CreatePostPage() {
             <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h1:font-headline prose-h1:text-4xl prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
               <h1>{title || "Tiêu đề sẽ hiển thị ở đây"}</h1>
               <p className="lead text-muted-foreground">{description || "Mô tả ngắn sẽ hiển thị ở đây."}</p>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {content}
-              </ReactMarkdown>
+              <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
           </Card>
            <div className="flex justify-end gap-2">
@@ -78,12 +75,10 @@ export default function CreatePostPage() {
               />
             </div>
             <div className="prose prose-stone dark:prose-invert max-w-none">
-              <Textarea
-                placeholder="Viết nội dung của bạn ở đây bằng Markdown..."
-                className="min-h-[500px] text-base p-4 resize-y font-mono"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-              />
+                <RichTextEditor
+                    content={content}
+                    onChange={setContent}
+                />
             </div>
           </Card>
         </div>
