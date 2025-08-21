@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand, PlayCircle, Upload } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
+import { Card } from "@/components/ui/card";
 
 interface BlogPostPageProps {
   title?: string;
@@ -449,13 +450,18 @@ function DocPageContent({ title, description, content }: { title: string, descri
         <div className="space-y-8">
             <h2 className="text-2xl font-bold font-headline">Responses ({commentsData.length})</h2>
 
-            <div className="space-y-2">
-                <div className="flex items-center gap-3">
+            <div className="space-y-4">
+                <div className="flex items-start gap-3">
                     <Avatar className="h-10 w-10">
-                        <AvatarImage src="https://placehold.co/40x40.png" alt="Current User"/>
-                        <AvatarFallback>U</AvatarFallback>
+                        <AvatarImage src="https://placehold.co/40x40.png" alt="Khoavo Private"/>
+                        <AvatarFallback>KP</AvatarFallback>
                     </Avatar>
-                    <p className="text-muted-foreground">What are your thoughts?</p>
+                    <div className="w-full">
+                        <p className="font-semibold">Khoavo Private</p>
+                        <Card className="mt-2">
+                           <Textarea placeholder="What are your thoughts?" className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0 min-h-[60px]" />
+                        </Card>
+                    </div>
                 </div>
             </div>
 
