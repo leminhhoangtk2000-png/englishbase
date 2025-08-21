@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Logo } from "@/components/logo";
 import { SearchCommand } from "@/components/search-command";
 import { Button } from "@/components/ui/button";
-import { Menu, Github } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -23,6 +23,7 @@ const navLinks = [
     { href: "/exercises", label: "Bài tập" },
     { href: "/blog-new", label: "Blog" },
     { href: "/user", label: "User" },
+    { href: "/admin", label: "Admin" },
 ];
 
 export function MainNav({ docs = [] }: MainNavProps) {
