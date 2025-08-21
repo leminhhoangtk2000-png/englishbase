@@ -14,8 +14,8 @@ export const blogNewConfig: DocsConfig = {
           component: IntroductionPage,
         },
         {
-          title: "First Post",
-          description: "This is the first blog post.",
+          title: "8 Apps to Use Instead of Doomscrolling on Your iPhone",
+          description: "How to productively style your screen time",
           href: "/blog-new/first-post",
           component: InstallationPage,
         },

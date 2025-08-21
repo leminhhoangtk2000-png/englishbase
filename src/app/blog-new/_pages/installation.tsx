@@ -3,23 +3,24 @@ import { CodeBlock } from "@/components/code-block";
 export function InstallationPage() {
   return (
     <>
-      <h2 id="overview">My First Blog Post</h2>
       <p>
-        This is an example of a blog post page. You can add any content you like here.
+        There’s a good chance you’re reading this on a device that’s distracting you. I’m writing this on a laptop that’s dinging and lighting up with notifications. We are constantly surrounded by technology that is designed to keep us engaged, but what if we could use that same technology to help us disengage?
+      </p>
+      <p>
+        The apps I’ve found below have helped me to be more present and less distracted. They are not a silver bullet, but they have helped me to create a more intentional relationship with my phone. I hope they can do the same for you.
       </p>
 
-      <h3 id="step-1">Code Blocks</h3>
-      <p>
-        You can easily include code blocks to share snippets.
-      </p>
-      <CodeBlock value={`function helloWorld() {
-  console.log("Hello, World!");
-}`} />
+      <div className="my-8 flex justify-center">
+        <img src="https://placehold.co/600x300.png" data-ai-hint="mobile app screenshots" alt="App screenshots" className="rounded-md" />
+      </div>
+      
+      <p>It’s not just your fault. The design of our devices, and the apps we use, are engineered to keep our attention for as long as possible. The endless scroll, the notifications, the red bubbles — they all play a part in keeping us hooked. It’s a battle for our attention, and we are losing.</p>
 
-      <h3 id="step-2">More Content</h3>
+      <h2 id="key-features">The Resistance</h2>
       <p>
-        Continue adding sections and content as needed.
+        But there is a growing movement of people who are fighting back. They are designing apps and tools that help us to be more intentional with our technology. They are creating products that are not designed to be addictive, but to be useful.
       </p>
+
     </>
   );
 }

@@ -7,7 +7,8 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bookmark, MessageCircle, MoreHorizontal, BarChart2 } from "lucide-react";
+import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Mic, PlayCircle } from "lucide-react";
+import { AuthorInfo } from "../_components/author-info";
 
 interface DocPageProps {
   params: {
@@ -239,6 +240,31 @@ function BlogListPage() {
   );
 }
 
+const authorDetails = {
+  name: "Justis Earle",
+  publication: "The Startup",
+  avatar: "https://placehold.co/48x48.png",
+  bio: "Writer and illustrator. Follow my newsletter: https://thestartup.info",
+  claps: 240,
+  comments: 177
+};
+
+const commentsData = [
+    {
+        author: "Carl Cort",
+        avatar: "https://placehold.co/32x32.png",
+        text: "I used to be a doom-scroller and these apps really helped me to break the habit. Thanks for sharing!",
+        claps: 2,
+        date: "2 mo ago"
+    },
+    {
+        author: "J.P. Lamborn",
+        avatar: "https://placehold.co/32x32.png",
+        text: "Great list! I'd also add 'Readwise' to the list. It's a great app for saving and revisiting highlights from articles and books.",
+        claps: 1,
+        date: "1 mo ago"
+    }
+]
 
 export default async function DocPage({ params }: DocPageProps) {
   // If there's no slug, it's the blog's main page.
@@ -255,18 +281,134 @@ export default async function DocPage({ params }: DocPageProps) {
   const ContentComponent = doc.component;
 
   return (
-    <main className="relative py-6 lg:py-8">
+    <main className="relative py-6 lg:py-8 font-serif">
       <div className="mx-auto w-full max-w-3xl px-4">
-        <div className="space-y-4 text-center">
-          <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl font-headline">{doc.title}</h1>
+        <div className="flex justify-between items-start mb-4">
+            <div className="text-sm">
+                <div className="flex items-center">
+                    <Avatar className="h-10 w-10 mr-3">
+                        <AvatarImage src={authorDetails.avatar} alt={authorDetails.name} />
+                        <AvatarFallback>{authorDetails.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <p className="font-semibold">{authorDetails.name} in <span className="text-primary">{authorDetails.publication}</span></p>
+                        <p className="text-muted-foreground">Published on Aug 12 · 7 min read</p>
+                    </div>
+                </div>
+            </div>
+            <div className="flex items-center gap-4 text-muted-foreground">
+                <button className="hover:text-foreground"><Linkedin className="w-5 h-5" /></button>
+                <button className="hover:text-foreground"><Twitter className="w-5 h-5" /></button>
+                <button className="hover:text-foreground"><Facebook className="w-5 h-5" /></button>
+                <button className="hover:text-foreground"><LinkIcon className="w-5 h-5" /></button>
+            </div>
+        </div>
+        
+        <Separator className="my-6" />
+
+        <div className="space-y-4 mb-8">
+          <h1 className="text-4xl font-bold tracking-tight text-center lg:text-5xl font-headline">{doc.title}</h1>
           {doc.description && (
-            <p className="text-lg text-muted-foreground">{doc.description}</p>
+            <p className="text-xl text-muted-foreground text-center">{doc.description}</p>
           )}
         </div>
-        <Separator className="my-8" />
-        <div className="prose prose-stone dark:prose-invert max-w-none mx-auto prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
+
+        <AuthorInfo author={authorDetails} />
+
+        <div className="my-8">
+            <Image 
+                src="https://placehold.co/800x500.png" 
+                alt={doc.title}
+                width={800}
+                height={500}
+                data-ai-hint="colorful illustration"
+                className="w-full object-cover rounded-md"
+            />
+        </div>
+
+        <div className="prose prose-stone dark:prose-invert max-w-none mx-auto text-lg prose-p:leading-8 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
           <ContentComponent />
         </div>
+        
+        <Separator className="my-12" />
+
+        <div className="space-y-8">
+            <h2 className="text-2xl font-bold font-headline">Responses ({commentsData.length})</h2>
+
+            <div className="space-y-2">
+                <div className="flex items-center gap-3">
+                    <Avatar className="h-10 w-10">
+                        <AvatarImage src="https://placehold.co/40x40.png" alt="Current User"/>
+                        <AvatarFallback>U</AvatarFallback>
+                    </Avatar>
+                    <p className="text-muted-foreground">What are your thoughts?</p>
+                </div>
+            </div>
+
+            <div className="space-y-6">
+                {commentsData.map((comment, index) => (
+                    <div key={index}>
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <Avatar className="h-8 w-8">
+                                    <AvatarImage src={comment.avatar} alt={comment.author}/>
+                                    <AvatarFallback>{comment.author.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div>
+                                    <p className="font-semibold text-sm">{comment.author}</p>
+                                    <p className="text-xs text-muted-foreground">{comment.date}</p>
+                                </div>
+                            </div>
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                                <MoreHorizontal className="w-4 h-4"/>
+                            </Button>
+                        </div>
+                        <p className="mt-3 text-muted-foreground">{comment.text}</p>
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3">
+                            <div className="flex items-center gap-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M11.37.83L12 3.28l.63-2.45h-1.26zM13.92 3.9l.7-2.94c.04-.18.23-.29.4-.25l.26.05c.17.03.29.2.25.38l-.7 2.93-1.9.83zm-3.84 0l-1.9-.83.7-2.94c.04-.18.23-.29.4-.25l.26.05c.17.03.29.2.25.38l-.7 2.93zM20.08 11c.45-.42.72-1.03.72-1.69 0-1.33-1.08-2.41-2.42-2.41-1.33 0-2.41 1.08-2.41 2.41 0 .31.06.6.17.86l-3.2 3.2-3.2-3.2c.1-.26.17-.55.17-.86 0-1.33-1.08-2.41-2.42-2.41-1.33 0-2.41 1.08-2.41 2.41 0 .66.27 1.27.72 1.69C2.18 12.55 1 15.89 1 19.52V20h1.52c0-3.52 2.92-6.38 6.5-6.38s6.5 2.86 6.5 6.38H23v-.48c0-3.63-1.18-6.97-3.92-8.52z" fill="currentColor"></path></svg>
+                                <span>{comment.claps}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <MessageCircle className="w-4 h-4" />
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+             <Button variant="outline" className="rounded-full">Show more responses</Button>
+        </div>
+
+        <Separator className="my-12" />
+
+        <div>
+            <h3 className="font-semibold mb-4">More from The Startup and Deutsch.vn</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground">The Startup</p>
+                    <h4 className="font-bold">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
+                    <p className="text-sm text-muted-foreground">The May 12, 2024 iOS update comes with a lot of new things...</p>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
+                        <span>May 12</span>
+                        <span>·</span>
+                        <span>5 min read</span>
+                        <Star className="w-4 h-4 ml-2 text-yellow-400 fill-current" />
+                    </div>
+                </div>
+                <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground">Deutsch.vn</p>
+                    <h4 className="font-bold">The German Case System: A Beginner's Guide</h4>
+                    <p className="text-sm text-muted-foreground">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
+                     <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
+                        <span>Aug 21</span>
+                        <span>·</span>
+                        <span>10 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
       </div>
     </main>
   );
