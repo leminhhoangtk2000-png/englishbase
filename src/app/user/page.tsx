@@ -22,7 +22,7 @@ const ContributionGraph = () => {
       return 0;
     });
     setDays(randomDays);
-  }, []);
+  }, [selectedYear]);
 
 
   const contributionColors = [
@@ -40,40 +40,36 @@ const ContributionGraph = () => {
     <div className="flex items-start gap-4">
       <div className="p-4 border rounded-md flex-1">
         <div className="flex justify-between items-start mb-4">
-          <div className="flex-1">
-            <h3 className="text-base mb-2">202 contributions in {selectedYear}</h3>
-            <div className="relative">
-              {/* Month Labels */}
-              <div className="flex gap-[13px] text-xs text-muted-foreground ml-7 mb-1">
-                  {months.map((month) => (
-                    <div key={month} className="w-[49px] text-left">
-                      {month}
-                    </div>
-                  ))}
-              </div>
-              <div className="flex gap-2">
-                  {/* Day Labels */}
-                  <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
-                      <span>Mon</span>
-                      <span className="invisible md:visible">Wed</span>
-                      <span>Fri</span>
-                  </div>
-                  {/* Grid */}
-                  <div className="grid grid-flow-col grid-rows-7 gap-1">
-                      {days.map((level, index) => (
-                          <div
-                              key={index}
-                              className={`w-2 h-2 ${contributionColors[level]}`}
-                              title={`Contribution level ${level} on day ${index + 1}`}
-                          />
-                      ))}
-                  </div>
-              </div>
-            </div>
-          </div>
+          <h3 className="text-base mb-2">202 contributions in {selectedYear}</h3>
           <Button variant="outline" size="sm" className="text-xs h-7">Contribution settings</Button>
         </div>
 
+        <div>
+          <div className="flex justify-between text-xs text-muted-foreground ml-7 mb-1" style={{ paddingRight: "14px" }}>
+              {months.map((month) => (
+                <div key={month} className="w-[49px] text-left">
+                  {month}
+                </div>
+              ))}
+          </div>
+          <div className="flex gap-2">
+              <div className="flex flex-col justify-between text-xs text-muted-foreground self-stretch pt-px pb-px">
+                  <span>Mon</span>
+                  <span className="invisible md:visible">Wed</span>
+                  <span>Fri</span>
+              </div>
+              <div className="grid grid-flow-col grid-rows-7 gap-1">
+                  {days.map((level, index) => (
+                      <div
+                          key={index}
+                          className={`w-2 h-2 ${contributionColors[level]}`}
+                          title={`Contribution level ${level} on day ${index + 1}`}
+                      />
+                  ))}
+              </div>
+          </div>
+        </div>
+        
         <div className="flex justify-between items-center mt-2 text-xs text-muted-foreground">
           <Link href="#" className="hover:text-primary">Learn how we count contributions</Link>
           <div className="flex items-center gap-1">
