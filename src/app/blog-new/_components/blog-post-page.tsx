@@ -319,7 +319,7 @@ function Comment({ comment, level = 0 }: { comment: CommentData, level?: number 
                 {hasReplies && (
                     <div onClick={toggleReplies} className="flex items-center gap-2 cursor-pointer hover:text-foreground">
                         <MessageCircle className="w-4 h-4" />
-                        <span className="font-semibold">{comment.replies?.length}</span>
+                        <span>{comment.replies?.length}</span>
                     </div>
                 )}
                 <span onClick={handleReplyClick} className="cursor-pointer hover:text-foreground">Reply</span>
@@ -356,6 +356,86 @@ const ClapIcon = () => (
   </svg>
 );
 
+const SupportIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="inline-block">
+        <path d="M15.63 13.922a.615.615 0 01.485.485c.04.13.06.264.06.402v1.581a.69.69 0 01-.69.69H7.69a.69.69 0 01-.69-.69v-1.58c0-.139.02-.273.06-.403a.615.615 0 01.485-.485c.13-.04.264-.06.402-.06h7.586c.138 0 .272.02.402.06zM9.5 9.21a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM17 9.21a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" fill="currentColor"></path>
+        <path fillRule="evenodd" clipRule="evenodd" d="M12.21 2.322a.69.69 0 01.58 0 9.888 9.888 0 018.006 8.006.69.69 0 010 .58 9.888 9.888 0 01-8.006 8.006.69.69 0 01-.58 0 9.888 9.888 0 01-8.006-8.006.69.69 0 010-.58 9.888 9.888 0 018.006-8.006zM3.56 11.838a8.51 8.51 0 007.068 7.068.69.69 0 00.372 0 8.51 8.51 0 007.067-7.068.69.69 0 000-.372A8.51 8.51 0 0011 4.398a.69.69 0 00-.372 0A8.51 8.51 0 003.56 11.47a.69.69 0 000 .372z" fill="currentColor"></path>
+    </svg>
+);
+
+
+function AuthorInfo() {
+  const { name, claps, comments } = authorDetails;
+
+  return (
+    <div className="space-y-8 my-12">
+      <div className="flex items-center justify-between text-sm text-muted-foreground border-t border-b py-3">
+          <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                       <ClapIcon />
+                  </Button>
+                  <span>{(claps / 1000).toFixed(1)}K</span>
+              </div>
+              <Separator orientation="vertical" className="h-6" />
+              <div className="flex items-center gap-2">
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <MessageCircle className="w-5 h-5" />
+                  </Button>
+                   <span>{comments}</span>
+              </div>
+          </div>
+          <div className="flex items-center gap-2">
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Bookmark className="w-5 h-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Upload className="w-5 h-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <MoreHorizontal className="w-5 h-5" />
+              </Button>
+          </div>
+      </div>
+      
+      <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
+        <div className="flex items-start gap-4">
+          <Avatar className="w-16 h-16 rounded-full border">
+            <AvatarImage src="https://placehold.co/64x64.png" alt="Mac O'Clock" />
+            <AvatarFallback>MO</AvatarFallback>
+          </Avatar>
+          <div>
+            <p className="text-sm text-muted-foreground">Published in</p>
+            <h3 className="text-lg font-bold">Mac O'Clock</h3>
+            <p className="text-sm text-muted-foreground mt-1">72K followers · Last published 9 hours ago</p>
+          </div>
+        </div>
+        <Button variant="outline" className="rounded-full shrink-0">Follow</Button>
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
+        <div className="flex items-start gap-4">
+          <Avatar className="w-16 h-16 rounded-full border">
+            <AvatarImage src={authorDetails.avatar} alt={authorDetails.name} />
+            <AvatarFallback>{authorDetails.name.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div>
+            <p className="text-sm text-muted-foreground">Written by</p>
+            <h3 className="text-lg font-bold">{authorDetails.name}</h3>
+            <p className="text-sm text-muted-foreground mt-1">69K followers · 41 following</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+            <Button variant="outline" className="rounded-full">Follow</Button>
+            <Button variant="outline" size="icon" className="rounded-full">
+                <SupportIcon />
+            </Button>
+        </div>
+      </div>
+
+    </div>
+  )
+}
 
 function DocPageContent({ title, description, content }: { title: string, description?: string, content: React.ReactNode }) {
   const [claps, setClaps] = React.useState(authorDetails.claps);
@@ -444,6 +524,8 @@ function DocPageContent({ title, description, content }: { title: string, descri
         <div className="prose prose-stone dark:prose-invert max-w-none mx-auto prose-xl font-serif prose-p:leading-8 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-3xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
           {content}
         </div>
+        
+        <AuthorInfo />
         
         <Separator className="my-12" />
 
