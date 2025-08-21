@@ -9,6 +9,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { cn } from "@/lib/utils";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 
 function ContributionGraph() {
@@ -43,7 +44,7 @@ function ContributionGraph() {
     <div className="flex items-start gap-4">
       <div className="p-4 border rounded-md flex-1">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-base mb-2">202 đóng góp trong năm {selectedYear}</h3>
+          <h3 className="text-base mb-2">{days.filter(d => d > 0).length} đóng góp trong năm {selectedYear}</h3>
           <Button variant="outline" size="sm" className="text-xs h-7">Cài đặt đóng góp</Button>
         </div>
         
@@ -119,141 +120,153 @@ const TimelineItem = ({ icon, children, isLast = false }: { icon: React.ReactNod
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* Left Sidebar */}
-        <div className="md:col-span-1">
-          <Avatar className="w-full h-auto max-w-[256px] aspect-square rounded-full border-4 border-card mb-4">
-            <AvatarImage src="https://placehold.co/256x256.png" data-ai-hint="man portrait" />
-            <AvatarFallback>KV</AvatarFallback>
-          </Avatar>
-          <div className="flex items-center gap-2 mb-1">
-            <h1 className="text-2xl font-bold">Khoa Võ</h1>
-          </div>
-          <p className="text-lg text-muted-foreground mb-4">khoavo261</p>
-          <Button variant="outline" className="w-full mb-4" asChild>
-            <Link href="/user/edit">Chỉnh sửa hồ sơ</Link>
-          </Button>
-          
-          <p className="text-sm text-foreground mb-4">
-            Lập trình viên phát triển các dự án mã nguồn mở.
-          </p>
-
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-            <Link href="#" className="flex items-center gap-1 hover:text-primary">
-              <Users className="w-4 h-4" />
-              <span className="font-semibold text-foreground">0</span> người theo dõi
-            </Link>
-            <span>·</span>
-            <Link href="#" className="hover:text-primary">
-              <span className="font-semibold text-foreground">2</span> đang theo dõi
-            </Link>
-          </div>
-
-          <div className="space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4"/>
-                  <span>Việt Nam</span>
+      <Tabs defaultValue="profile">
+        <TabsList className="mb-4">
+          <TabsTrigger value="profile">Thông tin cơ bản</TabsTrigger>
+          <TabsTrigger value="write" asChild>
+            <Link href="/blog-new/create">Viết cùng Deutsch.vn</Link>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="profile">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            {/* Left Sidebar */}
+            <div className="md:col-span-1">
+              <Avatar className="w-full h-auto max-w-[256px] aspect-square rounded-full border-4 border-card mb-4">
+                <AvatarImage src="https://placehold.co/256x256.png" data-ai-hint="man portrait" />
+                <AvatarFallback>KV</AvatarFallback>
+              </Avatar>
+              <div className="flex items-center gap-2 mb-1">
+                <h1 className="text-2xl font-bold">Khoa Võ</h1>
               </div>
-               <div className="flex items-center gap-2">
-                  <LinkIcon className="w-4 h-4"/>
-                  <Link href="#" className="hover:text-primary hover:underline">https://portfolio.example.com</Link>
+              <p className="text-lg text-muted-foreground mb-4">khoavo261</p>
+              <Button variant="outline" className="w-full mb-4" asChild>
+                <Link href="/user/edit">Chỉnh sửa hồ sơ</Link>
+              </Button>
+              
+              <p className="text-sm text-foreground mb-4">
+                Lập trình viên phát triển các dự án mã nguồn mở.
+              </p>
+
+              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                <Link href="#" className="flex items-center gap-1 hover:text-primary">
+                  <Users className="w-4 h-4" />
+                  <span className="font-semibold text-foreground">0</span> người theo dõi
+                </Link>
+                <span>·</span>
+                <Link href="#" className="hover:text-primary">
+                  <span className="font-semibold text-foreground">2</span> đang theo dõi
+                </Link>
               </div>
-              <div className="flex items-center gap-2">
-                  <Twitter className="w-4 h-4"/>
-                   <Link href="#" className="hover:text-primary hover:underline">@khoavo_dev</Link>
+
+              <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4"/>
+                      <span>Việt Nam</span>
+                  </div>
+                   <div className="flex items-center gap-2">
+                      <LinkIcon className="w-4 h-4"/>
+                      <Link href="#" className="hover:text-primary hover:underline">https://portfolio.example.com</Link>
+                  </div>
+                  <div className="flex items-center gap-2">
+                      <Twitter className="w-4 h-4"/>
+                       <Link href="#" className="hover:text-primary hover:underline">@khoavo_dev</Link>
+                  </div>
+                   <div className="flex items-center gap-2">
+                      <Linkedin className="w-4 h-4"/>
+                      <Link href="#" className="hover:text-primary hover:underline">linkedin.com/in/khoavo</Link>
+                  </div>
               </div>
-               <div className="flex items-center gap-2">
-                  <Linkedin className="w-4 h-4"/>
-                  <Link href="#" className="hover:text-primary hover:underline">linkedin.com/in/khoavo</Link>
-              </div>
-          </div>
-        </div>
-
-        {/* Right Content */}
-        <div className="md:col-span-3">
-            <ContributionGraph />
-
-            <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động đóng góp</h2>
-            <div className="border-t">
-                <div className="text-center text-sm py-3 border-b">
-                    Tháng Tám 2025
-                </div>
-
-                <TimelineItem icon={<GitMerge className="w-4 h-4" />}>
-                    <div className="flex justify-between items-center text-sm mb-2">
-                        <h3 className="font-semibold">Đã tạo 49 commit trong 2 repository</h3>
-                        <GitCommit className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                    <ul className="space-y-1 text-sm">
-                        <li className="flex justify-between items-center">
-                            <Link href="#" className="text-primary hover:underline truncate">khoavo261/Bisflow <span className="text-muted-foreground">25 commit</span></Link>
-                            <div className="w-24 h-2 bg-green-600 rounded-full" />
-                        </li>
-                        <li className="flex justify-between items-center">
-                            <Link href="#" className="text-primary hover:underline truncate">khoavo261/deutschhub <span className="text-muted-foreground">24 commit</span></Link>
-                            <div className="w-24 h-2 bg-green-600 rounded-full" />
-                        </li>
-                    </ul>
-                </TimelineItem>
-
-                <TimelineItem icon={<BookMarked className="w-4 h-4" />}>
-                     <div className="flex justify-between items-center text-sm mb-2 text-muted-foreground">
-                        <h3 className="font-normal">Đã tạo repository đầu tiên</h3>
-                        <span>4 tháng 8</span>
-                    </div>
-                    <Card className="p-6 text-center bg-card/50">
-                        <Image src="https://placehold.co/400x200.png" data-ai-hint="space illustration" width={400} height={200} className="mx-auto mb-4 rounded-md" alt="First repository illustration"/>
-                        <p className="font-semibold text-green-400">Repository đầu tiên</p>
-                        <h4 className="font-semibold text-lg"><Link href="#" className="text-primary hover:underline">deutschhub</Link> <span className="text-xs border rounded-full px-2 py-0.5 text-muted-foreground">Riêng tư</span></h4>
-                        <p className="text-xs text-muted-foreground mt-2">Chỉ những người có thể xem khoavo261/deutschhub mới thấy được đóng góp này</p>
-                    </Card>
-                </TimelineItem>
-
-                <TimelineItem icon={<GitBranch className="w-4 h-4" />} isLast>
-                    <div className="flex justify-between items-center text-sm mb-2">
-                        <h3 className="font-semibold">Đã tạo 3 repository khác</h3>
-                        <GitCommit className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                     <ul className="space-y-2 text-sm">
-                        <li className="flex justify-between items-center">
-                           <div className="flex items-center gap-2">
-                                <Lock className="w-4 h-4" />
-                                <Link href="#" className="text-primary hover:underline">khoavo261/deutsch-vn2</Link>
-                           </div>
-                           <div className="flex items-center gap-2 text-muted-foreground">
-                                <span className="w-3 h-3 rounded-full bg-blue-400" />
-                                <span>TypeScript</span>
-                                <span>20 tháng 8</span>
-                           </div>
-                        </li>
-                        <li className="flex justify-between items-center">
-                           <div className="flex items-center gap-2">
-                                <Lock className="w-4 h-4" />
-                                <Link href="#" className="text-primary hover:underline">khoavo261/Bisflow</Link>
-                           </div>
-                           <div className="flex items-center gap-2 text-muted-foreground">
-                                <span className="w-3 h-3 rounded-full bg-blue-400" />
-                                <span>TypeScript</span>
-                                <span>13 tháng 8</span>
-                           </div>
-                        </li>
-                        <li className="flex justify-between items-center">
-                           <div className="flex items-center gap-2">
-                                <Lock className="w-4 h-4" />
-                                <Link href="#" className="text-primary hover:underline">khoavo261/DeutscheEcke</Link>
-                           </div>
-                           <div className="flex items-center gap-2 text-muted-foreground">
-                                <span className="w-3 h-3 rounded-full bg-blue-400" />
-                                <span>TypeScript</span>
-                                <span>12 tháng 8</span>
-                           </div>
-                        </li>
-                    </ul>
-                </TimelineItem>
-
             </div>
-        </div>
-      </div>
+
+            {/* Right Content */}
+            <div className="md:col-span-3">
+                <ContributionGraph />
+
+                <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động đóng góp</h2>
+                <div className="border-t">
+                    <div className="text-center text-sm py-3 border-b">
+                        Tháng Tám 2025
+                    </div>
+
+                    <TimelineItem icon={<GitMerge className="w-4 h-4" />}>
+                        <div className="flex justify-between items-center text-sm mb-2">
+                            <h3 className="font-semibold">Đã tạo 49 commit trong 2 repository</h3>
+                            <GitCommit className="w-4 h-4 text-muted-foreground" />
+                        </div>
+                        <ul className="space-y-1 text-sm">
+                            <li className="flex justify-between items-center">
+                                <Link href="#" className="text-primary hover:underline truncate">khoavo261/Bisflow <span className="text-muted-foreground">25 commit</span></Link>
+                                <div className="w-24 h-2 bg-green-600 rounded-full" />
+                            </li>
+                            <li className="flex justify-between items-center">
+                                <Link href="#" className="text-primary hover:underline truncate">khoavo261/deutschhub <span className="text-muted-foreground">24 commit</span></Link>
+                                <div className="w-24 h-2 bg-green-600 rounded-full" />
+                            </li>
+                        </ul>
+                    </TimelineItem>
+
+                    <TimelineItem icon={<BookMarked className="w-4 h-4" />}>
+                         <div className="flex justify-between items-center text-sm mb-2 text-muted-foreground">
+                            <h3 className="font-normal">Đã tạo repository đầu tiên</h3>
+                            <span>4 tháng 8</span>
+                        </div>
+                        <Card className="p-6 text-center bg-card/50">
+                            <Image src="https://placehold.co/400x200.png" data-ai-hint="space illustration" width={400} height={200} className="mx-auto mb-4 rounded-md" alt="First repository illustration"/>
+                            <p className="font-semibold text-green-400">Repository đầu tiên</p>
+                            <h4 className="font-semibold text-lg"><Link href="#" className="text-primary hover:underline">deutschhub</Link> <span className="text-xs border rounded-full px-2 py-0.5 text-muted-foreground">Riêng tư</span></h4>
+                            <p className="text-xs text-muted-foreground mt-2">Chỉ những người có thể xem khoavo261/deutschhub mới thấy được đóng góp này</p>
+                        </Card>
+                    </TimelineItem>
+
+                    <TimelineItem icon={<GitBranch className="w-4 h-4" />} isLast>
+                        <div className="flex justify-between items-center text-sm mb-2">
+                            <h3 className="font-semibold">Đã tạo 3 repository khác</h3>
+                            <GitCommit className="w-4 h-4 text-muted-foreground" />
+                        </div>
+                         <ul className="space-y-2 text-sm">
+                            <li className="flex justify-between items-center">
+                               <div className="flex items-center gap-2">
+                                    <Lock className="w-4 h-4" />
+                                    <Link href="#" className="text-primary hover:underline">khoavo261/deutsch-vn2</Link>
+                               </div>
+                               <div className="flex items-center gap-2 text-muted-foreground">
+                                    <span className="w-3 h-3 rounded-full bg-blue-400" />
+                                    <span>TypeScript</span>
+                                    <span>20 tháng 8</span>
+                               </div>
+                            </li>
+                            <li className="flex justify-between items-center">
+                               <div className="flex items-center gap-2">
+                                    <Lock className="w-4 h-4" />
+                                    <Link href="#" className="text-primary hover:underline">khoavo261/Bisflow</Link>
+                               </div>
+                               <div className="flex items-center gap-2 text-muted-foreground">
+                                    <span className="w-3 h-3 rounded-full bg-blue-400" />
+                                    <span>TypeScript</span>
+                                    <span>13 tháng 8</span>
+                               </div>
+                            </li>
+                            <li className="flex justify-between items-center">
+                               <div className="flex items-center gap-2">
+                                    <Lock className="w-4 h-4" />
+                                    <Link href="#" className="text-primary hover:underline">khoavo261/DeutscheEcke</Link>
+                               </div>
+                               <div className="flex items-center gap-2 text-muted-foreground">
+                                    <span className="w-3 h-3 rounded-full bg-blue-400" />
+                                    <span>TypeScript</span>
+                                    <span>12 tháng 8</span>
+                               </div>
+                            </li>
+                        </ul>
+                    </TimelineItem>
+
+                </div>
+            </div>
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
+
+    
