@@ -8,10 +8,6 @@ const sidebarNavItems = [
     href: "/user/edit",
   },
   {
-    title: "Giao diện",
-    href: "/user/edit/appearance",
-  },
-  {
     title: "Thông báo",
     href: "/user/edit/notifications",
   },
