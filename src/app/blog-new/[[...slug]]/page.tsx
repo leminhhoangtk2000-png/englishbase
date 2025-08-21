@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Mic, PlayCircle, Hand } from "lucide-react";
+import { Bookmark, MessageCircle, MoreHorizontal, BarChart2, Linkedin, Twitter, Facebook, Link as LinkIcon, Star, Hand } from "lucide-react";
 import { AuthorInfo } from "../_components/author-info";
 
 interface DocPageProps {
@@ -385,26 +385,46 @@ export default async function DocPage({ params }: DocPageProps) {
         <div>
             <h3 className="font-semibold mb-4">More from The Startup and Deutsch.vn</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                    <p className="text-xs text-muted-foreground">The Startup</p>
-                    <h4 className="font-bold">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
-                    <p className="text-sm text-muted-foreground">The May 12, 2024 iOS update comes with a lot of new things...</p>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
-                        <span>May 12</span>
-                        <span>·</span>
-                        <span>5 min read</span>
-                        <Star className="w-4 h-4 ml-2 text-yellow-400 fill-current" />
+                <div className="flex gap-4">
+                    <div className="flex-1 space-y-2">
+                        <p className="text-xs text-muted-foreground">The Startup</p>
+                        <h4 className="font-bold">12 New iOS Features That Will Change the Way You Use Your iPhone</h4>
+                        <p className="text-sm text-muted-foreground">The May 12, 2024 iOS update comes with a lot of new things...</p>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
+                            <span>May 12</span>
+                            <span>·</span>
+                            <span>5 min read</span>
+                            <Star className="w-4 h-4 ml-2 text-yellow-400 fill-current" />
+                        </div>
                     </div>
+                    <Image 
+                        src="https://placehold.co/100x100.png"
+                        alt="iOS Features"
+                        width={100}
+                        height={100}
+                        data-ai-hint="smartphone interface"
+                        className="object-cover rounded-md"
+                    />
                 </div>
-                <div className="space-y-2">
-                    <p className="text-xs text-muted-foreground">Deutsch.vn</p>
-                    <h4 className="font-bold">The German Case System: A Beginner's Guide</h4>
-                    <p className="text-sm text-muted-foreground">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
-                     <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
-                        <span>Aug 21</span>
-                        <span>·</span>
-                        <span>10 min read</span>
+                <div className="flex gap-4">
+                    <div className="flex-1 space-y-2">
+                        <p className="text-xs text-muted-foreground">Deutsch.vn</p>
+                        <h4 className="font-bold">The German Case System: A Beginner's Guide</h4>
+                        <p className="text-sm text-muted-foreground">Navigate Nominative, Accusative, Dative, and Genitive cases with ease.</p>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
+                            <span>Aug 21</span>
+                            <span>·</span>
+                            <span>10 min read</span>
+                        </div>
                     </div>
+                    <Image 
+                        src="https://placehold.co/100x100.png"
+                        alt="German Case System"
+                        width={100}
+                        height={100}
+                        data-ai-hint="german flag book"
+                        className="object-cover rounded-md"
+                    />
                 </div>
             </div>
         </div>
