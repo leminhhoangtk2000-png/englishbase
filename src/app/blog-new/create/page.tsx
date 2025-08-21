@@ -80,7 +80,7 @@ export default function CreatePostPage() {
             <div className="prose prose-stone dark:prose-invert max-w-none">
               <Textarea
                 placeholder="Viết nội dung của bạn ở đây bằng Markdown..."
-                className="min-h-[500px] text-base p-4 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-y font-mono"
+                className="min-h-[500px] text-base p-4 resize-y font-mono"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
