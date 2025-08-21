@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Hand } from "lucide-react";
+import { Hand, MessageCircle } from "lucide-react";
 import React from "react";
 
 type AuthorDetails = {
@@ -33,7 +33,7 @@ export function AuthorInfo({ author }: { author: AuthorDetails }) {
                 <Separator orientation="vertical" className="h-6" />
                 <div className="flex items-center gap-2">
                     <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Hand className="w-5 h-5" />
+                        <MessageCircle className="w-5 h-5" />
                     </Button>
                      <span>{author.comments}</span>
                 </div>
