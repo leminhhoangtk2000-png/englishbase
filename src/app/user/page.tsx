@@ -10,14 +10,12 @@ import Link from 'next/link';
 import * as React from 'react';
 import { cn } from "@/lib/utils";
 
-const ContributionGraph = () => {
+function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
   const [days, setDays] = React.useState<number[]>([]);
 
   React.useEffect(() => {
-    // Initialize with all days as 0
     const initialDays = Array.from({ length: 371 }, () => 0);
-    // Then, generate random activity
     const randomDays = initialDays.map(() => {
       if (Math.random() > 0.4) {
         return Math.floor(Math.random() * 4) + 1;
@@ -35,17 +33,17 @@ const ContributionGraph = () => {
     "bg-green-800",
   ];
   
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const months = ["Thg1", "Thg2", "Thg3", "Thg4", "Thg5", "Thg6", "Thg7", "Thg8", "Thg9", "Thg10", "Thg11", "Thg12"];
   const years = ['2025', '2024'];
-  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const weekDays = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
 
 
   return (
     <div className="flex items-start gap-4">
       <div className="p-4 border rounded-md flex-1">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-base mb-2">202 contributions in {selectedYear}</h3>
-          <Button variant="outline" size="sm" className="text-xs h-7">Contribution settings</Button>
+          <h3 className="text-base mb-2">202 đóng góp trong năm {selectedYear}</h3>
+          <Button variant="outline" size="sm" className="text-xs h-7">Cài đặt đóng góp</Button>
         </div>
 
         <div className="flex gap-2">
@@ -69,7 +67,7 @@ const ContributionGraph = () => {
                     <div
                         key={index}
                         className={`w-2 h-2 ${contributionColors[level]}`}
-                        title={`Contribution level ${level} on day ${index + 1}`}
+                        title={`Mức độ đóng góp ${level} vào ngày ${index + 1}`}
                     />
                 ))}
             </div>
@@ -77,13 +75,13 @@ const ContributionGraph = () => {
         </div>
         
         <div className="flex justify-between items-center mt-2 text-xs text-muted-foreground">
-          <Link href="#" className="hover:text-primary">Learn how we count contributions</Link>
+          <Link href="#" className="hover:text-primary">Tìm hiểu cách chúng tôi đếm đóng góp</Link>
           <div className="flex items-center gap-1">
-            <span>Less</span>
+            <span>Ít</span>
             {contributionColors.map((color, index) => (
               <div key={index} className={`w-2.5 h-2.5 ${color}`} />
             ))}
-            <span>More</span>
+            <span>Nhiều</span>
           </div>
         </div>
       </div>
@@ -116,7 +114,6 @@ const TimelineItem = ({ icon, children, isLast = false }: { icon: React.ReactNod
     </div>
 );
 
-
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -128,30 +125,30 @@ export default function UserPage() {
             <AvatarFallback>KV</AvatarFallback>
           </Avatar>
           <div className="flex items-center gap-2 mb-1">
-            <h1 className="text-2xl font-bold">Khoa Vo</h1>
+            <h1 className="text-2xl font-bold">Khoa Võ</h1>
           </div>
-          <p className="text-lg text-muted-foreground mb-4">khoavo261 · he/him</p>
-          <Button variant="outline" className="w-full mb-4">Edit profile</Button>
-
+          <p className="text-lg text-muted-foreground mb-4">khoavo261</p>
+          <Button variant="outline" className="w-full mb-4">Chỉnh sửa hồ sơ</Button>
+          
           <p className="text-sm text-foreground mb-4">
-            Software Developer building open-source projects.
+            Lập trình viên phát triển các dự án mã nguồn mở.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
             <Link href="#" className="flex items-center gap-1 hover:text-primary">
               <Users className="w-4 h-4" />
-              <span className="font-semibold text-foreground">0</span> followers
+              <span className="font-semibold text-foreground">0</span> người theo dõi
             </Link>
             <span>·</span>
             <Link href="#" className="hover:text-primary">
-              <span className="font-semibold text-foreground">2</span> following
+              <span className="font-semibold text-foreground">2</span> đang theo dõi
             </Link>
           </div>
 
           <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4"/>
-                  <span>Vietnam</span>
+                  <span>Việt Nam</span>
               </div>
                <div className="flex items-center gap-2">
                   <LinkIcon className="w-4 h-4"/>
@@ -172,24 +169,24 @@ export default function UserPage() {
         <div className="md:col-span-3">
             <ContributionGraph />
 
-            <h2 className="text-lg font-semibold mt-8 mb-4">Contribution activity</h2>
+            <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động đóng góp</h2>
             <div className="border-t">
                 <div className="text-center text-sm py-3 border-b">
-                    August 2025
+                    Tháng Tám 2025
                 </div>
 
                 <TimelineItem icon={<GitMerge className="w-4 h-4" />}>
                     <div className="flex justify-between items-center text-sm mb-2">
-                        <h3 className="font-semibold">Created 49 commits in 2 repositories</h3>
+                        <h3 className="font-semibold">Đã tạo 49 commit trong 2 repository</h3>
                         <GitCommit className="w-4 h-4 text-muted-foreground" />
                     </div>
                     <ul className="space-y-1 text-sm">
                         <li className="flex justify-between items-center">
-                            <Link href="#" className="text-primary hover:underline truncate">khoavo261/Bisflow <span className="text-muted-foreground">25 commits</span></Link>
+                            <Link href="#" className="text-primary hover:underline truncate">khoavo261/Bisflow <span className="text-muted-foreground">25 commit</span></Link>
                             <div className="w-24 h-2 bg-green-600 rounded-full" />
                         </li>
                         <li className="flex justify-between items-center">
-                            <Link href="#" className="text-primary hover:underline truncate">khoavo261/deutschhub <span className="text-muted-foreground">24 commits</span></Link>
+                            <Link href="#" className="text-primary hover:underline truncate">khoavo261/deutschhub <span className="text-muted-foreground">24 commit</span></Link>
                             <div className="w-24 h-2 bg-green-600 rounded-full" />
                         </li>
                     </ul>
@@ -197,20 +194,20 @@ export default function UserPage() {
 
                 <TimelineItem icon={<BookMarked className="w-4 h-4" />}>
                      <div className="flex justify-between items-center text-sm mb-2 text-muted-foreground">
-                        <h3 className="font-normal">Created their first repository</h3>
-                        <span>Aug 4</span>
+                        <h3 className="font-normal">Đã tạo repository đầu tiên</h3>
+                        <span>4 tháng 8</span>
                     </div>
                     <Card className="p-6 text-center bg-card/50">
                         <Image src="https://placehold.co/400x200.png" data-ai-hint="space illustration" width={400} height={200} className="mx-auto mb-4 rounded-md" alt="First repository illustration"/>
-                        <p className="font-semibold text-green-400">First repository</p>
-                        <h4 className="font-semibold text-lg"><Link href="#" className="text-primary hover:underline">deutschhub</Link> <span className="text-xs border rounded-full px-2 py-0.5 text-muted-foreground">Private</span></h4>
-                        <p className="text-xs text-muted-foreground mt-2">Only people who can see khoavo261/deutschhub can see this contribution</p>
+                        <p className="font-semibold text-green-400">Repository đầu tiên</p>
+                        <h4 className="font-semibold text-lg"><Link href="#" className="text-primary hover:underline">deutschhub</Link> <span className="text-xs border rounded-full px-2 py-0.5 text-muted-foreground">Riêng tư</span></h4>
+                        <p className="text-xs text-muted-foreground mt-2">Chỉ những người có thể xem khoavo261/deutschhub mới thấy được đóng góp này</p>
                     </Card>
                 </TimelineItem>
 
                 <TimelineItem icon={<GitBranch className="w-4 h-4" />} isLast>
                     <div className="flex justify-between items-center text-sm mb-2">
-                        <h3 className="font-semibold">Created 3 other repositories</h3>
+                        <h3 className="font-semibold">Đã tạo 3 repository khác</h3>
                         <GitCommit className="w-4 h-4 text-muted-foreground" />
                     </div>
                      <ul className="space-y-2 text-sm">
@@ -222,7 +219,7 @@ export default function UserPage() {
                            <div className="flex items-center gap-2 text-muted-foreground">
                                 <span className="w-3 h-3 rounded-full bg-blue-400" />
                                 <span>TypeScript</span>
-                                <span>Aug 20</span>
+                                <span>20 tháng 8</span>
                            </div>
                         </li>
                         <li className="flex justify-between items-center">
@@ -233,7 +230,7 @@ export default function UserPage() {
                            <div className="flex items-center gap-2 text-muted-foreground">
                                 <span className="w-3 h-3 rounded-full bg-blue-400" />
                                 <span>TypeScript</span>
-                                <span>Aug 13</span>
+                                <span>13 tháng 8</span>
                            </div>
                         </li>
                         <li className="flex justify-between items-center">
@@ -244,7 +241,7 @@ export default function UserPage() {
                            <div className="flex items-center gap-2 text-muted-foreground">
                                 <span className="w-3 h-3 rounded-full bg-blue-400" />
                                 <span>TypeScript</span>
-                                <span>Aug 12</span>
+                                <span>12 tháng 8</span>
                            </div>
                         </li>
                     </ul>
