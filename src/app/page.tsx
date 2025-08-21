@@ -221,7 +221,6 @@ export default function Home() {
                   <li><Link href="#" className="text-muted-foreground hover:text-primary">Lộ trình</Link></li>
                   <li><Link href="#" className="text-muted-foreground hover:text-primary">Đội nhóm</Link></li>
                   <li><Link href="#" className="text-muted-foreground hover:text-primary">Liên hệ</Link></li>
-                  <li><Link href="#" className="text-muted-foreground hover:text-primary">Theme 1</Link></li>
                 </ul>
               </div>
 
