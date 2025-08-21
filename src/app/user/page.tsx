@@ -120,14 +120,6 @@ export default function UserPage() {
 
         {/* Right Content */}
         <div className="md:col-span-3">
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-semibold">Popular repositories</h2>
-                <Link href="#" className="text-sm text-primary hover:underline">Customize your pins</Link>
-            </div>
-            <Card className="text-center py-8 mb-8">
-                <p>You don&apos;t have any public repositories yet.</p>
-            </Card>
-
             <ContributionGraph />
 
             <h2 className="text-lg font-semibold mt-8 mb-4">Contribution activity</h2>
