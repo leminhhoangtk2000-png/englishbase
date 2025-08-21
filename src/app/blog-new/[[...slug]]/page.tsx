@@ -279,7 +279,7 @@ const commentsData: CommentData[] = [
     }
 ];
 
-const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number }) => {
+function Comment({ comment, level = 0 }: { comment: CommentData, level?: number }) {
     const [repliesVisible, setRepliesVisible] = React.useState(false);
     const hasReplies = comment.replies && comment.replies.length > 0;
 
@@ -330,33 +330,7 @@ const Comment = ({ comment, level = 0 }: { comment: CommentData, level?: number 
     );
 };
 
-
-async function getDoc(params: DocPageProps['params']) {
-    const doc = await getDocFromParams({ params });
-    if (!doc || !doc.component) {
-        notFound();
-    }
-    return doc;
-}
-
-export default function DocPageWrapper({ params }: DocPageProps) {
-  // If there's no slug, it's the blog's main page.
-  if (!params.slug || params.slug.length === 0) {
-    return <BlogListPage />;
-  }
-  
-  const [doc, setDoc] = React.useState<Awaited<ReturnType<typeof getDoc>> | null>(null);
-
-  React.useEffect(() => {
-    getDoc(params).then(setDoc);
-  }, [params]);
-
-
-  if (!doc) {
-    // You can return a loading state here
-    return <div>Loading...</div>;
-  }
-  
+function DocPageContent({ doc }: { doc: any }) {
   const ContentComponent = doc.component;
 
   return (
@@ -485,3 +459,21 @@ export default function DocPageWrapper({ params }: DocPageProps) {
     </main>
   );
 }
+
+
+export default async function Page({ params }: DocPageProps) {
+  // If there's no slug, it's the blog's main page.
+  if (!params.slug || params.slug.length === 0) {
+    return <BlogListPage />;
+  }
+  
+  const doc = await getDocFromParams({ params });
+
+  if (!doc || !doc.component) {
+    notFound();
+  }
+
+  return <DocPageContent doc={doc} />;
+}
+
+    
