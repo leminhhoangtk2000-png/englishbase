@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 const levels = [
   {
@@ -47,16 +47,13 @@ export function ExercisesLandingPage() {
         </p>
       </div>
 
-      <div className="space-y-20">
+      <div className="space-y-16">
         {levels.map((level, index) => (
-          <Card 
-            key={level.name} 
-            className="overflow-hidden shadow-lg border-border/60 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl"
-          >
+          <React.Fragment key={level.name}>
             <div
               className="grid md:grid-cols-2 gap-8 md:gap-16 items-center"
             >
-              <div className={`p-8 md:p-12 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+              <div className={`p-8 md:p-12 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                 <h2 className="text-3xl font-bold font-headline mb-4">{level.name}</h2>
                 <p className="text-muted-foreground mb-6 text-lg">{level.description}</p>
                 <Button asChild size="lg">
@@ -65,18 +62,19 @@ export function ExercisesLandingPage() {
                   </Link>
                 </Button>
               </div>
-              <div className={`relative h-64 md:h-full ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+              <div className={`relative h-80 md:h-96 rounded-lg overflow-hidden ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
                 <Image
                   src={level.image}
                   alt={`Hình ảnh minh họa cho ${level.name}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   data-ai-hint={level.data_ai_hint}
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
-          </Card>
+            {index < levels.length - 1 && <Separator className="my-8" />}
+          </ React.Fragment>
         ))}
       </div>
     </div>
