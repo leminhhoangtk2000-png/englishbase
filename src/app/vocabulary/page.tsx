@@ -28,20 +28,20 @@ export default function VocabularyPage() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [notFound, setNotFound] = React.useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!searchTerm.trim()) {
-        setResults(null);
-        setNotFound(false);
-        return;
-    };
+  const performSearch = (term: string) => {
+    if (!term.trim()) {
+      setResults(null);
+      setNotFound(false);
+      return;
+    }
 
     setIsLoading(true);
     setNotFound(false);
     setResults(null);
+    setSearchTerm(term);
 
     setTimeout(() => {
-      const lowerCaseSearchTerm = searchTerm.toLowerCase().trim();
+      const lowerCaseSearchTerm = term.toLowerCase().trim();
       const filteredResults = vocabularyList.filter(
         (entry) =>
           entry.german.toLowerCase().includes(lowerCaseSearchTerm) ||
@@ -58,6 +58,16 @@ export default function VocabularyPage() {
     }, 500); // Simulate network delay
   };
 
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    performSearch(searchTerm);
+  };
+
+  const handleHistoryClick = (word: string) => {
+    performSearch(word);
+  };
+
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
       <div className="text-center max-w-2xl mx-auto">
@@ -69,7 +79,7 @@ export default function VocabularyPage() {
         </p>
 
         <form
-          onSubmit={handleSearch}
+          onSubmit={handleSearchSubmit}
           className="mt-8 flex w-full items-center space-x-2"
         >
           <div className="relative w-full">
@@ -117,11 +127,16 @@ export default function VocabularyPage() {
                         <CardDescription>Các từ bạn đã tra gần đây.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <ul className="space-y-3">
+                        <ul className="space-y-1">
                             {searchHistorySample.map(item => (
-                                <li key={item.german} className="flex justify-between items-center text-sm">
-                                    <span className="font-medium">{item.german}</span>
-                                    <span className="text-muted-foreground">{item.vietnamese}</span>
+                                <li key={item.german}>
+                                   <button 
+                                      onClick={() => handleHistoryClick(item.german)}
+                                      className="flex justify-between items-center text-sm w-full text-left p-2 rounded-md hover:bg-muted"
+                                    >
+                                        <span className="font-medium">{item.german}</span>
+                                        <span className="text-muted-foreground">{item.vietnamese}</span>
+                                    </button>
                                 </li>
                             ))}
                         </ul>
@@ -136,11 +151,16 @@ export default function VocabularyPage() {
                         <CardDescription>Các từ bạn đã lưu để học lại.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <ul className="space-y-3">
+                        <ul className="space-y-1">
                              {savedWordsSample.map(item => (
-                                <li key={item.german} className="flex justify-between items-center text-sm">
-                                    <span className="font-medium">{item.german}</span>
-                                    <span className="text-muted-foreground">{item.vietnamese}</span>
+                                <li key={item.german}>
+                                    <button 
+                                      onClick={() => handleHistoryClick(item.german)}
+                                      className="flex justify-between items-center text-sm w-full text-left p-2 rounded-md hover:bg-muted"
+                                    >
+                                        <span className="font-medium">{item.german}</span>
+                                        <span className="text-muted-foreground">{item.vietnamese}</span>
+                                    </button>
                                 </li>
                             ))}
                         </ul>
