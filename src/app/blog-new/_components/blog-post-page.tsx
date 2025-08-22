@@ -93,15 +93,29 @@ const staffPicks = [
   },
 ];
 
-const recommendedTopics = [
-  "Programming",
-  "Writing",
-  "Self Improvement",
-  "Data Science",
-  "Politics",
-  "Cryptocurrency",
-  "Productivity",
+const allRecommendedTopics = [
+  "Học ngoại ngữ",
+  "Ngữ pháp & Từ vựng",
+  "Kỹ năng nghe – nói – đọc – viết",
+  "Công cụ & Tài liệu học tập",
+  "Học bổng & Cơ hội tài chính",
+  "Visa & Thủ tục hồ sơ",
+  "Cuộc sống du học",
+  "Làm thêm & Quản lý tài chính",
+  "Các quốc gia & Hệ thống giáo dục",
+  "Định hướng nghề nghiệp & Cơ hội sau du học",
+  "Du lịch & Khám phá",
+  "Ẩm thực & Nấu ăn",
+  "Sách & Văn hóa đọc",
+  "Phim ảnh & Giải trí",
+  "Âm nhạc & Podcast",
+  "Thể thao & Sức khỏe",
+  "Công nghệ & Ứng dụng hữu ích",
+  "Kỹ năng sống & Phát triển bản thân",
+  "Tài chính cá nhân & Quản lý tiền bạc",
+  "Thời trang & Phong cách sống",
 ];
+
 
 const whoToFollow = [
   {
@@ -123,6 +137,9 @@ const whoToFollow = [
 // --- End of data for the blog list page ---
 
 function BlogListPage() {
+  const [showAllTopics, setShowAllTopics] = React.useState(false);
+  const recommendedTopics = showAllTopics ? allRecommendedTopics : allRecommendedTopics.slice(0, 7);
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="border-b flex justify-between items-center">
@@ -212,7 +229,9 @@ function BlogListPage() {
               <Badge key={topic} variant="secondary" className="px-3 py-1 rounded-full cursor-pointer hover:bg-muted">{topic}</Badge>
             ))}
           </div>
-          <Link href="#" className="text-sm text-primary hover:underline mt-4 inline-block">See more topics</Link>
+          <button onClick={() => setShowAllTopics(!showAllTopics)} className="text-sm text-primary hover:underline mt-4 inline-block">
+            {showAllTopics ? "See less topics" : "See more topics"}
+          </button>
 
           <Separator className="my-8" />
 
