@@ -184,13 +184,30 @@ function PlatformReview() {
     const [rating, setRating] = React.useState(0);
     const [hoverRating, setHoverRating] = React.useState(0);
     const [review, setReview] = React.useState("");
+    const [submitted, setSubmitted] = React.useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         // Handle submission logic here
         console.log({ rating, review });
-        alert("Cảm ơn bạn đã gửi đánh giá!");
+        setSubmitted(true);
     };
+
+    if (submitted) {
+        return (
+            <Card>
+                <CardHeader className="p-4 items-center text-center">
+                    <CardTitle className="text-base">Cảm ơn bạn!</CardTitle>
+                    <CardDescription className="text-xs">
+                        Chúng tôi đã nhận được đánh giá của bạn.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="p-4 pt-0 flex justify-center">
+                    <Check className="w-10 h-10 text-green-500" />
+                </CardContent>
+            </Card>
+        );
+    }
 
     return (
         <Card>
