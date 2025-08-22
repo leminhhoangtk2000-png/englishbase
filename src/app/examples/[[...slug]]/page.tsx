@@ -11,7 +11,7 @@ interface DocPageProps {
 }
 
 export default async function DocPage({ params }: DocPageProps) {
-  const doc = await getDocFromParams({ params });
+  const doc = await getDocFromParams(params.slug);
 
   if (!doc || !doc.component) {
     notFound();

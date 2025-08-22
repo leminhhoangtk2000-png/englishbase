@@ -17,7 +17,7 @@ export default async function DocPage({ params }: DocPageProps) {
     return <ExercisesLandingPage />;
   }
 
-  const doc = await getDocFromParams({ params });
+  const doc = await getDocFromParams(params.slug);
 
   if (!doc || !doc.component) {
     notFound();

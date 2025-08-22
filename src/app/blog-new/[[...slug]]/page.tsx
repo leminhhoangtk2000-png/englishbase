@@ -16,7 +16,7 @@ export default async function Page({ params }: PageProps) {
     return <BlogPostPage />;
   }
 
-  const doc = await getDocFromParams({ params });
+  const doc = await getDocFromParams(params.slug);
 
   if (!doc || !doc.component) {
     notFound();
