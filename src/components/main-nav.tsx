@@ -21,6 +21,7 @@ const navLinks = [
     { href: "/components", label: "B1 Niveau" },
     { href: "/examples", label: "B2 Niveau" },
     { href: "/exercises", label: "Bài tập" },
+    { href: "/vocabulary", label: "Từ vựng" },
     { href: "/blog-new", label: "Blog" },
     { href: "/user", label: "User" },
     { href: "/admin", label: "Admin" },
