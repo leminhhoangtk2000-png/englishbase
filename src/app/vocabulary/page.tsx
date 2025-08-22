@@ -14,6 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { translateWord } from "@/ai/flows/vocabulary-flow";
+
 
 const searchHistorySample: VocabularyEntry[] = [
   vocabularyList[0], // der Kopf
@@ -83,7 +85,7 @@ export default function VocabularyPage() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [notFound, setNotFound] = React.useState(false);
 
-  const performSearch = (term: string) => {
+  const performSearch = async (term: string) => {
     if (!term.trim()) {
       setResults(null);
       setNotFound(false);
@@ -95,22 +97,35 @@ export default function VocabularyPage() {
     setResults(null);
     setSearchTerm(term);
 
-    setTimeout(() => {
-      const lowerCaseSearchTerm = term.toLowerCase().trim();
-      const filteredResults = vocabularyList.filter(
-        (entry) =>
-          entry.german.toLowerCase().includes(lowerCaseSearchTerm) ||
-          entry.vietnamese.toLowerCase().includes(lowerCaseSearchTerm) ||
-          entry.plural.toLowerCase().includes(lowerCaseSearchTerm)
-      );
+    // Step 1: Search in local library first
+    const lowerCaseSearchTerm = term.toLowerCase().trim();
+    const localResults = vocabularyList.filter(
+      (entry) =>
+        entry.german.toLowerCase().includes(lowerCaseSearchTerm) ||
+        entry.vietnamese.toLowerCase().includes(lowerCaseSearchTerm) ||
+        entry.plural.toLowerCase().includes(lowerCaseSearchTerm)
+    );
 
-      if (filteredResults.length > 0) {
-        setResults(filteredResults);
-      } else {
-        setNotFound(true);
-      }
+    if (localResults.length > 0) {
+      setResults(localResults);
       setIsLoading(false);
-    }, 500); // Simulate network delay
+      return;
+    }
+
+    // Step 2: If not found, call Genkit AI flow
+    try {
+        const aiResult = await translateWord({ word: term });
+        if (aiResult) {
+            setResults([aiResult as VocabularyEntry]);
+        } else {
+            setNotFound(true);
+        }
+    } catch (error) {
+        console.error("AI translation error:", error);
+        setNotFound(true);
+    } finally {
+        setIsLoading(false);
+    }
   };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
