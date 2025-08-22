@@ -25,6 +25,7 @@ const navLinks = [
     { href: "/vocabulary", label: "Từ vựng" },
     { href: "/blog-new", label: "Blog" },
     { href: "/user", label: "User" },
+    { href: "/user-premium", label: "User Premium" },
     { href: "/admin", label: "Admin" },
 ];
 
