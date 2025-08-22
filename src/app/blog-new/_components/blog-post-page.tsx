@@ -200,7 +200,7 @@ function BlogListPage() {
         </div>
 
         <aside className="lg:col-span-1 lg:border-l lg:pl-8">
-          <h3 className="font-semibold mb-4">Staff Picks</h3>
+          <h3 className="font-semibold mb-4">Lựa chọn của biên tập</h3>
           <div className="space-y-4">
             {staffPicks.map((pick, index) => (
               <div key={index}>
@@ -218,24 +218,24 @@ function BlogListPage() {
                 <p className="text-sm text-muted-foreground mt-1">{pick.date}</p>
               </div>
             ))}
-            <Link href="#" className="text-sm text-primary hover:underline">See the full list</Link>
+            <Link href="#" className="text-sm text-primary hover:underline">Xem toàn bộ danh sách</Link>
           </div>
 
           <Separator className="my-8" />
 
-          <h3 className="font-semibold mb-4">Recommended topics</h3>
+          <h3 className="font-semibold mb-4">Chủ đề đề xuất</h3>
           <div className="flex flex-wrap gap-2">
             {recommendedTopics.map((topic) => (
               <Badge key={topic} variant="secondary" className="px-3 py-1 rounded-full cursor-pointer hover:bg-muted">{topic}</Badge>
             ))}
           </div>
           <button onClick={() => setShowAllTopics(!showAllTopics)} className="text-sm text-primary hover:underline mt-4 inline-block">
-            {showAllTopics ? "See less topics" : "See more topics"}
+            {showAllTopics ? "Ẩn bớt" : "Xem thêm"}
           </button>
 
           <Separator className="my-8" />
 
-          <h3 className="font-semibold mb-4">Who to follow</h3>
+          <h3 className="font-semibold mb-4">Gợi ý theo dõi</h3>
           <div className="space-y-4">
             {whoToFollow.map((person, index) => (
               <div key={index} className="flex items-center justify-between">
@@ -249,7 +249,7 @@ function BlogListPage() {
                     <p className="text-sm text-muted-foreground truncate max-w-[150px]">{person.bio}</p>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" className="rounded-full">Follow</Button>
+                <Button variant="outline" size="sm" className="rounded-full">Theo dõi</Button>
               </div>
             ))}
           </div>
