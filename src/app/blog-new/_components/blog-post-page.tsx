@@ -128,12 +128,11 @@ function BlogListPage() {
       <div className="border-b flex justify-between items-center">
         <div className="flex items-center space-x-6 text-sm text-muted-foreground overflow-x-auto pb-3">
           <Link href="#" className="text-foreground font-semibold">+</Link>
-          <Link href="#" className="text-foreground font-semibold">For you</Link>
-          <Link href="#" className="hover:text-foreground">Following</Link>
-          <Link href="#" className="hover:text-foreground">Featured</Link>
-          <Link href="#" className="hover:text-foreground">Web Development</Link>
-          <Link href="#" className="hover:text-foreground">Books</Link>
-          <Link href="#" className="hover:text-foreground">Marketing</Link>
+          <Link href="#" className="text-foreground font-semibold">A1 Niveau</Link>
+          <Link href="#" className="hover:text-foreground">A2 Niveau</Link>
+          <Link href="#" className="hover:text-foreground">B1 Niveau</Link>
+          <Link href="#" className="hover:text-foreground">B2 Niveau</Link>
+          <Link href="#" className="hover:text-foreground">C1 Niveau</Link>
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
