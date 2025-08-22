@@ -14,14 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
 
 const searchHistorySample: VocabularyEntry[] = [
   vocabularyList[0], // der Kopf
@@ -43,6 +35,47 @@ const vocabularyByTopic = [
     }
     // Add more topics here in the future
 ]
+
+function VocabularyCard({ entry }: { entry: VocabularyEntry }) {
+    return (
+        <Card className="overflow-hidden">
+            <CardHeader className="bg-muted/50 p-4">
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                        <h2 className="text-2xl font-bold font-headline text-primary">{entry.german}</h2>
+                        <Badge variant="outline">{entry.vietnamese}</Badge>
+                    </div>
+                    <div className="flex items-center gap-1">
+                        <Button variant="ghost" size="icon">
+                            <Bookmark className="h-5 w-5" />
+                            <span className="sr-only">Lưu từ</span>
+                        </Button>
+                        <Button variant="ghost" size="icon">
+                            <Volume2 className="h-5 w-5" />
+                            <span className="sr-only">Phát âm</span>
+                        </Button>
+                    </div>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground pt-1">
+                    <span>Số nhiều: <span className="font-semibold text-foreground">{entry.plural}</span></span>
+                    <Separator orientation="vertical" className="h-4" />
+                    <span>Phiên âm: <span className="font-semibold text-foreground">{entry.phonetic}</span></span>
+                </div>
+            </CardHeader>
+            <CardContent className="p-4 space-y-3">
+                <div>
+                    <p className="text-sm font-semibold text-muted-foreground">Ví dụ:</p>
+                    <p className="italic">{entry.exampleGerman}</p>
+                </div>
+                <div>
+                    <p className="text-sm font-semibold text-muted-foreground">Giải nghĩa:</p>
+                    <p>{entry.exampleVietnamese}</p>
+                </div>
+            </CardContent>
+        </Card>
+    );
+}
+
 
 export default function VocabularyPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -208,24 +241,11 @@ export default function VocabularyPage() {
                         </div>
                       </AccordionTrigger>
                       <AccordionContent>
-                        <Table>
-                          <TableHeader>
-                            <TableRow>
-                              <TableHead className="w-[35%]">Từ tiếng Đức</TableHead>
-                              <TableHead className="w-[35%]">Số nhiều</TableHead>
-                              <TableHead>Nghĩa tiếng Việt</TableHead>
-                            </TableRow>
-                          </TableHeader>
-                          <TableBody>
+                        <div className="space-y-4">
                             {topicItem.words.map((word) => (
-                              <TableRow key={word.german}>
-                                <TableCell className="font-medium">{word.german}</TableCell>
-                                <TableCell>{word.plural}</TableCell>
-                                <TableCell>{word.vietnamese}</TableCell>
-                              </TableRow>
+                              <VocabularyCard key={word.german} entry={word} />
                             ))}
-                          </TableBody>
-                        </Table>
+                        </div>
                       </AccordionContent>
                     </AccordionItem>
                   ))}
@@ -237,41 +257,7 @@ export default function VocabularyPage() {
         {!isLoading && results && (
           <div className="space-y-6">
             {results.map((entry, index) => (
-                <Card key={index} className="overflow-hidden">
-                    <CardHeader className="bg-muted/50 p-4">
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-4">
-                                <h2 className="text-2xl font-bold font-headline text-primary">{entry.german}</h2>
-                                <Badge variant="outline">{entry.vietnamese}</Badge>
-                            </div>
-                           <div className="flex items-center gap-1">
-                                <Button variant="ghost" size="icon">
-                                    <Bookmark className="h-5 w-5" />
-                                    <span className="sr-only">Lưu từ</span>
-                                </Button>
-                                <Button variant="ghost" size="icon">
-                                    <Volume2 className="h-5 w-5" />
-                                    <span className="sr-only">Phát âm</span>
-                                </Button>
-                           </div>
-                        </div>
-                         <div className="flex items-center gap-4 text-sm text-muted-foreground pt-1">
-                            <span>Số nhiều: <span className="font-semibold text-foreground">{entry.plural}</span></span>
-                            <Separator orientation="vertical" className="h-4" />
-                            <span>Phiên âm: <span className="font-semibold text-foreground">{entry.phonetic}</span></span>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="p-4 space-y-3">
-                       <div>
-                            <p className="text-sm font-semibold text-muted-foreground">Ví dụ:</p>
-                            <p className="italic">{entry.exampleGerman}</p>
-                       </div>
-                        <div>
-                            <p className="text-sm font-semibold text-muted-foreground">Giải nghĩa:</p>
-                            <p>{entry.exampleVietnamese}</p>
-                        </div>
-                    </CardContent>
-                </Card>
+                <VocabularyCard key={index} entry={entry} />
             ))}
           </div>
         )}
