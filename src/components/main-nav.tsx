@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 import { type Doc } from "@/types";
+import { Separator } from "./ui/separator";
 
 interface MainNavProps {
     docs?: Doc[];
@@ -68,8 +69,17 @@ export function MainNav({ docs = [] }: MainNavProps) {
                     <div className="w-full flex-1 md:w-auto md:flex-none">
                         <SearchCommand docs={docs} />
                     </div>
-                    <nav className="flex items-center">
+                    <nav className="flex items-center gap-2">
                         <ThemeToggle />
+                        <Separator orientation="vertical" className="h-6 hidden sm:block" />
+                        <div className="hidden sm:flex items-center gap-2">
+                            <Button variant="ghost" asChild>
+                                <Link href="/login">Đăng nhập</Link>
+                            </Button>
+                            <Button asChild>
+                                <Link href="/signup">Đăng ký</Link>
+                            </Button>
+                        </div>
                     </nav>
                 </div>
             </div>
