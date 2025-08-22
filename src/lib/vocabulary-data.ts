@@ -5,6 +5,8 @@ export type VocabularyEntry = {
   vietnamese: string;
   exampleGerman: string;
   exampleVietnamese: string;
+  type: string;
+  level: string;
 };
 
 export const vocabularyList: VocabularyEntry[] = [
@@ -15,6 +17,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Đầu",
     exampleGerman: "Der Kopf tut weh, weil ich gestern gestürzt bin.",
     exampleVietnamese: "Đầu tôi đau, vì hôm qua tôi bị ngã.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "das Gesicht",
@@ -23,6 +27,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Khuôn mặt",
     exampleGerman: "Das Gesicht des Kindes war voller Freude.",
     exampleVietnamese: "Khuôn mặt của đứa trẻ đầy niềm vui.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "das Haar",
@@ -31,6 +37,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Tóc",
     exampleGerman: "Die Haare sind sehr lang, deshalb muss ich sie schneiden.",
     exampleVietnamese: "Tóc tôi rất dài, vì vậy tôi phải cắt.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Stirn",
@@ -39,6 +47,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Trán",
     exampleGerman: "Die Stirn ist manchmal ein Indikator für Stress.",
     exampleVietnamese: "Trán đôi khi là dấu hiệu của căng thẳng.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "das Auge",
@@ -47,6 +57,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Mắt",
     exampleGerman: "Das Auge tut weh, weil ich es gestern verletzt habe.",
     exampleVietnamese: "Mắt thì đau, vì hôm qua tôi đã làm tổn thương nó.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Augenbraue",
@@ -55,6 +67,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Lông mày",
     exampleGerman: "Die Augenbrauen müssen regelmäßig gezupft werden.",
     exampleVietnamese: "Lông mày cần được nhổ đều đặn.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Wimper",
@@ -63,6 +77,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Lông mi",
     exampleGerman: "Die Wimpern sind lang, weil sie mit Mascara betont werden.",
     exampleVietnamese: "Lông mi dài, vì chúng được tô điểm với mascara.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Nase",
@@ -71,6 +87,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Mũi",
     exampleGerman: "Die Nase ist rot, weil ich erkältet bin.",
     exampleVietnamese: "Mũi tôi đỏ, vì tôi bị cảm lạnh.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "das Ohr",
@@ -79,6 +97,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Tai",
     exampleGerman: "Das Ohr hört alles, aber es kann nicht immer verstehen.",
     exampleVietnamese: "Tai nghe tất cả, nhưng không phải lúc nào cũng hiểu.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "der Mund",
@@ -87,6 +107,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Miệng",
     exampleGerman: "Der Mund ist trocken, weil ich lange nicht gesprochen habe.",
     exampleVietnamese: "Miệng tôi khô, vì tôi đã không nói chuyện lâu.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Lippe",
@@ -95,6 +117,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Môi",
     exampleGerman: "Die Lippen sind rot, weil ich Lippenstift trage.",
     exampleVietnamese: "Môi tôi đỏ, vì tôi đang thoa son môi.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "der Zahn",
@@ -103,6 +127,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Răng",
     exampleGerman: "Die Zähne sind gesund, weil ich jeden Tag putze.",
     exampleVietnamese: "Răng tôi khỏe mạnh, vì tôi đánh răng mỗi ngày.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Zunge",
@@ -111,6 +137,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Lưỡi",
     exampleGerman: "Die Zunge ist empfindlich, weil sie bei der Verdauung hilft.",
     exampleVietnamese: "Lưỡi rất nhạy cảm, vì nó giúp trong quá trình tiêu hóa.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "das Kinn",
@@ -119,6 +147,8 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Cằm",
     exampleGerman: "Das Kinn ist markant, und man sieht es deutlich.",
     exampleVietnamese: "Cằm rất nổi bật, và bạn có thể thấy rõ.",
+    type: "Nomen",
+    level: "A1",
   },
   {
     german: "die Wange",
@@ -127,5 +157,7 @@ export const vocabularyList: VocabularyEntry[] = [
     vietnamese: "Má",
     exampleGerman: "Die Wange war rot, weil sie den ganzen Tag in der Sonne war.",
     exampleVietnamese: "Má tôi đỏ, vì tôi đã ở ngoài nắng cả ngày.",
+    type: "Nomen",
+    level: "A1",
   },
 ];

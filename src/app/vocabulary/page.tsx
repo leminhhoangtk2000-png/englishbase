@@ -45,7 +45,7 @@ function VocabularyCard({ entry }: { entry: VocabularyEntry }) {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <h2 className="text-2xl font-bold font-headline text-primary">{entry.german}</h2>
-                        <Badge variant="outline">{entry.vietnamese}</Badge>
+                        <Badge variant="secondary">{entry.vietnamese}</Badge>
                     </div>
                     <div className="flex items-center gap-1">
                         <Button variant="ghost" size="icon">
@@ -58,7 +58,10 @@ function VocabularyCard({ entry }: { entry: VocabularyEntry }) {
                         </Button>
                     </div>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground pt-1">
+                 <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
+                    <Badge variant="outline">{entry.level}</Badge>
+                    <Badge variant="outline">{entry.type}</Badge>
+                    <Separator orientation="vertical" className="h-4" />
                     <span>Số nhiều: <span className="font-semibold text-foreground">{entry.plural}</span></span>
                     <Separator orientation="vertical" className="h-4" />
                     <span>Phiên âm: <span className="font-semibold text-foreground">{entry.phonetic}</span></span>
@@ -269,6 +272,9 @@ export default function VocabularyPage() {
                                 <div className="p-4 space-y-3 bg-muted/50 rounded-md border">
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                            <Badge variant="outline">{word.level}</Badge>
+                                            <Badge variant="outline">{word.type}</Badge>
+                                            <Separator orientation="vertical" className="h-4" />
                                             <span>Số nhiều: <span className="font-semibold text-foreground">{word.plural}</span></span>
                                             <Separator orientation="vertical" className="h-4" />
                                             <span>Phiên âm: <span className="font-semibold text-foreground">{word.phonetic}</span></span>
