@@ -1,13 +1,26 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Search, BookOpenText, Volume2 } from "lucide-react";
+import { Search, BookOpenText, Volume2, History, Bookmark } from "lucide-react";
 import React from "react";
 import { vocabularyList, type VocabularyEntry } from "@/lib/vocabulary-data";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+
+const searchHistorySample: VocabularyEntry[] = [
+  vocabularyList[0], // der Kopf
+  vocabularyList[4], // das Auge
+  vocabularyList[7], // die Nase
+];
+
+const savedWordsSample: VocabularyEntry[] = [
+  vocabularyList[11], // der Zahn
+  vocabularyList[12], // die Zunge
+  vocabularyList[14], // die Wange
+];
+
 
 export default function VocabularyPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -94,13 +107,46 @@ export default function VocabularyPage() {
         )}
 
         {!isLoading && !results && !notFound && (
-          <div className="text-center py-16 px-6 bg-secondary/50 rounded-lg">
-            <BookOpenText className="mx-auto h-12 w-12 text-muted-foreground" />
-            <h3 className="mt-4 text-lg font-medium">Bắt đầu tra cứu</h3>
-            <p className="mt-1 text-muted-foreground">
-              Kết quả của bạn sẽ được hiển thị ở đây.
-            </p>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                            <History className="w-5 h-5" />
+                            <span>Lịch sử tra cứu</span>
+                        </CardTitle>
+                        <CardDescription>Các từ bạn đã tra gần đây.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-3">
+                            {searchHistorySample.map(item => (
+                                <li key={item.german} className="flex justify-between items-center text-sm">
+                                    <span className="font-medium">{item.german}</span>
+                                    <span className="text-muted-foreground">{item.vietnamese}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                            <Bookmark className="w-5 h-5" />
+                            <span>Từ vựng đã lưu</span>
+                        </CardTitle>
+                        <CardDescription>Các từ bạn đã lưu để học lại.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-3">
+                             {savedWordsSample.map(item => (
+                                <li key={item.german} className="flex justify-between items-center text-sm">
+                                    <span className="font-medium">{item.german}</span>
+                                    <span className="text-muted-foreground">{item.vietnamese}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </CardContent>
+                </Card>
+            </div>
         )}
 
         {!isLoading && results && (
@@ -113,10 +159,16 @@ export default function VocabularyPage() {
                                 <h2 className="text-2xl font-bold font-headline text-primary">{entry.german}</h2>
                                 <Badge variant="outline">{entry.vietnamese}</Badge>
                             </div>
-                            <Button variant="ghost" size="icon">
-                                <Volume2 className="h-5 w-5" />
-                                <span className="sr-only">Phát âm</span>
-                            </Button>
+                           <div className="flex items-center gap-1">
+                                <Button variant="ghost" size="icon">
+                                    <Bookmark className="h-5 w-5" />
+                                    <span className="sr-only">Lưu từ</span>
+                                </Button>
+                                <Button variant="ghost" size="icon">
+                                    <Volume2 className="h-5 w-5" />
+                                    <span className="sr-only">Phát âm</span>
+                                </Button>
+                           </div>
                         </div>
                          <div className="flex items-center gap-4 text-sm text-muted-foreground pt-1">
                             <span>Số nhiều: <span className="font-semibold text-foreground">{entry.plural}</span></span>
