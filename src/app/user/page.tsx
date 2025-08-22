@@ -48,10 +48,7 @@ function ContributionGraph() {
   return (
     <div className="flex items-start gap-4">
       <div className="p-4 border rounded-md flex-1">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-base mb-2">{days.filter(d => d > 0).length} đóng góp trong năm {selectedYear}</h3>
-          <Button variant="outline" size="sm" className="text-xs h-7">Cài đặt đóng góp</Button>
-        </div>
+        <h3 className="text-base mb-4">{days.filter(d => d > 0).length} đóng góp trong năm {selectedYear}</h3>
         
         <div className="flex gap-3">
           <div className="flex flex-col text-xs text-muted-foreground self-stretch pt-6">
