@@ -26,6 +26,7 @@ const navLinks = [
     { href: "/blog-new", label: "Blog" },
     { href: "/user", label: "User" },
     { href: "/user-premium", label: "User Premium" },
+    { href: "/kiem-tra", label: "Kiểm tra" },
     { href: "/admin", label: "Admin" },
 ];
 
