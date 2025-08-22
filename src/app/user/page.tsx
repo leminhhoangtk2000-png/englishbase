@@ -5,7 +5,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -16,6 +16,8 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 
 function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
@@ -255,6 +257,39 @@ function PlatformReview() {
     );
 }
 
+function LearningGoal() {
+    const [goal, setGoal] = React.useState("b1");
+
+    return (
+        <Card className="mt-8">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                    <Target className="w-5 h-5" />
+                    Mục tiêu học tập của bạn
+                </CardTitle>
+                <CardDescription>
+                    Chọn trình độ bạn đang hướng tới để chúng tôi có thể cá nhân hóa trải nghiệm học tập.
+                </CardDescription>
+            </CardHeader>
+            <CardContent>
+                <Select value={goal} onValueChange={setGoal}>
+                    <SelectTrigger className="w-[280px]">
+                        <SelectValue placeholder="Chọn mục tiêu..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="a1">Sơ cấp 1 (A1)</SelectItem>
+                        <SelectItem value="a2">Sơ cấp 2 (A2)</SelectItem>
+                        <SelectItem value="b1">Trung cấp 1 (B1)</SelectItem>
+                        <SelectItem value="b2">Trung cấp 2 (B2)</SelectItem>
+                        <SelectItem value="c1">Cao cấp 1 (C1)</SelectItem>
+                        <SelectItem value="c2">Cao cấp 2 (C2)</SelectItem>
+                    </SelectContent>
+                </Select>
+            </CardContent>
+        </Card>
+    )
+}
+
 export default function UserPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -329,6 +364,8 @@ export default function UserPage() {
             </TabsList>
             <TabsContent value="profile">
               <ContributionGraph />
+
+              <LearningGoal />
 
               <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động</h2>
               <div className="border-t">
