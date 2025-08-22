@@ -8,6 +8,20 @@ import React from "react";
 import { vocabularyList, type VocabularyEntry } from "@/lib/vocabulary-data";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 const searchHistorySample: VocabularyEntry[] = [
   vocabularyList[0], // der Kopf
@@ -21,6 +35,14 @@ const savedWordsSample: VocabularyEntry[] = [
   vocabularyList[14], // die Wange
 ];
 
+const vocabularyByTopic = [
+    {
+        topic: "Körperteile (Các bộ phận cơ thể)",
+        level: "A1",
+        words: vocabularyList,
+    }
+    // Add more topics here in the future
+]
 
 export default function VocabularyPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -117,6 +139,7 @@ export default function VocabularyPage() {
         )}
 
         {!isLoading && !results && !notFound && (
+          <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card>
                     <CardHeader>
@@ -167,6 +190,48 @@ export default function VocabularyPage() {
                     </CardContent>
                 </Card>
             </div>
+            
+            <Separator className="my-12" />
+
+            <div className="space-y-4">
+                <div className="text-center">
+                    <h2 className="text-2xl font-bold font-headline">Thư viện Từ vựng</h2>
+                    <p className="text-muted-foreground">Khám phá từ vựng theo chủ đề và trình độ.</p>
+                </div>
+                <Accordion type="single" collapsible className="w-full">
+                  {vocabularyByTopic.map((topicItem, index) => (
+                    <AccordionItem value={`item-${index}`} key={index}>
+                      <AccordionTrigger className="text-lg font-semibold">
+                        <div className="flex items-center gap-4">
+                            <Badge>{topicItem.level}</Badge>
+                            <span>{topicItem.topic}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead className="w-[35%]">Từ tiếng Đức</TableHead>
+                              <TableHead className="w-[35%]">Số nhiều</TableHead>
+                              <TableHead>Nghĩa tiếng Việt</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {topicItem.words.map((word) => (
+                              <TableRow key={word.german}>
+                                <TableCell className="font-medium">{word.german}</TableCell>
+                                <TableCell>{word.plural}</TableCell>
+                                <TableCell>{word.vietnamese}</TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+            </div>
+          </>
         )}
 
         {!isLoading && results && (
