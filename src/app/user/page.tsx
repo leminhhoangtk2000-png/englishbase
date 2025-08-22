@@ -325,7 +325,7 @@ export default function UserPage() {
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
-              <TabsTrigger value="support" className="flex items-center gap-1.5 font-semibold data-[state=inactive]:text-yellow-600 data-[state=active]:text-yellow-500 data-[state=inactive]:bg-yellow-500/10 data-[state=active]:bg-yellow-500/20">
+              <TabsTrigger value="support" className="flex items-center gap-1.5 font-semibold data-[state=inactive]:text-orange-600 data-[state=active]:text-orange-500 data-[state=inactive]:bg-orange-500/10 data-[state=active]:bg-orange-500/20 nude:data-[state=inactive]:text-primary nude:data-[state=inactive]:bg-primary/10 nude:data-[state=active]:bg-primary/20">
                 <Star className="w-4 h-4" />
                 Trở thành người hỗ trợ
               </TabsTrigger>
