@@ -241,11 +241,47 @@ export default function VocabularyPage() {
                         </div>
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="space-y-4">
-                            {topicItem.words.map((word) => (
-                              <VocabularyCard key={word.german} entry={word} />
-                            ))}
-                        </div>
+                        <Accordion type="single" collapsible className="w-full">
+                          {topicItem.words.map((word, wordIndex) => (
+                            <AccordionItem value={`word-${index}-${wordIndex}`} key={word.german}>
+                              <AccordionTrigger className="text-base font-medium hover:no-underline">
+                                <div className="flex justify-between w-full pr-4 items-center">
+                                    <span>{word.german}</span>
+                                    <span className="text-sm text-muted-foreground">{word.vietnamese}</span>
+                                </div>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <div className="p-4 space-y-3 bg-muted/50 rounded-md border">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                            <span>Số nhiều: <span className="font-semibold text-foreground">{word.plural}</span></span>
+                                            <Separator orientation="vertical" className="h-4" />
+                                            <span>Phiên âm: <span className="font-semibold text-foreground">{word.phonetic}</span></span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                                                <Bookmark className="h-5 w-5" />
+                                                <span className="sr-only">Lưu từ</span>
+                                            </Button>
+                                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                                                <Volume2 className="h-5 w-5" />
+                                                <span className="sr-only">Phát âm</span>
+                                            </Button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-semibold text-muted-foreground">Ví dụ:</p>
+                                        <p className="italic">{word.exampleGerman}</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-semibold text-muted-foreground">Giải nghĩa:</p>
+                                        <p>{word.exampleVietnamese}</p>
+                                    </div>
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                          ))}
+                        </Accordion>
                       </AccordionContent>
                     </AccordionItem>
                   ))}
