@@ -20,7 +20,7 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <>
       <MainNav />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="space-y-0.5">
@@ -37,6 +37,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <div className="flex-1">{children}</div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

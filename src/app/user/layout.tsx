@@ -7,9 +7,9 @@ interface UserLayoutProps {
 
 export default function UserLayout({ children }: UserLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <>
       <MainNav />
       <main>{children}</main>
-    </div>
+    </>
   );
 }
