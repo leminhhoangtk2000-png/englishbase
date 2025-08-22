@@ -3,24 +3,46 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Search, BookOpenText } from "lucide-react";
+import { Search, BookOpenText, Volume2 } from "lucide-react";
 import React from "react";
+import { vocabularyList, type VocabularyEntry } from "@/lib/vocabulary-data";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 export default function VocabularyPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
-  const [results, setResults] = React.useState(null);
+  const [results, setResults] = React.useState<VocabularyEntry[] | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [notFound, setNotFound] = React.useState(false);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchTerm.trim()) return;
-    // Here you would typically call an API
-    // For now, we'll just simulate a loading state
+    if (!searchTerm.trim()) {
+        setResults(null);
+        setNotFound(false);
+        return;
+    };
+
     setIsLoading(true);
+    setNotFound(false);
+    setResults(null);
+
     setTimeout(() => {
-      //
+      const lowerCaseSearchTerm = searchTerm.toLowerCase().trim();
+      const filteredResults = vocabularyList.filter(
+        (entry) =>
+          entry.german.toLowerCase().includes(lowerCaseSearchTerm) ||
+          entry.vietnamese.toLowerCase().includes(lowerCaseSearchTerm) ||
+          entry.plural.toLowerCase().includes(lowerCaseSearchTerm)
+      );
+
+      if (filteredResults.length > 0) {
+        setResults(filteredResults);
+      } else {
+        setNotFound(true);
+      }
       setIsLoading(false);
-    }, 1500);
+    }, 500); // Simulate network delay
   };
 
   return (
@@ -54,9 +76,24 @@ export default function VocabularyPage() {
       </div>
 
       <div className="mt-16 max-w-4xl mx-auto">
-        {isLoading ? (
-            <div className="text-center text-muted-foreground">Đang tải kết quả...</div>
-        ) : !results ? (
+        {isLoading && (
+            <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                <p className="ml-4 text-muted-foreground">Đang tải kết quả...</p>
+            </div>
+        )}
+        
+        {!isLoading && notFound && (
+            <div className="text-center py-16 px-6 bg-secondary/50 rounded-lg">
+                <BookOpenText className="mx-auto h-12 w-12 text-muted-foreground" />
+                <h3 className="mt-4 text-lg font-medium">Không tìm thấy kết quả</h3>
+                <p className="mt-1 text-muted-foreground">
+                    Chúng tôi không tìm thấy từ nào phù hợp với "{searchTerm}". Vui lòng thử lại.
+                </p>
+            </div>
+        )}
+
+        {!isLoading && !results && !notFound && (
           <div className="text-center py-16 px-6 bg-secondary/50 rounded-lg">
             <BookOpenText className="mx-auto h-12 w-12 text-muted-foreground" />
             <h3 className="mt-4 text-lg font-medium">Bắt đầu tra cứu</h3>
@@ -64,8 +101,42 @@ export default function VocabularyPage() {
               Kết quả của bạn sẽ được hiển thị ở đây.
             </p>
           </div>
-        ) : (
-          <div>{/* Render results here */}</div>
+        )}
+
+        {!isLoading && results && (
+          <div className="space-y-6">
+            {results.map((entry, index) => (
+                <Card key={index} className="overflow-hidden">
+                    <CardHeader className="bg-muted/50 p-4">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <h2 className="text-2xl font-bold font-headline text-primary">{entry.german}</h2>
+                                <Badge variant="outline">{entry.vietnamese}</Badge>
+                            </div>
+                            <Button variant="ghost" size="icon">
+                                <Volume2 className="h-5 w-5" />
+                                <span className="sr-only">Phát âm</span>
+                            </Button>
+                        </div>
+                         <div className="flex items-center gap-4 text-sm text-muted-foreground pt-1">
+                            <span>Số nhiều: <span className="font-semibold text-foreground">{entry.plural}</span></span>
+                            <Separator orientation="vertical" className="h-4" />
+                            <span>Phiên âm: <span className="font-semibold text-foreground">{entry.phonetic}</span></span>
+                        </div>
+                    </CardHeader>
+                    <CardContent className="p-4 space-y-3">
+                       <div>
+                            <p className="text-sm font-semibold text-muted-foreground">Ví dụ:</p>
+                            <p className="italic">{entry.exampleGerman}</p>
+                       </div>
+                        <div>
+                            <p className="text-sm font-semibold text-muted-foreground">Giải nghĩa:</p>
+                            <p>{entry.exampleVietnamese}</p>
+                        </div>
+                    </CardContent>
+                </Card>
+            ))}
+          </div>
         )}
       </div>
     </div>
