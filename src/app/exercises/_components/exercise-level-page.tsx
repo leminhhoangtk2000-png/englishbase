@@ -5,9 +5,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, SlidersHorizontal } from "lucide-react";
+import { Clock, SlidersHorizontal, Eye, MessageCircle } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -25,6 +25,8 @@ const exercises = [
     duration: "2 phút đọc",
     description: "Bài tập nghe về tìm nhà ở Leipzig, trình độ B1",
     href: "#",
+    views: 1200,
+    comments: 15,
   },
   {
     title: "Kleine Gewohnheiten, große Wirkung",
@@ -33,6 +35,8 @@ const exercises = [
     duration: "3 phút đọc",
     description: "Bài tập nghe về thói quen hàng ngày và ý nghĩa lâu dài, trình độ B1",
     href: "#",
+    views: 2300,
+    comments: 28,
   },
   {
     title: "Mein Nebenjob im Studium",
@@ -41,6 +45,8 @@ const exercises = [
     duration: "3 phút đọc",
     description: "Bài tập nghe về kinh nghiệm đi làm thêm khi đang học đại học, trình độ B1",
     href: "#",
+    views: 980,
+    comments: 12,
   },
   {
     title: "Freundschaft im digitalen Zeitalter",
@@ -49,6 +55,8 @@ const exercises = [
     duration: "3 phút đọc",
     description: "Bài tập nghe về tình bạn trong thời đại số, trình độ B1",
     href: "#",
+    views: 1500,
+    comments: 22,
   },
   {
     title: "Homeoffice – Erfahrung und Meinung",
@@ -57,6 +65,8 @@ const exercises = [
     duration: "3 phút đọc",
     description: "Bài tập nghe về kinh nghiệm làm việc tại nhà, trình độ B1+",
     href: "#",
+    views: 1800,
+    comments: 19,
   },
   {
     title: "Reisen als Student – mit wenig Geld die Welt entdecken",
@@ -65,6 +75,8 @@ const exercises = [
     duration: "3 phút đọc",
     description: "Bài tập nghe về kinh nghiệm du lịch tiết kiệm thời sinh viên, trình độ B1+",
     href: "#",
+    views: 2100,
+    comments: 35,
   },
 ];
 
@@ -190,12 +202,24 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                 </div>
                 <CardContent className="p-4 flex flex-col flex-grow">
                   <h4 className="font-semibold mb-2">{exercise.title}</h4>
-                  <div className="flex items-center text-xs text-muted-foreground mb-3">
-                    <Clock className="w-3 h-3 mr-1.5" />
-                    <span>{exercise.duration}</span>
-                  </div>
                   <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
                 </CardContent>
+                <CardFooter className="p-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">
+                    <div className="flex items-center">
+                        <Clock className="w-3 h-3 mr-1.5" />
+                        <span>{exercise.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center">
+                            <Eye className="w-3 h-3 mr-1.5" />
+                            <span>{(exercise.views / 1000).toFixed(1)}k</span>
+                        </div>
+                        <div className="flex items-center">
+                            <MessageCircle className="w-3 h-3 mr-1.5" />
+                            <span>{exercise.comments}</span>
+                        </div>
+                    </div>
+                </CardFooter>
               </Card>
             </Link>
           ))}
