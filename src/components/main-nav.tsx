@@ -17,10 +17,10 @@ interface MainNavProps {
 }
 
 const navLinks = [
-    { href: "/docs", label: "A1 Niveau" },
-    { href: "/blog", label: "A2 Niveau" },
-    { href: "/components", label: "B1 Niveau" },
-    { href: "/examples", label: "B2 Niveau" },
+    { href: "/docs", label: "Ngữ pháp A1" },
+    { href: "/blog", label: "Ngữ pháp A2" },
+    { href: "/components", label: "Ngữ pháp B1" },
+    { href: "/examples", label: "Ngữ pháp B2" },
     { href: "/exercises", label: "Bài tập" },
     { href: "/vocabulary", label: "Từ vựng" },
     { href: "/blog-new", label: "Blog" },

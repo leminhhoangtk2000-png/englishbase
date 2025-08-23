@@ -1,4 +1,7 @@
 import { blogConfig } from "@/config/blog";
+import { docsConfig } from "@/config/docs";
+import { componentsConfig } from "@/config/components";
+import { examplesConfig } from "@/config/examples";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";
@@ -16,7 +19,12 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
     items: item.items?.map(({ component, ...subItem }) => subItem),
   }));
 
-  const allDocs: Doc[] = blogConfig.items.flatMap(item => item.items ?? []).map(doc => ({
+  const allDocs: Doc[] = [
+    ...docsConfig.items.flatMap(item => item.items ?? []),
+    ...blogConfig.items.flatMap(item => item.items ?? []),
+    ...componentsConfig.items.flatMap(item => item.items ?? []),
+    ...examplesConfig.items.flatMap(item => item.items ?? [])
+  ].map(doc => ({
       title: doc.title,
       href: doc.href ?? '',
       content: doc.description ?? '',
