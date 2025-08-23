@@ -5,7 +5,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Crown } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -366,32 +366,43 @@ export default function UserPage() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="profile">
-              <ContributionGraph />
-
-              <LearningGoal />
-
-              <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động</h2>
-              <div className="border-t">
-                  <div className="text-center text-sm py-3 border-b">
-                      Tháng Tám 2025
-                  </div>
-
-                  {userActivity.map((activity, index) => (
-                    <TimelineItem 
-                      key={index} 
-                      icon={activity.type === 'read_blog' ? <BookOpen className="w-4 h-4" /> : <ClipboardCheck className="w-4 h-4" />}
-                      isLast={index === userActivity.length - 1}
-                    >
-                      <div className="flex justify-between items-start text-sm">
-                          <p className="text-muted-foreground">
-                            {activity.type === 'read_blog' ? 'Đã đọc bài viết ' : 'Đã hoàn thành bài tập '}
-                            <Link href="#" className="font-semibold text-foreground hover:underline">{activity.title}</Link>
-                            {activity.score && <span> với số điểm <span className="font-semibold text-foreground">{activity.score}</span></span>}
-                          </p>
-                          <span className="text-muted-foreground flex-shrink-0 ml-4">{activity.date}</span>
+              <div className="relative">
+                <div className="filter blur-sm opacity-50 pointer-events-none">
+                  <ContributionGraph />
+                  <LearningGoal />
+                  <h2 className="text-lg font-semibold mt-8 mb-4">Hoạt động</h2>
+                  <div className="border-t">
+                      <div className="text-center text-sm py-3 border-b">
+                          Tháng Tám 2025
                       </div>
-                    </TimelineItem>
-                  ))}
+                      {userActivity.map((activity, index) => (
+                        <TimelineItem 
+                          key={index} 
+                          icon={activity.type === 'read_blog' ? <BookOpen className="w-4 h-4" /> : <ClipboardCheck className="w-4 h-4" />}
+                          isLast={index === userActivity.length - 1}
+                        >
+                          <div className="flex justify-between items-start text-sm">
+                              <p className="text-muted-foreground">
+                                {activity.type === 'read_blog' ? 'Đã đọc bài viết ' : 'Đã hoàn thành bài tập '}
+                                <Link href="#" className="font-semibold text-foreground hover:underline">{activity.title}</Link>
+                                {activity.score && <span> với số điểm <span className="font-semibold text-foreground">{activity.score}</span></span>}
+                              </p>
+                              <span className="text-muted-foreground flex-shrink-0 ml-4">{activity.date}</span>
+                          </div>
+                        </TimelineItem>
+                      ))}
+                  </div>
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/80 rounded-lg p-8 text-center">
+                    <Crown className="w-16 h-16 text-yellow-500 mb-4" />
+                    <h3 className="text-2xl font-bold font-headline mb-2">Mở khóa tính năng Premium</h3>
+                    <p className="text-muted-foreground mb-6 max-w-md">
+                        Nâng cấp tài khoản để theo dõi tiến độ học tập, đặt mục tiêu và xem lại lịch sử hoạt động của bạn.
+                    </p>
+                    <Button size="lg" asChild>
+                        <Link href="/user-premium">Nâng cấp ngay</Link>
+                    </Button>
+                </div>
               </div>
             </TabsContent>
             <TabsContent value="manage-blog">
