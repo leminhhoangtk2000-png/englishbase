@@ -1,9 +1,11 @@
+
 import { notFound } from "next/navigation";
 import { getDocFromParams } from "@/lib/exercises";
 import { DocsTOC } from "../_components/docs-toc";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { ExercisesLandingPage } from "../_components/exercises-landing-page";
+import { ExerciseLevelPage } from "../_components/exercise-level-page";
 
 interface DocPageProps {
   params: {
@@ -17,6 +19,11 @@ export default async function DocPage({ params }: DocPageProps) {
     return <ExercisesLandingPage />;
   }
 
+  // Handle specific level pages like /exercises/a1
+  if (params.slug.length === 1 && ["a1", "a2", "b1", "b2"].includes(params.slug[0])) {
+    return <ExerciseLevelPage />;
+  }
+  
   const doc = await getDocFromParams(params.slug);
 
   if (!doc || !doc.component) {
