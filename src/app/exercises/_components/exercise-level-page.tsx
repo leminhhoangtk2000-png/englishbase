@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, SlidersHorizontal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const exercises = [
   {
@@ -60,77 +61,57 @@ const exercises = [
   },
 ];
 
-export function ExerciseLevelPage() {
+const levels = ["a1", "a2", "b1", "b2"];
+
+export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
   const [skillFilter, setSkillFilter] = React.useState("Nghe");
-  const [levelFilter, setLevelFilter] = React.useState("Nâng cao");
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold font-headline">Bài tập nghe trình độ B1</h1>
+        <h1 className="text-3xl font-bold font-headline">Bài tập nghe trình độ {level.toUpperCase()}</h1>
         <p className="text-muted-foreground mt-2">Luyện tập kỹ năng nghe qua các bài hội thoại và tình huống thực tế.</p>
       </div>
 
       <Card className="mb-8">
-        <CardContent className="p-4 flex flex-col md:flex-row items-center gap-6">
-            <div className="flex items-center gap-2 text-sm font-semibold">
-                <SlidersHorizontal className="w-4 h-4" />
-                <span>Bộ lọc</span>
+        <CardContent className="p-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                  <SlidersHorizontal className="w-4 h-4" />
+                  <span>KỸ NĂNG</span>
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant={skillFilter === "Tất cả" ? "default" : "secondary"}
+                  size="sm"
+                  onClick={() => setSkillFilter("Tất cả")}
+                >
+                  Tất cả
+                </Button>
+                <Button
+                  variant={skillFilter === "Nghe" ? "default" : "secondary"}
+                  size="sm"
+                  onClick={() => setSkillFilter("Nghe")}
+                >
+                  Nghe
+                </Button>
+                <Button
+                  variant={skillFilter === "Đọc" ? "default" : "secondary"}
+                  size="sm"
+                  onClick={() => setSkillFilter("Đọc")}
+                >
+                  Đọc
+                </Button>
+              </div>
             </div>
-            <Separator orientation="vertical" className="h-8 hidden md:block" />
-          <div className="flex items-center gap-4">
-            <h3 className="font-semibold text-sm shrink-0">KỸ NĂNG</h3>
-            <div className="flex gap-2">
-              <Button
-                variant={skillFilter === "Tất cả" ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setSkillFilter("Tất cả")}
-              >
-                Tất cả
-              </Button>
-              <Button
-                variant={skillFilter === "Nghe" ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setSkillFilter("Nghe")}
-              >
-                Nghe
-              </Button>
-              <Button
-                variant={skillFilter === "Đọc" ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setSkillFilter("Đọc")}
-              >
-                Đọc
-              </Button>
+            
+            <div className="flex items-center gap-2">
+                {levels.map(lvl => (
+                    <Button key={lvl} variant={level === lvl ? 'default' : 'outline'} size="sm" asChild>
+                       <Link href={`/exercises/${lvl}`}>{lvl.toUpperCase()}</Link>
+                    </Button>
+                ))}
             </div>
-          </div>
-          <Separator orientation="vertical" className="h-8 hidden md:block" />
-          <div className="flex items-center gap-4">
-            <h3 className="font-semibold text-sm shrink-0">CẤP ĐỘ</h3>
-            <div className="flex gap-2">
-              <Button
-                variant={levelFilter === "Tất cả" ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setLevelFilter("Tất cả")}
-              >
-                Tất cả
-              </Button>
-              <Button
-                variant={levelFilter === "Nâng cao" ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setLevelFilter("Nâng cao")}
-              >
-                Nâng cao
-              </Button>
-              <Button
-                variant={levelFilter === "Cơ bản" ? "default" : "secondary"}
-                size="sm"
-                onClick={() => setLevelFilter("Cơ bản")}
-              >
-                Cơ bản
-              </Button>
-            </div>
-          </div>
         </CardContent>
       </Card>
       

@@ -21,7 +21,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
   // Handle specific level pages like /exercises/a1
   if (params.slug.length === 1 && ["a1", "a2", "b1", "b2"].includes(params.slug[0])) {
-    return <ExerciseLevelPage />;
+    return <ExerciseLevelPage level={params.slug[0]} />;
   }
   
   const doc = await getDocFromParams(params.slug);

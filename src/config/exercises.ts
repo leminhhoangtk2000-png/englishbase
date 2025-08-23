@@ -15,6 +15,24 @@ export const exercisesConfig: DocsConfig = {
           href: "/exercises/a1",
           component: ExerciseLevelPage,
         },
+        {
+          title: "Bài tập A2",
+          description: "Danh sách các bài tập cho trình độ A2",
+          href: "/exercises/a2",
+          component: ExerciseLevelPage,
+        },
+        {
+          title: "Bài tập B1",
+          description: "Danh sách các bài tập cho trình độ B1",
+          href: "/exercises/b1",
+          component: ExerciseLevelPage,
+        },
+        {
+          title: "Bài tập B2",
+          description: "Danh sách các bài tập cho trình độ B2",
+          href: "/exercises/b2",
+          component: ExerciseLevelPage,
+        },
       ],
     },
     {
