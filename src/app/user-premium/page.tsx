@@ -269,21 +269,29 @@ function LearningGoal() {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <div className="flex items-center justify-between">
-                    <Select value={goal} onValueChange={setGoal}>
-                        <SelectTrigger className="w-[280px]">
-                            <SelectValue placeholder="Chọn mục tiêu..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="a1">Sơ cấp 1 (A1)</SelectItem>
-                            <SelectItem value="a2">Sơ cấp 2 (A2)</SelectItem>
-                            <SelectItem value="b1">Trung cấp 1 (B1)</SelectItem>
-                            <SelectItem value="b2">Trung cấp 2 (B2)</SelectItem>
-                            <SelectItem value="c1">Cao cấp 1 (C1)</SelectItem>
-                            <SelectItem value="c2">Cao cấp 2 (C2)</SelectItem>
-                        </SelectContent>
-                    </Select>
-                    <Button>Làm bài test</Button>
+                <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                        <Select value={goal} onValueChange={setGoal}>
+                            <SelectTrigger className="w-[280px]">
+                                <SelectValue placeholder="Chọn mục tiêu..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="a1">Sơ cấp 1 (A1)</SelectItem>
+                                <SelectItem value="a2">Sơ cấp 2 (A2)</SelectItem>
+                                <SelectItem value="b1">Trung cấp 1 (B1)</SelectItem>
+                                <SelectItem value="b2">Trung cấp 2 (B2)</SelectItem>
+                                <SelectItem value="c1">Cao cấp 1 (C1)</SelectItem>
+                                <SelectItem value="c2">Cao cấp 2 (C2)</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Button>Làm bài test</Button>
+                    </div>
+                    <Separator />
+                    <div className="text-sm">
+                        <span className="text-muted-foreground">Trình độ hiện tại của bạn:</span>
+                        <p className="font-semibold text-lg text-primary">B1 - Trung cấp</p>
+                        <p className="text-xs text-muted-foreground">(Dựa trên kết quả bài kiểm tra ngày 29/08/2024)</p>
+                    </div>
                 </div>
             </CardContent>
         </Card>

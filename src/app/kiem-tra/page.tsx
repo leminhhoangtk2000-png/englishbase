@@ -19,7 +19,7 @@ export default function KiemTraPage() {
       <Card className="mt-12 max-w-3xl mx-auto">
         <CardHeader>
           <CardTitle>Bài kiểm tra trắc nghiệm tổng hợp</CardTitle>
-          <CardDescription>Bài thi bao gồm 60 câu hỏi và sẽ kéo dài trong 45 phút.</CardDescription>
+          <CardDescription>Bài thi bao gồm 12 đề với 60 câu hỏi và sẽ kéo dài trong 90 phút.</CardDescription>
         </CardHeader>
         <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
@@ -27,7 +27,7 @@ export default function KiemTraPage() {
                     <Clock className="w-8 h-8 text-primary" />
                     <div>
                         <p className="font-semibold">Thời gian</p>
-                        <p className="text-muted-foreground">45 phút</p>
+                        <p className="text-muted-foreground">90 phút</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-3">
