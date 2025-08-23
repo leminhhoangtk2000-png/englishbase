@@ -136,15 +136,20 @@ export default function VocabularyPage() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const term = searchTerm.trim();
-    if (term.includes(" ")) {
-        toast({
-            title: "Lỗi tìm kiếm",
-            description: "Chức năng này chỉ hỗ trợ tra cứu một từ duy nhất.",
-            variant: "destructive",
-        });
-        return;
+    const wordCount = term.split(/\s+/).filter(Boolean).length;
+
+    if (wordCount > 3) {
+      toast({
+        title: "Lỗi tìm kiếm",
+        description: "Chức năng này chỉ hỗ trợ tra cứu tối đa 3 từ.",
+        variant: "destructive",
+      });
+      return;
     }
-    performSearch(term);
+    
+    if (wordCount > 0) {
+      performSearch(term);
+    }
   };
 
   const handleHistoryClick = (word: string) => {
