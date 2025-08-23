@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, SlidersHorizontal, Eye, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Clock, SlidersHorizontal, Eye, MessageCircle, CheckCircle2, Star } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -29,6 +29,7 @@ const exercises = [
     views: 1200,
     comments: 15,
     completed: true,
+    rating: 4.8,
   },
   {
     title: "Kleine Gewohnheiten, große Wirkung",
@@ -40,6 +41,7 @@ const exercises = [
     views: 2300,
     comments: 28,
     completed: false,
+    rating: 4.5,
   },
   {
     title: "Mein Nebenjob im Studium",
@@ -51,6 +53,7 @@ const exercises = [
     views: 980,
     comments: 12,
     completed: true,
+    rating: 4.9,
   },
   {
     title: "Freundschaft im digitalen Zeitalter",
@@ -62,6 +65,7 @@ const exercises = [
     views: 1500,
     comments: 22,
     completed: false,
+    rating: 4.6,
   },
   {
     title: "Homeoffice – Erfahrung und Meinung",
@@ -73,6 +77,7 @@ const exercises = [
     views: 1800,
     comments: 19,
     completed: false,
+    rating: 4.7,
   },
   {
     title: "Reisen als Student – mit wenig Geld die Welt entdecken",
@@ -84,6 +89,7 @@ const exercises = [
     views: 2100,
     comments: 35,
     completed: false,
+    rating: 4.8,
   },
 ];
 
@@ -216,9 +222,15 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                   <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
                 </CardContent>
                 <CardFooter className="px-4 pb-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">
-                    <div className="flex items-center">
-                        <Clock className="w-3 h-3 mr-1.5" />
-                        <span>{exercise.duration}</span>
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center">
+                            <Clock className="w-3 h-3 mr-1.5" />
+                            <span>{exercise.duration}</span>
+                        </div>
+                         <div className="flex items-center">
+                            <Star className="w-3 h-3 mr-1.5 text-yellow-400 fill-yellow-400" />
+                            <span>{exercise.rating}</span>
+                        </div>
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center">
