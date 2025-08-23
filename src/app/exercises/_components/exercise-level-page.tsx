@@ -192,28 +192,30 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {exercises.map((exercise) => (
             <Link href={exercise.href} key={exercise.title}>
-              <Card className="overflow-hidden h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="relative">
-                  <Image
-                    src={exercise.image}
-                    alt={exercise.title}
-                    width={600}
-                    height={400}
-                    data-ai-hint={exercise.data_ai_hint}
-                    className="object-cover w-full h-48"
-                  />
-                  {exercise.completed && (
-                     <Badge className="absolute top-2 right-2 bg-green-600/90 text-white border-green-600">
-                        <CheckCircle2 className="w-3 h-3 mr-1.5" />
-                        Đã hoàn thành
-                    </Badge>
-                  )}
+              <Card className="h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+                 <div className="p-2">
+                    <div className="relative">
+                      <Image
+                        src={exercise.image}
+                        alt={exercise.title}
+                        width={600}
+                        height={400}
+                        data-ai-hint={exercise.data_ai_hint}
+                        className="object-cover w-full h-40 rounded-md"
+                      />
+                      {exercise.completed && (
+                         <Badge className="absolute top-2 right-2 bg-green-600/90 text-white border-green-600">
+                            <CheckCircle2 className="w-3 h-3 mr-1.5" />
+                            Đã hoàn thành
+                        </Badge>
+                      )}
+                    </div>
                 </div>
-                <CardContent className="p-4 flex flex-col flex-grow">
+                <CardContent className="px-4 pb-4 pt-2 flex flex-col flex-grow">
                   <h4 className="font-semibold mb-2 font-headline">{exercise.title}</h4>
                   <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
                 </CardContent>
-                <CardFooter className="p-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">
+                <CardFooter className="px-4 pb-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">
                     <div className="flex items-center">
                         <Clock className="w-3 h-3 mr-1.5" />
                         <span>{exercise.duration}</span>
