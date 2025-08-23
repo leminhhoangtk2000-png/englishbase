@@ -52,7 +52,7 @@ export function SearchCommand({ docs }: { docs: Doc[] }) {
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="Điểm ngữ pháp bạn cần là gì?" />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Links">
