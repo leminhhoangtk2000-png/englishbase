@@ -73,7 +73,7 @@ function ContributionGraph() {
               {days.map((level, index) => (
                 <div
                   key={index}
-                  className={`w-2.5 h-2.5 ${contributionColors[level]}`}
+                  className={`w-2.5 h-2.5 rounded-sm ${contributionColors[level]}`}
                   title={`Mức độ đóng góp ${level} vào ngày ${index + 1}`}
                 />
               ))}
@@ -86,7 +86,7 @@ function ContributionGraph() {
           <div className="flex items-center gap-1">
             <span>Ít</span>
             {contributionColors.map((color, index) => (
-              <div key={index} className={`w-2.5 h-2.5 ${color}`} />
+              <div key={index} className={`w-2.5 h-2.5 rounded-sm ${color}`} />
             ))}
             <span>Nhiều</span>
           </div>
