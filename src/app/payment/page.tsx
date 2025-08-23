@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle, ArrowRight, Home, Banknote, ShieldCheck, QrCode } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MainNav } from "@/components/main-nav";
 
 const tiers = {
   bronze: { name: "Người hỗ trợ Đồng", price: 25000, icon: "🥉" },
@@ -61,6 +62,8 @@ export default function PaymentPage() {
   const totalAmount = tiers[selectedTier].price * parseInt(selectedDuration);
 
   return (
+    <>
+    <MainNav />
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
       <div className="max-w-3xl mx-auto">
         {/* Stepper */}
@@ -210,5 +213,6 @@ export default function PaymentPage() {
         </Card>
       </div>
     </div>
+    </>
   );
 }
