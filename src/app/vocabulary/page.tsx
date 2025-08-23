@@ -15,6 +15,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { translateWord } from "@/ai/flows/vocabulary-flow";
+import { useToast } from "@/hooks/use-toast";
 
 
 const searchHistorySample: VocabularyEntry[] = [
@@ -87,6 +88,7 @@ export default function VocabularyPage() {
   const [results, setResults] = React.useState<VocabularyEntry[] | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [notFound, setNotFound] = React.useState(false);
+  const { toast } = useToast();
 
   const performSearch = async (term: string) => {
     if (!term.trim()) {
@@ -133,7 +135,16 @@ export default function VocabularyPage() {
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    performSearch(searchTerm);
+    const term = searchTerm.trim();
+    if (term.includes(" ")) {
+        toast({
+            title: "Lỗi tìm kiếm",
+            description: "Chức năng này chỉ hỗ trợ tra cứu một từ duy nhất.",
+            variant: "destructive",
+        });
+        return;
+    }
+    performSearch(term);
   };
 
   const handleHistoryClick = (word: string) => {
