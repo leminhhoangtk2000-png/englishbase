@@ -582,6 +582,11 @@ export default function UserPage() {
                             </CardFooter>
                         </Card>
                     </div>
+                    <p className="text-center text-sm text-muted-foreground italic mt-8 max-w-2xl mx-auto">
+                      Ngoài tiếng Đức, bọn mình đã và đang xây dựng team để có thể <strong className="text-foreground">xây dựng thêm nền tảng tiếng Anh</strong>. Vì vậy <strong className="text-foreground">kinh phí là một khoản thật sự cần thiết</strong>.
+                      <br />
+                      <strong className="text-foreground">Rất cảm ơn vì sự ủng hộ của các bạn!</strong>
+                    </p>
                 </div>
             </TabsContent>
           </Tabs>
