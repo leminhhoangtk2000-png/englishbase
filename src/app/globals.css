@@ -79,6 +79,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  .nude ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
 }
 
 @layer utilities {
