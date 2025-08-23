@@ -27,6 +27,7 @@ const navLinks = [
     { href: "/user", label: "User" },
     { href: "/user-premium", label: "User Premium" },
     { href: "/kiem-tra", label: "Kiểm tra" },
+    { href: "/payment", label: "Thanh toán" },
     { href: "/admin", label: "Admin" },
 ];
 

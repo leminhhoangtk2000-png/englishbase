@@ -516,7 +516,9 @@ export default function UserPremiumPage() {
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <Button className="w-full">Hỗ trợ</Button>
+                                <Button className="w-full" asChild>
+                                    <Link href="/payment?tier=bronze">Hỗ trợ</Link>
+                                </Button>
                             </CardFooter>
                         </Card>
                          <Card className="flex flex-col border-primary shadow-lg">
@@ -533,7 +535,9 @@ export default function UserPremiumPage() {
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <Button className="w-full">Hỗ trợ</Button>
+                                <Button className="w-full" asChild>
+                                    <Link href="/payment?tier=silver">Hỗ trợ</Link>
+                                </Button>
                             </CardFooter>
                         </Card>
                          <Card className="flex flex-col">
@@ -550,7 +554,9 @@ export default function UserPremiumPage() {
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                               <Button className="w-full">Hỗ trợ</Button>
+                               <Button className="w-full" asChild>
+                                    <Link href="/payment?tier=gold">Hỗ trợ</Link>
+                               </Button>
                             </CardFooter>
                         </Card>
                     </div>

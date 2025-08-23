@@ -20,6 +20,10 @@ const sidebarNavItems = [
     title: "Quy tắc Blog",
     href: "/admin/blog-rules",
   },
+  {
+    title: "Sepay Webhooks",
+    href: "/admin/sepay-webhooks",
+  }
 ];
 
 interface AdminLayoutProps {
