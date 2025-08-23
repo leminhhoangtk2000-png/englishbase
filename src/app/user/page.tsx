@@ -540,7 +540,7 @@ export default function UserPage() {
                             <CardContent className="flex-grow">
                                 <ul className="space-y-2 text-sm text-muted-foreground">
                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tên của bạn sẽ được vinh danh.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 1 bạn học.</li>
                                 </ul>
                             </CardContent>
                             <CardFooter>
@@ -556,8 +556,8 @@ export default function UserPage() {
                             </CardHeader>
                             <CardContent className="flex-grow">
                                  <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tất cả quyền lợi của gói Đồng.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Truy cập sớm các tính năng mới.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 6 bạn học.</li>
                                 </ul>
                             </CardContent>
                             <CardFooter>
@@ -573,8 +573,8 @@ export default function UserPage() {
                             </CardHeader>
                             <CardContent className="flex-grow">
                                 <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tất cả quyền lợi của gói Bạc.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tham gia các buổi thảo luận độc quyền.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 14 bạn học khác và cả team Deutsch.vn.</li>
                                 </ul>
                             </CardContent>
                             <CardFooter>
