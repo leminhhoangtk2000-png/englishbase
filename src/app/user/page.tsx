@@ -5,7 +5,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Crown } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Crown, Info } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -402,13 +402,18 @@ export default function UserPage() {
                     <Button size="lg" asChild>
                         <Link href="/user-premium">Nâng cấp ngay</Link>
                     </Button>
-                    <div className="mt-8 text-xs text-muted-foreground max-w-lg space-y-2">
-                        <p>
-                            Hi các bạn, đây là một dự án không nhằm mục đích thu lợi nhuận. Nhưng hiện tại dự án đang trong đà phát triển quá nhanh, hiện tại bọn mình đã bắt đầu phải thuê server riêng, và có nhiều chi phí phát sinh khác. Vì vậy có một vài phần không quá quan trọng, chỉ nhằm mục đích tăng cao trải nghiệm bọn mình sẽ giới hạn lại để tiết kiệm chi phí dự án.
-                        </p>
-                        <p>
-                            Đây là phần không thật sự cần thiết cho việc học, bọn mình làm phần này vì đam mê tạo ra một sản phẩm trải nghiệm tốt. Nếu các bạn không có nhu cầu đó thì không cần trả phí cho phần này đâu nha.
-                        </p>
+                    <div className="mt-8 max-w-2xl w-full">
+                        <div className="bg-secondary/50 border rounded-lg p-4 text-sm text-muted-foreground text-left flex items-start gap-3">
+                            <Info className="w-5 h-5 mt-0.5 shrink-0" />
+                            <div className="space-y-2">
+                                <p>
+                                    Hi các bạn, đây là một dự án không nhằm mục đích thu lợi nhuận. Nhưng hiện tại dự án đang trong đà phát triển quá nhanh, hiện tại bọn mình đã bắt đầu phải thuê server riêng, và có nhiều chi phí phát sinh khác. Vì vậy có một vài phần không quá quan trọng, chỉ nhằm mục đích tăng cao trải nghiệm bọn mình sẽ giới hạn lại để tiết kiệm chi phí dự án.
+                                </p>
+                                <p>
+                                    Đây là phần không thật sự cần thiết cho việc học, bọn mình làm phần này vì đam mê tạo ra một sản phẩm trải nghiệm tốt. Nếu các bạn không có nhu cầu đó thì không cần trả phí cho phần này đâu nha.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
               </div>
