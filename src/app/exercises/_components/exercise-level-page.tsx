@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, SlidersHorizontal, Eye, MessageCircle } from "lucide-react";
+import { Clock, SlidersHorizontal, Eye, MessageCircle, CheckCircle2 } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 const exercises = [
   {
@@ -27,6 +28,7 @@ const exercises = [
     href: "#",
     views: 1200,
     comments: 15,
+    completed: true,
   },
   {
     title: "Kleine Gewohnheiten, große Wirkung",
@@ -37,6 +39,7 @@ const exercises = [
     href: "#",
     views: 2300,
     comments: 28,
+    completed: false,
   },
   {
     title: "Mein Nebenjob im Studium",
@@ -47,6 +50,7 @@ const exercises = [
     href: "#",
     views: 980,
     comments: 12,
+    completed: true,
   },
   {
     title: "Freundschaft im digitalen Zeitalter",
@@ -57,6 +61,7 @@ const exercises = [
     href: "#",
     views: 1500,
     comments: 22,
+    completed: false,
   },
   {
     title: "Homeoffice – Erfahrung und Meinung",
@@ -67,6 +72,7 @@ const exercises = [
     href: "#",
     views: 1800,
     comments: 19,
+    completed: false,
   },
   {
     title: "Reisen als Student – mit wenig Geld die Welt entdecken",
@@ -77,6 +83,7 @@ const exercises = [
     href: "#",
     views: 2100,
     comments: 35,
+    completed: false,
   },
 ];
 
@@ -193,15 +200,17 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                     width={600}
                     height={400}
                     data-ai-hint={exercise.data_ai_hint}
-                    className="object-cover w-full h-48"
+                    className="object-cover w-full h-40"
                   />
-                  <div className="absolute inset-0 bg-black/50 p-4 flex flex-col justify-end text-white">
-                    <h3 className="font-bold text-lg font-headline leading-tight">{exercise.title}</h3>
-                    <p className="text-xs mt-1">@deutsch.vn</p>
-                  </div>
+                  {exercise.completed && (
+                     <Badge className="absolute top-2 right-2 bg-green-600/90 text-white border-green-600">
+                        <CheckCircle2 className="w-3 h-3 mr-1.5" />
+                        Đã hoàn thành
+                    </Badge>
+                  )}
                 </div>
                 <CardContent className="p-4 flex flex-col flex-grow">
-                  <h4 className="font-semibold mb-2">{exercise.title}</h4>
+                  <h4 className="font-semibold mb-2 font-headline">{exercise.title}</h4>
                   <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
                 </CardContent>
                 <CardFooter className="p-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">
