@@ -13,6 +13,10 @@ const sidebarNavItems = [
     href: "/admin/posts",
   },
   {
+    title: "Bài kiểm tra",
+    href: "/admin/tests",
+  },
+  {
     title: "Webhooks",
     href: "/admin/webhooks",
   },
