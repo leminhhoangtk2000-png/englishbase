@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock } from "lucide-react";
+import { Clock, SlidersHorizontal } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const exercises = [
   {
@@ -65,104 +66,106 @@ export function ExerciseLevelPage() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <aside className="lg:col-span-1">
-          <Card>
-            <CardContent className="p-4 space-y-6">
-              <div className="space-y-2">
-                <h3 className="font-semibold text-sm">KỸ NĂNG</h3>
-                <div className="flex gap-2">
-                  <Button
-                    variant={skillFilter === "Tất cả" ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setSkillFilter("Tất cả")}
-                    className="flex-1"
-                  >
-                    Tất cả
-                  </Button>
-                  <Button
-                    variant={skillFilter === "Nghe" ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setSkillFilter("Nghe")}
-                    className="flex-1"
-                  >
-                    Nghe
-                  </Button>
-                  <Button
-                    variant={skillFilter === "Đọc" ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setSkillFilter("Đọc")}
-                    className="flex-1"
-                  >
-                    Đọc
-                  </Button>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-semibold text-sm">CẤP ĐỘ</h3>
-                 <div className="flex gap-2">
-                  <Button
-                    variant={levelFilter === "Tất cả" ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setLevelFilter("Tất cả")}
-                    className="flex-1"
-                  >
-                    Tất cả
-                  </Button>
-                  <Button
-                    variant={levelFilter === "Nâng cao" ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setLevelFilter("Nâng cao")}
-                    className="flex-1"
-                  >
-                    Nâng cao
-                  </Button>
-                  <Button
-                    variant={levelFilter === "Cơ bản" ? "default" : "secondary"}
-                    size="sm"
-                    onClick={() => setLevelFilter("Cơ bản")}
-                     className="flex-1"
-                  >
-                    Cơ bản
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </aside>
-        <main className="lg:col-span-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {exercises.map((exercise) => (
-              <Link href={exercise.href} key={exercise.title}>
-                <Card className="overflow-hidden h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div className="relative">
-                        <Image
-                        src={exercise.image}
-                        alt={exercise.title}
-                        width={600}
-                        height={400}
-                        data-ai-hint={exercise.data_ai_hint}
-                        className="object-cover w-full h-48"
-                        />
-                        <div className="absolute inset-0 bg-black/50 p-4 flex flex-col justify-end text-white">
-                            <h3 className="font-bold text-lg font-headline leading-tight">{exercise.title}</h3>
-                            <p className="text-xs mt-1">@deutsch.vn</p>
-                        </div>
-                    </div>
-                    <CardContent className="p-4 flex flex-col flex-grow">
-                        <h4 className="font-semibold mb-2">{exercise.title}</h4>
-                        <div className="flex items-center text-xs text-muted-foreground mb-3">
-                            <Clock className="w-3 h-3 mr-1.5" />
-                            <span>{exercise.duration}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
-                    </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </main>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold font-headline">Bài tập nghe trình độ B1</h1>
+        <p className="text-muted-foreground mt-2">Luyện tập kỹ năng nghe qua các bài hội thoại và tình huống thực tế.</p>
       </div>
+
+      <Card className="mb-8">
+        <CardContent className="p-4 flex flex-col md:flex-row items-center gap-6">
+            <div className="flex items-center gap-2 text-sm font-semibold">
+                <SlidersHorizontal className="w-4 h-4" />
+                <span>Bộ lọc</span>
+            </div>
+            <Separator orientation="vertical" className="h-8 hidden md:block" />
+          <div className="flex items-center gap-4">
+            <h3 className="font-semibold text-sm shrink-0">KỸ NĂNG</h3>
+            <div className="flex gap-2">
+              <Button
+                variant={skillFilter === "Tất cả" ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setSkillFilter("Tất cả")}
+              >
+                Tất cả
+              </Button>
+              <Button
+                variant={skillFilter === "Nghe" ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setSkillFilter("Nghe")}
+              >
+                Nghe
+              </Button>
+              <Button
+                variant={skillFilter === "Đọc" ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setSkillFilter("Đọc")}
+              >
+                Đọc
+              </Button>
+            </div>
+          </div>
+          <Separator orientation="vertical" className="h-8 hidden md:block" />
+          <div className="flex items-center gap-4">
+            <h3 className="font-semibold text-sm shrink-0">CẤP ĐỘ</h3>
+            <div className="flex gap-2">
+              <Button
+                variant={levelFilter === "Tất cả" ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setLevelFilter("Tất cả")}
+              >
+                Tất cả
+              </Button>
+              <Button
+                variant={levelFilter === "Nâng cao" ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setLevelFilter("Nâng cao")}
+              >
+                Nâng cao
+              </Button>
+              <Button
+                variant={levelFilter === "Cơ bản" ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setLevelFilter("Cơ bản")}
+              >
+                Cơ bản
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <main>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {exercises.map((exercise) => (
+            <Link href={exercise.href} key={exercise.title}>
+              <Card className="overflow-hidden h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="relative">
+                  <Image
+                    src={exercise.image}
+                    alt={exercise.title}
+                    width={600}
+                    height={400}
+                    data-ai-hint={exercise.data_ai_hint}
+                    className="object-cover w-full h-48"
+                  />
+                  <div className="absolute inset-0 bg-black/50 p-4 flex flex-col justify-end text-white">
+                    <h3 className="font-bold text-lg font-headline leading-tight">{exercise.title}</h3>
+                    <p className="text-xs mt-1">@deutsch.vn</p>
+                  </div>
+                </div>
+                <CardContent className="p-4 flex flex-col flex-grow">
+                  <h4 className="font-semibold mb-2">{exercise.title}</h4>
+                  <div className="flex items-center text-xs text-muted-foreground mb-3">
+                    <Clock className="w-3 h-3 mr-1.5" />
+                    <span>{exercise.duration}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }
