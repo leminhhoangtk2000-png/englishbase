@@ -86,7 +86,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-8">
+      <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold font-headline">Bài tập nghe trình độ {level.toUpperCase()}</h1>
         <p className="text-muted-foreground mt-2">Luyện tập kỹ năng nghe qua các bài hội thoại và tình huống thực tế.</p>
       </div>
