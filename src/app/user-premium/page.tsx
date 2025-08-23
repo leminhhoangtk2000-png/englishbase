@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Quote } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -480,64 +480,80 @@ export default function UserPremiumPage() {
               </Card>
             </TabsContent>
             <TabsContent value="support">
-                <div className="text-center p-4">
-                    <h2 className="text-2xl font-bold font-headline">Chung tay xây dựng Deutsch.vn</h2>
-                    <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                        Mỗi sự đóng góp, dù nhỏ nhất, đều là nguồn động viên to lớn giúp chúng tôi duy trì và phát triển nền tảng học tập miễn phí này.
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                    <Card className="flex flex-col">
-                        <CardHeader className="items-center">
-                            <Coffee className="w-10 h-10 mb-4 text-primary" />
-                            <CardTitle>Người hỗ trợ Đồng</CardTitle>
-                            <p className="text-2xl font-bold">25.000đ</p>
-                            <p className="text-sm text-muted-foreground">/ tháng</p>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <ul className="space-y-2 text-sm text-muted-foreground">
-                                <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tên của bạn sẽ được vinh danh.</li>
-                            </ul>
+                 <div className="space-y-8">
+                    <Card className="bg-secondary/50 border-border/80">
+                        <CardContent className="p-6 relative">
+                            <Quote className="absolute top-2 left-2 w-8 h-8 text-border" />
+                             <div className="space-y-4 text-sm text-muted-foreground text-center max-w-3xl mx-auto py-4">
+                                <p>
+                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">5.000đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
+                                </p>
+                                <p>
+                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một bạn học khác</strong>.
+                                </p>
+                                <p className="font-semibold text-foreground italic text-base py-2">
+                                    "Kiến thức là miễn phí, và bọn mình tin chắc việc làm của chúng ta là có ý nghĩa và sẽ ý nghĩa hơn từng ngày."
+                                </p>
+                                <p>
+                                    Về cơ bản nếu bạn ủng hộ 49.000đ, 99.000đ hay 25.000đ thì <strong className="text-foreground">chất lượng trải nghiệm cũng sẽ như nhau</strong>. Vì vậy hãy <strong className="text-foreground">cân nhắc kỹ khi hỗ trợ</strong> nhé. Bọn mình sẽ <strong className="text-foreground">không thu phí theo hình thức subscription</strong>, đây là khoản phí <strong className="text-foreground">trả một lần</strong>, để tránh việc các bạn quên và khoản phí sẽ tự động gia hạn.
+                                </p>
+                            </div>
+                            <Quote className="absolute bottom-2 right-2 w-8 h-8 text-border rotate-180" />
                         </CardContent>
-                        <CardFooter>
-                            <Button className="w-full">Hỗ trợ</Button>
-                        </CardFooter>
                     </Card>
-                     <Card className="flex flex-col border-primary shadow-lg">
-                        <CardHeader className="items-center">
-                            <Heart className="w-10 h-10 mb-4 text-primary" />
-                            <CardTitle>Người hỗ trợ Bạc</CardTitle>
-                             <p className="text-2xl font-bold">49.000đ</p>
-                            <p className="text-sm text-muted-foreground">/ tháng</p>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                             <ul className="space-y-2 text-sm text-muted-foreground">
-                                <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tất cả quyền lợi của gói Đồng.</li>
-                                <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Truy cập sớm các tính năng mới.</li>
-                            </ul>
-                        </CardContent>
-                        <CardFooter>
-                            <Button className="w-full">Hỗ trợ</Button>
-                        </CardFooter>
-                    </Card>
-                     <Card className="flex flex-col">
-                        <CardHeader className="items-center">
-                            <Rocket className="w-10 h-10 mb-4 text-primary" />
-                            <CardTitle>Người hỗ trợ Vàng</CardTitle>
-                             <p className="text-2xl font-bold">99.000đ</p>
-                            <p className="text-sm text-muted-foreground">/ tháng</p>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <ul className="space-y-2 text-sm text-muted-foreground">
-                                <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tất cả quyền lợi của gói Bạc.</li>
-                                <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tham gia các buổi thảo luận độc quyền.</li>
-                            </ul>
-                        </CardContent>
-                        <CardFooter>
-                           <Button className="w-full">Hỗ trợ</Button>
-                        </CardFooter>
-                    </Card>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <Card className="flex flex-col">
+                            <CardHeader className="items-center">
+                                <Coffee className="w-10 h-10 mb-4 text-primary" />
+                                <CardTitle>Người hỗ trợ Đồng</CardTitle>
+                                <p className="text-2xl font-bold">25.000đ</p>
+                                <p className="text-sm text-muted-foreground">/ một lần</p>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tên của bạn sẽ được vinh danh.</li>
+                                </ul>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full">Hỗ trợ</Button>
+                            </CardFooter>
+                        </Card>
+                         <Card className="flex flex-col border-primary shadow-lg">
+                            <CardHeader className="items-center">
+                                <Heart className="w-10 h-10 mb-4 text-primary" />
+                                <CardTitle>Người hỗ trợ Bạc</CardTitle>
+                                 <p className="text-2xl font-bold">49.000đ</p>
+                                <p className="text-sm text-muted-foreground">/ một lần</p>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                 <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tất cả quyền lợi của gói Đồng.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Truy cập sớm các tính năng mới.</li>
+                                </ul>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full">Hỗ trợ</Button>
+                            </CardFooter>
+                        </Card>
+                         <Card className="flex flex-col">
+                            <CardHeader className="items-center">
+                                <Rocket className="w-10 h-10 mb-4 text-primary" />
+                                <CardTitle>Người hỗ trợ Vàng</CardTitle>
+                                 <p className="text-2xl font-bold">99.000đ</p>
+                                <p className="text-sm text-muted-foreground">/ một lần</p>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tất cả quyền lợi của gói Bạc.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Tham gia các buổi thảo luận độc quyền.</li>
+                                </ul>
+                            </CardContent>
+                            <CardFooter>
+                               <Button className="w-full">Hỗ trợ</Button>
+                            </CardFooter>
+                        </Card>
+                    </div>
                 </div>
             </TabsContent>
           </Tabs>
