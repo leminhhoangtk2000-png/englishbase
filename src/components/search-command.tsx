@@ -11,12 +11,14 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
+import { File } from "lucide-react";
 import { Search } from "lucide-react";
 import type { Doc } from "@/types";
 import { cn } from "@/lib/utils";
 
 export function SearchCommand({ docs }: { docs: Doc[] }) {
   const [open, setOpen] = React.useState(false);
+  const [query, setQuery] = React.useState("");
   const router = useRouter();
 
   React.useEffect(() => {
@@ -52,22 +54,33 @@ export function SearchCommand({ docs }: { docs: Doc[] }) {
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Điểm ngữ pháp bạn cần là gì?" />
+        <CommandInput 
+          placeholder="Điểm ngữ pháp bạn cần là gì?"
+          value={query}
+          onValueChange={setQuery}
+        />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Links">
-            {docs.map((doc) => (
-              <CommandItem
-                key={doc.href}
-                value={doc.title}
-                onSelect={() => {
-                  runCommand(() => router.push(doc.href));
-                }}
-              >
-                <span>{doc.title}</span>
-              </CommandItem>
-            ))}
-          </CommandGroup>
+          <CommandEmpty>Không tìm thấy kết quả.</CommandEmpty>
+          {query.length > 0 && (
+            <CommandGroup heading="Links">
+              {docs.map((doc) => (
+                <CommandItem
+                  key={doc.href}
+                  value={doc.title}
+                  onSelect={() => {
+                    runCommand(() => router.push(doc.href));
+                  }}
+                  className="p-2 items-start"
+                >
+                  <File className="mr-2 mt-1 h-4 w-4 flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="font-medium">{doc.title}</span>
+                    <span className="text-xs text-muted-foreground">{doc.content}</span>
+                  </div>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          )}
         </CommandList>
       </CommandDialog>
     </>
