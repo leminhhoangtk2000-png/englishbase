@@ -219,11 +219,11 @@ export default function SepayWebhooksPage() {
                             </div>
                              <div>
                                 <p className="text-muted-foreground">Trạng thái</p>
-                                <p className="font-semibold">
+                                <div className="font-semibold">
                                      <Badge variant={transaction.status === "Thành công" ? "default" : "destructive"}>
                                         {transaction.status}
                                     </Badge>
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <div className="border rounded-md max-h-96 overflow-y-auto">
