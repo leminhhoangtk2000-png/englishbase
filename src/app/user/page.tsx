@@ -360,7 +360,7 @@ export default function UserPage() {
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
-              <TabsTrigger value="support" className="flex items-center gap-1.5 font-semibold">
+              <TabsTrigger value="support" className="flex items-center gap-1.5 font-semibold text-foreground">
                 <Star className="w-4 h-4" />
                 Trở thành người hỗ trợ
               </TabsTrigger>
@@ -519,7 +519,7 @@ export default function UserPage() {
                         <CardHeader className="items-center">
                             <Coffee className="w-10 h-10 mb-4 text-primary" />
                             <CardTitle>Người hỗ trợ Đồng</CardTitle>
-                            <p className="text-2xl font-bold">49.000đ</p>
+                            <p className="text-2xl font-bold">25.000đ</p>
                             <p className="text-sm text-muted-foreground">/ tháng</p>
                         </CardHeader>
                         <CardContent className="flex-grow">
@@ -536,7 +536,7 @@ export default function UserPage() {
                         <CardHeader className="items-center">
                             <Heart className="w-10 h-10 mb-4 text-primary" />
                             <CardTitle>Người hỗ trợ Bạc</CardTitle>
-                             <p className="text-2xl font-bold">99.000đ</p>
+                             <p className="text-2xl font-bold">49.000đ</p>
                             <p className="text-sm text-muted-foreground">/ tháng</p>
                         </CardHeader>
                         <CardContent className="flex-grow">
@@ -553,7 +553,7 @@ export default function UserPage() {
                         <CardHeader className="items-center">
                             <Rocket className="w-10 h-10 mb-4 text-primary" />
                             <CardTitle>Người hỗ trợ Vàng</CardTitle>
-                             <p className="text-2xl font-bold">199.000đ</p>
+                             <p className="text-2xl font-bold">99.000đ</p>
                             <p className="text-sm text-muted-foreground">/ tháng</p>
                         </CardHeader>
                         <CardContent className="flex-grow">
