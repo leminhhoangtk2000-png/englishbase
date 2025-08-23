@@ -402,6 +402,14 @@ export default function UserPage() {
                     <Button size="lg" asChild>
                         <Link href="/user-premium">Nâng cấp ngay</Link>
                     </Button>
+                    <div className="mt-8 text-xs text-muted-foreground max-w-lg space-y-2">
+                        <p>
+                            Hi các bạn, đây là một dự án không nhằm mục đích thu lợi nhuận. Nhưng hiện tại dự án đang trong đà phát triển quá nhanh, hiện tại bọn mình đã bắt đầu phải thuê server riêng, và có nhiều chi phí phát sinh khác. Vì vậy có một vài phần không quá quan trọng, chỉ nhằm mục đích tăng cao trải nghiệm bọn mình sẽ giới hạn lại để tiết kiệm chi phí dự án.
+                        </p>
+                        <p>
+                            Đây là phần không thật sự cần thiết cho việc học, bọn mình làm phần này vì đam mê tạo ra một sản phẩm trải nghiệm tốt. Nếu các bạn không có nhu cầu đó thì không cần trả phí cho phần này đâu nha.
+                        </p>
+                    </div>
                 </div>
               </div>
             </TabsContent>
