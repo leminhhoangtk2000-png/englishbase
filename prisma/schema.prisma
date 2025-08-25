@@ -1,0 +1,303 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User management
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  username    String?  @unique
+  name        String?
+  avatar      String?
+  role        Role     @default(USER)
+  isPremium   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  posts       Post[]
+  comments    Comment[]
+  exercises   UserExercise[]
+  vocabulary  UserVocabulary[]
+  progress    UserProgress[]
+  
+  @@map("users")
+}
+
+enum Role {
+  ADMIN
+  USER
+  USER_PREMIUM
+}
+
+// Content management
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String?
+  excerpt     String?
+  published   Boolean  @default(false)
+  featured    Boolean  @default(false)
+  views       Int      @default(0)
+  authorId    String
+  categoryId  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  category    Category? @relation(fields: [categoryId], references: [id])
+  comments    Comment[]
+  tags        PostTag[]
+
+  @@map("posts")
+}
+
+model Category {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String?
+  color       String?
+  
+  // Relations
+  posts       Post[]
+  
+  @@map("categories")
+}
+
+model Tag {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  
+  // Relations
+  posts       PostTag[]
+  
+  @@map("tags")
+}
+
+model PostTag {
+  postId      String
+  tagId       String
+  
+  post        Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag         Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  
+  @@id([postId, tagId])
+  @@map("post_tags")
+}
+
+model Comment {
+  id          String   @id @default(cuid())
+  content     String
+  authorId    String
+  postId      String
+  parentId    String?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  parent      Comment? @relation("CommentReplies", fields: [parentId], references: [id])
+  replies     Comment[] @relation("CommentReplies")
+
+  @@map("comments")
+}
+
+// Vocabulary system
+model VocabularyEntry {
+  id              String @id @default(cuid())
+  german          String
+  vietnamese      String
+  phonetic        String?
+  plural          String?
+  type            VocabularyType
+  level           LanguageLevel
+  exampleGerman   String?
+  exampleVietnamese String?
+  category        String?
+  difficulty      Int    @default(1)
+  frequency       Int    @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  userVocabulary  UserVocabulary[]
+  exerciseItems   ExerciseItem[]
+
+  @@unique([german, vietnamese])
+  @@map("vocabulary_entries")
+}
+
+enum VocabularyType {
+  NOMEN
+  VERB
+  ADJEKTIV
+  ADVERB
+  PRONOUN
+  PREPOSITION
+  CONJUNCTION
+  OTHER
+}
+
+enum LanguageLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+model UserVocabulary {
+  id              String @id @default(cuid())
+  userId          String
+  vocabularyId    String
+  status          LearningStatus @default(NEW)
+  correctCount    Int    @default(0)
+  totalAttempts   Int    @default(0)
+  lastReviewed    DateTime?
+  nextReview      DateTime?
+  difficulty      Int    @default(1)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vocabulary      VocabularyEntry @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, vocabularyId])
+  @@map("user_vocabulary")
+}
+
+enum LearningStatus {
+  NEW
+  LEARNING
+  LEARNED
+  MASTERED
+  NEED_REVIEW
+}
+
+// Exercise system
+model Exercise {
+  id              String @id @default(cuid())
+  title           String
+  description     String?
+  type            ExerciseType
+  level           LanguageLevel
+  difficulty      Int    @default(1)
+  timeLimit       Int?   // in seconds
+  published       Boolean @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  items           ExerciseItem[]
+  userExercises   UserExercise[]
+
+  @@map("exercises")
+}
+
+enum ExerciseType {
+  MULTIPLE_CHOICE
+  FILL_BLANK
+  TRANSLATION
+  LISTENING
+  SPEAKING
+  VOCABULARY_MATCH
+  GRAMMAR
+}
+
+model ExerciseItem {
+  id              String @id @default(cuid())
+  exerciseId      String
+  question        String
+  correctAnswer   String
+  options         String[] // JSON array for multiple choice
+  explanation     String?
+  points          Int      @default(1)
+  order           Int
+  vocabularyId    String?
+
+  // Relations
+  exercise        Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  vocabulary      VocabularyEntry? @relation(fields: [vocabularyId], references: [id])
+
+  @@map("exercise_items")
+}
+
+model UserExercise {
+  id              String @id @default(cuid())
+  userId          String
+  exerciseId      String
+  score           Int?
+  maxScore        Int?
+  timeSpent       Int?   // in seconds
+  completed       Boolean @default(false)
+  answers         Json?  // Store user answers
+  startedAt       DateTime @default(now())
+  completedAt     DateTime?
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercise        Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+
+  @@map("user_exercises")
+}
+
+// Progress tracking
+model UserProgress {
+  id              String @id @default(cuid())
+  userId          String
+  level           LanguageLevel
+  category        String
+  totalWords      Int    @default(0)
+  learnedWords    Int    @default(0)
+  masteredWords   Int    @default(0)
+  streakDays      Int    @default(0)
+  totalStudyTime  Int    @default(0) // in minutes
+  lastActivity    DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, level, category])
+  @@map("user_progress")
+}
+
+// Payment system (for premium features)
+model Payment {
+  id              String @id @default(cuid())
+  userId          String?
+  amount          Decimal
+  currency        String @default("VND")
+  status          PaymentStatus @default(PENDING)
+  method          String?
+  transactionId   String? @unique
+  description     String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("payments")
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
