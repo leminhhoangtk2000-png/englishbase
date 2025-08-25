@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { UserAvatarDropdown } from "@/components/user-avatar-dropdown";
+import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
 import { type Doc } from "@/types";
 import { Separator } from "./ui/separator";
@@ -33,6 +35,7 @@ const navLinks = [
 
 export function MainNav({ docs = [] }: MainNavProps) {
     const pathname = usePathname();
+    const { user, loading } = useAuth();
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -76,12 +79,20 @@ export function MainNav({ docs = [] }: MainNavProps) {
                         <ThemeToggle />
                         <Separator orientation="vertical" className="h-6 hidden sm:block" />
                         <div className="hidden sm:flex items-center gap-2">
-                            <Button variant="ghost" asChild>
-                                <Link href="/login">Đăng nhập</Link>
-                            </Button>
-                            <Button asChild>
-                                <Link href="/signup">Đăng ký</Link>
-                            </Button>
+                            {!loading && (
+                                user ? (
+                                    <UserAvatarDropdown />
+                                ) : (
+                                    <>
+                                        <Button variant="ghost" asChild>
+                                            <Link href="/login">Đăng nhập</Link>
+                                        </Button>
+                                        <Button asChild>
+                                            <Link href="/signup">Đăng ký</Link>
+                                        </Button>
+                                    </>
+                                )
+                            )}
                         </div>
                     </nav>
                 </div>

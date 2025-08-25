@@ -1,0 +1,202 @@
+[
+  {
+    "german": "die Wohnung",
+    "plural": "die Wohnungen",
+    "phonetic": "/ˈvɔnʊŋ/",
+    "vietnamese": "căn hộ",
+    "exampleGerman": "Ich habe eine neue Wohnung in der Stadt gefunden.",
+    "exampleVietnamese": "Tôi đã tìm được một căn hộ mới trong thành phố.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "das Fachwerkhaus",
+    "plural": "die Fachwerkhäuser",
+    "phonetic": "/ˈfaxvɛʁkˌhaʊ̯s/",
+    "vietnamese": "nhà gỗ có khung",
+    "exampleGerman": "In Deutschland gibt es viele Fachwerkhäuser.",
+    "exampleVietnamese": "Ở Đức có nhiều nhà gỗ có khung.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "der Altbau",
+    "plural": "die Altbauten",
+    "phonetic": "/ˈaltˌbaʊ/",
+    "vietnamese": "nhà cũ, nhà cổ",
+    "exampleGerman": "Der Altbau hat hohe Decken und große Fenster.",
+    "exampleVietnamese": "Ngôi nhà cũ có trần cao và cửa sổ lớn.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "das Hochhaus",
+    "plural": "die Hochhäuser",
+    "phonetic": "/ˈhoːxˌhaʊ̯s/",
+    "vietnamese": "tòa nhà cao tầng",
+    "exampleGerman": "Ich wohne im 10. Stock eines Hochhauses.",
+    "exampleVietnamese": "Tôi sống ở tầng 10 của một tòa nhà cao tầng.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "das Reihenhaus",
+    "plural": "die Reihenhäuser",
+    "phonetic": "/ˈʁaɪ̯ənˌhaʊ̯s/",
+    "vietnamese": "nhà liền kề",
+    "exampleGerman": "Die Reihenhäuser in dieser Straße sehen alle gleich aus.",
+    "exampleVietnamese": "Những ngôi nhà liền kề trên con phố này trông giống hệt nhau.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "das Einfamilienhaus",
+    "plural": "die Einfamilienhäuser",
+    "phonetic": "/ˈaɪ̯nˌfamili̯ənˌhaʊ̯s/",
+    "vietnamese": "nhà riêng",
+    "exampleGerman": "Mein Traum ist es, in einem Einfamilienhaus mit Garten zu wohnen.",
+    "exampleVietnamese": "Ước mơ của tôi là sống trong một ngôi nhà riêng có vườn.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "die Möbel",
+    "plural": "-",
+    "phonetic": "/ˈmøːbl̩/",
+    "vietnamese": "đồ đạc, nội thất",
+    "exampleGerman": "Die Möbel in meinem Wohnzimmer sind modern.",
+    "exampleVietnamese": "Đồ đạc trong phòng khách của tôi rất hiện đại.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "der Garten",
+    "plural": "die Gärten",
+    "phonetic": "/ˈɡaʁtn̩/",
+    "vietnamese": "vườn",
+    "exampleGerman": "Wir haben viele Blumen im Garten.",
+    "exampleVietnamese": "Chúng tôi có nhiều hoa trong vườn.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "die Garage",
+    "plural": "die Garagen",
+    "phonetic": "/ɡaˈʁaːʒə/",
+    "vietnamese": "gara, nhà để xe",
+    "exampleGerman": "Mein Auto steht in der Garage.",
+    "exampleVietnamese": "Xe của tôi đang đỗ trong gara.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "der Balkon",
+    "plural": "die Balkone",
+    "phonetic": "/balˈkoːn/",
+    "vietnamese": "ban công",
+    "exampleGerman": "Der Balkon bietet einen schönen Blick auf den Garten.",
+    "exampleVietnamese": "Ban công có tầm nhìn đẹp ra vườn.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "die Terrasse",
+    "plural": "die Terrassen",
+    "phonetic": "/teˈʁasə/",
+    "vietnamese": "hiên, sân thượng",
+    "exampleGerman": "Im Sommer frühstücke ich gerne auf der Terrasse.",
+    "exampleVietnamese": "Vào mùa hè, tôi thích ăn sáng trên hiên nhà.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "auf dem Land",
+    "plural": "-",
+    "phonetic": "/aʊ̯f dem lant/",
+    "vietnamese": "ở nông thôn",
+    "exampleGerman": "Wir leben auf dem Land und genießen die Ruhe.",
+    "exampleVietnamese": "Chúng tôi sống ở nông thôn và tận hưởng sự yên tĩnh.",
+    "type": "Phrase",
+    "level": "A1"
+  },
+  {
+    "german": "das Studentenwohnheim",
+    "plural": "die Studentenwohnheime",
+    "phonetic": "/ˈʃtʊdntənˌvɔnˌhaɪ̯m/",
+    "vietnamese": "ký túc xá sinh viên",
+    "exampleGerman": "Das Studentenwohnheim ist in der Nähe der Universität.",
+    "exampleVietnamese": "Ký túc xá sinh viên ở gần trường đại học.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "der Bauernhof",
+    "plural": "die Bauernhöfe",
+    "phonetic": "/ˈbaʊɐnˌhoːf/",
+    "vietnamese": "trang trại",
+    "exampleGerman": "Mein Großvater lebt auf einem Bauernhof mit vielen Tieren.",
+    "exampleVietnamese": "Ông của tôi sống trong một trang trại với nhiều động vật.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "die Altbauwohnung",
+    "plural": "die Altbauwohnungen",
+    "phonetic": "/ˈaltˌbaʊˌvɔnʊŋ/",
+    "vietnamese": "căn hộ trong nhà cũ",
+    "exampleGerman": "Die Altbauwohnung hat hohe Decken und große Fenster.",
+    "exampleVietnamese": "Căn hộ trong nhà cũ có trần nhà cao và cửa sổ lớn.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "die Wohnküche",
+    "plural": "die Wohnküchen",
+    "phonetic": "/ˈvoːnˌkʏçə/",
+    "vietnamese": "bếp ăn",
+    "exampleGerman": "Die Wohnküche ist sehr gemütlich und praktisch.",
+    "exampleVietnamese": "Bếp ăn rất ấm cúng và tiện lợi.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "ziemlich",
+    "plural": "-",
+    "phonetic": "/ˈtsiːmlɪç/",
+    "vietnamese": "khá, tương đối",
+    "exampleGerman": "Die Wohnung ist ziemlich teuer.",
+    "exampleVietnamese": "Căn hộ này khá đắt.",
+    "type": "Adjektiv",
+    "level": "A1"
+  },
+  {
+    "german": "klein",
+    "plural": "-",
+    "phonetic": "/klaɪ̯n/",
+    "vietnamese": "nhỏ",
+    "exampleGerman": "Mein Zimmer ist klein, aber gemütlich.",
+    "exampleVietnamese": "Phòng của tôi nhỏ nhưng ấm cúng.",
+    "type": "Adjektiv",
+    "level": "A1"
+  },
+  {
+    "german": "das Wohnheim",
+    "plural": "die Wohnheime",
+    "phonetic": "/ˈvoːnˌhaɪ̯m/",
+    "vietnamese": "ký túc xá",
+    "exampleGerman": "Viele Studenten wohnen im Wohnheim.",
+    "exampleVietnamese": "Nhiều sinh viên sống trong ký túc xá.",
+    "type": "Nomen",
+    "level": "A1"
+  },
+  {
+    "german": "gemütlich",
+    "plural": "-",
+    "phonetic": "/ɡəˈmʏːtlɪç/",
+    "vietnamese": "thoải mái, ấm cúng",
+    "exampleGerman": "Das Wohnzimmer ist sehr gemütlich eingerichtet.",
+    "exampleVietnamese": "Phòng khách được bài trí rất ấm cúng.",
+    "type": "Adjektiv",
+    "level": "A1"
+  }
+]

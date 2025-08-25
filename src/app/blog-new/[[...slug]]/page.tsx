@@ -4,19 +4,21 @@ import { BlogPostPage } from "../_components/blog-post-page";
 import { type NavItemWithComponent } from "@/types";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 // This is a Server Component
 export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  
   // If there's no slug, it's the blog's main page.
-  if (!params.slug || params.slug.length === 0) {
+  if (!slug || slug.length === 0) {
     return <BlogPostPage />;
   }
 
-  const doc = await getDocFromParams(params.slug);
+  const doc = await getDocFromParams(slug);
 
   if (!doc || !doc.component) {
     notFound();

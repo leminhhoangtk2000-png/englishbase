@@ -7,11 +7,11 @@ export type NavItem = {
   external?: boolean;
   items?: NavItemWithComponent[];
   description?: string;
-  component?: () => JSX.Element;
+  component?: React.ComponentType<any>;
 };
 
 export type NavItemWithComponent = NavItem & {
-  component?: () => JSX.Element;
+  component?: React.ComponentType<any>;
 };
 
 export type DocsConfig = {

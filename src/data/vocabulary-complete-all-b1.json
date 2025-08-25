@@ -1,0 +1,622 @@
+[
+  {
+    "german": "der Smalltalk",
+    "plural": "die Smalltalks",
+    "phonetic": "/ˈsmɔːlˌtɔːk/",
+    "vietnamese": "Cuộc trò chuyện ngắn",
+    "exampleGerman": "Beim Smalltalk geht es oft um das Wetter, damit man sich besser kennenlernen kann.",
+    "exampleVietnamese": "Trong cuộc trò chuyện ngắn, người ta thường nói về thời tiết, để có thể hiểu nhau hơn.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Smalltalk-Situation",
+    "plural": "die Smalltalk-Situationen",
+    "phonetic": "/ˈsmɔːlˌtɔːk zituˈaːt͡si̯oːn/",
+    "vietnamese": "Tình huống trò chuyện ngắn",
+    "exampleGerman": "Diese Smalltalk-Situation war unangenehm, weil keiner wusste, was er sagen sollte.",
+    "exampleVietnamese": "Tình huống trò chuyện ngắn này khá khó chịu, vì không ai biết phải nói gì.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Partnerschaftsproblem",
+    "plural": "die Partnerschaftsprobleme",
+    "phonetic": "/ˈpaʁtnɐˌʃaftspʁoˌbleːmə/",
+    "vietnamese": "Vấn đề trong mối quan hệ",
+    "exampleGerman": "Partnerschaftsprobleme können stressig sein, aber es gibt Lösungen.",
+    "exampleVietnamese": "Các vấn đề trong mối quan hệ có thể gây căng thẳng, nhưng có những giải pháp.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Beleidigung",
+    "plural": "die Beleidigungen",
+    "phonetic": "/bəˈlaɪ̯dɪɡʊŋ/",
+    "vietnamese": "Sự xúc phạm",
+    "exampleGerman": "Er hat sich wegen der Beleidigung entschuldigt, weil er wusste, dass er jemanden verletzt hatte.",
+    "exampleVietnamese": "Anh ấy đã xin lỗi vì sự xúc phạm, vì anh ấy biết rằng mình đã làm tổn thương người khác.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Bosheit",
+    "plural": "die Bosheiten",
+    "phonetic": "/ˈboːshaɪ̯t/",
+    "vietnamese": "Sự ác ý",
+    "exampleGerman": "Manchmal versteckt sich Bosheit hinter netten Worten, damit man niemanden verletzt.",
+    "exampleVietnamese": "Đôi khi sự ác ý ẩn sau những lời nói dễ nghe, để không làm tổn thương ai.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Kongresszentrum",
+    "plural": "die Kongresszentren",
+    "phonetic": "/kɔnˈɡʁɛsˌʦɛntʁʊm/",
+    "vietnamese": "Trung tâm hội nghị",
+    "exampleGerman": "Das Kongresszentrum ist sehr modern, deshalb besuchen viele internationale Gäste die Konferenzen dort.",
+    "exampleVietnamese": "Trung tâm hội nghị rất hiện đại, vì vậy nhiều khách quốc tế tham dự các hội thảo tại đó.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Anreise",
+    "plural": "die Anreisen",
+    "phonetic": "/ˈʔanˌʁaɪ̯zə/",
+    "vietnamese": "Hành trình đến",
+    "exampleGerman": "Die Anreise war lang, aber der Aufenthalt war es wert.",
+    "exampleVietnamese": "Hành trình đến rất dài, nhưng chuyến đi đáng giá.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Partnerkarte",
+    "plural": "die Partnerkarten",
+    "phonetic": "/ˈpaʁtnɐˌkaʁtə/",
+    "vietnamese": "Thẻ đối tác",
+    "exampleGerman": "Mit der Partnerkarte bekommt man viele Rabatte, deshalb nutze ich sie oft.",
+    "exampleVietnamese": "Với thẻ đối tác, bạn có thể nhận được nhiều ưu đãi, vì vậy tôi thường xuyên sử dụng nó.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Rückfrage",
+    "plural": "die Rückfragen",
+    "phonetic": "/ˈʁʏkˌfʁaːɡə/",
+    "vietnamese": "Câu hỏi lại",
+    "exampleGerman": "Haben Sie Rückfragen zu meinem Vortrag, oder ist alles klar?",
+    "exampleVietnamese": "Bạn có câu hỏi nào về bài thuyết trình của tôi không, hay mọi thứ đều rõ ràng?",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "lästern",
+    "plural": "",
+    "phonetic": "/ˈlɛstɐn/",
+    "vietnamese": "Nói xấu",
+    "exampleGerman": "Meine Kollegen lästern immer über den Chef, weil sie mit seiner Führung nicht zufrieden sind.",
+    "exampleVietnamese": "Đồng nghiệp của tôi luôn nói xấu về sếp, vì họ không hài lòng với cách lãnh đạo của anh ấy.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "eignen",
+    "plural": "",
+    "phonetic": "/ˈaɪ̯ɡnən/",
+    "vietnamese": "Phù hợp",
+    "exampleGerman": "Dieses Buch eignet sich hervorragend für Anfänger, da es viele einfache Erklärungen enthält.",
+    "exampleVietnamese": "Cuốn sách này rất phù hợp cho người mới bắt đầu, vì nó chứa nhiều giải thích dễ hiểu.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "zurückfragen",
+    "plural": "",
+    "phonetic": "/ʦuˈʁʏkˌfʁaːɡən/",
+    "vietnamese": "Hỏi lại",
+    "exampleGerman": "Ich muss noch etwas zurückfragen, damit ich sicher bin.",
+    "exampleVietnamese": "Tôi cần hỏi lại một vài điều, để tôi chắc chắn.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "variieren",
+    "plural": "",
+    "phonetic": "/vaʁiˈʔiːʁən/",
+    "vietnamese": "Thay đổi",
+    "exampleGerman": "Die Preise variieren je nach Angebot, aber die Qualität bleibt gleich.",
+    "exampleVietnamese": "Giá cả thay đổi tùy theo sản phẩm cung cấp, nhưng chất lượng vẫn giữ nguyên.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "hoffentlich",
+    "plural": "",
+    "phonetic": "/ˈhɔfn̩tlɪç/",
+    "vietnamese": "Hy vọng",
+    "exampleGerman": "Hoffentlich wird das Wetter morgen besser, damit wir draußen spielen können.",
+    "exampleVietnamese": "Hy vọng thời tiết ngày mai sẽ tốt hơn, để chúng ta có thể chơi ngoài trời.",
+    "type": "Adverb",
+    "level": "B1"
+  },
+  {
+    "german": "wunderbar",
+    "plural": "",
+    "phonetic": "/ˈvʊndɐˌbaːɐ̯/",
+    "vietnamese": "Tuyệt vời",
+    "exampleGerman": "Die Aussicht ist einfach wunderbar, weil man den ganzen Park sehen kann.",
+    "exampleVietnamese": "Khung cảnh thật tuyệt vời, vì bạn có thể nhìn thấy toàn bộ công viên.",
+    "type": "Adjektiv",
+    "level": "B1"
+  },
+  {
+    "german": "der Arbeiter",
+    "plural": "die Arbeiter",
+    "phonetic": "/ˈaʁbaɪ̯tɐ/",
+    "vietnamese": "Công nhân",
+    "exampleGerman": "Die Arbeiter in der Fabrik arbeiten in Schichten, damit die Produktion nie stillsteht.",
+    "exampleVietnamese": "Các công nhân trong nhà máy làm việc theo ca, để sản xuất không bao giờ ngừng.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Bergmann",
+    "plural": "die Bergmänner",
+    "phonetic": "/ˈbɛʁkˌman/",
+    "vietnamese": "Thợ mỏ",
+    "exampleGerman": "Der Bergmann arbeitet unter Tage, weil er Kohle abbaut.",
+    "exampleVietnamese": "Thợ mỏ làm việc dưới lòng đất, vì anh ta khai thác than.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Bergarbeiter",
+    "plural": "die Bergarbeiter",
+    "phonetic": "/ˈbɛʁkˌʔaʁbaɪ̯tɐ/",
+    "vietnamese": "Công nhân khai thác mỏ",
+    "exampleGerman": "Die Bergarbeiter brauchen spezielle Ausrüstung, weil ihre Arbeit gefährlich ist.",
+    "exampleVietnamese": "Các công nhân khai thác mỏ cần thiết bị đặc biệt, vì công việc của họ nguy hiểm.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Kraftwerk",
+    "plural": "die Kraftwerke",
+    "phonetic": "/ˈkʁaftˌvɛʁk/",
+    "vietnamese": "Nhà máy điện",
+    "exampleGerman": "Das neue Kraftwerk produziert saubere Energie, weil es mit Windkraft betrieben wird.",
+    "exampleVietnamese": "Nhà máy điện mới sản xuất năng lượng sạch, vì nó hoạt động bằng năng lượng gió.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Bergwerk",
+    "plural": "die Bergwerke",
+    "phonetic": "/ˈbɛʁkˌvɛʁk/",
+    "vietnamese": "Mỏ khai thác",
+    "exampleGerman": "Das alte Bergwerk wurde geschlossen, weil es nicht mehr rentabel war.",
+    "exampleVietnamese": "Mỏ khai thác cũ đã bị đóng cửa, vì nó không còn có lợi nhuận.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Industrieanlage",
+    "plural": "die Industrieanlagen",
+    "phonetic": "/ɪndʊsˈtʁiːˌanlaːɡə/",
+    "vietnamese": "Khu công nghiệp",
+    "exampleGerman": "Die Industrieanlage wurde modernisiert, damit sie umweltfreundlicher wird.",
+    "exampleVietnamese": "Khu công nghiệp đã được hiện đại hóa, để nó thân thiện với môi trường hơn.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "abbauen",
+    "plural": "",
+    "phonetic": "/ˈapˌbaʊ̯ən/",
+    "vietnamese": "Khai thác, giảm bớt",
+    "exampleGerman": "In diesem Bergwerk wird seit Jahren Kohle abgebaut, weil sie eine wichtige Energiequelle ist.",
+    "exampleVietnamese": "Tại mỏ này, than đã được khai thác trong nhiều năm, vì nó là một nguồn năng lượng quan trọng.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "malochen",
+    "plural": "",
+    "phonetic": "/maˈloːxən/",
+    "vietnamese": "Lao động vất vả",
+    "exampleGerman": "Er muss jeden Tag hart malochen, damit er seine Familie ernähren kann.",
+    "exampleVietnamese": "Anh ấy phải lao động vất vả mỗi ngày, để có thể nuôi gia đình.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "der Kleingarten",
+    "plural": "die Kleingärten",
+    "phonetic": "/ˈklaɪ̯nˌɡaʁtn̩/",
+    "vietnamese": "Vườn nhỏ",
+    "exampleGerman": "Er verbringt viel Zeit in seinem Kleingarten, weil er dort Gemüse anbaut.",
+    "exampleVietnamese": "Anh ấy dành nhiều thời gian trong vườn nhỏ, vì anh ấy trồng rau ở đó.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Schrebergarten",
+    "plural": "die Schrebergärten",
+    "phonetic": "/ˈʃʁeːbɐˌɡaʁtn̩/",
+    "vietnamese": "Vườn riêng nhỏ",
+    "exampleGerman": "Viele Deutsche haben einen Schrebergarten, weil sie dort entspannen können.",
+    "exampleVietnamese": "Nhiều người Đức có một vườn riêng nhỏ, vì họ có thể thư giãn ở đó.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Brieftaube",
+    "plural": "die Brieftauben",
+    "phonetic": "/ˈbʁiːfˌtaʊ̯bə/",
+    "vietnamese": "Chim bồ câu đưa thư",
+    "exampleGerman": "Früher wurden Brieftauben zur Nachrichtenübermittlung genutzt, weil es keine Telefone gab.",
+    "exampleVietnamese": "Trước đây, chim bồ câu đưa thư được sử dụng để truyền tin, vì không có điện thoại.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "züchten",
+    "plural": "",
+    "phonetic": "/ˈt͡sʏçtn̩/",
+    "vietnamese": "Nuôi, nhân giống",
+    "exampleGerman": "Er züchtet Brieftauben, damit sie Nachrichten übermitteln können.",
+    "exampleVietnamese": "Anh ấy nuôi chim bồ câu đưa thư, để chúng có thể truyền tin nhắn.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "die Urgroßeltern",
+    "plural": "",
+    "phonetic": "/ˈʊʁɡʁoːsˌʔɛltɐn/",
+    "vietnamese": "Ông bà cố",
+    "exampleGerman": "Meine Urgroßeltern haben den Zweiten Weltkrieg erlebt, weil sie damals jung waren.",
+    "exampleVietnamese": "Ông bà cố của tôi đã trải qua Chiến tranh thế giới thứ hai, vì họ còn trẻ vào thời điểm đó.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Urgroßvater",
+    "plural": "die Urgroßväter",
+    "phonetic": "/ˈʊʁɡʁoːsˌfaːtɐ/",
+    "vietnamese": "Cụ ông",
+    "exampleGerman": "Mein Urgroßvater war Schmied, weil das damals ein wichtiger Beruf war.",
+    "exampleVietnamese": "Cụ ông của tôi là thợ rèn, vì đó là một nghề quan trọng vào thời đó.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Kamerad",
+    "plural": "die Kameraden",
+    "phonetic": "/ˌkaməˈʁaːt/",
+    "vietnamese": "Đồng đội (nam)",
+    "exampleGerman": "Er und sein Kamerad helfen sich immer gegenseitig, weil sie beste Freunde sind.",
+    "exampleVietnamese": "Anh ấy và đồng đội luôn giúp đỡ lẫn nhau, vì họ là bạn thân nhất.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Jugend",
+    "plural": "",
+    "phonetic": "/ˈjuːɡn̩t/",
+    "vietnamese": "Tuổi trẻ",
+    "exampleGerman": "Die Jugend von heute hat viele Möglichkeiten, weil die Welt vernetzter ist als früher.",
+    "exampleVietnamese": "Thanh niên ngày nay có nhiều cơ hội, vì thế giới kết nối hơn trước đây.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Klima",
+    "plural": "die Klimata",
+    "phonetic": "/ˈkliːma/",
+    "vietnamese": "Khí hậu",
+    "exampleGerman": "Das Klima verändert sich schnell, weil die Temperaturen weltweit steigen.",
+    "exampleVietnamese": "Khí hậu thay đổi nhanh chóng, vì nhiệt độ toàn cầu tăng.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Umwelt",
+    "plural": "die Umwelten",
+    "phonetic": "/ˈʊmˌvɛlt/",
+    "vietnamese": "Môi trường",
+    "exampleGerman": "Wir müssen die Umwelt schützen, damit zukünftige Generationen eine saubere Welt haben.",
+    "exampleVietnamese": "Chúng ta phải bảo vệ môi trường, để các thế hệ tương lai có một thế giới sạch.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Umweltproblem",
+    "plural": "die Umweltprobleme",
+    "phonetic": "/ˈʊmˌvɛltpʁoˌbleːm/",
+    "vietnamese": "Vấn đề môi trường",
+    "exampleGerman": "Umweltprobleme werden immer ernster, weil wir zu viel Plastik verwenden.",
+    "exampleVietnamese": "Các vấn đề môi trường ngày càng nghiêm trọng, vì chúng ta sử dụng quá nhiều nhựa.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Prognose",
+    "plural": "die Prognosen",
+    "phonetic": "/pʁoˈɡnoːzə/",
+    "vietnamese": "Dự báo",
+    "exampleGerman": "Die Prognose für die nächsten Jahre zeigt, dass es mehr Hitzewellen geben wird.",
+    "exampleVietnamese": "Dự báo trong những năm tới cho thấy rằng sẽ có nhiều đợt sóng nhiệt hơn.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Klimawandel",
+    "plural": "",
+    "phonetic": "/ˈkliːmaˌvandl̩/",
+    "vietnamese": "Biến đổi khí hậu",
+    "exampleGerman": "Der Klimawandel führt zu extremen Wetterbedingungen, weil die Temperaturen weltweit steigen.",
+    "exampleVietnamese": "Biến đổi khí hậu dẫn đến điều kiện thời tiết khắc nghiệt, vì nhiệt độ toàn cầu tăng.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Meteorologe",
+    "plural": "die Meteorologen",
+    "phonetic": "/meˌteoʁoˈloːɡə/",
+    "vietnamese": "Nhà khí tượng học",
+    "exampleGerman": "Der Meteorologe warnt vor einem Sturm, weil die Wetterdaten beunruhigend sind.",
+    "exampleVietnamese": "Nhà khí tượng học cảnh báo về một cơn bão, vì dữ liệu thời tiết đáng lo ngại.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Sturm",
+    "plural": "die Stürme",
+    "phonetic": "/ʃtʊʁm/",
+    "vietnamese": "Bão",
+    "exampleGerman": "Der Sturm war so stark, dass viele Bäume umgefallen sind.",
+    "exampleVietnamese": "Cơn bão mạnh đến mức nhiều cây đã bị đổ.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Hochwasser",
+    "plural": "die Hochwasser",
+    "phonetic": "/ˈhoːxˌvasɐ/",
+    "vietnamese": "Lũ lụt",
+    "exampleGerman": "Jedes Jahr kommt es in manchen Regionen zu Hochwasser, weil die Regenfälle immer stärker werden.",
+    "exampleVietnamese": "Hàng năm, một số khu vực bị ảnh hưởng bởi lũ lụt, vì lượng mưa ngày càng nhiều hơn.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Hitzewelle",
+    "plural": "die Hitzewellen",
+    "phonetic": "/ˈhɪt͡səˌvɛlə/",
+    "vietnamese": "Sóng nhiệt",
+    "exampleGerman": "Die Hitzewelle dauerte drei Wochen, obwohl es normalerweise nur wenige Tage heiß ist.",
+    "exampleVietnamese": "Sóng nhiệt kéo dài ba tuần, mặc dù thông thường chỉ nóng vài ngày.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Schneesturm",
+    "plural": "die Schneestürme",
+    "phonetic": "/ˈʃneːʃtʊʁm/",
+    "vietnamese": "Bão tuyết",
+    "exampleGerman": "Der Schneesturm hat viele Straßen blockiert, sodass die Autofahrer nicht weiterfahren konnten.",
+    "exampleVietnamese": "Bão tuyết đã làm tắc nghẽn nhiều con đường, khiến các tài xế không thể tiếp tục di chuyển.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Sachschaden",
+    "plural": "die Sachschäden",
+    "phonetic": "/ˈzaxˌʃaːdn̩/",
+    "vietnamese": "Thiệt hại về vật chất",
+    "exampleGerman": "Der Sturm verursachte großen Sachschaden, weil viele Häuser beschädigt wurden.",
+    "exampleVietnamese": "Cơn bão gây ra thiệt hại lớn về vật chất, vì nhiều ngôi nhà bị hư hỏng.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "überfluten",
+    "plural": "",
+    "phonetic": "/ˈyːbɐˌfluːtn̩/",
+    "vietnamese": "Ngập lụt",
+    "exampleGerman": "Das Wasser überflutete die ganze Stadt, weil der Fluss über die Ufer trat.",
+    "exampleVietnamese": "Nước đã ngập lụt toàn bộ thành phố, vì sông tràn bờ.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "verursachen",
+    "plural": "",
+    "phonetic": "/fɛɐ̯ˈʔuːɐ̯zaχn̩/",
+    "vietnamese": "Gây ra",
+    "exampleGerman": "Starke Regenfälle haben Überschwemmungen verursacht, weil die Flüsse über die Ufer getreten sind.",
+    "exampleVietnamese": "Lượng mưa lớn đã gây ra lũ lụt, vì các con sông tràn bờ.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "lahmlegen",
+    "plural": "",
+    "phonetic": "/ˈlaːmˌleːɡn̩/",
+    "vietnamese": "Làm tê liệt",
+    "exampleGerman": "Der Sturm hat die gesamte Infrastruktur lahmgelegt, sodass keine Züge mehr fahren konnten.",
+    "exampleVietnamese": "Cơn bão đã làm tê liệt toàn bộ cơ sở hạ tầng, khiến các chuyến tàu không thể hoạt động.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "der Wetterrekord",
+    "plural": "die Wetterrekorde",
+    "phonetic": "/ˈvɛtɐʁəˌkɔʁt/",
+    "vietnamese": "Kỷ lục thời tiết",
+    "exampleGerman": "Dieses Jahr gab es einen neuen Wetterrekord, weil es noch nie so heiß war.",
+    "exampleVietnamese": "Năm nay có một kỷ lục thời tiết mới, vì chưa bao giờ nóng như vậy.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Schulhof",
+    "plural": "die Schulhöfe",
+    "phonetic": "/ˈʃuːlˌhoːf/",
+    "vietnamese": "Sân trường",
+    "exampleGerman": "Die Kinder spielen in der Pause auf dem Schulhof, weil dort viel Platz ist.",
+    "exampleVietnamese": "Trẻ em chơi trong sân trường lúc giải lao, vì ở đó có nhiều chỗ.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Lehrerzimmer",
+    "plural": "die Lehrerzimmer",
+    "phonetic": "/ˈleːʁɐˌt͡sɪmɐ/",
+    "vietnamese": "Phòng giáo viên",
+    "exampleGerman": "Die Lehrer treffen sich im Lehrerzimmer, um über die Schüler zu sprechen.",
+    "exampleVietnamese": "Các giáo viên gặp nhau trong phòng giáo viên, để nói về học sinh.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Sporthalle",
+    "plural": "die Sporthallen",
+    "phonetic": "/ˈʃpɔʁtˌhalə/",
+    "vietnamese": "Nhà thể chất",
+    "exampleGerman": "Der Sportunterricht findet in der Sporthalle statt, weil es draußen regnet.",
+    "exampleVietnamese": "Giờ thể dục diễn ra trong nhà thể chất, vì ngoài trời mưa.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Zeugnis",
+    "plural": "die Zeugnisse",
+    "phonetic": "/ˈt͡sɔʏ̯ɡnɪs/",
+    "vietnamese": "Bảng điểm, chứng chỉ",
+    "exampleGerman": "Das Zeugnis zeigt, dass er gute Noten hat, weil er fleißig gelernt hat.",
+    "exampleVietnamese": "Bảng điểm cho thấy anh ấy có điểm tốt, vì anh ấy đã học chăm chỉ.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Nachhilfe",
+    "plural": "die Nachhilfen",
+    "phonetic": "/ˈnaːxˌhɪlfə/",
+    "vietnamese": "Lớp học thêm",
+    "exampleGerman": "Viele Schüler nehmen Nachhilfe, weil sie ihre Noten verbessern möchten.",
+    "exampleVietnamese": "Nhiều học sinh học lớp học thêm, vì họ muốn cải thiện điểm số của mình.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Klassenausflug",
+    "plural": "die Klassenausflüge",
+    "phonetic": "/ˈklasənˌaʊ̯sˌfluːk/",
+    "vietnamese": "Chuyến đi thực tế của lớp",
+    "exampleGerman": "Der Klassenausflug ins Museum war interessant, weil wir viel gelernt haben.",
+    "exampleVietnamese": "Chuyến đi thực tế của lớp đến bảo tàng rất thú vị, vì chúng tôi đã học được nhiều.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Stundenplan",
+    "plural": "die Stundenpläne",
+    "phonetic": "/ˈʃtʊndn̩ˌplaːn/",
+    "vietnamese": "Thời khóa biểu",
+    "exampleGerman": "Mein Stundenplan ist sehr voll, weil ich viele verschiedene Fächer habe.",
+    "exampleVietnamese": "Thời khóa biểu của tôi rất kín, vì tôi có nhiều môn học khác nhau.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Schulkantine",
+    "plural": "die Schulkantinen",
+    "phonetic": "/ˈʃuːlkanˌtiːnə/",
+    "vietnamese": "Căng tin trường",
+    "exampleGerman": "Das Essen in der Schulkantine ist lecker, weil es täglich frisch zubereitet wird.",
+    "exampleVietnamese": "Đồ ăn trong căng tin trường ngon, vì nó được chế biến tươi hàng ngày.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "das Latein",
+    "plural": "",
+    "phonetic": "/laˈtaɪ̯n/",
+    "vietnamese": "Tiếng Latinh",
+    "exampleGerman": "Latein ist ein schwieriges Fach, weil es eine alte Sprache ist.",
+    "exampleVietnamese": "Tiếng Latinh là một môn học khó, vì nó là một ngôn ngữ cổ.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Medien-AG",
+    "plural": "die Medien-AGs",
+    "phonetic": "/ˈmeːdi̯ən aˈɡeː/",
+    "vietnamese": "Câu lạc bộ truyền thông",
+    "exampleGerman": "Ich bin in der Medien-AG, weil ich gerne Videos bearbeite.",
+    "exampleVietnamese": "Tôi tham gia câu lạc bộ truyền thông, vì tôi thích chỉnh sửa video.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "programmieren",
+    "plural": "",
+    "phonetic": "/pʁoɡʁaˈmiːʁən/",
+    "vietnamese": "Lập trình",
+    "exampleGerman": "Er hat gelernt zu programmieren, damit er eigene Apps entwickeln kann.",
+    "exampleVietnamese": "Anh ấy đã học lập trình, để có thể phát triển ứng dụng của riêng mình.",
+    "type": "Verb",
+    "level": "B1"
+  },
+  {
+    "german": "der Comic",
+    "plural": "die Comics",
+    "phonetic": "/ˈkɔmɪk/",
+    "vietnamese": "Truyện tranh",
+    "exampleGerman": "Er liest gerne Comics, weil sie lustige Geschichten erzählen.",
+    "exampleVietnamese": "Anh ấy thích đọc truyện tranh, vì chúng kể những câu chuyện vui.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Abfahrtszeit",
+    "plural": "die Abfahrtszeiten",
+    "phonetic": "/ˈapfaʁt͡sˌt͡saɪ̯t/",
+    "vietnamese": "Giờ khởi hành",
+    "exampleGerman": "Die Abfahrtszeit des Zuges ist um 10:30 Uhr, also sollten wir pünktlich sein.",
+    "exampleVietnamese": "Giờ khởi hành của tàu là lúc 10:30, vì vậy chúng ta nên đúng giờ.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Wettbewerb",
+    "plural": "die Wettbewerbe",
+    "phonetic": "/ˈvɛtbəˌvɛʁb/",
+    "vietnamese": "Cuộc thi",
+    "exampleGerman": "Der Wettbewerb war sehr spannend, weil alle Teilnehmer gut vorbereitet waren.",
+    "exampleVietnamese": "Cuộc thi rất thú vị, vì tất cả thí sinh đều chuẩn bị tốt.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "die Werbung",
+    "plural": "die Werbungen",
+    "phonetic": "/ˈvɛʁbʊŋ/",
+    "vietnamese": "Quảng cáo",
+    "exampleGerman": "Die Werbung für das neue Schulprojekt war sehr erfolgreich, weil viele Schüler mitmachen wollten.",
+    "exampleVietnamese": "Quảng cáo cho dự án trường học mới rất thành công, vì nhiều học sinh muốn tham gia.",
+    "type": "Nomen",
+    "level": "B1"
+  },
+  {
+    "german": "der Aushang",
+    "plural": "die Aushänge",
+    "phonetic": "/ˈaʊ̯sˌhaŋ/",
+    "vietnamese": "Thông báo dán trên bảng",
+    "exampleGerman": "Der neue Aushang informiert über die Schulveranstaltungen, damit alle Bescheid wissen.",
+    "exampleVietnamese": "Thông báo mới cung cấp thông tin về các sự kiện của trường, để mọi người đều biết.",
+    "type": "Nomen",
+    "level": "B1"
+  }
+]

@@ -5,13 +5,14 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 
 interface DocPageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 export default async function DocPage({ params }: DocPageProps) {
-  const doc = await getDocFromParams(params.slug);
+  const { slug } = await params;
+  const doc = await getDocFromParams(slug);
 
   if (!doc || !doc.component) {
     notFound();

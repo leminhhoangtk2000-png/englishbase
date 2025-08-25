@@ -3,6 +3,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import { AuthProvider } from '@/lib/auth-context';
 import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
@@ -32,9 +33,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex-1">{children}</div>
-          <Toaster />
-          <Footer />
+          <AuthProvider>
+            <div className="flex-1">{children}</div>
+            <Toaster />
+            <Footer />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -8,25 +8,24 @@ import { ExercisesLandingPage } from "../_components/exercises-landing-page";
 import { ExerciseLevelPage } from "../_components/exercise-level-page";
 
 interface DocPageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 export default async function DocPage({ params }: DocPageProps) {
+  const { slug } = await params;
   // If there's no slug, it's the exercises's main page.
-  if (!params.slug || params.slug.length === 0) {
+  if (!slug || slug.length === 0) {
     return <ExercisesLandingPage />;
   }
 
   // Handle specific level pages like /exercises/a1
-  if (params.slug.length === 1 && ["a1", "a2", "b1", "b2"].includes(params.slug[0])) {
-    return <ExerciseLevelPage level={params.slug[0]} />;
+  if (slug.length === 1 && ["a1", "a2", "b1", "b2"].includes(slug[0])) {
+    return <ExerciseLevelPage level={slug[0]} />;
   }
-  
-  const doc = await getDocFromParams(params.slug);
 
-  if (!doc || !doc.component) {
+  const doc = await getDocFromParams(slug);  if (!doc || !doc.component) {
     notFound();
   }
 
