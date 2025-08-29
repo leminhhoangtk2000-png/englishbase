@@ -27,6 +27,10 @@ const sidebarNavItems = [
   {
     title: "Sepay Webhooks",
     href: "/admin/sepay-webhooks",
+  },
+  {
+    title: "Cài đặt TTS",
+    href: "/admin/tts-settings",
   }
 ];
 

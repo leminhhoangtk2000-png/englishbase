@@ -1,0 +1,62 @@
+[
+  {
+    "german": "die Familie",
+    "plural": "die Familien",
+    "phonetic": "/faˈmiːli̯ə/",
+    "vietnamese": "gia đình",
+    "exampleGerman": "Meine Familie ist sehr groß.",
+    "exampleVietnamese": "Gia đình tôi rất đông.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Familie",
+    "difficulty": 1
+  },
+  {
+    "german": "der Vater",
+    "plural": "die Väter",
+    "phonetic": "/ˈfaːtɐ/",
+    "vietnamese": "bố, cha",
+    "exampleGerman": "Mein Vater arbeitet in einem Büro.",
+    "exampleVietnamese": "Bố tôi làm việc trong một văn phòng.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Familie",
+    "difficulty": 1
+  },
+  {
+    "german": "die Mutter",
+    "plural": "die Mütter",
+    "phonetic": "/ˈmʊtɐ/",
+    "vietnamese": "mẹ",
+    "exampleGerman": "Meine Mutter kocht sehr gut.",
+    "exampleVietnamese": "Mẹ tôi nấu ăn rất ngon.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Familie",
+    "difficulty": 1
+  },
+  {
+    "german": "der Bruder",
+    "plural": "die Brüder",
+    "phonetic": "/ˈbʁuːdɐ/",
+    "vietnamese": "anh trai, em trai",
+    "exampleGerman": "Mein Bruder ist älter als ich.",
+    "exampleVietnamese": "Anh trai tôi lớn tuổi hơn tôi.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Familie",
+    "difficulty": 1
+  },
+  {
+    "german": "die Schwester",
+    "plural": "die Schwestern",
+    "phonetic": "/ˈʃvɛstɐ/",
+    "vietnamese": "chị gái, em gái",
+    "exampleGerman": "Meine Schwester studiert Medizin.",
+    "exampleVietnamese": "Chị gái tôi học ngành y.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Familie",
+    "difficulty": 1
+  }
+]

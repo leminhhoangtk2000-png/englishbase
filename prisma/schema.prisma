@@ -118,6 +118,47 @@ model Comment {
 }
 
 // Vocabulary system
+model VocabularyLevel {
+  id              String @id @default(cuid())
+  name            String @unique // A1, A2, B1, B2, C1, C2
+  displayName     String // "Grundstufe A1", "Mittelstufe B1", etc.
+  description     String?
+  order           Int    @unique
+  isActive        Boolean @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  topics          VocabularyTopic[]
+  vocabularyEntries VocabularyEntry[]
+  exercises       Exercise[]
+  userProgress    UserProgress[]
+
+  @@map("vocabulary_levels")
+}
+
+model VocabularyTopic {
+  id              String @id @default(cuid())
+  name            String // "Familie", "Wohnen", "Essen", etc.
+  displayName     String // "Familie und Verwandtschaft", etc.
+  description     String?
+  levelId         String
+  slug            String
+  order           Int
+  isActive        Boolean @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  vocabularyEntries VocabularyEntry[]
+  userProgress    UserProgress[]
+
+  @@unique([levelId, slug])
+  @@unique([levelId, order])
+  @@map("vocabulary_topics")
+}
+
 model VocabularyEntry {
   id              String @id @default(cuid())
   german          String
@@ -125,20 +166,23 @@ model VocabularyEntry {
   phonetic        String?
   plural          String?
   type            VocabularyType
-  level           LanguageLevel
+  levelId         String
+  topicId         String
   exampleGerman   String?
   exampleVietnamese String?
-  category        String?
   difficulty      Int    @default(1)
   frequency       Int    @default(0)
+  tags            String[] // Additional tags for categorization
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
   // Relations
+  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  topic           VocabularyTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
   userVocabulary  UserVocabulary[]
   exerciseItems   ExerciseItem[]
 
-  @@unique([german, vietnamese])
+  @@unique([german, vietnamese, levelId, topicId])
   @@map("vocabulary_entries")
 }
 
@@ -151,15 +195,6 @@ enum VocabularyType {
   PREPOSITION
   CONJUNCTION
   OTHER
-}
-
-enum LanguageLevel {
-  A1
-  A2
-  B1
-  B2
-  C1
-  C2
 }
 
 model UserVocabulary {
@@ -197,7 +232,7 @@ model Exercise {
   title           String
   description     String?
   type            ExerciseType
-  level           LanguageLevel
+  levelId         String
   difficulty      Int    @default(1)
   timeLimit       Int?   // in seconds
   published       Boolean @default(false)
@@ -205,6 +240,7 @@ model Exercise {
   updatedAt       DateTime @updatedAt
 
   // Relations
+  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
   items           ExerciseItem[]
   userExercises   UserExercise[]
 
@@ -262,8 +298,8 @@ model UserExercise {
 model UserProgress {
   id              String @id @default(cuid())
   userId          String
-  level           LanguageLevel
-  category        String
+  levelId         String
+  topicId         String?
   totalWords      Int    @default(0)
   learnedWords    Int    @default(0)
   masteredWords   Int    @default(0)
@@ -275,8 +311,10 @@ model UserProgress {
 
   // Relations
   user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  topic           VocabularyTopic? @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
-  @@unique([userId, level, category])
+  @@unique([userId, levelId, topicId])
   @@map("user_progress")
 }
 

@@ -5,6 +5,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { AuthProvider } from '@/lib/auth-context';
 import { Footer } from '@/components/footer';
+import { TTSProvider } from '@/hooks/use-tts';
+import { VocabularyProvider } from '@/hooks/use-vocabulary';
 
 export const metadata: Metadata = {
   title: 'Deutsch.vn',
@@ -33,11 +35,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AuthProvider>
-            <div className="flex-1">{children}</div>
-            <Toaster />
-            <Footer />
-          </AuthProvider>
+          <TTSProvider>
+            <VocabularyProvider>
+              <AuthProvider>
+                <div className="flex-1">{children}</div>
+                <Toaster />
+                <Footer />
+              </AuthProvider>
+            </VocabularyProvider>
+          </TTSProvider>
         </ThemeProvider>
       </body>
     </html>
