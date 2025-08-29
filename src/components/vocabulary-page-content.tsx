@@ -13,7 +13,6 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { translateWord } from "@/ai/flows/vocabulary-flow";
 import { useToast } from "@/hooks/use-toast";
 import SpeechButton from "@/components/speech-button";
 import { VocabularyCard as VocabCard } from "@/components/vocabulary-card";
@@ -79,8 +78,8 @@ export function VocabularyPageContent() {
         setResults(null);
         setSearchTerm(term);
 
-        // Step 1: Search in database first
         try {
+            // First try database search
             const response = await fetch(`/api/vocabulary?search=${encodeURIComponent(term)}&limit=50`);
             if (response.ok) {
                 const data = await response.json();
@@ -94,52 +93,43 @@ export function VocabularyPageContent() {
                     return;
                 }
             }
-        } catch (error) {
-            console.error('Database search error:', error);
-        }
 
-        // Step 2: If not found in database, try AI translation
-        try {
-            const translatedWord = await translateWord({ word: term });
-            
-            if (translatedWord) {
-                // Convert AI response to VocabularyEntry format
-                const aiWord: VocabularyEntry = {
-                    id: `ai-${Date.now()}`,
-                    german: translatedWord.german,
-                    vietnamese: translatedWord.vietnamese,
-                    phonetic: translatedWord.phonetic,
-                    type: translatedWord.type,
-                    level: {
-                        id: 'ai-level',
-                        name: translatedWord.level,
-                        displayName: translatedWord.level
-                    },
-                    exampleGerman: translatedWord.exampleGerman,
-                    exampleVietnamese: translatedWord.exampleVietnamese,
-                    plural: translatedWord.plural,
-                    difficulty: 3,
-                    frequency: 0,
-                    tags: [],
-                    topic: {
-                        id: 'ai-topic',
-                        name: 'general',
-                        displayName: 'Tổng quát',
-                        slug: 'general'
-                    }
-                };
-                
-                const results = [aiWord];
-                setResults(results);
-                // Add AI results to history
-                results.forEach((word) => {
-                    addToHistory(word);
-                });
+            // If not found in database, try AI search and auto-save
+            const aiResponse = await fetch('/api/vocabulary/ai-search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ word: term })
+            });
+
+            if (aiResponse.ok) {
+                const aiData = await aiResponse.json();
+                if (aiData.success && aiData.data) {
+                    setResults([aiData.data]);
+                    addToHistory(aiData.data);
+                    
+                    // Show toast indicating source
+                    toast({
+                        title: aiData.source === 'ai_generated' ? "Từ vựng mới đã được tạo!" : "Tìm thấy trong cơ sở dữ liệu",
+                        description: aiData.source === 'ai_generated' 
+                            ? "AI đã tạo và lưu từ vựng mới vào hệ thống"
+                            : "Từ vựng đã có sẵn trong cơ sở dữ liệu",
+                        variant: "default",
+                    });
+                } else {
+                    setNotFound(true);
+                }
             } else {
                 setNotFound(true);
+                toast({
+                    title: "Lỗi tìm kiếm",
+                    description: "Không thể tìm kiếm từ vựng. Vui lòng thử lại.",
+                    variant: "destructive",
+                });
             }
         } catch (error) {
-            console.error('AI translation error:', error);
+            console.error('Search error:', error);
             setNotFound(true);
             toast({
                 title: "Lỗi tìm kiếm",
