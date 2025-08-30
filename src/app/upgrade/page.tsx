@@ -12,11 +12,11 @@ const supporterTiers = [
     name: 'Người hỗ trợ Đồng',
     price: '25.000đ',
     icon: '🥉',
-    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 5.000đ thôi. Bạn đã hỗ trợ chi phí học cho 20 bạn.',
+    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 250đ thôi. Bạn đã hỗ trợ chi phí học cho 100 bạn.',
     features: [
       'Truy cập đầy đủ tất cả nội dung',
       'Huy hiệu "Người hỗ trợ" đặc biệt',
-      'Bạn đang giúp đỡ 20 bạn học',
+      'Bạn đang giúp đỡ 100 bạn học',
       'Góp phần duy trì server và chi phí'
     ]
   },
@@ -25,11 +25,11 @@ const supporterTiers = [
     name: 'Người hỗ trợ Bạc',
     icon: '🥈',
     price: '49.000đ',
-    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 5.000đ thôi. Bạn đã hỗ trợ chi phí học cho 120 bạn.',
+    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 250đ thôi. Bạn đã hỗ trợ chi phí học cho 196 bạn.',
     features: [
       'Tất cả tính năng gói Đồng',
       'Huy hiệu "Người hỗ trợ" đặc biệt',
-      'Bạn đang giúp đỡ 120 bạn học',
+      'Bạn đang giúp đỡ 196 bạn học',
       'Góp phần phát triển tính năng mới'
     ],
     popular: true
@@ -39,11 +39,11 @@ const supporterTiers = [
     name: 'Người hỗ trợ Vàng',
     icon: '🥇',
     price: '99.000đ',
-    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 5.000đ thôi. Bạn đã hỗ trợ chi phí học cho 320 bạn học.',
+    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 250đ thôi. Bạn đã hỗ trợ chi phí học cho 396 bạn.',
     features: [
       'Tất cả tính năng gói Bạc',
       'Huy hiệu "Người hỗ trợ" đặc biệt',
-      'Bạn đang giúp đỡ 320 bạn học',
+      'Bạn đang giúp đỡ 396 bạn học',
       'Góp phần phát triển nội dung mới'
     ]
   }
