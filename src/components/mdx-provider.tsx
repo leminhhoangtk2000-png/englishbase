@@ -14,7 +14,8 @@ import {
   GrammarBox,
   VocabularyList,
   AuthorCredit,
-  FacebookComments
+  FacebookComments,
+  CommentSystem
 } from './exercise-registry'
 
 // Standard MDX components with Tailwind styling
@@ -28,6 +29,7 @@ const mdxComponents: MDXComponents = {
   VocabularyList,
   AuthorCredit,
   FacebookComments,
+  CommentSystem,
   
   // HTML elements with Tailwind classes
   h1: (props) => (

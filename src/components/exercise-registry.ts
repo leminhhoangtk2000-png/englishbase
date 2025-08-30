@@ -22,6 +22,7 @@ import VocabularyList from './exercises/VocabularyList'
 // Content & Social Components
 import AuthorCredit from './exercises/AuthorCredit'
 import FacebookComments from './exercises/FacebookComments'
+import CommentSystem from './exercises/CommentSystem'
 
 // Re-export for easy import
 export { 
@@ -32,7 +33,8 @@ export {
   GrammarBox,
   VocabularyList,
   AuthorCredit,
-  FacebookComments
+  FacebookComments,
+  CommentSystem
 }
 
 // =============================================================================

@@ -9,15 +9,17 @@ import {
   GrammarBox,
   VocabularyList
 } from '@/components/exercises'
+import CommentSystem from '@/components/exercises/CommentSystem'
 
 export default function ExercisesDemoPage() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="prose prose-lg max-w-none">
-        <h1 className="text-4xl font-bold mb-8">Demo Exercise Components</h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Đây là trang demo các components bài tập cho hệ thống học tiếng Đức.
-        </p>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <div className="prose prose-lg max-w-none dark:prose-invert">
+          <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">Demo Exercise Components</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Đây là trang demo các components bài tập cho hệ thống học tiếng Đức.
+          </p>
 
         {/* 1. Lueckentext */}
         <section className="mb-12">
@@ -318,7 +320,18 @@ export default function ExercisesDemoPage() {
             </div>
           </div>
         </section>
+
+        {/* 8. Comment System */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">8. Comment System</h2>
+          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+            <CommentSystem 
+              exerciseId="exercises-demo-123"
+            />
+          </div>
+        </section>
       </div>
+    </div>
     </div>
   )
 }
