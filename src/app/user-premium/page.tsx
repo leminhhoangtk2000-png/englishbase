@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Quote } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Quote, BookmarkCheck } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -15,6 +15,7 @@ import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { SavedVocabularyCard } from "@/components/saved-vocabulary-card";
 
 function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
@@ -365,6 +366,10 @@ export default function UserPremiumPage() {
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
+              <TabsTrigger value="saved-vocabulary" className="flex items-center gap-1.5">
+                <BookmarkCheck className="w-4 h-4" />
+                Từ vựng đã lưu
+              </TabsTrigger>
               <TabsTrigger value="support" className="flex items-center gap-1.5 font-semibold text-foreground">
                 <Star className="w-4 h-4" />
                 Trở thành người hỗ trợ
@@ -486,6 +491,9 @@ export default function UserPremiumPage() {
                     </div>
                 </div>
               </Card>
+            </TabsContent>
+            <TabsContent value="saved-vocabulary">
+              <SavedVocabularyCard />
             </TabsContent>
             <TabsContent value="support">
                  <div className="space-y-8">

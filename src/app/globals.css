@@ -144,6 +144,12 @@
   .prose pre {
     @apply bg-muted p-4 rounded-lg overflow-x-auto;
   }
+
+  /* Fix code text color for nude theme */
+  .nude .prose code,
+  .nude .prose pre code {
+    color: hsl(34 10% 15%) !important; /* Dark brown for nude theme */
+  }
   
   /* Lists */
   .prose ul, .prose ol {

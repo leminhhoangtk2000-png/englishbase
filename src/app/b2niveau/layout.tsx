@@ -1,4 +1,4 @@
-import { docsConfig } from "@/config/b1niveau";
+import { docsConfig } from "@/config/b2niveau";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";

@@ -6,6 +6,36 @@
  */
 
 // =============================================================================
+// ICONS - Import các icon từ Lucide React
+// =============================================================================
+
+import {
+  // Exercise type icons
+  Edit3, CheckSquare, Shuffle, PenTool,
+  
+  // Learning support icons
+  BookOpen, List, GraduationCap,
+  
+  // Content & social icons
+  User, MessageCircle,
+  
+  // Multimedia icons
+  Headphones, Video, Image,
+  
+  // Assessment icons
+  Trophy, BarChart3, Target,
+  
+  // Utility icons
+  Clock, Play, Square, Volume2,
+  
+  // Difficulty icons
+  Star, StarHalf, Zap,
+  
+  // Category icons
+  Brain, Mic, Eye, FileText
+} from 'lucide-react'
+
+// =============================================================================
 // EXERCISE COMPONENTS - Các components bài tập tương tác
 // =============================================================================
 
@@ -35,30 +65,42 @@ export {
   CommentSystem
 }
 
+// Export icons for easy access
+export const ExerciseIcons = {
+  Edit3, CheckSquare, Shuffle, PenTool,
+  BookOpen, List, GraduationCap,
+  User, MessageCircle,
+  Headphones, Video, Image,
+  Trophy, BarChart3, Target,
+  Clock, Play, Square, Volume2,
+  Star, StarHalf, Zap,
+  Brain, Mic, Eye, FileText
+}
+
 // =============================================================================
 // PLANNED EXERCISE COMPONENTS - Components sẽ được thêm trong tương lai
 // =============================================================================
 
 // Advanced Exercise Types (TODO)
-// export { default as DragDropExercise } from './exercises/DragDropExercise'
-// export { default as ListeningExercise } from './exercises/ListeningExercise' 
-// export { default as SpeakingExercise } from './exercises/SpeakingExercise'
-// export { default as ReadingComprehension } from './exercises/ReadingComprehension'
+// 🎯 export { default as DragDropExercise } from './exercises/DragDropExercise' // Shuffle icon
+// 🎧 export { default as ListeningExercise } from './exercises/ListeningExercise' // Headphones icon
+// 🎤 export { default as SpeakingExercise } from './exercises/SpeakingExercise' // Mic icon
+// 👁️ export { default as ReadingComprehension } from './exercises/ReadingComprehension' // Eye icon
 
 // Specialized Grammar Components (TODO)
-// export { default as VerbConjugation } from './exercises/VerbConjugation'
-// export { default as CaseExercise } from './exercises/CaseExercise'
-// export { default as WordOrderExercise } from './exercises/WordOrderExercise'
+// 🎓 export { default as VerbConjugation } from './exercises/VerbConjugation' // GraduationCap icon
+// 🧠 export { default as CaseExercise } from './exercises/CaseExercise' // Brain icon
+// 🎯 export { default as WordOrderExercise } from './exercises/WordOrderExercise' // Target icon
 
 // Assessment & Progress Components (TODO)
-// export { default as QuizBuilder } from './exercises/QuizBuilder'
-// export { default as ProgressTracker } from './exercises/ProgressTracker'
-// export { default as LevelTest } from './exercises/LevelTest'
+// 🏆 export { default as QuizBuilder } from './exercises/QuizBuilder' // Trophy icon
+// 📊 export { default as ProgressTracker } from './exercises/ProgressTracker' // BarChart3 icon
+// ⭐ export { default as LevelTest } from './exercises/LevelTest' // Star icon
 
 // Multimedia Components (TODO)
-// export { default as AudioPlayer } from './exercises/AudioPlayer'
-// export { default as VideoPlayer } from './exercises/VideoPlayer'
-// export { default as ImageAnnotation } from './exercises/ImageAnnotation'
+// 🔊 export { default as AudioPlayer } from './exercises/AudioPlayer' // Volume2 icon
+// 🎥 export { default as VideoPlayer } from './exercises/VideoPlayer' // Video icon
+// 🖼️ export { default as ImageAnnotation } from './exercises/ImageAnnotation' // Image icon
 
 // =============================================================================
 // MDX UTILITIES - Tiện ích cho MDX
@@ -121,6 +163,7 @@ export interface ExerciseProps {
   timeLimit?: number // seconds
   showHints?: boolean
   allowRetry?: boolean
+  icon?: React.ComponentType<any>
 }
 
 export interface VocabularyWord {
@@ -142,6 +185,18 @@ export interface GrammarRule {
   counterExamples?: string[]
 }
 
+export interface DifficultyLevel {
+  name: string
+  icon: React.ComponentType<any>
+  color: string
+}
+
+export interface CategoryInfo {
+  name: string
+  icon: React.ComponentType<any>
+  color: string
+}
+
 // =============================================================================
 // CONFIGURATION - Cấu hình mặc định
 // =============================================================================
@@ -152,6 +207,31 @@ export const ExerciseConfig = {
     excellent: 80,
     good: 60,
     needsImprovement: 0
+  },
+  
+  // Icons for each exercise type
+  icons: {
+    lueckentext: Edit3,
+    multipleChoice: CheckSquare,
+    matching: Shuffle,
+    writing: PenTool,
+    grammar: BookOpen,
+    vocabulary: List,
+    listening: Headphones,
+    speaking: Mic,
+    reading: Eye,
+    dragDrop: Shuffle,
+    verbConjugation: GraduationCap,
+    caseExercise: Brain,
+    wordOrder: Target,
+    quiz: Trophy,
+    progress: BarChart3,
+    level: Star,
+    audio: Volume2,
+    video: Video,
+    image: Image,
+    author: User,
+    comment: MessageCircle
   },
   
   // Default colors for each component type
@@ -211,13 +291,13 @@ export function calculateScore(correct: number, total: number): ExerciseResult {
 export function getFeedbackMessage(feedback: ExerciseResult['feedback']): string {
   switch (feedback) {
     case 'excellent':
-      return 'Xuất sắc! 🌟'
+      return 'Xuất sắc! 🌟 Hoàn hảo!'
     case 'good':
-      return 'Khá tốt! 👍'
+      return 'Khá tốt! 👍 Tiếp tục cố gắng!'
     case 'needs-improvement':
-      return 'Cần cải thiện 📚'
+      return 'Cần cải thiện 📚 Hãy thử lại!'
     default:
-      return 'Hoàn thành!'
+      return 'Hoàn thành! ✅'
   }
 }
 
@@ -226,6 +306,27 @@ export function getFeedbackMessage(feedback: ExerciseResult['feedback']): string
  */
 export function getComponentColor(type: keyof typeof ExerciseConfig.colors): string {
   return ExerciseConfig.colors[type] || 'gray'
+}
+
+/**
+ * Get icon component based on exercise type
+ */
+export function getExerciseIcon(type: keyof typeof ExerciseConfig.icons) {
+  return ExerciseConfig.icons[type] || BookOpen
+}
+
+/**
+ * Get difficulty level info with icon and color
+ */
+export function getDifficultyInfo(level: keyof typeof DIFFICULTY_LEVELS) {
+  return DIFFICULTY_LEVELS[level] || DIFFICULTY_LEVELS.A1
+}
+
+/**
+ * Get category info with icon and color
+ */
+export function getCategoryInfo(category: keyof typeof CATEGORIES) {
+  return CATEGORIES[category] || CATEGORIES.GRAMMAR
 }
 
 /**
@@ -364,19 +465,19 @@ export const EXERCISE_TYPES = {
 } as const
 
 export const DIFFICULTY_LEVELS = {
-  A1: 'A1',
-  A2: 'A2', 
-  B1: 'B1',
-  B2: 'B2',
-  C1: 'C1',
-  C2: 'C2'
+  A1: { name: 'A1', icon: Star, color: 'green' },
+  A2: { name: 'A2', icon: Star, color: 'blue' }, 
+  B1: { name: 'B1', icon: StarHalf, color: 'yellow' },
+  B2: { name: 'B2', icon: StarHalf, color: 'orange' },
+  C1: { name: 'C1', icon: Zap, color: 'red' },
+  C2: { name: 'C2', icon: Zap, color: 'purple' }
 } as const
 
 export const CATEGORIES = {
-  GRAMMAR: 'Ngữ pháp',
-  VOCABULARY: 'Từ vựng',
-  LISTENING: 'Nghe',
-  SPEAKING: 'Nói',
-  READING: 'Đọc',
-  WRITING: 'Viết'
+  GRAMMAR: { name: 'Ngữ pháp', icon: BookOpen, color: 'indigo' },
+  VOCABULARY: { name: 'Từ vựng', icon: List, color: 'teal' },
+  LISTENING: { name: 'Nghe', icon: Headphones, color: 'purple' },
+  SPEAKING: { name: 'Nói', icon: Mic, color: 'green' },
+  READING: { name: 'Đọc', icon: Eye, color: 'blue' },
+  WRITING: { name: 'Viết', icon: FileText, color: 'yellow' }
 } as const

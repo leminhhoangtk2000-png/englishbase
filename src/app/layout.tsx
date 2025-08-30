@@ -33,7 +33,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
           enableSystem
-          disableTransitionOnChange
+          themes={['light', 'dark', 'nude']}
         >
           <TTSProvider>
             <VocabularyProvider>

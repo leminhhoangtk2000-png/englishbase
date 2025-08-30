@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
-import { DocsTOC } from "../_components/docs-toc";
+import { DocsTOC } from "@/components/docs-toc-client";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookOpen, GraduationCap, FileText } from "lucide-react";
 
 interface DocPageProps {
   params: Promise<{
@@ -15,53 +17,154 @@ interface DocPageProps {
 export default async function DocPage({ params }: DocPageProps) {
   const { slug } = await params;
 
-  // If no slug, show main niveau page
+    // If no slug, show main niveau page
   if (!slug || slug.length === 0) {
-    const niveauContent = getNiveauContent('b2niveau');
-    
     return (
       <main className="relative py-6 lg:py-8">
         <div className="mx-auto w-full min-w-0">
-          <div className="space-y-2 mb-8">
-            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">B2 Niveau</h1>
-            <p className="text-lg text-muted-foreground">
-              Tiếng Đức trung cấp khá - Niveau B2 theo khung tham chiếu châu Âu
+          <div className="flex max-w-[980px] flex-col items-start gap-2 mb-8">
+            <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl">
+              Trình độ B2 - Upper Intermediate
+              <Badge variant="secondary" className="ml-3">
+                B2 Niveau
+              </Badge>
+            </h1>
+            <p className="max-w-[700px] text-lg text-muted-foreground">
+              Học tiếng Đức trình độ trung cấp cao B2. Nắm vững ngữ pháp phức tạp, từ vựng chuyên ngành và giao tiếp tự tin.
             </p>
           </div>
-          
-          <div className="grid gap-8">
-            {niveauContent.sections.map((section) => (
-              <div key={section.slug} className="space-y-4">
-                <h2 className="text-2xl font-semibold font-headline capitalize">
-                  {section.title}
-                </h2>
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {section.items.map((item) => (
-                    <Link
-                      key={item.slug}
-                      href={`/b2niveau/${section.slug}/${item.slug}`}
-                      className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
-                    >
-                      <h3 className="font-medium group-hover:text-primary">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {item.description}
-                      </p>
-                      {item.tags && item.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-2">
-                          {item.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      )}
-                    </Link>
-                  ))}
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
+            <Card className="group relative overflow-hidden border-2 transition-all hover:shadow-lg">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2">
+                  <BookOpen className="h-5 w-5 text-primary" />
+                  <CardTitle className="text-lg">Ngữ pháp - Grammatik</CardTitle>
                 </div>
-              </div>
-            ))}
+                <CardDescription>
+                  Học các cấu trúc ngữ pháp nâng cao và phức tạp
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <Link
+                    href="/b2niveau/grammatik/01-indirekte-rede"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Câu gián tiếp - Indirekte Rede
+                  </Link>
+                  <Link
+                    href="/b2niveau/grammatik/02-konnektoren"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Liên từ phức tạp - Konnektoren
+                  </Link>
+                  <Link
+                    href="/b2niveau/grammatik/03-modalverben-alternativen"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Thay thế động từ khuyết thiếu
+                  </Link>
+                  <Link
+                    href="/b2niveau/grammatik/04-partizipialkonstruktionen"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Cấu trúc phân từ
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative overflow-hidden border-2 transition-all hover:shadow-lg">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2">
+                  <GraduationCap className="h-5 w-5 text-primary" />
+                  <CardTitle className="text-lg">Từ vựng - Wortschatz</CardTitle>
+                </div>
+                <CardDescription>
+                  Từ vựng chuyên ngành và học thuật nâng cao
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <Link
+                    href="/b2niveau/wortschatz/01-wirtschaft"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Kinh tế - Wirtschaft
+                  </Link>
+                  <Link
+                    href="/b2niveau/wortschatz/02-politik"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Chính trị - Politik
+                  </Link>
+                  <Link
+                    href="/b2niveau/wortschatz/03-wissenschaft"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Khoa học - Wissenschaft
+                  </Link>
+                  <Link
+                    href="/b2niveau/wortschatz/04-kultur"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Văn hóa - Kultur
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative overflow-hidden border-2 transition-all hover:shadow-lg">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-primary" />
+                  <CardTitle className="text-lg">Bài tập - Übungen</CardTitle>
+                </div>
+                <CardDescription>
+                  Luyện tập nâng cao kỹ năng tổng hợp
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <Link
+                    href="/b2niveau/uebungen/01-grammatik-uebungen"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Luyện ngữ pháp B2
+                  </Link>
+                  <Link
+                    href="/b2niveau/uebungen/02-wortschatz-uebungen"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Luyện từ vựng B2
+                  </Link>
+                  <Link
+                    href="/b2niveau/uebungen/03-schreiben-uebungen"
+                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    • Luyện viết B2
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="w-full max-w-[700px] space-y-4">
+            <h2 className="text-2xl font-bold">Về trình độ B2</h2>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                Trình độ B2 (Upper Intermediate) là mức độ trung cấp cao trong hệ thống đánh giá CEFR. 
+                Ở trình độ này, bạn có thể:
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Hiểu những ý chính của văn bản phức tạp về cả chủ đề cụ thể và trừu tượng</li>
+                <li>Tương tác một cách trôi chảy và tự nhiên với người bản địa</li>
+                <li>Tạo ra văn bản rõ ràng, chi tiết về nhiều chủ đề khác nhau</li>
+                <li>Giải thích quan điểm về một vấn đề, nêu ra ưu và nhược điểm của các lựa chọn khác nhau</li>
+                <li>Hiểu và thảo luận về các chủ đề chuyên môn trong lĩnh vực của mình</li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
@@ -172,7 +275,7 @@ export default async function DocPage({ params }: DocPageProps) {
       </div>
       <div className="hidden text-sm lg:block">
         <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-y-auto py-12 pl-4">
-          <DocsTOC toc={toc} />
+          <DocsTOC />
         </div>
       </div>
     </main>
