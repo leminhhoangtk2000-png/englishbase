@@ -23,3 +23,26 @@ export type Doc = {
   content: string;
   href: string;
 };
+
+// Markdown related types
+export type MarkdownMeta = {
+  title: string;
+  description: string;
+  date: string;
+  author?: string;
+  tags?: string[];
+  level: string;
+  order?: number;
+  slug: string;
+};
+
+export type MarkdownContent = {
+  meta: MarkdownMeta;
+  content: string;
+};
+
+export type MarkdownSection = {
+  name: string;
+  slug: string;
+  items: MarkdownContent[];
+};

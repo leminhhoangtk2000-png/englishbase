@@ -1,41 +1,33 @@
 import type { DocsConfig } from "@/types";
-import { IntroductionPage } from "@/app/a1niveau/_pages/introduction";
-import { InstallationPage } from "@/app/a1niveau/_pages/installation";
+import { getNavigationStructure } from "@/lib/markdown";
+
+// Get dynamic navigation from markdown files
+const markdownNavigation = getNavigationStructure('a1niveau');
 
 export const docsConfig: DocsConfig = {
-  items: [
+  items: markdownNavigation.length > 0 ? markdownNavigation : [
     {
-      title: "Getting Started",
+      title: "Ngữ pháp - Grammatik",
       items: [
         {
-          title: "Introduction",
-          description: "Khám phá ngữ pháp tiếng Đức cấp độ A1.",
-          href: "/a1niveau/introduction",
-          component: IntroductionPage,
+          title: "Chia động từ hiện tại",
+          description: "Học cách chia động từ trong tiếng Đức ở thì hiện tại",
+          href: "/a1niveau/grammatik/01-chia-dong-tu-hien-tai",
         },
         {
-          title: "Installation",
-          description: "Hướng dẫn từng bước để thiết lập môi trường học A1.",
-          href: "/a1niveau/installation",
-          component: InstallationPage,
+          title: "Thị động từ Modal Verben",
+          description: "Học cách sử dụng các động từ tình thái",
+          href: "/a1niveau/grammatik/02-modal-verben",
         },
       ],
     },
     {
-      title: "Core Concepts",
+      title: "Từ vựng - Wortschatz",
       items: [
         {
-          title: "Styling",
-          description: "Học cách tùy chỉnh giao diện trang tài liệu.",
-          href: "/a1niveau/core-concepts/styling",
-          // You would create and import the component here
-          // component: StylingPage, 
-        },
-        {
-          title: "Search",
-          description: "Hiểu cách hoạt động của chức năng tìm kiếm toàn văn.",
-          href: "/a1niveau/core-concepts/search",
-          // component: SearchPage,
+          title: "Gia đình - Familie",
+          description: "Học từ vựng về gia đình trong tiếng Đức",
+          href: "/a1niveau/wortschatz/01-familie",
         },
       ],
     },

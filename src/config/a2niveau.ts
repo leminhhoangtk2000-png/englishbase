@@ -1,38 +1,18 @@
 import type { DocsConfig } from "@/types";
-import { IntroductionPage } from "@/app/a2niveau/_pages/introduction";
-import { InstallationPage } from "@/app/a2niveau/_pages/installation";
+import { getNavigationStructure } from "@/lib/markdown";
+
+// Get dynamic navigation from markdown files
+const markdownNavigation = getNavigationStructure('a2niveau');
 
 export const blogConfig: DocsConfig = {
-  items: [
+  items: markdownNavigation.length > 0 ? markdownNavigation : [
     {
-      title: "Getting Started",
+      title: "Ngữ pháp - Grammatik",
       items: [
         {
-          title: "Introduction",
-          description: "Chào mừng đến với ngữ pháp A2.",
-          href: "/a2niveau/introduction",
-          component: IntroductionPage,
-        },
-        {
-          title: "First Post",
-          description: "Bài học đầu tiên về ngữ pháp A2.",
-          href: "/a2niveau/first-post",
-          component: InstallationPage,
-        },
-      ],
-    },
-    {
-      title: "Core Concepts",
-      items: [
-        {
-          title: "Styling",
-          description: "Học cách tùy chỉnh giao diện trang tài liệu.",
-          href: "/a2niveau/core-concepts/styling",
-        },
-        {
-          title: "Search",
-          description: "Hiểu cách hoạt động của chức năng tìm kiếm toàn văn.",
-          href: "/a2niveau/core-concepts/search",
+          title: "Quá khứ đơn - Präteritum",
+          description: "Học cách sử dụng thì quá khứ đơn trong tiếng Đức",
+          href: "/a2niveau/grammatik/01-praeteritum",
         },
       ],
     },

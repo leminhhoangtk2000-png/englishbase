@@ -1,40 +1,30 @@
-import type { DocsConfig } from "@/types";
-import { IntroductionPage } from "@/app/b1niveau/_pages/introduction";
-import { InstallationPage } from "@/app/b1niveau/_pages/installation";
-
-export const componentsConfig: DocsConfig = {
-  items: [
+export const b1niveauConfig = {
+  sidebarNav: [
     {
-      title: "Getting Started",
+      title: "Grammatik",
       items: [
         {
-          title: "Introduction",
-          description: "Khám phá ngữ pháp B1.",
-          href: "/b1niveau/introduction",
-          component: IntroductionPage,
+          title: "Perfekt",
+          href: "/b1niveau/grammatik/perfekt"
         },
         {
-          title: "Installation",
-          description: "Cách cài đặt và sử dụng các thành phần B1.",
-          href: "/b1niveau/installation",
-          component: InstallationPage,
-        },
-      ],
+          title: "Präteritum",
+          href: "/b1niveau/grammatik/praeteritum"
+        }
+      ]
     },
     {
-      title: "Component List",
+      title: "Wortschatz",
       items: [
         {
-          title: "Buttons",
-          description: "Bộ sưu tập các thành phần nút.",
-          href: "/b1niveau/list/buttons",
+          title: "Arbeit",
+          href: "/b1niveau/wortschatz/arbeit"
         },
         {
-          title: "Cards",
-          description: "Thành phần thẻ để hiển thị nội dung.",
-          href: "/b1niveau/list/cards",
-        },
-      ],
-    },
-  ],
-};
+          title: "Gesundheit",
+          href: "/b1niveau/wortschatz/gesundheit"
+        }
+      ]
+    }
+  ]
+}
