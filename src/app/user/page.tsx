@@ -18,6 +18,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { SavedVocabularyCard } from "@/components/saved-vocabulary-card";
+import { useAuth } from "@/lib/auth-context";
+import { useRouter } from "next/navigation";
 
 
 function ContributionGraph() {
@@ -295,6 +297,44 @@ function LearningGoal() {
 }
 
 export default function UserPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    if (!loading && !user) {
+      router.push('/login');
+    }
+  }, [user, loading, router]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p>Đang tải...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-2">Bạn cần đăng nhập</h1>
+          <p className="text-muted-foreground mb-6">
+            Vui lòng đăng nhập để truy cập trang này.
+          </p>
+          <Button asChild>
+            <Link href="/login">Đăng nhập</Link>
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -405,7 +445,7 @@ export default function UserPage() {
                         Nâng cấp tài khoản để theo dõi tiến độ học tập, đặt mục tiêu và xem lại lịch sử hoạt động của bạn.
                     </p>
                     <Button size="lg" asChild>
-                        <Link href="/user-premium">Nâng cấp ngay</Link>
+                        <Link href="/payment">Nâng cấp ngay</Link>
                     </Button>
                     <div className="mt-8 max-w-2xl w-full">
                         <div className="bg-secondary/50 border rounded-lg p-6 text-sm text-muted-foreground text-left relative">
@@ -522,10 +562,10 @@ export default function UserPage() {
                             <Quote className="absolute top-2 left-2 w-8 h-8 text-border" />
                              <div className="space-y-4 text-sm text-muted-foreground text-center max-w-3xl mx-auto py-4">
                                 <p>
-                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">5.000đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
+                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">100đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
                                 </p>
                                 <p>
-                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một bạn học khác</strong>.
+                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một 50 học khác</strong>.
                                 </p>
                                 <p className="font-semibold text-foreground italic text-base py-2">
                                     "Kiến thức là miễn phí, và bọn mình tin chắc việc làm của chúng ta là có ý nghĩa và sẽ ý nghĩa hơn từng ngày."

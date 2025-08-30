@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Quote, BookmarkCheck } from "lucide-react";
+import { GitCommit, GitMerge, Lock, MapPin, Smile, Users, Star, Book, GitBranch, BookMarked, Link as LinkIcon, Twitter, Linkedin, Trash2, Pencil, X, BookOpen, ClipboardCheck, Coffee, Heart, Rocket, Check, Target, Quote, BookmarkCheck, Crown } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -16,6 +16,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { SavedVocabularyCard } from "@/components/saved-vocabulary-card";
+import { useAuth } from "@/lib/auth-context";
+import { useRouter } from "next/navigation";
 
 function ContributionGraph() {
   const [selectedYear, setSelectedYear] = React.useState('2025');
@@ -300,6 +302,45 @@ function LearningGoal() {
 }
 
 export default function UserPremiumPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    if (!loading && (!user || (user.role !== 'USER_PREMIUM' && user.role !== 'ADMIN'))) {
+      router.push('/payment');
+    }
+  }, [user, loading, router]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p>Đang tải...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user || (user.role !== 'USER_PREMIUM' && user.role !== 'ADMIN')) {
+    return (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center">
+          <Crown className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold mb-2">Tính năng Premium</h1>
+          <p className="text-muted-foreground mb-6">
+            Bạn cần nâng cấp tài khoản để truy cập trang này.
+          </p>
+          <Button asChild>
+            <Link href="/payment">Nâng cấp ngay</Link>
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
