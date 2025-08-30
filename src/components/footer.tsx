@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="font-bold text-lg mb-2">Deutsch.VN</h3>
+              <h3 className="font-bold text-lg mb-2">Deutsch.vn</h3>
               <p className="text-muted-foreground mb-4">Cùng nhau xây dựng một cộng đồng học tiếng Đức cởi mở, thân thiện và hiệu quả cho người Việt.</p>
               <div className="flex gap-4">
                 <Link href="#"><Facebook className="w-6 h-6 text-muted-foreground hover:text-primary" /></Link>

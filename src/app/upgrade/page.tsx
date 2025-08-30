@@ -12,7 +12,7 @@ const supporterTiers = [
     name: 'Người hỗ trợ Đồng',
     price: '25.000đ',
     icon: '🥉',
-    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 250đ thôi. Bạn đã hỗ trợ chi phí học cho 100 bạn.',
+    description: ' 250đ thôi. Bạn đã hỗ trợ chi phí học cho 20 bạn.',
     features: [
       'Truy cập đầy đủ tất cả nội dung',
       'Huy hiệu "Người hỗ trợ" đặc biệt',
@@ -25,7 +25,7 @@ const supporterTiers = [
     name: 'Người hỗ trợ Bạc',
     icon: '🥈',
     price: '49.000đ',
-    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 250đ thôi. Bạn đã hỗ trợ chi phí học cho 196 bạn.',
+    description: ' 250đ thôi. Bạn đã hỗ trợ chi phí học cho 116 bạn.',
     features: [
       'Tất cả tính năng gói Đồng',
       'Huy hiệu "Người hỗ trợ" đặc biệt',
@@ -39,7 +39,7 @@ const supporterTiers = [
     name: 'Người hỗ trợ Vàng',
     icon: '🥇',
     price: '99.000đ',
-    description: 'Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là 250đ thôi. Bạn đã hỗ trợ chi phí học cho 396 bạn.',
+    description: ' 250đ thôi. Bạn đã hỗ trợ chi phí học cho 316 bạn.',
     features: [
       'Tất cả tính năng gói Bạc',
       'Huy hiệu "Người hỗ trợ" đặc biệt',
@@ -83,7 +83,7 @@ export default function UpgradePage() {
                 <p className="text-muted-foreground leading-relaxed">
                   Đó là lý do bọn mình có gói người hỗ trợ <strong>25.000đ</strong>. 
                   Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình 
-                  <strong> cover chi phí cho 5 bạn học khác</strong>.
+                  <strong> cover chi phí cho 100 bạn học khác</strong>.
                 </p>
               </div>
             </div>

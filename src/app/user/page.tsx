@@ -562,10 +562,10 @@ export default function UserPage() {
                             <Quote className="absolute top-2 left-2 w-8 h-8 text-border" />
                              <div className="space-y-4 text-sm text-muted-foreground text-center max-w-3xl mx-auto py-4">
                                 <p>
-                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">100đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
+                                     <strong className="text-foreground">250đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
                                 </p>
                                 <p>
-                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một 50 học khác</strong>.
+                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một 20 học khác</strong>.
                                 </p>
                                 <p className="font-semibold text-foreground italic text-base py-2">
                                     "Kiến thức là miễn phí, và bọn mình tin chắc việc làm của chúng ta là có ý nghĩa và sẽ ý nghĩa hơn từng ngày."
@@ -588,7 +588,7 @@ export default function UserPage() {
                             <CardContent className="flex-grow">
                                 <ul className="space-y-2 text-sm text-muted-foreground">
                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 1 bạn học.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 20 bạn học.</li>
                                 </ul>
                             </CardContent>
                             <CardFooter>
@@ -607,7 +607,7 @@ export default function UserPage() {
                             <CardContent className="flex-grow">
                                  <ul className="space-y-2 text-sm text-muted-foreground">
                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 6 bạn học.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 116 bạn học.</li>
                                 </ul>
                             </CardContent>
                             <CardFooter>
@@ -626,7 +626,7 @@ export default function UserPage() {
                             <CardContent className="flex-grow">
                                 <ul className="space-y-2 text-sm text-muted-foreground">
                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 14 bạn học khác và cả team Deutsch.vn.</li>
+                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 316 bạn học khác và cả team Deutsch.vn.</li>
                                 </ul>
                             </CardContent>
                             <CardFooter>
