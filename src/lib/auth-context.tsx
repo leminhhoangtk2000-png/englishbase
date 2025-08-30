@@ -7,6 +7,7 @@ interface AuthContextType {
   user: AuthUser | null
   loading: boolean
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>
+  signup: (name: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>
   logout: () => Promise<void>
   refreshUser: () => Promise<void>
 }
@@ -56,6 +57,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
+  const signup = async (name: string, email: string, password: string) => {
+    try {
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setUser(data.user)
+        return { success: true }
+      } else {
+        return { success: false, error: data.error }
+      }
+    } catch (error) {
+      console.error('Signup error:', error)
+      return { success: false, error: 'Có lỗi xảy ra khi đăng ký' }
+    }
+  }
+
   const logout = async () => {
     try {
       await fetch('/api/auth/logout', {
@@ -77,6 +102,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         user,
         loading,
         login,
+        signup,
         logout,
         refreshUser,
       }}

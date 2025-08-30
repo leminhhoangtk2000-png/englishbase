@@ -2,6 +2,7 @@ import { cookies } from 'next/headers'
 import { verifyToken } from './auth'
 import { prisma } from './prisma'
 import { AuthUser } from './auth'
+import bcrypt from 'bcryptjs'
 
 export async function getCurrentUser(): Promise<AuthUser | null> {
   try {
@@ -47,4 +48,37 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
     console.error('Error getting current user:', error)
     return null
   }
+}
+
+export async function createUser(userData: {
+  email: string
+  password: string
+  name: string
+  role?: 'USER' | 'USER_PREMIUM' | 'ADMIN'
+}) {
+  // Hash password
+  const hashedPassword = await bcrypt.hash(userData.password, 12)
+  
+  // Create user in database
+  const user = await prisma.user.create({
+    data: {
+      email: userData.email,
+      password: hashedPassword,
+      name: userData.name,
+      role: userData.role || 'USER',
+      username: userData.email.split('@')[0], // Default username from email
+    }
+  })
+
+  return user
+}
+
+export async function verifyPassword(plainPassword: string, hashedPassword: string): Promise<boolean> {
+  return bcrypt.compare(plainPassword, hashedPassword)
+}
+
+export async function getUserByEmail(email: string) {
+  return prisma.user.findUnique({
+    where: { email }
+  })
 }

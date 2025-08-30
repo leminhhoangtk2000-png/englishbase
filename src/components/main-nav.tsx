@@ -40,11 +40,11 @@ const otherNavLinks = [
     { href: "/exercises", label: "Bài tập" },
     { href: "/vocabulary", label: "Từ vựng" },
     { href: "/blog-new", label: "Blog" },
-    { href: "/user", label: "User" },
-    { href: "/user-premium", label: "User Premium" },
-    { href: "/kiem-tra", label: "Kiểm tra" },
-    { href: "/payment", label: "Thanh toán" },
-    { href: "/admin", label: "Admin" },
+    // { href: "/user", label: "User" },
+    // { href: "/user-premium", label: "User Premium" },
+    // { href: "/kiem-tra", label: "Kiểm tra" },
+    // { href: "/payment", label: "Thanh toán" },
+    // { href: "/admin", label: "Admin" },
 ];
 
 export function MainNav({ docs = [] }: MainNavProps) {
