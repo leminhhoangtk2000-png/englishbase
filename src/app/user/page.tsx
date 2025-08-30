@@ -445,7 +445,7 @@ export default function UserPage() {
                         Nâng cấp tài khoản để theo dõi tiến độ học tập, đặt mục tiêu và xem lại lịch sử hoạt động của bạn.
                     </p>
                     <Button size="lg" asChild>
-                        <Link href="/payment">Nâng cấp ngay</Link>
+                        <Link href="/upgrade">Nâng cấp ngay</Link>
                     </Button>
                     <div className="mt-8 max-w-2xl w-full">
                         <div className="bg-secondary/50 border rounded-lg p-6 text-sm text-muted-foreground text-left relative">

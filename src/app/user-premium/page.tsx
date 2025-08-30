@@ -307,7 +307,7 @@ export default function UserPremiumPage() {
 
   React.useEffect(() => {
     if (!loading && (!user || (user.role !== 'USER_PREMIUM' && user.role !== 'ADMIN'))) {
-      router.push('/payment');
+      router.push('/upgrade');
     }
   }, [user, loading, router]);
 
@@ -334,7 +334,7 @@ export default function UserPremiumPage() {
             Bạn cần nâng cấp tài khoản để truy cập trang này.
           </p>
           <Button asChild>
-            <Link href="/payment">Nâng cấp ngay</Link>
+            <Link href="/upgrade">Nâng cấp ngay</Link>
           </Button>
         </div>
       </div>
@@ -543,10 +543,10 @@ export default function UserPremiumPage() {
                             <Quote className="absolute top-2 left-2 w-8 h-8 text-border" />
                              <div className="space-y-4 text-sm text-muted-foreground text-center max-w-3xl mx-auto py-4">
                                 <p>
-                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">5.000đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
+                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">100đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
                                 </p>
                                 <p>
-                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một bạn học khác</strong>.
+                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho 50 bạn học khác</strong>.
                                 </p>
                                 <p className="font-semibold text-foreground italic text-base py-2">
                                     "Kiến thức là miễn phí, và bọn mình tin chắc việc làm của chúng ta là có ý nghĩa và sẽ ý nghĩa hơn từng ngày."
