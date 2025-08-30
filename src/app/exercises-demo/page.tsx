@@ -5,11 +5,10 @@ import {
   MatchingExercise, 
   WritingExercise, 
   AuthorCredit, 
-  FacebookComments,
+  CommentSystem,
   GrammarBox,
   VocabularyList
 } from '@/components/exercises'
-import CommentSystem from '@/components/exercises/CommentSystem'
 
 export default function ExercisesDemoPage() {
   return (
@@ -242,34 +241,7 @@ export default function ExercisesDemoPage() {
             </div>
           </div>
 
-          <FacebookComments 
-            url="https://edu-theme.com/demo/exercise-components"
-            initialComments={[
-              {
-                id: "1",
-                author: "Học viên A",
-                content: "Bài tập rất hay và dễ hiểu. Cảm ơn thầy cô!",
-                timestamp: "29/08/2025",
-                likes: 3,
-                replies: [
-                  {
-                    id: "1-1",
-                    author: "Lonia",
-                    content: "Cảm ơn bạn! Chúc bạn học tốt!",
-                    timestamp: "29/08/2025",
-                    likes: 1
-                  }
-                ]
-              },
-              {
-                id: "2",
-                author: "Học viên B",
-                content: "Các bài tập ghép cặp rất thú vị. Tôi đã làm được 100% đúng!",
-                timestamp: "30/08/2025",
-                likes: 2
-              }
-            ]}
-          />
+                    <CommentSystem exerciseId="exercise-demo" />
         </section>
 
         {/* Tips */}

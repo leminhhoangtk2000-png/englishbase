@@ -52,10 +52,10 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
   const getWordCountColor = () => {
     const status = getWordCountStatus();
     switch (status) {
-      case 'too-short': return 'text-red-600';
-      case 'too-long': return 'text-orange-600';
-      case 'good': return 'text-green-600';
-      default: return 'text-gray-600';
+      case 'too-short': return 'text-red-600 dark:text-red-400';
+      case 'too-long': return 'text-orange-600 dark:text-orange-400';
+      case 'good': return 'text-green-600 dark:text-green-400';
+      default: return 'text-gray-600 dark:text-gray-400';
     }
   };
 
@@ -73,24 +73,24 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
   const usedKeywords = keywordUsage.filter(k => k.used).length;
 
   return (
-    <Card className="my-6 border-2 border-yellow-100">
-      <CardHeader className="bg-yellow-50">
-        <CardTitle className="flex items-center gap-2 text-yellow-800">
-          <Edit3 className="w-5 h-5" />
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
+          <Edit3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           {title || 'Bài tập viết'}
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="p-6">
+      <CardContent className="p-6 bg-white dark:bg-gray-900">
         {/* Câu hỏi */}
         <div className="mb-4">
-          <h4 className="font-medium text-gray-800 mb-3">
+          <h4 className="font-medium text-gray-800 dark:text-gray-200 mb-3">
             {prompt.question}
           </h4>
           
           {/* Yêu cầu độ dài */}
           {(prompt.minWords || prompt.maxWords) && (
-            <div className="text-sm text-gray-600 mb-2">
+            <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               <strong>Yêu cầu độ dài:</strong> {' '}
               {prompt.minWords && prompt.maxWords 
                 ? `${prompt.minWords}-${prompt.maxWords} từ`
@@ -103,7 +103,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
           
           {/* Từ khóa cần sử dụng */}
           {prompt.keywords && prompt.keywords.length > 0 && (
-            <div className="text-sm text-gray-600 mb-2">
+            <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               <strong>Từ khóa cần sử dụng:</strong> {prompt.keywords.join(', ')}
             </div>
           )}
@@ -111,9 +111,9 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
 
         {/* Gợi ý */}
         {prompt.hints && prompt.hints.length > 0 && (
-          <div className="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-            <h5 className="font-medium text-blue-800 mb-2">Gợi ý:</h5>
-            <ul className="text-sm text-blue-700 space-y-1">
+          <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+            <h5 className="font-medium text-blue-800 dark:text-blue-200 mb-2">Gợi ý:</h5>
+            <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
               {prompt.hints.map((hint, index) => (
                 <li key={index} className="flex items-start">
                   <span className="mr-2">•</span>
@@ -130,7 +130,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
             placeholder="Viết câu trả lời của bạn ở đây..."
-            className="min-h-32 resize-y"
+            className="min-h-32 resize-y bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100"
             disabled={showFeedback}
           />
           
@@ -148,7 +148,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
             
             {/* Hiển thị từ khóa đã sử dụng */}
             {prompt.keywords && prompt.keywords.length > 0 && (
-              <span className="text-gray-600">
+              <span className="text-gray-600 dark:text-gray-400">
                 Từ khóa đã dùng: {usedKeywords}/{prompt.keywords.length}
               </span>
             )}
@@ -157,16 +157,16 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
 
         {/* Kiểm tra từ khóa */}
         {showFeedback && prompt.keywords && prompt.keywords.length > 0 && (
-          <div className="mb-4 p-3 bg-gray-50 rounded-lg border">
-            <h5 className="font-medium text-gray-800 mb-2">Kiểm tra từ khóa:</h5>
+          <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+            <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-2">Kiểm tra từ khóa:</h5>
             <div className="flex flex-wrap gap-2">
               {keywordUsage.map((item, index) => (
                 <span
                   key={index}
                   className={`px-2 py-1 rounded text-sm ${
                     item.used
-                      ? 'bg-green-100 text-green-800 border border-green-300'
-                      : 'bg-red-100 text-red-800 border border-red-300'
+                      ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-300 dark:border-green-700'
+                      : 'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300 border border-red-300 dark:border-red-700'
                   }`}
                 >
                   {item.keyword} {item.used ? '✓' : '✗'}
@@ -177,10 +177,10 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
         )}
 
         {/* Nút điều khiển */}
-        <div className="flex gap-3 mb-4">
+        <div className="flex gap-3 mb-4 pt-4 border-t border-gray-200 dark:border-gray-700">
           <Button
             onClick={handleCheck}
-            className="bg-yellow-600 hover:bg-yellow-700"
+            className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white"
             disabled={showFeedback || userAnswer.trim().length === 0}
           >
             <CheckCircle className="w-4 h-4 mr-2" />
@@ -190,6 +190,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
           <Button
             onClick={handleReset}
             variant="outline"
+            className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
             Làm lại
@@ -199,7 +200,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
             <Button
               onClick={toggleSample}
               variant="outline"
-              className="ml-auto"
+              className="ml-auto border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
             >
               {showSample ? 'Ẩn' : 'Xem'} mẫu
             </Button>
@@ -208,8 +209,8 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
 
         {/* Đánh giá */}
         {showFeedback && (
-          <div className="bg-gray-50 p-4 rounded-lg border">
-            <h5 className="font-semibold mb-3">Đánh giá:</h5>
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+            <h5 className="font-semibold mb-3 text-gray-900 dark:text-gray-100">Đánh giá:</h5>
             
             {/* Đánh giá độ dài */}
             <div className="mb-2">
@@ -240,7 +241,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
               </div>
             )}
             
-            <div className="text-green-600 font-medium">
+            <div className="text-green-600 dark:text-green-400 font-medium">
               ✓ Bài viết đã được hoàn thành
             </div>
           </div>
@@ -248,12 +249,12 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
 
         {/* Câu trả lời mẫu */}
         {showSample && prompt.sampleAnswer && (
-          <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h5 className="font-medium text-blue-800 mb-2 flex items-center gap-2">
+          <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+            <h5 className="font-medium text-blue-800 dark:text-blue-200 mb-2 flex items-center gap-2">
               <Volume2 className="w-4 h-4" />
               Câu trả lời mẫu:
             </h5>
-            <p className="text-blue-700 leading-relaxed">
+            <p className="text-blue-700 dark:text-blue-300 leading-relaxed">
               {prompt.sampleAnswer}
             </p>
           </div>

@@ -21,7 +21,6 @@ import VocabularyList from './exercises/VocabularyList'
 
 // Content & Social Components
 import AuthorCredit from './exercises/AuthorCredit'
-import FacebookComments from './exercises/FacebookComments'
 import CommentSystem from './exercises/CommentSystem'
 
 // Re-export for easy import
@@ -33,7 +32,6 @@ export {
   GrammarBox,
   VocabularyList,
   AuthorCredit,
-  FacebookComments,
   CommentSystem
 }
 
@@ -102,7 +100,7 @@ export const LearningSupportComponents = {
 // Content Management Components  
 export const ContentComponents = {
   AuthorCredit,
-  FacebookComments
+  CommentSystem
 } as const
 
 // =============================================================================

@@ -68,13 +68,21 @@ export default function MatchingExercise({
     setMatches({});
     setSelectedLeft(null);
     setShowFeedback(false);
-    // Shuffle lại
-    setShuffledRightItems([...shuffledRightItems].sort(() => Math.random() - 0.5));
+    
+    // Shuffle lại cột phải
+    const rightItems = items.map(item => ({
+      id: item.id,
+      right: item.right
+    }));
+    setShuffledRightItems([...rightItems].sort(() => Math.random() - 0.5));
   };
 
   const handleShuffle = () => {
-    if (showFeedback) return;
-    setShuffledRightItems([...shuffledRightItems].sort(() => Math.random() - 0.5));
+    const rightItems = items.map(item => ({
+      id: item.id,
+      right: item.right
+    }));
+    setShuffledRightItems([...rightItems].sort(() => Math.random() - 0.5));
   };
 
   const correctCount = items.reduce((count, item) => {
@@ -84,9 +92,9 @@ export default function MatchingExercise({
   const scorePercentage = items.length > 0 ? (correctCount / items.length) * 100 : 0;
   
   const getScoreColor = () => {
-    if (scorePercentage >= 80) return 'text-green-600';
-    if (scorePercentage >= 60) return 'text-yellow-600';
-    return 'text-red-600';
+    if (scorePercentage >= 80) return 'text-green-600 dark:text-green-400';
+    if (scorePercentage >= 60) return 'text-yellow-600 dark:text-yellow-400';
+    return 'text-red-600 dark:text-red-400';
   };
 
   const getMatchStatus = (leftId: string) => {
@@ -100,19 +108,19 @@ export default function MatchingExercise({
   };
 
   return (
-    <Card className="my-6 border-2 border-green-100">
-      <CardHeader className="bg-green-50">
-        <CardTitle className="flex items-center gap-2 text-green-800">
-          <ArrowRight className="w-5 h-5" />
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
+          <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           {title || 'Bài tập ghép cặp'}
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="p-6">
+      <CardContent className="p-6 bg-white dark:bg-gray-900">
         <div className="grid md:grid-cols-2 gap-6">
           {/* Cột trái */}
           <div>
-            <h4 className="font-semibold mb-3 text-center text-gray-700">
+            <h4 className="font-semibold mb-3 text-center text-gray-700 dark:text-gray-300">
               {leftColumnTitle}
             </h4>
             <div className="space-y-2">
@@ -128,15 +136,15 @@ export default function MatchingExercise({
                     className={`w-full text-left p-3 rounded-lg border-2 transition-all ${
                       showFeedback
                         ? status === 'correct'
-                          ? 'border-green-500 bg-green-50'
+                          ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
                           : status === 'incorrect'
-                          ? 'border-red-500 bg-red-50'
-                          : 'border-gray-200 bg-gray-50'
+                          ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                          : 'border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800'
                         : isSelected
-                        ? 'border-blue-500 bg-blue-50'
+                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
                         : matches[item.id]
-                        ? 'border-purple-300 bg-purple-50'
-                        : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                        ? 'border-purple-300 dark:border-purple-500 bg-purple-50 dark:bg-purple-900/20'
+                        : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'
                     } ${showFeedback ? 'cursor-default' : 'cursor-pointer'}`}
                   >
                     <div className="flex items-center justify-between">
@@ -144,9 +152,9 @@ export default function MatchingExercise({
                       {showFeedback && (
                         <span>
                           {status === 'correct' ? (
-                            <CheckCircle className="w-5 h-5 text-green-600" />
+                            <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
                           ) : status === 'incorrect' ? (
-                            <XCircle className="w-5 h-5 text-red-600" />
+                            <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
                           ) : null}
                         </span>
                       )}
@@ -154,14 +162,14 @@ export default function MatchingExercise({
                     
                     {/* Hiển thị đáp án đúng khi sai */}
                     {showFeedback && status === 'incorrect' && (
-                      <div className="mt-2 text-sm text-green-600 font-medium">
+                      <div className="mt-2 text-sm text-green-600 dark:text-green-400 font-medium">
                         Đáp án đúng: {item.right}
                       </div>
                     )}
                     
                     {/* Hiển thị giải thích */}
                     {showFeedback && status === 'correct' && item.explanation && (
-                      <div className="mt-2 text-sm text-gray-600 italic">
+                      <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 italic">
                         {item.explanation}
                       </div>
                     )}
@@ -174,7 +182,7 @@ export default function MatchingExercise({
           {/* Cột phải */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h4 className="font-semibold text-gray-700">
+              <h4 className="font-semibold text-gray-700 dark:text-gray-300">
                 {rightColumnTitle}
               </h4>
               {!showFeedback && (
@@ -182,6 +190,7 @@ export default function MatchingExercise({
                   onClick={handleShuffle}
                   variant="outline"
                   size="sm"
+                  className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
                   <Shuffle className="w-4 h-4" />
                 </Button>
@@ -202,22 +211,22 @@ export default function MatchingExercise({
                     className={`w-full text-left p-3 rounded-lg border-2 transition-all ${
                       showFeedback
                         ? isCorrectMatch
-                          ? 'border-green-500 bg-green-50'
+                          ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
                           : isMatched
-                          ? 'border-red-500 bg-red-50'
-                          : 'border-gray-200 bg-gray-50'
+                          ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                          : 'border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800'
                         : isMatched
-                        ? 'border-purple-300 bg-purple-50 cursor-default'
-                        : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50 cursor-pointer'
+                        ? 'border-purple-300 dark:border-purple-500 bg-purple-50 dark:bg-purple-900/20 cursor-default'
+                        : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <span>{item.right}</span>
                       {showFeedback && isCorrectMatch && (
-                        <CheckCircle className="w-5 h-5 text-green-600" />
+                        <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
                       )}
                       {showFeedback && isMatched && !isCorrectMatch && (
-                        <XCircle className="w-5 h-5 text-red-600" />
+                        <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
                       )}
                     </div>
                   </button>
@@ -229,18 +238,18 @@ export default function MatchingExercise({
 
         {/* Hướng dẫn */}
         {!showFeedback && (
-          <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-            <p className="text-sm text-blue-800">
+          <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+            <p className="text-sm text-blue-800 dark:text-blue-200">
               <strong>Hướng dẫn:</strong> Nhấn vào từ ở cột trái, sau đó nhấn vào từ tương ứng ở cột phải để ghép cặp.
             </p>
           </div>
         )}
 
         {/* Nút điều khiển */}
-        <div className="flex gap-3 mt-6">
+        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
           <Button
             onClick={handleCheck}
-            className="bg-green-600 hover:bg-green-700"
+            className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white"
             disabled={showFeedback}
           >
             <CheckCircle className="w-4 h-4 mr-2" />
@@ -249,6 +258,7 @@ export default function MatchingExercise({
           <Button
             onClick={handleReset}
             variant="outline"
+            className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
             Làm lại
@@ -257,29 +267,29 @@ export default function MatchingExercise({
 
         {/* Kết quả */}
         {showFeedback && (
-          <div className="bg-gray-50 p-4 rounded-lg border mt-4">
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700 mt-4">
             <div className="flex items-center justify-between">
-              <p className="font-semibold">
+              <p className="font-semibold text-gray-900 dark:text-gray-100">
                 Kết quả: <span className={getScoreColor()}>
                   {correctCount}/{items.length} ({scorePercentage.toFixed(0)}%)
                 </span>
               </p>
               
               {scorePercentage >= 80 && (
-                <div className="flex items-center text-green-600">
+                <div className="flex items-center text-green-600 dark:text-green-400">
                   <CheckCircle className="w-5 h-5 mr-1" />
                   <span className="font-medium">Xuất sắc!</span>
                 </div>
               )}
               
               {scorePercentage >= 60 && scorePercentage < 80 && (
-                <div className="flex items-center text-yellow-600">
+                <div className="flex items-center text-yellow-600 dark:text-yellow-400">
                   <span className="font-medium">Khá tốt!</span>
                 </div>
               )}
               
               {scorePercentage < 60 && (
-                <div className="flex items-center text-red-600">
+                <div className="flex items-center text-red-600 dark:text-red-400">
                   <span className="font-medium">Cần cải thiện</span>
                 </div>
               )}

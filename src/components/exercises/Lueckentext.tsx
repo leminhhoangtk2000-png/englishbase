@@ -105,20 +105,20 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
               className={`inline-block w-32 h-8 text-sm ${
                 showFeedback
                   ? isCorrect
-                    ? 'border-green-500 bg-green-50'
-                    : 'border-red-500 bg-red-50'
-                  : 'border-gray-300'
+                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
+                    : 'border-red-500 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300'
+                  : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'
               }`}
               placeholder="..."
             />
             {showFeedback && (
               <span className="ml-2 inline-flex items-center">
                 {isCorrect ? (
-                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
                 ) : (
                   <>
-                    <XCircle className="w-4 h-4 text-red-600 mr-1" />
-                    <span className="text-blue-600 font-medium text-sm">
+                    <XCircle className="w-4 h-4 text-red-600 dark:text-red-400 mr-1" />
+                    <span className="text-blue-600 dark:text-blue-400 font-medium text-sm">
                       {part.correctAnswer}
                     </span>
                   </>
@@ -144,23 +144,23 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
 
   const scorePercentage = totalBlanks > 0 ? (correctCount / totalBlanks) * 100 : 0;
   const getScoreColor = () => {
-    if (scorePercentage >= 80) return 'text-green-600';
-    if (scorePercentage >= 60) return 'text-yellow-600';
-    return 'text-red-600';
+    if (scorePercentage >= 80) return 'text-green-600 dark:text-green-400';
+    if (scorePercentage >= 60) return 'text-yellow-600 dark:text-yellow-400';
+    return 'text-red-600 dark:text-red-400';
   };
 
   return (
-    <Card className="my-6 border-2 border-blue-100">
-      <CardHeader className="bg-blue-50">
-        <CardTitle className="flex items-center gap-2 text-blue-800">
-          <Play className="w-5 h-5" />
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
+          <Play className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           {title || 'Bài tập điền chỗ trống'}
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="p-6">
+      <CardContent className="p-6 bg-white dark:bg-gray-900">
         {/* Hiển thị đoạn text với xuống dòng */}
-        <div className="mb-6 leading-relaxed text-base">
+        <div className="mb-6 leading-relaxed text-base text-gray-800 dark:text-gray-200">
           {renderTextWithLineBreaks()}
         </div>
 
@@ -168,7 +168,7 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
         <div className="flex gap-3 mb-4">
           <Button
             onClick={handleCheck}
-            className="bg-blue-600 hover:bg-blue-700"
+            className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white"
             disabled={showFeedback}
           >
             <CheckCircle className="w-4 h-4 mr-2" />
@@ -177,6 +177,7 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
           <Button
             onClick={handleReset}
             variant="outline"
+            className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
             Làm lại
@@ -185,16 +186,16 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
 
         {/* Kết quả */}
         {showFeedback && (
-          <div className="bg-gray-50 p-4 rounded-lg border">
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
-              <p className="font-semibold">
+              <p className="font-semibold text-gray-900 dark:text-gray-100">
                 Kết quả: <span className={getScoreColor()}>
                   {correctCount}/{totalBlanks} ({scorePercentage.toFixed(0)}%)
                 </span>
               </p>
               
               {scorePercentage >= 80 && (
-                <div className="flex items-center text-green-600">
+                <div className="flex items-center text-green-600 dark:text-green-400">
                   <CheckCircle className="w-5 h-5 mr-1" />
                   <span className="font-medium">Xuất sắc!</span>
                 </div>
