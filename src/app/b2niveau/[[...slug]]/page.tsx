@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getMarkdownBySlug, markdownToHtml, getNiveauContent } from "@/lib/markdown";
+import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
 import { DocsTOC } from "../_components/docs-toc";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
@@ -135,13 +135,7 @@ export default async function DocPage({ params }: DocPageProps) {
   }
 
   const htmlContent = await markdownToHtml(markdownContent.content);
-
-  const toc = {
-    items: [
-      { title: "Tổng quan", url: "#overview" },
-      { title: "Nội dung chính", url: "#main-content" },
-    ],
-  };
+  const toc = extractTableOfContents(markdownContent.content);
 
   return (
     <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">

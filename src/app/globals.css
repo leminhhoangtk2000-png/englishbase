@@ -452,3 +452,37 @@
 .dark .prose .admonition th {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Anchor links for headings */
+.prose .anchor {
+  float: left;
+  padding-right: 0.25rem;
+  margin-left: -1.25rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.prose h1:hover .anchor,
+.prose h2:hover .anchor,
+.prose h3:hover .anchor,
+.prose h4:hover .anchor,
+.prose h5:hover .anchor,
+.prose h6:hover .anchor {
+  opacity: 0.6;
+}
+
+.prose .anchor:hover {
+  opacity: 1 !important;
+}
+
+.prose .anchor::before {
+  content: "#";
+  color: #6b7280;
+  font-weight: normal;
+}
+
+.dark .prose .anchor::before {
+  color: #9ca3af;
+}

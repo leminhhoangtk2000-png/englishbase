@@ -4,6 +4,12 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeStringify from 'rehype-stringify'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -126,12 +132,34 @@ export async function markdownToHtml(markdown: string): Promise<string> {
   // Pre-process admonitions
   const processedMarkdown = processAdmonitions(markdown)
   
-  const result = await remark()
+  const result = await unified()
+    .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkHtml, { sanitize: false })
+    .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings, {
+      behavior: 'append',
+      properties: {
+        className: ['anchor'],
+        ariaLabel: 'Link to section'
+      }
+    })
+    .use(rehypeStringify)
     .process(processedMarkdown)
   
   return result.toString()
+}
+
+/**
+ * Add IDs to headings for anchor links
+ */
+function addHeadingIds(markdown: string): string {
+  const headingRegex = /^(#{1,6})\s+(.+)$/gm
+  
+  return markdown.replace(headingRegex, (match, hashes, title) => {
+    const id = slugify(title.trim())
+    return `${hashes} ${title.trim()} {#${id}}`
+  })
 }
 
 /**
@@ -189,6 +217,100 @@ function getAdmonitionIcon(type: string): string {
     danger: '🚨'
   }
   return icons[type] || 'ℹ️'
+}
+
+/**
+ * Extract table of contents from markdown content
+ */
+export function extractTableOfContents(markdown: string) {
+  const headingRegex = /^(#{1,6})\s+(.+)$/gm
+  const headings: Array<{ level: number; title: string; id: string }> = []
+  
+  let match
+  while ((match = headingRegex.exec(markdown)) !== null) {
+    const level = match[1].length
+    const rawTitle = match[2].trim()
+    
+    // Clean markdown syntax from title
+    const cleanTitle = cleanMarkdownSyntax(rawTitle)
+    const id = slugify(cleanTitle)
+    
+    headings.push({ level, title: cleanTitle, id })
+  }
+  
+  return buildTOCTree(headings)
+}
+
+/**
+ * Clean markdown syntax from text
+ */
+function cleanMarkdownSyntax(text: string): string {
+  return text
+    // Remove bold/italic syntax
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/_(.+?)_/g, '$1')
+    // Remove code syntax
+    .replace(/`(.+?)`/g, '$1')
+    // Remove links syntax
+    .replace(/\[(.+?)\]\(.+?\)/g, '$1')
+    // Remove other common markdown
+    .replace(/~~(.+?)~~/g, '$1')
+    .trim()
+}
+
+/**
+ * Convert title to slug (matching rehype-slug behavior)
+ */
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    // Replace spaces and special chars with hyphens
+    .replace(/\s+/g, '-')
+    // Remove non-alphanumeric characters except hyphens
+    .replace(/[^\w\-]+/g, '')
+    // Remove multiple consecutive hyphens
+    .replace(/\-\-+/g, '-')
+    // Remove leading/trailing hyphens
+    .replace(/^-+/, '')
+    .replace(/-+$/, '')
+}
+
+/**
+ * Build hierarchical TOC tree
+ */
+function buildTOCTree(headings: Array<{ level: number; title: string; id: string }>) {
+  const items: Array<{ title: string; url: string; items?: any[] }> = []
+  const stack: Array<{ level: number; item: any }> = []
+  
+  for (const heading of headings) {
+    const item = {
+      title: heading.title,
+      url: `#${heading.id}`,
+      items: [] as any[]
+    }
+    
+    // Remove items from stack that are at same or higher level
+    while (stack.length > 0 && stack[stack.length - 1].level >= heading.level) {
+      stack.pop()
+    }
+    
+    if (stack.length === 0) {
+      // Top level item
+      items.push(item)
+    } else {
+      // Nested item
+      const parent = stack[stack.length - 1].item
+      if (!parent.items) parent.items = []
+      parent.items.push(item)
+    }
+    
+    stack.push({ level: heading.level, item })
+  }
+  
+  return { items }
 }
 
 /**

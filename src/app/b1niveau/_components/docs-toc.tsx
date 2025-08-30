@@ -83,6 +83,21 @@ interface TreeProps {
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault()
+    const targetId = url.replace('#', '')
+    const element = document.getElementById(targetId)
+    
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+      // Update URL without triggering page reload
+      window.history.pushState(null, '', url)
+    }
+  }
+
   return tree?.items?.length && level < 3 ? (
     <ul className={cn("m-0 list-none text-sm", { "pl-4": level !== 1 })}>
       {tree.items.map((item, index) => {
@@ -90,8 +105,9 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
           <li key={index} className={cn("mt-0 pt-2")}>
             <a
               href={item.url}
+              onClick={(e) => handleClick(e, item.url)}
               className={cn(
-                "inline-block no-underline transition-colors hover:text-foreground",
+                "inline-block no-underline transition-colors hover:text-foreground cursor-pointer",
                 item.url === `#${activeItem}`
                   ? "font-medium text-foreground"
                   : "text-muted-foreground"

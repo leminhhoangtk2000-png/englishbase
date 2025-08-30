@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { getMarkdownBySlug, markdownToHtml, getNiveauContent } from "@/lib/markdown";
-import { DocsTOC } from "../_components/docs-toc";
+import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
+import { DocsTOC } from "@/components/docs-toc-client";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -135,13 +135,7 @@ export default async function DocPage({ params }: DocPageProps) {
   }
 
   const htmlContent = await markdownToHtml(markdownContent.content);
-
-  const toc = {
-    items: [
-      { title: "Tổng quan", url: "#overview" },
-      { title: "Nội dung chính", url: "#main-content" },
-    ],
-  };
+  const toc = extractTableOfContents(markdownContent.content);
 
   return (
     <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
@@ -178,7 +172,7 @@ export default async function DocPage({ params }: DocPageProps) {
       </div>
       <div className="hidden text-sm lg:block">
         <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-y-auto py-12 pl-4">
-          <DocsTOC toc={toc} />
+          <DocsTOC />
         </div>
       </div>
     </main>

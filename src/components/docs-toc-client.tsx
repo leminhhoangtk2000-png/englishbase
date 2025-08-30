@@ -1,18 +1,74 @@
 "use client"
 
 import * as React from "react"
-import { useMemo } from "react"
+import { useMemo, useEffect, useState } from "react"
 import { useMounted } from "@/hooks/use-mounted"
 import { cn } from "@/lib/utils"
 
-interface DocsTOCProps {
-  toc: { items: { title: string; url: string; items?: DocsTOCProps['toc']['items'] }[] }
+interface TOCItem {
+  title: string
+  url: string
+  level?: number
+  items?: TOCItem[]
 }
 
-export function DocsTOC({ toc }: DocsTOCProps) {
+interface DocsTOCProps {
+  toc?: { items: TOCItem[] }
+}
+
+export function DocsTOC({ toc: serverTOC }: DocsTOCProps) {
+  const [clientTOC, setClientTOC] = useState<{ items: TOCItem[] } | null>(null)
+  const mounted = useMounted()
+
+  useEffect(() => {
+    if (!mounted) return
+
+    // Extract TOC only from the main prose content area
+    const proseContainer = document.querySelector('.prose')
+    if (!proseContainer) return
+
+    const headings = proseContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    const tocItems: (TOCItem & { level: number })[] = []
+
+    headings.forEach(heading => {
+      // Skip the main title (h1) as it's already shown in the page header
+      if (heading.tagName.toLowerCase() === 'h1') return
+
+      if (!heading.id) {
+        // Generate ID if not exists
+        const text = heading.textContent || ''
+        const id = text.toLowerCase()
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/[^\w\-]+/g, '')
+          .replace(/\-\-+/g, '-')
+          .replace(/^-+/, '')
+          .replace(/-+$/, '')
+        
+        if (id) {
+          heading.id = id
+        }
+      }
+
+      if (heading.id && heading.textContent) {
+        const level = parseInt(heading.tagName.charAt(1))
+        tocItems.push({
+          title: heading.textContent.trim(),
+          url: `#${heading.id}`,
+          level
+        })
+      }
+    })
+
+    // Build hierarchical structure
+    const hierarchicalTOC = buildTOCHierarchy(tocItems)
+    setClientTOC({ items: hierarchicalTOC })
+  }, [mounted])
+
+  const toc = clientTOC || serverTOC
   const itemIds = useMemo(
     () =>
-      toc.items
+      toc?.items
         ? toc.items
             .flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
             .flat()
@@ -22,13 +78,12 @@ export function DocsTOC({ toc }: DocsTOCProps) {
     [toc]
   )
   const activeHeading = useActiveItem(itemIds as string[])
-  const mounted = useMounted()
 
   if (!toc?.items?.length || !mounted) {
     return (
       <div className="space-y-2">
         <p className="font-medium">On This Page</p>
-        <p className="text-sm text-muted-foreground">No headings found.</p>
+        <p className="text-sm text-muted-foreground">Loading...</p>
       </div>
     )
   }
@@ -53,7 +108,7 @@ function useActiveItem(itemIds: string[]) {
           }
         })
       },
-      { rootMargin: `0% 0% -80% 0%` }
+      { rootMargin: "0% 0% -80% 0%" }
     )
 
     itemIds?.forEach((id) => {
@@ -76,6 +131,35 @@ function useActiveItem(itemIds: string[]) {
   return activeId
 }
 
+/**
+ * Build hierarchical TOC structure
+ */
+function buildTOCHierarchy(items: (TOCItem & { level: number })[]): TOCItem[] {
+  const result: TOCItem[] = []
+  const stack: (TOCItem & { level: number })[] = []
+
+  for (const item of items) {
+    // Remove items from stack that are at same or higher level
+    while (stack.length > 0 && stack[stack.length - 1].level >= item.level) {
+      stack.pop()
+    }
+
+    if (stack.length === 0) {
+      // Top level item
+      result.push(item)
+    } else {
+      // Nested item
+      const parent = stack[stack.length - 1]
+      if (!parent.items) parent.items = []
+      parent.items.push(item)
+    }
+
+    stack.push(item)
+  }
+
+  return result
+}
+
 interface TreeProps {
   tree: DocsTOCProps['toc']
   level?: number
@@ -88,6 +172,8 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
     const targetId = url.replace('#', '')
     const element = document.getElementById(targetId)
     
+    console.log('Clicking TOC item:', { url, targetId, element })
+    
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
@@ -95,6 +181,14 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
       })
       // Update URL without triggering page reload
       window.history.pushState(null, '', url)
+    } else {
+      console.warn('Element not found for ID:', targetId)
+      // Try to find all heading elements in prose for debugging
+      const proseContainer = document.querySelector('.prose')
+      if (proseContainer) {
+        const allHeadings = proseContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')
+        console.log('Available prose headings:', Array.from(allHeadings).map(h => ({ text: h.textContent, id: h.id })))
+      }
     }
   }
 
