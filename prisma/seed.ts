@@ -73,11 +73,44 @@ async function seedVocabulary() {
                         category = 'b1-complete'
                     }
 
+                    // Get or create the vocabulary level
+                    const vocabularyLevel = await prisma.vocabularyLevel.upsert({
+                        where: { name: level },
+                        update: {},
+                        create: {
+                            name: level,
+                            displayName: `Level ${level}`,
+                            description: `German language level ${level}`,
+                            order: level === 'A1' ? 1 : level === 'A2' ? 2 : level === 'B1' ? 3 : level === 'B2' ? 4 : level === 'C1' ? 5 : 6
+                        }
+                    })
+
+                    // Get or create the vocabulary topic
+                    const vocabularyTopic = await prisma.vocabularyTopic.upsert({
+                        where: { 
+                            levelId_slug: {
+                                levelId: vocabularyLevel.id,
+                                slug: category
+                            }
+                        },
+                        update: {},
+                        create: {
+                            name: category,
+                            displayName: category.charAt(0).toUpperCase() + category.slice(1),
+                            description: `Vocabulary topic: ${category}`,
+                            levelId: vocabularyLevel.id,
+                            slug: category,
+                            order: 1
+                        }
+                    })
+
                     await prisma.vocabularyEntry.upsert({
                         where: {
-                            german_vietnamese: {
+                            german_vietnamese_levelId_topicId: {
                                 german: item.german,
-                                vietnamese: item.vietnamese
+                                vietnamese: item.vietnamese,
+                                levelId: vocabularyLevel.id,
+                                topicId: vocabularyTopic.id
                             }
                         },
                         update: {},
@@ -87,10 +120,10 @@ async function seedVocabulary() {
                             phonetic: item.phonetic || null,
                             plural: item.plural || null,
                             type: type as any,
-                            level: level as any,
+                            levelId: vocabularyLevel.id,
+                            topicId: vocabularyTopic.id,
                             exampleGerman: item.exampleGerman || null,
                             exampleVietnamese: item.exampleVietnamese || null,
-                            category: category,
                             difficulty: 1,
                             frequency: 0
                         }

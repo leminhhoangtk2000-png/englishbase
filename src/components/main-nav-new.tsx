@@ -13,7 +13,12 @@ import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
 import { type Doc } from "@/types";
 import { Separator } from "./ui/separator";
-import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface MainNavProps {
     docs?: Doc[];
@@ -38,7 +43,6 @@ const niveauMenus = [
 
 const otherNavLinks = [
     { href: "/exercises", label: "Bài tập" },
-    { href: "/exercises-demo", label: "Demo Components" },
     { href: "/vocabulary", label: "Từ vựng" },
     { href: "/blog-new", label: "Blog" },
     { href: "/user", label: "User" },
@@ -51,7 +55,6 @@ const otherNavLinks = [
 export function MainNav({ docs = [] }: MainNavProps) {
     const pathname = usePathname();
     const { user, loading } = useAuth();
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -61,43 +64,36 @@ export function MainNav({ docs = [] }: MainNavProps) {
                     <nav className="flex items-center gap-6 text-sm ml-6">
                         {/* Dropdown menus for A and B Niveau */}
                         {niveauMenus.map((menu) => (
-                            <div 
-                                key={menu.label}
-                                className="relative group"
-                                onMouseEnter={() => setOpenDropdown(menu.label)}
-                                onMouseLeave={() => setOpenDropdown(null)}
-                            >
-                                <button
-                                    className={cn(
-                                        "h-9 px-3 font-medium transition-colors hover:text-foreground/80 flex items-center gap-1 bg-transparent border-none cursor-pointer",
-                                        menu.items.some(item => pathname.startsWith(item.href)) ? "text-foreground" : "text-foreground/60"
-                                    )}
-                                >
-                                    {menu.label}
-                                    <ChevronDown className="h-3 w-3" />
-                                </button>
-                                
-                                {/* Dropdown Content */}
-                                <div className={cn(
-                                    "absolute top-full left-0 mt-1 w-[300px] bg-popover border rounded-md shadow-lg p-1 z-50 transition-all duration-200",
-                                    openDropdown === menu.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-                                )}>
+                            <DropdownMenu key={menu.label}>
+                                <DropdownMenuTrigger asChild>
+                                    <Button 
+                                        variant="ghost" 
+                                        className={cn(
+                                            "h-9 px-3 font-medium transition-colors hover:text-foreground/80 flex items-center gap-1",
+                                            menu.items.some(item => pathname.startsWith(item.href)) ? "text-foreground" : "text-foreground/60"
+                                        )}
+                                    >
+                                        {menu.label}
+                                        <ChevronDown className="h-3 w-3" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="start" className="w-[300px]">
                                     {menu.items.map((item) => (
-                                        <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            className={cn(
-                                                "flex flex-col items-start gap-1 p-3 rounded-sm hover:bg-accent transition-colors",
-                                                pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : ""
-                                            )}
-                                            onClick={() => setOpenDropdown(null)}
-                                        >
-                                            <div className="font-medium text-sm">{item.label}</div>
-                                            <div className="text-xs text-muted-foreground">{item.description}</div>
-                                        </Link>
+                                        <DropdownMenuItem key={item.href} asChild>
+                                            <Link
+                                                href={item.href}
+                                                className={cn(
+                                                    "flex flex-col items-start gap-1 p-3 cursor-pointer",
+                                                    pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : ""
+                                                )}
+                                            >
+                                                <div className="font-medium">{item.label}</div>
+                                                <div className="text-sm text-muted-foreground">{item.description}</div>
+                                            </Link>
+                                        </DropdownMenuItem>
                                     ))}
-                                </div>
-                            </div>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         ))}
                         
                         {/* Other navigation links */}
