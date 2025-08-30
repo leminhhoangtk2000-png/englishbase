@@ -543,7 +543,7 @@ export default function UserPremiumPage() {
                             <Quote className="absolute top-2 left-2 w-8 h-8 text-border" />
                              <div className="space-y-4 text-sm text-muted-foreground text-center max-w-3xl mx-auto py-4">
                                 <p>
-                                     <strong className="text-foreground">250đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
+                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">250đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
                                 </p>
                                 <p>
                                     Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho 20 bạn học khác</strong>.
