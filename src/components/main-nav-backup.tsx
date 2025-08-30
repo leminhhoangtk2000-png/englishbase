@@ -13,7 +13,14 @@ import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
 import { type Doc } from "@/types";
 import { Separator } from "./ui/separator";
-import { useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 interface MainNavProps {
     docs?: Doc[];
@@ -50,7 +57,6 @@ const otherNavLinks = [
 export function MainNav({ docs = [] }: MainNavProps) {
     const pathname = usePathname();
     const { user, loading } = useAuth();
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -58,53 +64,54 @@ export function MainNav({ docs = [] }: MainNavProps) {
                 <div className="mr-4 hidden md:flex">
                     <Logo />
                     <nav className="flex items-center gap-6 text-sm ml-6">
-                        {/* Dropdown menus for A and B Niveau */}
-                        {niveauMenus.map((menu) => (
-                            <div 
-                                key={menu.label}
-                                className="relative group"
-                                onMouseEnter={() => setOpenDropdown(menu.label)}
-                                onMouseLeave={() => setOpenDropdown(null)}
-                            >
-                                <button
-                                    className={cn(
-                                        "h-9 px-3 font-medium transition-colors hover:text-foreground/80 flex items-center gap-1 bg-transparent border-none cursor-pointer",
-                                        menu.items.some(item => pathname.startsWith(item.href)) ? "text-foreground" : "text-foreground/60"
-                                    )}
-                                >
-                                    {menu.label}
-                                    <ChevronDown className="h-3 w-3" />
-                                </button>
-                                
-                                {/* Dropdown Content */}
-                                <div className={cn(
-                                    "absolute top-full left-0 mt-1 w-[300px] bg-popover border rounded-md shadow-lg p-1 z-50 transition-all duration-200",
-                                    openDropdown === menu.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-                                )}>
-                                    {menu.items.map((item) => (
-                                        <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            className={cn(
-                                                "flex flex-col items-start gap-1 p-3 rounded-sm hover:bg-accent transition-colors",
-                                                pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : ""
-                                            )}
-                                            onClick={() => setOpenDropdown(null)}
-                                        >
-                                            <div className="font-medium text-sm">{item.label}</div>
-                                            <div className="text-xs text-muted-foreground">{item.description}</div>
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                {niveauMenus.map((menu) => (
+                                    <NavigationMenuItem key={menu.label}>
+                                        <NavigationMenuTrigger className="h-9 px-3">
+                                            {menu.label}
+                                        </NavigationMenuTrigger>
+                                        <NavigationMenuContent>
+                                            <div className="grid w-[400px] gap-3 p-4">
+                                                {menu.items.map((item) => (
+                                                    <NavigationMenuLink key={item.href} asChild>
+                                                        <Link
+                                                            href={item.href}
+                                                            className={cn(
+                                                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                                                pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : ""
+                                                            )}
+                                                        >
+                                                            <div className="text-sm font-medium leading-none">
+                                                                {item.label}
+                                                            </div>
+                                                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                                {item.description}
+                                                            </p>
+                                                        </Link>
+                                                    </NavigationMenuLink>
+                                                ))}
+                                            </div>
+                                        </NavigationMenuContent>
+                                    </NavigationMenuItem>
+                                ))}
+                            </NavigationMenuList>
+                        </NavigationMenu>
                         
-                        {/* Other navigation links */}
                         {otherNavLinks.map(({ href, label }) => (
                             <Link
                                 key={href}
                                 href={href}
                                 className={cn(
+                                    "font-medium transition-colors hover:text-foreground/80",
+                                    pathname.startsWith(href) ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                {label}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
                                     "font-medium transition-colors hover:text-foreground/80",
                                     pathname.startsWith(href) ? "text-foreground" : "text-foreground/60"
                                 )}
@@ -155,5 +162,5 @@ export function MainNav({ docs = [] }: MainNavProps) {
                 </div>
             </div>
         </header>
-    );
+    )
 }

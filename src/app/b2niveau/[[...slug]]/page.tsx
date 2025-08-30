@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDocFromParams } from "@/lib/examples";
+import { getDocFromParams } from "@/lib/b2niveau";
 import { DocsTOC } from "../_components/docs-toc";
 import React from "react";
 import { Separator } from "@/components/ui/separator";

@@ -47,7 +47,7 @@ export default function Home() {
                 Cùng nhau xây dựng một cộng đồng học tiếng Đức cởi mở, thân thiện và hiệu quả cho người Việt.
               </p>
               <Button size="lg" className="rounded-full px-10 py-6 text-lg font-bold" asChild>
-                <Link href="/docs/introduction">Vào học</Link>
+                <Link href="/a1niveau/introduction">Vào học</Link>
               </Button>
               <div className="flex justify-center md:justify-start gap-6 mt-8 text-muted-foreground">
                 <div className="flex items-center gap-2">

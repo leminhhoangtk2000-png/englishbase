@@ -1,7 +1,7 @@
-import { blogConfig } from "@/config/blog";
-import { docsConfig } from "@/config/docs";
-import { componentsConfig } from "@/config/components";
-import { examplesConfig } from "@/config/examples";
+import { examplesConfig } from "@/config/b2niveau";
+import { docsConfig } from "@/config/a1niveau";
+import { blogConfig } from "@/config/a2niveau";
+import { componentsConfig } from "@/config/b1niveau";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";
@@ -14,7 +14,7 @@ interface DocsLayoutProps {
 
 export default async function DocsLayout({ children }: DocsLayoutProps) {
   // Omit the 'component' property before passing to client components
-  const navItems: NavItem[] = blogConfig.items.map(item => ({
+  const navItems: NavItem[] = examplesConfig.items.map(item => ({
     ...item,
     items: item.items?.map(({ component, ...subItem }) => subItem),
   }));
