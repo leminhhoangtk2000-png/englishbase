@@ -6,35 +6,8 @@ import path from 'path';
 export async function getDocFromParams(slugs: string[]) {
   const slug = slugs?.join("/") || "introduction";
   
-  // Check if this is an MDX file request (e.g., /exercises/a1/einkaufen-teil-1)
-  if (slugs.length >= 2) {
-    const level = slugs[0]; // a1, a2, b1, b2
-    const exerciseName = slugs[1];
-    
-    // Check if this is a valid level
-    if (['a1', 'a2', 'b1', 'b2'].includes(level)) {
-      try {
-        const exercisePath = path.join(process.cwd(), 'src/content/exercises', level, `${exerciseName}.mdx`);
-        
-        if (fs.existsSync(exercisePath)) {
-          // Dynamically import the MDX component
-          const mdxComponent = await import(`@/content/exercises/${level}/${exerciseName}.mdx`);
-          
-          return {
-            title: exerciseName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-            description: `Bài tập ${level.toUpperCase()}`,
-            href: `/exercises/${slug}`,
-            component: mdxComponent.default,
-            level: level,
-            category: 'exercise'
-          };
-        }
-      } catch (error) {
-        console.error(`Error loading MDX file: ${error}`);
-        return undefined;
-      }
-    }
-  }
+  // For now, let's handle exercise routes but return to config-based system
+  // This will be updated once we have actual MDX components registered
   
   // Fallback to config-based docs
   const doc = exercisesConfig.items
