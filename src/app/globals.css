@@ -506,17 +506,30 @@
   transform: rotateY(180deg);
 }
 
-/* Hide metadata text in exercise pages - more specific targeting */
+/* Hide metadata text in exercise pages - more aggressive targeting */
 .exercise-content .prose p:first-child,
 .exercise-content .prose > p:first-of-type,
-.exercise-content article > p:first-child {
+.exercise-content article > p:first-child,
+.prose p:first-child,
+article p:first-child {
   display: none !important;
 }
 
-/* Also hide if metadata appears as text content */
-.exercise-content .prose p:contains("title:"),
-.exercise-content .prose p:contains("level:"),
-.exercise-content .prose p:contains("skill:") {
+/* Hide any paragraph containing metadata keywords */
+p:has-text("title:"),
+p:has-text("level:"),
+p:has-text("skill:") {
+  display: none !important;
+}
+
+/* CSS-based hiding for common metadata patterns */
+.prose p[data-metadata],
+.exercise-content p[data-metadata] {
+  display: none !important;
+}
+
+/* Global metadata hiding for all MDX content */
+[data-mdx-content] p:first-child {
   display: none !important;
 }
 

@@ -3,9 +3,17 @@ import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { AuthorCredit } from '@/components/ui/author-credit';
 import { Comments } from '@/components/ui/comments';
+import { ExerciseMetadataHider } from '@/components/exercise-metadata-hider';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    // Wrapper to add metadata hider to all MDX content
+    wrapper: ({ children }) => (
+      <div data-mdx-content>
+        <ExerciseMetadataHider />
+        {children}
+      </div>
+    ),
     // Built-in components with enhanced styling
     h1: ({ children }) => (
       <h1 className="text-4xl font-bold mb-8 text-center font-headline bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
