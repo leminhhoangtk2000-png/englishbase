@@ -1,0 +1,41 @@
+{
+  "topic": "essen",
+  "level": "a1", 
+  "displayName": "Essen und Trinken - Ăn uống",
+  "description": "Từ vựng về thức ăn và đồ uống",
+  "vocabulary": [
+    {
+      "german": "das Brot",
+      "vietnamese": "bánh mì",
+      "type": "noun",
+      "gender": "neuter",
+      "plural": "die Brote",
+      "examples": {
+        "german": "Ich esse Brot zum Frühstück.",
+        "vietnamese": "Tôi ăn bánh mì vào bữa sáng."
+      }
+    },
+    {
+      "german": "das Wasser",
+      "vietnamese": "nước",
+      "type": "noun", 
+      "gender": "neuter",
+      "plural": "die Wasser",
+      "examples": {
+        "german": "Ich trinke viel Wasser.",
+        "vietnamese": "Tôi uống nhiều nước."
+      }
+    },
+    {
+      "german": "der Kaffee",
+      "vietnamese": "cà phê",
+      "type": "noun",
+      "gender": "masculine",
+      "plural": "die Kaffees",
+      "examples": {
+        "german": "Am Morgen trinke ich Kaffee.",
+        "vietnamese": "Vào buổi sáng tôi uống cà phê."
+      }
+    }
+  ]
+}

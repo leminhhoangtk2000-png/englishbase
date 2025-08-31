@@ -1,0 +1,52 @@
+{
+  "topic": "familie",
+  "level": "a1",
+  "displayName": "Familie - Gia đình",
+  "description": "Từ vựng về gia đình và các mối quan hệ",
+  "vocabulary": [
+    {
+      "german": "die Familie",
+      "vietnamese": "gia đình",
+      "type": "noun",
+      "gender": "feminine",
+      "plural": "die Familien",
+      "examples": {
+        "german": "Meine Familie ist groß.",
+        "vietnamese": "Gia đình tôi đông người."
+      }
+    },
+    {
+      "german": "der Vater",
+      "vietnamese": "bố, cha",
+      "type": "noun", 
+      "gender": "masculine",
+      "plural": "die Väter",
+      "examples": {
+        "german": "Mein Vater arbeitet im Büro.",
+        "vietnamese": "Bố tôi làm việc ở văn phòng."
+      }
+    },
+    {
+      "german": "die Mutter", 
+      "vietnamese": "mẹ",
+      "type": "noun",
+      "gender": "feminine", 
+      "plural": "die Mütter",
+      "examples": {
+        "german": "Meine Mutter kocht sehr gut.",
+        "vietnamese": "Mẹ tôi nấu ăn rất ngon."
+      }
+    },
+    {
+      "german": "der Sohn",
+      "vietnamese": "con trai",
+      "type": "noun",
+      "gender": "masculine",
+      "plural": "die Söhne", 
+      "examples": {
+        "german": "Ihr Sohn ist 10 Jahre alt.",
+        "vietnamese": "Con trai của cô ấy 10 tuổi."
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "topic": "beruf",
+  "level": "b1",
+  "displayName": "Beruf und Arbeit - Nghề nghiệp và công việc", 
+  "description": "Từ vựng về nghề nghiệp và môi trường làm việc",
+  "vocabulary": [
+    {
+      "german": "der Beruf",
+      "vietnamese": "nghề nghiệp",
+      "type": "noun",
+      "gender": "masculine", 
+      "plural": "die Berufe",
+      "examples": {
+        "german": "Was ist Ihr Beruf?",
+        "vietnamese": "Nghề nghiệp của anh/chị là gì?"
+      }
+    },
+    {
+      "german": "der Arzt",
+      "vietnamese": "bác sĩ (nam)",
+      "type": "noun",
+      "gender": "masculine",
+      "plural": "die Ärzte",
+      "examples": {
+        "german": "Der Arzt untersucht den Patienten.",
+        "vietnamese": "Bác sĩ khám cho bệnh nhân."
+      }
+    },
+    {
+      "german": "die Ärztin", 
+      "vietnamese": "bác sĩ (nữ)",
+      "type": "noun",
+      "gender": "feminine",
+      "plural": "die Ärztinnen",
+      "examples": {
+        "german": "Die Ärztin ist sehr freundlich.",
+        "vietnamese": "Bác sĩ nữ rất thân thiện."
+      }
+    },
+    {
+      "german": "der Lehrer",
+      "vietnamese": "giáo viên (nam)",
+      "type": "noun", 
+      "gender": "masculine",
+      "plural": "die Lehrer",
+      "examples": {
+        "german": "Der Lehrer erklärt die Grammatik.",
+        "vietnamese": "Giáo viên giải thích ngữ pháp."
+      }
+    }
+  ]
+}
