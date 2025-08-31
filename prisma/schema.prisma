@@ -36,6 +36,7 @@ model User {
   exercises   UserExercise[]
   vocabulary  UserVocabulary[]
   progress    UserProgress[]
+  reviews     Review[]
   
   @@map("users")
 }
@@ -355,4 +356,19 @@ enum PaymentStatus {
   COMPLETED
   FAILED
   REFUNDED
+}
+
+// User Reviews/Feedback
+model Review {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating          Int      // 1-5 stars
+  comment         String
+  isPublic        Boolean  @default(true)
+  nextAllowedDate DateTime? // When user can submit next review (365 days cooldown)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("reviews")
 }
