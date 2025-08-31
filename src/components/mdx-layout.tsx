@@ -4,7 +4,7 @@ import React from 'react'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import mdxComponents from './mdx-provider'
 import { DocsTOC } from './docs-toc-client'
-import { type TOCItem } from '../lib/mdx'
+import { type MDXTableOfContentsItem } from '../lib/mdx'
 
 interface MDXLayoutProps {
   source: any // MDX source from next-mdx-remote/rsc
@@ -17,7 +17,7 @@ interface MDXLayoutProps {
     category?: string
     tags?: string[]
   }
-  toc?: TOCItem[]
+  toc?: MDXTableOfContentsItem[]
   showTOC?: boolean
   className?: string
 }
@@ -139,7 +139,7 @@ export function SimpleMDXRenderer({
   source, 
   className = "" 
 }: { 
-  source: MDXRemoteSerializeResult
+  source: any
   className?: string 
 }) {
   return (
