@@ -71,23 +71,23 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
             value={userAnswer}
             onChange={(e) => handleAnswerChange(blankIndex, e.target.value)}
             disabled={showResults}
-            className={`inline-block w-24 h-8 mx-1 text-center ${
+            className={`inline-block w-28 h-10 mx-2 text-center font-semibold border-2 rounded-lg transition-all duration-200 ${
               showResults 
                 ? isCorrect 
-                  ? 'border-green-500 bg-green-50' 
+                  ? 'border-green-400 bg-green-50 text-green-800' 
                   : isIncorrect 
-                    ? 'border-red-500 bg-red-50' 
-                    : 'border-gray-300'
-                : 'border-purple-300 focus:border-purple-500'
+                    ? 'border-red-400 bg-red-50 text-red-800' 
+                    : 'border-gray-300 bg-gray-50'
+                : 'border-purple-300 bg-white focus:border-purple-500 focus:ring-2 focus:ring-purple-200 hover:border-purple-400'
             }`}
             placeholder="___"
           />
           {showResults && (
-            <span className="ml-1">
+            <span className="ml-2">
               {isCorrect ? (
-                <CheckCircle className="w-4 h-4 text-green-600" />
+                <CheckCircle className="w-5 h-5 text-green-600" />
               ) : isIncorrect ? (
-                <XCircle className="w-4 h-4 text-red-600" />
+                <XCircle className="w-5 h-5 text-red-600" />
               ) : null}
             </span>
           )}
@@ -111,60 +111,69 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
     : 0;
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle className="text-lg">{title}</CardTitle>
+    <Card className="w-full bg-white shadow-lg border-0 rounded-2xl overflow-hidden my-10">
+      <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+        <CardTitle className="text-lg font-semibold flex items-center gap-3">
+          <span className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+            ✏️
+          </span>
+          {title}
+        </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="text-base leading-relaxed">
+      <CardContent className="p-6 space-y-6">
+        <div className="text-lg leading-relaxed bg-gray-50 p-6 rounded-xl border-2 border-gray-200">
           {textParts.map((part, index) => renderTextPart(part, index))}
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="text-sm text-gray-600">
+        <div className="flex items-center justify-between bg-purple-50 p-4 rounded-xl">
+          <div className="text-sm font-medium text-purple-700">
             {showResults ? (
-              <span>
-                Kết quả: {correctAnswers}/{totalBlanks} đúng
+              <span className="flex items-center gap-2">
+                🎯 <strong>Kết quả:</strong> {correctAnswers}/{totalBlanks} đúng
+                {correctAnswers === totalBlanks && <span className="text-green-600">🎉</span>}
               </span>
             ) : (
-              <span>
-                Đã điền: {filledBlanks}/{totalBlanks} chỗ trống
+              <span className="flex items-center gap-2">
+                📝 <strong>Tiến độ:</strong> {filledBlanks}/{totalBlanks} chỗ trống
               </span>
             )}
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             {!showResults ? (
               <Button 
                 onClick={handleSubmit}
                 disabled={filledBlanks === 0}
-                className="bg-purple-600 hover:bg-purple-700"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg"
               >
-                Kiểm tra đáp án
+                ✨ Kiểm tra đáp án
               </Button>
             ) : (
               <Button 
                 onClick={handleReset}
                 variant="outline"
+                className="border-purple-300 text-purple-700 hover:bg-purple-50 font-semibold px-6 py-2 rounded-xl"
               >
-                Làm lại
+                🔄 Làm lại
               </Button>
             )}
           </div>
         </div>
 
         {showResults && (
-          <div className="space-y-2">
-            <h4 className="font-medium text-gray-800">Đáp án đúng:</h4>
-            <div className="text-sm text-gray-600 space-y-1">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-blue-200">
+            <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+              💡 Đáp án đúng:
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {textParts
                 .filter((part): part is BlankItem => typeof part === 'object' && part.type === 'blank')
                 .map((blank, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <span className="font-mono bg-gray-100 px-2 py-1 rounded">
-                      Chỗ trống {index + 1}:
+                  <div key={index} className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                    <span className="font-mono bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
+                      #{index + 1}
                     </span>
-                    <span className="font-medium">{blank.correctAnswer}</span>
+                    <span className="font-semibold text-gray-700">{blank.correctAnswer}</span>
                   </div>
                 ))
               }
