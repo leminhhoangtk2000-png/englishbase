@@ -16,37 +16,37 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     // Built-in components with enhanced styling
     h1: ({ children }) => (
-      <h1 className="text-4xl font-bold mb-8 text-center font-headline bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+      <h1 className="text-4xl font-bold mb-8 text-center font-headline">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
       <div className="mb-8 mt-12">
-        <h2 className="text-3xl font-bold mb-6 font-headline text-gray-900 flex items-center gap-3">
-          <span className="w-1 h-8 bg-gradient-to-b from-purple-500 to-blue-500 rounded-full"></span>
+        <h2 className="text-3xl font-bold mb-6 font-headline flex items-center gap-3">
+          <span className="w-1 h-8 bg-blue-500 rounded-full"></span>
           {children}
         </h2>
       </div>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-semibold mb-4 mt-8 font-headline text-purple-700 flex items-center gap-2">
-        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+      <h3 className="text-xl font-semibold mb-4 mt-8 font-headline flex items-center gap-2">
+        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
         {children}
       </h3>
     ),
-    p: ({ children }) => <p className="mb-6 leading-8 text-gray-700">{children}</p>,
+    p: ({ children }) => <p className="mb-6 leading-8">{children}</p>,
     
     // Video wrapper for center alignment
     iframe: ({ src, title, width, height, ...props }) => (
       <div className="my-10">
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+        <div className="p-2">
           <div className="flex justify-center">
             <div className="w-full max-w-4xl">
               <div className="relative aspect-video">
                 <iframe
                   src={src}
                   title={title}
-                  className="absolute inset-0 w-full h-full rounded-xl shadow-md"
+                  className="absolute inset-0 w-full h-full rounded-xl"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -63,16 +63,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // Horizontal rule styling
     hr: () => (
       <div className="my-12 flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
+        <div className="w-24 h-px bg-gray-300 dark:bg-gray-600"></div>
       </div>
     ),
 
     // Block quotes for tips
     blockquote: ({ children }) => (
-      <div className="my-8 bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-400 rounded-r-xl p-6">
+      <div className="my-8 border-l-4 border-blue-400 pl-6">
         <div className="flex items-start gap-3">
           <span className="text-2xl">💡</span>
-          <div className="prose prose-purple text-gray-700">{children}</div>
+          <div className="prose prose-blue opacity-80">{children}</div>
         </div>
       </div>
     ),
