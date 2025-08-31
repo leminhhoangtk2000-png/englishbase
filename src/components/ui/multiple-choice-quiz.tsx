@@ -47,43 +47,43 @@ export function MultipleChoiceQuiz({ questions }: MultipleChoiceQuizProps) {
   };
 
   return (
-    <div className="space-y-8 my-10">
+    <div className="space-y-6 my-8">
       {questions.map((question, questionIndex) => {
         const isAnswered = showResults[questionIndex];
         const selectedAnswer = selectedAnswers[questionIndex];
         const isCorrect = selectedAnswer === question.correctAnswer;
 
         return (
-          <Card key={questionIndex} className="w-full bg-white shadow-lg border-0 rounded-2xl overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-purple-500 to-blue-500 text-white">
-              <CardTitle className="text-lg font-semibold flex items-center gap-3">
-                <span className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+          <Card key={questionIndex} className="w-full bg-white shadow-sm border border-gray-200 rounded-lg overflow-hidden">
+            <CardHeader className="bg-gray-50 border-b border-gray-200">
+              <CardTitle className="text-base font-medium flex items-center gap-3 text-gray-800">
+                <span className="bg-blue-100 text-blue-700 rounded-full w-7 h-7 flex items-center justify-center text-sm font-semibold">
                   {questionIndex + 1}
                 </span>
                 {question.question}
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6 space-y-4">
-              <div className="space-y-3">
+            <CardContent className="p-5 space-y-3">
+              <div className="space-y-2">
                 {question.options.map((option, optionIndex) => {
                   let buttonVariant: "default" | "outline" | "destructive" | "secondary" = "outline";
-                  let buttonClass = "w-full justify-start text-left h-auto p-4 border-2 transition-all duration-200";
+                  let buttonClass = "w-full justify-start text-left h-auto p-3 border transition-all duration-200";
                   let icon = null;
 
                   if (isAnswered) {
                     if (option === question.correctAnswer) {
-                      buttonClass += " bg-green-50 border-green-200 text-green-800 hover:bg-green-100";
-                      icon = <CheckCircle className="w-5 h-5 text-green-600" />;
+                      buttonClass += " bg-green-50 border-green-300 text-green-800 hover:bg-green-50";
+                      icon = <CheckCircle className="w-4 h-4 text-green-600" />;
                     } else if (option === selectedAnswer && !isCorrect) {
-                      buttonClass += " bg-red-50 border-red-200 text-red-800 hover:bg-red-100";
-                      icon = <XCircle className="w-5 h-5 text-red-600" />;
+                      buttonClass += " bg-red-50 border-red-300 text-red-800 hover:bg-red-50";
+                      icon = <XCircle className="w-4 h-4 text-red-600" />;
                     } else {
                       buttonClass += " bg-gray-50 border-gray-200 text-gray-600";
                     }
                   } else if (selectedAnswer === option) {
-                    buttonClass += " bg-purple-50 border-purple-300 text-purple-800 shadow-md";
+                    buttonClass += " bg-blue-50 border-blue-300 text-blue-800";
                   } else {
-                    buttonClass += " hover:bg-purple-50 hover:border-purple-200 hover:shadow-md";
+                    buttonClass += " hover:bg-gray-50 hover:border-gray-300";
                   }
 
                   return (
@@ -95,7 +95,7 @@ export function MultipleChoiceQuiz({ questions }: MultipleChoiceQuizProps) {
                       disabled={isAnswered}
                     >
                       <div className="flex items-center justify-between w-full">
-                        <span className="font-medium">{option}</span>
+                        <span className="text-sm">{option}</span>
                         {icon}
                       </div>
                     </Button>
@@ -103,40 +103,40 @@ export function MultipleChoiceQuiz({ questions }: MultipleChoiceQuizProps) {
                 })}
               </div>
 
-              <div className="flex gap-3 pt-4">
+              <div className="flex gap-2 pt-3 border-t border-gray-100">
                 {!isAnswered ? (
                   <Button 
                     onClick={() => handleSubmit(questionIndex)}
                     disabled={!selectedAnswer}
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg"
+                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-md"
                   >
-                    ✨ Kiểm tra đáp án
+                    Kiểm tra đáp án
                   </Button>
                 ) : (
                   <Button 
                     onClick={() => resetQuestion(questionIndex)}
                     variant="outline"
-                    className="border-purple-300 text-purple-700 hover:bg-purple-50 font-semibold px-6 py-2 rounded-xl"
+                    className="border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 rounded-md"
                   >
-                    🔄 Làm lại
+                    Làm lại
                   </Button>
                 )}
               </div>
 
               {isAnswered && (
-                <div className={`p-4 rounded-xl border-2 ${
+                <div className={`p-3 rounded-md border ${
                   isCorrect 
                     ? 'bg-green-50 border-green-200' 
                     : 'bg-red-50 border-red-200'
                 }`}>
-                  <p className={`font-semibold ${
+                  <p className={`text-sm font-medium ${
                     isCorrect ? 'text-green-800' : 'text-red-800'
                   }`}>
-                    {isCorrect ? '🎉 Xuất sắc! Bạn đã trả lời đúng!' : '💪 Chưa chính xác, hãy thử lại!'}
+                    {isCorrect ? '✓ Chính xác!' : '✗ Chưa đúng'}
                   </p>
                   {!isCorrect && (
-                    <p className="text-sm text-gray-600 mt-2">
-                      💡 <strong>Đáp án đúng:</strong> {question.correctAnswer}
+                    <p className="text-xs text-gray-600 mt-1">
+                      <strong>Đáp án:</strong> {question.correctAnswer}
                     </p>
                   )}
                 </div>

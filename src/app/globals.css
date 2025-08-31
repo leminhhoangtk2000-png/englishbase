@@ -505,3 +505,30 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+/* Hide metadata text in exercise pages - more specific targeting */
+.exercise-content .prose p:first-child,
+.exercise-content .prose > p:first-of-type,
+.exercise-content article > p:first-child {
+  display: none !important;
+}
+
+/* Also hide if metadata appears as text content */
+.exercise-content .prose p:contains("title:"),
+.exercise-content .prose p:contains("level:"),
+.exercise-content .prose p:contains("skill:") {
+  display: none !important;
+}
+
+/* Remove page backgrounds for better dark theme compatibility */
+.exercise-page {
+  background: transparent !important;
+}
+
+.exercise-page main {
+  background: transparent !important;
+}
+
+.exercise-page .container {
+  background: transparent !important;
+}

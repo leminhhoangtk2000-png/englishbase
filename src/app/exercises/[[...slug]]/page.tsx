@@ -6,6 +6,7 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { ExercisesLandingPage } from "../_components/exercises-landing-page";
 import { ExerciseLevelPage } from "../_components/exercise-level-page";
+import { ExerciseMetadataHider } from "@/components/exercise-metadata-hider";
 
 interface DocPageProps {
   params: Promise<{
@@ -39,22 +40,25 @@ export default async function DocPage({ params }: DocPageProps) {
   if (isExercise) {
     // Render as independent exercise page without sidebar
     return (
-      <main className="container mx-auto max-w-4xl py-6 px-4">
-        <div className="mb-6">
-          <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-            <a href="/exercises" className="hover:text-foreground transition-colors">Bài tập</a>
-            <span className="font-medium text-foreground">/</span>
-            <a href={`/exercises/${slug[0]}`} className="hover:text-foreground transition-colors capitalize">
-              {slug[0].toUpperCase()}
-            </a>
-            <span className="font-medium text-foreground">/</span>
-            <div className="font-medium text-foreground">{doc.title}</div>
+      <main className="w-full py-6 exercise-page">
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="mb-6">
+            <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+              <a href="/exercises" className="hover:text-foreground transition-colors">Bài tập</a>
+              <span className="font-medium text-foreground">/</span>
+              <a href={`/exercises/${slug[0]}`} className="hover:text-foreground transition-colors capitalize">
+                {slug[0].toUpperCase()}
+              </a>
+              <span className="font-medium text-foreground">/</span>
+              <div className="font-medium text-foreground">{doc.title}</div>
+            </div>
           </div>
+          
+          <article className="prose prose-lg prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-h3:font-headline prose-h3:tracking-tight prose-h3:font-semibold prose-h3:text-xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 exercise-content">
+            <ExerciseMetadataHider />
+            <ContentComponent />
+          </article>
         </div>
-        
-        <article className="prose prose-lg prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-h3:font-headline prose-h3:tracking-tight prose-h3:font-semibold prose-h3:text-xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
-          <ContentComponent />
-        </article>
       </main>
     );
   }
