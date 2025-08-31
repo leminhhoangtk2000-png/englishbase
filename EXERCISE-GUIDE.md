@@ -71,7 +71,7 @@ publish: true
 import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { AuthorCredit } from '@/components/ui/author-credit';
-import { FacebookComments } from '@/components/ui/facebook-comments';
+import { Comments } from '@/components/ui/comments';
 
 ## 🎧 Đoạn 1: Tiêu đề phần
 
@@ -108,7 +108,7 @@ import { FacebookComments } from '@/components/ui/facebook-comments';
 
 ---
 
-<FacebookComments url="https://localhost:9002/exercises/a1/ten-bai-tap" />
+<Comments url="https://localhost:9002/exercises/a1/ten-bai-tap" />
 ```
 
 ## 🎮 Các component có sẵn

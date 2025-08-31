@@ -30,7 +30,7 @@ publish: true
 import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { AuthorCredit } from '@/components/ui/author-credit';
-import { FacebookComments } from '@/components/ui/facebook-comments';
+import { Comments } from '@/components/ui/comments';
 
 ## 🎧 Đoạn 1: Tiêu đề
 
@@ -76,7 +76,18 @@ import { FacebookComments } from '@/components/ui/facebook-comments';
 
 ---
 
-<FacebookComments url="https://localhost:9002/exercises/[level]/[exercise-name]" />
+### 4. Comments
+Hệ thống bình luận tự build với yêu cầu đăng nhập
+```jsx
+<Comments url="URL của bài tập" />
+```
+
+**Tính năng:**
+- ✅ Yêu cầu đăng nhập để comment
+- ✅ Hệ thống reply/trả lời  
+- ✅ Like/thích bình luận
+- ✅ Hiển thị role người dùng (Admin, Premium, User)
+- ✅ Real-time interaction
 ```
 
 ### **Bước 2: Tạo Page Route**

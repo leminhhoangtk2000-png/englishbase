@@ -2,7 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { AuthorCredit } from '@/components/ui/author-credit';
-import { FacebookComments } from '@/components/ui/facebook-comments';
+import { Comments } from '@/components/ui/comments';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -16,7 +16,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     MultipleChoiceQuiz,
     Lueckentext,
     AuthorCredit,
-    FacebookComments,
+    Comments,
+    
+    // Deprecated - kept for backward compatibility
+    FacebookComments: Comments,
     
     // Allow other components to pass through
     ...components,
