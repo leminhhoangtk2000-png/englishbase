@@ -532,39 +532,3 @@ p:has-text("skill:") {
 [data-mdx-content] p:first-child {
   display: none !important;
 }
-
-/* Remove page backgrounds for better dark theme compatibility */
-.exercise-page {
-  background: transparent !important;
-}
-
-.exercise-page main {
-  background: transparent !important;
-}
-
-.exercise-page .container {
-  background: transparent !important;
-}
-
-/* Remove backgrounds from common UI components in exercises */
-.exercise-page .prose,
-.exercise-page article,
-.exercise-page .container > div {
-  background: transparent !important;
-}
-
-/* Remove card backgrounds that might appear */
-.exercise-page .bg-white,
-.exercise-page .bg-gray-50,
-.exercise-page .bg-card {
-  background: transparent !important;
-}
-
-/* Ensure body and html don't have conflicting backgrounds */
-body {
-  background: transparent !important;
-}
-
-html {
-  background: transparent !important;
-}
