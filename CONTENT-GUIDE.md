@@ -2,28 +2,33 @@
 
 ## 📁 Cấu trúc thư mục
 
-### 1. Content (Files .md/.mdx)
+### 1. Learning Content (.md/.mdx files) - `src/content/`
 ```
 src/content/
 ├── a1niveau/
-│   ├── grammatik/       # Ngữ pháp A1
-│   ├── wortschatz/      # Từ vựng A1  
-│   └── uebungen/        # Bài tập A1
+│   ├── grammatik/       # Ngữ pháp A1 (MD files)
+│   └── uebungen/        # Bài tập A1 (MD files)
 ├── a2niveau/
-│   ├── grammatik/       # Ngữ pháp A2
-│   ├── wortschatz/      # Từ vựng A2
-│   └── uebungen/        # Bài tập A2
+│   ├── grammatik/       # Ngữ pháp A2 (MD files)
+│   └── uebungen/        # Bài tập A2 (MD files)
 ├── b1niveau/
-│   ├── grammatik/       # Ngữ pháp B1
-│   ├── wortschatz/      # Từ vựng B1
-│   └── uebungen/        # Bài tập B1
+│   ├── grammatik/       # Ngữ pháp B1 (MD files)
+│   └── uebungen/        # Bài tập B1 (MD files)
 └── b2niveau/
-    ├── grammatik/       # Ngữ pháp B2
-    ├── wortschatz/      # Từ vựng B2
-    └── uebungen/        # Bài tập B2
+    ├── grammatik/       # Ngữ pháp B2 (MD files)
+    └── uebungen/        # Bài tập B2 (MD files)
 ```
 
-### 2. Images (Hình ảnh minh họa)
+### 2. Vocabulary Database (JSON files) - `src/data/vocabulary/`
+```
+src/data/vocabulary/
+├── a1/                  # JSON files cho từ vựng A1
+├── a2/                  # JSON files cho từ vựng A2
+├── b1/                  # JSON files cho từ vựng B1
+└── b2/                  # JSON files cho từ vựng B2
+```
+
+### 3. Images (Static assets) - `public/images/`
 ```
 public/images/
 ├── a1niveau/            # Ảnh cho nội dung A1
@@ -32,6 +37,20 @@ public/images/
 ├── b2niveau/            # Ảnh cho nội dung B2
 └── shared/              # Ảnh dùng chung
 ```
+
+## 🎯 Phân biệt rõ ràng:
+
+### **Vocabulary** → Database-driven 
+- **Location**: `src/data/vocabulary/[level]/`
+- **Format**: JSON files
+- **Usage**: Seed vào PostgreSQL, hiển thị qua API
+- **URL**: `/vocabulary` page với database
+
+### **Grammar/Exercises** → File-based content
+- **Location**: `src/content/[niveau]/`  
+- **Format**: Markdown files với frontmatter
+- **Usage**: Static content, processed by Next.js
+- **URL**: `/[niveau]/grammatik/[slug]`
 
 ## 📝 Hướng dẫn sử dụng
 
