@@ -1,0 +1,71 @@
+---
+title: Familie und Freunde - A1
+description: Bài tập nghe về gia đình và bạn bè
+category: A1
+authors: [Deutschvn]
+tags: [Nghe, Gia đình]
+image: img/blog/familie.png
+publish: true
+---
+
+import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
+import { Lueckentext } from '@/components/ui/lueckentext';
+import { AuthorCredit } from '@/components/ui/author-credit';
+import { FacebookComments } from '@/components/ui/facebook-comments';
+
+## 👨‍👩‍👧‍👦 Đoạn 1: Meine Familie
+
+<iframe 
+  width="640" 
+  height="360" 
+  src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
+  title="Familie Video" 
+  frameBorder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerPolicy="strict-origin-when-cross-origin" 
+  allowFullScreen
+></iframe>
+
+### **Bài tập 1: Trắc nghiệm về gia đình**
+
+<MultipleChoiceQuiz
+  questions={[
+    {
+      question: 'Wie viele Personen sind in der Familie?',
+      options: ['Drei Personen', 'Vier Personen', 'Fünf Personen', 'Sechs Personen'],
+      correctAnswer: 'Vier Personen',
+    },
+    {
+      question: 'Wie alt ist die Mutter?',
+      options: ['35 Jahre alt', '40 Jahre alt', '45 Jahre alt', '50 Jahre alt'],
+      correctAnswer: '40 Jahre alt',
+    },
+  ]}
+/>
+
+### **Bài tập 2: Điền từ về gia đình**
+
+<Lueckentext
+  title="Hoàn thành đoạn văn về gia đình"
+  textParts={[
+    "Meine Familie hat ",
+    { type: "blank", correctAnswer: "vier" },
+    " Personen. Mein ",
+    { type: "blank", correctAnswer: "Vater" },
+    " ist 45 Jahre alt und meine ",
+    { type: "blank", correctAnswer: "Mutter" },
+    " ist 40 Jahre alt. Ich habe eine kleine ",
+    { type: "blank", correctAnswer: "Schwester" },
+    ". Sie ist 8 Jahre alt.",
+  ]}
+/>
+
+---
+
+### **Tác giả ✍️**
+
+<AuthorCredit author="Deutschvn Team" />
+
+---
+
+<FacebookComments url="https://localhost:9002/exercises/a1/familie-und-freunde" />
