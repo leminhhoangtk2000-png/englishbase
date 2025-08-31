@@ -18,6 +18,13 @@ model User {
   name        String?
   password    String   // Hashed password
   avatar      String?
+  bio         String?
+  url         String?
+  facebook    String?
+  instagram   String?
+  tiktok      String?
+  threads     String?
+  niveau      Niveau   @default(A1)
   role        Role     @default(USER)
   isPremium   Boolean  @default(false)
   createdAt   DateTime @default(now())
@@ -37,6 +44,15 @@ enum Role {
   ADMIN
   USER
   USER_PREMIUM
+}
+
+enum Niveau {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
 }
 
 // Content management

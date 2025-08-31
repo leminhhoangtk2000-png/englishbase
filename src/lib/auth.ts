@@ -13,6 +13,13 @@ export interface AuthUser {
   role: string
   isPremium: boolean
   avatar: string | null
+  bio: string | null
+  url: string | null
+  facebook: string | null
+  instagram: string | null
+  tiktok: string | null
+  threads: string | null
+  niveau: string | null
 }
 
 export async function hashPassword(password: string): Promise<string> {
@@ -65,6 +72,13 @@ export async function loginUser(email: string, password: string): Promise<{ user
           role: user.role,
           isPremium: user.isPremium,
           avatar: user.avatar,
+          bio: user.bio,
+          url: user.url,
+          facebook: user.facebook,
+          instagram: user.instagram,
+          tiktok: user.tiktok,
+          threads: user.threads,
+          niveau: user.niveau,
         }
 
         const token = generateToken(authUser)
@@ -91,6 +105,13 @@ export async function loginUser(email: string, password: string): Promise<{ user
           role: tempUser.role,
           isPremium: tempUser.isPremium,
           avatar: tempUser.avatar,
+          bio: null,
+          url: null,
+          facebook: null,
+          instagram: null,
+          tiktok: null,
+          threads: null,
+          niveau: null,
         }
 
         const token = generateToken(authUser)

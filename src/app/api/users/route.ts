@@ -1,8 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { getCurrentUser } from '@/lib/auth-server'
 
 export async function GET(request: NextRequest) {
     try {
+        // Kiểm tra authentication - chỉ ADMIN mới có thể xem danh sách users
+        const currentUser = await getCurrentUser();
+        
+        if (!currentUser) {
+            return NextResponse.json(
+                { error: 'Unauthorized' },
+                { status: 401 }
+            );
+        }
+        
+        if (currentUser.role !== 'ADMIN') {
+            return NextResponse.json(
+                { error: 'Forbidden - Admin access required' },
+                { status: 403 }
+            );
+        }
         const { searchParams } = new URL(request.url)
         const role = searchParams.get('role')
         const page = parseInt(searchParams.get('page') || '1')

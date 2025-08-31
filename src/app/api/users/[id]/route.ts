@@ -1,11 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { getCurrentUser } from '@/lib/auth-server'
 
 export async function PATCH(
     request: NextRequest,
     { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        // Kiểm tra authentication - chỉ ADMIN mới có thể cập nhật users
+        const currentUser = await getCurrentUser();
+        
+        if (!currentUser) {
+            return NextResponse.json(
+                { error: 'Unauthorized' },
+                { status: 401 }
+            );
+        }
+        
+        if (currentUser.role !== 'ADMIN') {
+            return NextResponse.json(
+                { error: 'Forbidden - Admin access required' },
+                { status: 403 }
+            );
+        }
+
         const { id } = await params
         const body = await request.json()
 
@@ -35,7 +53,25 @@ export async function GET(
     { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        // Kiểm tra authentication - chỉ ADMIN hoặc chính user đó mới có thể xem
+        const currentUser = await getCurrentUser();
+        
+        if (!currentUser) {
+            return NextResponse.json(
+                { error: 'Unauthorized' },
+                { status: 401 }
+            );
+        }
+
         const { id } = await params
+
+        // Cho phép ADMIN xem tất cả hoặc user xem chính mình
+        if (currentUser.role !== 'ADMIN' && currentUser.id !== id) {
+            return NextResponse.json(
+                { error: 'Forbidden - You can only view your own profile' },
+                { status: 403 }
+            );
+        }
 
         const user = await prisma.user.findUnique({
             where: { id },

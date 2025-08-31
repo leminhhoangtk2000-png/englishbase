@@ -299,12 +299,35 @@ function LearningGoal() {
 export default function UserPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
+  const [profileData, setProfileData] = React.useState<any>(null);
+  const [loadingProfile, setLoadingProfile] = React.useState(true);
 
   React.useEffect(() => {
     if (!loading && !user) {
       router.push('/login');
     }
   }, [user, loading, router]);
+
+  // Load profile data from API
+  React.useEffect(() => {
+    const loadProfile = async () => {
+      if (user) {
+        try {
+          const response = await fetch('/api/profile');
+          if (response.ok) {
+            const data = await response.json();
+            setProfileData(data.user);
+          }
+        } catch (error) {
+          console.error('Error loading profile:', error);
+        } finally {
+          setLoadingProfile(false);
+        }
+      }
+    };
+    
+    loadProfile();
+  }, [user]);
 
   if (loading) {
     return (
@@ -339,22 +362,37 @@ export default function UserPage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Left Sidebar */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 max-w-full overflow-hidden">
           <Avatar className="w-full h-auto max-w-[256px] aspect-square rounded-full border-4 border-card mb-4">
-            <AvatarImage src="https://placehold.co/256x256.png" data-ai-hint="man portrait" />
-            <AvatarFallback>KV</AvatarFallback>
+            <AvatarImage src={profileData?.avatar || "https://placehold.co/256x256.png"} />
+            <AvatarFallback>
+              {profileData?.name?.charAt(0) || user?.name?.charAt(0) || user?.email?.charAt(0) || "U"}
+            </AvatarFallback>
           </Avatar>
           <div className="flex items-center gap-2 mb-1">
-            <h1 className="text-2xl font-bold">Khoa Võ</h1>
+            <h1 className="text-2xl font-bold">
+              {profileData?.name || user?.name || "Người dùng"}
+            </h1>
           </div>
-          <p className="text-lg text-muted-foreground mb-4">khoavo261</p>
+          <p className="text-lg text-muted-foreground mb-4">
+            {profileData?.username || user?.username || user?.email}
+          </p>
           <Button variant="outline" className="w-full mb-4" asChild>
             <Link href="/user/edit">Chỉnh sửa hồ sơ</Link>
           </Button>
           
           <p className="text-sm text-foreground mb-4">
-            Lập trình viên phát triển các dự án mã nguồn mở.
+            {profileData?.bio || "Chưa có giới thiệu"}
           </p>
+
+          {/* Hiển thị trình độ tiếng Đức */}
+          {profileData?.niveau && (
+            <div className="mb-4">
+              <Badge variant="secondary" className="text-sm">
+                Trình độ: {profileData.niveau}
+              </Badge>
+            </div>
+          )}
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
             <Link href="#" className="flex items-center gap-1 hover:text-primary">
@@ -367,26 +405,79 @@ export default function UserPage() {
             </Link>
           </div>
 
-          <div className="space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4"/>
-                  <span>Việt Nam</span>
-              </div>
-               <div className="flex items-center gap-2">
-                  <LinkIcon className="w-4 h-4"/>
-                  <Link href="#" className="hover:text-primary hover:underline">https://portfolio.example.com</Link>
-              </div>
-              <div className="flex items-center gap-2">
-                  <Twitter className="w-4 h-4"/>
-                   <Link href="#" className="hover:text-primary hover:underline">@khoavo_dev</Link>
-              </div>
-               <div className="flex items-center gap-2">
-                  <Linkedin className="w-4 h-4"/>
-                  <Link href="#" className="hover:text-primary hover:underline">linkedin.com/in/khoavo</Link>
-              </div>
-          </div>
+          <div className="space-y-2 text-sm text-muted-foreground max-w-full">
+              {/* Website URL */}
+              {profileData?.url && (
+                <div className="flex items-center gap-2 min-w-0">
+                  <LinkIcon className="w-4 h-4 flex-shrink-0" />
+                  <Link 
+                    href={profileData.url} 
+                    target="_blank" 
+                    className="hover:text-primary truncate block"
+                    title={profileData.url}
+                  >
+                    {profileData.url}
+                  </Link>
+                </div>
+              )}
 
-          <div className="mt-8">
+              {/* Social Media Links */}
+              {profileData?.facebook && (
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-4 h-4 text-blue-600 flex-shrink-0">FB</span>
+                  <Link 
+                    href={`https://facebook.com/${profileData.facebook}`} 
+                    target="_blank" 
+                    className="hover:text-primary truncate block"
+                    title={`facebook.com/${profileData.facebook}`}
+                  >
+                    facebook.com/{profileData.facebook}
+                  </Link>
+                </div>
+              )}
+
+              {profileData?.instagram && (
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-4 h-4 text-pink-600 flex-shrink-0">IG</span>
+                  <Link 
+                    href={`https://instagram.com/${profileData.instagram}`} 
+                    target="_blank" 
+                    className="hover:text-primary truncate block"
+                    title={`instagram.com/${profileData.instagram}`}
+                  >
+                    instagram.com/{profileData.instagram}
+                  </Link>
+                </div>
+              )}
+
+              {profileData?.tiktok && (
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-4 h-4 text-black flex-shrink-0">TT</span>
+                  <Link 
+                    href={`https://tiktok.com/@${profileData.tiktok}`} 
+                    target="_blank" 
+                    className="hover:text-primary truncate block"
+                    title={`tiktok.com/@${profileData.tiktok}`}
+                  >
+                    tiktok.com/@{profileData.tiktok}
+                  </Link>
+                </div>
+              )}
+
+              {profileData?.threads && (
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-4 h-4 text-black flex-shrink-0">TH</span>
+                  <Link 
+                    href={`https://threads.net/@${profileData.threads}`} 
+                    target="_blank" 
+                    className="hover:text-primary truncate block"
+                    title={`threads.net/@${profileData.threads}`}
+                  >
+                    threads.net/@{profileData.threads}
+                  </Link>
+                </div>
+              )}
+          </div>          <div className="mt-8">
             <PlatformReview />
           </div>
         </div>
@@ -404,10 +495,6 @@ export default function UserPage() {
               <TabsTrigger value="saved-vocabulary" className="flex items-center gap-1.5">
                 <BookmarkCheck className="w-4 h-4" />
                 Từ vựng đã lưu
-              </TabsTrigger>
-              <TabsTrigger value="support" className="flex items-center gap-1.5 font-semibold text-foreground">
-                <Star className="w-4 h-4" />
-                Trở thành người hỗ trợ
               </TabsTrigger>
             </TabsList>
             <TabsContent value="profile">
@@ -445,7 +532,7 @@ export default function UserPage() {
                         Nâng cấp tài khoản để theo dõi tiến độ học tập, đặt mục tiêu và xem lại lịch sử hoạt động của bạn.
                     </p>
                     <Button size="lg" asChild>
-                        <Link href="/upgrade">Nâng cấp ngay</Link>
+                        <Link href="/payment">Nâng cấp ngay</Link>
                     </Button>
                     <div className="mt-8 max-w-2xl w-full">
                         <div className="bg-secondary/50 border rounded-lg p-6 text-sm text-muted-foreground text-left relative">
@@ -554,94 +641,6 @@ export default function UserPage() {
             </TabsContent>
             <TabsContent value="saved-vocabulary">
               <SavedVocabularyCard />
-            </TabsContent>
-            <TabsContent value="support">
-                <div className="space-y-8">
-                    <Card className="bg-secondary/50 border-border/80">
-                        <CardContent className="p-6 relative">
-                            <Quote className="absolute top-2 left-2 w-8 h-8 text-border" />
-                             <div className="space-y-4 text-sm text-muted-foreground text-center max-w-3xl mx-auto py-4">
-                                <p>
-                                    Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong className="text-foreground">250đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình mỗi bạn cũng chỉ tiêu tốn hết <strong className="text-foreground">20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
-                                </p>
-                                <p>
-                                    Đó là lý do bọn mình có gói người hỗ trợ <strong className="text-foreground">25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong className="text-foreground">cover chi phí cho một 20 học khác</strong>.
-                                </p>
-                                <p className="font-semibold text-foreground italic text-base py-2">
-                                    "Kiến thức là miễn phí, và bọn mình tin chắc việc làm của chúng ta là có ý nghĩa và sẽ ý nghĩa hơn từng ngày."
-                                </p>
-                                <p>
-                                    Về cơ bản nếu bạn ủng hộ 49.000đ, 99.000đ hay 25.000đ thì <strong className="text-foreground">chất lượng trải nghiệm cũng sẽ như nhau</strong>. Vì vậy hãy <strong className="text-foreground">cân nhắc kỹ khi hỗ trợ</strong> nhé. Bọn mình sẽ <strong className="text-foreground">không thu phí theo hình thức subscription</strong>, đây là khoản phí <strong className="text-foreground">trả một lần</strong>, để tránh việc các bạn quên và khoản phí sẽ tự động gia hạn.
-                                </p>
-                            </div>
-                            <Quote className="absolute bottom-2 right-2 w-8 h-8 text-border rotate-180" />
-                        </CardContent>
-                    </Card>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <Card className="flex flex-col">
-                            <CardHeader className="items-center">
-                                <Coffee className="w-10 h-10 mb-4 text-primary" />
-                                <CardTitle>Người hỗ trợ Đồng</CardTitle>
-                                <p className="text-2xl font-bold">25.000đ</p>
-                                <p className="text-sm text-muted-foreground">/ một lần</p>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 20 bạn học.</li>
-                                </ul>
-                            </CardContent>
-                            <CardFooter>
-                                <Button className="w-full" asChild>
-                                    <Link href="/payment?tier=bronze">Hỗ trợ</Link>
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                         <Card className="flex flex-col border-primary shadow-lg">
-                            <CardHeader className="items-center">
-                                <Heart className="w-10 h-10 mb-4 text-primary" />
-                                <CardTitle>Người hỗ trợ Bạc</CardTitle>
-                                 <p className="text-2xl font-bold">49.000đ</p>
-                                <p className="text-sm text-muted-foreground">/ một lần</p>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                 <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 116 bạn học.</li>
-                                </ul>
-                            </CardContent>
-                            <CardFooter>
-                                <Button className="w-full" asChild>
-                                    <Link href="/payment?tier=silver">Hỗ trợ</Link>
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                         <Card className="flex flex-col">
-                            <CardHeader className="items-center">
-                                <Rocket className="w-10 h-10 mb-4 text-primary" />
-                                <CardTitle>Người hỗ trợ Vàng</CardTitle>
-                                 <p className="text-2xl font-bold">99.000đ</p>
-                                <p className="text-sm text-muted-foreground">/ một lần</p>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Huy hiệu "Người hỗ trợ" đặc biệt.</li>
-                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-green-500" /> Bạn đang giúp đỡ 316 bạn học khác và cả team Deutsch.vn.</li>
-                                </ul>
-                            </CardContent>
-                            <CardFooter>
-                               <Button className="w-full" asChild>
-                                    <Link href="/payment?tier=gold">Hỗ trợ</Link>
-                               </Button>
-                            </CardFooter>
-                        </Card>
-                    </div>
-                    <p className="text-center text-sm text-muted-foreground italic mt-8 max-w-2xl mx-auto">
-                      Ngoài tiếng Đức, bọn mình đã và đang xây dựng team để có thể <strong className="text-foreground">xây dựng thêm nền tảng học tiếng Anh miễn phí</strong>. Vì vậy <strong className="text-foreground">kinh phí là một khoản thật sự cần thiết</strong>.
-                      <br />
-                      <strong className="text-foreground">Rất cảm ơn vì sự ủng hộ của các bạn!</strong>
-                    </p>
-                </div>
             </TabsContent>
           </Tabs>
         </div>
