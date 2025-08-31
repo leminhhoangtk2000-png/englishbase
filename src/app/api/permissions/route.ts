@@ -33,30 +33,39 @@ export async function GET(request: NextRequest) {
             )
         }
 
+        // Convert user to proper User type
+        const userForPermissions = {
+            id: user.id,
+            email: user.email,
+            name: user.name || undefined,
+            role: user.role,
+            isPremium: user.isPremium
+        };
+
         let result: any = {
             user: {
                 id: user.id,
                 email: user.email,
-                name: user.name,
+                name: user.name || undefined,
                 role: user.role,
                 isPremium: user.isPremium
             },
             permissions: {
-                isAdmin: isAdmin(user),
-                isPremiumUser: isPremiumUser(user),
-                canAccessPremiumContent: canAccessPremiumContent(user),
-                canManageUsers: hasPermission(user, 'canManageUsers'),
-                canManageContent: hasPermission(user, 'canManageContent'),
-                canViewAnalytics: hasPermission(user, 'canViewAnalytics'),
-                canModerateComments: hasPermission(user, 'canModerateComments'),
-                canCreateExercises: hasPermission(user, 'canCreateExercises'),
-                canManageVocabulary: hasPermission(user, 'canManageVocabulary')
+                isAdmin: isAdmin(userForPermissions),
+                isPremiumUser: isPremiumUser(userForPermissions),
+                canAccessPremiumContent: canAccessPremiumContent(userForPermissions),
+                canManageUsers: hasPermission(userForPermissions, 'canManageUsers'),
+                canManageContent: hasPermission(userForPermissions, 'canManageContent'),
+                canViewAnalytics: hasPermission(userForPermissions, 'canViewAnalytics'),
+                canModerateComments: hasPermission(userForPermissions, 'canModerateComments'),
+                canCreateExercises: hasPermission(userForPermissions, 'canCreateExercises'),
+                canManageVocabulary: hasPermission(userForPermissions, 'canManageVocabulary')
             }
         }
 
         // If specific permission is requested
         if (permission) {
-            result.hasPermission = hasPermission(user, permission as any)
+            result.hasPermission = hasPermission(userForPermissions, permission as any)
         }
 
         return NextResponse.json(result)

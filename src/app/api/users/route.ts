@@ -73,6 +73,7 @@ export async function POST(request: NextRequest) {
                 username: body.username,
                 name: body.name,
                 avatar: body.avatar,
+                password: body.password || 'defaultpass123', // Add required password field
                 role: body.role || 'USER',
                 isPremium: body.role === 'USER_PREMIUM' || body.isPremium || false
             }

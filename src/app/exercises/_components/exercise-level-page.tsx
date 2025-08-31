@@ -25,6 +25,13 @@ interface Exercise {
   level: string;
   tags: string[];
   slug: string;
+  image?: string;
+  data_ai_hint?: string;
+  completed?: boolean;
+  duration?: string;
+  rating?: number;
+  views?: number;
+  comments?: number;
 }
 
 interface ExerciseLevelPageProps {
@@ -254,11 +261,11 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                  <div className="p-2">
                     <div className="relative">
                       <Image
-                        src={exercise.image}
+                        src={exercise.image || "https://placehold.co/600x400.png"}
                         alt={exercise.title}
                         width={600}
                         height={400}
-                        data-ai-hint={exercise.data_ai_hint}
+                        data-ai-hint={exercise.data_ai_hint || exercise.title}
                         className="object-cover w-full h-40 rounded-md"
                       />
                       {exercise.completed && (
@@ -287,7 +294,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                     <div className="flex items-center gap-4">
                         <div className="flex items-center">
                             <Eye className="w-3 h-3 mr-1.5" />
-                            <span>{(exercise.views / 1000).toFixed(1)}k</span>
+                            <span>{((exercise.views || 0) / 1000).toFixed(1)}k</span>
                         </div>
                         <div className="flex items-center">
                             <MessageCircle className="w-3 h-3 mr-1.5" />

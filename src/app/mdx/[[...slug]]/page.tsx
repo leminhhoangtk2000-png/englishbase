@@ -47,7 +47,7 @@ export default async function MDXPage({ params }: PageProps) {
   const slug = resolvedParams.slug?.join('/') || 'demo/exercise-components'
   
   try {
-    const mdxFile = await getMDXFile(slug)
+    const mdxFile = await getMDXFile('exercises', slug)
     const toc = await getMDXTableOfContents(slug)
     
     if (!mdxFile) {
@@ -62,15 +62,15 @@ export default async function MDXPage({ params }: PageProps) {
             <div className="prose prose-lg max-w-none">
               {/* Header */}
               <div className="mb-8">
-                <h1 className="text-4xl font-bold mb-4">{mdxFile.meta.title}</h1>
-                {mdxFile.meta.description && (
-                  <p className="text-xl text-gray-600 mb-4">{mdxFile.meta.description}</p>
+                <h1 className="text-4xl font-bold mb-4">{mdxFile.title}</h1>
+                {mdxFile.description && (
+                  <p className="text-xl text-gray-600 mb-4">{mdxFile.description}</p>
                 )}
-                {mdxFile.meta.author && (
-                  <p className="text-sm text-gray-500">Tác giả: {mdxFile.meta.author}</p>
+                {mdxFile.metadata.author && (
+                  <p className="text-sm text-gray-500">Tác giả: {mdxFile.metadata.author}</p>
                 )}
-                {mdxFile.meta.date && (
-                  <p className="text-sm text-gray-500">Ngày: {mdxFile.meta.date}</p>
+                {mdxFile.metadata.date && (
+                  <p className="text-sm text-gray-500">Ngày: {mdxFile.metadata.date}</p>
                 )}
               </div>
 

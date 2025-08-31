@@ -32,6 +32,7 @@ export async function POST(request: Request) {
             data: {
                 email: body.email || 'test@example.com',
                 name: body.name || 'Test User',
+                password: 'test123', // Default test password
                 role: 'USER'
             }
         })
