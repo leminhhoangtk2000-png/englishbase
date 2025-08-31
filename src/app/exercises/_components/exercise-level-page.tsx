@@ -1,13 +1,13 @@
 
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, SlidersHorizontal, Eye, MessageCircle, CheckCircle2, Star } from "lucide-react";
+import { Clock, SlidersHorizontal, Eye, MessageCircle, CheckCircle2, Star, BookOpen, Tag } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -17,6 +17,19 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+
+interface Exercise {
+  title: string;
+  description: string;
+  href: string;
+  level: string;
+  tags: string[];
+  slug: string;
+}
+
+interface ExerciseLevelPageProps {
+  level: string;
+}
 
 const exercises = [
   {
@@ -102,12 +115,51 @@ const levels = [
 
 export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
   const router = useRouter();
-  const [skillFilter, setSkillFilter] = React.useState("Nghe");
+  const [skillFilter, setSkillFilter] = React.useState("Tất cả");
   const [difficultyFilter, setDifficultyFilter] = React.useState("Tất cả");
+  const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch exercises for the current level
+    const fetchExercises = async () => {
+      try {
+        const response = await fetch(`/api/exercises/${level}`);
+        if (response.ok) {
+          const data = await response.json();
+          setExercises(data);
+        }
+      } catch (error) {
+        console.error('Error fetching exercises:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchExercises();
+  }, [level]);
 
   const handleLevelChange = (newLevel: string) => {
     router.push(`/exercises/${newLevel}`);
   };
+
+  const filteredExercises = exercises.filter(exercise => {
+    if (skillFilter !== "Tất cả" && !exercise.tags.includes(skillFilter)) {
+      return false;
+    }
+    return true;
+  });
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600 mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Đang tải bài tập...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">

@@ -25,11 +25,41 @@ export default async function DocPage({ params }: DocPageProps) {
     return <ExerciseLevelPage level={slug[0]} />;
   }
 
-  const doc = await getDocFromParams(slug);  if (!doc || !doc.component) {
+  const doc = await getDocFromParams(slug);
+
+  if (!doc || !doc.component) {
     notFound();
   }
 
   const ContentComponent = doc.component;
+  
+  // Check if this is an MDX exercise (independent page without sidebar)
+  const isExercise = slug.length >= 2 && ["a1", "a2", "b1", "b2"].includes(slug[0]);
+
+  if (isExercise) {
+    // Render as independent exercise page without sidebar
+    return (
+      <main className="container mx-auto max-w-4xl py-6 px-4">
+        <div className="mb-6">
+          <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+            <a href="/exercises" className="hover:text-foreground transition-colors">Bài tập</a>
+            <span className="font-medium text-foreground">/</span>
+            <a href={`/exercises/${slug[0]}`} className="hover:text-foreground transition-colors capitalize">
+              {slug[0].toUpperCase()}
+            </a>
+            <span className="font-medium text-foreground">/</span>
+            <div className="font-medium text-foreground">{doc.title}</div>
+          </div>
+        </div>
+        
+        <article className="prose prose-lg prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-h3:font-headline prose-h3:tracking-tight prose-h3:font-semibold prose-h3:text-xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1">
+          <ContentComponent />
+        </article>
+      </main>
+    );
+  }
+
+  // Regular docs layout with sidebar
   const toc = {
     items: [
       { title: "Overview", url: "#overview" },
