@@ -24,7 +24,7 @@ export default function CreatePostPage() {
   const handlePublish = () => {
     // Logic publish (sẽ được phát triển sau)
     alert("Bài viết đã được xuất bản! (Demo)");
-    router.push("/blog-new");
+    router.push("/blog");
   };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {

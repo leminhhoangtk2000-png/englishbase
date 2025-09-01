@@ -173,7 +173,7 @@ export default function UserPage() {
             <TabsList className="mb-4">
               <TabsTrigger value="profile">Thông tin cơ bản</TabsTrigger>
               <TabsTrigger value="write" asChild>
-                <Link href="/blog-new/create">Viết cùng Deutsch.vn</Link>
+                <Link href="/blog/create">Viết cùng Deutsch.vn</Link>
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
@@ -237,7 +237,7 @@ export default function UserPage() {
                       {blogPosts.map((post, index) => (
                         <TableRow key={index}>
                           <TableCell className="font-medium">
-                            <Link href="/blog-new/first-post" className="hover:underline">
+                            <Link href="/blog/first-post" className="hover:underline">
                               {post.title}
                             </Link>
                           </TableCell>

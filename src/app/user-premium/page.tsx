@@ -403,7 +403,7 @@ export default function UserPremiumPage() {
             <TabsList className="mb-4">
               <TabsTrigger value="profile">Thông tin cơ bản</TabsTrigger>
               <TabsTrigger value="write" asChild>
-                <Link href="/blog-new/create">Viết cùng Deutsch.vn</Link>
+                <Link href="/blog/create">Viết cùng Deutsch.vn</Link>
               </TabsTrigger>
               <TabsTrigger value="manage-blog">Quản lý blog</TabsTrigger>
               <TabsTrigger value="saved-posts">Bài viết đã lưu</TabsTrigger>
@@ -502,7 +502,7 @@ export default function UserPremiumPage() {
                                             <span className="font-semibold">{post.author}</span>
                                         </div>
                                         <h3 className="font-bold font-headline text-lg">
-                                            <Link href="/blog-new/first-post" className="hover:underline">{post.title}</Link>
+                                            <Link href="/blog/first-post" className="hover:underline">{post.title}</Link>
                                         </h3>
                                     </div>
                                     <div className="flex-shrink-0">

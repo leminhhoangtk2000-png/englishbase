@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDocFromParams } from "@/lib/blog-new";
+import { getDocFromParams } from "@/lib/blog";
 import { BlogPostPage } from "../_components/blog-post-page";
 import { type NavItemWithComponent } from "@/types";
 
