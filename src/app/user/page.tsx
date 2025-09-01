@@ -42,7 +42,7 @@ export default function UserPage() {
     username: user.username || 'user',
     avatar: user.avatar,
     bio: user.bio || 'Đang học tiếng Đức với Deutsch.vn',
-    url: 'https://deutsch.vn',
+    url: user.website, // Use user's website instead of hardcoded
     facebook: user.facebook,
     instagram: user.instagram,
     tiktok: user.tiktok,

@@ -24,6 +24,7 @@ export function ProfileEditModal({ children }: ProfileEditModalProps) {
     name: user?.name || '',
     username: user?.username || '',
     bio: user?.bio || '',
+    website: user?.website || '',
     facebook: user?.facebook || '',
     instagram: user?.instagram || '',
     tiktok: user?.tiktok || '',
@@ -119,6 +120,7 @@ export function ProfileEditModal({ children }: ProfileEditModalProps) {
         name: user.name || '',
         username: user.username || '',
         bio: user.bio || '',
+        website: user.website || '',
         facebook: user.facebook || '',
         instagram: user.instagram || '',
         tiktok: user.tiktok || '',
@@ -199,6 +201,17 @@ export function ProfileEditModal({ children }: ProfileEditModalProps) {
               onChange={(e) => handleInputChange('bio', e.target.value)}
               placeholder="Giới thiệu bản thân..."
               rows={3}
+            />
+          </div>
+
+          {/* Website */}
+          <div className="space-y-2">
+            <Label htmlFor="website">Website</Label>
+            <Input
+              id="website"
+              value={formData.website}
+              onChange={(e) => handleInputChange('website', e.target.value)}
+              placeholder="https://your-website.com"
             />
           </div>
 

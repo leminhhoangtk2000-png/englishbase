@@ -19,6 +19,7 @@ model User {
   password    String   // Hashed password
   avatar      String?
   bio         String?
+  website     String?
   facebook    String?
   instagram   String?
   tiktok      String?

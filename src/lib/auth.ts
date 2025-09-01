@@ -14,6 +14,7 @@ export interface AuthUser {
   isPremium: boolean
   avatar: string | null
   bio: string | null
+  website: string | null
   facebook: string | null
   instagram: string | null
   tiktok: string | null
@@ -76,6 +77,7 @@ export async function loginUser(email: string, password: string): Promise<{ user
           isPremium: user.isPremium,
           avatar: user.avatar,
           bio: user.bio,
+          website: user.website,
           facebook: user.facebook,
           instagram: user.instagram,
           tiktok: user.tiktok,
@@ -108,6 +110,7 @@ export async function loginUser(email: string, password: string): Promise<{ user
           isPremium: tempUser.isPremium,
           avatar: tempUser.avatar,
           bio: null,
+          website: null,
           facebook: null,
           instagram: null,
           tiktok: null,

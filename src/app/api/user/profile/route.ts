@@ -14,7 +14,7 @@ export async function PUT(request: NextRequest) {
     }
 
     const data = await request.json();
-    const { name, username, bio, facebook, instagram, tiktok, threads, skillLevel, avatar } = data;
+    const { name, username, bio, website, facebook, instagram, tiktok, threads, skillLevel, avatar } = data;
 
     // Validate username uniqueness if it's being changed
     if (username && username !== user.username) {
@@ -34,6 +34,7 @@ export async function PUT(request: NextRequest) {
         name: name || null,
         username: username || null,
         bio: bio || null,
+        website: website || null,
         facebook: facebook || null,
         instagram: instagram || null,
         tiktok: tiktok || null,
@@ -50,6 +51,7 @@ export async function PUT(request: NextRequest) {
         isPremium: true,
         avatar: true,
         bio: true,
+        website: true,
         facebook: true,
         instagram: true,
         tiktok: true,
