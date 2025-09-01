@@ -18,6 +18,12 @@ model User {
   name        String?
   password    String   // Hashed password
   avatar      String?
+  bio         String?
+  facebook    String?
+  instagram   String?
+  tiktok      String?
+  threads     String?
+  skillLevel  String?  // A1, A2, B1, B2, C1, C2
   role        Role     @default(USER)
   isPremium   Boolean  @default(false)
   createdAt   DateTime @default(now())

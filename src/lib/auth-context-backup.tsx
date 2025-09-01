@@ -20,23 +20,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const refreshUser = async () => {
     try {
+      console.log('🔄 Auth Context: Refreshing user data...')
       const response = await fetch('/api/auth/me', {
         credentials: 'include', // Important for cookies
       })
+      console.log('🔄 Auth Context: Response status:', response.status)
       if (response.ok) {
         const data = await response.json()
+        console.log('✅ Auth Context: User data received:', data.user?.email)
         setUser(data.user)
         // Store user in localStorage as backup
         if (typeof window !== 'undefined') {
           localStorage.setItem('auth-user', JSON.stringify(data.user))
         }
       } else {
+        console.log('❌ Auth Context: No user data, checking localStorage...')
         // Try to get user from localStorage
         if (typeof window !== 'undefined') {
           const storedUser = localStorage.getItem('auth-user')
           if (storedUser) {
             try {
               const user = JSON.parse(storedUser)
+              console.log('📦 Auth Context: Restored user from localStorage:', user.email)
               setUser(user)
               return
             } catch (e) {
@@ -47,12 +52,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(null)
       }
     } catch (error) {
+      console.error('❌ Auth Context: Error refreshing user:', error)
       // Try to get user from localStorage as fallback
       if (typeof window !== 'undefined') {
         const storedUser = localStorage.getItem('auth-user')
         if (storedUser) {
           try {
             const user = JSON.parse(storedUser)
+            console.log('📦 Auth Context: Restored user from localStorage (error fallback):', user.email)
             setUser(user)
             return
           } catch (e) {
@@ -60,6 +67,43 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           }
         }
       }
+      setUser(null)
+    }
+  }
+import { AuthUser } from '@/lib/auth'
+
+interface AuthContextType {
+  user: AuthUser | null
+  loading: boolean
+  login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>
+  signup: (name: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>
+  logout: () => Promise<void>
+  refreshUser: () => Promise<void>
+}
+
+const AuthContext = createContext<AuthContextType | null>(null)
+
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<AuthUser | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  const refreshUser = async () => {
+    try {
+      console.log('🔄 Auth Context: Refreshing user...')
+      const response = await fetch('/api/auth/me', {
+        credentials: 'include', // Important for cookies
+      })
+      console.log('🔄 Auth Context: Response status:', response.status)
+      if (response.ok) {
+        const data = await response.json()
+        console.log('✅ Auth Context: User data received:', data.user?.email)
+        setUser(data.user)
+      } else {
+        console.log('❌ Auth Context: No user data, clearing user')
+        setUser(null)
+      }
+    } catch (error) {
+      console.error('❌ Auth Context: Error refreshing user:', error)
       setUser(null)
     }
   }
@@ -79,10 +123,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok) {
         setUser(data.user)
-        // Store user in localStorage as backup
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('auth-user', JSON.stringify(data.user))
-        }
         return { success: true }
       } else {
         return { success: false, error: data.error }
@@ -93,25 +133,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
-  const signup = async (email: string, password: string, name: string) => {
+  const signup = async (name: string, email: string, password: string) => {
     try {
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password, name }),
-        credentials: 'include',
+        body: JSON.stringify({ name, email, password }),
       })
 
       const data = await response.json()
 
       if (response.ok) {
         setUser(data.user)
-        // Store user in localStorage as backup
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('auth-user', JSON.stringify(data.user))
-        }
         return { success: true }
       } else {
         return { success: false, error: data.error }
@@ -128,17 +163,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         method: 'POST',
       })
       setUser(null)
-      // Clear localStorage
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem('auth-user')
-      }
     } catch (error) {
       console.error('Logout error:', error)
     }
   }
 
   useEffect(() => {
+    console.log('🚀 Auth Context: Component mounted, checking authentication...')
     refreshUser().finally(() => {
+      console.log('🏁 Auth Context: Initial auth check complete')
       setLoading(false)
     })
   }, [])

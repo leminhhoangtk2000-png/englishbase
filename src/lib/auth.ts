@@ -14,12 +14,11 @@ export interface AuthUser {
   isPremium: boolean
   avatar: string | null
   bio: string | null
-  url: string | null
   facebook: string | null
   instagram: string | null
   tiktok: string | null
   threads: string | null
-  niveau: string | null
+  skillLevel: string | null
 }
 
 export async function hashPassword(password: string): Promise<string> {
@@ -44,8 +43,12 @@ export function generateToken(user: AuthUser): string {
 
 export function verifyToken(token: string): any {
   try {
-    return jwt.verify(token, JWT_SECRET)
+    console.log('🔓 JWT: Verifying token with secret:', JWT_SECRET.substring(0, 10) + '...')
+    const decoded = jwt.verify(token, JWT_SECRET)
+    console.log('✅ JWT: Token verified successfully, user ID:', (decoded as any).id)
+    return decoded
   } catch (error) {
+    console.error('❌ JWT: Token verification failed:', error instanceof Error ? error.message : error)
     return null
   }
 }
@@ -73,12 +76,11 @@ export async function loginUser(email: string, password: string): Promise<{ user
           isPremium: user.isPremium,
           avatar: user.avatar,
           bio: user.bio,
-          url: user.url,
           facebook: user.facebook,
           instagram: user.instagram,
           tiktok: user.tiktok,
           threads: user.threads,
-          niveau: user.niveau,
+          skillLevel: user.skillLevel,
         }
 
         const token = generateToken(authUser)
@@ -106,12 +108,11 @@ export async function loginUser(email: string, password: string): Promise<{ user
           isPremium: tempUser.isPremium,
           avatar: tempUser.avatar,
           bio: null,
-          url: null,
           facebook: null,
           instagram: null,
           tiktok: null,
           threads: null,
-          niveau: null,
+          skillLevel: null,
         }
 
         const token = generateToken(authUser)

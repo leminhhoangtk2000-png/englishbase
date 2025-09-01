@@ -113,53 +113,50 @@ export function PlatformReview() {
     // Show existing review if user has already submitted
     if (existingReview && !submitted) {
         return (
-            <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/30">
-                <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Check className="w-8 h-8 text-green-600 dark:text-green-400" />
+            <Card className="border-0 shadow-none bg-green-50/50 dark:bg-green-950/20">
+                <CardHeader className="text-center pb-3">
+                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Check className="w-6 h-6 text-green-600 dark:text-green-400" />
                     </div>
-                    <CardTitle className="text-xl font-bold text-green-800 dark:text-green-200">
+                    <CardTitle className="text-lg font-bold text-green-800 dark:text-green-200">
                         Cảm ơn đánh giá của bạn!
                     </CardTitle>
-                    <CardDescription className="text-green-700 dark:text-green-300">
-                        Góp ý của bạn rất quý giá với chúng tôi
-                    </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 pt-0">
                     {/* Rating Display */}
                     <div className="text-center">
                         <div className="flex items-center justify-center gap-1 mb-2">
                             {[...Array(5)].map((_, i) => (
                                 <Star
                                     key={i}
-                                    className={`w-5 h-5 ${
+                                    className={`w-4 h-4 ${
                                         i < existingReview.rating 
                                             ? 'text-yellow-400 fill-current' 
                                             : 'text-gray-300'
                                     }`}
                                 />
                             ))}
-                            <span className="ml-2 font-bold text-lg">{existingReview.rating}/5</span>
+                            <span className="ml-2 font-bold text-base">{existingReview.rating}/5</span>
                         </div>
                     </div>
 
                     {/* Review Quote */}
-                    <div className="bg-white/50 dark:bg-black/20 p-4 rounded-lg border border-green-200/50 dark:border-green-700/50">
-                        <p className="text-center italic text-gray-700 dark:text-gray-300">
+                    <div className="bg-white/50 dark:bg-black/20 p-3 rounded-lg border-0">
+                        <p className="text-center italic text-gray-700 dark:text-gray-300 text-sm">
                             "{existingReview.comment}"
                         </p>
                     </div>
 
                     {/* Cooldown Timer */}
                     {cooldownInfo?.active && (
-                        <div className="bg-blue-50 dark:bg-blue-950/30 p-4 rounded-lg border border-blue-200 dark:border-blue-800 text-center">
+                        <div className="bg-blue-50 dark:bg-blue-950/30 p-3 rounded-lg border-0 text-center">
                             <div className="flex items-center justify-center gap-2 mb-2">
                                 <Clock className="w-4 h-4 text-blue-600" />
-                                <span className="font-semibold text-blue-800 dark:text-blue-200">
+                                <span className="font-semibold text-blue-800 dark:text-blue-200 text-sm">
                                     Thời gian chờ đánh giá tiếp theo
                                 </span>
                             </div>
-                            <p className="text-sm text-blue-700 dark:text-blue-300">
+                            <p className="text-xs text-blue-700 dark:text-blue-300">
                                 Bạn có thể gửi đánh giá mới sau <span className="font-bold">{cooldownInfo.remainingDays} ngày</span>
                             </p>
                             <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
@@ -175,21 +172,18 @@ export function PlatformReview() {
     // Show success message after submitting
     if (submitted) {
         return (
-            <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/30">
-                <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Check className="w-8 h-8 text-green-600 dark:text-green-400" />
+            <Card className="border-0 shadow-none bg-green-50/50 dark:bg-green-950/20">
+                <CardHeader className="text-center pb-3">
+                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Check className="w-6 h-6 text-green-600 dark:text-green-400" />
                     </div>
-                    <CardTitle className="text-xl font-bold text-green-800 dark:text-green-200">
+                    <CardTitle className="text-lg font-bold text-green-800 dark:text-green-200">
                         Cảm ơn đánh giá của bạn!
                     </CardTitle>
-                    <CardDescription className="text-green-700 dark:text-green-300">
-                        Góp ý của bạn rất quý giá với chúng tôi
-                    </CardDescription>
                 </CardHeader>
-                <CardContent>
-                    <div className="bg-white/50 dark:bg-black/20 p-4 rounded-lg border border-green-200/50 dark:border-green-700/50 text-center">
-                        <p className="text-gray-700 dark:text-gray-300 font-medium">
+                <CardContent className="pt-0">
+                    <div className="bg-white/50 dark:bg-black/20 p-3 rounded-lg border-0 text-center">
+                        <p className="text-gray-700 dark:text-gray-300 font-medium text-sm">
                             💝 Góp ý của bạn giúp chúng tôi phát triển tốt hơn
                         </p>
                     </div>
@@ -200,23 +194,23 @@ export function PlatformReview() {
 
     // Show review form
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>Đánh giá nền tảng</CardTitle>
-                <CardDescription>
+        <Card className="border-0 shadow-none">
+            <CardHeader className="pb-3">
+                <CardTitle className="text-base">Đánh giá nền tảng</CardTitle>
+                <CardDescription className="text-sm">
                     Chia sẻ ý kiến của bạn để giúp chúng tôi cải thiện
                 </CardDescription>
             </CardHeader>
             <form onSubmit={handleSubmit}>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 pt-0">
                     <div className="space-y-2">
-                        <Label>Đánh giá sao</Label>
+                        <Label className="text-sm">Đánh giá sao</Label>
                         <div className="flex gap-1">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Star
                                     key={star}
                                     className={cn(
-                                        "w-6 h-6 cursor-pointer transition-colors",
+                                        "w-5 h-5 cursor-pointer transition-colors",
                                         (hoverRating >= star || rating >= star)
                                             ? "text-yellow-400 fill-yellow-400"
                                             : "text-gray-300 hover:text-yellow-300"
@@ -229,24 +223,26 @@ export function PlatformReview() {
                         </div>
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="review">Nhận xét</Label>
+                        <Label htmlFor="review" className="text-sm">Nhận xét</Label>
                         <Textarea
                             id="review"
                             placeholder="Chia sẻ trải nghiệm của bạn..."
                             value={review}
                             onChange={(e) => setReview(e.target.value)}
-                            rows={4}
+                            rows={3}
+                            className="text-sm"
                         />
-                        <div className="text-right text-sm text-muted-foreground">
+                        <div className="text-right text-xs text-muted-foreground">
                             {review.length}/10 ký tự tối thiểu
                         </div>
                     </div>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="pt-0">
                     <Button 
                         type="submit" 
                         disabled={rating === 0 || review.trim().length < 10 || loading}
                         className="w-full"
+                        size="sm"
                     >
                         {loading ? "Đang gửi..." : existingReview ? "Cập nhật đánh giá" : "Gửi đánh giá"}
                     </Button>

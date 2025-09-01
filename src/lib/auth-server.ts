@@ -29,12 +29,11 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
         isPremium: true,
         avatar: true,
         bio: true,
-        url: true,
         facebook: true,
         instagram: true,
         tiktok: true,
         threads: true,
-        niveau: true,
+        skillLevel: true,
       }
     })
 
@@ -51,15 +50,13 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
       isPremium: user.isPremium,
       avatar: user.avatar,
       bio: user.bio,
-      url: user.url,
       facebook: user.facebook,
       instagram: user.instagram,
       tiktok: user.tiktok,
       threads: user.threads,
-      niveau: user.niveau,
+      skillLevel: user.skillLevel,
     }
   } catch (error) {
-    console.error('Error getting current user:', error)
     return null
   }
 }

@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
         where: { id: existingReview.id },
         data: {
           rating,
-          comment: comment.trim(),
+          content: comment.trim(),
           nextAllowedDate,
           updatedAt: now,
         },
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
         data: {
           userId: currentUser.id,
           rating,
-          comment: comment.trim(),
+          content: comment.trim(),
           nextAllowedDate,
         },
         include: {

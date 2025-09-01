@@ -19,6 +19,7 @@ import { UserActivity } from "./_components/UserActivity";
 import { PlatformReview } from "./_components/PlatformReview";
 import { LearningGoal } from "./_components/LearningGoal";
 import { SavedPosts } from "./_components/SavedPosts";
+import { ProfileEditModal } from "@/components/profile-edit-modal";
 import { blogPosts } from "./_components/data";
 
 export default function UserPage() {
@@ -35,13 +36,13 @@ export default function UserPage() {
     return null;
   }
 
-  // Mock profile data
+  // Profile data from user context
   const profileData = {
     name: user.name || 'User',
     username: user.username || 'user',
     avatar: user.avatar,
     bio: user.bio || 'Đang học tiếng Đức với Deutsch.vn',
-    url: user.url,
+    url: 'https://deutsch.vn',
     facebook: user.facebook,
     instagram: user.instagram,
     tiktok: user.tiktok,
@@ -53,7 +54,7 @@ export default function UserPage() {
       <div className="grid md:grid-cols-4 gap-8">
         {/* Left Sidebar */}
         <div className="md:col-span-1">
-          <Card className="text-center">
+          <Card className="text-center border-0 shadow-none">
             <CardHeader className="pb-2">
               <div className="mx-auto relative">
                 <Avatar className="w-20 h-20 mx-auto">
@@ -74,6 +75,13 @@ export default function UserPage() {
               <p className="text-sm text-muted-foreground">
                 {profileData.bio}
               </p>
+
+              {/* Edit Profile Button */}
+              <ProfileEditModal>
+                <Button variant="outline" size="sm" className="w-full">
+                  Chỉnh sửa hồ sơ
+                </Button>
+              </ProfileEditModal>
               
               <div className="flex justify-center space-x-4 text-sm">
                 <Link href="#" className="hover:text-primary flex items-center gap-1">
@@ -97,7 +105,7 @@ export default function UserPage() {
                       className="hover:text-primary truncate block"
                       title={profileData.url}
                     >
-                      {profileData.url}
+                      {profileData.url.replace('https://', '')}
                     </Link>
                   </div>
                 )}
@@ -105,56 +113,56 @@ export default function UserPage() {
                 {/* Social Media Links */}
                 {profileData?.facebook && (
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="w-4 h-4 text-blue-600 flex-shrink-0">FB</span>
+                    <span className="w-4 h-4 text-blue-600 flex-shrink-0 font-bold text-xs">FB</span>
                     <Link 
                       href={`https://facebook.com/${profileData.facebook}`} 
                       target="_blank" 
                       className="hover:text-primary truncate block"
                       title={`facebook.com/${profileData.facebook}`}
                     >
-                      facebook.com/{profileData.facebook}
+                      {profileData.facebook}
                     </Link>
                   </div>
                 )}
 
                 {profileData?.instagram && (
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="w-4 h-4 text-pink-600 flex-shrink-0">IG</span>
+                    <span className="w-4 h-4 text-pink-600 flex-shrink-0 font-bold text-xs">IG</span>
                     <Link 
                       href={`https://instagram.com/${profileData.instagram}`} 
                       target="_blank" 
                       className="hover:text-primary truncate block"
                       title={`instagram.com/${profileData.instagram}`}
                     >
-                      instagram.com/{profileData.instagram}
+                      @{profileData.instagram}
                     </Link>
                   </div>
                 )}
 
                 {profileData?.tiktok && (
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="w-4 h-4 text-black flex-shrink-0">TT</span>
+                    <span className="w-4 h-4 text-black flex-shrink-0 font-bold text-xs">TT</span>
                     <Link 
                       href={`https://tiktok.com/@${profileData.tiktok}`} 
                       target="_blank" 
                       className="hover:text-primary truncate block"
                       title={`tiktok.com/@${profileData.tiktok}`}
                     >
-                      tiktok.com/@{profileData.tiktok}
+                      @{profileData.tiktok}
                     </Link>
                   </div>
                 )}
 
                 {profileData?.threads && (
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="w-4 h-4 text-black flex-shrink-0">TH</span>
+                    <span className="w-4 h-4 text-black flex-shrink-0 font-bold text-xs">TH</span>
                     <Link 
                       href={`https://threads.net/@${profileData.threads}`} 
                       target="_blank" 
                       className="hover:text-primary truncate block"
                       title={`threads.net/@${profileData.threads}`}
                     >
-                      threads.net/@{profileData.threads}
+                      @{profileData.threads}
                     </Link>
                   </div>
                 )}

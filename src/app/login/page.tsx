@@ -37,7 +37,9 @@ export default function LoginPage() {
       
       if (result.success) {
         // Get user info and redirect to appropriate dashboard
-        const response = await fetch('/api/auth/me')
+        const response = await fetch('/api/auth/me', {
+          credentials: 'include', // Important for cookies
+        })
         if (response.ok) {
           const { user } = await response.json()
           const dashboardPath = getDashboardPath(user.role)

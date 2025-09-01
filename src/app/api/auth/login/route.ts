@@ -29,11 +29,13 @@ export async function POST(request: NextRequest) {
     const cookieStore = await cookies()
     cookieStore.set('auth-token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: false, // Set to false for localhost development
       sameSite: 'lax',
       maxAge: 60 * 60 * 24 * 7, // 7 days
       path: '/',
     })
+
+    console.log('🍪 Login: Cookie set successfully with token:', token.substring(0, 20) + '...')
 
     return NextResponse.json({
       message: 'Đăng nhập thành công',
