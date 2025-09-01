@@ -65,62 +65,62 @@ async function createTestReviews() {
     const testReviews = [
       {
         rating: 5,
-        comment: 'Tuyệt vời! Tôi đã học được rất nhiều từ vựng tiếng Đức mới. Giao diện rất thân thiện và dễ sử dụng.',
+        content: 'Tuyệt vời! Tôi đã học được rất nhiều từ vựng tiếng Đức mới. Giao diện rất thân thiện và dễ sử dụng.',
         isPublic: true
       },
       {
         rating: 5,
-        comment: 'Die beste App zum Deutschlernen! Sehr systematisch und gut strukturiert. Danke für diese tolle Plattform!',
+        content: 'Die beste App zum Deutschlernen! Sehr systematisch und gut strukturiert. Danke für diese tolle Plattform!',
         isPublic: true
       },
       {
         rating: 4,
-        comment: 'Ứng dụng rất hữu ích cho việc học tiếng Đức. Từ vựng được phân loại rất chi tiết và khoa học.',
+        content: 'Ứng dụng rất hữu ích cho việc học tiếng Đức. Từ vựng được phân loại rất chi tiết và khoa học.',
         isPublic: true
       },
       {
         rating: 5,
-        comment: 'Ich liebe diese Lernplattform! Die Übungen sind abwechslungsreich und helfen mir sehr beim Vokabellernen.',
+        content: 'Ich liebe diese Lernplattform! Die Übungen sind abwechslungsreich und helfen mir sehr beim Vokabellernen.',
         isPublic: true
       },
       {
         rating: 4,
-        comment: 'Cảm ơn team đã tạo ra một công cụ học tập tuyệt vời như vậy. Tôi đã cải thiện đáng kể khả năng tiếng Đức của mình.',
+        content: 'Cảm ơn team đã tạo ra một công cụ học tập tuyệt vời như vậy. Tôi đã cải thiện đáng kể khả năng tiếng Đức của mình.',
         isPublic: true
       },
       {
         rating: 5,
-        comment: 'Fantastisch! Die Kombination aus Deutsch und Vietnamesisch macht das Lernen sehr effektiv.',
+        content: 'Fantastisch! Die Kombination aus Deutsch und Vietnamesisch macht das Lernen sehr effektiv.',
         isPublic: true
       },
       {
         rating: 4,
-        comment: 'Giao diện đẹp, nội dung chất lượng. Đặc biệt thích phần luyện tập từ vựng theo chủ đề.',
+        content: 'Giao diện đẹp, nội dung chất lượng. Đặc biệt thích phần luyện tập từ vựng theo chủ đề.',
         isPublic: true
       },
       {
         rating: 5,
-        comment: 'Sehr empfehlenswert für alle Vietnamesen, die Deutsch lernen wollen. Gut durchdacht und professionell.',
+        content: 'Sehr empfehlenswert für alle Vietnamesen, die Deutsch lernen wollen. Gut durchdacht und professionell.',
         isPublic: true
       },
       {
         rating: 4,
-        comment: 'Ứng dụng giúp tôi học từ vựng một cách có hệ thống. Rất thích phần phát âm và ví dụ câu.',
+        content: 'Ứng dụng giúp tôi học từ vựng một cách có hệ thống. Rất thích phần phát âm và ví dụ câu.',
         isPublic: true
       },
       {
         rating: 5,
-        comment: 'Perfekt für das Selbststudium! Die Erklärungen sind klar und die Beispiele sehr hilfreich.',
+        content: 'Perfekt für das Selbststudium! Die Erklärungen sind klar und die Beispiele sehr hilfreich.',
         isPublic: true
       },
       {
         rating: 4,
-        comment: 'Cảm ơn đội ngũ phát triển! Đây chính xác là những gì tôi cần để cải thiện tiếng Đức.',
+        content: 'Cảm ơn đội ngũ phát triển! Đây chính xác là những gì tôi cần để cải thiện tiếng Đức.',
         isPublic: true
       },
       {
         rating: 5,
-        comment: 'Eine wunderbare Ergänzung zu meinem Deutschkurs. Die Vokabeln sind sehr praktisch und alltagsnah.',
+        content: 'Eine wunderbare Ergänzung zu meinem Deutschkurs. Die Vokabeln sind sehr praktisch und alltagsnah.',
         isPublic: true
       }
     ];

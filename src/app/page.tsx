@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { CheckCircle, Shield, Zap, Star, Users, Check } from 'lucide-react';
 import { MainNav } from '@/components/main-nav';
-import { HappyLearnersComponent } from '@/components/HappyLearnersComponent';
 
 const testimonials = [
   {
@@ -256,35 +255,6 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Happy Learners Section */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <HappyLearnersComponent />
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-primary to-secondary">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Sẵn sàng bắt đầu hành trình học tiếng Đức?
-              </h2>
-              <p className="text-xl mb-8 opacity-90">
-                Tham gia cùng hàng ngàn học viên đã thành công với Deutsch.vn
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">
-                  <Link href="/signup">Đăng ký miễn phí</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-primary">
-                  <Link href="/vocabulary">Dùng thử ngay</Link>
-                </Button>
-              </div>
             </div>
           </div>
         </section>

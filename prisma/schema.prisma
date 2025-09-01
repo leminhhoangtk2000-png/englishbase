@@ -18,13 +18,6 @@ model User {
   name        String?
   password    String   // Hashed password
   avatar      String?
-  bio         String?
-  url         String?
-  facebook    String?
-  instagram   String?
-  tiktok      String?
-  threads     String?
-  niveau      Niveau   @default(A1)
   role        Role     @default(USER)
   isPremium   Boolean  @default(false)
   createdAt   DateTime @default(now())
@@ -45,15 +38,6 @@ enum Role {
   ADMIN
   USER
   USER_PREMIUM
-}
-
-enum Niveau {
-  A1
-  A2
-  B1
-  B2
-  C1
-  C2
 }
 
 // Content management
@@ -358,17 +342,21 @@ enum PaymentStatus {
   REFUNDED
 }
 
-// User Reviews/Feedback
+// Review system
 model Review {
-  id              String   @id @default(cuid())
+  id              String @id @default(cuid())
   userId          String
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  rating          Int      // 1-5 stars
-  comment         String
-  isPublic        Boolean  @default(true)
-  nextAllowedDate DateTime? // When user can submit next review (365 days cooldown)
+  title           String?
+  content         String
+  rating          Int    // 1-5 stars
+  isPublic        Boolean @default(true)
+  isApproved      Boolean @default(false)
+  nextAllowedDate DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("reviews")
 }

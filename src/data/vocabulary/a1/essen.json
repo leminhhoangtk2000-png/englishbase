@@ -1,41 +1,62 @@
-{
-  "topic": "essen",
-  "level": "a1", 
-  "displayName": "Essen und Trinken - Ăn uống",
-  "description": "Từ vựng về thức ăn và đồ uống",
-  "vocabulary": [
-    {
-      "german": "das Brot",
-      "vietnamese": "bánh mì",
-      "type": "noun",
-      "gender": "neuter",
-      "plural": "die Brote",
-      "examples": {
-        "german": "Ich esse Brot zum Frühstück.",
-        "vietnamese": "Tôi ăn bánh mì vào bữa sáng."
-      }
-    },
-    {
-      "german": "das Wasser",
-      "vietnamese": "nước",
-      "type": "noun", 
-      "gender": "neuter",
-      "plural": "die Wasser",
-      "examples": {
-        "german": "Ich trinke viel Wasser.",
-        "vietnamese": "Tôi uống nhiều nước."
-      }
-    },
-    {
-      "german": "der Kaffee",
-      "vietnamese": "cà phê",
-      "type": "noun",
-      "gender": "masculine",
-      "plural": "die Kaffees",
-      "examples": {
-        "german": "Am Morgen trinke ich Kaffee.",
-        "vietnamese": "Vào buổi sáng tôi uống cà phê."
-      }
-    }
-  ]
-}
+[
+  {
+    "german": "das Essen",
+    "plural": "-",
+    "phonetic": "/ˈɛsən/",
+    "vietnamese": "thức ăn",
+    "exampleGerman": "Das Essen schmeckt sehr gut.",
+    "exampleVietnamese": "Thức ăn rất ngon.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Essen",
+    "difficulty": 1
+  },
+  {
+    "german": "das Brot",
+    "plural": "die Brote",
+    "phonetic": "/bʁoːt/",
+    "vietnamese": "bánh mì",
+    "exampleGerman": "Ich esse jeden Morgen Brot mit Butter.",
+    "exampleVietnamese": "Tôi ăn bánh mì với bơ mỗi sáng.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Essen",
+    "difficulty": 1
+  },
+  {
+    "german": "das Wasser",
+    "plural": "-",
+    "phonetic": "/ˈvasɐ/",
+    "vietnamese": "nước",
+    "exampleGerman": "Ich trinke viel Wasser am Tag.",
+    "exampleVietnamese": "Tôi uống nhiều nước trong ngày.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Essen",
+    "difficulty": 1
+  },
+  {
+    "german": "der Kaffee",
+    "plural": "die Kaffees",
+    "phonetic": "/ˈkafe/",
+    "vietnamese": "cà phê",
+    "exampleGerman": "Am Morgen trinke ich immer Kaffee.",
+    "exampleVietnamese": "Buổi sáng tôi luôn uống cà phê.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Essen",
+    "difficulty": 1
+  },
+  {
+    "german": "der Apfel",
+    "plural": "die Äpfel",
+    "phonetic": "/ˈapfəl/",
+    "vietnamese": "quả táo",
+    "exampleGerman": "Ich esse gerne Äpfel.",
+    "exampleVietnamese": "Tôi thích ăn táo.",
+    "type": "Nomen",
+    "level": "A1",
+    "topic": "Essen",
+    "difficulty": 1
+  }
+]
