@@ -8,6 +8,8 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '50');
     const source = searchParams.get('source');
     const isActive = searchParams.get('isActive');
+    const favorite = searchParams.get('favorite');
+    const interesting = searchParams.get('interesting');
 
     const where: any = {};
     
@@ -17,6 +19,15 @@ export async function GET(request: NextRequest) {
     
     if (isActive !== null) {
       where.isActive = isActive === 'true';
+    }
+
+    if (favorite === 'true') {
+      where.isFavorite = true;
+    }
+
+    if (interesting === 'true') {
+      where.isHot = true;
+      where.hotScore = { gte: 7 }; // Only articles with score >= 7
     }
 
     const articles = await prisma.newsArticle.findMany({

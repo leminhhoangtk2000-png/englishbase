@@ -22,8 +22,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 class GermanNewsCrawler:
-    def __init__(self, min_word_count=2000):
+    def __init__(self, min_word_count=2000, max_word_count=4000):
         self.min_word_count = min_word_count
+        self.max_word_count = max_word_count
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
@@ -120,8 +121,15 @@ class GermanNewsCrawler:
             return 'Unknown'
 
     def is_valid_german_article(self, article):
-        """Check if article is valid German content"""
-        if not article.text or len(article.text.strip()) < self.min_word_count:
+        """Check if article is valid German content with proper length"""
+        if not article.text:
+            return False
+            
+        text_length = len(article.text.strip())
+        
+        # Check length bounds: 2000-4000 characters
+        if text_length < self.min_word_count or text_length > self.max_word_count:
+            logger.info(f"Article rejected: {text_length} chars (need {self.min_word_count}-{self.max_word_count})")
             return False
             
         # Basic German text detection
@@ -310,11 +318,12 @@ def main():
     parser.add_argument('--all', action='store_true', help='Crawl all German news sources')
     parser.add_argument('--max-articles', type=int, default=10, help='Maximum articles per source')
     parser.add_argument('--min-words', type=int, default=2000, help='Minimum word count for articles')
+    parser.add_argument('--max-words', type=int, default=4000, help='Maximum word count for articles')
     parser.add_argument('--output', type=str, help='Output JSON file')
     
     args = parser.parse_args()
     
-    crawler = GermanNewsCrawler(min_word_count=args.min_words)
+    crawler = GermanNewsCrawler(min_word_count=args.min_words, max_word_count=args.max_words)
     
     articles = []
     

@@ -83,19 +83,24 @@ interface CrawlJob {
 
 export default function DieNeuenPage() {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
+  const [interestingArticles, setInterestingArticles] = useState<NewsArticle[]>([]);
   const [crawlJobs, setCrawlJobs] = useState<CrawlJob[]>([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [newUrl, setNewUrl] = useState('');
-  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzingVietnamese, setAnalyzingVietnamese] = useState(false);
   const [analyzingArticleId, setAnalyzingArticleId] = useState<string | null>(null);
+  const [schedulerActive, setSchedulerActive] = useState(false);
+  const [schedulerLoading, setSchedulerLoading] = useState(false);
   
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
+  const [favCurrentPage, setFavCurrentPage] = useState(1);
   const articlesPerPage = 20;
 
   useEffect(() => {
     fetchArticles();
+    fetchInterestingArticles();
     fetchCrawlJobs();
   }, []);
 
@@ -108,6 +113,18 @@ export default function DieNeuenPage() {
       }
     } catch (error) {
       console.error('Error fetching articles:', error);
+    }
+  };
+
+  const fetchInterestingArticles = async () => {
+    try {
+      const response = await fetch('/api/admin/news-articles?interesting=true');
+      if (response.ok) {
+        const data = await response.json();
+        setInterestingArticles(data);
+      }
+    } catch (error) {
+      console.error('Error fetching interesting articles:', error);
     }
   };
 
@@ -236,7 +253,8 @@ export default function DieNeuenPage() {
       
       if (result.success) {
         toast.success(`${result.article.isFavorite ? '❤️ Added to favorites' : '💔 Removed from favorites'}`);
-        fetchArticles(); // Refresh to show updated results
+        fetchArticles(); // Refresh main articles table
+        // Note: No longer fetching favorite articles since we use interesting articles instead
       } else {
         toast.error(`Failed to update favorite: ${result.error}`);
       }
@@ -245,33 +263,6 @@ export default function DieNeuenPage() {
       toast.error('Failed to update favorite');
     } finally {
       setAnalyzingArticleId(null);
-    }
-  };
-
-  const batchAnalyze = async () => {
-    setAnalyzing(true);
-    try {
-      const response = await fetch('/api/admin/batch-analyze', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ limit: 10 }),
-      });
-
-      const result = await response.json();
-      
-      if (result.success) {
-        toast.success(`Batch analysis completed! Analyzed ${result.analyzed} articles, ${result.errors} errors`);
-        fetchArticles();
-      } else {
-        toast.error(`Batch analysis failed: ${result.error}`);
-      }
-    } catch (error) {
-      console.error('Error in batch analysis:', error);
-      toast.error('Failed to run batch analysis');
-    } finally {
-      setAnalyzing(false);
     }
   };
 
@@ -305,6 +296,82 @@ export default function DieNeuenPage() {
       setLoading(false);
     }
   };
+
+  const batchAnalyzeForVietnamese = async () => {
+    setAnalyzingVietnamese(true);
+    try {
+      toast.info('Starting AI analysis for Vietnamese learners...');
+      
+      const response = await fetch('/api/admin/batch-analyze-vietnamese', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast.success(`✅ Analysis completed! Analyzed ${result.analyzed} articles, found ${result.interesting} interesting ones`);
+        fetchArticles();
+        fetchInterestingArticles();
+      } else {
+        toast.error(`Analysis failed: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error in batch analysis:', error);
+      toast.error('Failed to analyze articles');
+    } finally {
+      setAnalyzingVietnamese(false);
+    }
+  };
+
+  const toggleScheduler = async () => {
+    setSchedulerLoading(true);
+    try {
+      const action = schedulerActive ? 'stop' : 'start';
+      const response = await fetch('/api/admin/scheduler', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ action })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSchedulerActive(!schedulerActive);
+        if (action === 'start') {
+          toast.success('🕰️ Auto-scheduler started! Crawling at 7 AM, cleanup at midnight');
+        } else {
+          toast.success('⏹️ Auto-scheduler stopped');
+        }
+      } else {
+        toast.error(`Scheduler ${action} failed: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error toggling scheduler:', error);
+      toast.error('Failed to toggle scheduler');
+    } finally {
+      setSchedulerLoading(false);
+    }
+  };
+
+  const checkSchedulerStatus = async () => {
+    try {
+      const response = await fetch('/api/admin/scheduler');
+      const result = await response.json();
+      setSchedulerActive(result.activeTasks > 0);
+    } catch (error) {
+      console.error('Error checking scheduler status:', error);
+    }
+  };
+
+  // Check scheduler status on component mount
+  useEffect(() => {
+    checkSchedulerStatus();
+  }, []);
 
   const filteredArticles = articles.filter(article =>
     article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -427,7 +494,7 @@ export default function DieNeuenPage() {
             Die Neuen
           </h1>
           <p className="mt-1 text-muted-foreground">
-            Crawl German newspaper articles automatically at 7 AM and 6 PM daily
+            Automated news crawling at 7:00 AM daily, automatic cleanup at midnight
           </p>
         </div>
         <div className="flex gap-2">
@@ -439,16 +506,16 @@ export default function DieNeuenPage() {
             Refresh
           </Button>
           <Button
-            onClick={batchAnalyze}
-            disabled={analyzing}
+            onClick={batchAnalyzeForVietnamese}
+            disabled={analyzingVietnamese}
             variant="outline"
           >
-            {analyzing ? (
+            {analyzingVietnamese ? (
               <RefreshCw className="h-4 w-4 animate-spin mr-2" />
             ) : (
               <Brain className="h-4 w-4 mr-2" />
             )}
-            AI Analysis
+            Auto-Analyze for Vietnamese
           </Button>
           <Button
             onClick={dailyReset}
@@ -469,11 +536,45 @@ export default function DieNeuenPage() {
             )}
             Run All Sources
           </Button>
+          <Button
+            onClick={toggleScheduler}
+            disabled={schedulerLoading}
+            variant={schedulerActive ? "default" : "outline"}
+            className={schedulerActive ? "bg-green-600 hover:bg-green-700" : ""}
+          >
+            {schedulerLoading ? (
+              <RefreshCw className="h-4 w-4 animate-spin mr-2" />
+            ) : schedulerActive ? (
+              <CheckCircle className="h-4 w-4 mr-2" />
+            ) : (
+              <Clock className="h-4 w-4 mr-2" />
+            )}
+            {schedulerActive ? 'Auto-Schedule ON' : 'Start Auto-Schedule'}
+          </Button>
         </div>
       </div>
 
       {/* Stats Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Auto-Schedule</CardTitle>
+            {schedulerActive ? (
+              <CheckCircle className="h-4 w-4 text-green-500" />
+            ) : (
+              <Clock className="h-4 w-4 text-muted-foreground" />
+            )}
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">
+              {schedulerActive ? 'ACTIVE' : 'OFF'}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {schedulerActive ? '7 AM crawl, 12 AM cleanup' : 'Manual mode'}
+            </p>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Articles</CardTitle>
@@ -537,59 +638,6 @@ export default function DieNeuenPage() {
           </CardContent>
         </Card>
       </div>
-
-      {/* Manual Crawl Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Manual Crawl</CardTitle>
-          <CardDescription>
-            Start a manual crawl job or use quick actions for popular German news sources
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex gap-2">
-            <div className="flex-1">
-              <Label htmlFor="crawl-url">News Source URL</Label>
-              <Input
-                id="crawl-url"
-                placeholder="https://www.spiegel.de or specific article URL"
-                value={newUrl}
-                onChange={(e) => setNewUrl(e.target.value)}
-              />
-            </div>
-            <div className="flex items-end">
-              <Button 
-                onClick={() => startCrawl()}
-                disabled={loading || !newUrl}
-              >
-                {loading ? (
-                  <RefreshCw className="h-4 w-4 animate-spin mr-2" />
-                ) : (
-                  <PlayCircle className="h-4 w-4 mr-2" />
-                )}
-                Start Crawl
-              </Button>
-            </div>
-          </div>
-
-          <div>
-            <Label>Quick Actions - Popular German News Sources:</Label>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {defaultSources.map((source) => (
-                <Button
-                  key={source}
-                  variant="outline"
-                  size="sm"
-                  onClick={() => startCrawl(source)}
-                  disabled={loading}
-                >
-                  {source.replace('https://www.', '').replace('https://', '')}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* Quick Crawl Sources */}
       <Card>
@@ -782,18 +830,6 @@ export default function DieNeuenPage() {
                           <ExternalLink className="h-4 w-4" />
                         </a>
                       </Button>
-                      <Button 
-                        variant="ghost" 
-                        size="sm"
-                        onClick={() => toggleFavorite(article.id)}
-                        disabled={analyzingArticleId === article.id}
-                      >
-                        {analyzingArticleId === article.id ? (
-                          <RefreshCw className="h-4 w-4 animate-spin" />
-                        ) : (
-                          <Heart className={`h-4 w-4 ${article.isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
-                        )}
-                      </Button>
                     </div>
                   </TableCell>
                 </TableRow>
@@ -860,6 +896,151 @@ export default function DieNeuenPage() {
                 </Button>
               </div>
             </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Interesting Articles Table */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Brain className="h-5 w-5 text-purple-500" />
+            Interesting Articles
+          </CardTitle>
+          <CardDescription>
+            AI-curated articles interesting for Vietnamese learners studying German ({interestingArticles.length} total)
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {interestingArticles.length === 0 ? (
+            <div className="text-center py-8 text-muted-foreground">
+              <Brain className="h-12 w-12 mx-auto mb-4 text-gray-300" />
+              <p>No interesting articles found yet.</p>
+              <p className="text-sm">AI will analyze and curate articles after crawling.</p>
+            </div>
+          ) : (
+            <>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Title</TableHead>
+                    <TableHead>Source</TableHead>
+                    <TableHead>Interest Score</TableHead>
+                    <TableHead>Words</TableHead>
+                    <TableHead>Analyzed</TableHead>
+                    <TableHead>Actions</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {interestingArticles
+                    .slice((favCurrentPage - 1) * articlesPerPage, favCurrentPage * articlesPerPage)
+                    .map((article) => (
+                    <TableRow key={article.id}>
+                      <TableCell className="max-w-md">
+                        <div className="space-y-1">
+                          <p className="font-medium line-clamp-2">{article.title}</p>
+                          <p className="text-xs text-muted-foreground line-clamp-1">
+                            {article.excerpt}
+                          </p>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex items-center gap-1">
+                          <Globe className="h-3 w-3" />
+                          <span className="text-xs">{article.source}</span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        {article.isHot && (
+                          <div className="flex items-center gap-1">
+                            <Brain className="h-4 w-4 text-purple-500" />
+                            <span className="text-xs font-medium text-purple-600">
+                              {article.hotScore}/10
+                            </span>
+                          </div>
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        <span className="text-xs">{article.wordCount}</span>
+                      </TableCell>
+                      <TableCell>
+                        <span className="text-xs text-muted-foreground">
+                          {article.analyzedAt ? new Date(article.analyzedAt).toLocaleDateString() : 'N/A'}
+                        </span>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex gap-1">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => window.open(article.url, '_blank')}
+                          >
+                            <ExternalLink className="h-3 w-3" />
+                          </Button>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+
+              {/* Interesting Articles Pagination */}
+              {interestingArticles.length > articlesPerPage && (
+                <div className="flex items-center justify-between mt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Showing {((favCurrentPage - 1) * articlesPerPage) + 1} to {Math.min(favCurrentPage * articlesPerPage, interestingArticles.length)} of {interestingArticles.length} interesting articles
+                  </p>
+                  
+                  <div className="flex items-center space-x-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setFavCurrentPage(prev => Math.max(prev - 1, 1))}
+                      disabled={favCurrentPage === 1}
+                    >
+                      Previous
+                    </Button>
+
+                    <div className="flex items-center space-x-1">
+                      {Array.from({ length: Math.min(5, Math.ceil(interestingArticles.length / articlesPerPage)) }, (_, i) => {
+                        const favTotalPages = Math.ceil(interestingArticles.length / articlesPerPage);
+                        let pageNumber;
+                        
+                        if (favTotalPages <= 5) {
+                          pageNumber = i + 1;
+                        } else if (favCurrentPage <= 3) {
+                          pageNumber = i + 1;
+                        } else if (favCurrentPage >= favTotalPages - 2) {
+                          pageNumber = favTotalPages - 4 + i;
+                        } else {
+                          pageNumber = favCurrentPage - 2 + i;
+                        }
+                        
+                        return (
+                          <Button
+                            key={pageNumber}
+                            variant={pageNumber === favCurrentPage ? "default" : "outline"}
+                            size="sm"
+                            onClick={() => setFavCurrentPage(pageNumber)}
+                          >
+                            {pageNumber}
+                          </Button>
+                        );
+                      })}
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setFavCurrentPage(prev => Math.min(prev + 1, Math.ceil(interestingArticles.length / articlesPerPage)))}
+                      disabled={favCurrentPage === Math.ceil(interestingArticles.length / articlesPerPage)}
+                    >
+                      Next
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </CardContent>
       </Card>

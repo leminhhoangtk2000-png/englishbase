@@ -87,25 +87,27 @@ export class NewspaperCrawler {
     });
   }
 
-  async crawlSingleArticle(url: string, minWords: number = 2000): Promise<CrawlResponse> {
-    const args = ['--url', url, '--min-words', minWords.toString()];
+  async crawlSingleArticle(url: string, minWords: number = 2000, maxWords: number = 4000): Promise<CrawlResponse> {
+    const args = ['--url', url, '--min-words', minWords.toString(), '--max-words', maxWords.toString()];
     return this.runPythonScript(args);
   }
 
-  async crawlNewsSource(sourceUrl: string, maxArticles: number = 10, minWords: number = 2000): Promise<CrawlResponse> {
+  async crawlNewsSource(sourceUrl: string, maxArticles: number = 10, minWords: number = 2000, maxWords: number = 4000): Promise<CrawlResponse> {
     const args = [
       '--source', sourceUrl,
       '--max-articles', maxArticles.toString(),
-      '--min-words', minWords.toString()
+      '--min-words', minWords.toString(),
+      '--max-words', maxWords.toString()
     ];
     return this.runPythonScript(args);
   }
 
-  async crawlAllSources(maxArticlesPerSource: number = 5, minWords: number = 2000): Promise<CrawlResponse> {
+  async crawlAllSources(maxArticlesPerSource: number = 5, minWords: number = 2000, maxWords: number = 4000): Promise<CrawlResponse> {
     const args = [
       '--all',
       '--max-articles', maxArticlesPerSource.toString(),
-      '--min-words', minWords.toString()
+      '--min-words', minWords.toString(),
+      '--max-words', maxWords.toString()
     ];
     return this.runPythonScript(args);
   }

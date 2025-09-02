@@ -5,7 +5,7 @@ import { NewspaperCrawler } from '../../../../../scripts/news-crawler/newspaper-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { url, minWordCount = 2000, maxArticles = 10 } = body;
+    const { url, minWordCount = 2000, maxWordCount = 4000, maxArticles = 10 } = body;
 
     if (!url) {
       return NextResponse.json(
@@ -44,10 +44,10 @@ export async function POST(request: NextRequest) {
 
       if (isArticleUrl) {
         // Crawl single article
-        crawlResult = await crawler.crawlSingleArticle(url, minWordCount);
+        crawlResult = await crawler.crawlSingleArticle(url, minWordCount, maxWordCount);
       } else {
         // Crawl news site for multiple articles
-        crawlResult = await crawler.crawlNewsSource(url, maxArticles, minWordCount);
+        crawlResult = await crawler.crawlNewsSource(url, maxArticles, minWordCount, maxWordCount);
       }
 
       if (!crawlResult.success) {
