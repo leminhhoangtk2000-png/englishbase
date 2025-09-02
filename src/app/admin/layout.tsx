@@ -13,6 +13,10 @@ const sidebarNavItems = [
     href: "/admin/die-neuen",
   },
   {
+    title: "AI Management",
+    href: "/admin/ai-management",
+  },
+  {
     title: "Bài viết",
     href: "/admin/posts",
   },

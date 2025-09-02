@@ -20,6 +20,8 @@ import {
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { 
   Newspaper, 
   Clock, 
@@ -29,7 +31,16 @@ import {
   AlertCircle,
   CheckCircle,
   XCircle,
-  PlayCircle
+  PlayCircle,
+  Eye,
+  ExternalLink,
+  User,
+  Hash,
+  Globe,
+  Flame,
+  Brain,
+  Zap,
+  Heart
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -42,11 +53,21 @@ interface NewsArticle {
   author?: string;
   publishedAt?: string;
   source: string;
+  language: string;
   wordCount: number;
   isActive: boolean;
   difficulty?: string;
   tags: string[];
+  // AI analysis fields
+  isHot: boolean;
+  hotScore?: number;
+  aiAnalysis?: string;
+  analyzedAt?: string;
+  // User preferences
+  isFavorite: boolean;
+  favoriteAt?: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 interface CrawlJob {
@@ -66,6 +87,12 @@ export default function DieNeuenPage() {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [newUrl, setNewUrl] = useState('');
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzingArticleId, setAnalyzingArticleId] = useState<string | null>(null);
+  
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 20;
 
   useEffect(() => {
     fetchArticles();
@@ -126,6 +153,38 @@ export default function DieNeuenPage() {
     }
   };
 
+  const crawlSingleSource = async (sourceUrl: string, sourceName: string) => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/admin/crawl-news', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sources: [sourceUrl],
+          maxArticlesPerSource: 5,
+          minWords: 2000
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast.success(`${sourceName} crawl completed! Found ${result.totalArticles} articles`);
+        fetchArticles();
+        fetchCrawlJobs();
+      } else {
+        toast.error(`${sourceName} crawl failed: ` + (result.error || 'Unknown error'));
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error(`Failed to crawl ${sourceName}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const startCrawl = async (url?: string) => {
     setLoading(true);
     try {
@@ -161,9 +220,171 @@ export default function DieNeuenPage() {
     }
   };
 
+  // Favorite Functions
+  const toggleFavorite = async (articleId: string) => {
+    setAnalyzingArticleId(articleId);
+    try {
+      const response = await fetch('/api/admin/toggle-favorite', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ articleId }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast.success(`${result.article.isFavorite ? '❤️ Added to favorites' : '💔 Removed from favorites'}`);
+        fetchArticles(); // Refresh to show updated results
+      } else {
+        toast.error(`Failed to update favorite: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error toggling favorite:', error);
+      toast.error('Failed to update favorite');
+    } finally {
+      setAnalyzingArticleId(null);
+    }
+  };
+
+  const batchAnalyze = async () => {
+    setAnalyzing(true);
+    try {
+      const response = await fetch('/api/admin/batch-analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ limit: 10 }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast.success(`Batch analysis completed! Analyzed ${result.analyzed} articles, ${result.errors} errors`);
+        fetchArticles();
+      } else {
+        toast.error(`Batch analysis failed: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error in batch analysis:', error);
+      toast.error('Failed to run batch analysis');
+    } finally {
+      setAnalyzing(false);
+    }
+  };
+
+  const dailyReset = async () => {
+    if (!confirm('This will delete all articles older than 24 hours. Continue?')) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch('/api/admin/news-reset', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast.success(`Daily reset completed! Deleted ${result.deletedArticles} old articles`);
+        fetchArticles();
+        fetchCrawlJobs();
+      } else {
+        toast.error(`Daily reset failed: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error in daily reset:', error);
+      toast.error('Failed to perform daily reset');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const filteredArticles = articles.filter(article =>
     article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     article.source.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Pagination calculations
+  const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+  const startIndex = (currentPage - 1) * articlesPerPage;
+  const endIndex = startIndex + articlesPerPage;
+  const currentArticles = filteredArticles.slice(startIndex, endIndex);
+
+  // Reset to page 1 when search term changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm]);
+
+  // Component for displaying full article content
+  const ArticleContentModal = ({ article }: { article: NewsArticle }) => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="ghost" size="sm">
+          <Eye className="h-4 w-4" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl max-h-[80vh]">
+        <DialogHeader>
+          <DialogTitle className="text-left">
+            {article.title}
+          </DialogTitle>
+          <DialogDescription className="text-left">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
+              <div className="flex items-center gap-1">
+                <Globe className="h-4 w-4" />
+                {article.source}
+              </div>
+              <div className="flex items-center gap-1">
+                <Hash className="h-4 w-4" />
+                {article.wordCount.toLocaleString()} words
+              </div>
+              {article.author && (
+                <div className="flex items-center gap-1">
+                  <User className="h-4 w-4" />
+                  {article.author}
+                </div>
+              )}
+              {article.publishedAt && (
+                <div className="flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  {new Date(article.publishedAt).toLocaleDateString()}
+                </div>
+              )}
+            </div>
+          </DialogDescription>
+        </DialogHeader>
+        <ScrollArea className="max-h-[60vh] mt-4">
+          <div className="prose prose-sm max-w-none">
+            <div className="whitespace-pre-wrap text-sm leading-relaxed">
+              {article.content}
+            </div>
+          </div>
+        </ScrollArea>
+        <div className="flex justify-between items-center mt-4 pt-4 border-t">
+          <Badge variant={article.isActive ? "default" : "secondary"}>
+            {article.isActive ? "Active" : "Inactive"}
+          </Badge>
+          <Button variant="outline" asChild>
+            <a 
+              href={article.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <ExternalLink className="h-4 w-4" />
+              View Original
+            </a>
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 
   const getStatusIcon = (status: string) => {
@@ -216,6 +437,26 @@ export default function DieNeuenPage() {
           >
             <RefreshCw className="h-4 w-4 mr-2" />
             Refresh
+          </Button>
+          <Button
+            onClick={batchAnalyze}
+            disabled={analyzing}
+            variant="outline"
+          >
+            {analyzing ? (
+              <RefreshCw className="h-4 w-4 animate-spin mr-2" />
+            ) : (
+              <Brain className="h-4 w-4 mr-2" />
+            )}
+            AI Analysis
+          </Button>
+          <Button
+            onClick={dailyReset}
+            disabled={loading}
+            variant="outline"
+          >
+            <Zap className="h-4 w-4 mr-2" />
+            Daily Reset
           </Button>
           <Button
             onClick={scheduleFullCrawl}
@@ -350,6 +591,44 @@ export default function DieNeuenPage() {
         </CardContent>
       </Card>
 
+      {/* Quick Crawl Sources */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Quick Crawl Sources</CardTitle>
+          <CardDescription>
+            Crawl individual German news sources instantly
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { name: 'Der Spiegel', url: 'https://www.spiegel.de', color: 'bg-red-500' },
+              { name: 'Die Zeit', url: 'https://www.zeit.de', color: 'bg-gray-700' },
+              { name: 'Süddeutsche', url: 'https://www.sueddeutsche.de', color: 'bg-blue-600' },
+              { name: 'FAZ', url: 'https://www.faz.net', color: 'bg-orange-600' },
+              { name: 'Tagesschau', url: 'https://www.tagesschau.de', color: 'bg-blue-700' },
+              { name: 'Die Welt', url: 'https://www.welt.de', color: 'bg-gray-800' }
+            ].map((source) => (
+              <Button
+                key={source.url}
+                onClick={() => crawlSingleSource(source.url, source.name)}
+                disabled={loading}
+                variant="outline"
+                className="h-auto p-4 flex flex-col items-start gap-2"
+              >
+                <div className="flex items-center gap-2 w-full">
+                  <div className={`w-3 h-3 rounded-full ${source.color}`} />
+                  <span className="font-medium">{source.name}</span>
+                </div>
+                <span className="text-xs text-muted-foreground">
+                  Click to crawl latest articles
+                </span>
+              </Button>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Recent Crawl Jobs */}
       <Card>
         <CardHeader>
@@ -410,7 +689,7 @@ export default function DieNeuenPage() {
         <CardHeader>
           <CardTitle>Crawled Articles</CardTitle>
           <CardDescription>
-            German news articles with more than 2000 characters
+            German news articles with more than 2000 characters ({filteredArticles.length} total)
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -429,13 +708,15 @@ export default function DieNeuenPage() {
               <TableRow>
                 <TableHead>Title</TableHead>
                 <TableHead>Source</TableHead>
+                <TableHead>Hot</TableHead>
                 <TableHead>Words</TableHead>
                 <TableHead>Published</TableHead>
                 <TableHead>Status</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredArticles.slice(0, 20).map((article) => (
+              {currentArticles.map((article) => (
                 <TableRow key={article.id}>
                   <TableCell>
                     <div>
@@ -454,6 +735,26 @@ export default function DieNeuenPage() {
                   </TableCell>
                   <TableCell>{article.source}</TableCell>
                   <TableCell>
+                    <div className="flex items-center gap-2">
+                      {article.isHot && (
+                        <Badge variant="destructive" className="bg-orange-500 hover:bg-orange-600">
+                          <Flame className="h-3 w-3 mr-1" />
+                          HOT
+                        </Badge>
+                      )}
+                      {article.hotScore && (
+                        <span className="text-xs text-muted-foreground">
+                          {(article.hotScore * 100).toFixed(0)}%
+                        </span>
+                      )}
+                      {!article.analyzedAt && (
+                        <Badge variant="outline" className="text-xs">
+                          Not analyzed
+                        </Badge>
+                      )}
+                    </div>
+                  </TableCell>
+                  <TableCell>
                     <Badge variant="outline">
                       {article.wordCount.toLocaleString()}
                     </Badge>
@@ -469,17 +770,97 @@ export default function DieNeuenPage() {
                       {article.isActive ? "Active" : "Inactive"}
                     </Badge>
                   </TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-2">
+                      <ArticleContentModal article={article} />
+                      <Button variant="ghost" size="sm" asChild>
+                        <a 
+                          href={article.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => toggleFavorite(article.id)}
+                        disabled={analyzingArticleId === article.id}
+                      >
+                        {analyzingArticleId === article.id ? (
+                          <RefreshCw className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <Heart className={`h-4 w-4 ${article.isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
+                        )}
+                      </Button>
+                    </div>
+                  </TableCell>
                 </TableRow>
               ))}
-              {filteredArticles.length === 0 && (
+              {currentArticles.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
+                  <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
                     {searchTerm ? 'No articles match your search.' : 'No articles crawled yet.'}
                   </TableCell>
                 </TableRow>
               )}
             </TableBody>
           </Table>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-between mt-4">
+              <div className="text-sm text-muted-foreground">
+                Showing {startIndex + 1} to {Math.min(endIndex, filteredArticles.length)} of {filteredArticles.length} articles
+              </div>
+              <div className="flex items-center space-x-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </Button>
+                
+                <div className="flex items-center space-x-1">
+                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                    let pageNumber;
+                    if (totalPages <= 5) {
+                      pageNumber = i + 1;
+                    } else if (currentPage <= 3) {
+                      pageNumber = i + 1;
+                    } else if (currentPage >= totalPages - 2) {
+                      pageNumber = totalPages - 4 + i;
+                    } else {
+                      pageNumber = currentPage - 2 + i;
+                    }
+                    
+                    return (
+                      <Button
+                        key={pageNumber}
+                        variant={pageNumber === currentPage ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setCurrentPage(pageNumber)}
+                      >
+                        {pageNumber}
+                      </Button>
+                    );
+                  })}
+                </div>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </Button>
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

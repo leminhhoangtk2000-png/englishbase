@@ -21,9 +21,17 @@ export async function GET(request: NextRequest) {
 
     const articles = await prisma.newsArticle.findMany({
       where,
-      orderBy: {
-        createdAt: 'desc'
-      },
+      orderBy: [
+        {
+          isHot: 'desc' // Hot articles first
+        },
+        {
+          hotScore: 'desc' // Then by hot score
+        },
+        {
+          createdAt: 'desc' // Finally by creation date
+        }
+      ],
       take: limit,
       skip: (page - 1) * limit,
     });

@@ -14,6 +14,8 @@ import time
 import requests
 from urllib.parse import urljoin, urlparse
 import logging
+import feedparser
+import ssl
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -26,7 +28,10 @@ class GermanNewsCrawler:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         
-        # German news sources
+        # Bypass SSL verification for testing
+        ssl._create_default_https_context = ssl._create_unverified_context
+        
+        # German news sources with RSS feeds
         self.german_sources = {
             'spiegel.de': 'Der Spiegel',
             'zeit.de': 'Die Zeit', 
@@ -39,6 +44,69 @@ class GermanNewsCrawler:
             'handelsblatt.com': 'Handelsblatt',
             'tagesspiegel.de': 'Der Tagesspiegel'
         }
+        
+        # RSS feed URLs for German news sources
+        self.rss_feeds = {
+            'spiegel.de': 'https://www.spiegel.de/schlagzeilen/index.rss',
+            'zeit.de': 'https://newsfeed.zeit.de/index',
+            'sueddeutsche.de': 'https://rss.sueddeutsche.de/rss/Topthemen',
+            'faz.net': 'https://www.faz.net/rss/aktuell/',
+            'tagesschau.de': 'https://www.tagesschau.de/xml/rss2/',
+            'welt.de': 'https://www.welt.de/feeds/latest.rss',
+        }
+
+    def get_rss_feed_for_source(self, source_url):
+        """Get RSS feed URL for a given source"""
+        try:
+            domain = urlparse(source_url).netloc.lower()
+            if domain.startswith('www.'):
+                domain = domain[4:]
+            
+            return self.rss_feeds.get(domain, None)
+        except:
+            return None
+
+    def crawl_rss_feed(self, rss_url, source_name, max_articles=10):
+        """Crawl articles from RSS feed"""
+        try:
+            logger.info(f"Parsing RSS feed: {rss_url}")
+            feed = feedparser.parse(rss_url)
+            
+            articles = []
+            processed_count = 0
+            
+            for entry in feed.entries:
+                if processed_count >= max_articles:
+                    break
+                
+                try:
+                    # Get article URL
+                    article_url = entry.link
+                    
+                    # Crawl the individual article
+                    article_data = self.crawl_single_article(article_url)
+                    
+                    if article_data:
+                        # Override source name with provided source
+                        article_data['source'] = source_name
+                        articles.append(article_data)
+                        processed_count += 1
+                        
+                        logger.info(f"RSS: Processed article: {article_data['title']} ({article_data['word_count']} words)")
+                    
+                    # Be respectful with delays
+                    time.sleep(1)
+                    
+                except Exception as e:
+                    logger.error(f"Error processing RSS entry {entry.link}: {e}")
+                    continue
+            
+            logger.info(f"Found {len(articles)} articles from RSS feed")
+            return articles
+            
+        except Exception as e:
+            logger.error(f"Error parsing RSS feed {rss_url}: {e}")
+            return []
 
     def get_source_name(self, url):
         """Extract source name from URL"""
@@ -69,14 +137,20 @@ class GermanNewsCrawler:
             logger.info(f"Crawling article: {url}")
             
             article = Article(url, language='de')
-            article.set_headers(self.headers)
+            
+            # Set config with headers
+            from newspaper.configuration import Configuration
+            config = Configuration()
+            config.browser_user_agent = self.headers['User-Agent']
+            config.request_timeout = 30
+            article.config = config
             
             # Download and parse article
             article.download()
             article.parse()
             
-            # Extract additional info
-            article.nlp()
+            # Skip NLP for now to avoid NLTK dependency issues
+            # article.nlp()
             
             # Validate article
             if not self.is_valid_german_article(article):
@@ -88,12 +162,12 @@ class GermanNewsCrawler:
                 'title': article.title.strip() if article.title else '',
                 'url': url,
                 'content': article.text.strip() if article.text else '',
-                'excerpt': article.summary[:300] + '...' if article.summary and len(article.summary) > 300 else article.summary,
+                'excerpt': article.text[:300] + '...' if article.text and len(article.text) > 300 else article.text,
                 'authors': article.authors if article.authors else [],
                 'publish_date': article.publish_date.isoformat() if article.publish_date else None,
                 'source': self.get_source_name(url),
                 'word_count': len(article.text) if article.text else 0,
-                'keywords': list(article.keywords) if article.keywords else [],
+                'keywords': [],  # Skip keywords for now
                 'top_image': article.top_image if article.top_image else None,
                 'language': 'de',
                 'crawled_at': datetime.now().isoformat()
@@ -107,13 +181,41 @@ class GermanNewsCrawler:
             return None
 
     def crawl_news_source(self, source_url, max_articles=10):
-        """Crawl multiple articles from a news source"""
+        """Crawl multiple articles from a news source, trying RSS first"""
         try:
             logger.info(f"Crawling news source: {source_url}")
             
+            # Try RSS feed first
+            rss_url = self.get_rss_feed_for_source(source_url)
+            source_name = self.get_source_name(source_url)
+            
+            if rss_url:
+                logger.info(f"Using RSS feed for {source_name}: {rss_url}")
+                articles = self.crawl_rss_feed(rss_url, source_name, max_articles)
+                if articles:
+                    return articles
+                else:
+                    logger.warning(f"RSS feed failed, falling back to direct crawling for {source_url}")
+            
+            # Fallback to direct source crawling (original method)
+            return self.crawl_news_source_direct(source_url, max_articles)
+            
+        except Exception as e:
+            logger.error(f"Error crawling source {source_url}: {str(e)}")
+            return []
+
+    def crawl_news_source_direct(self, source_url, max_articles=10):
+        """Crawl multiple articles from a news source using direct method"""
+        try:
+            logger.info(f"Direct crawling news source: {source_url}")
+            
             # Create newspaper Source object
-            source = Source(source_url, language='de')
-            source.set_headers(self.headers)
+            from newspaper.configuration import Configuration
+            config = Configuration()
+            config.browser_user_agent = self.headers['User-Agent']
+            config.request_timeout = 30
+            
+            source = Source(source_url, language='de', config=config)
             
             # Build the source (find all articles)
             source.build()
@@ -128,10 +230,14 @@ class GermanNewsCrawler:
                     break
                     
                 try:
+                    # Set config for each article
+                    article.config = config
+                    
                     # Download and parse article
                     article.download()
                     article.parse()
-                    article.nlp()
+                    # Skip NLP for now
+                    # article.nlp()
                     
                     # Validate article
                     if not self.is_valid_german_article(article):
@@ -142,12 +248,12 @@ class GermanNewsCrawler:
                         'title': article.title.strip() if article.title else '',
                         'url': article.url,
                         'content': article.text.strip() if article.text else '',
-                        'excerpt': article.summary[:300] + '...' if article.summary and len(article.summary) > 300 else article.summary,
+                        'excerpt': article.text[:300] + '...' if article.text and len(article.text) > 300 else article.text,
                         'authors': article.authors if article.authors else [],
                         'publish_date': article.publish_date.isoformat() if article.publish_date else None,
                         'source': self.get_source_name(source_url),
                         'word_count': len(article.text) if article.text else 0,
-                        'keywords': list(article.keywords) if article.keywords else [],
+                        'keywords': [],  # Skip keywords for now
                         'top_image': article.top_image if article.top_image else None,
                         'language': 'de',
                         'crawled_at': datetime.now().isoformat()

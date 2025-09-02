@@ -383,12 +383,25 @@ model NewsArticle {
   isActive      Boolean  @default(true)
   difficulty    String?  // A1, A2, B1, B2, C1, C2 (can be determined later)
   tags          String[] // Array of tags
+  
+  // AI analysis fields
+  isHot         Boolean  @default(false) // Hot/interesting article
+  hotScore      Float?   // AI-generated interest score (0-1)
+  aiAnalysis    String?  // AI analysis summary
+  analyzedAt    DateTime? // When AI analysis was done
+  
+  // User preferences
+  isFavorite    Boolean  @default(false) // User marked as favorite
+  favoriteAt    DateTime? // When marked as favorite
+  
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
   @@map("news_articles")
   @@index([publishedAt, isActive])
   @@index([source, publishedAt])
+  @@index([isHot, hotScore])
+  @@index([createdAt])
 }
 
 // Crawling job logs
@@ -410,4 +423,39 @@ enum CrawlStatus {
   RUNNING
   COMPLETED
   FAILED
+}
+
+// AI Provider Management
+model AIProvider {
+  id          String    @id @default(cuid())
+  name        String    @unique // 'openai', 'gemini', 'claude', etc.
+  displayName String    // 'OpenAI GPT', 'Google Gemini', etc.
+  apiKey      String    // Encrypted API key
+  baseUrl     String?   // Custom base URL if needed
+  isActive    Boolean   @default(false)
+  models      String[]  // Available models for this provider
+  defaultModel String?  // Default model to use
+  temperature Float?    // Default temperature
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  testResults AITestResult[]
+
+  @@map("ai_providers")
+}
+
+model AITestResult {
+  id          String     @id @default(cuid())
+  providerId  String
+  provider    AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  model       String
+  prompt      String
+  response    String?
+  success     Boolean
+  error       String?
+  responseTime Int?     // in milliseconds
+  tokensUsed  Int?
+  cost        Float?    // in USD
+  createdAt   DateTime  @default(now())
+
+  @@map("ai_test_results")
 }
