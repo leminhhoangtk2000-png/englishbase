@@ -1,0 +1,126 @@
+---
+id: demo-exercise-components
+title: Demo Exercise Components
+description: Demonstração dos componenteimport { CommentSystem } from '@/components/exercises';
+
+<CommentSystem exerciseId="demo-exercise-components" />
+# Demo Exercise Components
+
+Đây là file demo để test tất cả các components bài tập mới.
+
+## 1. Bài tập điền chỗ trống (Lueckentext)
+
+import { Lueckentext } from '@/components/exercises';
+
+<Lueckentext
+  title="Bài tập: Điền mạo từ (der, die, das)"
+  textParts={[
+    "1. ", { type: "blank", correctAnswer: "Der" }, " Tisch (sein) ", { type: "blank", correctAnswer: "ist" }, " groß.", "\n",
+    "2. ", { type: "blank", correctAnswer: "Die" }, " Blume (haben) ", { type: "blank", correctAnswer: "hat" }, " eine schöne Farbe.", "\n",
+    "3. ", { type: "blank", correctAnswer: "Das" }, " Auto (fahren) ", { type: "blank", correctAnswer: "fährt" }, " sehr schnell."
+  ]}
+/>
+
+## 2. Bài tập trắc nghiệm (Multiple Choice)
+
+import { MultipleChoice } from '@/components/exercises';
+
+<MultipleChoice
+  title="Bài tập: Chọn mạo từ đúng"
+  questions={[
+    {
+      question: "_____ Hund ist sehr freundlich.",
+      options: [
+        { text: "Der", isCorrect: true, explanation: "Hund là danh từ giống đực nên dùng 'der'" },
+        { text: "Die", isCorrect: false },
+        { text: "Das", isCorrect: false }
+      ]
+    },
+    {
+      question: "_____ Katze schläft auf dem Sofa.",
+      options: [
+        { text: "Der", isCorrect: false },
+        { text: "Die", isCorrect: true, explanation: "Katze là danh từ giống cái nên dùng 'die'" },
+        { text: "Das", isCorrect: false }
+      ]
+    }
+  ]}
+/>
+
+## 3. Bài tập ghép cặp (Matching Exercise)
+
+import { MatchingExercise } from '@/components/exercises';
+
+<MatchingExercise
+  title="Bài tập: Ghép từ Đức - Việt"
+  leftColumnTitle="Tiếng Đức"
+  rightColumnTitle="Tiếng Việt"
+  items={[
+    { id: "1", left: "der Hund", right: "con chó", explanation: "Động vật nuôi phổ biến" },
+    { id: "2", left: "die Katze", right: "con mèo", explanation: "Động vật nuôi trong nhà" },
+    { id: "3", left: "das Haus", right: "ngôi nhà", explanation: "Nơi ở của con người" },
+    { id: "4", left: "der Tisch", right: "cái bàn", explanation: "Đồ nội thất" }
+  ]}
+/>
+
+## 4. Bài tập viết (Writing Exercise)
+
+import { WritingExercise } from '@/components/exercises';
+
+<WritingExercise
+  title="Bài tập: Viết đoạn văn về gia đình"
+  prompt={{
+    question: "Hãy viết một đoạn văn ngắn giới thiệu về gia đình bạn bằng tiếng Đức.",
+    minWords: 50,
+    maxWords: 100,
+    keywords: ["Familie", "Vater", "Mutter", "wohnen", "arbeiten"],
+    hints: [
+      "Bắt đầu với 'Meine Familie...'",
+      "Giới thiệu từng thành viên trong gia đình",
+      "Nói về nghề nghiệp và sở thích",
+      "Kết thúc với cảm nhận về gia đình"
+    ],
+    sampleAnswer: "Meine Familie ist sehr wichtig für mich. Mein Vater arbeitet als Ingenieur und meine Mutter ist Lehrerin. Wir wohnen in einem kleinen Haus in der Stadt. Am Wochenende verbringen wir gerne Zeit zusammen. Wir kochen gemeinsam und schauen Filme. Ich liebe meine Familie sehr."
+  }}
+/>
+
+## Tác giả
+
+import { AuthorCredit } from '@/components/exercises';
+
+<AuthorCredit 
+  author="Lonia" 
+  role="Giáo viên tiếng Đức"
+  date="30/08/2025"
+  bio="Chuyên gia giảng dạy tiếng Đức với 5 năm kinh nghiệm"
+/>
+
+## Hỏi đáp
+
+:::tip VITAMIN ĐỘNG LỰC 🌱
+Nếu bạn thấy việc mình đang làm có ý nghĩa, hãy để lại một lời động viên nhé 😊
+:::
+
+import { FacebookComments } from '@/components/exercises';
+
+<FacebookComments 
+  url="https://edu-theme.com/demo/exercise-components"
+  initialComments={[
+    {
+      id: "1",
+      author: "Học viên A",
+      content: "Bài tập rất hay và dễ hiểu. Cảm ơn thầy cô!",
+      timestamp: "29/08/2025",
+      likes: 3,
+      replies: [
+        {
+          id: "1-1",
+          author: "Lonia",
+          content: "Cảm ơn bạn! Chúc bạn học tốt!",
+          timestamp: "29/08/2025",
+          likes: 1
+        }
+      ]
+    }
+  ]}
+/>

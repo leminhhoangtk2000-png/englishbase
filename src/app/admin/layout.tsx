@@ -9,6 +9,10 @@ const sidebarNavItems = [
     href: "/admin",
   },
   {
+    title: "Die Neuen",
+    href: "/admin/die-neuen",
+  },
+  {
     title: "Bài viết",
     href: "/admin/posts",
   },

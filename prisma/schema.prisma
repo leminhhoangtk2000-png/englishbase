@@ -367,3 +367,47 @@ model Review {
 
   @@map("reviews")
 }
+
+// News articles crawled from German newspapers
+model NewsArticle {
+  id            String   @id @default(cuid())
+  title         String
+  url           String   @unique
+  content       String   // Full article content
+  excerpt       String?  // Article summary
+  author        String?
+  publishedAt   DateTime?
+  source        String   // Newspaper/website name
+  language      String   @default("de") // German
+  wordCount     Int      // For filtering >2000 chars
+  isActive      Boolean  @default(true)
+  difficulty    String?  // A1, A2, B1, B2, C1, C2 (can be determined later)
+  tags          String[] // Array of tags
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("news_articles")
+  @@index([publishedAt, isActive])
+  @@index([source, publishedAt])
+}
+
+// Crawling job logs
+model CrawlJob {
+  id            String     @id @default(cuid())
+  source        String     // Which newspaper/site was crawled
+  status        CrawlStatus @default(PENDING)
+  articlesFound Int        @default(0)
+  articlesAdded Int        @default(0)
+  startedAt     DateTime   @default(now())
+  completedAt   DateTime?
+  errorMessage  String?
+  
+  @@map("crawl_jobs")
+}
+
+enum CrawlStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
