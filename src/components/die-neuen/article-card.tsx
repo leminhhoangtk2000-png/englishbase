@@ -7,6 +7,8 @@ import { de } from 'date-fns/locale';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Eye } from 'lucide-react';
 import { NewsArticle } from './types';
+import { LikeDisplay } from '@/components/ui/like-display';
+import { ThemedBadge } from '@/components/ui/themed-badge';
 
 interface ArticleCardProps {
   article: NewsArticle;
@@ -48,9 +50,9 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           <div className="flex-1 p-4">
             {/* Badges */}
             <div className="flex gap-2 mb-2">
-              <Badge variant="outline" className="text-xs border-gray-300 text-gray-600">
+              <ThemedBadge variant="themed" className="text-xs">
                 {article.category}
-              </Badge>
+              </ThemedBadge>
               <Badge variant="outline" className="text-xs border-gray-200 text-gray-500">
                 {article.source}
               </Badge>
@@ -76,6 +78,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
                 <Eye className="w-3 h-3" />
                 {article.wordCount} Wörter
               </div>
+              <LikeDisplay url={`/die-neuen/${article.id}`} initialLikes={article.id === '1' ? 67 : article.id === '2' ? 53 : article.id === '3' ? 41 : article.id === '4' ? 38 : 32} className="text-xs" />
             </div>
           </div>
         </div>

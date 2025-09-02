@@ -17,6 +17,7 @@ const vocabularyLevels = [
 // Define topics for each level
 const vocabularyTopics = {
   A1: [
+    { name: 'Start', displayName: 'Start auf Deutsch', description: 'Grundlegende Begriffe für den Deutschstart', slug: 'start', order: 0 },
     { name: 'Familie', displayName: 'Familie und Verwandtschaft', description: 'Grundlegende Familienbegriffe', slug: 'familie', order: 1 },
     { name: 'Wohnen', displayName: 'Wohnen und Zuhause', description: 'Haus, Wohnung und Einrichtung', slug: 'wohnen', order: 2 },
     { name: 'Essen', displayName: 'Essen und Trinken', description: 'Lebensmittel und Getränke', slug: 'essen', order: 3 },

@@ -1,0 +1,49 @@
+/* Theme-specific CSS classes for content types */
+
+/* Blog Theme (Green) */
+.theme-blog {
+  --theme-primary: rgb(34, 197, 94);
+  --theme-primary-hover: rgb(22, 163, 74);
+  --theme-primary-light: rgb(240, 253, 244);
+  --theme-primary-border: rgb(187, 247, 208);
+}
+
+.theme-blog .prose a {
+  @apply text-green-600 no-underline hover:underline;
+}
+
+.theme-blog .hover-theme-link:hover {
+  @apply text-green-600;
+}
+
+/* News Theme (Blue) */
+.theme-news {
+  --theme-primary: rgb(59, 130, 246);
+  --theme-primary-hover: rgb(37, 99, 235);
+  --theme-primary-light: rgb(239, 246, 255);
+  --theme-primary-border: rgb(191, 219, 254);
+}
+
+.theme-news .prose a {
+  @apply text-blue-600 no-underline hover:underline;
+}
+
+.theme-news .hover-theme-link:hover {
+  @apply text-blue-600;
+}
+
+/* Exercise Theme (Purple) */
+.theme-exercises {
+  --theme-primary: rgb(168, 85, 247);
+  --theme-primary-hover: rgb(147, 51, 234);
+  --theme-primary-light: rgb(250, 245, 255);
+  --theme-primary-border: rgb(221, 214, 254);
+}
+
+.theme-exercises .prose a {
+  @apply text-purple-600 no-underline hover:underline;
+}
+
+.theme-exercises .hover-theme-link:hover {
+  @apply text-purple-600;
+}

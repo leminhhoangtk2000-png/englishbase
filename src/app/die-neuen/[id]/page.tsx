@@ -12,6 +12,14 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { MainNav } from '@/components/main-nav'
+import { Comments } from '@/components/ui/comments'
+import { LikeButton } from '@/components/ui/like-button'
+import { ThemedButton } from '@/components/ui/themed-button'
+import { ThemedBadge } from '@/components/ui/themed-badge'
+import { ReadingExerciseComponent } from '@/components/reading-exercise/reading-exercise'
+import { getExerciseByArticleId } from '@/data/reading-exercises'
+import { VocabularySidebar } from '@/components/vocabulary-search/vocabulary-sidebar'
+import { VocabularyMobileToggle } from '@/components/vocabulary-search/vocabulary-mobile-toggle'
 
 // Mock data for articles (same as in main page)
 const mockArticles = [
@@ -221,6 +229,7 @@ export default function ArticlePage() {
   const [article, setArticle] = useState<any>(null)
   const [relatedArticles, setRelatedArticles] = useState<any[]>([])
   const [isBookmarked, setIsBookmarked] = useState(false)
+  const [exercise, setExercise] = useState<any>(null)
 
   useEffect(() => {
     const articleId = params.id as string
@@ -232,6 +241,10 @@ export default function ArticlePage() {
     }
 
     setArticle(foundArticle)
+    
+    // Get reading exercise for this article
+    const articleExercise = getExerciseByArticleId(articleId)
+    setExercise(articleExercise)
     
     // Get related articles (other articles from same category)
     const related = mockArticles
@@ -267,214 +280,175 @@ export default function ArticlePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <MainNav />
       
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Back Button */}
-        <div className="mb-8">
-          <Link href="/die-neuen">
-            <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Zurück zur Übersicht
-            </Button>
-          </Link>
-        </div>
+      {/* Main Layout with Sidebar */}
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="flex gap-8">
+          {/* Main Content */}
+          <div className="flex-1 max-w-4xl">
+            {/* Back Button */}
+            <div className="mb-8">
+              <Link href="/die-neuen">
+                <Button variant="ghost" className="text-gray-600 hover:text-gray-900 p-0">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Zurück zur Übersicht
+                </Button>
+              </Link>
+            </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Article Content */}
-          <div className="lg:col-span-3">
-            <article className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-              {/* Article Header */}
-              <div className="relative h-96 w-full">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <Badge variant="secondary" className="mb-3 bg-white/90 text-gray-800">
-                    {article.category}
-                  </Badge>
-                  <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight">
-                    {article.title}
-                  </h1>
+            {/* Article Header */}
+            <header className="mb-12">
+              <ThemedBadge variant="themed" className="mb-4">
+                {article.category}
+              </ThemedBadge>
+              
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                {article.title}
+              </h1>
+              
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                {article.summary}
+              </p>
+
+              {/* Author and Meta */}
+              <div className="flex items-center gap-4 pb-8 border-b border-gray-200">
+                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                  <User className="w-6 h-6 text-gray-600" />
                 </div>
-              </div>
-
-              {/* Article Meta */}
-              <div className="p-8 border-b border-gray-200">
-                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 mb-6">
-                  <div className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    <span className="font-medium">{article.author}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <span className="font-medium text-gray-900">{article.author}</span>
+                    <span>·</span>
                     <span>
                       {format(new Date(article.publishedAt), 'dd. MMMM yyyy', { locale: de })}
                     </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4" />
+                    <span>·</span>
                     <span>{article.readTime} Min. Lesezeit</span>
                   </div>
+                  <p className="text-sm text-gray-500 mt-1">Redakteur</p>
                 </div>
-
-                {/* Action Buttons */}
-                <div className="flex items-center gap-3 mb-6">
-                  <Button onClick={handleShare} variant="outline" size="sm" className="border-gray-300 text-gray-700">
-                    <Share2 className="w-4 h-4 mr-2" />
-                    Teilen
+                <div className="flex items-center gap-2">
+                  <Button onClick={handleShare} variant="ghost" size="sm" className="text-gray-600">
+                    <Share2 className="w-4 h-4" />
                   </Button>
                   <Button 
                     onClick={() => setIsBookmarked(!isBookmarked)} 
-                    variant={isBookmarked ? "default" : "outline"} 
+                    variant="ghost" 
                     size="sm"
-                    className={isBookmarked ? "bg-gray-900 hover:bg-gray-800" : "border-gray-300 text-gray-700"}
+                    className="text-gray-600"
                   >
-                    <Bookmark className="w-4 h-4 mr-2" />
-                    {isBookmarked ? 'Gespeichert' : 'Speichern'}
+                    <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
                   </Button>
                 </div>
+              </div>
+            </header>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {article.tags.map((tag: string) => (
-                    <Badge key={tag} variant="outline" className="text-xs border-gray-300 text-gray-600">
-                      <Tag className="w-3 h-3 mr-1" />
-                      {tag}
-                    </Badge>
+            {/* Like Button - Top */}
+            <div className="flex justify-center mb-8">
+              <LikeButton url={`/die-neuen/${article.id}`} initialLikes={article.id === '1' ? 67 : article.id === '2' ? 53 : article.id === '3' ? 41 : article.id === '4' ? 38 : 32} />
+            </div>
+
+            {/* Hero Image */}
+            <div className="relative w-full h-96 mb-12 rounded-lg overflow-hidden">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            {/* Article Content */}
+            <article className="max-w-3xl mx-auto">
+              <div 
+                className="prose prose-xl max-w-none text-gray-800
+                  prose-headings:text-gray-900 prose-headings:font-semibold prose-headings:tracking-tight
+                  prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+                  prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
+                  prose-p:mb-6 prose-p:leading-relaxed prose-p:text-gray-700 prose-p:text-lg
+                  prose-ul:mb-6 prose-li:mb-2 prose-li:text-gray-700 prose-li:text-lg
+                  prose-ol:mb-6 prose-ol:text-gray-700 prose-ol:text-lg
+                  prose-strong:text-gray-900 prose-strong:font-semibold
+                  prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-600 prose-blockquote:text-xl prose-blockquote:my-8
+                  prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+            </article>
+
+            {/* Tags */}
+            <div className="max-w-3xl mx-auto mt-12 pt-8 border-t border-gray-200">
+              <div className="flex flex-wrap gap-2">
+                {article.tags.map((tag: string) => (
+                  <Badge key={tag} variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Like Button - Bottom */}
+            <div className="max-w-3xl mx-auto mt-12 flex justify-center">
+              <LikeButton url={`/die-neuen/${article.id}`} initialLikes={article.id === '1' ? 67 : article.id === '2' ? 53 : article.id === '3' ? 41 : article.id === '4' ? 38 : 32} />
+            </div>
+
+            {/* Reading Exercise Section */}
+            {exercise && (
+              <ReadingExerciseComponent exercise={exercise} />
+            )}
+
+            {/* Comments Section */}
+            <div className="max-w-3xl mx-auto mt-12">
+              <Comments url={`/die-neuen/${article.id}`} />
+            </div>
+
+            {/* Related Articles */}
+            {relatedArticles.length > 0 && (
+              <section className="max-w-3xl mx-auto mt-16 pt-12 border-t border-gray-200">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-8">Mehr aus {article.category}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {relatedArticles.map((related) => (
+                    <Link key={related.id} href={`/die-neuen/${related.id}`} className="group">
+                      <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
+                        <Image
+                          src={related.image}
+                          alt={related.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        {related.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm line-clamp-2 mb-2">
+                        {related.summary}
+                      </p>
+                      <div className="flex items-center text-xs text-gray-500">
+                        <span>{format(new Date(related.publishedAt), 'dd.MM.yyyy', { locale: de })}</span>
+                        <span className="mx-2">·</span>
+                        <span>{related.readTime} Min.</span>
+                      </div>
+                    </Link>
                   ))}
                 </div>
-              </div>
-
-              {/* Article Summary */}
-              <div className="p-8 border-b border-gray-200 bg-gray-50">
-                <p className="text-lg text-gray-700 leading-relaxed italic font-light">
-                  {article.summary}
-                </p>
-              </div>
-
-              {/* Article Content */}
-              <div className="p-8">
-                <div 
-                  className="prose prose-lg max-w-none text-gray-800
-                    prose-headings:text-gray-900 prose-headings:font-semibold
-                    prose-h2:text-xl prose-h2:mt-8 prose-h2:mb-4
-                    prose-p:mb-4 prose-p:leading-relaxed prose-p:text-gray-700
-                    prose-ul:mb-4 prose-li:mb-2 prose-li:text-gray-700
-                    prose-strong:text-gray-900 prose-strong:font-semibold"
-                  dangerouslySetInnerHTML={{ __html: article.content }}
-                />
-              </div>
-
-              {/* Article Footer */}
-              <div className="p-8 border-t border-gray-200 bg-gray-50">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                      <User className="w-6 h-6 text-gray-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">{article.author}</p>
-                      <p className="text-sm text-gray-600">Redakteur</p>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm" className="border-gray-300 text-gray-700">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Kommentare
-                  </Button>
-                </div>
-              </div>
-            </article>
+              </section>
+            )}
           </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-8 space-y-6">
-              {/* Related Articles */}
-              {relatedArticles.length > 0 && (
-                <Card className="border-gray-200">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-lg mb-4 text-gray-900">Ähnliche Artikel</h3>
-                    <div className="space-y-4">
-                      {relatedArticles.map((related) => (
-                        <Link 
-                          key={related.id} 
-                          href={`/die-neuen/${related.id}`}
-                          className="block group"
-                        >
-                          <div className="flex gap-3">
-                            <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                              <Image
-                                src={related.image}
-                                alt={related.title}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform"
-                              />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h4 className="font-medium text-sm leading-tight text-gray-900 group-hover:text-gray-600 transition-colors line-clamp-2">
-                                {related.title}
-                              </h4>
-                              <p className="text-xs text-gray-500 mt-1">
-                                {format(new Date(related.publishedAt), 'dd.MM.yyyy', { locale: de })}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
-
-              {/* Category Info */}
-              <Card className="border-gray-200">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-4 text-gray-900">Kategorie</h3>
-                  <Badge variant="secondary" className="mb-3 bg-gray-100 text-gray-700">
-                    {article.category}
-                  </Badge>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Entdecken Sie weitere Artikel aus dieser Kategorie
-                  </p>
-                  <Link href={`/die-neuen?category=${article.category}`}>
-                    <Button variant="outline" size="sm" className="w-full border-gray-300 text-gray-700">
-                      Mehr aus {article.category}
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Reading Progress */}
-              <Card className="border-gray-200">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-4 text-gray-900">Lesefortschritt</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Lesezeit</span>
-                      <span className="text-gray-900 font-medium">{article.readTime} Min.</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-gray-800 h-2 rounded-full" style={{ width: '75%' }}></div>
-                    </div>
-                    <p className="text-xs text-gray-500">
-                      Sie haben etwa 75% des Artikels gelesen
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+          
+          {/* Vocabulary Sidebar */}
+          <div className="w-80 hidden lg:block">
+            <div className="sticky top-[calc(50vh-350px)]">
+              <VocabularySidebar />
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Mobile Vocabulary Toggle */}
+      <VocabularyMobileToggle />
     </div>
   )
 }

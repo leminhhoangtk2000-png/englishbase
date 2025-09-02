@@ -266,6 +266,12 @@ export function Comments({ url, exerciseId }: CommentsProps) {
                       <Heart className={`w-3 h-3 ${comment.isLiked ? 'fill-red-500 text-red-500' : ''}`} />
                       {comment.likes}
                     </button>
+                    {comment.replies && comment.replies.length > 0 && (
+                      <span className="flex items-center gap-1 text-gray-500">
+                        <MessageCircle className="w-3 h-3" />
+                        {comment.replies.length} trả lời
+                      </span>
+                    )}
                     {user && (
                       <button 
                         onClick={() => setReplyTo(comment.id)}

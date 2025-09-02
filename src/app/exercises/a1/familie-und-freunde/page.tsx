@@ -1,4 +1,5 @@
 import FamilieUndFreunde from '@/content/exercises/a1/familie-und-freunde.mdx';
+import { ThemedBadge } from '@/components/ui/themed-badge';
 
 export default function Page() {
   return (
@@ -21,10 +22,10 @@ export default function Page() {
           {/* Exercise Title Card */}
           <div className="bg-white rounded-2xl shadow-lg border border-purple-100 p-8 mb-8">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+              <ThemedBadge variant="themed" className="mb-4">
+                <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
                 Trình độ A1
-              </div>
+              </ThemedBadge>
               <h1 className="text-3xl font-bold text-gray-900 mb-3 font-headline">
                 👨‍👩‍👧‍👦 Familie und Freunde
               </h1>
