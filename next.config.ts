@@ -13,6 +13,44 @@ const nextConfig: NextConfig = {
   // Compression
   compress: true,
   
+  // Webpack configuration to fix caching issues
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Disable webpack caching to prevent snapshot errors
+    config.cache = false;
+    
+    // Add fallbacks for Node.js modules
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      path: false,
+      os: false,
+      crypto: false,
+      stream: false,
+      buffer: false,
+      util: false,
+      assert: false,
+      url: false,
+      querystring: false,
+    };
+    
+    // Ignore specific warnings
+    config.ignoreWarnings = [
+      /Critical dependency: the request of a dependency is an expression/,
+      /Failed to parse source map/,
+      /webpack\.cache\.PackFileCacheStrategy/,
+    ];
+    
+    // Reduce stats verbosity
+    config.stats = {
+      ...config.stats,
+      warnings: false,
+      cached: false,
+      cachedAssets: false,
+    };
+    
+    return config;
+  },
+  
   // Images optimization
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -20,6 +58,18 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'placehold.co',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
       },

@@ -48,8 +48,6 @@ interface ProviderStats {
     totalTests: number;
     successRate: number;
     averageResponseTime: number;
-    totalTestTokens: number;
-    totalTestCost: number;
   };
 }
 
@@ -382,10 +380,7 @@ export default function AIManagementPage() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Requests</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0) + (stats?.tests.totalTests || 0), 0).toLocaleString()}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0), 0)} usage + {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.tests.totalTests || 0), 0)} tests
+                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0), 0).toLocaleString()}
                 </p>
               </div>
               <Activity className="h-8 w-8 text-blue-600" />
@@ -399,14 +394,7 @@ export default function AIManagementPage() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Tokens</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => {
-                    const usageTokens = stats?.usage.totalTokens || 0;
-                    const testTokens = stats?.tests.totalTestTokens || 0;
-                    return sum + usageTokens + testTokens;
-                  }, 0))}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalTokens || 0), 0))} usage + {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.tests.totalTestTokens || 0), 0))} tests
+                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalTokens || 0), 0))}
                 </p>
               </div>
               <TrendingUp className="h-8 w-8 text-green-600" />
@@ -420,14 +408,7 @@ export default function AIManagementPage() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Cost</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {formatCost(Object.values(providerStats).reduce((sum, stats) => {
-                    const usageCost = stats?.usage.totalCost || 0;
-                    const testCost = stats?.tests.totalTestCost || 0;
-                    return sum + usageCost + testCost;
-                  }, 0))}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalCost || 0), 0))} usage + {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.tests.totalTestCost || 0), 0))} tests
+                  {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalCost || 0), 0))}
                 </p>
               </div>
               <DollarSign className="h-8 w-8 text-red-600" />
@@ -528,15 +509,15 @@ export default function AIManagementPage() {
                             <div className="space-y-1">
                               <div className="flex items-center gap-1 text-xs">
                                 <Activity className="h-3 w-3" />
-                                <span>{stats.usage.totalRequests + stats.tests.totalTests} requests</span>
+                                <span>{stats.usage.totalRequests} requests</span>
                               </div>
                               <div className="flex items-center gap-1 text-xs">
                                 <TrendingUp className="h-3 w-3" />
-                                <span>{formatTokens(stats.usage.totalTokens + (stats.tests.totalTestTokens || 0))} tokens</span>
+                                <span>{formatTokens(stats.usage.totalTokens)} tokens</span>
                               </div>
                               <div className="flex items-center gap-1 text-xs">
                                 <DollarSign className="h-3 w-3" />
-                                <span>{formatCost(stats.usage.totalCost + (stats.tests.totalTestCost || 0))}</span>
+                                <span>{formatCost(stats.usage.totalCost)}</span>
                               </div>
                               {stats.tests.totalTests > 0 && (
                                 <div className={`text-xs ${getSuccessRateColor(stats.tests.successRate)}`}>

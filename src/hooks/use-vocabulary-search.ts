@@ -294,36 +294,133 @@ export function useVocabularySearch() {
         return { found: true, entry: found };
       }
 
-      // If not found, try AI API call
+      // If not found, try AI Management system
       try {
-        const aiResponse = await fetch('/api/vocabulary/ai-search', {
+        // Get active AI provider from AI Management system
+        const providersResponse = await fetch('/api/admin/ai-providers');
+        const providersData = await providersResponse.json();
+        const activeProvider = providersData.providers?.find((p: any) => p.isActive);
+        
+        if (!activeProvider) {
+          throw new Error('No active AI provider available');
+        }
+
+        // Call the AI provider test endpoint for vocabulary definition
+        const aiResponse = await fetch(`/api/admin/ai-providers/${activeProvider.id}/test`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ word })
+          body: JSON.stringify({ 
+            testPrompt: `Provide a German-Vietnamese vocabulary definition for the word "${word}". Include:
+1. Word: ${word}
+2. Part of speech (e.g., Nomen, Verb, Adjektiv)
+3. German definition
+4. Vietnamese translation
+5. German example sentence
+6. Vietnamese translation of example
+7. IPA pronunciation
+
+Format as JSON with keys: word, partOfSpeech, definition, vietnamese, germanExample, vietnameseExample, pronunciation`
+          }),
         });
 
         if (aiResponse.ok) {
           const aiResult = await aiResponse.json();
-          if (aiResult.success && aiResult.data) {
-            // Add AI generated entry to local database
-            mockVocabularyDatabase.push(aiResult.data);
-            
-            // Add to search history
-            setSearchHistory(prev => {
-              const newHistory = [word, ...prev.filter(h => h !== word)].slice(0, 10);
-              return newHistory;
-            });
+          if (aiResult.success && aiResult.result?.response) {
+            try {
+              // Try to parse AI response as JSON
+              let responseText = aiResult.result.response;
+              
+              // Clean up markdown code blocks if present
+              if (responseText.includes('```json')) {
+                responseText = responseText.replace(/```json\s*/g, '').replace(/```\s*$/g, '');
+              }
+              if (responseText.includes('```')) {
+                responseText = responseText.replace(/```\s*/g, '');
+              }
+              
+              const parsedResponse = JSON.parse(responseText.trim());
+              
+              const aiGeneratedEntry: VocabularyEntry = {
+                id: Date.now().toString(),
+                word: parsedResponse.word || word,
+                pronunciation: parsedResponse.pronunciation || `/${word.toLowerCase()}/`,
+                partOfSpeech: parsedResponse.partOfSpeech || 'noun',
+                level: 'B1',
+                definitions: {
+                  german: parsedResponse.definition || `Definition für "${word}" (AI-generiert)`,
+                  vietnamese: parsedResponse.vietnamese || `Định nghĩa cho từ "${word}" (được tạo bởi AI)`,
+                  english: `Definition for "${word}" (AI-generated)`
+                },
+                examples: [
+                  {
+                    german: parsedResponse.germanExample || `Beispiel: "${word}" wird oft verwendet.`,
+                    vietnamese: parsedResponse.vietnameseExample || `Ví dụ: "${word}" thường được sử dụng.`
+                  }
+                ],
+                synonyms: [],
+                antonyms: [],
+                relatedWords: [],
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+                source: 'ai'
+              };
 
-            return { found: true, entry: aiResult.data };
+              // Add AI generated entry to local database
+              mockVocabularyDatabase.push(aiGeneratedEntry);
+              
+              // Add to search history
+              setSearchHistory(prev => {
+                const newHistory = [word, ...prev.filter(h => h !== word)].slice(0, 10);
+                return newHistory;
+              });
+
+              return { found: true, entry: aiGeneratedEntry };
+            } catch (parseError) {
+              console.error('Error parsing AI response:', parseError);
+              // If parsing fails, use raw response
+              const aiGeneratedEntry: VocabularyEntry = {
+                id: Date.now().toString(),
+                word: word,
+                pronunciation: `/${word.toLowerCase()}/`,
+                partOfSpeech: 'noun',
+                level: 'B1',
+                definitions: {
+                  german: aiResult.result.response,
+                  vietnamese: `Định nghĩa AI: ${aiResult.result.response}`,
+                  english: `AI Definition: ${aiResult.result.response}`
+                },
+                examples: [
+                  {
+                    german: `Beispiel: "${word}" wird oft verwendet.`,
+                    vietnamese: `Ví dụ: "${word}" thường được sử dụng.`
+                  }
+                ],
+                synonyms: [],
+                antonyms: [],
+                relatedWords: [],
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+                source: 'ai'
+              };
+
+              mockVocabularyDatabase.push(aiGeneratedEntry);
+              
+              setSearchHistory(prev => {
+                const newHistory = [word, ...prev.filter(h => h !== word)].slice(0, 10);
+                return newHistory;
+              });
+
+              return { found: true, entry: aiGeneratedEntry };
+            }
           }
         }
       } catch (aiError) {
-        console.error('AI API error:', aiError);
+        console.error('AI Management system error:', aiError);
       }
 
-      // Fallback: Mock AI response if API fails
+      // Fallback: Mock AI response if AI Management system fails
       await new Promise(resolve => setTimeout(resolve, 1000)); // Shorter delay for fallback
 
       const aiGeneratedEntry: VocabularyEntry = {

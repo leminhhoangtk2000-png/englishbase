@@ -39,6 +39,7 @@ const niveauMenus = [
 const otherNavLinks = [
     { href: "/exercises", label: "Bài tập" },
     { href: "/vocabulary", label: "Từ vựng" },
+    { href: "/die-neuen", label: "Die Neuen" },
     { href: "/blog", label: "Blog" },
     // { href: "/user", label: "User" },
     // { href: "/user-premium", label: "User Premium" },

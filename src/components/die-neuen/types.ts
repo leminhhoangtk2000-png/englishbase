@@ -3,7 +3,6 @@ export interface NewsArticle {
   title: string;
   excerpt: string;
   content: string;
-  source: string;
   url: string;
   publishedAt: string;
   category: string;

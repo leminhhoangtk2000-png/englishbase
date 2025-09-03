@@ -48,8 +48,6 @@ interface ProviderStats {
     totalTests: number;
     successRate: number;
     averageResponseTime: number;
-    totalTestTokens: number;
-    totalTestCost: number;
   };
 }
 
@@ -238,14 +236,14 @@ export default function AIManagementPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-7xl">
+    <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">AI Provider Management</h1>
         <p className="text-gray-600">Manage your AI providers and API configurations</p>
       </div>
 
       {/* Header Actions */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+      <div className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-4">
           <Badge variant="outline" className="text-sm">
             {providers.length} Provider{providers.length !== 1 ? 's' : ''}
@@ -382,10 +380,7 @@ export default function AIManagementPage() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Requests</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0) + (stats?.tests.totalTests || 0), 0).toLocaleString()}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0), 0)} usage + {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.tests.totalTests || 0), 0)} tests
+                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0), 0).toLocaleString()}
                 </p>
               </div>
               <Activity className="h-8 w-8 text-blue-600" />
@@ -399,14 +394,7 @@ export default function AIManagementPage() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Tokens</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => {
-                    const usageTokens = stats?.usage.totalTokens || 0;
-                    const testTokens = stats?.tests.totalTestTokens || 0;
-                    return sum + usageTokens + testTokens;
-                  }, 0))}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalTokens || 0), 0))} usage + {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.tests.totalTestTokens || 0), 0))} tests
+                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalTokens || 0), 0))}
                 </p>
               </div>
               <TrendingUp className="h-8 w-8 text-green-600" />
@@ -420,14 +408,181 @@ export default function AIManagementPage() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Cost</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {formatCost(Object.values(providerStats).reduce((sum, stats) => {
-                    const usageCost = stats?.usage.totalCost || 0;
-                    const testCost = stats?.tests.totalTestCost || 0;
-                    return sum + usageCost + testCost;
-                  }, 0))}
+                  {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalCost || 0), 0))}
                 </p>
-                <p className="text-xs text-gray-500">
-                  {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalCost || 0), 0))} usage + {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.tests.totalTestCost || 0), 0))} tests
+              </div>
+              <DollarSign className="h-8 w-8 text-red-600" />
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card className="hover:shadow-md transition-shadow">
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">Test Success Rate</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {(() => {
+                    const allStats = Object.values(providerStats);
+                    const totalTests = allStats.reduce((sum, stats) => sum + (stats?.tests.totalTests || 0), 0);
+                    const avgSuccessRate = totalTests > 0 
+                      ? allStats.reduce((sum, stats) => sum + (stats?.tests.successRate || 0), 0) / allStats.length
+                      : 0;
+                    return `${avgSuccessRate.toFixed(1)}%`;
+                  })()}
+                </p>
+              </div>
+              <TestTube className="h-8 w-8 text-purple-600" />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+            <DialogContent className="max-w-lg">
+              <DialogHeader>
+                <DialogTitle>Add AI Provider</DialogTitle>
+                <DialogDescription>
+                  Configure a new AI provider for your application
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="space-y-4 mt-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label>Provider Type *</Label>
+                    <Select onValueChange={handleProviderSelect} value={formData.name}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select provider" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="openai">OpenAI</SelectItem>
+                        <SelectItem value="gemini">Google Gemini</SelectItem>
+                        <SelectItem value="claude">Anthropic Claude</SelectItem>
+                        <SelectItem value="custom">Custom Provider</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <Label>Display Name *</Label>
+                    <Input
+                      placeholder="e.g., My OpenAI API"
+                      value={formData.displayName}
+                      onChange={(e) => setFormData({...formData, displayName: e.target.value})}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label>API Key *</Label>
+                  <Input
+                    type="password"
+                    placeholder="Enter your API key"
+                    value={formData.apiKey}
+                    onChange={(e) => setFormData({...formData, apiKey: e.target.value})}
+                  />
+                </div>
+
+                {formData.models.length > 0 && (
+                  <div>
+                    <Label>Available Models</Label>
+                    <div className="flex flex-wrap gap-2 mt-2 p-3 border rounded-md bg-gray-50">
+                      {formData.models.map((model) => (
+                        <Badge key={model} variant="secondary" className="text-xs">
+                          {model}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label>Default Model</Label>
+                    <Select 
+                      value={formData.defaultModel}
+                      onValueChange={(value) => setFormData({...formData, defaultModel: value})}
+                      disabled={formData.models.length === 0}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select model" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {formData.models.map((model) => (
+                          <SelectItem key={model} value={model}>{model}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <Label>Temperature</Label>
+                    <Input
+                      type="number"
+                      step="0.1"
+                      min="0"
+                      max="2"
+                      value={formData.temperature}
+                      onChange={(e) => setFormData({...formData, temperature: parseFloat(e.target.value) || 0.7})}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-end gap-2 pt-4">
+                  <Button variant="outline" onClick={() => setShowAddDialog(false)}>
+                    Cancel
+                  </Button>
+                  <Button onClick={handleAddProvider} disabled={loading}>
+                    {loading ? (
+                      <RefreshCw className="h-4 w-4 animate-spin mr-2" />
+                    ) : (
+                      <Plus className="h-4 w-4 mr-2" />
+                    )}
+                    Add Provider
+                  </Button>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+      </div>
+
+      {/* Usage Overview */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <Card className="hover:shadow-md transition-shadow">
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">Total Requests</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalRequests || 0), 0).toLocaleString()}
+                </p>
+              </div>
+              <Activity className="h-8 w-8 text-blue-600" />
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card className="hover:shadow-md transition-shadow">
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">Total Tokens</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {formatTokens(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalTokens || 0), 0))}
+                </p>
+              </div>
+              <TrendingUp className="h-8 w-8 text-green-600" />
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card className="hover:shadow-md transition-shadow">
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">Total Cost</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {formatCost(Object.values(providerStats).reduce((sum, stats) => sum + (stats?.usage.totalCost || 0), 0))}
                 </p>
               </div>
               <DollarSign className="h-8 w-8 text-red-600" />
@@ -498,111 +653,111 @@ export default function AIManagementPage() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {providers.map((provider) => {
-                    const stats = providerStats[provider.id];
-                    return (
-                      <TableRow key={provider.id}>
-                        <TableCell>
-                          <div>
-                            <div className="font-medium">{provider.displayName}</div>
-                            <div className="text-sm text-gray-500">{provider.name}</div>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <Badge variant={provider.isActive ? "default" : "secondary"}>
-                            {provider.isActive ? (
-                              <>
-                                <CheckCircle className="h-3 w-3 mr-1" />
-                                Active
-                              </>
-                            ) : (
-                              <>
-                                <XCircle className="h-3 w-3 mr-1" />
-                                Inactive
-                              </>
-                            )}
-                          </Badge>
-                        </TableCell>
-                        <TableCell>
-                          {stats ? (
-                            <div className="space-y-1">
-                              <div className="flex items-center gap-1 text-xs">
-                                <Activity className="h-3 w-3" />
-                                <span>{stats.usage.totalRequests + stats.tests.totalTests} requests</span>
-                              </div>
-                              <div className="flex items-center gap-1 text-xs">
-                                <TrendingUp className="h-3 w-3" />
-                                <span>{formatTokens(stats.usage.totalTokens + (stats.tests.totalTestTokens || 0))} tokens</span>
-                              </div>
-                              <div className="flex items-center gap-1 text-xs">
-                                <DollarSign className="h-3 w-3" />
-                                <span>{formatCost(stats.usage.totalCost + (stats.tests.totalTestCost || 0))}</span>
-                              </div>
-                              {stats.tests.totalTests > 0 && (
-                                <div className={`text-xs ${getSuccessRateColor(stats.tests.successRate)}`}>
-                                  {stats.tests.successRate.toFixed(1)}% success rate
-                                </div>
-                              )}
-                            </div>
+                {providers.map((provider) => {
+                  const stats = providerStats[provider.id];
+                  return (
+                    <TableRow key={provider.id}>
+                      <TableCell>
+                        <div>
+                          <div className="font-medium">{provider.displayName}</div>
+                          <div className="text-sm text-gray-500">{provider.name}</div>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <Badge variant={provider.isActive ? "default" : "secondary"}>
+                          {provider.isActive ? (
+                            <>
+                              <CheckCircle className="h-3 w-3 mr-1" />
+                              Active
+                            </>
                           ) : (
-                            <div className="text-xs text-gray-400">Loading...</div>
+                            <>
+                              <XCircle className="h-3 w-3 mr-1" />
+                              Inactive
+                            </>
                           )}
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex flex-wrap gap-1">
-                            {provider.models.slice(0, 2).map((model) => (
-                              <Badge key={model} variant="outline" className="text-xs">
-                                {model}
-                              </Badge>
-                            ))}
-                            {provider.models.length > 2 && (
-                              <Badge variant="outline" className="text-xs">
-                                +{provider.models.length - 2}
-                              </Badge>
+                        </Badge>
+                      </TableCell>
+                      <TableCell>
+                        {stats ? (
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-1 text-xs">
+                              <Activity className="h-3 w-3" />
+                              <span>{stats.usage.totalRequests} requests</span>
+                            </div>
+                            <div className="flex items-center gap-1 text-xs">
+                              <TrendingUp className="h-3 w-3" />
+                              <span>{formatTokens(stats.usage.totalTokens)} tokens</span>
+                            </div>
+                            <div className="flex items-center gap-1 text-xs">
+                              <DollarSign className="h-3 w-3" />
+                              <span>{formatCost(stats.usage.totalCost)}</span>
+                            </div>
+                            {stats.tests.totalTests > 0 && (
+                              <div className={`text-xs ${getSuccessRateColor(stats.tests.successRate)}`}>
+                                {stats.tests.successRate.toFixed(1)}% success rate
+                              </div>
                             )}
                           </div>
-                          <div className="text-xs text-gray-500 mt-1">
-                            Default: {provider.defaultModel || 'None'}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <code className="text-xs bg-gray-100 px-2 py-1 rounded">
-                            {provider.apiKey}
-                          </code>
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex gap-1 justify-end">
-                            <Button 
-                              variant="ghost" 
-                              size="sm"
-                              onClick={() => handleTestProvider(provider.id)}
-                              disabled={testingProviderId === provider.id}
-                              title="Test API connection"
-                            >
-                              {testingProviderId === provider.id ? (
-                                <RefreshCw className="h-4 w-4 animate-spin" />
-                              ) : (
-                                <TestTube className="h-4 w-4" />
-                              )}
-                            </Button>
-                            <Button variant="ghost" size="sm" title="Provider settings">
-                              <Settings className="h-4 w-4" />
-                            </Button>
-                            <Button 
-                              variant="ghost" 
-                              size="sm"
-                              onClick={() => handleDeleteProvider(provider.id)}
-                              title="Delete provider"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
+                        ) : (
+                          <div className="text-xs text-gray-400">Loading...</div>
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex flex-wrap gap-1">
+                          {provider.models.slice(0, 2).map((model) => (
+                            <Badge key={model} variant="outline" className="text-xs">
+                              {model}
+                            </Badge>
+                          ))}
+                          {provider.models.length > 2 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{provider.models.length - 2}
+                            </Badge>
+                          )}
+                        </div>
+                        <div className="text-xs text-gray-500 mt-1">
+                          Default: {provider.defaultModel || 'None'}
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <code className="text-xs bg-gray-100 px-2 py-1 rounded">
+                          {provider.apiKey}
+                        </code>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex gap-1">
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            onClick={() => handleTestProvider(provider.id)}
+                            disabled={testingProviderId === provider.id}
+                            title="Test API connection"
+                          >
+                            {testingProviderId === provider.id ? (
+                              <RefreshCw className="h-4 w-4 animate-spin" />
+                            ) : (
+                              <TestTube className="h-4 w-4" />
+                            )}
+                          </Button>
+                          <Button variant="ghost" size="sm" title="Provider settings">
+                            <Settings className="h-4 w-4" />
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            onClick={() => handleDeleteProvider(provider.id)}
+                            title="Delete provider"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
             </div>
           )}
         </CardContent>

@@ -53,9 +53,6 @@ export default function ArticleCard({ article }: ArticleCardProps) {
               <ThemedBadge variant="themed" className="text-xs">
                 {article.category}
               </ThemedBadge>
-              <Badge variant="outline" className="text-xs border-gray-200 text-gray-500">
-                {article.source}
-              </Badge>
             </div>
 
             {/* Title */}

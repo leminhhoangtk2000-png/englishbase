@@ -4,6 +4,68 @@ import * as path from 'path'
 
 const prisma = new PrismaClient()
 
+// Map Vietnamese types to Prisma enum
+function mapVocabularyType(vietnameseType: string): any {
+  const typeMap: Record<string, string> = {
+    'Danh từ': 'NOMEN',
+    'DANH TỪ': 'NOMEN',
+    'Động từ': 'VERB', 
+    'ĐỘNG TỪ': 'VERB',
+    'Tính từ': 'ADJEKTIV',
+    'TÍNH TỪ': 'ADJEKTIV',
+    'Trạng từ': 'ADVERB',
+    'TRẠNG TỪ': 'ADVERB',
+    'Đại từ': 'PRONOUN',
+    'ĐẠI TỪ': 'PRONOUN',
+    'Giới từ': 'PREPOSITION',
+    'GIỚI TỪ': 'PREPOSITION',
+    'Liên từ': 'CONJUNCTION',
+    'LIÊN TỪ': 'CONJUNCTION'
+  }
+  
+  return typeMap[vietnameseType] || 'OTHER'
+}
+
+// Auto-detect type from German word
+function detectGermanType(german: string): string {
+  const word = german.toLowerCase().trim()
+  
+  // Nouns with articles
+  if (word.startsWith('der ') || word.startsWith('die ') || word.startsWith('das ')) {
+    return 'NOMEN'
+  }
+  
+  // Verbs - common endings
+  if (word.endsWith('en') && !word.includes(' ')) {
+    return 'VERB'
+  }
+  
+  // Adjectives - common endings  
+  if (word.endsWith('lich') || word.endsWith('ig') || word.endsWith('isch') || 
+      word.endsWith('bar') || word.endsWith('sam') || word.endsWith('haft')) {
+    return 'ADJEKTIV'
+  }
+  
+  // Adverbs - common patterns
+  if (word === 'hier' || word === 'dort' || word === 'heute' || word === 'morgen' ||
+      word === 'immer' || word === 'nie' || word === 'oft' || word === 'manchmal') {
+    return 'ADVERB'
+  }
+  
+  // Prepositions
+  if (['in', 'an', 'auf', 'zu', 'mit', 'von', 'bei', 'nach', 'über', 'unter', 'vor', 'hinter'].includes(word)) {
+    return 'PREPOSITION'
+  }
+  
+  // Pronouns
+  if (['ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr', 'sie', 'mich', 'dich', 'sich', 'uns', 'euch', 'jemand', 'niemand'].includes(word)) {
+    return 'PRONOUN'
+  }
+  
+  // Default to NOMEN for German nouns without articles
+  return 'NOMEN'
+}
+
 // Define vocabulary levels
 const vocabularyLevels = [
   { name: 'A1', displayName: 'Grundstufe A1', description: 'Anfänger Niveau', order: 1 },
@@ -90,11 +152,11 @@ async function loadVocabularyFromFiles() {
   
   for (const levelName of levelDirs) {
     const level = await prisma.vocabularyLevel.findUnique({
-      where: { name: levelName }
+      where: { name: levelName.toUpperCase() }
     })
     
     if (!level) {
-      console.log(`Level ${levelName} not found in database, skipping...`)
+      console.log(`Level ${levelName.toUpperCase()} not found in database, skipping...`)
       continue
     }
     
@@ -123,6 +185,14 @@ async function loadVocabularyFromFiles() {
       
       for (const entry of vocabularyData) {
         try {
+          // Determine vocabulary type
+          let vocabularyType = 'OTHER'
+          if (entry.type) {
+            vocabularyType = mapVocabularyType(entry.type)
+          } else {
+            vocabularyType = detectGermanType(entry.german)
+          }
+          
           await prisma.vocabularyEntry.upsert({
             where: {
               german_vietnamese_levelId_topicId: {
@@ -135,7 +205,7 @@ async function loadVocabularyFromFiles() {
             update: {
               phonetic: entry.phonetic,
               plural: entry.plural,
-              type: entry.type?.toUpperCase() || 'OTHER',
+              type: vocabularyType as any,
               exampleGerman: entry.exampleGerman,
               exampleVietnamese: entry.exampleVietnamese,
               difficulty: entry.difficulty || 1,
@@ -146,7 +216,7 @@ async function loadVocabularyFromFiles() {
               vietnamese: entry.vietnamese,
               phonetic: entry.phonetic,
               plural: entry.plural,
-              type: entry.type?.toUpperCase() || 'OTHER',
+              type: vocabularyType as any,
               levelId: level.id,
               topicId: topic.id,
               exampleGerman: entry.exampleGerman,

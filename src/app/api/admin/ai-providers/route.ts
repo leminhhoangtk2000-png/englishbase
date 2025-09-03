@@ -56,8 +56,14 @@ export async function POST(request: NextRequest) {
     };
 
     return NextResponse.json({ provider: safeProvider });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error creating AI provider:', error);
+    
+    // Handle Prisma unique constraint error
+    if (error.code === 'P2002') {
+      return NextResponse.json({ error: 'Provider name already exists' }, { status: 400 });
+    }
+    
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

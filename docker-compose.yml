@@ -4,8 +4,8 @@ services:
     container_name: edu-theme-postgres
     restart: always
     environment:
-      POSTGRES_USER: edu_user
-      POSTGRES_PASSWORD: edu_password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres  
       POSTGRES_DB: edu_theme_db
     ports:
       - "5555:5432"

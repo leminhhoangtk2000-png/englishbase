@@ -287,6 +287,21 @@ model Review {
   @@map("reviews")
 }
 
+model CrawlJob {
+  id            String         @id @default(cuid())
+  source        String
+  status        CrawlJobStatus @default(PENDING)
+  articlesFound Int            @default(0)
+  articlesAdded Int            @default(0)
+  errorMessage  String?
+  startedAt     DateTime       @default(now())
+  completedAt   DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  @@map("crawl_jobs")
+}
+
 enum Role {
   ADMIN
   USER
@@ -329,24 +344,64 @@ enum PaymentStatus {
   REFUNDED
 }
 
-model CrawlJob {
-  id             String           @id @default(cuid())
-  source         String
-  status         CrawlJobStatus   @default(PENDING)
-  articlesFound  Int              @default(0)
-  articlesAdded  Int              @default(0)
-  errorMessage   String?
-  startedAt      DateTime         @default(now())
-  completedAt    DateTime?
-  createdAt      DateTime         @default(now())
-  updatedAt      DateTime         @updatedAt
-
-  @@map("crawl_jobs")
-}
-
 enum CrawlJobStatus {
   PENDING
   RUNNING
   COMPLETED
   FAILED
+}
+
+// AI Management Models
+model AIProvider {
+  id           String        @id @default(cuid())
+  name         String        @unique
+  displayName  String
+  apiKey       String
+  baseUrl      String?
+  isActive     Boolean       @default(true)
+  models       String[]
+  defaultModel String?
+  maxTokens    Int?
+  temperature  Float?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  testResults  AITestResult[]
+  usage        AIUsage[]
+
+  @@map("ai_providers")
+}
+
+model AITestResult {
+  id           String     @id @default(cuid())
+  providerId   String
+  model        String
+  prompt       String
+  response     String?
+  success      Boolean
+  error        String?
+  responseTime Int?       // in milliseconds
+  tokensUsed   Int?
+  cost         Float?
+  createdAt    DateTime   @default(now())
+  provider     AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@map("ai_test_results")
+}
+
+model AIUsage {
+  id            String     @id @default(cuid())
+  providerId    String
+  model         String
+  operation     String     // e.g., "vocabulary_search", "translation", etc.
+  promptTokens  Int        @default(0)
+  responseTokens Int       @default(0)
+  totalTokens   Int        @default(0)
+  cost          Float      @default(0)
+  success       Boolean    @default(true)
+  error         String?
+  metadata      Json?      // Additional info like user_id, request_type, etc.
+  createdAt     DateTime   @default(now())
+  provider      AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@map("ai_usage")
 }

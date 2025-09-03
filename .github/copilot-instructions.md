@@ -1,5 +1,27 @@
 # AI Coding Agent Instructions for Edu-theme
 
+## ⚠️ PROTECTED SYSTEMS - DO NOT MODIFY
+
+### AI Management System (STABLE)
+**Location**: `/admin/ai-management` and related API endpoints
+**Status**: ✅ COMPLETE AND STABLE - LOCKED FROM MODIFICATIONS
+
+**Protected Files**:
+- `src/app/admin/ai-management/page.tsx` (594 lines)
+- `src/app/api/admin/ai-providers/[id]/test/route.ts`
+- `src/app/api/admin/ai-providers/[id]/stats/route.ts`  
+- `src/lib/ai-utils.ts`
+- Database models: AIProvider, AIUsage, AITestResult
+
+**Features**: AI provider management, real-time testing, usage analytics, responsive dashboard
+**Documentation**: `AI-MANAGEMENT-SYSTEM.md`
+
+**CRITICAL RULE**: Before making ANY changes to AI Management system:
+1. Read `AI-MANAGEMENT-SYSTEM.md` documentation first
+2. Get explicit approval from project maintainer
+3. Create backup of current working version
+4. Test thoroughly on development environment
+
 ## Project Overview
 This is a **German-Vietnamese language learning platform** built with Next.js 15.3.3, TypeScript, Prisma, and PostgreSQL. The platform follows a multi-role architecture (ADMIN/USER_PREMIUM/USER) with vocabulary learning, exercises, and content management capabilities.
 
