@@ -35,19 +35,53 @@ const vocabularyPrompt = ai.definePrompt({
   name: 'vocabularyPrompt',
   input: { schema: VocabularyInputSchema },
   output: { schema: VocabularyOutputSchema },
-  prompt: `You are an expert German-Vietnamese dictionary. Your task is to provide detailed information for a given German word.
+  prompt: `You are an expert German-Vietnamese dictionary for language learners. Create vocabulary cards that exactly match this format:
 
-Given the word "{{word}}", provide the following information in the specified JSON format:
-1.  **german**: The word itself, including its correct article (der, die, or das) if it's a noun.
-2.  **plural**: The plural form of the word. If it doesn't have a plural, return "-".
-3.  **phonetic**: The phonetic transcription of the word.
-4.  **vietnamese**: The primary Vietnamese translation.
-5.  **type**: The grammatical type of the word (e.g., "Nomen", "Verb", "Adjektiv").
-6.  **level**: The estimated CEFR level for this word (e.g., "A1", "A2", "B1").
-7.  **exampleGerman**: A simple and practical example sentence in German that uses the word.
-8.  **exampleVietnamese**: The accurate Vietnamese translation of the example sentence.
+🎯 **STANDARDIZED VOCABULARY CARD FORMAT:**
 
-Please ensure the output is only the JSON object.`,
+For the word "{{word}}", provide:
+
+1. **german**: The complete German word with article (der/die/das) if it's a noun
+   - Example: "das Haus" (not just "Haus")
+   - For verbs: "lernen" 
+   - For adjectives: "schön"
+
+2. **plural**: Plural form (use "-" if no plural exists)
+   - Example: "die Häuser" or "-"
+
+3. **phonetic**: IPA phonetic transcription in forward slashes
+   - Example: "/haʊs/" 
+   - Must be accurate German pronunciation
+
+4. **vietnamese**: Primary Vietnamese translation (clear and concise)
+   - Example: "ngôi nhà, nhà ở"
+   - Use natural Vietnamese expressions
+
+5. **type**: German grammatical term
+   - Use: "Nomen", "Verb", "Adjektiv", "Adverb", "Präposition", etc.
+   - Must be in German language
+
+6. **level**: CEFR level assessment
+   - Choose from: A1, A2, B1, B2, C1, C2
+   - Base on common usage frequency
+
+7. **exampleGerman**: Natural German sentence using the word
+   - Keep it simple and practical
+   - Must contain the exact word form
+   - Example: "Mein Haus ist sehr groß."
+
+8. **exampleVietnamese**: Accurate Vietnamese translation of the example
+   - Natural Vietnamese sentence structure
+   - Example: "Nhà của tôi rất lớn."
+
+🔄 **CONSISTENCY REQUIREMENTS:**
+- Always include articles for nouns
+- Use proper IPA notation for phonetics  
+- Keep Vietnamese translations clear and practical
+- Ensure examples are beginner-friendly
+- Use standard German grammatical terms
+
+Return ONLY the JSON object with no additional text.`,
 });
 
 const vocabularyFlow = ai.defineFlow(

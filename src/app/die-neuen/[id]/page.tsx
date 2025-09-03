@@ -288,7 +288,7 @@ export default function ArticlePage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex gap-8">
           {/* Main Content */}
-          <div className="flex-1 max-w-4xl">
+          <div className="flex-1 max-w-4xl max-h-[80vh] overflow-y-auto">
             {/* Back Button */}
             <div className="mb-8">
               <Link href="/die-neuen">

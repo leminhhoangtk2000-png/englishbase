@@ -173,9 +173,29 @@ export async function POST(request: NextRequest) {
     })
     
     if (existingWord) {
+      // Transform database model to match VocabularyEntry interface
+      const transformedEntry = {
+        id: existingWord.id,
+        word: existingWord.german,
+        pronunciation: existingWord.phonetic,
+        partOfSpeech: existingWord.type,
+        level: existingWord.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
+        definitions: {
+          german: existingWord.german,
+          vietnamese: existingWord.vietnamese,
+        },
+        examples: existingWord.exampleGerman && existingWord.exampleVietnamese ? [{
+          german: existingWord.exampleGerman,
+          vietnamese: existingWord.exampleVietnamese
+        }] : [],
+        createdAt: existingWord.createdAt.toISOString(),
+        updatedAt: existingWord.updatedAt.toISOString(),
+        source: 'database' as const
+      }
+      
       return NextResponse.json({
         success: true,
-        data: existingWord,
+        data: transformedEntry,
         source: 'database'
       })
     }
@@ -213,9 +233,29 @@ export async function POST(request: NextRequest) {
     
     console.log(`Saved new vocabulary: ${newVocabulary.german} -> ${newVocabulary.vietnamese}`)
     
+    // Transform database model to match VocabularyEntry interface
+    const transformedEntry = {
+      id: newVocabulary.id,
+      word: newVocabulary.german,
+      pronunciation: newVocabulary.phonetic,
+      partOfSpeech: newVocabulary.type,
+      level: newVocabulary.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
+      definitions: {
+        german: newVocabulary.german,
+        vietnamese: newVocabulary.vietnamese,
+      },
+      examples: newVocabulary.exampleGerman && newVocabulary.exampleVietnamese ? [{
+        german: newVocabulary.exampleGerman,
+        vietnamese: newVocabulary.exampleVietnamese
+      }] : [],
+      createdAt: newVocabulary.createdAt.toISOString(),
+      updatedAt: newVocabulary.updatedAt.toISOString(),
+      source: 'ai' as const
+    }
+    
     return NextResponse.json({
       success: true,
-      data: newVocabulary,
+      data: transformedEntry,
       source: 'ai_generated'
     })
     

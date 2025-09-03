@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Volume2, Heart, Clock } from 'lucide-react';
 import { VocabularyEntry } from '@/types/vocabulary';
 
@@ -35,8 +36,10 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
   };
 
   return (
-    <Card className="w-full group hover:shadow-md transition-shadow overflow-visible">
-      <CardContent className="p-4 space-y-3 overflow-visible">
+    <Card className="w-full group hover:shadow-md transition-shadow max-h-[65vh] flex flex-col">
+      <ScrollArea className="flex-1 max-h-[60vh]">
+        <CardContent className="p-4 space-y-3 pr-6">
+          {/* Header với từ vựng và các nút */}
         {/* Header với từ vựng và các nút */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center space-x-2 flex-1 min-w-0">
@@ -216,6 +219,7 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
           </span>
         </div>
       </CardContent>
+      </ScrollArea>
     </Card>
   );
 }

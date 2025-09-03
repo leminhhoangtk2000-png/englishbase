@@ -1,21 +1,19 @@
 services:
   postgres:
-    image: postgres:15
+    image: postgres:15-alpine
     container_name: edu-theme-postgres
     restart: always
     environment:
+      POSTGRES_USER: edu_user
+      POSTGRES_PASSWORD: edu_password
       POSTGRES_DB: edu_theme_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
-      - "5434:5432"
+      - "5555:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - edu-network
-    command: postgres -c listen_addresses='*' -c log_statement=all
 
   pgadmin:
     image: dpage/pgadmin4:latest

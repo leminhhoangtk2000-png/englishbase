@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,157 +7,133 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// User management
 model User {
-  id          String   @id @default(cuid())
-  email       String   @unique
-  username    String?  @unique
-  name        String?
-  password    String   // Hashed password
-  avatar      String?
-  bio         String?
-  website     String?
-  facebook    String?
-  instagram   String?
-  tiktok      String?
-  threads     String?
-  skillLevel  String?  // A1, A2, B1, B2, C1, C2
-  role        Role     @default(USER)
-  isPremium   Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String           @id @default(cuid())
+  email      String           @unique
+  username   String?          @unique
+  name       String?
+  password   String
+  avatar     String?
+  role       Role             @default(USER)
+  isPremium  Boolean          @default(false)
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  bio        String?
+  facebook   String?
+  instagram  String?
+  skillLevel String?
+  threads    String?
+  tiktok     String?
+  website    String?
+  comments   Comment[]
+  posts      Post[]
+  reviews    Review[]
+  exercises  UserExercise[]
+  progress   UserProgress[]
+  vocabulary UserVocabulary[]
 
-  // Relations
-  posts       Post[]
-  comments    Comment[]
-  exercises   UserExercise[]
-  vocabulary  UserVocabulary[]
-  progress    UserProgress[]
-  reviews     Review[]
-  
   @@map("users")
 }
 
-enum Role {
-  ADMIN
-  USER
-  USER_PREMIUM
-}
-
-// Content management
 model Post {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  content     String?
-  excerpt     String?
-  published   Boolean  @default(false)
-  featured    Boolean  @default(false)
-  views       Int      @default(0)
-  authorId    String
-  categoryId  String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  category    Category? @relation(fields: [categoryId], references: [id])
-  comments    Comment[]
-  tags        PostTag[]
+  id         String    @id @default(cuid())
+  title      String
+  slug       String    @unique
+  content    String?
+  excerpt    String?
+  published  Boolean   @default(false)
+  featured   Boolean   @default(false)
+  views      Int       @default(0)
+  authorId   String
+  categoryId String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  comments   Comment[]
+  tags       PostTag[]
+  author     User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  category   Category? @relation(fields: [categoryId], references: [id])
 
   @@map("posts")
 }
 
 model Category {
-  id          String @id @default(cuid())
-  name        String @unique
-  slug        String @unique
+  id          String  @id @default(cuid())
+  name        String  @unique
+  slug        String  @unique
   description String?
   color       String?
-  
-  // Relations
   posts       Post[]
-  
+
   @@map("categories")
 }
 
 model Tag {
-  id          String @id @default(cuid())
-  name        String @unique
-  slug        String @unique
-  
-  // Relations
-  posts       PostTag[]
-  
+  id    String    @id @default(cuid())
+  name  String    @unique
+  slug  String    @unique
+  posts PostTag[]
+
   @@map("tags")
 }
 
 model PostTag {
-  postId      String
-  tagId       String
-  
-  post        Post @relation(fields: [postId], references: [id], onDelete: Cascade)
-  tag         Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
-  
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
   @@id([postId, tagId])
   @@map("post_tags")
 }
 
 model Comment {
-  id          String   @id @default(cuid())
-  content     String
-  authorId    String
-  postId      String
-  parentId    String?
-  published   Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
-  parent      Comment? @relation("CommentReplies", fields: [parentId], references: [id])
-  replies     Comment[] @relation("CommentReplies")
+  id        String    @id @default(cuid())
+  content   String
+  authorId  String
+  postId    String
+  parentId  String?
+  published Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parent    Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies   Comment[] @relation("CommentReplies")
+  post      Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
 
   @@map("comments")
 }
 
-// Vocabulary system
 model VocabularyLevel {
-  id              String @id @default(cuid())
-  name            String @unique // A1, A2, B1, B2, C1, C2
-  displayName     String // "Grundstufe A1", "Mittelstufe B1", etc.
-  description     String?
-  order           Int    @unique
-  isActive        Boolean @default(true)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  topics          VocabularyTopic[]
+  id                String            @id @default(cuid())
+  name              String            @unique
+  displayName       String
+  description       String?
+  order             Int               @unique
+  isActive          Boolean           @default(true)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  exercises         Exercise[]
+  userProgress      UserProgress[]
   vocabularyEntries VocabularyEntry[]
-  exercises       Exercise[]
-  userProgress    UserProgress[]
+  topics            VocabularyTopic[]
 
   @@map("vocabulary_levels")
 }
 
 model VocabularyTopic {
-  id              String @id @default(cuid())
-  name            String // "Familie", "Wohnen", "Essen", etc.
-  displayName     String // "Familie und Verwandtschaft", etc.
-  description     String?
-  levelId         String
-  slug            String
-  order           Int
-  isActive        Boolean @default(true)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  id                String            @id @default(cuid())
+  name              String
+  displayName       String
+  description       String?
+  levelId           String
+  slug              String
+  order             Int
+  isActive          Boolean           @default(true)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  userProgress      UserProgress[]
   vocabularyEntries VocabularyEntry[]
-  userProgress    UserProgress[]
+  level             VocabularyLevel   @relation(fields: [levelId], references: [id], onDelete: Cascade)
 
   @@unique([levelId, slug])
   @@unique([levelId, order])
@@ -168,30 +141,156 @@ model VocabularyTopic {
 }
 
 model VocabularyEntry {
-  id              String @id @default(cuid())
-  german          String
-  vietnamese      String
-  phonetic        String?
-  plural          String?
-  type            VocabularyType
-  levelId         String
-  topicId         String
-  exampleGerman   String?
+  id                String           @id @default(cuid())
+  german            String
+  vietnamese        String
+  phonetic          String?
+  plural            String?
+  type              VocabularyType
+  levelId           String
+  topicId           String
+  exampleGerman     String?
   exampleVietnamese String?
-  difficulty      Int    @default(1)
-  frequency       Int    @default(0)
-  tags            String[] // Additional tags for categorization
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
-  topic           VocabularyTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
-  userVocabulary  UserVocabulary[]
-  exerciseItems   ExerciseItem[]
+  difficulty        Int              @default(1)
+  frequency         Int              @default(0)
+  tags              String[]
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  exerciseItems     ExerciseItem[]
+  userVocabulary    UserVocabulary[]
+  level             VocabularyLevel  @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  topic             VocabularyTopic  @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
   @@unique([german, vietnamese, levelId, topicId])
   @@map("vocabulary_entries")
+}
+
+model UserVocabulary {
+  id            String          @id @default(cuid())
+  userId        String
+  vocabularyId  String
+  status        LearningStatus  @default(NEW)
+  correctCount  Int             @default(0)
+  totalAttempts Int             @default(0)
+  lastReviewed  DateTime?
+  nextReview    DateTime?
+  difficulty    Int             @default(1)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  user          User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vocabulary    VocabularyEntry @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, vocabularyId])
+  @@map("user_vocabulary")
+}
+
+model Exercise {
+  id            String          @id @default(cuid())
+  title         String
+  description   String?
+  type          ExerciseType
+  levelId       String
+  difficulty    Int             @default(1)
+  timeLimit     Int?
+  published     Boolean         @default(false)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  items         ExerciseItem[]
+  level         VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  userExercises UserExercise[]
+
+  @@map("exercises")
+}
+
+model ExerciseItem {
+  id            String           @id @default(cuid())
+  exerciseId    String
+  question      String
+  correctAnswer String
+  options       String[]
+  explanation   String?
+  points        Int              @default(1)
+  order         Int
+  vocabularyId  String?
+  exercise      Exercise         @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  vocabulary    VocabularyEntry? @relation(fields: [vocabularyId], references: [id])
+
+  @@map("exercise_items")
+}
+
+model UserExercise {
+  id          String    @id @default(cuid())
+  userId      String
+  exerciseId  String
+  score       Int?
+  maxScore    Int?
+  timeSpent   Int?
+  completed   Boolean   @default(false)
+  answers     Json?
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+  exercise    Exercise  @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_exercises")
+}
+
+model UserProgress {
+  id             String           @id @default(cuid())
+  userId         String
+  levelId        String
+  topicId        String?
+  totalWords     Int              @default(0)
+  learnedWords   Int              @default(0)
+  masteredWords  Int              @default(0)
+  streakDays     Int              @default(0)
+  totalStudyTime Int              @default(0)
+  lastActivity   DateTime         @default(now())
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  level          VocabularyLevel  @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  topic          VocabularyTopic? @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, levelId, topicId])
+  @@map("user_progress")
+}
+
+model Payment {
+  id            String        @id @default(cuid())
+  userId        String?
+  amount        Decimal
+  currency      String        @default("VND")
+  status        PaymentStatus @default(PENDING)
+  method        String?
+  transactionId String?       @unique
+  description   String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("payments")
+}
+
+model Review {
+  id              String    @id @default(cuid())
+  userId          String
+  title           String?
+  content         String
+  rating          Int
+  isPublic        Boolean   @default(true)
+  isApproved      Boolean   @default(false)
+  nextAllowedDate DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("reviews")
+}
+
+enum Role {
+  ADMIN
+  USER
+  USER_PREMIUM
 }
 
 enum VocabularyType {
@@ -205,54 +304,12 @@ enum VocabularyType {
   OTHER
 }
 
-model UserVocabulary {
-  id              String @id @default(cuid())
-  userId          String
-  vocabularyId    String
-  status          LearningStatus @default(NEW)
-  correctCount    Int    @default(0)
-  totalAttempts   Int    @default(0)
-  lastReviewed    DateTime?
-  nextReview      DateTime?
-  difficulty      Int    @default(1)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  vocabulary      VocabularyEntry @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, vocabularyId])
-  @@map("user_vocabulary")
-}
-
 enum LearningStatus {
   NEW
   LEARNING
   LEARNED
   MASTERED
   NEED_REVIEW
-}
-
-// Exercise system
-model Exercise {
-  id              String @id @default(cuid())
-  title           String
-  description     String?
-  type            ExerciseType
-  levelId         String
-  difficulty      Int    @default(1)
-  timeLimit       Int?   // in seconds
-  published       Boolean @default(false)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
-  items           ExerciseItem[]
-  userExercises   UserExercise[]
-
-  @@map("exercises")
 }
 
 enum ExerciseType {
@@ -265,83 +322,6 @@ enum ExerciseType {
   GRAMMAR
 }
 
-model ExerciseItem {
-  id              String @id @default(cuid())
-  exerciseId      String
-  question        String
-  correctAnswer   String
-  options         String[] // JSON array for multiple choice
-  explanation     String?
-  points          Int      @default(1)
-  order           Int
-  vocabularyId    String?
-
-  // Relations
-  exercise        Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
-  vocabulary      VocabularyEntry? @relation(fields: [vocabularyId], references: [id])
-
-  @@map("exercise_items")
-}
-
-model UserExercise {
-  id              String @id @default(cuid())
-  userId          String
-  exerciseId      String
-  score           Int?
-  maxScore        Int?
-  timeSpent       Int?   // in seconds
-  completed       Boolean @default(false)
-  answers         Json?  // Store user answers
-  startedAt       DateTime @default(now())
-  completedAt     DateTime?
-
-  // Relations
-  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exercise        Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
-
-  @@map("user_exercises")
-}
-
-// Progress tracking
-model UserProgress {
-  id              String @id @default(cuid())
-  userId          String
-  levelId         String
-  topicId         String?
-  totalWords      Int    @default(0)
-  learnedWords    Int    @default(0)
-  masteredWords   Int    @default(0)
-  streakDays      Int    @default(0)
-  totalStudyTime  Int    @default(0) // in minutes
-  lastActivity    DateTime @default(now())
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  level           VocabularyLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
-  topic           VocabularyTopic? @relation(fields: [topicId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, levelId, topicId])
-  @@map("user_progress")
-}
-
-// Payment system (for premium features)
-model Payment {
-  id              String @id @default(cuid())
-  userId          String?
-  amount          Decimal
-  currency        String @default("VND")
-  status          PaymentStatus @default(PENDING)
-  method          String?
-  transactionId   String? @unique
-  description     String?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  @@map("payments")
-}
-
 enum PaymentStatus {
   PENDING
   COMPLETED
@@ -349,113 +329,24 @@ enum PaymentStatus {
   REFUNDED
 }
 
-// Review system
-model Review {
-  id              String @id @default(cuid())
-  userId          String
-  title           String?
-  content         String
-  rating          Int    // 1-5 stars
-  isPublic        Boolean @default(true)
-  isApproved      Boolean @default(false)
-  nextAllowedDate DateTime?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  // Relations
-  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@map("reviews")
-}
-
-// News articles crawled from German newspapers
-model NewsArticle {
-  id            String   @id @default(cuid())
-  title         String
-  url           String   @unique
-  content       String   // Full article content
-  excerpt       String?  // Article summary
-  author        String?
-  publishedAt   DateTime?
-  source        String   // Newspaper/website name
-  language      String   @default("de") // German
-  wordCount     Int      // For filtering >2000 chars
-  isActive      Boolean  @default(true)
-  difficulty    String?  // A1, A2, B1, B2, C1, C2 (can be determined later)
-  tags          String[] // Array of tags
-  
-  // AI analysis fields
-  isHot         Boolean  @default(false) // Hot/interesting article
-  hotScore      Float?   // AI-generated interest score (0-1)
-  aiAnalysis    String?  // AI analysis summary
-  analyzedAt    DateTime? // When AI analysis was done
-  
-  // User preferences
-  isFavorite    Boolean  @default(false) // User marked as favorite
-  favoriteAt    DateTime? // When marked as favorite
-  
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  @@map("news_articles")
-  @@index([publishedAt, isActive])
-  @@index([source, publishedAt])
-  @@index([isHot, hotScore])
-  @@index([createdAt])
-}
-
-// Crawling job logs
 model CrawlJob {
-  id            String     @id @default(cuid())
-  source        String     // Which newspaper/site was crawled
-  status        CrawlStatus @default(PENDING)
-  articlesFound Int        @default(0)
-  articlesAdded Int        @default(0)
-  startedAt     DateTime   @default(now())
-  completedAt   DateTime?
-  errorMessage  String?
-  
+  id             String           @id @default(cuid())
+  source         String
+  status         CrawlJobStatus   @default(PENDING)
+  articlesFound  Int              @default(0)
+  articlesAdded  Int              @default(0)
+  errorMessage   String?
+  startedAt      DateTime         @default(now())
+  completedAt    DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
   @@map("crawl_jobs")
 }
 
-enum CrawlStatus {
+enum CrawlJobStatus {
   PENDING
   RUNNING
   COMPLETED
   FAILED
-}
-
-// AI Provider Management
-model AIProvider {
-  id          String    @id @default(cuid())
-  name        String    @unique // 'openai', 'gemini', 'claude', etc.
-  displayName String    // 'OpenAI GPT', 'Google Gemini', etc.
-  apiKey      String    // Encrypted API key
-  baseUrl     String?   // Custom base URL if needed
-  isActive    Boolean   @default(false)
-  models      String[]  // Available models for this provider
-  defaultModel String?  // Default model to use
-  temperature Float?    // Default temperature
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  testResults AITestResult[]
-
-  @@map("ai_providers")
-}
-
-model AITestResult {
-  id          String     @id @default(cuid())
-  providerId  String
-  provider    AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
-  model       String
-  prompt      String
-  response    String?
-  success     Boolean
-  error       String?
-  responseTime Int?     // in milliseconds
-  tokensUsed  Int?
-  cost        Float?    // in USD
-  createdAt   DateTime  @default(now())
-
-  @@map("ai_test_results")
 }
