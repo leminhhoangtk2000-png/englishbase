@@ -99,7 +99,7 @@ async function createTestUsers() {
     console.log('• GET /api/permissions?userId=[id] - Check user permissions')
     console.log('• GET /api/test-db - Test database connection')
     console.log('\n🌐 Access URLs:')
-    console.log('• App: http://localhost:9002')
+    console.log('• App: http://localhost:9003')
     console.log('• pgAdmin: http://localhost:5050')
     console.log('• Prisma Studio: npm run db:studio')
 }

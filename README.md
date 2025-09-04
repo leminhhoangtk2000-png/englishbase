@@ -105,7 +105,7 @@ npm run test:users    # Create test accounts
 
 ### Key Commands
 ```bash
-npm run dev           # Development server (port 9002)
+npm run dev           # Development server (port 9003)
 npm run build         # Production build (optimized)
 npm run genkit:dev    # AI development with Genkit
 npm run db:studio     # Visual database management
@@ -118,11 +118,11 @@ npm run docker:up     # Start PostgreSQL + pgAdmin containers
 - `user@edu-theme.com` - Basic user access + core vocabulary
 
 ### 🌐 Key URLs
-- **Main Platform**: http://localhost:9002
-- **Vocabulary**: http://localhost:9002/vocabulary  
-- **Die Neuen News**: http://localhost:9002/die-neuen
-- **Admin Panel**: http://localhost:9002/admin
-- **AI Management**: http://localhost:9002/admin/ai-management
+- **Main Platform**: http://localhost:9003
+- **Vocabulary**: http://localhost:9003/vocabulary  
+- **Die Neuen News**: http://localhost:9003/die-neuen
+- **Admin Panel**: http://localhost:9003/admin
+- **AI Management**: http://localhost:9003/admin/ai-management
 
 ## Architecture
 

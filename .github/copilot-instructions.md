@@ -94,7 +94,7 @@ This is a **German-Vietnamese language learning platform** built with Next.js 15
 # Database workflow
 npm run docker:up && npm run db:push && npm run db:seed
 
-# Development server (port 9002)
+# Development server (port 9003)
 npm run dev
 
 # Production build with optimization
@@ -105,7 +105,7 @@ npm run genkit:dev
 
 # Testing
 npm run test:users  # Create test accounts
-curl http://localhost:9002/api/test-overview  # Verify setup
+curl http://localhost:9003/api/test-overview  # Verify setup
 ```
 
 ### Database Development Pattern
