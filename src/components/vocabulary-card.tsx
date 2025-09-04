@@ -29,7 +29,7 @@ export function VocabularyCard({
         {/* Header với từ vựng và các nút */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h3 className={`font-semibold text-gray-900 ${compact ? 'text-lg' : 'text-xl'}`}>
+            <h3 className={`font-semibold text-gray-900 dark:text-white ${compact ? 'text-lg' : 'text-xl'}`}>
               {word.german}
             </h3>
             <SpeechButton text={word.german} size="sm" />
@@ -39,7 +39,7 @@ export function VocabularyCard({
 
         {/* Phiên âm */}
         {word.phonetic && (
-          <p className={`text-gray-600 italic ${compact ? 'text-sm' : 'text-base'}`}>
+          <p className={`text-gray-600 dark:text-gray-400 italic ${compact ? 'text-sm' : 'text-base'}`}>
             /{word.phonetic}/
           </p>
         )}
@@ -78,7 +78,7 @@ export function VocabularyCard({
             <Separator />
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <p className="text-sm text-gray-700 italic">
+                <p className="text-sm text-gray-700 dark:text-gray-300 italic">
                   "{word.exampleGerman}"
                 </p>
                 <SpeechButton text={word.exampleGerman} size="sm" />

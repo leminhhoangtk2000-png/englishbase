@@ -35,9 +35,15 @@ interface VocabularyTopic {
     slug: string;
 }
 
+interface VocabularySuggestion extends VocabularyEntry {
+    similarity: number;
+    matchType: 'german' | 'vietnamese';
+}
+
 export function VocabularyPageContent() {
     const [searchTerm, setSearchTerm] = React.useState("");
     const [results, setResults] = React.useState<VocabularyEntry[] | null>(null);
+    const [suggestions, setSuggestions] = React.useState<VocabularySuggestion[] | null>(null);
     const [isLoading, setIsLoading] = React.useState(false);
     const [notFound, setNotFound] = React.useState(false);
     const [vocabularyLevels, setVocabularyLevels] = React.useState<VocabularyLevel[]>([]);
@@ -66,16 +72,47 @@ export function VocabularyPageContent() {
         }
     };
 
+    const loadSuggestions = async (term: string) => {
+        try {
+            const response = await fetch(`/api/vocabulary/suggestions?q=${encodeURIComponent(term)}&limit=5`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success && data.data && data.data.length > 0) {
+                    setSuggestions(data.data);
+                    setNotFound(false);
+                    toast({
+                        title: "Không tìm thấy từ chính xác",
+                        description: `Tìm thấy ${data.data.length} từ tương tự cho "${term}"`,
+                        variant: "default",
+                    });
+                } else {
+                    setNotFound(true);
+                    setSuggestions(null);
+                }
+            } else {
+                setNotFound(true);
+                setSuggestions(null);
+            }
+        } catch (error) {
+            console.error('Error loading suggestions:', error);
+            setNotFound(true);
+            setSuggestions(null);
+        }
+    };
+
     const performSearch = async (term: string) => {
         if (!term.trim()) {
             setResults(null);
+            setSuggestions(null);
             setNotFound(false);
             return;
         }
 
         setIsLoading(true);
         setNotFound(false);
-        setResults(null);
+        setSuggestions(null);
+        // Don't clear results immediately to avoid flash of empty state
+        // setResults(null);
         setSearchTerm(term);
 
         try {
@@ -84,6 +121,7 @@ export function VocabularyPageContent() {
             if (response.ok) {
                 const data = await response.json();
                 if (data.data && data.data.length > 0) {
+                    // Use database data
                     setResults(data.data);
                     // Add found words to history
                     data.data.forEach((word: VocabularyEntry) => {
@@ -106,27 +144,74 @@ export function VocabularyPageContent() {
             if (aiResponse.ok) {
                 const aiData = await aiResponse.json();
                 if (aiData.success && aiData.data) {
-                    setResults([aiData.data]);
-                    addToHistory(aiData.data);
+                    // Transform AI data to VocabularyEntry format
+                    const transformedEntry: VocabularyEntry = {
+                        id: aiData.data.id,
+                        german: aiData.data.definitions.german,
+                        vietnamese: aiData.data.definitions.vietnamese,
+                        phonetic: aiData.data.pronunciation,
+                        plural: aiData.data.plural,
+                        type: aiData.data.partOfSpeech,
+                        exampleGerman: aiData.data.examples?.[0]?.german,
+                        exampleVietnamese: aiData.data.examples?.[0]?.vietnamese,
+                        difficulty: aiData.data.difficulty || 3,
+                        frequency: aiData.data.frequency || 1,
+                        tags: aiData.data.tags || [],
+                        level: {
+                            id: `level-${aiData.data.level.toLowerCase()}`,
+                            name: aiData.data.level,
+                            displayName: `Grundstufe ${aiData.data.level}`
+                        },
+                        topic: {
+                            id: 'topic-general',
+                            name: 'allgemein',
+                            displayName: 'Tổng quát',
+                            slug: 'allgemein'
+                        }
+                    };
+
+                    setResults([transformedEntry]);
+                    console.log('Adding to history:', transformedEntry); // Debug log
+                    addToHistory(transformedEntry);
+                    setIsLoading(false); // Set loading to false immediately
                     
                     // Show toast indicating source
                     toast({
-                        title: aiData.source === 'ai_generated' ? "Từ vựng mới đã được tạo!" : "Tìm thấy trong cơ sở dữ liệu",
+                        title: aiData.source === 'ai_generated' ? "Từ vựng mới đã được tạo!" : 
+                               aiData.source === 'ai_updated' ? "Đã cập nhật từ vựng!" :
+                               "Tìm thấy trong cơ sở dữ liệu",
                         description: aiData.source === 'ai_generated' 
                             ? "AI đã tạo và lưu từ vựng mới vào hệ thống"
+                            : aiData.source === 'ai_updated'
+                            ? "AI đã bổ sung thông tin chi tiết cho từ vựng này"
                             : "Từ vựng đã có sẵn trong cơ sở dữ liệu",
                         variant: "default",
                     });
+                    return; // Return early to avoid finally block
                 } else {
-                    setNotFound(true);
+                    // AI couldn't find or create the word, try to get suggestions
+                    await loadSuggestions(term);
                 }
             } else {
-                setNotFound(true);
-                toast({
-                    title: "Lỗi tìm kiếm",
-                    description: "Không thể tìm kiếm từ vựng. Vui lòng thử lại.",
-                    variant: "destructive",
-                });
+                // Handle different error types
+                const errorData = await aiResponse.json().catch(() => ({}));
+                
+                if (aiResponse.status === 400 && errorData.error === 'Giới hạn tìm kiếm') {
+                    // Word count limit exceeded
+                    toast({
+                        title: "Giới hạn tìm kiếm",
+                        description: errorData.message || "Chỉ hỗ trợ tìm kiếm tối đa 3 từ trong 1 lần.",
+                        variant: "destructive",
+                    });
+                } else {
+                    // General error
+                    setNotFound(true);
+                    toast({
+                        title: "Lỗi tìm kiếm",
+                        description: "Không thể tìm kiếm từ vựng. Vui lòng thử lại.",
+                        variant: "destructive",
+                    });
+                }
             }
         } catch (error) {
             console.error('Search error:', error);
@@ -203,7 +288,7 @@ export function VocabularyPageContent() {
                 <form className="flex gap-2" onSubmit={handleSearchSubmit}>
                     <Input
                         type="text"
-                        placeholder="Nhập từ tiếng Đức hoặc tiếng Việt..."
+                        placeholder="Nhập từ tiếng Đức hoặc tiếng Việt (tối đa 3 từ)..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="flex-1"
@@ -216,6 +301,9 @@ export function VocabularyPageContent() {
                         )}
                     </Button>
                 </form>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
+                    💡 Mẹo: Tìm kiếm tối đa 3 từ trong 1 lần để có kết quả tốt nhất
+                </p>
             </div>
 
             {/* Search Results */}
@@ -240,14 +328,74 @@ export function VocabularyPageContent() {
                 </div>
             )}
 
+            {/* Suggestions */}
+            {!isLoading && suggestions && suggestions.length > 0 && (
+                <div id="suggestions">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Search className="w-5 h-5" />
+                                Có thể bạn muốn tìm
+                            </CardTitle>
+                            <CardDescription>
+                                Tìm thấy {suggestions.length} từ tương tự cho "{searchTerm}"
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                            {suggestions.map((entry, index) => (
+                                <div 
+                                    key={entry.id} 
+                                    className="border rounded-lg p-3 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+                                    onClick={() => {
+                                        setSearchTerm(entry.german);
+                                        performSearch(entry.german);
+                                    }}
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-2">
+                                                <h4 className="font-semibold text-gray-900 dark:text-white">
+                                                    {entry.german}
+                                                </h4>
+                                                <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-2 py-1 rounded-full">
+                                                    {Math.round(entry.similarity * 100)}% giống
+                                                </span>
+                                            </div>
+                                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                                                {entry.vietnamese}
+                                            </p>
+                                            {entry.phonetic && (
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 italic">
+                                                    /{entry.phonetic}/
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="text-right">
+                                            <span className="text-xs text-gray-500 dark:text-gray-400">
+                                                {entry.type}
+                                            </span>
+                                            {entry.level && (
+                                                <p className="text-xs text-purple-600 dark:text-purple-400">
+                                                    {entry.level.displayName}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </CardContent>
+                    </Card>
+                </div>
+            )}
+
             {/* Not Found */}
-            {notFound && (
+            {notFound && !suggestions && (
                 <div className="text-center py-12">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
                         <Search className="h-8 w-8 text-gray-400" />
                     </div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">Không tìm thấy kết quả</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy kết quả</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
                         Chúng tôi không tìm thấy từ nào phù hợp với <strong>"{searchTerm}"</strong>.
                         <br />Hãy thử với từ khóa khác hoặc kiểm tra chính tả.
                     </p>
@@ -322,7 +470,7 @@ export function VocabularyPageContent() {
                                                                                 ))}
                                                                             </div>
                                                                         ) : (
-                                                                            <p className="text-sm text-gray-500 italic">
+                                                                            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
                                                                                 Nhấn để tải từ vựng cho chủ đề này
                                                                             </p>
                                                                         )}
@@ -331,7 +479,7 @@ export function VocabularyPageContent() {
                                                             ))}
                                                         </Accordion>
                                                     ) : (
-                                                        <p className="text-sm text-gray-500 italic pl-4">
+                                                        <p className="text-sm text-gray-500 dark:text-gray-400 italic pl-4">
                                                             Chưa có chủ đề nào cho cấp độ này
                                                         </p>
                                                     )}

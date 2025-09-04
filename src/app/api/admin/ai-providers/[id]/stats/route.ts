@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 interface StatsParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function GET(
@@ -12,7 +12,7 @@ export async function GET(
   { params }: StatsParams
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const url = new URL(request.url);
     const days = parseInt(url.searchParams.get('days') || '7');
 

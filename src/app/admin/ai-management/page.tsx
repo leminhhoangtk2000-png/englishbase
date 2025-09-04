@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { formatCost, formatTokens, getSuccessRateColor } from '@/lib/ai-utils';
+import AIVocabularyConfig from '@/components/ai-vocabulary-config';
 
 interface AIProvider {
   id: string;
@@ -455,6 +456,11 @@ export default function AIManagementPage() {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* AI Vocabulary Configuration */}
+      <div className="mb-8">
+        <AIVocabularyConfig />
       </div>
 
       {/* Providers Table */}

@@ -13,6 +13,8 @@ interface VocabularyHistoryCardProps {
 
 export function VocabularyHistoryCard({ className = '' }: VocabularyHistoryCardProps) {
   const { searchHistory, clearHistory, addToHistory } = useVocabulary();
+  
+  console.log('VocabularyHistoryCard - searchHistory:', searchHistory); // Debug log
 
   const handleSearchAgain = (word: VocabularyEntry) => {
     // Re-add to history to move to top

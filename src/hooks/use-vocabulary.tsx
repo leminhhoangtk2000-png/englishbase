@@ -70,6 +70,7 @@ export function VocabularyProvider({ children }: { children: React.ReactNode }) 
 
   // Save search history to localStorage
   useEffect(() => {
+    console.log('Saving search history to localStorage:', searchHistory); // Debug log
     localStorage.setItem('vocabulary-search-history', JSON.stringify(searchHistory));
   }, [searchHistory]);
 
@@ -79,13 +80,16 @@ export function VocabularyProvider({ children }: { children: React.ReactNode }) 
   }, [savedVocabulary]);
 
   const addToHistory = (word: VocabularyEntry) => {
+    console.log('addToHistory called with:', word); // Debug log
     setSearchHistory(prev => {
       // Remove if already exists
       const filtered = prev.filter(w => w.id !== word.id);
       // Add to beginning
       const newHistory = [word, ...filtered];
       // Keep only last MAX_HISTORY_SIZE items
-      return newHistory.slice(0, MAX_HISTORY_SIZE);
+      const result = newHistory.slice(0, MAX_HISTORY_SIZE);
+      console.log('New search history:', result); // Debug log
+      return result;
     });
   };
 

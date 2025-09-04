@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { VocabularyCard } from './vocabulary-card';
 import { useVocabularySearch } from '@/hooks/use-vocabulary-search';
-import { useVocabulary } from '@/hooks/use-vocabulary';
+import { useVocabulary, VocabularyEntry as SavedVocabularyEntry } from '@/hooks/use-vocabulary';
 import { VocabularyEntry } from '@/types/vocabulary';
 
 interface VocabularySidebarProps {
@@ -30,6 +30,34 @@ const quickSuggestions = [
   'Energie', 'Politik', 'Umwelt', 'Wirtschaft', 'Bildung', 
   'Gesundheit', 'Technologie', 'Kultur', 'Sport', 'Wetter'
 ];
+
+// Transform function to convert VocabularyEntry to SavedVocabularyEntry
+const transformToSavedEntry = (entry: VocabularyEntry): SavedVocabularyEntry => {
+  return {
+    id: entry.id,
+    german: entry.definitions.german,
+    vietnamese: entry.definitions.vietnamese,
+    phonetic: entry.pronunciation,
+    plural: '',
+    type: entry.partOfSpeech,
+    exampleGerman: entry.examples[0]?.german || '',
+    exampleVietnamese: entry.examples[0]?.vietnamese || '',
+    difficulty: 3,
+    frequency: 1,
+    tags: [],
+    level: {
+      id: entry.level,
+      name: entry.level,
+      displayName: entry.level
+    },
+    topic: {
+      id: 'general',
+      name: 'general',
+      displayName: 'General',
+      slug: 'general'
+    }
+  };
+};
 
 export function VocabularySidebar({ className = '' }: VocabularySidebarProps) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -86,7 +114,7 @@ export function VocabularySidebar({ className = '' }: VocabularySidebarProps) {
     if (isWordSaved(entry.id)) {
       removeFromSaved(entry.id);
     } else {
-      addToSaved(entry);
+      addToSaved(transformToSavedEntry(entry));
     }
   };
 

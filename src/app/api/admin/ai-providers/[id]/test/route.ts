@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 interface TestParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function POST(
@@ -12,7 +12,7 @@ export async function POST(
   { params }: TestParams
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
     const { testPrompt = "Hello, this is a test message. Please respond with 'Test successful'." } = body;
 

@@ -118,10 +118,10 @@ Berlins Kultursenator Michael Schmidt lobte das neue Museum: "Berlin stärkt dam
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const article = mockArticleDetails[id as keyof typeof mockArticleDetails];
     

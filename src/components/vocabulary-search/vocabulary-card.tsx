@@ -71,9 +71,9 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
               {entry.level || 'A1'}
             </Badge>
             <Badge 
-              className={`${getTypeColor(entry.partOfSpeech || entry.type)} px-3 py-1.5 text-sm font-medium shadow-md`}
+              className={`${getTypeColor(entry.partOfSpeech || 'NOMEN')} px-3 py-1.5 text-sm font-medium shadow-md`}
             >
-              {entry.partOfSpeech || entry.type || 'NOMEN'}
+              {entry.partOfSpeech || 'NOMEN'}
             </Badge>
           </div>
           <Button
@@ -95,14 +95,14 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
           {/* Từ vựng chính */}
           <div className="space-y-3">
             <div className="flex items-center gap-4">
-              <h3 className="font-bold text-3xl bg-gradient-to-r from-gray-800 to-blue-800 bg-clip-text text-transparent break-words">
+              <h3 className="font-bold text-3xl bg-gradient-to-r from-gray-800 to-blue-800 dark:from-gray-200 dark:to-blue-200 bg-clip-text text-transparent break-words">
                 {entry.word}
               </h3>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => handleSpeak(entry.word)}
-                className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 border-blue-200 transition-all duration-200 hover:scale-105 shadow-sm"
+                className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:text-blue-400 dark:hover:text-blue-300 dark:hover:bg-blue-900/20 border-blue-200 dark:border-blue-700 transition-all duration-200 hover:scale-105 shadow-sm"
               >
                 <Volume2 className="h-4 w-4" />
               </Button>
@@ -110,8 +110,8 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
             
             {/* Phiên âm */}
             {entry.pronunciation && (
-              <div className="bg-gradient-to-r from-gray-50 to-slate-50 px-3 py-2 rounded-lg border border-gray-200">
-                <p className="text-sm text-gray-700 font-mono">
+              <div className="bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800 dark:to-slate-800 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300 font-mono">
                   /{entry.pronunciation}/
                 </p>
               </div>
@@ -123,28 +123,28 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
           {/* Định nghĩa */}
           <div className="space-y-4">
             {entry.definitions?.vietnamese && (
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100/50 border border-purple-200 rounded-xl p-4 shadow-sm">
+              <div className="bg-gradient-to-r from-purple-50 to-purple-100/50 dark:from-purple-900/30 dark:to-purple-800/30 border border-purple-200 dark:border-purple-700 rounded-xl p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs font-bold">🇻🇳</span>
                   </div>
-                  <span className="font-semibold text-purple-900">Tiếng Việt</span>
+                  <span className="font-semibold text-purple-900 dark:text-purple-200">Tiếng Việt</span>
                 </div>
-                <p className="text-purple-800 leading-relaxed font-medium">
+                <p className="text-purple-800 dark:text-purple-100 leading-relaxed font-medium">
                   {entry.definitions.vietnamese}
                 </p>
               </div>
             )}
 
             {entry.definitions?.german && (
-              <div className="bg-gradient-to-r from-amber-50 to-yellow-50/50 border border-amber-200 rounded-xl p-4 shadow-sm">
+              <div className="bg-gradient-to-r from-amber-50 to-yellow-50/50 dark:from-amber-900/30 dark:to-yellow-800/30 border border-amber-200 dark:border-amber-700 rounded-xl p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-6 h-6 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs font-bold">🇩🇪</span>
                   </div>
-                  <span className="font-semibold text-amber-900">Deutsch</span>
+                  <span className="font-semibold text-amber-900 dark:text-amber-200">Deutsch</span>
                 </div>
-                <p className="text-amber-800 leading-relaxed font-medium">
+                <p className="text-amber-800 dark:text-amber-100 leading-relaxed font-medium">
                   {entry.definitions.german}
                 </p>
               </div>
@@ -168,28 +168,28 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
           {/* Ví dụ */}
           {entry.examples && entry.examples.length > 0 && (
             <div className="space-y-3">
-              <Separator className="bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+              <Separator className="bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
               <div className="flex items-center gap-2 mb-3">
-                <BookOpen className="h-5 w-5 text-slate-600" />
-                <h4 className="text-lg font-semibold text-slate-700">Ví dụ</h4>
+                <BookOpen className="h-5 w-5 text-slate-600 dark:text-slate-400" />
+                <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Ví dụ</h4>
               </div>
               <div className="space-y-3">
                 {entry.examples.slice(0, 2).map((example, index) => (
-                  <div key={index} className="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-4 border border-slate-200 shadow-sm">
+                  <div key={index} className="bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-800 dark:to-gray-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm">
                     <div className="flex items-start justify-between gap-3 mb-2">
-                      <p className="text-slate-700 italic flex-1 break-words leading-relaxed font-medium">
+                      <p className="text-slate-700 dark:text-slate-300 italic flex-1 break-words leading-relaxed font-medium">
                         "{example.german}"
                       </p>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => handleSpeak(example.german)}
-                        className="text-blue-600 hover:text-blue-700 p-1 flex-shrink-0 hover:scale-105 transition-all"
+                        className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-1 flex-shrink-0 hover:scale-105 transition-all"
                       >
                         <Volume2 className="w-4 h-4" />
                       </Button>
                     </div>
-                    <p className="text-purple-600 italic break-words leading-relaxed">
+                    <p className="text-purple-600 dark:text-purple-300 italic break-words leading-relaxed">
                       "{example.vietnamese}"
                     </p>
                   </div>

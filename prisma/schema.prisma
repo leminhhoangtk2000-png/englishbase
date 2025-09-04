@@ -405,3 +405,15 @@ model AIUsage {
 
   @@map("ai_usage")
 }
+
+model AIVocabularyConfig {
+  id                  Int      @id @default(1)
+  preferredProviderId String?
+  fallbackProviderIds String[]
+  enableAutoFallback  Boolean  @default(true)
+  maxRetries          Int      @default(3)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("ai_vocabulary_config")
+}

@@ -1,6 +1,5 @@
 "use client";
 
-import { VocabularyProvider } from "@/hooks/use-vocabulary";
 import { TTSProvider } from "@/hooks/use-tts";
 import { VocabularyPageContent } from "@/components/vocabulary-page-content";
 
@@ -14,11 +13,9 @@ export default function VocabularyPage() {
         </p>
       </div>
       
-      <VocabularyProvider>
-        <TTSProvider>
-          <VocabularyPageContent />
-        </TTSProvider>
-      </VocabularyProvider>
+      <TTSProvider>
+        <VocabularyPageContent />
+      </TTSProvider>
     </div>
   )
 }

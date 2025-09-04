@@ -9,43 +9,88 @@ function classifyTopic(german: string, vietnamese: string, type: string): string
   
   // Family and relationships
   if (word.includes('vater') || word.includes('mutter') || word.includes('kind') || 
-      word.includes('eltern') || viWord.includes('cha') || viWord.includes('mẹ') || 
-      viWord.includes('con') || viWord.includes('gia đình')) {
+      word.includes('eltern') || word.includes('familie') ||
+      viWord.includes('cha') || viWord.includes('mẹ') || 
+      viWord.includes('con') || viWord.includes('gia đình') || viWord.includes('bố') || viWord.includes('má')) {
     return 'familie'
   }
   
   // Body parts
   if (word.includes('kopf') || word.includes('hand') || word.includes('fuß') ||
-      word.includes('auge') || viWord.includes('đầu') || viWord.includes('tay') ||
-      viWord.includes('chân') || viWord.includes('mắt')) {
+      word.includes('auge') || word.includes('körper') || word.includes('nase') ||
+      viWord.includes('đầu') || viWord.includes('tay') ||
+      viWord.includes('chân') || viWord.includes('mắt') || viWord.includes('cơ thể')) {
     return 'koerper'
   }
   
   // Food and drinks
   if (word.includes('essen') || word.includes('trinken') || word.includes('brot') ||
-      word.includes('wasser') || viWord.includes('ăn') || viWord.includes('uống') ||
-      viWord.includes('bánh') || viWord.includes('nước')) {
+      word.includes('wasser') || word.includes('küche') || word.includes('restaurant') ||
+      viWord.includes('ăn') || viWord.includes('uống') ||
+      viWord.includes('bánh') || viWord.includes('nước') || viWord.includes('thức ăn')) {
     return 'essen-trinken'
+  }
+  
+  // Home and living (household items)
+  if (word.includes('kühlschrank') || word.includes('bett') || word.includes('tisch') ||
+      word.includes('stuhl') || word.includes('fenster') || word.includes('tür') ||
+      word.includes('haus') || word.includes('wohnung') ||
+      viWord.includes('tủ lạnh') || viWord.includes('giường') || viWord.includes('bàn') ||
+      viWord.includes('ghế') || viWord.includes('cửa sổ') || viWord.includes('nhà')) {
+    return 'wohnen'
+  }
+  
+  // Clothing
+  if (word.includes('kleid') || word.includes('hose') || word.includes('hemd') ||
+      word.includes('schuhe') || word.includes('jacke') ||
+      viWord.includes('quần áo') || viWord.includes('áo') || viWord.includes('quần') ||
+      viWord.includes('giày') || viWord.includes('váy')) {
+    return 'kleidung'
   }
   
   // Colors
   if (word.includes('rot') || word.includes('blau') || word.includes('grün') ||
-      word.includes('gelb') || viWord.includes('đỏ') || viWord.includes('xanh') ||
-      viWord.includes('vàng')) {
+      word.includes('gelb') || word.includes('schwarz') || word.includes('weiß') ||
+      viWord.includes('đỏ') || viWord.includes('xanh') ||
+      viWord.includes('vàng') || viWord.includes('màu')) {
     return 'farben'
   }
   
   // Numbers
   if (word.includes('eins') || word.includes('zwei') || word.includes('drei') ||
-      viWord.includes('một') || viWord.includes('hai') || viWord.includes('ba')) {
+      word.includes('zahl') || word.includes('nummer') ||
+      viWord.includes('một') || viWord.includes('hai') || viWord.includes('ba') ||
+      viWord.includes('số')) {
     return 'zahlen'
   }
   
   // Time
   if (word.includes('zeit') || word.includes('tag') || word.includes('woche') ||
-      word.includes('monat') || viWord.includes('thời gian') || viWord.includes('ngày') ||
-      viWord.includes('tuần') || viWord.includes('tháng')) {
+      word.includes('monat') || word.includes('jahr') || word.includes('uhr') ||
+      viWord.includes('thời gian') || viWord.includes('ngày') ||
+      viWord.includes('tuần') || viWord.includes('tháng') || viWord.includes('giờ')) {
     return 'zeit'
+  }
+  
+  // Work and profession
+  if (word.includes('arbeit') || word.includes('beruf') || word.includes('job') ||
+      word.includes('büro') || word.includes('firma') ||
+      viWord.includes('công việc') || viWord.includes('nghề') || viWord.includes('làm việc')) {
+    return 'beruf'
+  }
+  
+  // Transportation
+  if (word.includes('auto') || word.includes('bus') || word.includes('zug') ||
+      word.includes('flugzeug') || word.includes('fahren') ||
+      viWord.includes('xe') || viWord.includes('máy bay') || viWord.includes('tàu')) {
+    return 'verkehr'
+  }
+  
+  // School and education
+  if (word.includes('schule') || word.includes('lehrer') || word.includes('student') ||
+      word.includes('lernen') || word.includes('buch') ||
+      viWord.includes('học') || viWord.includes('trường') || viWord.includes('giáo viên')) {
+    return 'schule'
   }
   
   // Verbs
@@ -156,13 +201,27 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Check word count limit (maximum 3 words per search)
+    const wordCount = word.trim().split(/\s+/).length
+    if (wordCount > 3) {
+      return NextResponse.json(
+        { 
+          error: 'Giới hạn tìm kiếm', 
+          message: 'Chúng tôi chỉ hỗ trợ tìm kiếm tối đa 3 từ trong 1 lần. Vui lòng thử lại với ít từ hơn.',
+          maxWords: 3,
+          currentWords: wordCount
+        },
+        { status: 400 }
+      )
+    }
     
     // First check if word already exists in database
     const existingWord = await prisma.vocabularyEntry.findFirst({
       where: {
         OR: [
-          { german: { contains: word, mode: 'insensitive' } },
-          { vietnamese: { contains: word, mode: 'insensitive' } }
+          { german: { equals: word, mode: 'insensitive' } },
+          { vietnamese: { equals: word, mode: 'insensitive' } }
         ]
       },
       include: {
@@ -172,103 +231,180 @@ export async function POST(request: NextRequest) {
     })
     
     if (existingWord) {
-      // Transform database model to match VocabularyEntry interface
-      const transformedEntry = {
-        id: existingWord.id,
-        word: existingWord.german,
-        pronunciation: existingWord.phonetic,
-        partOfSpeech: existingWord.type,
-        level: existingWord.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
-        definitions: {
-          german: existingWord.german,
-          vietnamese: existingWord.vietnamese,
-        },
-        examples: existingWord.exampleGerman && existingWord.exampleVietnamese ? [{
-          german: existingWord.exampleGerman,
-          vietnamese: existingWord.exampleVietnamese
-        }] : [],
-        createdAt: existingWord.createdAt.toISOString(),
-        updatedAt: existingWord.updatedAt.toISOString(),
-        source: 'database' as const
+      // Check if existing word has incomplete information
+      const hasIncompleteInfo = 
+        existingWord.vietnamese === 'chưa có nghĩa' ||
+        existingWord.vietnamese === 'Từ mới (cần bổ sung)' ||
+        existingWord.phonetic === '/không xác định/' ||
+        existingWord.phonetic === '' ||
+        !existingWord.phonetic;
+      
+      // If data is complete, return it
+      if (!hasIncompleteInfo) {
+        // Transform database model to match VocabularyEntry interface
+        const transformedEntry = {
+          id: existingWord.id,
+          word: existingWord.german,
+          pronunciation: existingWord.phonetic,
+          partOfSpeech: existingWord.type,
+          level: existingWord.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
+          definitions: {
+            german: existingWord.german,
+            vietnamese: existingWord.vietnamese,
+          },
+          examples: existingWord.exampleGerman && existingWord.exampleVietnamese ? [{
+            german: existingWord.exampleGerman,
+            vietnamese: existingWord.exampleVietnamese
+          }] : [],
+          createdAt: existingWord.createdAt.toISOString(),
+          updatedAt: existingWord.updatedAt.toISOString(),
+          source: 'database' as const
+        }
+
+        return NextResponse.json({
+          success: true,
+          data: transformedEntry,
+          source: 'database'
+        })
       }
       
-      return NextResponse.json({
-        success: true,
-        data: transformedEntry,
-        source: 'database'
-      })
+      // If data is incomplete, continue to AI generation to update it
+      console.log('Found existing word with incomplete data, updating with AI:', existingWord.german);
     }
     
-    // If not found, use AI Management system to translate and classify
+    // If not found or incomplete, use AI Management system to translate and classify
     console.log(`AI Management system translating word: ${word}`)
     
-    // Get active AI provider from AI Management system
-    const providersResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:9002'}/api/admin/ai-providers`);
-    const providersData = await providersResponse.json();
-    const activeProvider = providersData.providers?.find((p: any) => p.isActive);
+    // Get AI vocabulary configuration
+    const configResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:9002'}/api/admin/ai-vocabulary-config`);
+    const configData = await configResponse.json();
     
-    if (!activeProvider) {
+    if (!configData.success || !configData.data.config.preferredProviderId) {
       return NextResponse.json(
-        { error: 'No active AI provider available' },
+        { error: 'No AI provider configured for vocabulary search' },
         { status: 500 }
       )
     }
 
-    // Call the AI provider test endpoint for vocabulary definition
-    const aiResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:9002'}/api/admin/ai-providers/${activeProvider.id}/test`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        testPrompt: `Provide a German-Vietnamese vocabulary definition for the word "${word}". Create vocabulary cards that exactly match this format:
+    const config = configData.data.config;
+    const providers = configData.data.providers;
+    
+    // Try providers with enhanced retry logic
+    const providersToTry = [config.preferredProviderId];
+    if (config.enableAutoFallback) {
+      providersToTry.push(...config.fallbackProviderIds);
+    }
+    
+    let lastError = null;
+    let aiResult = null;
+    let successfulProviderId = null;
+    
+    for (let i = 0; i < Math.min(providersToTry.length, config.maxRetries); i++) {
+      const providerId = providersToTry[i];
+      
+      try {
+        console.log(`Trying AI provider ${i + 1}/${providersToTry.length}: ${providerId}`)
+        
+        // Enhanced retry for each provider (up to 2 attempts per provider)
+        for (let attempt = 1; attempt <= 2; attempt++) {
+          try {
+            console.log(`Provider ${providerId}, attempt ${attempt}/2`);
+            
+            const aiResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:9002'}/api/admin/ai-providers/${providerId}/test`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ 
+                testPrompt: `You are a German-Vietnamese dictionary expert. Create a vocabulary entry for "${word}".
 
-For the word "${word}", provide JSON with these exact keys:
+CRITICAL: Return ONLY valid JSON. No explanations, no markdown, no code blocks.
 
+Required JSON format:
 {
-  "german": "The complete German word with article (der/die/das) if it's a noun",
-  "plural": "Plural form (use '-' if no plural exists)",
-  "phonetic": "IPA phonetic transcription like /vɔrt/",
+  "german": "German word with article if noun",
+  "plural": "Plural form or '-'",
+  "phonetic": "IPA pronunciation",
   "vietnamese": "Vietnamese translation",
-  "type": "Word type (Nomen, Verb, Adjektiv, etc.)",
-  "level": "CEFR level (A1, A2, B1, B2, C1, or C2)",
-  "exampleGerman": "Example sentence in German using the word",
-  "exampleVietnamese": "Vietnamese translation of the example sentence"
+  "type": "NOMEN or VERB or ADJEKTIV or ADVERB",
+  "level": "A1 or A2 or B1 or B2 or C1 or C2",
+  "exampleGerman": "German example sentence",
+  "exampleVietnamese": "Vietnamese example sentence"
 }
 
-Requirements:
-- For nouns: Include article (der/die/das) in "german" field
-- For verbs: Use infinitive form
-- Level should be one of: A1, A2, B1, B2, C1, C2
-- Provide realistic, useful examples
-- Ensure Vietnamese translations are accurate
+Rules:
+- Nouns: include der/die/das
+- Verbs: infinitive form
+- Adjectives: base form
+- Type: UPPERCASE only
+- Examples: simple, practical sentences
 
-Respond with ONLY the JSON object, no additional text.`
-      }),
-    });
+Word: "${word}"`
+              }),
+            });
 
-    if (!aiResponse.ok) {
-      return NextResponse.json(
-        { error: 'AI provider failed to generate vocabulary' },
-        { status: 500 }
-      )
+            if (aiResponse.ok) {
+              const result = await aiResponse.json();
+              console.log(`AI Provider ${providerId} response:`, JSON.stringify(result, null, 2));
+              
+              if (result.success && result.result?.response) {
+                console.log(`Successfully got response from provider ${providerId} on attempt ${attempt}`);
+                console.log(`Raw AI response text:`, result.result.response);
+                aiResult = result;
+                successfulProviderId = providerId;
+                break; // Success, exit retry loop
+              } else {
+                console.log(`Provider ${providerId} attempt ${attempt} returned unsuccessful result:`, result);
+                if (attempt === 2) {
+                  lastError = `Provider ${providerId} returned no valid response after 2 attempts`;
+                }
+              }
+            } else {
+              console.log(`Provider ${providerId} attempt ${attempt} HTTP error:`, aiResponse.status, aiResponse.statusText);
+              if (attempt === 2) {
+                lastError = `Provider ${providerId} HTTP error: ${aiResponse.status}`;
+              }
+            }
+          } catch (attemptError) {
+            console.error(`Provider ${providerId} attempt ${attempt} failed:`, attemptError);
+            if (attempt === 2) {
+              lastError = `Provider ${providerId} failed: ${attemptError instanceof Error ? attemptError.message : 'Unknown error'}`;
+            }
+          }
+          
+          // Small delay between attempts
+          if (attempt === 1) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+        }
+        
+        if (aiResult && successfulProviderId) {
+          break; // Success, exit provider loop
+        }
+        
+      } catch (error) {
+        lastError = `Provider ${providerId} failed: ${error instanceof Error ? error.message : 'Unknown error'}`;
+        console.error(`AI provider ${providerId} failed:`, error);
+      }
     }
-
-    const aiResult = await aiResponse.json();
     
-    if (!aiResult.success || !aiResult.result?.response) {
+    if (!aiResult || !aiResult.success || !aiResult.result?.response) {
       return NextResponse.json(
-        { error: 'AI provider returned invalid response' },
+        { error: lastError || 'All AI providers failed to generate vocabulary' },
         { status: 500 }
       )
     }
 
-    // Parse AI response
+    // Parse AI response with multiple fallback strategies
     let aiData: any;
     try {
       let responseText = aiResult.result.response;
+      console.log('Raw AI response:', responseText);
       
-      // Clean up markdown code blocks if present
+      // Strategy 1: Clean response text thoroughly
+      responseText = responseText.trim();
+      
+      // Remove markdown code blocks
       if (responseText.includes('```json')) {
         responseText = responseText.replace(/```json\s*/g, '').replace(/```\s*$/g, '');
       }
@@ -276,91 +412,303 @@ Respond with ONLY the JSON object, no additional text.`
         responseText = responseText.replace(/```\s*/g, '');
       }
       
-      aiData = JSON.parse(responseText.trim());
+      // Strategy 2: Extract JSON from text
+      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        responseText = jsonMatch[0];
+      }
+      
+      // Strategy 3: Clean common AI response patterns
+      responseText = responseText
+        .replace(/^[^{]*/, '') // Remove text before first {
+        .replace(/[^}]*$/, '') // Remove text after last }
+        .replace(/^\s*JSON:\s*/, '') // Remove "JSON:" prefix
+        .replace(/^\s*Response:\s*/, '') // Remove "Response:" prefix
+        .trim();
+      
+      console.log('Cleaned response:', responseText);
+      
+      // Strategy 4: Parse JSON
+      aiData = JSON.parse(responseText);
+      
+      // Strategy 5: Validate and fix required fields
+      const requiredFields = {
+        'german': 'Unknown word',
+        'vietnamese': 'Từ chưa xác định', 
+        'type': 'NOMEN',
+        'level': 'A1',
+        'phonetic': '/unknown/',
+        'plural': '-',
+        'exampleGerman': `Das ist ${word}.`,
+        'exampleVietnamese': `Đây là ${word}.`
+      };
+      
+      for (const [field, defaultValue] of Object.entries(requiredFields)) {
+        if (!aiData[field] || aiData[field].trim() === '') {
+          aiData[field] = defaultValue;
+          console.log(`Fixed missing field ${field} with default: ${defaultValue}`);
+        }
+      }
+      
+      // Normalize type field
+      if (aiData.type) {
+        aiData.type = aiData.type.toUpperCase();
+        if (!['NOMEN', 'VERB', 'ADJEKTIV', 'ADVERB', 'PRONOUN', 'PREPOSITION', 'CONJUNCTION', 'OTHER'].includes(aiData.type)) {
+          aiData.type = 'NOMEN'; // Default fallback
+        }
+      }
+      
+      // Normalize level field
+      if (aiData.level) {
+        aiData.level = aiData.level.toUpperCase();
+        if (!['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(aiData.level)) {
+          aiData.level = 'A1'; // Default fallback
+        }
+      }
+      
+      console.log('Processed AI data:', aiData);
+      
     } catch (parseError) {
-      console.error('Failed to parse AI response:', parseError);
-      return NextResponse.json(
-        { error: 'AI response is not valid JSON' },
-        { status: 500 }
-      )
+      console.error('JSON parsing failed, trying simple translation fallback...');
+      console.error('Parse error:', parseError);
+      console.error('Original response:', aiResult.result.response);
+      
+      // Strategy 6: Simple translation fallback - try to get basic translation
+      try {
+        console.log('Attempting simple translation for:', word);
+        
+        // Try a simpler prompt for just translation using the same provider logic
+        const simplePrompt = `Translate the German word "${word}" to Vietnamese. Respond with just the Vietnamese translation, nothing else.`;
+        
+        // Use the same provider from previous attempt
+        const simpleResponse = await fetch(`/api/admin/ai-providers/${config.preferredProviderId}/test`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ testPrompt: simplePrompt })
+        });
+        
+        if (simpleResponse.ok) {
+          const simpleResult = await simpleResponse.json();
+          
+          if (simpleResult.success && simpleResult.result?.response) {
+            const vietnameseTranslation = simpleResult.result.response.trim()
+              .replace(/["""'']/g, '') // Remove quotes
+              .replace(/\.$/, '') // Remove trailing period
+              .trim();
+            
+            console.log('Got simple translation:', vietnameseTranslation);
+            
+            aiData = {
+              german: word,
+              vietnamese: vietnameseTranslation || 'chưa có nghĩa',
+              phonetic: '/không xác định/',
+              plural: '-',
+              type: 'NOMEN',
+              level: 'A1',
+              exampleGerman: `Das ist ${word}.`,
+              exampleVietnamese: `Đây là ${vietnameseTranslation || word}.`
+            };
+          } else {
+            throw new Error('Simple translation API failed');
+          }
+        } else {
+          throw new Error('Simple translation request failed');
+        }
+        
+      } catch (simpleError) {
+        console.error('Simple translation also failed:', simpleError);
+        
+        // Strategy 7: Complete fallback - create manual entry
+        aiData = {
+          german: word,
+          vietnamese: 'chưa có nghĩa',
+          phonetic: '/không xác định/',
+          plural: '-',
+          type: 'NOMEN',
+          level: 'A1',
+          exampleGerman: `Das ist ${word}.`,
+          exampleVietnamese: `Đây là ${word}.`
+        };
+      }
+      
+      console.log('Using fallback data:', aiData);
     }
 
     // Track AI usage in database
-    try {
-      await prisma.aIUsage.create({
-        data: {
-          providerId: activeProvider.id,
-          operation: 'vocabulary_search',
-          promptTokens: aiResult.result.tokensUsed ? Math.round(aiResult.result.tokensUsed * 0.7) : 0, // Estimate prompt tokens
-          responseTokens: aiResult.result.tokensUsed ? Math.round(aiResult.result.tokensUsed * 0.3) : 0, // Estimate response tokens
-          totalTokens: aiResult.result.tokensUsed || 0,
-          cost: aiResult.result.cost || 0,
-          requestData: { word },
-          responseData: aiData,
-          success: true,
-          duration: aiResult.result.responseTime || 0
-        }
-      });
-      console.log(`Tracked AI usage: ${aiResult.result.tokensUsed} tokens, $${aiResult.result.cost}`);
-    } catch (trackingError) {
-      console.error('Failed to track AI usage:', trackingError);
-      // Don't fail the request if tracking fails
-    }
-    
-    // Get or create level and topic
-    const level = await getOrCreateLevel(aiData.level)
-    const topicSlug = classifyTopic(aiData.german, aiData.vietnamese, aiData.type)
-    const topic = await getOrCreateTopic(topicSlug, level.id)
-    
-    // Save to database
-    const newVocabulary = await prisma.vocabularyEntry.create({
-      data: {
-        german: aiData.german,
-        vietnamese: aiData.vietnamese,
-        phonetic: aiData.phonetic,
-        plural: aiData.plural,
-        type: mapTypeToEnum(aiData.type),
-        exampleGerman: aiData.exampleGerman,
-        exampleVietnamese: aiData.exampleVietnamese,
-        levelId: level.id,
-        topicId: topic.id,
-        difficulty: 3, // Medium difficulty as default
-        frequency: 1, // First time searched
-        tags: []
-      },
-      include: {
-        level: true,
-        topic: true
+    if (successfulProviderId && aiResult) {
+      try {
+        await prisma.aIUsage.create({
+          data: {
+            providerId: successfulProviderId,
+            operation: 'vocabulary_search',
+            model: 'default',
+            promptTokens: aiResult.result.tokensUsed ? Math.round(aiResult.result.tokensUsed * 0.7) : 0,
+            responseTokens: aiResult.result.tokensUsed ? Math.round(aiResult.result.tokensUsed * 0.3) : 0,
+            totalTokens: aiResult.result.tokensUsed || 0,
+            cost: aiResult.result.cost || 0,
+            metadata: { 
+              word, 
+              source: 'vocabulary_search',
+              parsing_success: true,
+              provider_attempts: providersToTry.indexOf(successfulProviderId) + 1
+            },
+            success: true
+          }
+        });
+        console.log(`Tracked AI usage: ${aiResult.result.tokensUsed || 0} tokens, $${aiResult.result.cost || 0}`);
+      } catch (trackingError) {
+        console.error('Failed to track AI usage:', trackingError);
       }
-    })
-    
-    console.log(`Saved new vocabulary: ${newVocabulary.german} -> ${newVocabulary.vietnamese}`)
-    
-    // Transform database model to match VocabularyEntry interface
-    const transformedEntry = {
-      id: newVocabulary.id,
-      word: newVocabulary.german,
-      pronunciation: newVocabulary.phonetic,
-      partOfSpeech: newVocabulary.type,
-      level: newVocabulary.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
-      definitions: {
-        german: newVocabulary.german,
-        vietnamese: newVocabulary.vietnamese,
-      },
-      examples: newVocabulary.exampleGerman && newVocabulary.exampleVietnamese ? [{
-        german: newVocabulary.exampleGerman,
-        vietnamese: newVocabulary.exampleVietnamese
-      }] : [],
-      createdAt: newVocabulary.createdAt.toISOString(),
-      updatedAt: newVocabulary.updatedAt.toISOString(),
-      source: 'ai' as const
     }
     
-    return NextResponse.json({
-      success: true,
-      data: transformedEntry,
-      source: 'ai_generated'
-    })
+    // Get or create level and topic with error handling
+    let level, topic;
+    try {
+      level = await getOrCreateLevel(aiData.level)
+      const topicSlug = classifyTopic(aiData.german, aiData.vietnamese, aiData.type)
+      topic = await getOrCreateTopic(topicSlug, level.id)
+      console.log(`Level: ${level.name}, Topic: ${topic.slug}`);
+    } catch (levelTopicError) {
+      console.error('Error creating level/topic:', levelTopicError);
+      // Fallback to default level/topic
+      level = await getOrCreateLevel('A1');
+      topic = await getOrCreateTopic('allgemein', level.id);
+    }
+    
+    // Save to database with comprehensive error handling
+    let newVocabulary;
+    try {
+      if (existingWord && 
+          (existingWord.vietnamese === 'chưa có nghĩa' || 
+           existingWord.vietnamese === 'Từ mới (cần bổ sung)' ||
+           existingWord.phonetic === '/không xác định/' ||
+           existingWord.phonetic === '' ||
+           !existingWord.phonetic)) {
+        // Update existing incomplete entry
+        newVocabulary = await prisma.vocabularyEntry.update({
+          where: { id: existingWord.id },
+          data: {
+            german: aiData.german,
+            vietnamese: aiData.vietnamese,
+            phonetic: aiData.phonetic,
+            plural: aiData.plural,
+            type: mapTypeToEnum(aiData.type),
+            exampleGerman: aiData.exampleGerman,
+            exampleVietnamese: aiData.exampleVietnamese,
+            levelId: level.id,
+            topicId: topic.id,
+            difficulty: 3, // Medium difficulty as default
+            frequency: existingWord.frequency + 1, // Increment frequency
+            tags: []
+          },
+          include: {
+            level: true,
+            topic: true
+          }
+        })
+        console.log(`Updated existing vocabulary: ${aiData.german} -> ${aiData.vietnamese}`)
+      } else {
+        // Create new entry
+        newVocabulary = await prisma.vocabularyEntry.create({
+          data: {
+            german: aiData.german,
+            vietnamese: aiData.vietnamese,
+            phonetic: aiData.phonetic,
+            plural: aiData.plural,
+            type: mapTypeToEnum(aiData.type),
+            exampleGerman: aiData.exampleGerman,
+            exampleVietnamese: aiData.exampleVietnamese,
+            levelId: level.id,
+            topicId: topic.id,
+            difficulty: 3, // Medium difficulty as default
+            frequency: 1, // First time searched
+            tags: []
+          },
+          include: {
+            level: true,
+            topic: true
+          }
+        })
+        console.log(`Saved new vocabulary: ${aiData.german} -> ${aiData.vietnamese}`)
+      }
+      
+    } catch (saveError) {
+      console.error('Error saving vocabulary to database:', saveError);
+      
+      // Return AI data without saving if database fails
+      const responseData = {
+        id: 'temp-' + Date.now(),
+        word: aiData.german,
+        pronunciation: aiData.phonetic,
+        partOfSpeech: aiData.type,
+        level: aiData.level as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
+        definitions: {
+          german: aiData.german,
+          vietnamese: aiData.vietnamese,
+        },
+        examples: [{
+          german: aiData.exampleGerman,
+          vietnamese: aiData.exampleVietnamese,
+        }],
+        tags: [],
+        difficulty: 3,
+        frequency: 1,
+        plural: aiData.plural,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        source: 'ai_generated' as const
+      };
+      
+      return NextResponse.json({
+        success: true,
+        data: responseData,
+        source: 'ai_generated',
+        warning: 'Created by AI but not saved to database due to error'
+      });
+    }
+    
+    // Transform database model to match VocabularyEntry interface (only if successfully saved)
+    if (newVocabulary) {
+      const transformedEntry = {
+        id: newVocabulary.id,
+        word: newVocabulary.german,
+        pronunciation: newVocabulary.phonetic,
+        partOfSpeech: newVocabulary.type,
+        level: newVocabulary.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
+        definitions: {
+          german: newVocabulary.german,
+          vietnamese: newVocabulary.vietnamese,
+        },
+        examples: newVocabulary.exampleGerman && newVocabulary.exampleVietnamese ? [{
+          german: newVocabulary.exampleGerman,
+          vietnamese: newVocabulary.exampleVietnamese
+        }] : [],
+        tags: [],
+        difficulty: newVocabulary.difficulty,
+        frequency: newVocabulary.frequency,
+        plural: newVocabulary.plural,
+        createdAt: newVocabulary.createdAt,
+        updatedAt: newVocabulary.updatedAt,
+        source: 'ai_generated' as const
+      }
+      
+      // Determine if this was an update or create
+      const isUpdate = existingWord && 
+        (existingWord.vietnamese === 'chưa có nghĩa' || 
+         existingWord.vietnamese === 'Từ mới (cần bổ sung)' ||
+         existingWord.phonetic === '/không xác định/' ||
+         existingWord.phonetic === '' ||
+         !existingWord.phonetic);
+      
+      return NextResponse.json({
+        success: true,
+        data: transformedEntry,
+        source: isUpdate ? 'ai_updated' : 'ai_generated'
+      })
+    }
+    
+    // This should not be reached due to early returns in catch blocks
+    throw new Error('Unexpected state: newVocabulary is undefined')
     
   } catch (error) {
     console.error('Error in vocabulary AI search:', error)
