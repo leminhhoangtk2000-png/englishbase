@@ -2,6 +2,8 @@
 
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
+import { getUITheme } from '@/config/themes';
 
 interface PaginationProps {
   currentPage: number;
@@ -10,6 +12,22 @@ interface PaginationProps {
 }
 
 export default function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+  const { theme } = useTheme();
+  const currentTheme = getUITheme(theme);
+  
+  // Use semantic theme colors like blog
+  const getThemeStyles = () => {
+    return {
+      container: "flex justify-center items-center gap-2",
+      button: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border",
+      activeButton: "bg-primary text-primary-foreground border-primary",
+      disabledButton: "bg-muted text-muted-foreground border-border opacity-50 cursor-not-allowed",
+      info: "text-muted-foreground"
+    };
+  };
+
+  const styles = getThemeStyles();
+  
   if (totalPages <= 1) return null;
 
   const getVisiblePages = () => {
@@ -41,13 +59,13 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
   const visiblePages = getVisiblePages();
 
   return (
-    <div className="flex items-center justify-center gap-1 mt-8">
+    <div className={styles.container}>
       <Button
         variant="outline"
         size="sm"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center gap-1 border-gray-300 text-gray-700 hover:border-gray-400 disabled:opacity-50"
+        className={`flex items-center gap-1 ${currentPage === 1 ? styles.disabledButton : styles.button}`}
       >
         <ChevronLeft className="w-4 h-4" />
         Zurück
@@ -57,7 +75,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         {visiblePages.map((page, index) => {
           if (page === '...') {
             return (
-              <span key={`dots-${index}`} className="px-3 py-2 text-gray-500">
+              <span key={`dots-${index}`} className={`px-3 py-2 ${styles.info}`}>
                 ...
               </span>
             );
@@ -69,13 +87,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
               variant={currentPage === page ? "default" : "outline"}
               size="sm"
               onClick={() => onPageChange(page as number)}
-              className={`
-                min-w-[40px] h-9
-                ${currentPage === page 
-                  ? 'bg-gray-900 text-white border-gray-900 hover:bg-gray-800' 
-                  : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50'
-                }
-              `}
+              className={`min-w-[40px] h-9 ${currentPage === page ? styles.activeButton : styles.button}`}
             >
               {page}
             </Button>
@@ -88,7 +100,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         size="sm"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center gap-1 border-gray-300 text-gray-700 hover:border-gray-400 disabled:opacity-50"
+        className={`flex items-center gap-1 ${currentPage === totalPages ? styles.disabledButton : styles.button}`}
       >
         Weiter
         <ChevronRight className="w-4 h-4" />

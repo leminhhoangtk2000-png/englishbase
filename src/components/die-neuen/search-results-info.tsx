@@ -1,5 +1,8 @@
 'use client';
 
+import { useTheme } from '@/hooks/use-theme';
+import { getUITheme } from '@/config/themes';
+
 interface SearchResultsInfoProps {
   filteredCount: number;
   totalCount: number;
@@ -19,10 +22,13 @@ export default function SearchResultsInfo({
   filteredCount,
   articlesPerPage
 }: SearchResultsInfoProps) {
+  const { theme } = useTheme();
+  const currentTheme = getUITheme(theme);
+
   if (!searchTerm && selectedCategory === 'all') {
     return (
       <div className="mb-6 text-center">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted-foreground">
           Seite {currentPage} von {totalPages} • {Math.min(currentPage * articlesPerPage, totalCount)} von {totalCount} Artikeln
         </p>
       </div>
@@ -34,7 +40,7 @@ export default function SearchResultsInfo({
 
   return (
     <div className="mb-6 text-center">
-      <p className="text-sm text-gray-600">
+      <p className="text-sm text-muted-foreground">
         {filteredCount > 0 ? (
           <>
             {filteredCount} Artikel gefunden

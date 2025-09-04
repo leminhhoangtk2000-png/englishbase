@@ -20,6 +20,8 @@ import { ReadingExerciseComponent } from '@/components/reading-exercise/reading-
 import { getExerciseByArticleId } from '@/data/reading-exercises'
 import { VocabularySidebar } from '@/components/vocabulary-search/vocabulary-sidebar'
 import { VocabularyMobileToggle } from '@/components/vocabulary-search/vocabulary-mobile-toggle'
+import { useTheme } from '@/hooks/use-theme'
+import { getUITheme } from '@/config/themes'
 
 // Mock data for articles (same as in main page)
 const mockArticles = [
@@ -226,6 +228,7 @@ const mockArticles = [
 
 export default function ArticlePage() {
   const params = useParams()
+  const { theme } = useTheme()
   const [article, setArticle] = useState<any>(null)
   const [relatedArticles, setRelatedArticles] = useState<any[]>([])
   const [isBookmarked, setIsBookmarked] = useState(false)
@@ -279,8 +282,29 @@ export default function ArticlePage() {
     }
   }
 
+  // Use semantic theme colors like blog
+  const getThemeStyles = () => {
+    return {
+      page: "min-h-screen bg-background",
+      container: "container mx-auto px-4 sm:px-6 lg:px-8 py-8",
+      content: "max-w-3xl mx-auto",
+      title: "text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6 font-headline",
+      summary: "text-xl text-muted-foreground leading-relaxed mb-8",
+      authorMeta: "flex items-center gap-4 pb-8 border-b border-border",
+      authorName: "font-medium text-foreground",
+      metaText: "text-sm text-muted-foreground",
+      sectionTitle: "text-2xl font-semibold text-foreground mb-8",
+      relatedCard: "group",
+      relatedTitle: "text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2",
+      relatedSummary: "text-muted-foreground text-sm line-clamp-2 mb-2",
+      relatedMeta: "flex items-center text-xs text-muted-foreground"
+    };
+  };
+
+  const styles = getThemeStyles();
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className={styles.page}>
       {/* Header */}
       <MainNav />
       
@@ -305,22 +329,22 @@ export default function ArticlePage() {
                 {article.category}
               </ThemedBadge>
               
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className={styles.title}>
                 {article.title}
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className={styles.summary}>
                 {article.summary}
               </p>
 
               {/* Author and Meta */}
-              <div className="flex items-center gap-4 pb-8 border-b border-gray-200">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                  <User className="w-6 h-6 text-gray-600" />
+              <div className={styles.authorMeta}>
+                <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+                  <User className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-4 text-sm text-gray-600">
-                    <span className="font-medium text-gray-900">{article.author}</span>
+                  <div className={`flex items-center gap-4 ${styles.metaText}`}>
+                    <span className={styles.authorName}>{article.author}</span>
                     <span>·</span>
                     <span>
                       {format(new Date(article.publishedAt), 'dd. MMMM yyyy', { locale: de })}
@@ -328,17 +352,17 @@ export default function ArticlePage() {
                     <span>·</span>
                     <span>{article.readTime} Min. Lesezeit</span>
                   </div>
-                  <p className="text-sm text-gray-500 mt-1">Redakteur</p>
+                  <p className={`text-sm text-muted-foreground mt-1`}>Redakteur</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button onClick={handleShare} variant="ghost" size="sm" className="text-gray-600">
+                  <Button onClick={handleShare} variant="ghost" size="sm" className="text-muted-foreground">
                     <Share2 className="w-4 h-4" />
                   </Button>
                   <Button 
                     onClick={() => setIsBookmarked(!isBookmarked)} 
                     variant="ghost" 
                     size="sm"
-                    className="text-gray-600"
+                    className="text-muted-foreground"
                   >
                     <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
                   </Button>
@@ -363,27 +387,27 @@ export default function ArticlePage() {
             </div>
 
             {/* Article Content */}
-            <article className="max-w-3xl mx-auto">
+            <article className={styles.content}>
               <div 
-                className="prose prose-xl max-w-none text-gray-800
-                  prose-headings:text-gray-900 prose-headings:font-semibold prose-headings:tracking-tight
+                className="prose prose-xl max-w-none text-foreground
+                  prose-headings:text-foreground prose-headings:font-semibold prose-headings:tracking-tight
                   prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
                   prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
-                  prose-p:mb-6 prose-p:leading-relaxed prose-p:text-gray-700 prose-p:text-lg
-                  prose-ul:mb-6 prose-li:mb-2 prose-li:text-gray-700 prose-li:text-lg
-                  prose-ol:mb-6 prose-ol:text-gray-700 prose-ol:text-lg
-                  prose-strong:text-gray-900 prose-strong:font-semibold
-                  prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-600 prose-blockquote:text-xl prose-blockquote:my-8
-                  prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
+                  prose-p:mb-6 prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:text-lg
+                  prose-ul:mb-6 prose-li:mb-2 prose-li:text-muted-foreground prose-li:text-lg
+                  prose-ol:mb-6 prose-ol:text-muted-foreground prose-ol:text-lg
+                  prose-strong:text-foreground prose-strong:font-semibold
+                  prose-blockquote:border-l-4 prose-blockquote:border-border prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-muted-foreground prose-blockquote:text-xl prose-blockquote:my-8
+                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
             </article>
 
             {/* Tags */}
-            <div className="max-w-3xl mx-auto mt-12 pt-8 border-t border-gray-200">
+            <div className={`${styles.content} mt-12 pt-8 border-t border-border`}>
               <div className="flex flex-wrap gap-2">
                 {article.tags.map((tag: string) => (
-                  <Badge key={tag} variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                  <Badge key={tag} variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-secondary/80">
                     {tag}
                   </Badge>
                 ))}
@@ -391,7 +415,7 @@ export default function ArticlePage() {
             </div>
 
             {/* Like Button - Bottom */}
-            <div className="max-w-3xl mx-auto mt-12 flex justify-center">
+            <div className={`${styles.content} mt-12 flex justify-center`}>
               <LikeButton url={`/die-neuen/${article.id}`} initialLikes={article.id === '1' ? 67 : article.id === '2' ? 53 : article.id === '3' ? 41 : article.id === '4' ? 38 : 32} />
             </div>
 
@@ -401,17 +425,17 @@ export default function ArticlePage() {
             )}
 
             {/* Comments Section */}
-            <div className="max-w-3xl mx-auto mt-12">
+            <div className={`${styles.content} mt-12`}>
               <Comments url={`/die-neuen/${article.id}`} />
             </div>
 
             {/* Related Articles */}
             {relatedArticles.length > 0 && (
-              <section className="max-w-3xl mx-auto mt-16 pt-12 border-t border-gray-200">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-8">Mehr aus {article.category}</h2>
+              <section className={`${styles.content} mt-16 pt-12 border-t border-border`}>
+                <h2 className={styles.sectionTitle}>Mehr aus {article.category}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {relatedArticles.map((related) => (
-                    <Link key={related.id} href={`/die-neuen/${related.id}`} className="group">
+                    <Link key={related.id} href={`/die-neuen/${related.id}`} className={styles.relatedCard}>
                       <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
                         <Image
                           src={related.image}
@@ -420,13 +444,13 @@ export default function ArticlePage() {
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <h3 className={styles.relatedTitle}>
                         {related.title}
                       </h3>
-                      <p className="text-gray-600 text-sm line-clamp-2 mb-2">
+                      <p className={styles.relatedSummary}>
                         {related.summary}
                       </p>
-                      <div className="flex items-center text-xs text-gray-500">
+                      <div className={styles.relatedMeta}>
                         <span>{format(new Date(related.publishedAt), 'dd.MM.yyyy', { locale: de })}</span>
                         <span className="mx-2">·</span>
                         <span>{related.readTime} Min.</span>

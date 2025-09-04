@@ -9,73 +9,93 @@ import { Clock, Eye } from 'lucide-react';
 import { NewsArticle } from './types';
 import { LikeDisplay } from '@/components/ui/like-display';
 import { ThemedBadge } from '@/components/ui/themed-badge';
+import { useTheme } from '@/hooks/use-theme';
+import { getUITheme } from '@/config/themes';
 
 interface ArticleCardProps {
   article: NewsArticle;
 }
 
 export default function ArticleCard({ article }: ArticleCardProps) {
+  const { theme } = useTheme();
+  const currentTheme = getUITheme(theme);
+  
   const formatDate = (dateString: string) => {
     return format(new Date(dateString), 'dd.MM.yyyy', { locale: de });
   };
 
+  // Use semantic theme colors like blog
+  const getThemeStyles = () => {
+    return {
+      card: "bg-card border border-border shadow-sm hover:shadow-lg",
+      image: "bg-card",
+      imagePlaceholder: "bg-muted text-muted-foreground",
+      content: "bg-card",
+      title: "text-foreground hover:text-primary",
+      excerpt: "text-muted-foreground",
+      meta: "text-muted-foreground border-border"
+    };
+  };
+
+  const styles = getThemeStyles();
+
   return (
-    <article className="bg-white border border-gray-200 hover:border-gray-300 transition-colors">
-      <Link href={`/die-neuen/${article.id}`} className="block">
-        <div className="flex">
+    <article className={`${styles.card} transition-all duration-300 rounded-xl overflow-hidden hover:scale-[1.02] transform hover:-translate-y-1`}>
+      <Link href={`/die-neuen/${article.id}`} className="block h-full">
+        <div className="flex h-full">
           {/* Image */}
-          <div className="w-24 h-24 bg-gray-100 flex-shrink-0 relative">
+          <div className={`w-32 h-32 ${styles.image} flex-shrink-0 relative overflow-hidden`}>
             {article.imageUrl ? (
               <Image
                 src={article.imageUrl}
                 alt={article.title}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
-                📰
+              <div className={`w-full h-full flex items-center justify-center ${styles.imagePlaceholder}`}>
+                <span className="text-2xl">📰</span>
               </div>
             )}
             {article.featured && (
-              <div className="absolute top-1 left-1">
-                <Badge className="bg-gray-900 text-white text-xs">
-                  Featured
+              <div className="absolute top-2 left-2">
+                <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs shadow-lg border-0">
+                  ⭐ Featured
                 </Badge>
               </div>
             )}
           </div>
 
           {/* Content */}
-          <div className="flex-1 p-4">
+          <div className={`flex-1 p-5 flex flex-col justify-between ${styles.content}`}>
             {/* Badges */}
-            <div className="flex gap-2 mb-2">
-              <ThemedBadge variant="themed" className="text-xs">
+            <div className="flex gap-2 mb-3">
+              <ThemedBadge variant="themed" className="text-xs font-medium shadow-sm">
                 {article.category}
               </ThemedBadge>
             </div>
 
             {/* Title */}
-            <h3 className="font-medium text-gray-900 mb-2 line-clamp-2 leading-snug">
+            <h3 className={`font-bold ${styles.title} mb-3 line-clamp-2 leading-tight text-base transition-colors`}>
               {article.title}
             </h3>
 
             {/* Excerpt */}
-            <p className="text-gray-600 text-sm mb-3 line-clamp-2 leading-relaxed">
+            <p className={`${styles.excerpt} text-sm mb-4 line-clamp-2 leading-relaxed`}>
               {article.excerpt}
             </p>
 
             {/* Meta */}
-            <div className="flex items-center gap-4 text-xs text-gray-500">
+            <div className={`flex items-center gap-4 text-xs ${styles.meta} pt-2 border-t`}>
               <div className="flex items-center gap-1">
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3.5 h-3.5 text-blue-400" />
                 {formatDate(article.publishedAt)}
               </div>
               <div className="flex items-center gap-1">
-                <Eye className="w-3 h-3" />
+                <Eye className="w-3.5 h-3.5 text-green-400" />
                 {article.wordCount} Wörter
               </div>
-              <LikeDisplay url={`/die-neuen/${article.id}`} initialLikes={article.id === '1' ? 67 : article.id === '2' ? 53 : article.id === '3' ? 41 : article.id === '4' ? 38 : 32} className="text-xs" />
+              <LikeDisplay url={`/die-neuen/${article.id}`} initialLikes={article.id === '1' ? 67 : article.id === '2' ? 53 : article.id === '3' ? 41 : article.id === '4' ? 38 : 32} className="text-xs ml-auto" />
             </div>
           </div>
         </div>
