@@ -11,7 +11,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeStringify from 'rehype-stringify'
 
-const contentDirectory = path.join(process.cwd(), 'content')
+const contentDirectory = path.join(process.cwd(), 'src/content')
 
 export interface MarkdownMeta {
   title: string

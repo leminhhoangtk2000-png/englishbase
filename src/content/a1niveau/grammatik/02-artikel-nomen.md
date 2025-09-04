@@ -1,0 +1,126 @@
+
+---
+title: "Artikel und Nomen - Khái niệm về Quán từ"
+description: "Tìm hiểu về quán từ và danh từ trong tiếng Đức, bao gồm der/die/das và các quy tắc xác định giống"
+level: "A1"
+topic: "Grammatik"
+order: 2
+---
+
+📌 Trong tiếng Đức, quán từ và danh từ luôn đi liền với nhau:
+
+- Nếu thấy một quán từ, **chắc chắn** sau đó là một danh từ!  
+- Quán từ giúp xác định **giống, số và cách** của danh từ.
+
+---
+
+## **🔹 1. Các Loại Quán Từ trong Tiếng Đức**
+
+|🏷 **Loại Quán Từ**|📝 **Công Dụng**|📌 **Ví Dụ**|
+|---|---|---|
+|**Quán từ xác định** (_der, die, das_)|Dùng khi danh từ đã được xác định rõ ràng.|_Der Hund schläft._ _(Con chó đang ngủ.)_|
+|**Quán từ không xác định** (_ein, eine_)|Dùng khi danh từ chưa được xác định.|_Ich habe eine Katze._ _(Tôi có một con mèo.)_|
+|**Quán từ phủ định** (_kein, keine_)|Phủ định sự tồn tại của danh từ.|_Ich habe kein Auto._ _(Tôi không có xe hơi.)_|
+
+---
+
+## **🔹 2. Các Giống của Danh Từ trong Tiếng Đức**
+
+Danh từ trong tiếng Đức có **ba giống chính**:
+
+  **Giống đực (Maskulin) →** _der_  
+  **Giống cái (Feminin) →** _die_  
+  **Giống trung (Neutrum) →** _das_
+
+---
+
+### **🟦 2.1. Danh từ Giống Đực (Maskulin - der)**
+
+**Thường là:** Người, động vật đực, ngày tháng, mùa, phương hướng, danh từ có đuôi đặc biệt.
+
+| **Nhóm danh từ**                                   | 📖 **Ví dụ**                                                                                                     |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Người, động vật đực**                            | _der Vater_ _(người cha)_, _der Lehrer_ _(giáo viên nam)_, _der Hund_ _(chó đực)_                                |
+| **Ngày, tháng, mùa, phương hướng**                 | _der Montag_ _(thứ Hai)_, _der Dezember_ _(tháng Mười hai)_, _der Sommer_ _(mùa hè)_, _der Norden_ _(hướng Bắc)_ |
+| **Đuôi đặc trưng:** _-er, -en, -el, -ling, -ismus_ | _der Computer_, _der Löffel_ _(cái thìa)_, _der Kapitalismus_ _(chủ nghĩa tư bản)_                               |
+
+---
+
+### **🟨 2.2. Danh từ Giống Cái (Feminin - die)**
+
+**Thường là:** Người, động vật cái, danh từ có đuôi đặc biệt.
+
+| **Nhóm danh từ**                                            | 📖 **Ví dụ**                                                                                                      |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Người, động vật cái**                                     | _die Mutter_ _(người mẹ)_, _die Lehrerin_ _(cô giáo)_, _die Katze_ _(mèo cái)_                                    |
+| **Đuôi đặc trưng:** _-heit, -keit, -ung, -schaft, -ion, -e_ | _die Freiheit_ _(sự tự do)_, _die Freundschaft_ _(tình bạn)_, _die Nation_ _(quốc gia)_, _die Blume_ _(bông hoa)_ |
+
+---
+
+### **🟩 2.3. Danh từ Giống Trung (Neutrum - das)**
+
+**Thường là:** Quốc gia, thành phố, danh từ trừu tượng, danh từ có đuôi đặc biệt.
+
+| **Nhóm danh từ**                                     | 📖 **Ví dụ**                                           |
+| ---------------------------------------------------- | ------------------------------------------------------ |
+| **Quốc gia, thành phố (không có quán từ)**           | _das Deutschland_, _das Berlin_                        |
+| **Danh từ trừu tượng**                               | _das Glück_ _(sự may mắn)_, _das Leben_ _(cuộc sống)_  |
+| **Đuôi đặc trưng:** _-chen, -nis, -ment, -um, -zeug_ | _das Spielzeug_ _(đồ chơi)_, _das Gebäude_ _(tòa nhà)_ |
+
+---
+
+## **🔹 3. Các Dạng Số Nhiều của Danh Từ**
+
+**Lưu ý:**  
+  Không có quy tắc cố định, danh từ số nhiều cần **học thuộc**.  
+  Học danh từ phải học kèm **giống và dạng số nhiều**.
+
+### **📝 12 Cách Biến Đổi Danh Từ từ Số Ít Sang Số Nhiều**
+
+| **Cách Biến Đổi**     | 📖 **Quy Tắc Nhận Diện**                                              | ✏ **Ví Dụ** (Số ít → Số nhiều)     |
+| --------------------- | --------------------------------------------------------------------- | ---------------------------------- |
+| **Thêm -e**           | Hầu hết danh từ **giống đực** và một số **giống trung**               | _der Hund_ → _die Hunde_           |
+| **Thêm -er + Umlaut** | Chủ yếu là danh từ **giống trung**                                    | _das Kind_ → _die Kinder_          |
+| **Thêm -n / -en**     | Giống cái _(die)_ và danh từ có đuôi **-e, -heit, -keit, -ung, -ion** | _die Blume_ → _die Blumen_         |
+| **Thêm -s**           | Từ mượn từ tiếng Anh, Pháp hoặc kết thúc bằng **-o, -z**              | _das Auto_ → _die Autos_           |
+| **Không thay đổi**    | Danh từ kết thúc bằng **-er, -en, -el**                               | _der Lehrer_ → _die Lehrer_        |
+| **Thêm -se**          | Danh từ kết thúc bằng **-nis** _(trọng âm cuối)_                      | _das Ergebnis_ → _die Ergebnisse_  |
+| **Thêm -nen**         | Danh từ kết thúc bằng **-in** (nghề nghiệp giống cái)                 | _die Lehrerin_ → _die Lehrerinnen_ |
+
+---
+
+## **🔹 4. Biến Cách của Quán từ (Kasusdeklination der Artikel)**
+
+**Quán từ thay đổi theo bốn cách (Kasus):**  
+ - Nominativ (Chủ ngữ)  
+ - Akkusativ (Tân ngữ trực tiếp)  
+ - Dativ (Tân ngữ gián tiếp) 
+ - Genitiv (Sở hữu)
+
+### **📌 Bảng Biến Cách Quán Từ**
+
+|**Cách**|**Giống đực (Maskulin)**|**Giống cái (Feminin)**|**Trung tính (Neutrum)**|**Số nhiều (Plural)**|
+|---|---|---|---|---|
+|**Nominativ**|der Mann|die Frau|das Kind|die Kinder|
+|**Akkusativ**|den Mann|die Frau|das Kind|die Kinder|
+|**Dativ**|dem Mann|der Frau|dem Kind|den Kindern|
+|**Genitiv**|des Mannes|der Frau|des Kindes|der Kinder|
+
+:::note[**Ghi nhớ nhanh:**]
+  - **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).  
+  - **Dativ:** Danh từ số nhiều thêm **-n**.  
+  - **Genitiv:** Danh từ **đực và trung** thêm **-es**.
+:::
+
+---
+
+## **🎯 5. Tổng Kết**
+
+:::note
+  **Danh từ tiếng Đức có ba giống:** **đực (der), cái (die), trung (das)**  
+  **Số nhiều của danh từ có nhiều cách biến đổi, không có quy tắc chung tuyệt đối.**  
+  **Quán từ biến đổi theo cách (Kasus):** **Nominativ, Akkusativ, Dativ, Genitiv**  
+  **Danh từ luôn viết hoa chữ cái đầu.**  
+  **Danh từ số nhiều luôn đi với quán từ xác định "die".**  
+  **Học danh từ cần học cả giống và dạng số nhiều cùng lúc!**
+:::
