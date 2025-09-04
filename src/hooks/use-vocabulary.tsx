@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { GermanGender } from '@/lib/gender-utils';
 
 export interface VocabularyEntry {
   id: string;
@@ -9,6 +10,7 @@ export interface VocabularyEntry {
   phonetic?: string;
   plural?: string;
   type: string;
+  gender?: GermanGender;
   exampleGerman?: string;
   exampleVietnamese?: string;
   difficulty: number;

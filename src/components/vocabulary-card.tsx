@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { SpeechButton } from '@/components/speech-button';
 import { SaveButton } from '@/components/save-button';
 import { VocabularyEntry } from '@/hooks/use-vocabulary';
+import { GenderBadge } from '@/components/gender-badge';
 
 interface VocabularyCardProps {
   word: VocabularyEntry;
@@ -32,6 +33,8 @@ export function VocabularyCard({
             <h3 className={`font-semibold text-gray-900 dark:text-white ${compact ? 'text-lg' : 'text-xl'}`}>
               {word.german}
             </h3>
+            {/* Gender badge for nouns */}
+            {word.gender && <GenderBadge gender={word.gender} size={compact ? 'sm' : 'md'} />}
             <SpeechButton text={word.german} size="sm" />
           </div>
           <SaveButton word={word} size="sm" />
@@ -41,6 +44,13 @@ export function VocabularyCard({
         {word.phonetic && (
           <p className={`text-gray-600 dark:text-gray-400 italic ${compact ? 'text-sm' : 'text-base'}`}>
             /{word.phonetic}/
+          </p>
+        )}
+
+        {/* Plural form cho danh từ */}
+        {word.plural && word.plural !== '-' && (
+          <p className={`text-gray-600 dark:text-gray-400 ${compact ? 'text-sm' : 'text-base'}`}>
+            <span className="font-medium">Số nhiều:</span> {word.plural}
           </p>
         )}
 

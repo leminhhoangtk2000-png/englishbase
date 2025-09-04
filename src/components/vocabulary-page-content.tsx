@@ -19,6 +19,7 @@ import { VocabularyCard as VocabCard } from "@/components/vocabulary-card";
 import { VocabularyHistoryCard } from "@/components/vocabulary-history-card";
 import { SavedVocabularyCard } from "@/components/saved-vocabulary-card";
 import { useVocabulary, VocabularyEntry } from "@/hooks/use-vocabulary";
+import { extractGender, isNoun, addGenderToNoun } from "@/lib/gender-utils";
 
 interface VocabularyLevel {
     id: string;
@@ -121,10 +122,18 @@ export function VocabularyPageContent() {
             if (response.ok) {
                 const data = await response.json();
                 if (data.data && data.data.length > 0) {
-                    // Use database data
-                    setResults(data.data);
+                    // Process database results to add gender information
+                    const enhancedResults = data.data.map((word: VocabularyEntry) => {
+                        const gender = extractGender(word.german);
+                        return {
+                            ...word,
+                            gender: gender
+                        };
+                    });
+                    
+                    setResults(enhancedResults);
                     // Add found words to history
-                    data.data.forEach((word: VocabularyEntry) => {
+                    enhancedResults.forEach((word: VocabularyEntry) => {
                         addToHistory(word);
                     });
                     setIsLoading(false);
@@ -144,14 +153,34 @@ export function VocabularyPageContent() {
             if (aiResponse.ok) {
                 const aiData = await aiResponse.json();
                 if (aiData.success && aiData.data) {
+                    // Extract gender for nouns and enhance German word
+                    let germanWord = aiData.data.definitions.german;
+                    let gender = extractGender(germanWord);
+                    
+                    // If it's a noun and doesn't have gender, try to add it
+                    if (isNoun(aiData.data.partOfSpeech) && !gender) {
+                        germanWord = addGenderToNoun(germanWord);
+                        gender = extractGender(germanWord);
+                        
+                        // Show helpful toast about gender addition
+                        if (gender) {
+                            toast({
+                                title: "🔍 Giống từ được thêm tự động",
+                                description: `Đã thêm "${gender}" cho danh từ "${germanWord.replace(/^(der|die|das)\s+/, '')}"`,
+                                variant: "default",
+                            });
+                        }
+                    }
+
                     // Transform AI data to VocabularyEntry format
                     const transformedEntry: VocabularyEntry = {
                         id: aiData.data.id,
-                        german: aiData.data.definitions.german,
+                        german: germanWord,
                         vietnamese: aiData.data.definitions.vietnamese,
                         phonetic: aiData.data.pronunciation,
                         plural: aiData.data.plural,
                         type: aiData.data.partOfSpeech,
+                        gender: gender,
                         exampleGerman: aiData.data.examples?.[0]?.german,
                         exampleVietnamese: aiData.data.examples?.[0]?.vietnamese,
                         difficulty: aiData.data.difficulty || 3,
