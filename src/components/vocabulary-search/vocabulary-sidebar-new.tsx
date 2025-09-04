@@ -20,6 +20,7 @@ import { VocabularyCard } from './vocabulary-card';
 import { useVocabularySearch } from '@/hooks/use-vocabulary-search';
 import { useVocabulary, VocabularyEntry as SavedVocabularyEntry } from '@/hooks/use-vocabulary';
 import { VocabularyEntry } from '@/types/vocabulary';
+import { extractGender } from '@/lib/gender-utils';
 
 interface VocabularySidebarProps {
   className?: string;
@@ -33,13 +34,17 @@ const quickSuggestions = [
 
 // Transform function to convert VocabularyEntry to SavedVocabularyEntry
 const transformToSavedEntry = (entry: VocabularyEntry): SavedVocabularyEntry => {
+  const germanWord = entry.definitions.german;
+  const gender = extractGender(germanWord);
+  
   return {
     id: entry.id,
-    german: entry.definitions.german,
+    german: germanWord,
     vietnamese: entry.definitions.vietnamese,
     phonetic: entry.pronunciation,
     plural: '',
     type: entry.partOfSpeech,
+    gender: gender,
     exampleGerman: entry.examples[0]?.german || '',
     exampleVietnamese: entry.examples[0]?.vietnamese || '',
     difficulty: 3,
