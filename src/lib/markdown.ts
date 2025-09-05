@@ -4,11 +4,13 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeKatex from 'rehype-katex'
 import rehypeStringify from 'rehype-stringify'
 
 const contentDirectory = path.join(process.cwd(), 'src/content')
@@ -126,28 +128,51 @@ export function getMarkdownBySlug(
 }
 
 /**
- * Convert markdown to HTML
+ * Process markdown content to HTML with all enhanced features
  */
 export async function markdownToHtml(markdown: string): Promise<string> {
-  // Pre-process admonitions
-  const processedMarkdown = processAdmonitions(markdown)
+  // Process custom syntaxes first
+  const processedMarkdown = processAdvancedFeatures(markdown)
   
   const result = await unified()
     .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkRehype)
-    .use(rehypeSlug)
+    .use(remarkGfm) // GitHub Flavored Markdown
+    .use(remarkMath) // Math equations support
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeSlug) // Add IDs to headings
     .use(rehypeAutolinkHeadings, {
-      behavior: 'append',
+      behavior: 'wrap',
       properties: {
-        className: ['anchor'],
-        ariaLabel: 'Link to section'
-      }
+        className: ['anchor-link'],
+        ariaLabel: 'Link to this section',
+      },
     })
-    .use(rehypeStringify)
+    .use(rehypeKatex) // Render math equations
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(processedMarkdown)
-  
+
   return result.toString()
+}
+
+/**
+ * Process advanced markdown features before main processing
+ */
+function processAdvancedFeatures(markdown: string): string {
+  let processed = markdown
+  
+  // Process admonitions with enhanced syntax
+  processed = processAdvancedAdmonitions(processed)
+  
+  // Process code blocks with metadata
+  processed = processAdvancedCodeBlocks(processed)
+  
+  // Process tabs syntax
+  processed = processTabsSyntax(processed)
+  
+  // Process details/summary elements
+  processed = processDetailsSummary(processed)
+  
+  return processed
 }
 
 /**
@@ -163,10 +188,10 @@ function addHeadingIds(markdown: string): string {
 }
 
 /**
- * Process custom admonitions syntax :::type into HTML
+ * Process custom admonitions syntax :::type into HTML with enhanced features
  */
-function processAdmonitions(markdown: string): string {
-  const admonitionRegex = /:::(\w+)(?:\s+([^\n]*))?\n([\s\S]*?):::/g
+function processAdvancedAdmonitions(markdown: string): string {
+  const admonitionRegex = /:::(\w+)(?:\[([^\]]*)\])?\n([\s\S]*?):::/g
   
   return markdown.replace(admonitionRegex, (match, type, title, content) => {
     const safeType = type.toLowerCase()
@@ -187,6 +212,63 @@ ${processedContent}
 </div>
 `
   })
+}
+
+/**
+ * Process enhanced code block syntax with titles and line numbers
+ */
+function processAdvancedCodeBlocks(markdown: string): string {
+  // Enhanced code block regex with optional metadata
+  const codeBlockRegex = /```(\w+)(?:\s+([^\n]*))?\n([\s\S]*?)```/g
+  
+  return markdown.replace(codeBlockRegex, (match, language, metadata, code) => {
+    const metaString = metadata || ''
+    const titleMatch = metaString.match(/title="([^"]*)"/) || metaString.match(/title=([^\s]*)/)
+    const title = titleMatch ? titleMatch[1] : null
+    const showLineNumbers = metaString.includes('showLineNumbers')
+    const highlightLines = metaString.match(/\{([^}]*)\}/)?.[1] || ''
+    
+    let result = ''
+    
+    if (title) {
+      result += `<div class="code-block-title">${title}</div>\n`
+    }
+    
+    result += `<pre class="language-${language}${showLineNumbers ? ' line-numbers' : ''}"${highlightLines ? ` data-highlight="${highlightLines}"` : ''}><code class="language-${language}">${escapeHtml(code.trim())}</code></pre>`
+    
+    return result
+  })
+}
+
+/**
+ * Process tabs syntax for multi-language code blocks
+ */
+function processTabsSyntax(markdown: string): string {
+  // Simple tab syntax for now - can be enhanced later
+  return markdown
+}
+
+/**
+ * Process details/summary syntax
+ */
+function processDetailsSummary(markdown: string): string {
+  // Enhanced details elements are already supported in HTML
+  return markdown
+}
+
+/**
+ * Escape HTML characters
+ */
+function escapeHtml(text: string): string {
+  const htmlEscapes: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }
+  
+  return text.replace(/[&<>"']/g, (char) => htmlEscapes[char])
 }
 
 /**
