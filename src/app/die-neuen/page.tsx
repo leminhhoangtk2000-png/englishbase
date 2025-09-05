@@ -9,12 +9,14 @@ import {
   ArticleCard,
   Pagination,
   Sidebar,
-  LoadingSpinner,
-  LoadingGrid,
   type NewsArticle,
   mockArticles 
 } from '@/components/die-neuen';
+import { LoadingSpinner, LoadingGrid } from '@/components/die-neuen/loading';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/hooks/use-theme';
+import { getUITheme } from '@/config/themes';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 
 export default function DieNeuen() {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
@@ -25,9 +27,63 @@ export default function DieNeuen() {
   const [currentPage, setCurrentPage] = useState(1);
   const ARTICLES_PER_PAGE = 8;
 
+  const { theme } = useTheme();
+  const currentTheme = getUITheme(theme);
+
+  const getThemeBackground = () => {
+    // Use theme-specific background colors
+    switch (theme) {
+      case 'light':
+        return 'hsl(var(--background))'; // white
+      case 'dark':
+        return 'rgb(17, 24, 39)'; // gray-900
+      case 'nude':
+        return 'rgb(250, 245, 240)'; // stone-100
+      default:
+        return 'hsl(var(--background))';
+    }
+  };
+
+  const getThemeClasses = () => {
+    // Use theme-specific classes for better visual consistency
+    switch (theme) {
+      case 'light':
+        return {
+          page: "min-h-screen bg-background",
+          container: "container mx-auto px-4 py-8 max-w-7xl"
+        };
+      case 'dark':
+        return {
+          page: "min-h-screen bg-gray-900",
+          container: "container mx-auto px-4 py-8 max-w-7xl"
+        };
+      case 'nude':
+        return {
+          page: "min-h-screen bg-stone-100",
+          container: "container mx-auto px-4 py-8 max-w-7xl"
+        };
+      default:
+        return {
+          page: "min-h-screen bg-background",
+          container: "container mx-auto px-4 py-8 max-w-7xl"
+        };
+    }
+  };
+
+  const themeClasses = getThemeClasses();
+
   useEffect(() => {
     fetchArticles();
     
+    // Set body background using semantic color
+    document.body.style.backgroundColor = getThemeBackground();
+    
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, [theme]);
+
+  useEffect(() => {
     // Keyboard shortcut for search (Ctrl/Cmd + K)
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
@@ -83,7 +139,7 @@ export default function DieNeuen() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className={themeClasses.page}>
         <MainNav />
         <LoadingSpinner />
       </div>
@@ -91,9 +147,10 @@ export default function DieNeuen() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <MainNav />
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+    <div className={themeClasses.page}>
+      <div className={themeClasses.page}>
+        <MainNav />
+        <div className={themeClasses.container}>
         <DieNeuenHeader 
           searchTerm={searchTerm}
           showSearch={showSearch}
@@ -141,6 +198,9 @@ export default function DieNeuen() {
             articlesPerPage={ARTICLES_PER_PAGE}
           />
         </div>
+      </div>
+      
+      <ThemeSwitcher />
       </div>
     </div>
   );

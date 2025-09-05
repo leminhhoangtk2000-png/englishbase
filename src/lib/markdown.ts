@@ -75,8 +75,8 @@ export function getMarkdownFiles(niveau: string): MarkdownSection[] {
     
     // Sort by order field if available
     items.sort((a, b) => {
-      const orderA = a.meta.order || 999
-      const orderB = b.meta.order || 999
+      const orderA = a.meta.order !== undefined ? a.meta.order : 999
+      const orderB = b.meta.order !== undefined ? b.meta.order : 999
       return orderA - orderB
     })
     
@@ -363,7 +363,7 @@ export function getNiveauContent(niveau: string) {
         description: item.meta.description,
         slug: item.meta.slug,
         tags: item.meta.tags || [],
-        order: item.meta.order || 999,
+        order: item.meta.order !== undefined ? item.meta.order : 999,
       })),
     })),
   }
