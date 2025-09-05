@@ -119,8 +119,6 @@ Một số động từ thay đổi nguyên âm khi chia ở **du** và **er/sie
 - **Ngôi số nhiều (wir, ihr, sie/Sie)** luôn tuân theo **quy tắc chia cơ bản (nhóm A)**
 
 **Lưu ý:** Đối với các ngôi số nhiều như wir, ihr, sie, Sie thì luôn áp dụng quy tắc chia cơ bản (nhóm A)
-
-
 ---
 
 ## **4. Bài tập luyện tập**
@@ -137,4 +135,3 @@ Dưới đây là các bài tập luyện tập theo thứ tự dễ đến khó
 ---
 
 Chúc bạn học tốt! 🚀
-

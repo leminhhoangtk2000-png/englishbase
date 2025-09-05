@@ -44,10 +44,10 @@ Thường có **21 tiền tố** đặc trưng:
 **Ví dụ:**
 
 - **Stehst du morgen früh auf?** 
-	_(Bạn sẽ dậy sớm vào sáng mai chứ?)_
+ _(Bạn sẽ dậy sớm vào sáng mai chứ?)_
 
 -  **Ich weiß, dass er anruft.** 
-	_(Tôi biết rằng anh ấy sẽ gọi điện.)_
+ _(Tôi biết rằng anh ấy sẽ gọi điện.)_
 
 ---
 
@@ -78,7 +78,7 @@ Thường có **21 tiền tố** đặc trưng:
 - Không bao giờ tách tiền tố khỏi động từ!  
 - Ví dụ: 
 - _Ich **besuche** meine Oma am Wochenende._ 
-	_(Tôi thăm bà vào cuối tuần.)_
+ _(Tôi thăm bà vào cuối tuần.)_
 
 ---
 

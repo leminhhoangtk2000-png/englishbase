@@ -31,7 +31,7 @@ order: 12
 | **Ihr**     | ihr                     | euch                    | euch                          |
 | **sie/Sie** | sie                     | sie                     | ihnen                         |
 
-📌 **Mẹo nhớ nhanh:**
+**Mẹo nhớ nhanh:**
 
 - **Akkusativ:** Dùng khi tân ngữ bị tác động trực tiếp.
 - **Dativ:** Dùng khi tân ngữ **nhận lợi ích từ hành động** (thường đi với động từ như "geben", "helfen").
@@ -46,11 +46,8 @@ order: 12
 
 **Ví dụ:**
 
-- **Ich** bin Student. 
-	_(Tôi là sinh viên.)_
-
-- **Sie** wohnt in Berlin. 
-	_(Cô ấy sống ở Berlin.)_
+- **Ich** bin Student. _(Tôi là sinh viên.)_
+- **Sie** wohnt in Berlin. _(Cô ấy sống ở Berlin.)_
 
 ---
 
@@ -60,16 +57,11 @@ order: 12
 
 **Ví dụ:**
 
-- **Ich sehe dich.** 
-	_(Tôi nhìn thấy bạn.)_
-- **Er liebt sie.** 
-	_(Anh ấy yêu cô ấy.)_
+- **Ich sehe dich.** _(Tôi nhìn thấy bạn.)_
+- **Er liebt sie.** _(Anh ấy yêu cô ấy.)_
+- **Wir hören euch.** _(Chúng tôi nghe thấy các bạn.)_
 
-- **Wir hören euch.** 
-	_(Chúng tôi nghe thấy các bạn.)_
-
-📌 **Mẹo nhớ nhanh:**  
-**Hỏi "wen?" hoặc "was?"** để xác định **Akkusativ** (_Ai? Cái gì?_)
+**Mẹo nhớ nhanh:** Hỏi "wen?" hoặc "was?" để xác định **Akkusativ** _(Ai? Cái gì?)_
 
 ---
 
@@ -79,17 +71,11 @@ order: 12
 
 **Ví dụ:**
 
-- **Er gibt mir ein Buch.** 
-	_(Anh ấy đưa cho tôi một quyển sách.)_
+- **Er gibt mir ein Buch.** _(Anh ấy đưa cho tôi một quyển sách.)_
+- **Kannst du ihm helfen?** _(Bạn có thể giúp anh ấy không?)_
+- **Sie kauft uns ein Geschenk.** _(Cô ấy mua tặng chúng tôi một món quà.)_
 
-- **Kannst du ihm helfen?**
-	_(Bạn có thể giúp anh ấy không?)_
-
-- **Sie kauft uns ein Geschenk.** 
-	_(Cô ấy mua tặng chúng tôi một món quà.)_
-
-📌 **Mẹo nhớ nhanh:**  
-**Hỏi "wem?"** để xác định **Dativ** (_Cho ai? Đối với ai?_)
+**Mẹo nhớ nhanh:** Hỏi "wem?" để xác định **Dativ** _(Cho ai? Đối với ai?)_
 
 ---
 
@@ -101,23 +87,21 @@ order: 12
 |**Câu hỏi đi kèm**|Wen? Was? ("Ai? Cái gì?")|Wem? ("Cho ai?")|
 |**Ví dụ**|**Ich sehe ihn.** _(Tôi nhìn thấy anh ấy.)_|**Ich gebe ihm ein Buch.** _(Tôi đưa cho anh ấy một quyển sách.)_|
 
-💡 Mẹo học nhanh:  
- - **Nếu danh từ/tân ngữ bị tác động trực tiếp → dùng Akkusativ!**  
- - **Nếu danh từ/tân ngữ nhận lợi ích từ hành động → dùng Dativ!**
+**Mẹo học nhanh:**
+- **Nếu danh từ/tân ngữ bị tác động trực tiếp → dùng Akkusativ!**
+- **Nếu danh từ/tân ngữ nhận lợi ích từ hành động → dùng Dativ!**
 
 ---
 ## **🎯 4. Tổng Kết**
 
 **Lưu ý:**
-- **Personalpronomen (Đại từ nhân xưng) giúp thay thế danh từ trong câu.**  
-  
-- **Nhớ chia theo 3 cách:**  
- 
- - **Nominativ (Chủ ngữ):** Thực hiện hành động (_Ich bin müde._)  
- - **Akkusativ (Tân ngữ trực tiếp):** Bị tác động bởi hành động (_Ich sehe dich._)  
- - **Dativ (Tân ngữ gián tiếp):** Nhận lợi ích từ hành động (_Er gibt mir ein Geschenk._)
+- **Personalpronomen (Đại từ nhân xưng) giúp thay thế danh từ trong câu.**
 
-📌 Mẹo học nhanh:
+**Nhớ chia theo 3 cách:**
+- **Nominativ (Chủ ngữ):** Thực hiện hành động _(Ich bin müde.)_
+- **Akkusativ (Tân ngữ trực tiếp):** Bị tác động bởi hành động _(Ich sehe dich.)_
+- **Dativ (Tân ngữ gián tiếp):** Nhận lợi ích từ hành động _(Er gibt mir ein Geschenk.)_
 
-- **Akkusativ → Hỏi "wen?" hoặc "was?"** (_Ai? Cái gì?_)
-- **Dativ → Hỏi "wem?"** (_Cho ai?_)
+**Mẹo học nhanh:**
+- **Akkusativ → Hỏi "wen?" hoặc "was?"** _(Ai? Cái gì?)_
+- **Dativ → Hỏi "wem?"** _(Cho ai?)_

@@ -31,10 +31,10 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 **Ví dụ:**
 
 - Ich schlafe nicht. 
-	_(Tôi không ngủ.)_
+ _(Tôi không ngủ.)_
 
 - Er arbeitet heute nicht. 
-	_(Hôm nay anh ấy không làm việc.)_
+ _(Hôm nay anh ấy không làm việc.)_
 
 ---
 
@@ -45,10 +45,10 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 **Ví dụ:**
 
 - Der Film ist nicht interessant. 
-	_(Bộ phim không hay.)_
+ _(Bộ phim không hay.)_
 
 - Das Wetter ist nicht schön. 
-	_(Thời tiết không đẹp.)_
+ _(Thời tiết không đẹp.)_
 
 ---
 
@@ -59,10 +59,10 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 **Ví dụ:**
 
 - Ich gehe nicht nach Hause. 
-	_(Tôi không đi về nhà.)_
+ _(Tôi không đi về nhà.)_
 
 - Wir fahren nicht mit dem Bus. 
-	_(Chúng tôi không đi bằng xe buýt.)_
+ _(Chúng tôi không đi bằng xe buýt.)_
 
 ---
 
@@ -80,9 +80,9 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 **Ví dụ:**
 
 - Ich habe keinen Hund. 
-	_(Tôi không có chó.)_
+ _(Tôi không có chó.)_
 - Sie trinkt keinen Kaffee. 
-	_(Cô ấy không uống cà phê.)_
+ _(Cô ấy không uống cà phê.)_
 
 ---
 
@@ -97,13 +97,13 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 **Ví dụ:**
 
 - **Ich habe kein Geld.** 
-	_(Tôi không có tiền.)_ → _(Nominativ)_
+ _(Tôi không có tiền.)_ → _(Nominativ)_
 
 - **Ich sehe keinen Hund.** 
-	_(Tôi không thấy con chó nào.)_ → _(Akkusativ)_
+ _(Tôi không thấy con chó nào.)_ → _(Akkusativ)_
 
 - **Ich spreche mit keiner Frau.** 
-	- _(Tôi không nói chuyện với bất kỳ người phụ nữ nào.)_ → _(Dativ)_
+- _(Tôi không nói chuyện với bất kỳ người phụ nữ nào.)_ → _(Dativ)_
 
 ---
 
@@ -116,7 +116,7 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 |**Vị trí trong câu**|Đứng trước phần cần phủ định|Đứng trước danh từ|
 |**Loại từ đi kèm**|Động từ, tính từ, trạng từ|Danh từ|
 
-📌 **Mẹo ghi nhớ nhanh:**
+**Mẹo ghi nhớ nhanh:**
 
 - Nếu cần **phủ định danh từ không có quán từ → dùng "kein"**.
 - Nếu cần **phủ định động từ, tính từ, trạng từ → dùng "nicht"**.

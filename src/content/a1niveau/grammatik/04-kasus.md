@@ -66,7 +66,7 @@ order: 4
 |**Akkusativ**|Tân ngữ trực tiếp (chịu tác động từ động từ)|Wen? Was?|Ich sehe **den Hund**. _(Tôi thấy con chó.)_|
 |**Dativ**|Tân ngữ gián tiếp (nhận lợi ích từ hành động)|Wem?|Ich gebe **dem Hund** das Futter. _(Tôi đưa thức ăn cho con chó.)_|
 
-📌 **Mẹo nhớ nhanh:**
+**Mẹo nhớ nhanh:**
 
 - **"Wer/Was?" → Nominativ** (Ai thực hiện hành động?)
 - **"Wen/Was?" → Akkusativ** (Ai/cái gì chịu tác động?)  
@@ -82,7 +82,7 @@ order: 4
 |**Akkusativ**|**den** Mann|**die** Frau|**das** Kind|**die** Kinder|
 |**Dativ**|**dem** Mann|**der** Frau|**dem** Kind|**den** Kindern (+n)|
 
-📌 **Mẹo nhớ nhanh:**
+**Mẹo nhớ nhanh:**
 
 - **Akkusativ:** Chỉ danh từ giống đực thay đổi → "der" → "den"!
 - **Dativ:** Tất cả danh từ đều thay đổi!
@@ -96,7 +96,7 @@ order: 4
 -  **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)  
 -  **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
 
-📌 **Mẹo học nhanh:**
+**Mẹo học nhanh:**
 
 - **Wer/Was? → Nominativ**
 - **Wen/Was? → Akkusativ**  
