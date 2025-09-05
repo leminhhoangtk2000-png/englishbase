@@ -8,7 +8,7 @@ order: 5
 
  - Modalverben (động từ khuyết thiếu) giúp bổ sung ý nghĩa cho động từ chính, thể hiện **khả năng, sự cho phép, nghĩa vụ, mong muốn hoặc sở thích**.
 
-:::note[**Trong trình độ A1, có 7 động từ khuyết thiếu quan trọng:**]
+**Lưu ý:**
  **können** (có thể)  
  **dürfen** (được phép)  
  **müssen** (phải, cần)  
@@ -16,7 +16,6 @@ order: 5
  **wollen** (muốn)  
  **mögen** (thích)  
  **möchten** (muốn - lịch sự)
-:::
 
 **Cùng tìm hiểu cách sử dụng từng Modalverb nhé!**
 
@@ -44,7 +43,7 @@ order: 5
 
 ### **🔹 2.1. können (“có thể”)**
 
-  **Diễn tả khả năng hoặc khả năng thực hiện hành động.**
+- **Diễn tả khả năng hoặc khả năng thực hiện hành động.**
 
 **Ví dụ:**
 
@@ -58,7 +57,7 @@ order: 5
 
 ### **🔹 2.2. dürfen (“được phép”)**
 
-  **Diễn tả sự cho phép hoặc cấm đoán.**
+- **Diễn tả sự cho phép hoặc cấm đoán.**
 
 **Ví dụ:**
 
@@ -72,7 +71,7 @@ order: 5
 
 ### **🔹 2.3. müssen (“phải, cần”)**
 
-  **Diễn tả sự bắt buộc hoặc cần thiết.**
+- **Diễn tả sự bắt buộc hoặc cần thiết.**
 
 **Ví dụ:**
 
@@ -86,7 +85,7 @@ order: 5
 
 ### **🔹 2.4. sollen (“nên”)**
 
-  **Diễn tả nghĩa vụ hoặc lời khuyên.**
+- **Diễn tả nghĩa vụ hoặc lời khuyên.**
 
 **Ví dụ:**
 
@@ -100,7 +99,7 @@ order: 5
 
 ### **🔹 2.5. wollen (“muốn”)**
 
-  **Diễn tả mong muốn hoặc ý định mạnh mẽ.**
+- **Diễn tả mong muốn hoặc ý định mạnh mẽ.**
 
 **Ví dụ:**
 
@@ -116,7 +115,7 @@ order: 5
 
 ### **🔹 2.6. mögen (“thích”)**
 
-  **Diễn tả sở thích, sự yêu thích chung chung.**
+- **Diễn tả sở thích, sự yêu thích chung chung.**
 
 **Ví dụ:**
 
@@ -130,8 +129,8 @@ order: 5
 
 ### **🔹 2.7. möchten (“muốn” - lịch sự)**
 
-  **Diễn tả mong muốn một cách lịch sự.**  
-  **Thường dùng trong nhà hàng, cửa hàng hoặc yêu cầu lịch sự.**
+- **Diễn tả mong muốn một cách lịch sự.**  
+- **Thường dùng trong nhà hàng, cửa hàng hoặc yêu cầu lịch sự.**
 
 **Ví dụ:**
 
@@ -161,13 +160,12 @@ order: 5
 ---
 ## **🎯 5. Tổng Kết**
 
-:::note
-  - **Modalverben giúp diễn tả khả năng, sự cho phép, nghĩa vụ, mong muốn và sở thích.**  
-  - **Luôn đi kèm với động từ chính ở dạng nguyên mẫu (Infinitiv).**  
-  - **Nhớ chia Modalverben theo bảng và đặt đúng vị trí trong câu!**
+**Lưu ý:**
+-  **Modalverben giúp diễn tả khả năng, sự cho phép, nghĩa vụ, mong muốn và sở thích.**  
+-  **Luôn đi kèm với động từ chính ở dạng nguyên mẫu (Infinitiv).**  
+-  **Nhớ chia Modalverben theo bảng và đặt đúng vị trí trong câu!**
 
 📌 **Mẹo học nhanh:**
 
 - **Dùng "möchten" thay vì "wollen" khi muốn lịch sự.**
 - **Nhớ bảng chia Modalverben để sử dụng chính xác!**
-:::

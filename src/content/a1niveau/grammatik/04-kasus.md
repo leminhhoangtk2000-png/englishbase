@@ -1,11 +1,5 @@
 ---
-title: "Nominativ**Ví dụ:**
-
-- **Der Hund** spielt. (Ai chơi? → Con chó chơi.)
-
-- **Das Kind** liest ein Buch. (Ai đọc? → Đứa trẻ đọc sách.)
-
-**Mẹo nhớ nhanh:** Mọi chủ ngữ trong câu đều ở dạng Nominativ!iv - Dativ"
+title: "Nominativ - Akkusativ - Dativ"
 description: "Tìm hiểu về ba Kasus cơ bản trong tiếng Đức: Nominativ, Akkusativ và Dativ"
 level: "A1"
 topic: "Grammatik"
@@ -22,26 +16,22 @@ order: 4
 
 ### **🔹 1.1. Nominativ (Chủ ngữ)**
 
-  Là người hoặc vật thực hiện hành động trong câu.  
-  Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
+- Là người hoặc vật thực hiện hành động trong câu.  
+- Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
 
 **Ví dụ:**
 
-- **Der Hund** spielt.  
-  _(Ai chơi? → Con chó chơi.)_
+- **Der Hund** spielt. _(Ai chơi? → Con chó chơi.)_
+- **Das Kind** liest ein Buch. _(Ai đọc? → Đứa trẻ đọc sách.)_
 
-- **Das Kind** liest ein Buch.  
-  _(Ai đọc? → Đứa trẻ đọc sách.)_
-
-📌 **Mẹo nhớ nhanh:**  
-**Mọi chủ ngữ trong câu đều ở dạng Nominativ!**
+**Mẹo nhớ nhanh:** Mọi chủ ngữ trong câu đều ở dạng Nominativ!
 
 ---
 
 ### **🔹 1.2. Akkusativ (Tân ngữ trực tiếp)**
 
-  Là người hoặc vật chịu tác động trực tiếp từ hành động.  
-  Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
+- Là người hoặc vật chịu tác động trực tiếp từ hành động.  
+- Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
 
 **Ví dụ:**
 
@@ -55,8 +45,8 @@ order: 4
 
 ### **🔹 1.3. Dativ (Tân ngữ gián tiếp)**
 
-  Là người hoặc vật nhận lợi ích từ hành động.  
-  Trả lời câu hỏi: **Wem? (Cho ai?)**
+- Là người hoặc vật nhận lợi ích từ hành động.  
+- Trả lời câu hỏi: **Wem? (Cho ai?)**
 
 **Ví dụ:**
 
@@ -101,14 +91,13 @@ order: 4
 ---
 ## **🎯 4. Tổng Kết**
 
-:::note
-  - **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)  
-  - **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)  
-  - **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
+**Lưu ý:**
+-  **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)  
+-  **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)  
+-  **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
 
 📌 **Mẹo học nhanh:**
 
 - **Wer/Was? → Nominativ**
 - **Wen/Was? → Akkusativ**  
 - **Wem? → Dativ**
-:::

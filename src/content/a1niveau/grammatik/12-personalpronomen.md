@@ -42,7 +42,7 @@ order: 12
 
 ### **🔹 2.1. Nominativ (Đại từ chủ ngữ)**
 
-  **Dùng làm chủ ngữ trong câu** – thực hiện hành động trong câu.
+- **Dùng làm chủ ngữ trong câu** – thực hiện hành động trong câu.
 
 **Ví dụ:**
 
@@ -56,7 +56,7 @@ order: 12
 
 ### **🔹 2.2. Akkusativ (Đại từ tân ngữ trực tiếp)**
 
-  **Dùng làm tân ngữ trong câu**, khi bị tác động bởi động từ.
+- **Dùng làm tân ngữ trong câu**, khi bị tác động bởi động từ.
 
 **Ví dụ:**
 
@@ -75,7 +75,7 @@ order: 12
 
 ### **🔹 2.3. Dativ (Đại từ tân ngữ gián tiếp)**
 
-  **Dùng khi có đối tượng gián tiếp nhận lợi ích từ hành động.**
+- **Dùng khi có đối tượng gián tiếp nhận lợi ích từ hành động.**
 
 **Ví dụ:**
 
@@ -108,10 +108,10 @@ order: 12
 ---
 ## **🎯 4. Tổng Kết**
 
-:::note
-  **Personalpronomen (Đại từ nhân xưng) giúp thay thế danh từ trong câu.**  
+**Lưu ý:**
+- **Personalpronomen (Đại từ nhân xưng) giúp thay thế danh từ trong câu.**  
   
-  **Nhớ chia theo 3 cách:**  
+- **Nhớ chia theo 3 cách:**  
  
  - **Nominativ (Chủ ngữ):** Thực hiện hành động (_Ich bin müde._)  
  - **Akkusativ (Tân ngữ trực tiếp):** Bị tác động bởi hành động (_Ich sehe dich._)  
@@ -121,4 +121,3 @@ order: 12
 
 - **Akkusativ → Hỏi "wen?" hoặc "was?"** (_Ai? Cái gì?_)
 - **Dativ → Hỏi "wem?"** (_Cho ai?_)
-:::

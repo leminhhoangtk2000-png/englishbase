@@ -9,7 +9,7 @@ order: 6
 Trong tiếng Đức, nhiều động từ có thể **ghép với tiền tố (Präfix)** để tạo thành động từ có nghĩa mới. Tuy nhiên, các tiền tố này sẽ quyết định xem động từ có **tách được** hay **không tách được**.
 
 📌 **Có 2 nhóm chính:**  
-  - **Trennbare Verben (Động từ tách được)** – Tiền tố **tách rời** khỏi động từ khi chia.  
+-  **Trennbare Verben (Động từ tách được)** – Tiền tố **tách rời** khỏi động từ khi chia.  
  -  **Nicht trennbare Verben (Động từ không tách được)** – Tiền tố **luôn gắn liền** với động từ.
 
 ---
@@ -39,7 +39,7 @@ Thường có **21 tiền tố** đặc trưng:
 |**Sie/sie**|Sie **stehen** auf.|Sie **rufen** an.|
 
 **Lưu ý:**  
-  Trong **câu hỏi** hoặc **mệnh đề phụ**, tiền tố vẫn **đặt ở cuối câu**.  
+- Trong **câu hỏi** hoặc **mệnh đề phụ**, tiền tố vẫn **đặt ở cuối câu**.  
   
 **Ví dụ:**
 
@@ -75,8 +75,8 @@ Thường có **21 tiền tố** đặc trưng:
 |**Sie/sie**|Sie **besuchen**.|Sie **verstehen**.|
 
 **Lưu ý:**  
-  Không bao giờ tách tiền tố khỏi động từ!  
-  Ví dụ: 
+- Không bao giờ tách tiền tố khỏi động từ!  
+- Ví dụ: 
 - _Ich **besuche** meine Oma am Wochenende._ 
 	_(Tôi thăm bà vào cuối tuần.)_
 
@@ -115,7 +115,7 @@ Thường có **21 tiền tố** đặc trưng:
 
 ## **🎯 5. Tổng Kết**
 
-:::note
+**Lưu ý:**
 - **Trennbare Verben:** Tiền tố **tách rời** khi chia động từ.  
 - **Nicht Trennbare Verben:** Tiền tố **luôn đi liền với động từ**.  
 - **Một số động từ có thể vừa tách vừa không tách**, tùy theo **ngữ cảnh**.  
@@ -126,4 +126,3 @@ Thường có **21 tiền tố** đặc trưng:
 - **Nicht trennbare Verben** có **8 tiền tố chính** (_be-, ge-, er-..._).
 
 📌 **Học mẹo:** Không cần nhớ tất cả một lúc! Hãy **luyện tập với câu thực tế** để quen dần!
-:::

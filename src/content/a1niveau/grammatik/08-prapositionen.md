@@ -97,8 +97,8 @@ order: 8
 ---
 ## **🎯 5. Tổng Kết**
 
-:::note
-  **Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai (Wechselpräpositionen).**  
+**Lưu ý:**
+- **Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai (Wechselpräpositionen).**  
 
 **Những giới từ quan trọng:**  
 
@@ -112,4 +112,3 @@ order: 8
 - **Akkusativ** → chuyển động, có hành động hướng đến một nơi nào đó.
 - **Dativ** → vị trí cố định, diễn tả nơi chốn.
 - **Wechselpräpositionen** → chuyển động = Akkusativ, vị trí = Dativ.
-:::

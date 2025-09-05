@@ -102,13 +102,12 @@ Sau khi hoàn thành 12 bài học này, bạn sẽ:
 
 ## 💡 Lời khuyên học tập
 
-:::note[**Cách học hiệu quả**]
+**Lưu ý:**
 1. **Học tuần tự**: Bắt đầu từ bài 1 và học theo thứ tự
 2. **Luyện tập thường xuyên**: Làm bài tập sau mỗi bài học  
 3. **Kết hợp thực hành**: Áp dụng ngữ pháp vào giao tiếp hàng ngày
 4. **Ôn tập định kỳ**: Quay lại các bài đã học để củng cố kiến thức
 5. **Kiên trì**: Ngữ pháp tiếng Đức cần thời gian để thành thạo
-:::
 
 ---
 

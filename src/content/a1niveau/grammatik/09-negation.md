@@ -18,9 +18,9 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **"Nicht" dùng để phủ định:**  
 
-  - Động từ  
-  - Tính từ, trạng từ  
-  - Một phần của câu
+-  Động từ  
+-  Tính từ, trạng từ  
+-  Một phần của câu
 
 ---
 
@@ -125,7 +125,7 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 ## **🎯 4. Tổng Kết**
 
-:::note
+**Lưu ý:**
 **"Nicht" dùng để phủ định:**  
 
 - **Động từ** (_Ich gehe nicht_.)  
@@ -134,8 +134,7 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **"Kein" dùng để phủ định:**  
   
-  - **Danh từ không có mạo từ** (_Ich habe kein Auto_.)  
-  - **Danh từ có quán từ không xác định (ein/eine)** (_Ich habe keinen Hund_.)
+-  **Danh từ không có mạo từ** (_Ich habe kein Auto_.)  
+-  **Danh từ có quán từ không xác định (ein/eine)** (_Ich habe keinen Hund_.)
 
 📌 **Hãy nhớ bảng biến cách của "kein" để dùng chính xác!**
-:::

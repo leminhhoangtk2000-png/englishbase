@@ -109,23 +109,23 @@ Một số động từ thay đổi nguyên âm khi chia ở **du** và **er/sie
 
 ## **📌 3. Tóm Tắt Nhanh**
 
-:::note
-  - **Nhóm A:** Chia theo quy tắc **e/st/t** _(hầu hết các động từ)_.  
-  - **Nhóm A.1:** Động từ có đuôi **-s, -z, -ß**, **du** bỏ **s** trong **-st**.  
-  - **Nhóm A.2:** Động từ kết thúc bằng **-t, -d, -chn, -dn, -fn**, **du, er/sie/es** thêm **-e** trước **st, t**.  
-  - **Nhóm B.1:** Một số động từ thay đổi nguyên âm **a → ä, e → ie/i** _(chỉ ở du & er/sie/es)_.  
-  - **Nhóm B.2:** **10 động từ bất quy tắc** **(sein, haben, werden...)** cần học thuộc.  
-  - **Ngôi số nhiều (wir, ihr, sie/Sie)** luôn tuân theo **quy tắc chia cơ bản (nhóm A)**.
+**Quy tắc chia động từ:**
 
-***Đối với các ngôi số nhiều như wir, ihr, sie, Sie thì luôn áp dụng quy tắc chia cơ bản (nhóm A)***
-:::
+- **Nhóm A:** Chia theo quy tắc **e/st/t** _(hầu hết các động từ)_
+- **Nhóm A.1:** Động từ có đuôi **-s, -z, -ß**, **du** bỏ **s** trong **-st**
+- **Nhóm A.2:** Động từ kết thúc bằng **-t, -d, -chn, -dn, -fn**, **du, er/sie/es** thêm **-e** trước **st, t**
+- **Nhóm B.1:** Một số động từ thay đổi nguyên âm **a → ä, e → ie/i** _(chỉ ở du & er/sie/es)_
+- **Nhóm B.2:** **10 động từ bất quy tắc** **(sein, haben, werden...)** cần học thuộc
+- **Ngôi số nhiều (wir, ihr, sie/Sie)** luôn tuân theo **quy tắc chia cơ bản (nhóm A)**
+
+**Lưu ý:** Đối với các ngôi số nhiều như wir, ihr, sie, Sie thì luôn áp dụng quy tắc chia cơ bản (nhóm A)
 
 
 ---
 
 ## **4. Bài tập luyện tập**
 
-:::note
+**Lưu ý:**
 Dưới đây là các bài tập luyện tập theo thứ tự dễ đến khó:  
 
 1. [Konjugation Übungen 1](https://kyrosschule.de/ubungen-regelmasige-oder-unregelmasige-verben-schwache-verben/#google_vignette)  
@@ -133,7 +133,6 @@ Dưới đây là các bài tập luyện tập theo thứ tự dễ đến khó
 3. [Konjugation Übungen 3](https://deutschlernerblog.de/verben-konjugieren-uebungen-starke-und-unregelmaessige-verben-a1/)
 
 💡 **Lưu ý:** Đây là những trang web miễn phí. Nếu gặp lỗi, hãy thử làm mới (refresh) trang.
-:::
 
 ---
 

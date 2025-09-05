@@ -27,9 +27,9 @@ order: 2
 
 Danh từ trong tiếng Đức có **ba giống chính**:
 
-  **Giống đực (Maskulin) →** _der_  
-  **Giống cái (Feminin) →** _die_  
-  **Giống trung (Neutrum) →** _das_
+- **Giống đực (Maskulin) →** _der_
+- **Giống cái (Feminin) →** _die_
+- **Giống trung (Neutrum) →** _das_
 
 ---
 
@@ -71,8 +71,8 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 ## **🔹 3. Các Dạng Số Nhiều của Danh Từ**
 
 **Lưu ý:**  
-  Không có quy tắc cố định, danh từ số nhiều cần **học thuộc**.  
-  Học danh từ phải học kèm **giống và dạng số nhiều**.
+- Không có quy tắc cố định, danh từ số nhiều cần **học thuộc**.  
+- Học danh từ phải học kèm **giống và dạng số nhiều**.
 
 ### **📝 12 Cách Biến Đổi Danh Từ từ Số Ít Sang Số Nhiều**
 
@@ -105,21 +105,19 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 |**Dativ**|dem Mann|der Frau|dem Kind|den Kindern|
 |**Genitiv**|des Mannes|der Frau|des Kindes|der Kinder|
 
-:::note[**Ghi nhớ nhanh:**]
-  - **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).  
-  - **Dativ:** Danh từ số nhiều thêm **-n**.  
-  - **Genitiv:** Danh từ **đực và trung** thêm **-es**.
-:::
+**Lưu ý:**
+-  **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).  
+-  **Dativ:** Danh từ số nhiều thêm **-n**.  
+-  **Genitiv:** Danh từ **đực và trung** thêm **-es**.
 
 ---
 
 ## **🎯 5. Tổng Kết**
 
-:::note
-  **Danh từ tiếng Đức có ba giống:** **đực (der), cái (die), trung (das)**  
-  **Số nhiều của danh từ có nhiều cách biến đổi, không có quy tắc chung tuyệt đối.**  
-  **Quán từ biến đổi theo cách (Kasus):** **Nominativ, Akkusativ, Dativ, Genitiv**  
-  **Danh từ luôn viết hoa chữ cái đầu.**  
-  **Danh từ số nhiều luôn đi với quán từ xác định "die".**  
-  **Học danh từ cần học cả giống và dạng số nhiều cùng lúc!**
-:::
+**Lưu ý:**
+- **Danh từ tiếng Đức có ba giống:** **đực (der), cái (die), trung (das)**  
+- **Số nhiều của danh từ có nhiều cách biến đổi, không có quy tắc chung tuyệt đối.**  
+- **Quán từ biến đổi theo cách (Kasus):** **Nominativ, Akkusativ, Dativ, Genitiv**  
+- **Danh từ luôn viết hoa chữ cái đầu.**  
+- **Danh từ số nhiều luôn đi với quán từ xác định "die".**  
+- **Học danh từ cần học cả giống và dạng số nhiều cùng lúc!**
