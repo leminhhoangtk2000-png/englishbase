@@ -1,4 +1,3 @@
-
 ---
 title: "Chia động từ ở thì hiện tại - Präsens"
 description: "Học cách chia động từ trong tiếng Đức ở thì hiện tại (Präsens) với đầy đủ quy tắc và ví dụ"

@@ -1,5 +1,12 @@
+---
+title: "Modalverben - Động từ khuyết thiếu"
+description: "Tìm hiểu về các động từ khuyết thiếu (Modalverben) trong tiếng Đức: können, müssen, wollen, sollen, dürfen, mögen"
+level: "A1"
+topic: "Grammatik"
+order: 5
+---
 
- - Modalverben (động từ khuyết thiếu) giúp bổ sung ý nghĩa cho động từ chính, thể hiện **khả năng, sự cho phép, nghĩa vụ, mong muốn hoặc sở thích**.
+- Modalverben (động từ khuyết thiếu) giúp bổ sung ý nghĩa cho động từ chính, thể hiện **khả năng, sự cho phép, nghĩa vụ, mong muốn hoặc sở thích**.
 
 :::note[**Trong trình độ A1, có 7 động từ khuyết thiếu quan trọng:**]
  **können** (có thể)  

@@ -1,3 +1,10 @@
+---
+title: "Konjunktionen - Liên từ"
+description: "Học về các liên từ kết nối mệnh đề trong tiếng Đức"
+level: "A1"
+topic: "Grammatik"
+order: 10
+---
 
 **Konjunktionen (Liên từ)** giúp liên kết hai mệnh đề chính lại với nhau, diễn đạt mối quan hệ giữa chúng như **bổ sung, lựa chọn, tương phản, hoặc lý do**.
 

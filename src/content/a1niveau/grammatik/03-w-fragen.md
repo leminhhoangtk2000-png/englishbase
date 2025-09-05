@@ -1,14 +1,24 @@
+---
+title: "W-Fragen und Ja/Nein-Fragen"
+description: "Học cách đặt câu hỏi trong tiếng Đức với W-Fragen và Ja/Nein-Fragen"
+level: "A1"
+topic: "Grammatik" 
+order: 3
+---
 
+Trong tiếng Đức, câu hỏi được chia thành hai loại chính: **W-Fragen** (câu hỏi với từ đặt câu hỏi) và **Ja/Nein-Fragen** (câu hỏi có/không). Cùng tìm hiểu chi tiết dưới đây!
 
 ---
-title: "W## **1. W-Fragen (Câu hỏi với từ đặt câu hỏi)**
+
+## **1. W-Fragen (Câu hỏi với từ đặt câu hỏi)**
 
 W-Fragen bắt đầu bằng các từ đặt câu hỏi bắt đầu bằng chữ "W" (z.B.: Was, Wo, Wer, Wann, Warum).
 
 :::tip[📌 Cấu trúc chung]
-**W-Frage + Động từ chia + Chủ ngữ + (Phần còn lại)**  
+**W-Frage + Động từ chia + Chủ ngữ + (Phần còn lại)**
+:::
+
 ::: und Ja/Nein-Fragen"
-description: "Học cách đặt câu hỏi trong tiếng Đức với W-Fragen và Ja/Nein-Fragen"
 level: "A1"
 topic: "Grammatik" 
 order: 3

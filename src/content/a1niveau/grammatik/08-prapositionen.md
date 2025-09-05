@@ -1,3 +1,10 @@
+---
+title: "Präpositionen - Giới từ"
+description: "Học về giới từ trong tiếng Đức và cách sử dụng với các Kasus khác nhau"
+level: "A1"
+topic: "Grammatik"
+order: 8
+---
 
 - **Giới từ (Präpositionen)** giúp xác định **thời gian, địa điểm hoặc mối quan hệ giữa các yếu tố trong câu**.  
 - Trong tiếng Đức, giới từ có thể đi kèm với **Akkusativ, Dativ hoặc cả hai** (Wechselpräpositionen).

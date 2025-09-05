@@ -1,3 +1,10 @@
+---
+title: "Personalpronomen - Đại từ nhân xưng"
+description: "Tìm hiểu về đại từ nhân xưng trong tiếng Đức và cách chia theo các Kasus"
+level: "A1"
+topic: "Grammatik"
+order: 12
+---
 
 📌 **Personalpronomen** (đại từ nhân xưng) giúp thay thế danh từ trong câu, giúp câu ngắn gọn hơn và tránh lặp lại từ.  
 

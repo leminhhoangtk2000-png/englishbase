@@ -1,3 +1,10 @@
+---
+title: "Trennbare Verben - Động từ tách được"
+description: "Học về động từ tách được và không tách được trong tiếng Đức"
+level: "A1"
+topic: "Grammatik"
+order: 6
+---
 
 Trong tiếng Đức, nhiều động từ có thể **ghép với tiền tố (Präfix)** để tạo thành động từ có nghĩa mới. Tuy nhiên, các tiền tố này sẽ quyết định xem động từ có **tách được** hay **không tách được**.
 

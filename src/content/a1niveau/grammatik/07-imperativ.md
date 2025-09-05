@@ -1,3 +1,10 @@
+---
+title: "Imperativ - Câu mệnh lệnh"
+description: "Tìm hiểu cách tạo và sử dụng câu mệnh lệnh (Imperativ) trong tiếng Đức"
+level: "A1"
+topic: "Grammatik"
+order: 7
+---
 
 :::info
 Câu mệnh lệnh (**Imperativ**) được sử dụng để ra lệnh, đề nghị, mời gọi hoặc hướng dẫn. Câu mệnh lệnh chỉ được chia cho các ngôi **du** (bạn), **ihr** (các bạn), và **Sie** (trang trọng).

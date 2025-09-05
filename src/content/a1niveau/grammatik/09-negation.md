@@ -1,3 +1,11 @@
+---
+title: "Negation - Phủ định với nicht và kein"
+description: "Tìm hiểu cách phủ định trong tiếng Đức với nicht và kein"
+level: "A1"
+topic: "Grammatik"
+order: 9
+---
+
 📌 **Trong tiếng Đức, phủ định thường được thực hiện bằng hai từ chính: "nicht" và "kein".**  
 
  - **"Nicht"** dùng để phủ định **động từ, tính từ, trạng từ và một phần của câu**.  

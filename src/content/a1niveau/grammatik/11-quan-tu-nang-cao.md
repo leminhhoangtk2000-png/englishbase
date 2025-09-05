@@ -1,3 +1,10 @@
+---
+title: "Quán từ nâng cao - Erweiterter Wortschatz"
+description: "Mở rộng kiến thức về quán từ và từ vựng nâng cao trong tiếng Đức"
+level: "A1"
+topic: "Grammatik"
+order: 11
+---
 
 📌 **Quán từ (Artikel)** trong tiếng Đức giúp xác định danh từ về **giống (Genus), số (Numerus), cách (Kasus) và ngữ cảnh sử dụng.**  
 
