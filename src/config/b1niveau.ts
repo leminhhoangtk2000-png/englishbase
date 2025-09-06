@@ -7,79 +7,81 @@ const markdownNavigation = getNavigationStructure('b1niveau');
 export const docsConfig: DocsConfig = {
   items: markdownNavigation.length > 0 ? markdownNavigation : [
     {
-      title: "Ngữ pháp - Grammatik",
+      title: "Grammatik",
+      href: "/b1niveau/grammatik",
       items: [
         {
-          title: "Thì hoàn thành - Perfekt",
-          description: "Học cách sử dụng thì hoàn thành trong tiếng Đức",
-          href: "/b1niveau/grammatik/01-perfekt",
+          title: "B1 Niveau - Grammatik",
+          description: "Các bài học ngữ pháp tiếng Đức cấp độ B1 - Từ trung cấp đến nâng cao",
+          href: "/b1niveau/grammatik/index",
         },
         {
-          title: "Quá khứ đơn - Präteritum",
-          description: "Sử dụng thì quá khứ đơn trong văn viết",
-          href: "/b1niveau/grammatik/02-praeteritum",
+          title: "Plusquamperfekt - Thì quá khứ hoàn thành",
+          description: "Học cách sử dụng thì Plusquamperfekt trong tiếng Đức",
+          href: "/b1niveau/grammatik/01-plusquamperfekt",
         },
         {
-          title: "Câu điều kiện - Konjunktiv II",
-          description: "Học cách sử dụng câu điều kiện và lời khuyên",
-          href: "/b1niveau/grammatik/03-konjunktiv-ii",
+          title: "Futur I und II - Thì tương lai",
+          description: "Tìm hiểu về thì tương lai I và II trong tiếng Đức",
+          href: "/b1niveau/grammatik/02-futur",
         },
         {
-          title: "Câu bị động - Passiv",
-          description: "Cấu trúc câu bị động trong tiếng Đức",
-          href: "/b1niveau/grammatik/04-passiv",
+          title: "Konjunktiv I - Thể tường thuật",
+          description: "Học cách sử dụng Konjunktiv I cho lời tường thuật",
+          href: "/b1niveau/grammatik/03-konjunktiv-i",
+        },
+        {
+          title: "Relativsätze - Mệnh đề quan hệ",
+          description: "Tìm hiểu về mệnh đề quan hệ và đại từ quan hệ",
+          href: "/b1niveau/grammatik/04-relativsatze",
+        },
+        {
+          title: "Partizipien - Phân từ",
+          description: "Học về phân từ I và phân từ II trong tiếng Đức",
+          href: "/b1niveau/grammatik/05-partizipien",
+        },
+        {
+          title: "Infinitivsätze - Mệnh đề nguyên thể",
+          description: "Tìm hiểu về mệnh đề nguyên thể với zu",
+          href: "/b1niveau/grammatik/06-infinitivsatze",
+        },
+        {
+          title: "Subjektive Modalverben - Động từ tình thái chủ quan",
+          description: "Học cách sử dụng động từ tình thái để diễn tả suy đoán",
+          href: "/b1niveau/grammatik/07-subjektive-modalverben",
+        },
+        {
+          title: "Nominalisierung - Danh từ hóa",
+          description: "Tìm hiểu về quá trình danh từ hóa trong tiếng Đức",
+          href: "/b1niveau/grammatik/08-nominalisierung",
         },
       ],
     },
     {
-      title: "Từ vựng - Wortschatz",
+      title: "Wortschatz",
+      href: "/b1niveau/wortschatz",
       items: [
         {
-          title: "Công việc - Arbeit",
-          description: "Từ vựng về công việc và nghề nghiệp",
-          href: "/b1niveau/wortschatz/01-arbeit",
+          title: "Beruf und Karriere",
+          description: "Từ vựng về nghề nghiệp và sự nghiệp",
+          href: "/b1niveau/wortschatz/01-beruf",
         },
         {
-          title: "Sức khỏe - Gesundheit",
-          description: "Từ vựng về sức khỏe và y tế",
-          href: "/b1niveau/wortschatz/02-gesundheit",
+          title: "Medien und Kommunikation",
+          description: "Từ vựng về truyền thông và giao tiếp",
+          href: "/b1niveau/wortschatz/02-medien",
         },
         {
-          title: "Giáo dục - Bildung",
-          description: "Từ vựng về giáo dục và học tập",
-          href: "/b1niveau/wortschatz/03-bildung",
+          title: "Umwelt und Natur",
+          description: "Từ vựng về môi trường và thiên nhiên",
+          href: "/b1niveau/wortschatz/03-umwelt",
         },
         {
-          title: "Đi lại - Verkehr",
-          description: "Từ vựng về giao thông và đi lại",
-          href: "/b1niveau/wortschatz/04-verkehr",
-        },
-      ],
-    },
-    {
-      title: "Bài tập - Übungen",
-      items: [
-        {
-          title: "Luyện ngữ pháp B1",
-          description: "Bài tập thực hành ngữ pháp cấp độ B1",
-          href: "/b1niveau/uebungen/01-grammatik-uebungen",
-        },
-        {
-          title: "Luyện từ vựng B1",
-          description: "Bài tập thực hành từ vựng cấp độ B1",
-          href: "/b1niveau/uebungen/02-wortschatz-uebungen",
-        },
-        {
-          title: "Luyện đọc B1",
-          description: "Bài tập thực hành đọc hiểu cấp độ B1",
-          href: "/b1niveau/uebungen/03-lesen-uebungen",
+          title: "Politik und Gesellschaft",
+          description: "Từ vựng về chính trị và xã hội",
+          href: "/b1niveau/wortschatz/04-politik",
         },
       ],
     },
   ],
-};
-
-// Keep backwards compatibility
-export const b1niveauConfig = {
-  sidebarNav: docsConfig.items,
 };

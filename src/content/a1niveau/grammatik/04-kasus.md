@@ -25,9 +25,10 @@ Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
 - **Der Hund** spielt.<br>_Ai chơi? → Con chó chơi._
 - **Das Kind** liest ein Buch.<br>_Ai đọc? → Đứa trẻ đọc sách._
 
-:::note[Mẹo nhớ]  
+:::note[Mẹo nhớ]
+
 Mọi **chủ ngữ** trong câu đều ở dạng **Nominativ**.  
-:::
+ :::
 
 ---
 
@@ -41,9 +42,10 @@ Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
 - **Ich sehe den Mann.**<br>_Tôi nhìn thấy người đàn ông._
 - **Sie kauft das Buch.**<br>_Cô ấy mua cuốn sách._
 
-:::note[Mẹo nhớ]  
+:::note[Mẹo nhớ]
+
 Động từ tác động trực tiếp vào đối tượng nào → đối tượng đó ở **Akkusativ**.  
-:::
+ :::
 
 ---
 
@@ -58,8 +60,9 @@ Trả lời câu hỏi: **Wem? (Cho ai?)**
 - **Kannst du mir helfen?**<br>_Bạn có thể giúp tôi không?_
 
 :::note[Mẹo nhớ]
+
 Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.  
-:::
+ :::
 
 ---
 

@@ -356,19 +356,60 @@
     white-space: normal;
   }
   
-  /* Emphasis */
-  .prose em {
-    @apply italic;
+  /* Emphasis - Force inline display for italic text */
+  .prose em,
+  .prose i {
+    font-style: italic !important;
+    display: inline !important;
+    white-space: normal !important;
+    line-height: inherit !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    float: none !important;
   }
 
   /* German-Vietnamese Examples Styling */
-  .prose li em {
-    @apply italic text-gray-600 dark:text-gray-400 text-sm;
-    display: inline;
-    margin-top: 0.25rem;
-    padding-left: 0.25rem;
-    border-left: none;
-    font-style: italic;
+  .prose li em,
+  .prose li i,
+  .prose p em,
+  .prose p i,
+  .prose td em,
+  .prose td i {
+    font-style: italic !important;
+    color: rgb(75 85 99) !important;
+    display: inline !important;
+    white-space: normal !important;
+    line-height: inherit !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    float: none !important;
+  }
+
+  /* Dark mode for italic text */
+  .dark .prose li em,
+  .dark .prose li i,
+  .dark .prose p em,
+  .dark .prose p i,
+  .dark .prose td em,
+  .dark .prose td i {
+    color: rgb(156 163 175) !important;
+  }
+
+  /* Force inline for all italic text in admonitions */
+  .prose .admonition em,
+  .prose .admonition i {
+    display: inline !important;
+    white-space: normal !important;
+    line-height: inherit !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    float: none !important;
   }
 
   .dark .prose li em {
@@ -486,9 +527,13 @@
   line-height: 1.6 !important;
   display: block !important;
   visibility: visible !important;
+  color: currentColor !important;
+  opacity: 1 !important;
 }
 
 /* Force all admonition content to be visible */
+.prose .admonition-content,
+.prose .admonition-content *,
 .prose .admonition-content p,
 .prose .admonition-content ul,
 .prose .admonition-content ol,
@@ -498,6 +543,7 @@
   display: inherit !important;
   visibility: visible !important;
   opacity: 1 !important;
+  color: inherit !important;
 }
 
 /* Ensure strong elements stay inline */
@@ -559,11 +605,13 @@
 }
 
 .prose .admonition.admonition-tip .admonition-content {
-  color: #047857 !important;
+  color: #065f46 !important;
+  opacity: 1 !important;
 }
 
 .dark .prose .admonition.admonition-tip .admonition-content {
-  color: #a7f3d0 !important;
+  color: #d1fae5 !important;
+  opacity: 1 !important;
 }
 
 /* Info - Light Blue */
