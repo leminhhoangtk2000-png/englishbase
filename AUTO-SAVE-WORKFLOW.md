@@ -1,11 +1,11 @@
-# 🚀 QUY TRÌNH AUTO-SAVE & HOT RELOAD 
+# 🚀 QUY TRÌNH AUTO-SAVE & HOT RELOAD
 
 ## Bước 1: Cấu hình VS Code Auto-Save
 
 1. **Mở VS Code Settings (⌘ + ,)**
 2. **Bật Auto Save:**
    - Tìm `files.autoSave`
-   - Chọn `afterDelay` 
+   - Chọn `afterDelay`
    - Set `files.autoSaveDelay` = 1000ms
 
 ✅ **Hoặc dùng file .vscode/settings.json đã được tạo**
@@ -25,10 +25,12 @@ npm run watch:content
 ### ✅ **QUI TẮC QUAN TRỌNG:**
 
 1. **File naming:** `[order]-[name].md`
+
    - ✅ Đúng: `03-wfragen.md`
    - ❌ Sai: `3.  Wfragen und JaNein-Fragen.md`
 
 2. **Frontmatter bắt buộc:**
+
 ```yaml
 ---
 title: "Tiêu đề bài học"
@@ -40,6 +42,7 @@ order: 3
 ```
 
 3. **Admonition syntax:**
+
 ```markdown
 :::note
 Ghi chú quan trọng
@@ -92,7 +95,7 @@ npm run dev:clean
 ✅ **Real-time preview** - Thấy thay đổi ngay lập tức  
 ✅ **Auto-format** - Code tự động được format  
 ✅ **Error detection** - Báo lỗi syntax ngay  
-✅ **Hot reload** - Không cần refresh manual  
+✅ **Hot reload** - Không cần refresh manual
 
 ## 🔧 **SCRIPT UTILITIES:**
 
@@ -108,5 +111,6 @@ npm run watch:content
 ```
 
 ---
+
 **📅 Tạo ngày: $(date)**  
 **🎯 Mục tiêu: Real-time development cho German learning platform**

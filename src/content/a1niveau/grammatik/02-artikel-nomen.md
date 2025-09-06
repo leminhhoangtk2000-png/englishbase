@@ -8,18 +8,18 @@ order: 2
 
 📌 Trong tiếng Đức, quán từ và danh từ luôn đi liền với nhau:
 
-- Nếu thấy một quán từ, **chắc chắn** sau đó là một danh từ!  
+- Nếu thấy một quán từ, **chắc chắn** sau đó là một danh từ!
 - Quán từ giúp xác định **giống, số và cách** của danh từ.
 
 ---
 
 ## **🔹 1. Các Loại Quán Từ trong Tiếng Đức**
 
-|🏷 **Loại Quán Từ**|📝 **Công Dụng**|📌 **Ví Dụ**|
-|---|---|---|
-|**Quán từ xác định** (_der, die, das_)|Dùng khi danh từ đã được xác định rõ ràng.|_Der Hund schläft._ _(Con chó đang ngủ.)_|
-|**Quán từ không xác định** (_ein, eine_)|Dùng khi danh từ chưa được xác định.|_Ich habe eine Katze._ _(Tôi có một con mèo.)_|
-|**Quán từ phủ định** (_kein, keine_)|Phủ định sự tồn tại của danh từ.|_Ich habe kein Auto._ _(Tôi không có xe hơi.)_|
+| 🏷 **Loại Quán Từ**                       | 📝 **Công Dụng**                           | 📌 **Ví Dụ**                                   |
+| ---------------------------------------- | ------------------------------------------ | ---------------------------------------------- |
+| **Quán từ xác định** (_der, die, das_)   | Dùng khi danh từ đã được xác định rõ ràng. | _Der Hund schläft._ _(Con chó đang ngủ.)_      |
+| **Quán từ không xác định** (_ein, eine_) | Dùng khi danh từ chưa được xác định.       | _Ich habe eine Katze._ _(Tôi có một con mèo.)_ |
+| **Quán từ phủ định** (_kein, keine_)     | Phủ định sự tồn tại của danh từ.           | _Ich habe kein Auto._ _(Tôi không có xe hơi.)_ |
 
 ---
 
@@ -27,9 +27,9 @@ order: 2
 
 Danh từ trong tiếng Đức có **ba giống chính**:
 
-  **Giống đực (Maskulin) →** _der_  
-  **Giống cái (Feminin) →** _die_  
-  **Giống trung (Neutrum) →** _das_
+- **Giống đực (Maskulin) →** _der_
+- **Giống cái (Feminin) →** _die_
+- **Giống trung (Neutrum) →** _das_
 
 ---
 
@@ -70,9 +70,11 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 
 ## **🔹 3. Các Dạng Số Nhiều của Danh Từ**
 
-**Lưu ý:**  
-  Không có quy tắc cố định, danh từ số nhiều cần **học thuộc**.  
-  Học danh từ phải học kèm **giống và dạng số nhiều**.
+:::info[Ghi chú]
+
+- Không có quy tắc cố định cho số nhiều, cần **học thuộc**.
+- Khi học danh từ, hãy học kèm **giống và dạng số nhiều**.  
+  :::
 
 ### **📝 12 Cách Biến Đổi Danh Từ từ Số Ít Sang Số Nhiều**
 
@@ -90,36 +92,38 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 
 ## **🔹 4. Biến Cách của Quán từ (Kasusdeklination der Artikel)**
 
-**Quán từ thay đổi theo bốn cách (Kasus):**  
- - Nominativ (Chủ ngữ)  
- - Akkusativ (Tân ngữ trực tiếp)  
- - Dativ (Tân ngữ gián tiếp) 
- - Genitiv (Sở hữu)
+**Quán từ thay đổi theo bốn cách (Kasus):**
+
+- Nominativ (Chủ ngữ)
+- Akkusativ (Tân ngữ trực tiếp)
+- Dativ (Tân ngữ gián tiếp)
+- Genitiv (Sở hữu)
 
 ### **📌 Bảng Biến Cách Quán Từ**
 
-|**Cách**|**Giống đực (Maskulin)**|**Giống cái (Feminin)**|**Trung tính (Neutrum)**|**Số nhiều (Plural)**|
-|---|---|---|---|---|
-|**Nominativ**|der Mann|die Frau|das Kind|die Kinder|
-|**Akkusativ**|den Mann|die Frau|das Kind|die Kinder|
-|**Dativ**|dem Mann|der Frau|dem Kind|den Kindern|
-|**Genitiv**|des Mannes|der Frau|des Kindes|der Kinder|
+| **Cách**      | **Giống đực (Maskulin)** | **Giống cái (Feminin)** | **Trung tính (Neutrum)** | **Số nhiều (Plural)** |
+| ------------- | ------------------------ | ----------------------- | ------------------------ | --------------------- |
+| **Nominativ** | der Mann                 | die Frau                | das Kind                 | die Kinder            |
+| **Akkusativ** | den Mann                 | die Frau                | das Kind                 | die Kinder            |
+| **Dativ**     | dem Mann                 | der Frau                | dem Kind                 | den Kindern           |
+| **Genitiv**   | des Mannes               | der Frau                | des Kindes               | der Kinder            |
 
-:::note[**Ghi nhớ nhanh:**]
-  - **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).  
-  - **Dativ:** Danh từ số nhiều thêm **-n**.  
-  - **Genitiv:** Danh từ **đực và trung** thêm **-es**.
-:::
+:::tip[Ghi nhớ nhanh]
+
+- **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).
+- **Dativ:** Danh từ số nhiều thêm **-n**.
+- **Genitiv:** Danh từ **đực và trung** thêm **-es**.  
+  :::
 
 ---
 
 ## **🎯 5. Tổng Kết**
 
-:::note
-  **Danh từ tiếng Đức có ba giống:** **đực (der), cái (die), trung (das)**  
-  **Số nhiều của danh từ có nhiều cách biến đổi, không có quy tắc chung tuyệt đối.**  
-  **Quán từ biến đổi theo cách (Kasus):** **Nominativ, Akkusativ, Dativ, Genitiv**  
-  **Danh từ luôn viết hoa chữ cái đầu.**  
-  **Danh từ số nhiều luôn đi với quán từ xác định "die".**  
-  **Học danh từ cần học cả giống và dạng số nhiều cùng lúc!**
-:::
+:::note[Tóm tắt]
+
+- **Danh từ tiếng Đức có ba giống:** đực (**der**), cái (**die**), trung (**das**)
+- **Số nhiều của danh từ có nhiều cách biến đổi**, không có quy tắc chung tuyệt đối.
+- **Quán từ biến đổi theo Kasus:** Nominativ, Akkusativ, Dativ, Genitiv
+- **Danh từ luôn viết hoa chữ cái đầu.**
+- **Danh từ số nhiều luôn đi với quán từ xác định "die".**
+- 📌 **Học danh từ phải học kèm giống và số nhiều ngay từ đầu!** :::

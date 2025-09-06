@@ -6,22 +6,22 @@ topic: "Grammatik"
 order: 9
 ---
 
-📌 **Trong tiếng Đức, phủ định thường được thực hiện bằng hai từ chính: "nicht" và "kein".**  
+📌 **Trong tiếng Đức, phủ định thường được thực hiện bằng hai từ chính: "nicht" và "kein".**
 
- - **"Nicht"** dùng để phủ định **động từ, tính từ, trạng từ và một phần của câu**.  
- - **"Kein"** dùng để phủ định **danh từ không có mạo từ hoặc có quán từ không xác định (ein/eine)**.
+- **"Nicht"** dùng để phủ định **động từ, tính từ, trạng từ và một phần của câu**.
+- **"Kein"** dùng để phủ định **danh từ không có mạo từ hoặc có quán từ không xác định (ein/eine)**.
 
 Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 ---
 
-## **1️ Khi nào dùng "nicht"?**
+## **1. Khi nào dùng "nicht"?**
 
-**"Nicht" dùng để phủ định:**  
+**"Nicht" dùng để phủ định:**
 
-  - Động từ  
-  - Tính từ, trạng từ  
-  - Một phần của câu
+- Động từ
+- Tính từ, trạng từ
+- Một phần của câu
 
 ---
 
@@ -31,11 +31,8 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich schlafe nicht. 
-  _(Tôi không ngủ.)_
-
-- Er arbeitet heute nicht. 
-  _(Hôm nay anh ấy không làm việc.)_
+- Ich schlafe nicht.<br>_Tôi không ngủ._
+- Er arbeitet heute nicht.<br>_Hôm nay anh ấy không làm việc._
 
 ---
 
@@ -45,11 +42,8 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Der Film ist nicht interessant. 
-  _(Bộ phim không hay.)_
-
-- Das Wetter ist nicht schön. 
-  _(Thời tiết không đẹp.)_
+- Der Film ist nicht interessant.<br>_Bộ phim không hay._
+- Das Wetter ist nicht schön.<br>_Thời tiết không đẹp._
 
 ---
 
@@ -59,19 +53,16 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich gehe nicht nach Hause. 
-  _(Tôi không đi về nhà.)_
-
-- Wir fahren nicht mit dem Bus. 
-  _(Chúng tôi không đi bằng xe buýt.)_
+- Ich gehe nicht nach Hause.<br>_Tôi không đi về nhà._
+- Wir fahren nicht mit dem Bus.<br>_Chúng tôi không đi bằng xe buýt._
 
 ---
 
-## **2️ Khi nào dùng "kein"?**
+## **2. Khi nào dùng "kein"?**
 
-**"Kein" dùng để phủ định danh từ:**  
+**"Kein" dùng để phủ định danh từ:**
 
-- Danh từ không có mạo từ xác định (der, die, das).  
+- Danh từ không có mạo từ xác định (der, die, das).
 - Danh từ có quán từ không xác định (ein/eine).
 
 ---
@@ -80,63 +71,54 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich habe keinen Hund. 
-  _(Tôi không có chó.)_
-- Sie trinkt keinen Kaffee. 
-  _(Cô ấy không uống cà phê.)_
+- Ich habe keinen Hund.<br>_Tôi không có chó._
+- Sie trinkt keinen Kaffee.<br>_Cô ấy không uống cà phê._
 
 ---
 
 ### **📍 2.2. Cách chia "kein" theo giống và số**
 
-|**Cách (Kasus)**|**Maskulin (Giống đực)**|**Feminin (Giống cái)**|**Neutrum (Giống trung)**|**Plural (Số nhiều)**|
-|---|---|---|---|---|
-|**Nominativ**|kein Mann|keine Frau|kein Kind|keine Bücher|
-|**Akkusativ**|keinen Mann|keine Frau|kein Kind|keine Bücher|
-|**Dativ**|keinem Mann|keiner Frau|keinem Kind|keinen Büchern|
+| **Cách (Kasus)** | **Maskulin (Giống đực)** | **Feminin (Giống cái)** | **Neutrum (Giống trung)** | **Plural (Số nhiều)** |
+| ---------------- | ------------------------ | ----------------------- | ------------------------- | --------------------- |
+| **Nominativ**    | kein Mann                | keine Frau              | kein Kind                 | keine Bücher          |
+| **Akkusativ**    | keinen Mann              | keine Frau              | kein Kind                 | keine Bücher          |
+| **Dativ**        | keinem Mann              | keiner Frau             | keinem Kind               | keinen Büchern        |
 
 **Ví dụ:**
 
-- **Ich habe kein Geld.** 
-  _(Tôi không có tiền.)_ → _(Nominativ)_
-
-- **Ich sehe keinen Hund.** 
-  _(Tôi không thấy con chó nào.)_ → _(Akkusativ)_
-
-- **Ich spreche mit keiner Frau.** 
-  - _(Tôi không nói chuyện với bất kỳ người phụ nữ nào.)_ → _(Dativ)_
+- Ich habe kein Geld.<br>_Tôi không có tiền._ → (Nominativ)
+- Ich sehe keinen Hund.<br>_Tôi không thấy con chó nào._ → (Akkusativ)
+- Ich spreche mit keiner Frau.<br>_Tôi không nói chuyện với bất kỳ người phụ nữ nào._ → (Dativ)
 
 ---
 
-## **3️ So sánh "nicht" và "kein"**
+## **3. So sánh "nicht" và "kein"**
 
-|**Tiêu chí**|**Nicht**|**Kein**|
-|---|---|---|
-|**Dùng với**|Động từ, tính từ, trạng từ, một phần của câu|Danh từ không có mạo từ hoặc có "ein/eine"|
-|**Ví dụ**|**Ich bin nicht müde.** _(Tôi không mệt.)_|**Ich habe keinen Hunger.** _(Tôi không đói.)_|
-|**Vị trí trong câu**|Đứng trước phần cần phủ định|Đứng trước danh từ|
-|**Loại từ đi kèm**|Động từ, tính từ, trạng từ|Danh từ|
+| **Tiêu chí**       | **Nicht**                                    | **Kein**                                        |
+| ------------------ | -------------------------------------------- | ----------------------------------------------- |
+| **Dùng với**       | Động từ, tính từ, trạng từ, một phần của câu | Danh từ không có mạo từ hoặc có "ein/eine"      |
+| **Ví dụ**          | Ich bin **nicht** müde.<br>_Tôi không mệt._  | Ich habe **keinen** Hunger.<br>_Tôi không đói._ |
+| **Vị trí**         | Đứng trước phần cần phủ định                 | Đứng trước danh từ                              |
+| **Loại từ đi kèm** | Động từ, tính từ, trạng từ                   | Danh từ                                         |
 
 📌 **Mẹo ghi nhớ nhanh:**
 
-- Nếu cần **phủ định danh từ không có quán từ → dùng "kein"**.
-- Nếu cần **phủ định động từ, tính từ, trạng từ → dùng "nicht"**.
+- Nếu phủ định **danh từ không có quán từ → dùng "kein"**.
+- Nếu phủ định **động từ, tính từ, trạng từ → dùng "nicht"**.
 
 ---
 
 ## **🎯 4. Tổng Kết**
 
-:::note
-**"Nicht" dùng để phủ định:**  
-
-- **Động từ** (_Ich gehe nicht_.)  
-- **Tính từ, trạng từ** (_Das ist nicht gut_.)  
-- **Một phần của câu** (_Ich fahre nicht nach Berlin_.)
-
-**"Kein" dùng để phủ định:**  
-  
-  - **Danh từ không có mạo từ** (_Ich habe kein Auto_.)  
-  - **Danh từ có quán từ không xác định (ein/eine)** (_Ich habe keinen Hund_.)
-
-📌 **Hãy nhớ bảng biến cách của "kein" để dùng chính xác!**
-:::
+> **"Nicht" dùng để phủ định:**
+>
+> - Động từ → _Ich gehe nicht._
+> - Tính từ/trạng từ → _Das ist nicht gut._
+> - Một phần câu → _Ich fahre nicht nach Berlin._
+>
+> **"Kein" dùng để phủ định:**
+>
+> - Danh từ không có mạo từ → _Ich habe kein Auto._
+> - Danh từ có quán từ không xác định (ein/eine) → _Ich habe keinen Hund._
+>
+> 📌 **Hãy nhớ bảng biến cách của "kein" để dùng chính xác!**

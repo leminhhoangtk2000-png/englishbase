@@ -174,10 +174,9 @@
   
   .prose th {
     @apply px-4 py-2 text-left font-semibold;
-    background: none !important;
-    background-color: transparent !important;
+    background-color: #DCDCDC !important; /* Gainsboro background */
     border: 1px solid #e5e7eb;
-    color: #1f2937 !important; /* Dark gray for light theme */
+    color: #000000 !important; /* Black text */
   }
   
   .prose td {
@@ -192,13 +191,13 @@
   }
   
   .prose thead th {
-    background: none !important;
-    background-color: transparent !important;
-    color: #1f2937 !important;
+    background-color: #DCDCDC !important; /* Gainsboro background */
+    color: #000000 !important; /* Black text */
   }
 
   /* Dark theme table colors */
   .dark .prose th {
+    background-color: #374151 !important; /* Dark gray background */
     color: #f9fafb !important; /* Light text for dark theme */
     border-color: #4b5563 !important;
   }
@@ -214,7 +213,8 @@
 
   /* Nude theme table colors */
   .nude .prose th {
-    color: #92400e !important; /* Brown for nude theme headers */
+    background-color: #DCDCDC !important; /* Gainsboro background */
+    color: #000000 !important; /* Black text for nude theme headers */
     border-color: #d6d3d1 !important;
   }
   
@@ -273,25 +273,68 @@
   /* Italic text in lists (Vietnamese translations) */
   .prose li em {
     @apply italic text-gray-600 dark:text-gray-400 text-sm;
-    display: block;
+    display: inline;
     margin-top: 0.25rem;
   }
   
+  /* Typography with Inter font - Clean & Simple */
+  .prose {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px; /* 1rem - Body text */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+  }
+
   /* Headings */
   .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-    @apply text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: inherit;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
   }
   
   .prose h1 {
-    @apply text-3xl font-bold mb-6 mt-8;
+    font-size: 40px; /* 2.5rem */
+    font-weight: 700; /* Bold */
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
   }
   
   .prose h2 {
-    @apply text-2xl font-semibold mb-4 mt-6;
+    font-size: 32px; /* 2rem */
+    font-weight: 600; /* Semibold */
+    margin-bottom: 1.25rem;
+    margin-top: 2rem;
   }
   
   .prose h3 {
-    @apply text-xl font-medium mb-3 mt-5;
+    font-size: 24px; /* 1.5rem */
+    font-weight: 600; /* Semibold */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Body text */
+  .prose p {
+    font-size: 16px; /* 1rem */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .prose h1 {
+      font-size: 32px; /* Mobile H1 */
+    }
+    
+    .prose h2 {
+      font-size: 28px; /* Mobile H2 */
+    }
+    
+    .prose h3 {
+      font-size: 20px; /* Mobile H3 */
+    }
   }
   
   /* Links */
@@ -302,11 +345,15 @@
   /* Strong text - Basic styling */
   .prose strong {
     @apply font-bold;
+    display: inline !important;
+    white-space: normal;
   }
 
   /* Strong text in examples */
   .prose li strong {
     @apply font-bold;
+    display: inline !important;
+    white-space: normal;
   }
   
   /* Emphasis */
@@ -317,10 +364,10 @@
   /* German-Vietnamese Examples Styling */
   .prose li em {
     @apply italic text-gray-600 dark:text-gray-400 text-sm;
-    display: block;
+    display: inline;
     margin-top: 0.25rem;
-    padding-left: 1rem;
-    border-left: 2px solid #e5e7eb;
+    padding-left: 0.25rem;
+    border-left: none;
     font-style: italic;
   }
 
@@ -373,11 +420,23 @@
 }
 
 .prose th {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: white;
+  background-color: #DCDCDC !important; /* Gainsboro background */
+  color: #000000 !important; /* Black text */
   font-weight: 600;
   padding: 1rem;
   text-align: left;
+}
+
+/* Dark theme override */
+.dark .prose th {
+  background-color: #374151 !important; /* Dark gray for dark theme */
+  color: #f9fafb !important; /* Light text */
+}
+
+/* Nude theme same as light */
+.nude .prose th {
+  background-color: #DCDCDC !important; /* Gainsboro background */
+  color: #000000 !important; /* Black text */
 }
 
 .prose td {
@@ -412,19 +471,39 @@
   align-items: center !important;
   gap: 0.5rem !important;
   font-weight: 600 !important;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.875rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
 }
 
 .prose .admonition-icon {
-  font-size: 1rem;
+  font-size: 1rem !important;
 }
 
 .prose .admonition-content {
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Force all admonition content to be visible */
+.prose .admonition-content p,
+.prose .admonition-content ul,
+.prose .admonition-content ol,
+.prose .admonition-content li,
+.prose .admonition-content strong,
+.prose .admonition-content em {
+  display: inherit !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure strong elements stay inline */
+.prose .admonition-content strong {
+  display: inline !important;
+  white-space: normal;
 }
 
 .prose .admonition-content > *:first-child {
@@ -435,18 +514,18 @@
   margin-bottom: 0;
 }
 
-/* Note - Blue */
+/* Note - Blue (Lighter version) */
 .prose .admonition.admonition-note {
-  border-left-color: #3b82f6 !important;
-  background-color: rgba(239, 246, 255, 1) !important;
+  border-left-color: #93c5fd !important; /* Lighter blue border */
+  background-color: rgba(248, 250, 252, 1) !important; /* Very light blue background */
 }
 
 .dark .prose .admonition.admonition-note {
-  background-color: rgba(30, 58, 138, 0.3) !important;
+  background-color: rgba(30, 58, 138, 0.15) !important; /* Even lighter for dark theme */
 }
 
 .prose .admonition.admonition-note .admonition-title {
-  color: #1d4ed8 !important;
+  color: #3b82f6 !important; /* Lighter blue title */
 }
 
 .dark .prose .admonition.admonition-note .admonition-title {
@@ -454,11 +533,11 @@
 }
 
 .prose .admonition.admonition-note .admonition-content {
-  color: #1e40af !important;
+  color: #64748b !important; /* Lighter gray-blue content */
 }
 
 .dark .prose .admonition.admonition-note .admonition-content {
-  color: #bfdbfe !important;
+  color: #cbd5e1 !important; /* Lighter content for dark theme */
 }
 
 /* Tip - Green */
@@ -472,19 +551,45 @@
 }
 
 .prose .admonition.admonition-tip .admonition-title {
-  color: #059669;
+  color: #059669 !important;
 }
 
 .dark .prose .admonition.admonition-tip .admonition-title {
-  color: #6ee7b7;
+  color: #6ee7b7 !important;
 }
 
 .prose .admonition.admonition-tip .admonition-content {
-  color: #047857;
+  color: #047857 !important;
 }
 
 .dark .prose .admonition.admonition-tip .admonition-content {
-  color: #a7f3d0;
+  color: #a7f3d0 !important;
+}
+
+/* Info - Light Blue */
+.prose .admonition.admonition-info {
+  border-left-color: #0ea5e9 !important;
+  background-color: rgba(240, 249, 255, 1) !important;
+}
+
+.dark .prose .admonition.admonition-info {
+  background-color: rgba(7, 89, 133, 0.3) !important;
+}
+
+.prose .admonition.admonition-info .admonition-title {
+  color: #0284c7 !important;
+}
+
+.dark .prose .admonition.admonition-info .admonition-title {
+  color: #7dd3fc !important;
+}
+
+.prose .admonition.admonition-info .admonition-content {
+  color: #0369a1 !important;
+}
+
+.dark .prose .admonition.admonition-info .admonition-content {
+  color: #bae6fd !important;
 }
 
 /* Important - Purple */
@@ -903,6 +1008,8 @@
 .prose .admonition strong {
   font-weight: 700;
   color: currentColor;
+  display: inline !important;
+  white-space: normal;
 }
 
 /* Tables in admonitions */
@@ -925,7 +1032,8 @@
 }
 
 .prose .admonition th {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #DCDCDC !important; /* Gainsboro background */
+  color: #000000 !important; /* Black text */
   font-weight: 600;
 }
 

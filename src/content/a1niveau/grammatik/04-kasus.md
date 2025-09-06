@@ -6,12 +6,13 @@ topic: "Grammatik"
 order: 4
 ---
 
-- **Kasus** trong tiếng Đức giúp xác định vai trò của danh từ hoặc đại từ trong câu.  
+- **Kasus** trong tiếng Đức giúp xác định vai trò của danh từ hoặc đại từ trong câu.
 - **Có 4 Kasus:** **Nominativ, Akkusativ, Dativ, Genitiv**, nhưng trình độ A1 tập trung vào **Nominativ, Akkusativ, Dativ**.
 
 👉 **Hiểu rõ Kasus sẽ giúp bạn dùng ngữ pháp đúng hơn và giao tiếp tự nhiên hơn!** 🚀
 
 ---
+
 ## **1. Kasus trong tiếng Đức**
 
 ### **🔹 1.1. Nominativ (Chủ ngữ)**
@@ -21,14 +22,12 @@ Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
 
 **Ví dụ:**
 
-- **Der Hund** spielt. 
-  _(Ai chơi? → Con chó chơi.)_
+- **Der Hund** spielt.<br>_Ai chơi? → Con chó chơi._
+- **Das Kind** liest ein Buch.<br>_Ai đọc? → Đứa trẻ đọc sách._
 
-- **Das Kind** liest ein Buch. 
-  _(Ai đọc? → Đứa trẻ đọc sách.)_
-
-📌 Mẹo nhớ nhanh:  
-- **Mọi chủ ngữ trong câu đều ở dạng Nominativ!**
+:::note[Mẹo nhớ]  
+Mọi **chủ ngữ** trong câu đều ở dạng **Nominativ**.  
+:::
 
 ---
 
@@ -39,14 +38,12 @@ Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
 
 **Ví dụ:**
 
-- **Ich sehe den Mann.** 
-  _(Tôi nhìn thấy người đàn ông.)_
+- **Ich sehe den Mann.**<br>_Tôi nhìn thấy người đàn ông._
+- **Sie kauft das Buch.**<br>_Cô ấy mua cuốn sách._
 
-- **Sie kauft das Buch.** 
-  _(Cô ấy mua cuốn sách.)_
-
-📌 Mẹo nhớ nhanh:  
-- **Động từ ảnh hưởng trực tiếp đến đối tượng nào → đối tượng đó là Akkusativ!**
+:::note[Mẹo nhớ]  
+Động từ tác động trực tiếp vào đối tượng nào → đối tượng đó ở **Akkusativ**.  
+:::
 
 ---
 
@@ -57,58 +54,60 @@ Trả lời câu hỏi: **Wem? (Cho ai?)**
 
 **Ví dụ:**
 
-- **Er gibt dem Mann ein Buch.** 
-  _(Anh ấy đưa quyển sách cho người đàn ông.)_
+- **Er gibt dem Mann ein Buch.**<br>_Anh ấy đưa quyển sách cho người đàn ông._
+- **Kannst du mir helfen?**<br>_Bạn có thể giúp tôi không?_
 
-- **Kannst du mir helfen?** 
-  _(Bạn có thể giúp tôi không?)_
-
-📌 Mẹo nhớ nhanh:  
-- **Danh từ nào nhận lợi ích từ hành động → đó là Dativ!**
+:::note[Mẹo nhớ]
+Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.  
+:::
 
 ---
 
 ## **2. Bảng so sánh 3 Kasus quan trọng**
 
-|**Kasus**|**Vai trò**|**Câu hỏi**|**Ví dụ**|
-|---|---|---|---|
-|**Nominativ**|Chủ ngữ (người/vật thực hiện hành động)|Wer? Was?|**Der Hund** spielt. _(Con chó chơi.)_|
-|**Akkusativ**|Tân ngữ trực tiếp (chịu tác động từ động từ)|Wen? Was?|Ich sehe **den Hund**. _(Tôi thấy con chó.)_|
-|**Dativ**|Tân ngữ gián tiếp (nhận lợi ích từ hành động)|Wem?|Ich gebe **dem Hund** das Futter. _(Tôi đưa thức ăn cho con chó.)_|
+| **Kasus**     | **Vai trò**                                   | **Câu hỏi** | **Ví dụ**                                                          |
+| ------------- | --------------------------------------------- | ----------- | ------------------------------------------------------------------ |
+| **Nominativ** | Chủ ngữ (người/vật thực hiện hành động)       | Wer? Was?   | **Der Hund** spielt. _(Con chó chơi.)_                             |
+| **Akkusativ** | Tân ngữ trực tiếp (chịu tác động từ động từ)  | Wen? Was?   | Ich sehe **den Hund**. _(Tôi thấy con chó.)_                       |
+| **Dativ**     | Tân ngữ gián tiếp (nhận lợi ích từ hành động) | Wem?        | Ich gebe **dem Hund** das Futter. _(Tôi đưa thức ăn cho con chó.)_ |
 
-📌 Mẹo nhớ nhanh:  
+:::tip[Mẹo ghi nhớ nhanh]
 
-- **"Wer/Was?" → Nominativ** (Ai thực hiện hành động?)  
-- **"Wen/Was?" → Akkusativ** (Ai/cái gì chịu tác động?)  
-- **"Wem?" → Dativ** (Ai nhận lợi ích từ hành động?)
+- **Wer/Was? → Nominativ** (Ai thực hiện hành động?)
+- **Wen/Was? → Akkusativ** (Ai/cái gì chịu tác động?)
+- **Wem? → Dativ** (Ai nhận lợi ích từ hành động?)  
+  :::
 
 ---
 
 ## **3. Bảng biến đổi quán từ theo Kasus**
 
-|**Kasus**|**Giống đực (Maskulin)**|**Giống cái (Feminin)**|**Giống trung (Neutrum)**|**Số nhiều (Plural)**|
-|---|---|---|---|---|
-|**Nominativ**|**der** Mann|**die** Frau|**das** Kind|**die** Kinder|
-|**Akkusativ**|**den** Mann|**die** Frau|**das** Kind|**die** Kinder|
-|**Dativ**|**dem** Mann|**der** Frau|**dem** Kind|**den** Kindern (+n)|
+| **Kasus**     | **Giống đực (Maskulin)** | **Giống cái (Feminin)** | **Giống trung (Neutrum)** | **Số nhiều (Plural)** |
+| ------------- | ------------------------ | ----------------------- | ------------------------- | --------------------- |
+| **Nominativ** | **der** Mann             | **die** Frau            | **das** Kind              | **die** Kinder        |
+| **Akkusativ** | **den** Mann             | **die** Frau            | **das** Kind              | **die** Kinder        |
+| **Dativ**     | **dem** Mann             | **der** Frau            | **dem** Kind              | **den** Kindern (+n)  |
 
-📌 Mẹo nhớ nhanh:
+:::note[Lưu ý]
 
-- **Akkusativ:** **Chỉ danh từ giống đực thay đổi → "der" → "den"!**
-- **Dativ:** **Tất cả danh từ đều thay đổi!**
-- **Dativ số nhiều:** **Luôn có "-n" ở danh từ!**
+- **Akkusativ:** Chỉ **danh từ giống đực** thay đổi → "der" → "den".
+- **Dativ:** Tất cả danh từ đều thay đổi.
+- **Dativ số nhiều:** Danh từ **luôn thêm -n**.  
+  :::
 
 ---
+
 ## **🎯 4. Tổng Kết**
 
 :::note
-  - **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)  
-  - **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)  
-  - **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
 
-📌 **Mẹo học nhanh:**  
+- **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)
+- **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)
+- **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
 
- - **Wer/Was? → Nominativ**  
- - **Wen/Was? → Akkusativ**  
- - **Wem? → Dativ**
-:::
+📌 **Mẹo học nhanh:**
+
+- **Wer/Was? → Nominativ**
+- **Wen/Was? → Akkusativ**
+- **Wem? → Dativ**  
+  :::

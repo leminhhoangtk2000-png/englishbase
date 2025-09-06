@@ -131,7 +131,7 @@ export function getMarkdownBySlug(
  * Process markdown content to HTML with all enhanced features
  */
 export async function markdownToHtml(markdown: string): Promise<string> {
-  // Process custom syntaxes first
+  // Process custom syntaxes first (before markdown parsing)
   const processedMarkdown = processAdvancedFeatures(markdown)
   
   const result = await unified()
@@ -189,29 +189,47 @@ function addHeadingIds(markdown: string): string {
 
 /**
  * Process custom admonitions syntax :::type into HTML with enhanced features
+ * Following Docusaurus standard: https://docusaurus.io/docs/markdown-features/admonitions
  */
 function processAdvancedAdmonitions(markdown: string): string {
-  const admonitionRegex = /:::(\w+)(?:\[([^\]]*)\])?\n([\s\S]*?):::/g
-  
-  return markdown.replace(admonitionRegex, (match, type, title, content) => {
+  // Handle :::type[Custom Title] format (Docusaurus standard)
+  let processed = markdown.replace(/:::(\w+)\[([^\]]+)\]\s*\n([\s\S]*?)\s*:::/gm, (match, type, title, content) => {
     const safeType = type.toLowerCase()
-    const displayTitle = title?.trim() || getDefaultTitle(safeType)
     const processedContent = content.trim()
     
-    return `
-<div class="admonition admonition-${safeType}">
-  <div class="admonition-title">
-    <span class="admonition-icon">${getAdmonitionIcon(safeType)}</span>
-    ${displayTitle}
-  </div>
-  <div class="admonition-content">
+    return `<div class="admonition admonition-${safeType}" data-admonition-type="${safeType}">
+<div class="admonition-title">
+<span class="admonition-icon">${getAdmonitionIcon(safeType)}</span>
+${title.trim()}
+</div>
+<div class="admonition-content">
 
 ${processedContent}
 
-  </div>
 </div>
-`
+</div>`
   })
+  
+  // Handle :::type format (without custom title, use default) - More flexible with whitespace
+  processed = processed.replace(/:::(\w+)\s*\n([\s\S]*?)\s*:::/gm, (match, type, content) => {
+    const safeType = type.toLowerCase()
+    const displayTitle = getDefaultTitle(safeType)
+    const processedContent = content.trim()
+    
+    return `<div class="admonition admonition-${safeType}" data-admonition-type="${safeType}">
+<div class="admonition-title">
+<span class="admonition-icon">${getAdmonitionIcon(safeType)}</span>
+${displayTitle}
+</div>
+<div class="admonition-content">
+
+${processedContent}
+
+</div>
+</div>`
+  })
+  
+  return processed
 }
 
 /**
@@ -272,12 +290,13 @@ function escapeHtml(text: string): string {
 }
 
 /**
- * Get default title for admonition type
+ * Get default title for admonition type (Docusaurus standard)
  */
 function getDefaultTitle(type: string): string {
   const titles: Record<string, string> = {
     note: 'Ghi chú',
     tip: 'Mẹo',
+    info: 'Thông tin', 
     important: 'Quan trọng',
     warning: 'Cảnh báo',
     caution: 'Thận trọng',
@@ -287,12 +306,13 @@ function getDefaultTitle(type: string): string {
 }
 
 /**
- * Get emoji icon for admonition type
+ * Get emoji icon for admonition type (Docusaurus standard)
  */
 function getAdmonitionIcon(type: string): string {
   const icons: Record<string, string> = {
     note: 'ℹ️',
     tip: '💡',
+    info: 'ℹ️',
     important: '❗',
     warning: '⚠️',
     caution: '⚠️',

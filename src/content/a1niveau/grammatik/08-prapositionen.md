@@ -6,7 +6,7 @@ topic: "Grammatik"
 order: 8
 ---
 
-- **Giới từ (Präpositionen)** giúp xác định **thời gian, địa điểm hoặc mối quan hệ giữa các yếu tố trong câu**.  
+- **Giới từ (Präpositionen)** giúp xác định **thời gian, địa điểm hoặc mối quan hệ giữa các yếu tố trong câu**.
 - Trong tiếng Đức, giới từ có thể đi kèm với **Akkusativ, Dativ hoặc cả hai** (Wechselpräpositionen).
 
 **Dưới đây là phân loại và cách sử dụng giới từ quan trọng!** 🚀
@@ -17,21 +17,21 @@ order: 8
 
 **Các giới từ này luôn đi với Akkusativ.**
 
-|**Giới từ**|**Nghĩa**|**Ví dụ**|
-|---|---|---|
-|**durch**|qua, xuyên qua|_Ich gehe **durch** den Park._ _(Tôi đi qua công viên.)_|
-|**für**|cho, vì|_Das Geschenk ist **für** dich._ _(Món quà này dành cho bạn.)_|
-|**gegen**|chống lại, khoảng (thời gian)|_Er ist **gegen** den Plan._ _(Anh ấy chống lại kế hoạch.)_|
-|**ohne**|không có|_Ich gehe **ohne** dich._ _(Tôi đi mà không có bạn.)_|
-|**um**|quanh, vào lúc|_Wir sitzen **um** den Tisch._ _(Chúng tôi ngồi quanh bàn.)_|
+| **Giới từ** | **Nghĩa**                     | **Ví dụ**                                                     |
+| ----------- | ----------------------------- | ------------------------------------------------------------- |
+| **durch**   | qua, xuyên qua                | Ich gehe **durch** den Park.<br>_Tôi đi qua công viên._       |
+| **für**     | cho, vì                       | Das Geschenk ist **für** dich.<br>_Món quà này dành cho bạn._ |
+| **gegen**   | chống lại, khoảng (thời gian) | Er ist **gegen** den Plan.<br>_Anh ấy chống lại kế hoạch._    |
+| **ohne**    | không có                      | Ich gehe **ohne** dich.<br>_Tôi đi mà không có bạn._          |
+| **um**      | quanh, vào lúc                | Wir sitzen **um** den Tisch.<br>_Chúng tôi ngồi quanh bàn._   |
 
-**Mẹo nhớ:**  
+**Mẹo nhớ:**
 
-- **"durch"** chỉ chuyển động xuyên qua một địa điểm.  
-- **"für"** chỉ mục tiêu hoặc người nhận.  
-- **"gegen"** có thể chỉ sự đối lập hoặc thời gian khoảng.  
-- **"ohne"** luôn mang nghĩa phủ định.  
-- **"um"** dùng để chỉ **thời gian cụ thể** hoặc **vị trí quanh một vật**.
+- **durch** → chuyển động xuyên qua.
+- **für** → chỉ mục tiêu/người nhận.
+- **gegen** → sự đối lập hoặc thời gian khoảng.
+- **ohne** → luôn phủ định.
+- **um** → thời gian cụ thể hoặc vị trí quanh một vật.
 
 ---
 
@@ -39,41 +39,41 @@ order: 8
 
 **Các giới từ này luôn đi với Dativ.**
 
-|**Giới từ**|**Nghĩa**|**Ví dụ**|
-|---|---|---|
-|**aus**|từ, ra khỏi|_Ich komme **aus** Vietnam._ _(Tôi đến từ Việt Nam.)_|
-|**bei**|tại, bên cạnh|_Er wohnt **bei** seinen Eltern._ _(Anh ấy sống với bố mẹ.)_|
-|**mit**|với|_Wir fahren **mit** dem Auto._ _(Chúng tôi đi bằng xe hơi.)_|
-|**nach**|sau, đến|_Wir fahren **nach** Berlin._ _(Chúng tôi đi đến Berlin.)_|
-|**von**|của, từ|_Das ist ein Geschenk **von** mir._ _(Đây là một món quà từ tôi.)_|
-|**zu**|đến, tới|_Ich gehe **zu** meiner Freundin._ _(Tôi đi đến nhà bạn gái của tôi.)_|
+| **Giới từ** | **Nghĩa**     | **Ví dụ**                                                         |
+| ----------- | ------------- | ----------------------------------------------------------------- |
+| **aus**     | từ, ra khỏi   | Ich komme **aus** Vietnam.<br>_Tôi đến từ Việt Nam._              |
+| **bei**     | tại, bên cạnh | Er wohnt **bei** seinen Eltern.<br>_Anh ấy sống với bố mẹ._       |
+| **mit**     | với           | Wir fahren **mit** dem Auto.<br>_Chúng tôi đi bằng xe hơi._       |
+| **nach**    | sau, đến      | Wir fahren **nach** Berlin.<br>_Chúng tôi đi đến Berlin._         |
+| **von**     | của, từ       | Das ist ein Geschenk **von** mir.<br>_Đây là một món quà từ tôi._ |
+| **zu**      | đến, tới      | Ich gehe **zu** meiner Freundin.<br>_Tôi đi đến nhà bạn gái._     |
 
-**Mẹo nhớ:**  
+**Mẹo nhớ:**
 
-- **"aus"** chỉ nguồn gốc hoặc xuất xứ.  
-- **"bei"** chỉ vị trí gần ai đó hoặc nơi nào đó.  
-- **"mit"** đi với phương tiện hoặc đồng hành với ai đó.  
-- **"nach"** dùng cho thành phố, quốc gia và các mốc thời gian.  
-- **"von"** chỉ nguồn gốc hoặc sở hữu.  
-- **"zu"** dùng để chỉ đích đến cụ thể (nhà ai đó, một nơi nào đó).
+- **aus** → nguồn gốc, xuất xứ.
+- **bei** → vị trí gần người/nơi.
+- **mit** → phương tiện hoặc đồng hành.
+- **nach** → dùng cho thành phố, quốc gia, mốc thời gian.
+- **von** → chỉ nguồn gốc hoặc sở hữu.
+- **zu** → đích đến cụ thể (nhà ai đó, một nơi nào đó).
 
 ---
 
 ## **3. Giới từ có thể đi với cả Akkusativ và Dativ (Wechselpräpositionen)**
 
-**Dùng Akkusativ khi có sự di chuyển, Dativ khi chỉ vị trí.**
+**Akkusativ khi có sự di chuyển, Dativ khi chỉ vị trí.**
 
-|**Giới từ**|**Nghĩa**|**Akkusativ (Chuyển động)**|**Dativ (Vị trí)**|
-|---|---|---|---|
-|**an**|trên (dọc), tại|_Ich hänge das Bild **an** die Wand._ _(Tôi treo tranh lên tường.)_|_Das Bild hängt **an** der Wand._ _(Bức tranh ở trên tường.)_|
-|**in**|trong|_Ich gehe **in** die Schule._ _(Tôi đi vào trường.)_|_Ich bin **in** der Schule._ _(Tôi đang ở trong trường.)_|
-|**auf**|trên (ngang)|_Er legt das Buch **auf** den Tisch._ _(Anh ấy đặt quyển sách lên bàn.)_|_Das Buch liegt **auf** dem Tisch._ _(Quyển sách ở trên bàn.)_|
-|**über**|trên, qua|_Der Vogel fliegt **über** das Haus._ _(Con chim bay qua nhà.)_|_Die Lampe hängt **über** dem Tisch._ _(Chiếc đèn treo trên bàn.)_|
+| **Giới từ** | **Nghĩa**       | **Akkusativ (Chuyển động)**                                        | **Dativ (Vị trí)**                                           |
+| ----------- | --------------- | ------------------------------------------------------------------ | ------------------------------------------------------------ |
+| **an**      | trên (dọc), tại | Ich hänge das Bild **an** die Wand.<br>_Tôi treo tranh lên tường._ | Das Bild hängt **an** der Wand.<br>_Bức tranh ở trên tường._ |
+| **in**      | trong           | Ich gehe **in** die Schule.<br>_Tôi đi vào trường._                | Ich bin **in** der Schule.<br>_Tôi đang ở trong trường._     |
+| **auf**     | trên (ngang)    | Er legt das Buch **auf** den Tisch.<br>_Anh ấy đặt sách lên bàn._  | Das Buch liegt **auf** dem Tisch.<br>_Sách ở trên bàn._      |
+| **über**    | trên, qua       | Der Vogel fliegt **über** das Haus.<br>_Con chim bay qua nhà._     | Die Lampe hängt **über** dem Tisch.<br>_Đèn treo trên bàn._  |
 
-**Mẹo nhớ:**  
+**Mẹo nhớ:**
 
-- **Akkusativ** khi có chuyển động: _Ich gehe in die Schule._ _(Tôi đi vào trường.)_  
-- **Dativ** khi chỉ vị trí: _Ich bin in der Schule._ _(Tôi đang ở trong trường.)_
+- **Akkusativ** → có chuyển động: _Ich gehe in die Schule._
+- **Dativ** → vị trí: _Ich bin in der Schule._
 
 ---
 
@@ -81,35 +81,34 @@ order: 8
 
 **Các giới từ giúp xác định thời gian.**
 
-|**Giới từ**|**Dùng với**|**Ví dụ**|
-|---|---|---|
-|**am**|Ngày, buổi trong ngày|_Am Montag gehe ich zur Schule._ _(Vào thứ hai, tôi đi học.)_|
-|**im**|Tháng, mùa, năm|_Im Sommer fahren wir nach Berlin._ _(Vào mùa hè, chúng tôi đi Berlin.)_|
-|**um**|Giờ|_Der Kurs beginnt **um** 8 Uhr._ _(Lớp học bắt đầu lúc 8 giờ.)_|
-|**von...bis**|Khoảng thời gian|_Der Unterricht dauert **von** 9 **bis** 12 Uhr._ _(Buổi học kéo dài từ 9 đến 12 giờ.)_|
+| **Giới từ**   | **Dùng với**          | **Ví dụ**                                                                              |
+| ------------- | --------------------- | -------------------------------------------------------------------------------------- |
+| **am**        | Ngày, buổi trong ngày | Am Montag gehe ich zur Schule.<br>_Vào thứ hai, tôi đi học._                           |
+| **im**        | Tháng, mùa, năm       | Im Sommer fahren wir nach Berlin.<br>_Vào mùa hè, chúng tôi đi Berlin._                |
+| **um**        | Giờ                   | Der Kurs beginnt **um** 8 Uhr.<br>_Lớp học bắt đầu lúc 8 giờ._                         |
+| **von...bis** | Khoảng thời gian      | Der Unterricht dauert **von** 9 **bis** 12 Uhr.<br>_Buổi học kéo dài từ 9 đến 12 giờ._ |
 
-**Mẹo nhớ:**  
+**Mẹo nhớ:**
 
- - **"am"** dùng với **ngày trong tuần và buổi trong ngày**.  
- - **"im"** dùng với **tháng, mùa, năm**.  
- - **"um"** dùng với **thời gian cụ thể**.
+- **am** → ngày trong tuần, buổi trong ngày.
+- **im** → tháng, mùa, năm.
+- **um** → giờ cụ thể.
 
 ---
+
 ## **🎯 5. Tổng Kết**
 
-:::note
-  **Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai (Wechselpräpositionen).**  
-
-**Những giới từ quan trọng:**  
-
- - **Akkusativ:** durch, für, gegen, ohne, um.  
- - **Dativ:** aus, bei, mit, nach, von, zu.  
- - **Wechselpräpositionen:** an, in, auf, über.  
- - **Temporale Präpositionen:** am, im, um, von...bis.
-
-📌 **Mẹo nhớ nhanh:**
-
-- **Akkusativ** → chuyển động, có hành động hướng đến một nơi nào đó.
-- **Dativ** → vị trí cố định, diễn tả nơi chốn.
-- **Wechselpräpositionen** → chuyển động = Akkusativ, vị trí = Dativ.
-:::
+> **Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai (Wechselpräpositionen).**
+>
+> **Những giới từ quan trọng:**
+>
+> - **Akkusativ:** durch, für, gegen, ohne, um.
+> - **Dativ:** aus, bei, mit, nach, von, zu.
+> - **Wechselpräpositionen:** an, in, auf, über.
+> - **Temporale Präpositionen:** am, im, um, von...bis.
+>
+> 📌 **Mẹo nhớ nhanh:**
+>
+> - **Akkusativ** → chuyển động, có hành động hướng đến nơi nào đó.
+> - **Dativ** → vị trí cố định, diễn tả nơi chốn.
+> - **Wechselpräpositionen** → chuyển động = Akkusativ, vị trí = Dativ.
