@@ -1,0 +1,75 @@
+---
+title: "Verben mit festen Präpositionen"
+description: "Học các động từ đi với giới từ cố định trong tiếng Đức"
+level: "B1"
+topic: "Grammatik"
+order: 15
+---
+
+## 🔍 **1. Khái niệm & lưu ý quan trọng**
+
+📌 **Verben mit festen Präpositionen** là các động từ đi **cố định với một giới từ** nhất định, **không thể thay đổi**.  
+Đi kèm với giới từ là một **danh từ hoặc đại từ** đứng ở **Dativ** hoặc **Akkusativ**, tùy từng động từ.
+
+❗ **Chú ý:**
+
+- Không dịch từng từ → Hãy học cả **cụm cố định** như một đơn vị.
+    
+- Một số động từ có thể đi với **nhiều giới từ**, **thay đổi nghĩa hoàn toàn**.
+    
+- Trong văn viết, các cụm này thường được **danh từ hóa** hoặc xuất hiện trong **mệnh đề quan hệ/phụ**.
+    
+
+---
+
+## 📘 **2. Cấu trúc câu chuẩn**
+
+**Câu chủ động với giới từ:**  
+→ Ich warte **auf den Bus**. (Tôi đang chờ xe buýt.)
+
+**Câu bị động/gián tiếp học thuật:**  
+→ Die Rede **bezog sich auf die aktuelle Situation**. (Bài phát biểu đề cập đến tình hình hiện tại.)
+
+**Dạng danh từ hóa:**  
+→ Der **Bezug auf frühere Studien** ist hier besonders wichtig. (Việc tham chiếu các nghiên cứu trước đó rất quan trọng.)
+
+---
+
+## 📚 **3. Bảng động từ + giới từ nâng cao (chuẩn B2)**
+
+### 🔹 **Động từ + Akkusativ**
+
+|**Động từ + Präposition**|**Ý nghĩa**|**Ví dụ học thuật**|
+|---|---|---|
+|sich beziehen **auf**|liên hệ tới, tham chiếu tới|Die Theorie **bezieht sich auf** frühere Untersuchungen.|
+|sich freuen **auf**|mong đợi (điều gì sắp tới)|Ich freue mich **auf das Seminar nächste Woche**.|
+|sich konzentrieren **auf**|tập trung vào|Er **konzentriert sich auf** die Hauptargumente der Debatte.|
+|sich verlassen **auf**|tin cậy vào|Man muss sich **auf verlässliche Daten** verlassen können.|
+|sich vorbereiten **auf**|chuẩn bị cho|Sie **bereitet sich auf** die Prüfung vor.|
+
+---
+
+### 🔹 **Động từ + Dativ**
+
+|**Động từ + Präposition**|**Ý nghĩa**|**Ví dụ học thuật**|
+|---|---|---|
+|abhängen **von**|phụ thuộc vào|Der Erfolg **hängt von** vielen Faktoren **ab**.|
+|sich befassen **mit**|xử lý, nghiên cứu với|Die Studie **befasst sich mit** dem Verhalten von Jugendlichen.|
+|sich erkundigen **nach**|hỏi thăm, hỏi về|Ich möchte mich **nach dem aktuellen Stand** erkundigen.|
+|teilnehmen **an**|tham gia|Er **nimmt an** einem internationalen Projekt **teil**.|
+|sprechen **mit**|nói chuyện với|Wir haben **mit dem Professor** über die Ergebnisse gesprochen.|
+
+---
+
+### 🔹 **Động từ + nhiều giới từ (thay đổi nghĩa)**
+
+|**Cụm động từ**|**Ý nghĩa**|**Ví dụ**|
+|---|---|---|
+|sich freuen **auf**|mong đợi điều chưa xảy ra|Ich freue mich **auf den Urlaub**.|
+|sich freuen **über**|vui mừng vì điều đã xảy ra|Ich freue mich **über das Ergebnis**.|
+|sprechen **mit**|nói chuyện với ai|Ich spreche **mit dir**.|
+|sprechen **über**|nói về vấn đề gì|Wir sprechen **über Politik**.|
+
+---
+
+## 🧠 **4. Dạng danh từ hóa trong văn viết**

@@ -1,0 +1,97 @@
+
+---
+title: "Relativsätze - Câu quan hệ"
+description: "Học cách sử dụng đại từ quan hệ và câu quan hệ trong tiếng Đức"
+level: "B1"
+topic: "Grammatik"
+order: 2
+---
+
+**Đại từ quan hệ (Relativpronomen)** dùng để thay thế danh từ đã nhắc đến trước đó và giúp nối câu chính với mệnh đề quan hệ.  
+**Câu quan hệ (Relativsatz)** giúp bổ sung thông tin về danh từ mà không cần bắt đầu một câu mới.
+
+---
+
+## **1. Đại từ quan hệ là gì?**
+
+- Đại từ quan hệ (Relativpronomen) là một loại đại từ, do đó chúng luôn đứng độc lập mà không đi kèm với danh từ.  
+- Khác với quán từ xác định (der, die, das), đại từ quan hệ có thể đứng một mình mà vẫn mang đầy đủ ý nghĩa.
+
+**Ví dụ:**
+
+- Das ist der Mann, der mir geholfen hat. 
+	_(Đây là người đàn ông đã giúp tôi.)_
+
+- Ich kenne die Frau, die neben dir wohnt. 
+	_(Tôi biết người phụ nữ sống cạnh bạn.)_
+
+:::note[📌 **Lưu ý:**]
+  - **Đại từ quan hệ luôn đứng đầu mệnh đề quan hệ (Relativsatz).**  
+  - **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**  
+  - **Đại từ quan hệ thay đổi theo giống (Maskulin, Feminin, Neutrum), số (Số ít, Số nhiều) và cách (Kasus).**
+:::
+
+---
+
+## **2. Cách xác định chính xác đại từ quan hệ cần dùng**
+
+📌 **Để xác định đại từ quan hệ đúng, cần xem xét ba yếu tố:**  
+
+1. Giống (Maskulin, Feminin, Neutrum) của danh từ được thay thế.  
+2. Số (Số ít hay số nhiều) của danh từ đó.  
+3. Cách (Kasus) của danh từ trong mệnh đề quan hệ.
+
+**Bảng đại từ quan hệ theo giống, số và cách:**
+
+|**Kasus**|**Maskulin**|**Feminin**|**Neutrum**|**Plural**|
+|---|---|---|---|---|
+|**Nominativ** _(Chủ ngữ)_|der|die|das|die|
+|**Akkusativ** _(Tân ngữ trực tiếp)_|den|die|das|die|
+|**Dativ** _(Tân ngữ gián tiếp)_|dem|der|dem|denen|
+|**Genitiv** _(Sở hữu)_|dessen|deren|dessen|deren|
+
+**Ví dụ với từng cách:**
+
+**Nominativ (Chủ ngữ trong câu quan hệ):**
+
+- Der Mann, der dort steht, ist mein Vater. 
+	_(Người đàn ông đang đứng kia là bố tôi.)_
+
+**Akkusativ (Tân ngữ trong câu quan hệ):**
+
+- Das Buch, das ich gestern gelesen habe, war sehr spannend. 
+	_(Cuốn sách mà tôi đã đọc hôm qua rất hấp dẫn.)_
+
+**Dativ (Tân ngữ gián tiếp trong câu quan hệ):**
+
+- Die Frau, der ich geholfen habe, ist meine Nachbarin.
+	_(Người phụ nữ mà tôi đã giúp đỡ là hàng xóm của tôi.)_
+
+**Genitiv (Sở hữu trong câu quan hệ):**
+
+- Der Mann, dessen Auto vor dem Haus steht, ist mein Onkel. 
+	_(Người đàn ông có chiếc xe đậu trước nhà là chú tôi.)_
+
+:::note[📌 **Lưu ý:** ]
+  - **Nếu danh từ được thay thế đóng vai trò chủ ngữ trong câu quan hệ → dùng Nominativ.**  
+  - **Nếu danh từ là tân ngữ trực tiếp → dùng Akkusativ.**  
+  - **Nếu danh từ là tân ngữ gián tiếp (với giới từ như "mit", "von", "bei") → dùng Dativ.**  
+  - **Nếu danh từ thể hiện sự sở hữu → dùng Genitiv ("dessen" hoặc "deren").**
+:::
+
+---
+## **🎯 3. Tổng kết: Các lưu ý quan trọng**
+
+:::note
+  - **Đại từ quan hệ (Relativpronomen) luôn đứng đầu mệnh đề quan hệ và thay thế cho danh từ đã nhắc đến trước đó.**  
+  - **Khác với quán từ xác định, đại từ quan hệ không cần đi kèm với danh từ.**  
+  - **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**  
+  
+  **Để chọn đúng đại từ quan hệ, cần xác định:**
+
+- Giống của danh từ được thay thế (**Maskulin, Feminin, Neutrum**).
+- Số của danh từ (**Số ít hay số nhiều**).
+- Cách của danh từ trong mệnh đề quan hệ (**Nominativ, Akkusativ, Dativ, Genitiv**).  
+      **Trong văn viết trang trọng, Genitiv (dessen, deren) được dùng để chỉ sự sở hữu thay vì "von + Dativ".**  
+      **Một số câu quan hệ có thể bắt đầu bằng giới từ (z.B.: mit, auf, für), khi đó giới từ đứng trước đại từ quan hệ.**
+:::
