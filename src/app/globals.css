@@ -177,11 +177,13 @@
     background: none !important;
     background-color: transparent !important;
     border: 1px solid #e5e7eb;
+    color: #1f2937 !important; /* Dark gray for light theme */
   }
   
   .prose td {
     @apply px-4 py-2;
     border: 1px solid #e5e7eb;
+    color: #374151 !important; /* Medium gray for light theme */
   }
   
   .prose thead {
@@ -192,6 +194,37 @@
   .prose thead th {
     background: none !important;
     background-color: transparent !important;
+    color: #1f2937 !important;
+  }
+
+  /* Dark theme table colors */
+  .dark .prose th {
+    color: #f9fafb !important; /* Light text for dark theme */
+    border-color: #4b5563 !important;
+  }
+  
+  .dark .prose td {
+    color: #e5e7eb !important; /* Light gray for dark theme */
+    border-color: #4b5563 !important;
+  }
+  
+  .dark .prose table {
+    border-color: #4b5563 !important;
+  }
+
+  /* Nude theme table colors */
+  .nude .prose th {
+    color: #92400e !important; /* Brown for nude theme headers */
+    border-color: #d6d3d1 !important;
+  }
+  
+  .nude .prose td {
+    color: #78716c !important; /* Warm gray for nude theme */
+    border-color: #d6d3d1 !important;
+  }
+  
+  .nude .prose table {
+    border-color: #d6d3d1 !important;
   }
   
   /* Code blocks */
