@@ -1,4 +1,3 @@
-
 ---
 title: "Verben und Adjektive mit Präpositionen"
 description: "Học các động từ và tính từ đi kèm với giới từ trong tiếng Đức"

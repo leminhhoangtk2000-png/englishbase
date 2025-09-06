@@ -1,4 +1,3 @@
-
 ---
 title: "Konjunktiv II - Thể giả định loại hai"
 description: "Tìm hiểu về thể giả định Konjunktiv II và cách sử dụng trong tiếng Đức"

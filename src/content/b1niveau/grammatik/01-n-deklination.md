@@ -1,4 +1,3 @@
-
 ---
 title: "N-Deklination - Biến cách danh từ yếu"
 description: "Tìm hiểu về nhóm danh từ yếu (N-Deklination) trong tiếng Đức và cách biến đổi theo cách"

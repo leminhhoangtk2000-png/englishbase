@@ -1,4 +1,3 @@
-
 ---
 title: "Partizip I & Partizip II"
 description: "Tìm hiểu về phân từ loại 1 và phân từ loại 2 trong tiếng Đức"

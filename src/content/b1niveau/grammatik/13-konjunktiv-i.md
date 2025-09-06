@@ -1,4 +1,3 @@
-
 ---
 title: "Konjunktiv I - Thể giả định loại một"
 description: "Tìm hiểu về thể giả định Konjunktiv I và cách sử dụng trong lời nói gián tiếp"
