@@ -19,7 +19,7 @@ Ví dụ:
 
 - Ich **habe** gespielt. _(Tôi đã chơi.)_
 - Er **ist** gekommen. _(Anh ấy đã đến.)_
-  :::
+:::
 
 ## 🔍 Khi nào dùng haben, khi nào dùng sein?
 
@@ -57,4 +57,4 @@ _[Đây là nơi bạn có thể thêm các bài tập thực hành]_
 - Phần lớn động từ dùng với haben
 - Động từ di chuyển và thay đổi trạng thái dùng với sein
 - Đây là thì được dùng nhiều nhất trong giao tiếp hàng ngày
-  :::
+:::

@@ -1,0 +1,195 @@
+---
+title: "Komparativ und Superlativ - So sánh hơn và so sánh nhất"
+description: "Học cách so sánh bằng, so sánh hơn và so sánh nhất trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 3
+---
+
+# Komparativ und Superlativ - So sánh hơn và so sánh nhất
+
+📌 Trong tiếng Đức, tính từ có thể được chia thành ba cấp độ so sánh:  
+
+-  **So sánh bằng (Positiv)** – diễn tả sự tương đương giữa hai đối tượng.  
+-  **So sánh hơn (Komparativ)** – diễn tả một đối tượng có đặc điểm hơn đối tượng kia.  
+-  **So sánh nhất (Superlativ)** – diễn tả một đối tượng có đặc điểm cao nhất trong một nhóm.
+
+---
+
+## **1. So sánh bằng (Positiv)**
+
+`So sánh bằng được sử dụng để chỉ hai thứ có mức độ giống nhau.`
+
+### **🔹 1.1. Loại cơ bản**
+
+:::note[📌 **Công thức:**]
+**so + Tính từ + wie**
+:::
+
+**Ví dụ:**
+
+- Peter ist so groß wie Maria. 
+	_(Peter cao như Maria.)_
+
+- Dieses Auto ist so teuer wie das andere. 
+	_(Chiếc xe này đắt như chiếc xe kia.)_
+
+ Lưu ý:  
+  - **Cấu trúc này được dùng khi hai đối tượng có mức độ bằng nhau.**
+
+---
+
+### **🔹 1.2. Một số biến thể của so sánh bằng**
+
+📌 **Ngoài "so ... wie", có một số cách khác để diễn tả so sánh bằng với mức độ khác nhau.**
+
+|**Cấu trúc**|**Nghĩa**|**Ví dụ**|
+|---|---|---|
+|**genau so + Adj + wie**|Chính xác bằng|**Er ist genau so groß wie sein Bruder.** _(Anh ấy chính xác cao bằng anh trai mình.)_|
+|**doppelt so + Adj + wie**|Gấp đôi|**Dieses Haus ist doppelt so teuer wie das andere.** _(Ngôi nhà này đắt gấp đôi ngôi nhà kia.)_|
+|**halb so + Adj + wie**|Một nửa|**Der Test war halb so schwer wie erwartet.** _(Bài kiểm tra chỉ khó bằng một nửa so với dự đoán.)_|
+|**fast so + Adj + wie**|Gần bằng|**Ich bin fast so schnell wie du.** _(Tôi gần nhanh bằng bạn.)_|
+|**nicht so + Adj + wie**|Không bằng|**Das Wetter ist nicht so warm wie gestern.** _(Thời tiết hôm nay không ấm bằng hôm qua.)_|
+
+Lưu ý:  
+  - **"Nicht so ... wie" dùng để diễn tả một đối tượng kém hơn đối tượng khác.**
+
+---
+
+### **🔹 1.3. So sánh bằng về số lượng**
+
+📌 **Khi so sánh về số lượng, ta dùng "so viel(e) ... wie".**
+
+**Ví dụ:**
+
+- Er hat so viel Geld wie sein Freund. 
+	_(Anh ấy có nhiều tiền như bạn của mình.)_
+
+- Wir haben so viele Bücher wie ihr. 
+	_(Chúng tôi có nhiều sách như các bạn.)_
+
+**Lưu ý:**  
+  - **"Viel" dùng cho danh từ không đếm được.**  
+  - **"Viele" dùng cho danh từ số nhiều.**
+
+---
+
+### **🔹 1.4. Sử dụng cách nào với "wie"?**
+
+📌 **Sau "wie", danh từ có thể ở Akkusativ hoặc Dativ, tùy thuộc vào động từ.**
+
+**Ví dụ:**
+
+- **Ich kenne ihn so gut wie dich.** 
+	_(Tôi biết anh ấy cũng tốt như bạn.)_ _(Akkusativ)_
+
+- **Sie hilft mir so oft wie dir.** 
+	_(Cô ấy giúp tôi thường xuyên như giúp bạn.)_ _(Dativ)_
+
+**Lưu ý:**  
+  - **Cách của danh từ sau "wie" phụ thuộc vào động từ trong câu.**
+
+---
+
+## **2. So sánh hơn (Komparativ)**
+
+📌 **So sánh hơn được sử dụng để so sánh hai đối tượng mà một trong số đó có mức độ cao hơn.**
+
+### **🔹 2.1. Loại bình thường**
+
+:::note[📌 **Công thức:**]
+**Tính từ + "-er" + als**
+:::
+
+**Ví dụ:**
+
+- Tom ist größer als Paul. 
+	_(Tom cao hơn Paul.)_
+
+- Dieses Auto ist teurer als das andere. 
+	_(Chiếc xe này đắt hơn chiếc xe kia.)_
+
+**Lưu ý:**  
+  - **"Als" luôn được sử dụng trong so sánh hơn.**
+
+---
+
+### **🔹 2.2. So sánh hơn về số lượng**
+
+📌 **Dùng "mehr ... als" khi so sánh về số lượng.**
+
+**Ví dụ:**
+
+- Er hat mehr Geld als ich. 
+	_(Anh ấy có nhiều tiền hơn tôi.)_
+
+- Sie liest mehr Bücher als ihr Bruder. 
+	_(Cô ấy đọc nhiều sách hơn anh trai cô ấy.)_
+
+**Lưu ý:**  
+  - **Dùng "mehr" thay vì thêm "-er" khi so sánh danh từ số lượng.**
+
+---
+
+## **3. So sánh nhất (Superlativ)**
+
+📌 **So sánh nhất diễn tả mức độ cao nhất trong một nhóm.**
+
+:::note[📌 **Công thức:**]
+**am + Tính từ + "-sten"** (dạng trạng từ)  
+**der/die/das + Tính từ + "-ste"** (dạng tính từ)
+:::
+
+**Ví dụ:**
+
+- Tom ist am größten. 
+	_(Tom là cao nhất.)_
+
+- Das ist das teuerste Auto. 
+	_(Đây là chiếc xe đắt nhất.)_
+
+**Lưu ý:**  
+  - **"Am + -sten" dùng khi không có danh từ đi kèm.**  
+  - **"Der/die/das + -ste" dùng khi có danh từ.**
+
+---
+
+## **📍 4. Các tính từ đặc biệt**
+
+📌 **Một số tính từ thay đổi bất quy tắc khi so sánh hơn và so sánh nhất.**
+
+ **Bảng các tính từ bất quy tắc:**
+
+|**Nguyên thể**|**So sánh hơn**|**So sánh nhất**|
+|---|---|---|
+|gut (tốt)|besser|am besten|
+|viel (nhiều)|mehr|am meisten|
+|wenig (ít)|weniger|am wenigsten|
+|hoch (cao)|höher|am höchsten|
+|nah (gần)|näher|am nächsten|
+
+**Ví dụ:**
+
+- Dieser Film ist besser als der andere. 
+	_(Bộ phim này hay hơn bộ phim kia.)_
+
+- Das ist das beste Buch, das ich je gelesen habe. 
+	_(Đây là cuốn sách hay nhất mà tôi từng đọc.)_
+
+**Lưu ý:**  
+  **Một số tính từ thay đổi gốc khi ở so sánh hơn và so sánh nhất.**
+
+---
+
+## **🎯 5. Tổng kết: Những lưu ý quan trọng**
+
+:::note
+  **So sánh bằng:** **so + Adj + wie** _(Maria ist so klug wie Tom.)_  
+  **So sánh hơn:** **Adj + "-er" + als** _(Maria ist klüger als Tom.)_  
+  **So sánh nhất:** **am + Adj + "-sten"** _(Maria ist am klügsten.)_  
+  
+  **So sánh số lượng:**
+- **so viel(e) ... wie** _(so viele Bücher wie ...)_
+- **mehr ... als** _(mehr Geld als ...)_  
+      **Một số tính từ thay đổi bất quy tắc trong so sánh hơn và so sánh nhất.**
+:::
