@@ -5,7 +5,7 @@ import { getNavigationStructure } from "@/lib/markdown";
 const markdownNavigation = getNavigationStructure('a2niveau');
 
 export const docsConfig: DocsConfig = {
-  items: markdownNavigation.length > 0 ? markdownNavigation : [
+  items: [
     {
       title: "Grammatik",
       href: "/a2niveau/grammatik",
@@ -21,39 +21,64 @@ export const docsConfig: DocsConfig = {
           href: "/a2niveau/grammatik/01-perfekt",
         },
         {
+          title: "Adjektivdeklination - Chia đuôi tính từ",
+          description: "Học cách chia đuôi tính từ trong tiếng Đức theo các Kasus và quán từ",
+          href: "/a2niveau/grammatik/02-adjektivdeklination",
+        },
+        {
+          title: "Komparativ und Superlativ - So sánh hơn và so sánh nhất",
+          description: "Học cách so sánh bằng, so sánh hơn và so sánh nhất trong tiếng Đức",
+          href: "/a2niveau/grammatik/03-komparativ-superlativ",
+        },
+        {
+          title: "Perfekt - Thì quá khứ hoàn thành (Chi tiết)",
+          description: "Hướng dẫn chi tiết về thì Perfekt trong tiếng Đức với haben và sein",
+          href: "/a2niveau/grammatik/04-perfekt-advanced",
+        },
+        {
           title: "Präteritum - Thì quá khứ đơn",
-          description: "Tìm hiểu về thì Präteritum và cách chia động từ ở thì quá khứ",
-          href: "/a2niveau/grammatik/02-prateritum",
+          description: "Học cách sử dụng thì Präteritum trong tiếng Đức",
+          href: "/a2niveau/grammatik/05-prateritum",
         },
         {
-          title: "Adjektivdeklination - Chia tính từ",
-          description: "Học cách chia tính từ theo các Kasus và quán từ",
-          href: "/a2niveau/grammatik/03-adjektivdeklination",
+          title: "Plusquamperfekt - Thì quá khứ hoàn thành trước",
+          description: "Học cách sử dụng thì Plusquamperfekt trong tiếng Đức",
+          href: "/a2niveau/grammatik/06-plusquamperfekt",
         },
         {
-          title: "Komparativ und Superlativ - So sánh",
-          description: "Tìm hiểu về so sánh hơn và so sánh nhất trong tiếng Đức",
-          href: "/a2niveau/grammatik/04-komparativ-superlativ",
+          title: "Die Nebensätze - Các loại câu phụ",
+          description: "Học về các loại mệnh đề phụ trong tiếng Đức",
+          href: "/a2niveau/grammatik/07-nebensatze",
         },
         {
-          title: "Reflexivverben - Động từ phản thân",
-          description: "Học về động từ phản thân và cách sử dụng đại từ phản thân",
-          href: "/a2niveau/grammatik/05-reflexivverben",
-        },
-        {
-          title: "Konjunktiv II - Thể giả định",
-          description: "Tìm hiểu về thể giả định Konjunktiv II và cách sử dụng",
-          href: "/a2niveau/grammatik/06-konjunktiv-ii",
-        },
-        {
-          title: "Passiv - Câu bị động",
+          title: "Passiv - Thể bị động",
           description: "Học cách tạo và sử dụng câu bị động trong tiếng Đức",
-          href: "/a2niveau/grammatik/07-passiv",
+          href: "/a2niveau/grammatik/08-passiv",
         },
         {
-          title: "Nebensätze - Mệnh đề phụ",
-          description: "Tìm hiểu về các loại mệnh đề phụ và cách kết nối",
-          href: "/a2niveau/grammatik/08-nebensatze",
+          title: "Das Futur I & Futur II - Thì tương lai",
+          description: "Học về thì tương lai đơn và tương lai hoàn thành trong tiếng Đức",
+          href: "/a2niveau/grammatik/09-futur",
+        },
+        {
+          title: "Passiv Alternativen - Dạng thay thế bị động",
+          description: "Học các dạng thay thế của thể bị động trong tiếng Đức",
+          href: "/a2niveau/grammatik/10-passiv-alternativen",
+        },
+        {
+          title: "Die Possessivpronomen - Đại từ sở hữu",
+          description: "Học về đại từ sở hữu trong tiếng Đức",
+          href: "/a2niveau/grammatik/11-possessivpronomen",
+        },
+        {
+          title: "Reflexivpronomen - Đại từ phản thân",
+          description: "Học về đại từ phản thân và động từ phản thân",
+          href: "/a2niveau/grammatik/12-reflexivpronomen",
+        },
+        {
+          title: "Genitiv - Cách sở hữu",
+          description: "Học về cách sở hữu Genitiv trong tiếng Đức",
+          href: "/a2niveau/grammatik/13-genitiv",
         },
       ],
     },
