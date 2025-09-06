@@ -244,20 +244,21 @@
   }
 }
 
-/* Admonitions / Callouts */
+/* Admonitions / Callouts - Enhanced with !important for debugging */
 .prose .admonition {
-  margin: 1.5rem 0;
-  border-radius: 0.5rem;
-  border-left: 4px solid;
-  padding: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin: 1.5rem 0 !important;
+  border-radius: 0.5rem !important;
+  border-left: 4px solid !important;
+  padding: 1rem !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  display: block !important;
 }
 
 .prose .admonition-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 600 !important;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
   text-transform: uppercase;
@@ -283,38 +284,38 @@
 
 /* Note - Blue */
 .prose .admonition.admonition-note {
-  border-left-color: #3b82f6;
-  background-color: rgba(239, 246, 255, 1);
+  border-left-color: #3b82f6 !important;
+  background-color: rgba(239, 246, 255, 1) !important;
 }
 
 .dark .prose .admonition.admonition-note {
-  background-color: rgba(30, 58, 138, 0.3);
+  background-color: rgba(30, 58, 138, 0.3) !important;
 }
 
 .prose .admonition.admonition-note .admonition-title {
-  color: #1d4ed8;
+  color: #1d4ed8 !important;
 }
 
 .dark .prose .admonition.admonition-note .admonition-title {
-  color: #93c5fd;
+  color: #93c5fd !important;
 }
 
 .prose .admonition.admonition-note .admonition-content {
-  color: #1e40af;
+  color: #1e40af !important;
 }
 
 .dark .prose .admonition.admonition-note .admonition-content {
-  color: #bfdbfe;
+  color: #bfdbfe !important;
 }
 
 /* Tip - Green */
 .prose .admonition.admonition-tip {
-  border-left-color: #10b981;
-  background-color: rgba(240, 253, 244, 1);
+  border-left-color: #10b981 !important;
+  background-color: rgba(240, 253, 244, 1) !important;
 }
 
 .dark .prose .admonition.admonition-tip {
-  background-color: rgba(6, 78, 59, 0.3);
+  background-color: rgba(6, 78, 59, 0.3) !important;
 }
 
 .prose .admonition.admonition-tip .admonition-title {

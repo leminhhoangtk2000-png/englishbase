@@ -23,7 +23,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "W-Fragen und Ja/Nein-Fragen",
           description: "Học cách đặt câu hỏi trong tiếng Đức với W-Fragen và Ja/Nein-Fragen",
-          href: "/a1niveau/grammatik/03-w-fragen",
+          href: "/a1niveau/grammatik/03-wfragen",
         },
         {
           title: "Kasus - Nominativ, Akkusativ, Dativ",

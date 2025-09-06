@@ -106,7 +106,16 @@ npm run genkit:dev
 # Testing
 npm run test:users  # Create test accounts
 curl http://localhost:9003/api/test-overview  # Verify setup
+
+# Content monitoring (optional)
+npm run watch:content
 ```
+
+### Auto-Save Development Pattern (NEW)
+1. **VS Code Auto-Save**: Files auto-save after 1 second of editing
+2. **Next.js Hot Reload**: Automatic browser refresh on file changes
+3. **Real-time Preview**: http://localhost:9003 updates instantly
+4. **No Manual Refresh**: Development workflow is seamless
 
 ### Database Development Pattern
 1. Modify `prisma/schema.prisma`
@@ -114,11 +123,22 @@ curl http://localhost:9003/api/test-overview  # Verify setup
 3. Update seed data in `prisma/seed.ts` if needed
 4. Use `npm run db:studio` for visual database management
 
-### Content Addition Pattern
-1. Add JSON vocabulary files to `src/data/`
-2. Update `src/lib/vocabulary-data.ts` imports
-3. Run `npm run db:seed` to sync with database
-4. Configure routing in relevant `src/config/*.ts`
+### Content Addition Pattern (UPDATED)
+1. **Create markdown file** with proper naming: `[order]-[name].md`
+   - ✅ Good: `03-wfragen.md`
+   - ❌ Bad: `3.  Wfragen und JaNein-Fragen.md`
+2. **Add frontmatter**:
+```yaml
+---
+title: "Lesson Title"
+description: "Lesson description"
+level: "A1"
+topic: "Grammatik"
+order: 3
+---
+```
+3. **Update navigation** in `src/config/[niveau].ts`
+4. **Auto-save triggers** Next.js reload → immediate preview
 
 ### Theme Development Pattern (NEW)
 1. All new components must support theme switching
@@ -149,11 +169,13 @@ curl http://localhost:9003/api/test-overview  # Verify setup
 
 ## Project-Specific Conventions
 
-### File Naming & Structure
+### File Naming & Structure (UPDATED)
+- **Markdown Files**: `[order]-[name].md` format (e.g., `03-wfragen.md`)
 - **API Routes**: `route.ts` files with named exports (GET, POST, etc.)
 - **Page Components**: `page.tsx` in app directory structure
 - **Data Files**: `vocabulary-*.json` for vocabulary data
 - **Config Files**: `*.ts` in `src/config/` for navigation/routing
+- **NO backup/temp files**: Auto-ignored by `.gitignore`
 
 ### Vietnamese Language Support
 - **UI**: Vietnamese display names for roles and permissions
@@ -190,6 +212,19 @@ curl http://localhost:9003/api/test-overview  # Verify setup
 3. Test with vocabulary search to ensure proper detection
 4. Gender badges will automatically appear for nouns
 
+## Project Cleanup & Maintenance (NEW)
+
+### Cleaned Up Files
+- ✅ **Removed**: backup files, old test scripts, debug files
+- ✅ **Updated**: `.gitignore` to prevent future temp file commits
+- ✅ **Optimized**: Project structure for cleaner development
+
+### File Maintenance Rules
+1. **NO backup files**: Use git instead of `.backup`, `.old` suffixes
+2. **NO debug files**: Remove debug scripts after use
+3. **Clean naming**: Use proper kebab-case for markdown files
+4. **Auto-ignore**: Temp files automatically ignored by `.gitignore`
+
 ## Common Troubleshooting
 
 ### Prisma Client Issues
@@ -212,4 +247,9 @@ curl http://localhost:9003/api/test-overview  # Verify setup
 - **Wrong gender assigned**: Check `src/lib/common-nouns.ts` for overrides
 - **No gender badge**: Verify VocabularyEntry has gender field populated
 
-Always check `DATABASE.md` and `TEST-ACCOUNTS.md` for setup and testing guidance.
+### Auto-Save Issues (NEW)
+- **Changes not reflecting**: Check if dev server is running on port 9003
+- **File not updating**: Ensure proper frontmatter and filename format
+- **Navigation not showing**: Update corresponding config file in `src/config/`
+
+Always check `DATABASE.md`, `TEST-ACCOUNTS.md` and `AUTO-SAVE-WORKFLOW.md` for setup and development guidance.

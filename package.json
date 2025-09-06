@@ -20,7 +20,9 @@
     "db:reset": "prisma migrate reset --force && npm run db:seed",
     "test:users": "tsx scripts/create-test-users.ts",
     "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down"
+    "docker:down": "docker-compose down",
+    "auto-save": "./auto-save-reload.sh",
+    "watch:content": "nodemon --watch src/content --ext md,mdx --exec 'echo Content changed at $(date)'"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",

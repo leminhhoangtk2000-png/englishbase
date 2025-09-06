@@ -47,3 +47,16 @@ firestore-debug.log
 
 # docker
 docker-compose.override.yml
+
+# cleanup - ignore backup and temp files
+*backup*
+*old*
+*temp*
+*tmp*
+*.backup
+*.old
+test-*.js
+test-*.sh
+debug-*.js
+auto-save-reload.sh
+*.sql
