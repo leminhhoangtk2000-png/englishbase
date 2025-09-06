@@ -166,17 +166,32 @@
     @apply border-l-4 border-l-primary bg-muted/50 px-4 py-3 my-4 rounded-r-lg;
   }
   
-  /* Table styling - Basic */
+  /* Table styling - Very Basic */
   .prose table {
     @apply w-full border-collapse;
+    border: 1px solid #e5e7eb;
   }
   
   .prose th {
     @apply px-4 py-2 text-left font-semibold;
+    background: none !important;
+    background-color: transparent !important;
+    border: 1px solid #e5e7eb;
   }
   
   .prose td {
     @apply px-4 py-2;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .prose thead {
+    background: none !important;
+    background-color: transparent !important;
+  }
+  
+  .prose thead th {
+    background: none !important;
+    background-color: transparent !important;
   }
   
   /* Code blocks */
