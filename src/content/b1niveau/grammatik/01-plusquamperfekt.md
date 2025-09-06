@@ -1,12 +1,12 @@
 ---
-title: "Plusquamperfekt - Thì quá khứ hoàn thành"
+title: "Plusquamperfekt - Thì quá khứ hoàn thành trước"
 description: "Học cách sử dụng thì Plusquamperfekt trong tiếng Đức"
 level: "B1"
 topic: "Grammatik"
 order: 1
 ---
 
-# Plusquamperfekt - Thì quá khứ hoàn thành
+# Plusquamperfekt - Thì quá khứ hoàn thành trước
 
 Thì **Plusquamperfekt** được sử dụng để diễn tả một hành động đã xảy ra **trước** một hành động khác trong quá khứ.
 

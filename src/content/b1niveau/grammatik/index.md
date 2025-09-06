@@ -16,7 +16,7 @@ Chương trình B1 tập trung vào các chủ đề ngữ pháp nâng cao:
 
 ### ⏰ Hệ thống thì hoàn chỉnh
 
-- **Plusquamperfekt** - Thì quá khứ hoàn thành
+- **Plusquamperfekt** - Thì quá khứ hoàn thành trước
 - **Futur I und II** - Thì tương lai đơn và hoàn thành
 - Sự kết hợp các thì trong văn bản
 
