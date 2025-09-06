@@ -166,25 +166,17 @@
     @apply border-l-4 border-l-primary bg-muted/50 px-4 py-3 my-4 rounded-r-lg;
   }
   
-  /* Table styling */
+  /* Table styling - Basic */
   .prose table {
-    @apply w-full border-collapse border border-border rounded-lg overflow-hidden;
+    @apply w-full border-collapse;
   }
   
   .prose th {
-    @apply bg-muted px-4 py-2 text-left font-semibold border-b border-border;
+    @apply px-4 py-2 text-left font-semibold;
   }
   
   .prose td {
-    @apply px-4 py-2 border-b border-border;
-  }
-  
-  .prose tr:last-child td {
-    @apply border-b-0;
-  }
-  
-  .prose tr:hover {
-    @apply bg-muted/30;
+    @apply px-4 py-2;
   }
   
   /* Code blocks */
