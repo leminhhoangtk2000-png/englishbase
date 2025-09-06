@@ -1,3 +1,12 @@
+---
+title: "Genitiv - Cách sở hữu"
+description: "Học về cách sở hữu Genitiv trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 13
+---
+
+# Genitiv - Cách sở hữu
 
 - **Genitiv** là một trong bốn cách (Kasus) trong tiếng Đức, chủ yếu dùng để thể hiện sự sở hữu.  
 - Cách này thường xuất hiện trong văn viết, văn phong trang trọng và trong một số cấu trúc cố định.

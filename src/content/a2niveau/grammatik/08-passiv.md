@@ -1,3 +1,12 @@
+---
+title: "Passiv - Thể bị động"
+description: "Học cách tạo và sử dụng câu bị động trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 8
+---
+
+# Passiv - Thể bị động
 
 - **Thể bị động (Passiv)** được sử dụng khi **hành động quan trọng hơn chủ thể thực hiện hành động**.  
 - **Câu bị động nhấn mạnh quá trình hoặc trạng thái của sự vật, thay vì người thực hiện hành động.**

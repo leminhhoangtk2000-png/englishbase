@@ -1,4 +1,3 @@
-
 ---
 title: "Präteritum - Thì quá khứ đơn"
 description: "Học cách sử dụng thì Präteritum trong tiếng Đức"

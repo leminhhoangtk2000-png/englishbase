@@ -1,3 +1,12 @@
+---
+title: "Das Futur I & Futur II - Thì tương lai"
+description: "Học về thì tương lai đơn và tương lai hoàn thành trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 9
+---
+
+# Das Futur I & Futur II - Thì tương lai
 
 - **Thì Futur I (Tương lai đơn)** được sử dụng để diễn tả các sự kiện trong tương lai hoặc để diễn tả suy đoán về hiện tại.  
 - **Thì Futur II (Tương lai hoàn thành)** diễn tả một hành động sẽ hoàn thành vào một thời điểm cụ thể trong tương lai.

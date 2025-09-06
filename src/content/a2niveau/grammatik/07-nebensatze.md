@@ -1,3 +1,12 @@
+---
+title: "Die Nebensätze - Các loại câu phụ"
+description: "Học về các loại mệnh đề phụ trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 7
+---
+
+# Die Nebensätze - Các loại câu phụ
 
 - Câu phụ (Nebensätze) là loại câu **không thể đứng một mình**, mà **phải bổ sung ý nghĩa cho câu chính**.  
 - Câu phụ luôn có một liên từ (Konjunktion) đứng đầu.  

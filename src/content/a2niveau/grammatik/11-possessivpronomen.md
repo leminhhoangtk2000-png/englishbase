@@ -1,3 +1,12 @@
+---
+title: "Die Possessivpronomen - Đại từ sở hữu"
+description: "Học về đại từ sở hữu trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 11
+---
+
+# Die Possessivpronomen - Đại từ sở hữu
 
 - **Đại từ sở hữu (Possessivpronomen)** giúp chỉ sự sở hữu hoặc quan hệ giữa người hoặc vật.  
 - Chúng có hình thức khác nhau tùy theo giống **(Maskulin, Feminin, Neutrum), số (Số ít, Số nhiều) và cách (Kasus)**.  

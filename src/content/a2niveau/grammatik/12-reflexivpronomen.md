@@ -1,3 +1,12 @@
+---
+title: "Reflexivpronomen - Đại từ phản thân"
+description: "Học về đại từ phản thân và động từ phản thân"
+level: "A2"
+topic: "Grammatik"
+order: 12
+---
+
+# Reflexivpronomen - Đại từ phản thân
 
 - **Đại từ phản thân (Reflexivpronomen)** được sử dụng khi chủ ngữ và tân ngữ trong câu là cùng một người hoặc vật.  
 - **Động từ phản thân (Reflexive Verben)** là những động từ cần có đại từ phản thân để hoàn chỉnh nghĩa của câu.

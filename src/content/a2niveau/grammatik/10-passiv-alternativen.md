@@ -1,3 +1,12 @@
+---
+title: "Passiv Alternativen - Dạng thay thế bị động"
+description: "Học các dạng thay thế của thể bị động trong tiếng Đức"
+level: "A2"
+topic: "Grammatik"
+order: 10
+---
+
+# Passiv Alternativen - Dạng thay thế bị động
 
 - Trong tiếng Đức, có nhiều cách để diễn đạt câu bị động mà không cần sử dụng trực tiếp dạng bị động (Passiv).  
 - Những cách thay thế này thường giúp câu trở nên tự nhiên hơn trong văn nói và viết.

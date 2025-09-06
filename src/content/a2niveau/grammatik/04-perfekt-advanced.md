@@ -1,4 +1,3 @@
-
 ---
 title: "Perfekt - Thì quá khứ hoàn thành (Chi tiết)"
 description: "Hướng dẫn chi tiết về thì Perfekt trong tiếng Đức với haben và sein"

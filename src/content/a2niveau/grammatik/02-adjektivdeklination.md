@@ -1,4 +1,3 @@
-
 ---
 title: "Adjektivdeklination - Chia đuôi tính từ"
 description: "Học cách chia đuôi tính từ trong tiếng Đức theo các Kasus và quán từ"
