@@ -78,13 +78,13 @@ Câu mệnh lệnh (**Imperativ**) được sử dụng để ra lệnh, đề n
 **Ví dụ:**
 
 - **Komm bitte!** 
-	_(Đến đây, làm ơn!)_
+  _(Đến đây, làm ơn!)_
 
 - **Warten Sie bitte hier!** 
-	_(Ngài hãy đợi ở đây, làm ơn!)_
+  _(Ngài hãy đợi ở đây, làm ơn!)_
 
 - **Helft mir bitte!** 
-	_(Các bạn hãy giúp tôi với!)_
+  _(Các bạn hãy giúp tôi với!)_
 
 ---
 

@@ -16,16 +16,16 @@ order: 4
 
 ### **🔹 1.1. Nominativ (Chủ ngữ)**
 
-  Là người hoặc vật thực hiện hành động trong câu.  
-  Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
+Là người hoặc vật thực hiện hành động trong câu.  
+Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
 
 **Ví dụ:**
 
 - **Der Hund** spielt. 
-	_(Ai chơi? → Con chó chơi.)_
+  _(Ai chơi? → Con chó chơi.)_
 
 - **Das Kind** liest ein Buch. 
-	_(Ai đọc? → Đứa trẻ đọc sách.)_
+  _(Ai đọc? → Đứa trẻ đọc sách.)_
 
 📌 Mẹo nhớ nhanh:  
 - **Mọi chủ ngữ trong câu đều ở dạng Nominativ!**
@@ -34,16 +34,16 @@ order: 4
 
 ### **🔹 1.2. Akkusativ (Tân ngữ trực tiếp)**
 
-  Là người hoặc vật chịu tác động trực tiếp từ hành động.  
-  Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
+Là người hoặc vật chịu tác động trực tiếp từ hành động.  
+Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
 
 **Ví dụ:**
 
 - **Ich sehe den Mann.** 
-	_(Tôi nhìn thấy người đàn ông.)_
+  _(Tôi nhìn thấy người đàn ông.)_
 
 - **Sie kauft das Buch.** 
-	_(Cô ấy mua cuốn sách.)_
+  _(Cô ấy mua cuốn sách.)_
 
 📌 Mẹo nhớ nhanh:  
 - **Động từ ảnh hưởng trực tiếp đến đối tượng nào → đối tượng đó là Akkusativ!**
@@ -52,16 +52,16 @@ order: 4
 
 ### **🔹 1.3. Dativ (Tân ngữ gián tiếp)**
 
-  Là người hoặc vật nhận lợi ích từ hành động.  
-  Trả lời câu hỏi: **Wem? (Cho ai?)**
+Là người hoặc vật nhận lợi ích từ hành động.  
+Trả lời câu hỏi: **Wem? (Cho ai?)**
 
 **Ví dụ:**
 
 - **Er gibt dem Mann ein Buch.** 
-	_(Anh ấy đưa quyển sách cho người đàn ông.)_
+  _(Anh ấy đưa quyển sách cho người đàn ông.)_
 
 - **Kannst du mir helfen?** 
-	_(Bạn có thể giúp tôi không?)_
+  _(Bạn có thể giúp tôi không?)_
 
 📌 Mẹo nhớ nhanh:  
 - **Danh từ nào nhận lợi ích từ hành động → đó là Dativ!**

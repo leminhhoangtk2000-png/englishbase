@@ -206,9 +206,35 @@
     color: hsl(34 10% 15%) !important; /* Dark brown for nude theme */
   }
   
-  /* Lists */
+  /* Lists - Basic styling */
   .prose ul, .prose ol {
-    @apply space-y-1;
+    @apply my-4;
+  }
+
+  .prose ul > li {
+    @apply mb-2;
+  }
+
+  .prose ol > li {
+    @apply mb-2;
+  }
+
+  /* List item content styling */
+  .prose li > p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Strong text in lists */
+  .prose li strong {
+    @apply font-bold;
+  }
+
+  /* Italic text in lists (Vietnamese translations) */
+  .prose li em {
+    @apply italic text-gray-600 dark:text-gray-400 text-sm;
+    display: block;
+    margin-top: 0.25rem;
   }
   
   /* Headings */
@@ -233,15 +259,102 @@
     @apply text-primary hover:underline;
   }
   
-  /* Strong text */
+  /* Strong text - Basic styling */
   .prose strong {
-    @apply font-semibold text-foreground;
+    @apply font-bold;
+  }
+
+  /* Strong text in examples */
+  .prose li strong {
+    @apply font-bold;
   }
   
   /* Emphasis */
   .prose em {
     @apply italic;
   }
+
+  /* German-Vietnamese Examples Styling */
+  .prose li em {
+    @apply italic text-gray-600 dark:text-gray-400 text-sm;
+    display: block;
+    margin-top: 0.25rem;
+    padding-left: 1rem;
+    border-left: 2px solid #e5e7eb;
+    font-style: italic;
+  }
+
+  .dark .prose li em {
+    border-left-color: #374151;
+  }
+
+  /* Example sentences styling */
+  .prose li {
+    margin-bottom: 1rem;
+  }
+
+  .prose li > em {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced Typography for German Learning Content */
+.prose {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* Better spacing for German examples */
+.prose li {
+  margin-bottom: 1.25rem;
+  padding-top: 0.25rem;
+}
+
+/* Docusaurus-style paragraph spacing */
+.prose > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Table styling improvements */
+.prose table {
+  border-collapse: collapse;
+  margin: 2rem 0;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.prose th {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.prose tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.dark .prose tbody tr:nth-child(even) {
+  background-color: #1f2937;
+}
+
+.dark .prose td {
+  border-bottom-color: #374151;
 }
 
 /* Admonitions / Callouts - Enhanced with !important for debugging */

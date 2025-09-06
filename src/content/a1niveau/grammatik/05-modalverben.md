@@ -49,10 +49,10 @@ order: 5
 **Ví dụ:**
 
 - Ich kann Deutsch sprechen. 
-	_(Tôi có thể nói tiếng Đức.)_
+  _(Tôi có thể nói tiếng Đức.)_
 
 - Kannst du mir helfen? 
-	_(Bạn có thể giúp tôi không?)_
+  _(Bạn có thể giúp tôi không?)_
 
 ---
 
@@ -63,10 +63,10 @@ order: 5
 **Ví dụ:**
 
 - Du darfst hier parken. 
-	_(Bạn được phép đậu xe ở đây.)_
+  _(Bạn được phép đậu xe ở đây.)_
 
 - Er darf nicht rauchen. 
-	_(Anh ấy không được phép hút thuốc.)_
+  _(Anh ấy không được phép hút thuốc.)_
 
 ---
 
@@ -77,10 +77,10 @@ order: 5
 **Ví dụ:**
 
 - Ich muss heute arbeiten. 
-	_(Tôi phải làm việc hôm nay.)_
+  _(Tôi phải làm việc hôm nay.)_
 
 - Wir müssen die Hausaufgaben machen. 
-	_(Chúng tôi phải làm bài tập về nhà.)_
+  _(Chúng tôi phải làm bài tập về nhà.)_
 
 ---
 
@@ -91,10 +91,10 @@ order: 5
 **Ví dụ:**
 
 - Du sollst mehr lernen. 
-	_(Bạn nên học nhiều hơn.)_
+  _(Bạn nên học nhiều hơn.)_
 
 - Soll ich mitkommen? 
-	_(Tôi nên đi cùng không?)_
+  _(Tôi nên đi cùng không?)_
 
 ---
 
@@ -105,10 +105,10 @@ order: 5
 **Ví dụ:**
 
 - Ich will ins Kino gehen. 
-	_(Tôi muốn đi xem phim.)_
+  _(Tôi muốn đi xem phim.)_
 
 - Was willst du essen? 
-	_(Bạn muốn ăn gì?)_
+  _(Bạn muốn ăn gì?)_
 
 **Lưu ý:** "wollen" thể hiện **mong muốn mạnh mẽ, quyết tâm hơn "möchten".**
 
@@ -121,10 +121,10 @@ order: 5
 **Ví dụ:**
 
 - Ich mag Schokolade. 
-	_(Tôi thích sô-cô-la.)_
+  _(Tôi thích sô-cô-la.)_
 
 - Magst du Musik? 
-	_(Bạn thích nhạc không?)_
+  _(Bạn thích nhạc không?)_
 
 ---
 
@@ -136,10 +136,10 @@ order: 5
 **Ví dụ:**
 
 - Ich möchte einen Kaffee. 
-	_(Tôi muốn một cốc cà phê.)_
+  _(Tôi muốn một cốc cà phê.)_
 
 - Möchtest du etwas essen? 
-	_(Bạn muốn ăn gì đó không?)_
+  _(Bạn muốn ăn gì đó không?)_
 
 **Lưu ý:** "möchten" là dạng Konjunktiv II của "mögen" và mang ý nghĩa **lịch sự hơn "wollen"**.
 

@@ -47,10 +47,10 @@ order: 12
 **Ví dụ:**
 
 - **Ich** bin Student. 
-	_(Tôi là sinh viên.)_
+  _(Tôi là sinh viên.)_
 
 - **Sie** wohnt in Berlin. 
-	_(Cô ấy sống ở Berlin.)_
+  _(Cô ấy sống ở Berlin.)_
 
 ---
 
@@ -61,12 +61,12 @@ order: 12
 **Ví dụ:**
 
 - **Ich sehe dich.** 
-	_(Tôi nhìn thấy bạn.)_
+  _(Tôi nhìn thấy bạn.)_
 - **Er liebt sie.** 
-	_(Anh ấy yêu cô ấy.)_
+  _(Anh ấy yêu cô ấy.)_
 
 - **Wir hören euch.** 
-	_(Chúng tôi nghe thấy các bạn.)_
+  _(Chúng tôi nghe thấy các bạn.)_
 
 📌 **Mẹo nhớ nhanh:**  
 **Hỏi "wen?" hoặc "was?"** để xác định **Akkusativ** (_Ai? Cái gì?_)
@@ -80,13 +80,13 @@ order: 12
 **Ví dụ:**
 
 - **Er gibt mir ein Buch.** 
-	_(Anh ấy đưa cho tôi một quyển sách.)_
+  _(Anh ấy đưa cho tôi một quyển sách.)_
 
 - **Kannst du ihm helfen?**
-	_(Bạn có thể giúp anh ấy không?)_
+  _(Bạn có thể giúp anh ấy không?)_
 
 - **Sie kauft uns ein Geschenk.** 
-	_(Cô ấy mua tặng chúng tôi một món quà.)_
+  _(Cô ấy mua tặng chúng tôi một món quà.)_
 
 📌 **Mẹo nhớ nhanh:**  
 **Hỏi "wem?"** để xác định **Dativ** (_Cho ai? Đối với ai?_)
