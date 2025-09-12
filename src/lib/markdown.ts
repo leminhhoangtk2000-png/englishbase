@@ -470,9 +470,11 @@ export function getNiveauContent(niveau: string) {
             items: section.items.map((item: any) => ({
               title: item.title,
               description: item.description,
-              slug: item.href.split('/').pop(),
+              slug: item.href ? item.href.split('/').pop() : '',
+              href: item.href,
               tags: [],
               order: 0,
+              items: item.items || [], // Preserve sub-items for folder structure
             })),
           })),
         }

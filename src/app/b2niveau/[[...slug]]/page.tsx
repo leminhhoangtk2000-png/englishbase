@@ -34,13 +34,13 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
 
           <div className="grid gap-8">
-            {docsConfig.items.map((section) => (
+            {docsConfig.items.map((section: any) => (
               <div key={section.title} className="space-y-4">
                 <h2 className="text-2xl font-semibold font-headline">
                   {section.title}
                 </h2>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {section.items?.map((item) => (
+                  {section.items?.map((item: any) => (
                     <Link
                       key={item.href}
                       href={item.href || '#'}
@@ -86,7 +86,7 @@ export default async function DocPage({ params }: DocPageProps) {
   if (!section || !articleSlug) {
     // Show section overview
     const niveauContent = getNiveauContent('b2niveau');
-    const currentSection = niveauContent.sections.find(s => s.slug === section);
+    const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
     
     if (!currentSection) {
       notFound();
@@ -110,7 +110,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
           
           <div className="grid gap-4 md:grid-cols-2">
-            {currentSection.items.map((item) => (
+            {currentSection.items.map((item: any) => (
               <Link
                 key={item.slug}
                 href={`/b2niveau/${section}/${item.slug}`}
@@ -124,7 +124,7 @@ export default async function DocPage({ params }: DocPageProps) {
                 </p>
                 {item.tags && item.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {item.tags.map((tag) => (
+                    {item.tags.map((tag: any) => (
                       <Badge key={tag} variant="secondary" className="text-xs">
                         {tag}
                       </Badge>
@@ -168,7 +168,7 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
           {markdownContent.meta.tags && markdownContent.meta.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
-              {markdownContent.meta.tags.map((tag) => (
+              {markdownContent.meta.tags.map((tag: any) => (
                 <Badge key={tag} variant="outline">
                   {tag}
                 </Badge>

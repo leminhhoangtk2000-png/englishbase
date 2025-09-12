@@ -3,20 +3,20 @@ import { getNiveauContent } from '@/lib/markdown'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { niveau: string; section: string } }
+  { params }: { params: Promise<{ niveau: string; section: string }> }
 ) {
   try {
-    const { niveau, section } = params
+    const { niveau, section } = await params
     const content = getNiveauContent(niveau)
     
     // Find the specific section
-    const targetSection = content.sections.find(s => s.name === section)
+    const targetSection = content.sections.find((s: any) => s.name === section)
     
     if (!targetSection) {
       return Response.json({
         success: false,
         error: `Section '${section}' not found in niveau '${niveau}'`,
-        availableSections: content.sections.map(s => s.name)
+        availableSections: content.sections.map((s: any) => s.name)
       }, { status: 404 })
     }
     
@@ -25,7 +25,7 @@ export async function GET(
       niveau,
       section,
       totalItems: targetSection.items.length,
-      items: targetSection.items.map(item => ({
+      items: targetSection.items.map((item: any) => ({
         title: item.title,
         description: item.description,
         slug: item.slug,
@@ -35,11 +35,24 @@ export async function GET(
     })
   } catch (error) {
     console.error('Debug API error:', error)
+    
+    // Declare variables to avoid scope issues
+    let errorNiveau = 'unknown';
+    let errorSection = 'unknown';
+    
+    try {
+      const resolvedParams = await params;
+      errorNiveau = resolvedParams.niveau;
+      errorSection = resolvedParams.section;
+    } catch {
+      // Keep default values if params can't be resolved
+    }
+    
     return Response.json({ 
       success: false, 
       error: error instanceof Error ? error.message : 'Unknown error',
-      niveau: params.niveau,
-      section: params.section
+      niveau: errorNiveau,
+      section: errorSection
     }, { status: 500 })
   }
 }

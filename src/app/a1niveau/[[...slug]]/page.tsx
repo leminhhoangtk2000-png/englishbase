@@ -30,35 +30,56 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
           
           <div className="grid gap-8">
-            {niveauContent.sections.map((section) => (
+            {niveauContent.sections.map((section: any) => (
               <div key={section.slug} className="space-y-4">
                 <h2 className="text-2xl font-semibold font-headline capitalize">
                   {section.title}
                 </h2>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {section.items.map((item) => (
-                    <Link
-                      key={item.slug}
-                      href={`/a1niveau/${section.slug}/${item.slug}`}
-                      className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
-                    >
-                      <h3 className="font-medium group-hover:text-primary">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {item.description}
-                      </p>
-                      {item.tags && item.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-2">
-                          {item.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
+                  {section.items.map((item: any) => {
+                    // Check if this item has sub-items (folder structure)
+                    const hasSubItems = item.items && item.items.length > 0;
+                    
+                    // Extract slug from href if no direct slug
+                    const itemSlug = item.slug || (item.href ? item.href.split('/').pop() : '');
+                    const href = hasSubItems ? `/a1niveau/${section.slug}/${itemSlug}` : (item.href || '#');
+                    
+                    return (
+                      <Link
+                        key={item.slug || item.href || item.title}
+                        href={href}
+                        className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="font-medium group-hover:text-primary">
+                            {item.title}
+                          </h3>
+                          {hasSubItems && (
+                            <Badge variant="outline" className="text-xs">
+                              {item.items.length} bài
                             </Badge>
-                          ))}
+                          )}
                         </div>
-                      )}
-                    </Link>
-                  ))}
+                        <p className="text-sm text-muted-foreground">
+                          {item.description}
+                        </p>
+                        {hasSubItems && (
+                          <div className="mt-3 text-xs text-muted-foreground">
+                            📁 Folder - {item.items.length} lessons inside
+                          </div>
+                        )}
+                        {item.tags && item.tags.length > 0 && (
+                          <div className="flex flex-wrap gap-1 mt-2">
+                            {item.tags.map((tag: any) => (
+                              <Badge key={tag} variant="secondary" className="text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -76,7 +97,7 @@ export default async function DocPage({ params }: DocPageProps) {
     // Show section overview (e.g., /a1niveau/vokabular)
     const [section] = slug;
     const niveauContent = getNiveauContent('a1niveau');
-    const currentSection = niveauContent.sections.find(s => s.slug === section);
+    const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
     
     if (!currentSection) {
       notFound();
@@ -100,7 +121,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
           
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {currentSection.items.map((item) => (
+            {currentSection.items.map((item: any) => (
               <Link
                 key={item.slug}
                 href={`/a1niveau/${section}/${item.slug}`}
@@ -114,7 +135,7 @@ export default async function DocPage({ params }: DocPageProps) {
                 </p>
                 {item.tags && item.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {item.tags.map((tag) => (
+                    {item.tags.map((tag: any) => (
                       <Badge key={tag} variant="secondary" className="text-xs">
                         {tag}
                       </Badge>
@@ -153,7 +174,7 @@ export default async function DocPage({ params }: DocPageProps) {
           <div className="mx-auto w-full min-w-0">
             <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
               <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
-              {breadcrumbItems.map((item, index) => (
+              {breadcrumbItems.map((item: any, index: number) => (
                 <React.Fragment key={item}>
                   <span className="font-medium text-foreground">/</span>
                   {index === breadcrumbItems.length - 1 ? (
@@ -177,7 +198,7 @@ export default async function DocPage({ params }: DocPageProps) {
               )}
               {directMarkdownContent.meta?.tags && directMarkdownContent.meta.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {directMarkdownContent.meta.tags.map((tag) => (
+                  {directMarkdownContent.meta.tags.map((tag: any) => (
                     <Badge key={tag} variant="outline">
                       {tag}
                     </Badge>
@@ -265,7 +286,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="mx-auto w-full min-w-0">
           <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
             <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
-            {breadcrumbItems.map((item, index) => (
+            {breadcrumbItems.map((item: any, index: number) => (
               <React.Fragment key={item}>
                 <span className="font-medium text-foreground">/</span>
                 {index === breadcrumbItems.length - 1 ? (
@@ -338,7 +359,7 @@ export default async function DocPage({ params }: DocPageProps) {
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
           <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
-          {breadcrumbItems.map((item, index) => (
+          {breadcrumbItems.map((item: any, index: number) => (
             <React.Fragment key={item}>
               <span className="font-medium text-foreground">/</span>
               {index === breadcrumbItems.length - 1 ? (
@@ -362,7 +383,7 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
           {markdownContent.meta?.tags && markdownContent.meta.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
-              {markdownContent.meta.tags.map((tag) => (
+              {markdownContent.meta.tags.map((tag: any) => (
                 <Badge key={tag} variant="outline">
                   {tag}
                 </Badge>
