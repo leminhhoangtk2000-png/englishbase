@@ -5,8 +5,7 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, GraduationCap, FileText } from "lucide-react";
+import { docsConfig } from "@/config/b2niveau";
 
 interface DocPageProps {
   params: Promise<{
@@ -34,123 +33,33 @@ export default async function DocPage({ params }: DocPageProps) {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
-            <Card className="group relative overflow-hidden border-2 transition-all hover:shadow-lg">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-lg">Ngữ pháp - Grammatik</CardTitle>
+          <div className="grid gap-8">
+            {docsConfig.items.map((section) => (
+              <div key={section.title} className="space-y-4">
+                <h2 className="text-2xl font-semibold font-headline">
+                  {section.title}
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  {section.items?.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href || '#'}
+                      className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
+                    >
+                      <h3 className="font-medium group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {item.description}
+                      </p>
+                    </Link>
+                  ))}
                 </div>
-                <CardDescription>
-                  Học các cấu trúc ngữ pháp nâng cao và phức tạp
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <Link
-                    href="/b2niveau/grammatik/01-indirekte-rede"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Câu gián tiếp - Indirekte Rede
-                  </Link>
-                  <Link
-                    href="/b2niveau/grammatik/02-konnektoren"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Liên từ phức tạp - Konnektoren
-                  </Link>
-                  <Link
-                    href="/b2niveau/grammatik/03-modalverben-alternativen"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Thay thế động từ khuyết thiếu
-                  </Link>
-                  <Link
-                    href="/b2niveau/grammatik/04-partizipialkonstruktionen"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Cấu trúc phân từ
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group relative overflow-hidden border-2 transition-all hover:shadow-lg">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <GraduationCap className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-lg">Từ vựng - Wortschatz</CardTitle>
-                </div>
-                <CardDescription>
-                  Từ vựng chuyên ngành và học thuật nâng cao
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <Link
-                    href="/b2niveau/wortschatz/01-wirtschaft"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Kinh tế - Wirtschaft
-                  </Link>
-                  <Link
-                    href="/b2niveau/wortschatz/02-politik"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Chính trị - Politik
-                  </Link>
-                  <Link
-                    href="/b2niveau/wortschatz/03-wissenschaft"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Khoa học - Wissenschaft
-                  </Link>
-                  <Link
-                    href="/b2niveau/wortschatz/04-kultur"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Văn hóa - Kultur
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group relative overflow-hidden border-2 transition-all hover:shadow-lg">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-lg">Bài tập - Übungen</CardTitle>
-                </div>
-                <CardDescription>
-                  Luyện tập nâng cao kỹ năng tổng hợp
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <Link
-                    href="/b2niveau/uebungen/01-grammatik-uebungen"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Luyện ngữ pháp B2
-                  </Link>
-                  <Link
-                    href="/b2niveau/uebungen/02-wortschatz-uebungen"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Luyện từ vựng B2
-                  </Link>
-                  <Link
-                    href="/b2niveau/uebungen/03-schreiben-uebungen"
-                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    • Luyện viết B2
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
           </div>
 
-          <div className="w-full max-w-[700px] space-y-4">
+          <div className="w-full max-w-[700px] space-y-4 mt-12">
             <h2 className="text-2xl font-bold">Về trình độ B2</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>

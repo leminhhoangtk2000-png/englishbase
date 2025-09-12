@@ -1,0 +1,247 @@
+---
+title: "Passiv erweitert - Thể bị động nâng cao"
+description: "Các dạng thể bị động nâng cao và cách sử dụng trong B2"
+tags: ["Grammatik", "B2", "Passiv", "Fortgeschritten"]
+---
+
+# Passiv erweitert - Thể bị động nâng cao
+
+## Giới thiệu
+
+Thể bị động (Passiv) ở cấp độ B2 không chỉ bao gồm Vorgangspassiv cơ bản mà còn có Zustandspassiv, Passiv với động từ khuyết thiếu và các dạng thay thế khác. Bài học này sẽ giúp bạn nắm vững tất cả các dạng bị động nâng cao.
+
+## Ôn tập Vorgangspassiv cơ bản
+
+### Cấu trúc: werden + Partizip II
+
+| Thời gian | Aktiv | Passiv |
+|-----------|-------|--------|
+| **Präsens** | Er repariert das Auto. | Das Auto **wird repariert**. |
+| **Präteritum** | Er reparierte das Auto. | Das Auto **wurde repariert**. |
+| **Perfekt** | Er hat das Auto repariert. | Das Auto **ist repariert worden**. |
+| **Plusquamperfekt** | Er hatte das Auto repariert. | Das Auto **war repariert worden**. |
+| **Futur I** | Er wird das Auto reparieren. | Das Auto **wird repariert werden**. |
+
+## Zustandspassiv (Thể bị động trạng thái)
+
+### Cấu trúc: sein + Partizip II
+
+Das Zustandspassiv beschreibt das **Ergebnis** einer Handlung, nicht die Handlung selbst.
+
+### So sánh Vorgangspassiv và Zustandspassiv:
+
+| Vorgangspassiv (Handlung) | Zustandspassiv (Zustand) |
+|---------------------------|--------------------------|
+| Das Fenster **wird geöffnet**. | Das Fenster **ist geöffnet**. |
+| (Cửa sổ đang được mở) | (Cửa sổ đang mở) |
+| Der Brief **wurde geschrieben**. | Der Brief **war geschrieben**. |
+| (Lá thư đã được viết) | (Lá thư đã ở trạng thái được viết) |
+
+### Ví dụ:
+
+**Vorgangspassiv:**
+- Das Auto **wird gerade repariert**. (xe đang được sửa)
+- Die Tür **wurde gestern gestrichen**. (cửa đã được sơn hôm qua)
+
+**Zustandspassiv:**
+- Das Auto **ist repariert**. (xe đã được sửa xong)
+- Die Tür **war schon gestrichen**. (cửa đã được sơn rồi)
+
+## Passiv mit Modalverben
+
+### Cấu trúc: Modalverb + Partizip II + werden
+
+| Thời gian | Cấu trúc | Ví dụ |
+|-----------|----------|-------|
+| **Präsens** | kann/muss/soll + Partizip II + werden | Das Auto **kann repariert werden**. |
+| **Präteritum** | konnte/musste/sollte + Partizip II + werden | Das Auto **musste repariert werden**. |
+| **Perfekt** | hat + Partizip II + werden + müssen/können | Das Auto **hat repariert werden müssen**. |
+
+### Ví dụ:
+
+- Der Text **muss übersetzt werden**. (văn bản phải được dịch)
+- Die Hausaufgaben **können später gemacht werden**. (bài tập có thể được làm sau)
+- Das Problem **sollte schnell gelöst werden**. (vấn đề nên được giải quyết nhanh)
+- Die Rechnung **hätte bezahlt werden müssen**. (hóa đơn lẽ ra phải được thanh toán)
+
+## Passiv ohne Subjekt (Unpersönliches Passiv)
+
+### Với động từ không có tân ngữ trực tiếp:
+
+**Aktiv:** Die Leute tanzen.
+**Passiv:** **Es wird getanzt.** / **Hier wird getanzt.**
+
+### Ví dụ:
+
+- **Es wird viel diskutiert.** (có nhiều cuộc thảo luận)
+- **Hier wird nicht geraucht.** (ở đây không được hút thuốc)
+- **In Deutschland wird pünktlich gearbeitet.** (ở Đức làm việc đúng giờ)
+- **Es wurde die ganze Nacht gefeiert.** (tiệc diễn ra suốt đêm)
+
+## Passivformen mit "bekommen/erhalten/kriegen"
+
+### Dành cho tân ngữ gián tiếp (Dativ-Passiv):
+
+**Aktiv:** Der Lehrer gibt dem Schüler das Buch.
+**Passiv:** Der Schüler **bekommt das Buch gegeben**.
+
+### Ví dụ:
+
+- Ich **bekomme das Auto repariert**. (tôi được sửa xe)
+- Sie **erhielt den Preis überreicht**. (cô ấy được trao giải)
+- Wir **kriegten das Problem erklärt**. (chúng tôi được giải thích vấn đề)
+
+## Passivumschreibungen (Cách diễn đạt thay thế)
+
+### 1. sein + zu + Infinitiv
+
+**Bedeutung:** Möglichkeit oder Notwendigkeit
+
+- Das Problem **ist zu lösen**. = Das Problem **kann gelöst werden**.
+- Die Aufgabe **ist nicht zu schaffen**. = Die Aufgabe **kann nicht geschafft werden**.
+
+### 2. sich lassen + Infinitiv
+
+**Bedeutung:** Möglichkeit
+
+- Das Problem **lässt sich lösen**. = Das Problem **kann gelöst werden**.
+- Der Text **lässt sich leicht übersetzen**. = Der Text **kann leicht übersetzt werden**.
+
+### 3. Adjektive auf -bar, -lich
+
+- **lösbar** = kann gelöst werden (có thể giải quyết)
+- **essbar** = kann gegessen werden (có thể ăn được)
+- **sichtbar** = kann gesehen werden (có thể nhìn thấy)
+- **käuflich** = kann gekauft werden (có thể mua được)
+
+### 4. Partizip I mit "zu"
+
+- die **zu lösende** Aufgabe = die Aufgabe, die gelöst werden muss
+- das **zu reparierende** Auto = das Auto, das repariert werden muss
+
+## Passiv in verschiedenen Textarten
+
+### 1. Wissenschaftliche Texte:
+
+- "In diesem Experiment **wurde festgestellt**, dass..."
+- "Die Daten **wurden ausgewertet** und **analysiert**."
+- "Es **konnte bewiesen werden**, dass..."
+
+### 2. Nachrichten:
+
+- "Der Vertrag **wurde heute unterzeichnet**."
+- "Drei Personen **wurden verletzt**."
+- "Eine neue Lösung **wird diskutiert**."
+
+### 3. Anleitungen:
+
+- "Zuerst **wird** das Gerät **eingeschaltet**."
+- "Die Zutaten **werden** gut **vermischt**."
+- "Das Formular **muss ausgefüllt werden**."
+
+## Häufige Fehler beim Passiv
+
+### ❌ Falsch / ✅ Richtig:
+
+**1. Verwechslung von Vorgangs- und Zustandspassiv:**
+- ❌ Das Fenster ist von mir geöffnet.
+- ✅ Das Fenster ist geöffnet. / Das Fenster wird von mir geöffnet.
+
+**2. Modalverben im Passiv:**
+- ❌ Das Auto kann repariert.
+- ✅ Das Auto kann repariert werden.
+
+**3. Perfekt mit Modalverben:**
+- ❌ Das Auto hat repariert werden gekonnt.
+- ✅ Das Auto hat repariert werden können.
+
+**4. Unpersönliches Passiv:**
+- ❌ Die Leute wird getanzt.
+- ✅ Es wird getanzt.
+
+## Übungen
+
+### Übung 1: Vorgangs- oder Zustandspassiv?
+
+Entscheiden Sie: Handlung oder Zustand?
+
+1. Die Tür _______ gerade _______. (öffnen - Handlung)
+2. Die Tür _______ _______. (öffnen - Zustand)
+3. Das Haus _______ letztes Jahr _______. (bauen - Handlung)
+4. Das Haus _______ schon _______. (bauen - Zustand)
+
+**Lösungen:**
+1. wird geöffnet
+2. ist geöffnet
+3. wurde gebaut
+4. ist gebaut
+
+### Übung 2: Passiv mit Modalverben
+
+Transformieren Sie die Sätze:
+
+1. Man muss das Problem lösen.
+2. Man kann die Aufgabe schaffen.
+3. Man sollte den Text übersetzen.
+
+**Lösungen:**
+1. Das Problem muss gelöst werden.
+2. Die Aufgabe kann geschafft werden.
+3. Der Text sollte übersetzt werden.
+
+### Übung 3: Passivumschreibungen
+
+Drücken Sie anders aus:
+
+1. Das kann gemacht werden. (sich lassen)
+2. Das kann verstanden werden. (sein + zu)
+3. Das kann gegessen werden. (Adjektiv)
+
+**Lösungen:**
+1. Das lässt sich machen.
+2. Das ist zu verstehen.
+3. Das ist essbar.
+
+### Übung 4: Unpersönliches Passiv
+
+Bilden Sie unpersönliches Passiv:
+
+1. Die Studenten arbeiten fleißig.
+2. Die Kinder spielen im Park.
+3. Die Leute diskutieren laut.
+
+**Lösungen:**
+1. Es wird fleißig gearbeitet.
+2. Es wird im Park gespielt.
+3. Es wird laut diskutiert.
+
+## Strategien für den Gebrauch
+
+### Wann verwende ich Passiv?
+
+1. **Prozesse beschreiben:** "Das Auto wird repariert."
+2. **Unpersönlich bleiben:** "Es wurde ein Fehler gemacht."
+3. **Wissenschaftlich schreiben:** "Die Hypothese wurde bestätigt."
+4. **Fokus auf das Objekt:** "Das Haus wurde 1950 gebaut."
+
+### Wann vermeide ich Passiv?
+
+1. **Bei persönlichen Texten:** Lieber Aktiv verwenden
+2. **Bei zu vielen Passivformen:** Text wird schwer lesbar
+3. **Bei Verben ohne Akkusativ:** Nicht alle Verben können Passiv bilden
+
+## Zusammenfassung
+
+Das erweiterte Passiv im B2-Niveau umfasst:
+
+- **Zustandspassiv** (sein + Partizip II)
+- **Passiv mit Modalverben**
+- **Unpersönliches Passiv**
+- **Passivumschreibungen** (lassen, sein + zu, Adjektive)
+- **Verschiedene Anwendungsbereiche**
+
+Die Beherrschung dieser Formen ist essentiell für:
+- Wissenschaftliche Texte
+- Formelle Kommunikation
+- Nachrichtentexte
+- Anleitungen und Beschreibungen

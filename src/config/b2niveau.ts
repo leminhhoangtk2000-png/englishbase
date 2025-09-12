@@ -1,33 +1,74 @@
 import type { DocsConfig } from "@/types";
-import { getNavigationStructure } from "@/lib/markdown";
-
-// Get dynamic navigation from markdown files
-const markdownNavigation = getNavigationStructure('b2niveau');
 
 export const docsConfig: DocsConfig = {
-  items: markdownNavigation.length > 0 ? markdownNavigation : [
+  items: [
     {
       title: "Ngữ pháp - Grammatik",
       items: [
         {
-          title: "Câu gián tiếp - Indirekte Rede",
-          description: "Học cách chuyển đổi lời nói trực tiếp thành gián tiếp",
-          href: "/b2niveau/grammatik/01-indirekte-rede",
+          title: "Der Konjunktiv II",
+          description: "Hướng dẫn sử dụng Konjunktiv II ở thì hiện tại và quá khứ",
+          href: "/b2niveau/grammatik/01-konjunktiv-ii",
         },
         {
-          title: "Liên từ phức tạp - Konnektoren",
-          description: "Sử dụng các liên từ phức tạp trong câu",
-          href: "/b2niveau/grammatik/02-konnektoren",
+          title: "Doppelkonnektoren",
+          description: "Hướng dẫn sử dụng Doppelkonnektoren",
+          href: "/b2niveau/grammatik/02-doppelkonnektoren",
         },
         {
-          title: "Cách dùng 'haben zu/sein zu' - Modalverben Alternativen",
-          description: "Các cấu trúc thay thế cho động từ khuyết thiếu",
-          href: "/b2niveau/grammatik/03-modalverben-alternativen",
+          title: "Infinitivkonstruktionen mit zu",
+          description: "Cấu trúc động từ nguyên mẫu với zu",
+          href: "/b2niveau/grammatik/03-infinitivkonstruktionen",
         },
         {
-          title: "Phân từ - Partizipialkonstruktionen",
-          description: "Cấu trúc phân từ trong tiếng Đức",
-          href: "/b2niveau/grammatik/04-partizipialkonstruktionen",
+          title: "Relativsätze mit Präpositionen",
+          description: "Mệnh đề quan hệ với giới từ",
+          href: "/b2niveau/grammatik/04-relativsaetze",
+        },
+        {
+          title: "Indirekte Rede",
+          description: "Câu gián tiếp trong Konjunktiv I & II",
+          href: "/b2niveau/grammatik/05-indirekte-rede",
+        },
+        {
+          title: "Passiv",
+          description: "Thể bị động cơ bản và nâng cao",
+          href: "/b2niveau/grammatik/06-passiv",
+        },
+        {
+          title: "Partizipien als Adjektive",
+          description: "Phân từ được sử dụng như tính từ",
+          href: "/b2niveau/grammatik/07-partizipien",
+        },
+        {
+          title: "Redemittel für Argumentationen",
+          description: "Các mẫu câu cho việc lập luận",
+          href: "/b2niveau/grammatik/08-redemittel",
+        },
+        {
+          title: "Wortbildung",
+          description: "Tạo từ mới trong tiếng Đức",
+          href: "/b2niveau/grammatik/09-wortbildung",
+        },
+        {
+          title: "Nominalisierung",
+          description: "Danh từ hóa trong tiếng Đức",
+          href: "/b2niveau/grammatik/10-nominalisierung",
+        },
+        {
+          title: "Temporal và Kausal Konnektoren",
+          description: "Liên từ chỉ thời gian và nguyên nhân",
+          href: "/b2niveau/grammatik/11-konnektoren",
+        },
+        {
+          title: "Passiv erweitert",
+          description: "Thể bị động nâng cao với Zustandspassiv",
+          href: "/b2niveau/grammatik/12-passiv-erweitert",
+        },
+        {
+          title: "Argumentative Texte",
+          description: "Kỹ thuật viết văn bản lập luận",
+          href: "/b2niveau/grammatik/13-argumentative-texte",
         },
       ],
     },
