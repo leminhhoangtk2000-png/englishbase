@@ -93,7 +93,7 @@ export function getMarkdownFiles(niveau: string): MarkdownSection[] {
 }
 
 /**
- * Get a specific markdown file by niveau, section, and slug
+ * Get a specific markdown file by niveau, section, and slug (supporting nested paths)
  */
 export function getMarkdownBySlug(
   niveau: string,
@@ -101,6 +101,7 @@ export function getMarkdownBySlug(
   slug: string
 ): MarkdownContent | null {
   try {
+    // Support nested paths like "01-start-auf-deutsch/01-start" or "01-start-auf-deutsch/index"
     const filePath = path.join(contentDirectory, niveau, section, `${slug}.md`)
     const altFilePath = path.join(contentDirectory, niveau, section, `${slug}.mdx`)
     
@@ -117,7 +118,7 @@ export function getMarkdownBySlug(
     return {
       meta: {
         ...data,
-        slug,
+        slug: slug.split('/').pop() || slug, // Use the last part as slug
       } as MarkdownMeta,
       content,
     }
@@ -451,6 +452,37 @@ export function getAvailableNiveaus(): string[] {
  * Get all content for a specific niveau (for main pages)
  */
 export function getNiveauContent(niveau: string) {
+  // For a1niveau, use the static config instead of dynamic file scanning
+  if (niveau === 'a1niveau') {
+    // Import the config directly
+    try {
+      const configPath = path.join(process.cwd(), 'src', 'config', 'a1niveau.ts')
+      if (fs.existsSync(configPath)) {
+        // Use the static config
+        const { docsConfig } = require('@/config/a1niveau')
+        return {
+          niveau,
+          sections: docsConfig.items.map((section: any) => ({
+            name: section.title.toLowerCase(),
+            title: section.title,
+            slug: section.href.split('/').pop(),
+            itemCount: section.items.length,
+            items: section.items.map((item: any) => ({
+              title: item.title,
+              description: item.description,
+              slug: item.href.split('/').pop(),
+              tags: [],
+              order: 0,
+            })),
+          })),
+        }
+      }
+    } catch (error) {
+      console.warn('Could not load a1niveau config, falling back to file scanning')
+    }
+  }
+  
+  // Fallback to dynamic file scanning for other niveaux
   const sections = getMarkdownFiles(niveau)
   
   return {

@@ -69,10 +69,12 @@ export default async function DocPage({ params }: DocPageProps) {
   }
 
   // If we have slug, try to get markdown content
-  const [section, articleSlug] = slug;
+  const slugPath = slug.join('/');
   
-  if (!section || !articleSlug) {
-    // Show section overview
+  // Handle different slug lengths
+  if (slug.length === 1) {
+    // Show section overview (e.g., /a1niveau/vokabular)
+    const [section] = slug;
     const niveauContent = getNiveauContent('a1niveau');
     const currentSection = niveauContent.sections.find(s => s.slug === section);
     
@@ -93,11 +95,11 @@ export default async function DocPage({ params }: DocPageProps) {
               {currentSection.title}
             </h1>
             <p className="text-lg text-muted-foreground">
-              {currentSection.itemCount} bài học
+              {currentSection.itemCount} chủ đề
             </p>
           </div>
           
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {currentSection.items.map((item) => (
               <Link
                 key={item.slug}
@@ -127,8 +129,146 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
+  if (slug.length === 2) {
+    // Could be folder overview (e.g., /a1niveau/vokabular/01-start-auf-deutsch) or direct article
+    const [section, folderSlug] = slug;
+    const niveauContent = getNiveauContent('a1niveau');
+    const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
+    
+    if (!currentSection) {
+      notFound();
+    }
+    
+    // Find the folder/item by extracting slug from href
+    const currentItem = currentSection.items.find((item: any) => {
+      // Extract slug from href (e.g., "/a1niveau/vokabular/05-station-1" -> "05-station-1")
+      const itemSlug = item.href.split('/').pop();
+      return itemSlug === folderSlug;
+    });
+    
+    if (!currentItem) {
+      notFound();
+    }
+    
+    // If this item has sub-items, show them
+    if (currentItem.items && currentItem.items.length > 0) {
+      return (
+        <main className="relative py-6 lg:py-8">
+          <div className="mx-auto w-full min-w-0">
+            <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+              <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
+              <span className="font-medium text-foreground">/</span>
+              <Link href={`/a1niveau/${section}`} className="hover:text-foreground capitalize">{currentSection.title}</Link>
+              <span className="font-medium text-foreground">/</span>
+              <div className="font-medium text-foreground">{currentItem.title}</div>
+            </div>
+            <div className="space-y-2 mb-8">
+              <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
+                {currentItem.title}
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                {currentItem.description}
+              </p>
+            </div>
+            
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {currentItem.items.map((subItem: any) => (
+                <Link
+                  key={subItem.href}
+                  href={subItem.href}
+                  className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
+                >
+                  <h3 className="font-medium group-hover:text-primary">
+                    {subItem.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </main>
+      );
+    }
+    
+    // Otherwise, try to get markdown content for direct article
+    const markdownContent = getMarkdownBySlug('a1niveau', section, folderSlug);
+    if (!markdownContent) {
+      notFound();
+    }
+
+    const htmlContent = await markdownToHtml(markdownContent.content);
+    const toc = extractTableOfContents(markdownContent.content);
+    const breadcrumbItems = [section];
+
+    return (
+      <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
+        <div className="mx-auto w-full min-w-0">
+          <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+            <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
+            {breadcrumbItems.map((item, index) => (
+              <React.Fragment key={item}>
+                <span className="font-medium text-foreground">/</span>
+                {index === breadcrumbItems.length - 1 ? (
+                  <div className="font-medium text-foreground capitalize">{item}</div>
+                ) : (
+                  <Link href={`/a1niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                    {item}
+                  </Link>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="space-y-2">
+            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
+              {markdownContent.meta?.title || 'Untitled'}
+            </h1>
+            {markdownContent.meta?.description && (
+              <p className="text-xl text-muted-foreground">
+                {markdownContent.meta.description}
+              </p>
+            )}
+          </div>
+          <Separator className="my-4" />
+          <div className="mdx">
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          </div>
+        </div>
+        <div className="hidden text-sm lg:block">
+          <div className="sticky top-16 -mt-10 pt-10">
+            <DocsTOC toc={toc} />
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   // Get specific markdown content
-  const markdownContent = getMarkdownBySlug('a1niveau', section, articleSlug);
+  let markdownContent;
+  let breadcrumbItems: string[] = [];
+  
+  if (slug.length === 2) {
+    // Direct article (e.g., /a1niveau/grammatik/01-prasens)
+    const [section, articleSlug] = slug;
+    markdownContent = getMarkdownBySlug('a1niveau', section, articleSlug);
+    breadcrumbItems = [section];
+  } else if (slug.length === 3) {
+    // Nested content (e.g., /a1niveau/vokabular/01-start-auf-deutsch or /a1niveau/vokabular/01-start-auf-deutsch/01-start)
+    const [section, folderSlug, fileSlug] = slug;
+    
+    // First try to get content from folder/file
+    markdownContent = getMarkdownBySlug('a1niveau', section, `${folderSlug}/${fileSlug}`);
+    
+    // If not found, try to get folder index
+    if (!markdownContent) {
+      markdownContent = getMarkdownBySlug('a1niveau', section, `${folderSlug}/index`);
+    }
+    
+    breadcrumbItems = [section, folderSlug];
+  } else if (slug.length === 4) {
+    // Deep nested content (e.g., /a1niveau/vokabular/01-start-auf-deutsch/01-start)
+    const [section, folderSlug, , fileSlug] = slug;
+    markdownContent = getMarkdownBySlug('a1niveau', section, `${folderSlug}/${fileSlug}`);
+    breadcrumbItems = [section, folderSlug];
+  }
   
   if (!markdownContent) {
     notFound();
@@ -142,8 +282,18 @@ export default async function DocPage({ params }: DocPageProps) {
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
           <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
-          <span className="font-medium text-foreground">/</span>
-          <Link href={`/a1niveau/${section}`} className="hover:text-foreground capitalize">{section}</Link>
+          {breadcrumbItems.map((item, index) => (
+            <React.Fragment key={item}>
+              <span className="font-medium text-foreground">/</span>
+              {index === breadcrumbItems.length - 1 ? (
+                <div className="font-medium text-foreground capitalize">{item}</div>
+              ) : (
+                <Link href={`/a1niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                  {item}
+                </Link>
+              )}
+            </React.Fragment>
+          ))}
           <span className="font-medium text-foreground">/</span>
           <div className="font-medium text-foreground">{markdownContent.meta.title}</div>
         </div>
