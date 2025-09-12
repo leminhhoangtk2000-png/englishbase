@@ -83,10 +83,11 @@ export const docsConfig: DocsConfig = {
           href: "/a1niveau/vokabular/01-start-auf-deutsch",
           items: [
             { title: "Start", href: "/a1niveau/vokabular/01-start-auf-deutsch/01-start" },
-            { title: "Sprachen und Länder", href: "/a1niveau/vokabular/01-start-auf-deutsch/02-sprachen-und-lander" },
-            { title: "Hallo Wie geht's", href: "/a1niveau/vokabular/01-start-auf-deutsch/03-hallo-wie-gehts" },
-            { title: "Übung 1 A1", href: "/a1niveau/vokabular/01-start-auf-deutsch/04-ubung-1-a1" },
-            { title: "Verb-Adj-Adv 1 A1", href: "/a1niveau/vokabular/01-start-auf-deutsch/05-verb-adj-adv-1-a1" },
+            { title: "Deutsch sehen und hören", href: "/a1niveau/vokabular/01-start-auf-deutsch/02-deutsch-sehen-und-horen" },
+            { title: "Im Deutschkurs", href: "/a1niveau/vokabular/01-start-auf-deutsch/03-im-deutschkurs" },
+            { title: "Das Alphabet", href: "/a1niveau/vokabular/01-start-auf-deutsch/04-das-alphabet" },
+            { title: "Internationale Wörter", href: "/a1niveau/vokabular/01-start-auf-deutsch/05-internationale-worter" },
+            { title: "Verb-Adj-Adv 1-A1", href: "/a1niveau/vokabular/01-start-auf-deutsch/06-verb-adj-adv-1-a1" },
           ]
         },
         {
@@ -95,12 +96,10 @@ export const docsConfig: DocsConfig = {
           href: "/a1niveau/vokabular/02-kaffee-oder-tee",
           items: [
             { title: "Im Café", href: "/a1niveau/vokabular/02-kaffee-oder-tee/01-im-cafe" },
-            { title: "Wie viel kostet das", href: "/a1niveau/vokabular/02-kaffee-oder-tee/02-wie-viel-kostet-das" },
-            { title: "Zahlen", href: "/a1niveau/vokabular/02-kaffee-oder-tee/03-zahlen" },
-            { title: "Telefonnummern", href: "/a1niveau/vokabular/02-kaffee-oder-tee/04-telefonnummern" },
-            { title: "Telefonnummern und Preise", href: "/a1niveau/vokabular/02-kaffee-oder-tee/05-telefonnummern-und-preise" },
-            { title: "Zeitansagen", href: "/a1niveau/vokabular/02-kaffee-oder-tee/06-zeitansagen" },
-            { title: "Verb-Adj-Adv 2 A1", href: "/a1niveau/vokabular/02-kaffee-oder-tee/07-verb-adj-adv-2-a1" },
+            { title: "Wer - Woher - Was", href: "/a1niveau/vokabular/02-kaffee-oder-tee/02-wer-woher-was" },
+            { title: "Zahlen und zählen", href: "/a1niveau/vokabular/02-kaffee-oder-tee/03-zahlen-und-zahlen" },
+            { title: "Telefonnummer und Rechnungen", href: "/a1niveau/vokabular/02-kaffee-oder-tee/04-telefonummer-und-rechnungen" },
+            { title: "Übung 1-A1", href: "/a1niveau/vokabular/02-kaffee-oder-tee/05-ubung-1-a1" },
           ]
         },
         {
@@ -121,12 +120,13 @@ export const docsConfig: DocsConfig = {
           description: "Tên các thành phố, quốc gia và ngôn ngữ trên thế giới",
           href: "/a1niveau/vokabular/04-stadte-lander-sprachen",
           items: [
-            { title: "Städte und Länder", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/01-stadte-und-lander" },
-            { title: "Ich komme aus", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/02-ich-komme-aus" },
-            { title: "Städte in D A CH", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/03-stadte-in-d-a-ch" },
-            { title: "Sprachen", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/04-sprachen" },
-            { title: "Übung 3 A1", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/05-ubung-3-a1" },
-            { title: "Verb-Adj-Adv 4 A1", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/06-verb-adj-adv-4-a1" },
+            { title: "Sehenswürdigkeiten in Europa", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/01-sehenswurdigkeiten-in-europa" },
+            { title: "Menschen, Städte, Sprachen", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/02-menschen-stadte-sprachen" },
+            { title: "Warst du schon in", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/03-warst-du-schon-in" },
+            { title: "Die Lindenstraße", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/04-die-lindenstrasse" },
+            { title: "Über Länder und Sprachen sprechen", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/05-uber-lander-und-sprachen-sprechen" },
+            { title: "Übung 3-A1", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/06-ubung-3-a1" },
+            { title: "Verb-Adj-Adv 4-A1", href: "/a1niveau/vokabular/04-stadte-lander-sprachen/07-verb-adj-adv-4-a1" },
           ]
         },
         {
@@ -147,13 +147,13 @@ export const docsConfig: DocsConfig = {
           href: "/a1niveau/vokabular/06-menschen-und-hauser",
           items: [
             { title: "Wohnen", href: "/a1niveau/vokabular/06-menschen-und-hauser/01-wohnen" },
-            { title: "Herr Weiß sucht ein Zimmer", href: "/a1niveau/vokabular/06-menschen-und-hauser/02-herr-weiss-sucht-ein-zimmer" },
+            { title: "Wohnungen beschreiben", href: "/a1niveau/vokabular/06-menschen-und-hauser/02-wohnungen-beschreiben" },
             { title: "Meine Wohnung", href: "/a1niveau/vokabular/06-menschen-und-hauser/03-meine-wohnung" },
             { title: "Zimmer und Möbel", href: "/a1niveau/vokabular/06-menschen-und-hauser/04-zimmer-und-mobel" },
-            { title: "Berufbilder 1 A1", href: "/a1niveau/vokabular/06-menschen-und-hauser/05-berufbilder-1-a1" },
+            { title: "Wörter lernen mit System", href: "/a1niveau/vokabular/06-menschen-und-hauser/05-worter-lernen-mit-system" },
             { title: "Der Umzug", href: "/a1niveau/vokabular/06-menschen-und-hauser/06-der-umzug" },
-            { title: "Übung 4 A1", href: "/a1niveau/vokabular/06-menschen-und-hauser/07-ubung-4-a1" },
-            { title: "Verb-Adj-Adv 6 A1", href: "/a1niveau/vokabular/06-menschen-und-hauser/08-verb-adj-adv-6-a1" },
+            { title: "Übung 4-A1", href: "/a1niveau/vokabular/06-menschen-und-hauser/07-ubung-4-a1" },
+            { title: "Verb-Adj-Adv 6-A1", href: "/a1niveau/vokabular/06-menschen-und-hauser/08-verb-adj-adv-6-a1" },
           ]
         },
         {
@@ -161,13 +161,12 @@ export const docsConfig: DocsConfig = {
           description: "Từ vựng về thời gian, lịch hẹn và sắp xếp cuộc gặp",
           href: "/a1niveau/vokabular/07-termine",
           items: [
-            { title: "Pünktlich sein", href: "/a1niveau/vokabular/07-termine/01-punktlich-sein" },
-            { title: "Wie spät ist es", href: "/a1niveau/vokabular/07-termine/02-wie-spat-ist-es" },
-            { title: "Entschuldigung wie spät ist es", href: "/a1niveau/vokabular/07-termine/03-entschuldigung-wie-spat-ist-es" },
-            { title: "Tage und Tageszeiten", href: "/a1niveau/vokabular/07-termine/04-tage-und-tageszeiten" },
-            { title: "Verabredungen", href: "/a1niveau/vokabular/07-termine/05-verabredungen" },
-            { title: "Übung 5 A1", href: "/a1niveau/vokabular/07-termine/06-ubung-5-a1" },
-            { title: "Verb-Adj-Adv 7 A1", href: "/a1niveau/vokabular/07-termine/07-verb-adj-adv-7-a1" },
+            { title: "Uhrzeiten", href: "/a1niveau/vokabular/07-termine/01-uhrzeiten" },
+            { title: "Wochentage und Zeiten", href: "/a1niveau/vokabular/07-termine/02-wochentage-und-zeiten" },
+            { title: "Termine und Verabredungen", href: "/a1niveau/vokabular/07-termine/03-termine-und-verabredungen" },
+            { title: "Keine Zeit", href: "/a1niveau/vokabular/07-termine/04-keine-zeit" },
+            { title: "Übung 5-A1", href: "/a1niveau/vokabular/07-termine/05-ubung-5-a1" },
+            { title: "Verb-Adj-Adv 7-A1", href: "/a1niveau/vokabular/07-termine/06-verb-adj-adv-7-a1" },
           ]
         },
         {
@@ -180,8 +179,8 @@ export const docsConfig: DocsConfig = {
             { title: "Wo ist mein Terminkalender", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/03-wo-ist-mein-terminkalender" },
             { title: "Termine machen", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/04-termine-machen" },
             { title: "Die Stadt Leipzig", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/05-die-stadt-leipzig" },
-            { title: "Übung 6 A1", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/06-ubung-6-a1" },
-            { title: "Verb-Adj-Adv 8 A1", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/07-verb-adj-adv-8-a1" },
+            { title: "Übung 6-A1", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/06-ubung-6-a1" },
+            { title: "Verb-Adj-Adv 8-A1", href: "/a1niveau/vokabular/08-sprache-im-kurs-2/07-verb-adj-adv-8-a1" },
           ]
         },
         {
@@ -189,11 +188,11 @@ export const docsConfig: DocsConfig = {
           description: "Tiếp tục hành trình học tiếng Đức với Station 2 - khám phá nghề nghiệp và từ vựng nâng cao",
           href: "/a1niveau/vokabular/09-station-2",
           items: [
-            { title: "Berufbilder 2 A1", href: "/a1niveau/vokabular/09-station-2/01-berufbilder-2-a1" },
-            { title: "Wörter 2 A1", href: "/a1niveau/vokabular/09-station-2/02-worter-2-a1" },
-            { title: "Filmstation 2 A1", href: "/a1niveau/vokabular/09-station-2/03-filmstation-2-a1" },
-            { title: "Magazine 2 A1", href: "/a1niveau/vokabular/09-station-2/04-magazine-2-a1" },
-            { title: "Verb-Adj-Adv 9 A1", href: "/a1niveau/vokabular/09-station-2/05-verb-adj-adv-9-a1" },
+            { title: "Berufbilder 2-A1", href: "/a1niveau/vokabular/09-station-2/01-berufbilder-2-a1" },
+            { title: "Wörter 2-A1", href: "/a1niveau/vokabular/09-station-2/02-worter-2-a1" },
+            { title: "Filmstation 2-A1", href: "/a1niveau/vokabular/09-station-2/03-filmstation-2-a1" },
+            { title: "Magazine 2-A1", href: "/a1niveau/vokabular/09-station-2/04-magazine-2-a1" },
+            { title: "Verb-Adj-Adv 9-A1", href: "/a1niveau/vokabular/09-station-2/05-verb-adj-adv-9-a1" },
           ]
         },
         {
@@ -201,13 +200,13 @@ export const docsConfig: DocsConfig = {
           description: "Tên các nghề nghiệp và hoạt động công việc",
           href: "/a1niveau/vokabular/10-berufe",
           items: [
-            { title: "Ausbildung und Beruf", href: "/a1niveau/vokabular/10-berufe/01-ausbildung-und-beruf" },
-            { title: "Fähigkeiten", href: "/a1niveau/vokabular/10-berufe/02-fahigkeiten" },
-            { title: "Arbeitsplätze", href: "/a1niveau/vokabular/10-berufe/03-arbeitsplatze" },
-            { title: "Arbeitsplätze und Berufe", href: "/a1niveau/vokabular/10-berufe/04-arbeitsplatze-und-berufe" },
-            { title: "Berufe beschreiben", href: "/a1niveau/vokabular/10-berufe/05-berufe-beschreiben" },
-            { title: "Übung 7 A1", href: "/a1niveau/vokabular/10-berufe/06-ubung-7-a1" },
-            { title: "Verb-Adj-Adv 10 A1", href: "/a1niveau/vokabular/10-berufe/07-verb-adj-adv-10-a1" },
+            { title: "Was machen Sie beruflich", href: "/a1niveau/vokabular/10-berufe/01-was-machen-sie-beruflich" },
+            { title: "Berufe und Tätigkeiten", href: "/a1niveau/vokabular/10-berufe/02-berufe-und-tatigkeiten" },
+            { title: "Neue Berufe", href: "/a1niveau/vokabular/10-berufe/03-neue-berufe" },
+            { title: "Ich muss um sieben Uhr aufstehen", href: "/a1niveau/vokabular/10-berufe/04-ich-muss-um-sieben-uhr-aufstehen" },
+            { title: "Ich habe keinen Chef", href: "/a1niveau/vokabular/10-berufe/05-ich-habe-keinen-chef" },
+            { title: "Übung 7-A1", href: "/a1niveau/vokabular/10-berufe/06-ubung-7-a1" },
+            { title: "Verb-Adj-Adv 10-A1", href: "/a1niveau/vokabular/10-berufe/07-verb-adj-adv-10-a1" },
           ]
         },
         {
@@ -215,14 +214,12 @@ export const docsConfig: DocsConfig = {
           description: "Từ vựng về du lịch và tham quan thành phố Berlin",
           href: "/a1niveau/vokabular/11-berlin-sehen",
           items: [
-            { title: "Eine Busfahrt", href: "/a1niveau/vokabular/11-berlin-sehen/01-eine-busfahrt" },
-            { title: "Berlin Informationen", href: "/a1niveau/vokabular/11-berlin-sehen/02-berlin-informationen" },
-            { title: "Modalverben im Präsens", href: "/a1niveau/vokabular/11-berlin-sehen/03-modalverben-im-prasens" },
-            { title: "Präpositionen mit Dativ", href: "/a1niveau/vokabular/11-berlin-sehen/04-prapositionen-mit-dativ" },
-            { title: "Präteritum von haben und sein", href: "/a1niveau/vokabular/11-berlin-sehen/05-prateritum-von-haben-und-sein" },
-            { title: "Berlins Geschichte", href: "/a1niveau/vokabular/11-berlin-sehen/06-berlins-geschichte" },
-            { title: "Übung 8 A1", href: "/a1niveau/vokabular/11-berlin-sehen/07-ubung-8-a1" },
-            { title: "Verb-Adj-Adv 11 A1", href: "/a1niveau/vokabular/11-berlin-sehen/08-verb-adj-adv-11-a1" },
+            { title: "Mit der Linie 100 durch Berlin", href: "/a1niveau/vokabular/11-berlin-sehen/01-mit-der-linie-100-durch-berlin" },
+            { title: "Wie komme ich zur Friedrichstraße", href: "/a1niveau/vokabular/11-berlin-sehen/02-wie-komme-ich-zur-friedrichstrasse" },
+            { title: "Wohin gehen die Touristen", href: "/a1niveau/vokabular/11-berlin-sehen/03-wohin-gehen-die-touristen" },
+            { title: "Die Exkursion", href: "/a1niveau/vokabular/11-berlin-sehen/04-die-exkursion" },
+            { title: "Übung 8-A1", href: "/a1niveau/vokabular/11-berlin-sehen/05-ubung-8-a1" },
+            { title: "Verb-Adj-Adv 11-A1", href: "/a1niveau/vokabular/11-berlin-sehen/06-verb-adj-adv-11-a1" },
           ]
         },
         {
@@ -256,14 +253,13 @@ export const docsConfig: DocsConfig = {
           description: "Từ vựng về đồ ăn, đồ uống và hoạt động ăn uống",
           href: "/a1niveau/vokabular/14-essen-und-trinken",
           items: [
-            { title: "Ich hätte gern", href: "/a1niveau/vokabular/14-essen-und-trinken/01-ich-hatte-gern" },
-            { title: "Lebensmittel", href: "/a1niveau/vokabular/14-essen-und-trinken/02-lebensmittel" },
-            { title: "Im Restaurant", href: "/a1niveau/vokabular/14-essen-und-trinken/03-im-restaurant" },
-            { title: "Mengen und Maße", href: "/a1niveau/vokabular/14-essen-und-trinken/04-mengen-und-masse" },
-            { title: "Sachen für den Haushalt", href: "/a1niveau/vokabular/14-essen-und-trinken/05-sachen-fur-den-haushalt" },
-            { title: "Berufbilder 3 A1", href: "/a1niveau/vokabular/14-essen-und-trinken/06-berufbilder-3-a1" },
-            { title: "Übung 11 A1", href: "/a1niveau/vokabular/14-essen-und-trinken/07-ubung-11-a1" },
-            { title: "Verb-Adj-Adv 14 A1", href: "/a1niveau/vokabular/14-essen-und-trinken/08-verb-adj-adv-14-a1" },
+            { title: "Lebensmittel auf dem Markt", href: "/a1niveau/vokabular/14-essen-und-trinken/01-lebensmittel-auf-dem-markt" },
+            { title: "Einkaufen", href: "/a1niveau/vokabular/14-essen-und-trinken/02-einkaufen" },
+            { title: "Über Essen sprechen", href: "/a1niveau/vokabular/14-essen-und-trinken/03-uber-essen-sprechen" },
+            { title: "Was ich gern mag", href: "/a1niveau/vokabular/14-essen-und-trinken/04-was-ich-gern-mag" },
+            { title: "Ein Rezept", href: "/a1niveau/vokabular/14-essen-und-trinken/05-ein-rezept" },
+            { title: "Übung 10-A1", href: "/a1niveau/vokabular/14-essen-und-trinken/06-ubung-10-a1" },
+            { title: "Verb-Adj-Adv 14-A1", href: "/a1niveau/vokabular/14-essen-und-trinken/07-verb-adj-adv-14-a1" },
           ]
         },
         {
@@ -271,13 +267,12 @@ export const docsConfig: DocsConfig = {
           description: "Từ vựng về quần áo, thời trang và thời tiết",
           href: "/a1niveau/vokabular/15-kleidung-und-wetter",
           items: [
-            { title: "Anziehen ausziehen", href: "/a1niveau/vokabular/15-kleidung-und-wetter/01-anziehen-ausziehen" },
-            { title: "Mode und Geschmack", href: "/a1niveau/vokabular/15-kleidung-und-wetter/02-mode-und-geschmack" },
-            { title: "Über Wetter sprechen", href: "/a1niveau/vokabular/15-kleidung-und-wetter/03-uber-wetter-sprechen" },
-            { title: "Das Wetter in D A CH", href: "/a1niveau/vokabular/15-kleidung-und-wetter/04-das-wetter-in-d-a-ch" },
-            { title: "Das Jahr und die Jahreszeiten", href: "/a1niveau/vokabular/15-kleidung-und-wetter/05-das-jahr-und-die-jahreszeiten" },
-            { title: "Übung 12 A1", href: "/a1niveau/vokabular/15-kleidung-und-wetter/06-ubung-12-a1" },
-            { title: "Verb-Adj-Adv 15 A1", href: "/a1niveau/vokabular/15-kleidung-und-wetter/07-verb-adj-adv-15-a1" },
+            { title: "Modetrends im Frühling und Sommer", href: "/a1niveau/vokabular/15-kleidung-und-wetter/01-modetrends-im-fruhling-und-sommer" },
+            { title: "Kleidung und Farben", href: "/a1niveau/vokabular/15-kleidung-und-wetter/02-kleidung-und-farben" },
+            { title: "Einkaufsbummel", href: "/a1niveau/vokabular/15-kleidung-und-wetter/03-einkaufsbummel" },
+            { title: "Es gibt kein schlechtes Wetter", href: "/a1niveau/vokabular/15-kleidung-und-wetter/04-es-gibt-kein-schlechtes-wetter" },
+            { title: "Übung 11-A1", href: "/a1niveau/vokabular/15-kleidung-und-wetter/05-ubung-11-a1" },
+            { title: "Verb-Adj-Adv 15-A1", href: "/a1niveau/vokabular/15-kleidung-und-wetter/06-verb-adj-adv-15-a1" },
           ]
         },
         {
@@ -285,12 +280,10 @@ export const docsConfig: DocsConfig = {
           description: "Từ vựng về cơ thể, sức khỏe và chăm sóc y tế",
           href: "/a1niveau/vokabular/16-kopf-und-gesundheit",
           items: [
-            { title: "Der menschliche Körper", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/01-der-menschliche-korper" },
-            { title: "Gesundheit und Krankheiten", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/02-gesundheit-und-krankheiten" },
-            { title: "Gesund leben", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/03-gesund-leben" },
-            { title: "Berufbilder 4 A1", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/04-berufbilder-4-a1" },
-            { title: "Übung 13 A1", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/05-ubung-13-a1" },
-            { title: "Verb-Adj-Adv 16 A1", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/06-verb-adj-adv-16-a1" },
+            { title: "Bei der Hausärztin", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/01-bei-der-hausarztin" },
+            { title: "Empfehlungen und Anweisungen", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/02-empfehlungen-und-anweisungen" },
+            { title: "Emotionen", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/03-emotionen" },
+            { title: "Verb-Adj-Adv 16-A1", href: "/a1niveau/vokabular/16-kopf-und-gesundheit/04-verb-adj-adv-16-a1" },
           ]
         },
       ],

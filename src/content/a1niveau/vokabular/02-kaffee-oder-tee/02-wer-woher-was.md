@@ -1,142 +1,125 @@
 
-## **Chủ đề 1: Học tập và ngữ pháp (Lernen und Grammatik)**
-=======
-## **📚 Từ Vựng Liên Quan Đến Ngữ Pháp và Động Từ**
-
+## **❓ Từ Hỏi Cơ Bản (Wer, Woher, Was)**
 
 |**Từ vựng**|**Số nhiều**|**Loại từ**|**Phát âm**|**Nghĩa tiếng Việt**|
 |---|---|---|---|---|
-|**das Verb**|die Verben|Danh từ|[vɛʁp]|Động từ|
-|**die GrammatikA1**|-|Danh từ|[ɡʁaˈmatɪk]|Ngữ pháp|
-|**kontrollieren**|-|Động từ|[kɔntʁoˈliːʁən]|Kiểm tra|
-|**die Tabelle**|die Tabellen|Danh từ|[taˈbɛlə]|Bảng biểu|
-|**der Wortakzent**|die Wortakzente|Danh từ|[ˈvɔʁtʔakˌtsɛnt]|Trọng âm từ|
-|**ankreuzen**|-|Động từ|[ˈankʁɔyt͡sən]|Đánh dấu (chọn)|
-|**verwenden**|-|Động từ|[fɛɐ̯ˈvɛndən]|Sử dụng|
-
-| **Từ vựng**    | **Số nhiều**    | **Loại từ** | **Phát âm**      | **Nghĩa tiếng Việt** |
-| -------------- | --------------- | ----------- | ---------------- | -------------------- |
-| **das Verb**       | die Verben      | Danh từ     | [vɛʁp]           | Động từ              |
-| **die Grammatik**  | -               | Danh từ     | [ɡʁaˈmatɪk]      | Ngữ pháp             |
-| **kontrollieren**  | -               | Động từ     | [kɔntʁoˈliːʁən]  | Kiểm tra             |
-| **die Tabelle**    | die Tabellen    | Danh từ     | [taˈbɛlə]        | Bảng biểu            |
-| **der Wortakzent** | die Wortakzente | Danh từ     | [ˈvɔʁtʔakˌtsɛnt] | Trọng âm từ          |
-| **ankreuzen**      | -               | Động từ     | [ˈankʁɔyt͡sən]   | Đánh dấu (chọn)      |
-| **verwenden**      | -               | Động từ     | [fɛɐ̯ˈvɛndən]    | Sử dụng              |
-=======
+|**wer?**|-|Từ hỏi|[veːɐ̯]|Ai?|
+|**woher?**|-|Từ hỏi|[voˈheːɐ̯]|Từ đâu?|
+|**was?**|-|Từ hỏi|[vas]|Gì? / Cái gì?|
+|**wie?**|-|Từ hỏi|[viː]|Như thế nào?|
+|**wo?**|-|Từ hỏi|[voː]|Ở đâu?|
+|**ich komme aus...**|-|Cụm từ|[ɪç ˈkɔmə aʊs]|Tôi đến từ...|
+|**ich bin...**|-|Cụm từ|[ɪç bɪn]|Tôi là...|
 ### **📌 Ví dụ và Giải nghĩa**
 
+1. **wer?** (Ai?)
+    - **Ví dụ:** Wer ist das?
+    - **Giải nghĩa:** Đó là ai?
 
-1. **das Verb** (Động từ)
-    
-    - **Ví dụ:** Die Verben in diesem Text sind regelmäßig.
-    - **Giải nghĩa:** Các động từ trong đoạn văn này là động từ có quy tắc.
-2. **die Grammatik** (Ngữ pháp)
-    
-    - **Ví dụ:** Ich lerne die deutsche Grammatik.
-    - **Giải nghĩa:** Tôi đang học ngữ pháp tiếng Đức.
-3. **kontrollieren** (Kiểm tra)
-    
-    - **Ví dụ:** Kontrollieren Sie Ihre Antworten.
-    - **Giải nghĩa:** Kiểm tra lại các câu trả lời của bạn.
-4. **die Tabelle** (Bảng biểu)
-    
-    - **Ví dụ:** Die Tabelle zeigt die wichtigsten Verben.
-    - **Giải nghĩa:** Bảng này hiển thị các động từ quan trọng nhất.
-5. **der Wortakzent** (Trọng âm từ)
-    
-    - **Ví dụ:** Der Wortakzent liegt auf der ersten Silbe.
-    - **Giải nghĩa:** Trọng âm của từ nằm ở âm tiết đầu tiên.
-6. **ankreuzen** (Đánh dấu, chọn)
-    
-    - **Ví dụ:** Bitte kreuzen Sie die richtige Antwort an.
-    - **Giải nghĩa:** Vui lòng đánh dấu câu trả lời đúng.
-7. **verwenden** (Sử dụng)
-    
-    - **Ví dụ:** Wir verwenden viele neue Wörter im Unterricht.
-    - **Giải nghĩa:** Chúng tôi sử dụng nhiều từ mới trong lớp học.
+2. **woher?** (Từ đâu?)
+    - **Ví dụ:** Woher kommst du?
+    - **Giải nghĩa:** Bạn đến từ đâu?
+
+3. **was?** (Gì? / Cái gì?)
+    - **Ví dụ:** Was möchtest du trinken?
+    - **Giải nghĩa:** Bạn muốn uống gì?
+
+4. **wie?** (Như thế nào?)
+    - **Ví dụ:** Wie geht es dir?
+    - **Giải nghĩa:** Bạn có khỏe không?
+
+5. **wo?** (Ở đâu?)
+    - **Ví dụ:** Wo wohnst du?
+    - **Giải nghĩa:** Bạn sống ở đâu?
+
+6. **ich komme aus...** (Tôi đến từ...)
+    - **Ví dụ:** Ich komme aus Vietnam.
+    - **Giải nghĩa:** Tôi đến từ Việt Nam.
+
+7. **ich bin...** (Tôi là...)
+    - **Ví dụ:** Ich bin Student.
+    - **Giải nghĩa:** Tôi là sinh viên.
 
 ---
-## **🛍️ Từ Vựng Liên Quan Đến Đồ Dùng và Thói Quen Hàng Ngày**
+
+## **🌍 Từ Vựng Về Quốc Gia và Ngôn Ngữ**
 
 |**Từ vựng**|**Số nhiều**|**Loại từ**|**Phát âm**|**Nghĩa tiếng Việt**|
 |---|---|---|---|---|
-|**der Zucker**|-|Danh từ|[ˈʦʊkɐ]|Đường|
-|**ohne**|-|Giới từ|[ˈoːnə]|Không có|
-|**das Minimemo**|die Minimemos|Danh từ|[ˈmiːniˌmeːmo]|Ghi chú nhỏ|
-|**viel**|-|Trạng từ|[fiːl]|Nhiều|
-|**wenig**|-|Trạng từ|[ˈveːnɪç]|Ít|
-|**nehmen**|-|Động từ|[ˈneːmən]|Lấy, chọn|
-|**gern**|-|Trạng từ|[ɡɛʁn]|Thích làm gì đó|
-
+|**Deutschland**|-|Danh từ|[ˈdɔɪtʃlant]|Đức|
+|**Vietnam**|-|Danh từ|[ˌvi̯ɛtˈnaːm]|Việt Nam|
+|**Österreich**|-|Danh từ|[ˈøːstəʁaɪç]|Áo|
+|**die Schweiz**|-|Danh từ|[ʃvaɪts]|Thụy Sĩ|
+|**Frankreich**|-|Danh từ|[ˈfʁaŋkʁaɪç]|Pháp|
+|**Englisch**|-|Danh từ|[ˈɛŋlɪʃ]|Tiếng Anh|
+|**Deutsch**|-|Danh từ|[dɔɪtʃ]|Tiếng Đức|
 ### **📌 Ví dụ và Giải nghĩa**
 
-1. **der Zucker** (Đường)
-    
-    - **Ví dụ:** Möchten Sie Kaffee mit oder ohne Zucker?
-    - **Giải nghĩa:** Bạn muốn cà phê có hay không có đường?
-2. **ohne** (Không có)
-    
-    - **Ví dụ:** Ich trinke meinen Tee ohne Milch.
-    - **Giải nghĩa:** Tôi uống trà của mình không có sữa.
-3. **das Minimemo** (Ghi chú nhỏ)
-    
-    - **Ví dụ:** Schreiben Sie Ihre Ideen ins Minimemo.
-    - **Giải nghĩa:** Hãy viết ý tưởng của bạn vào ghi chú nhỏ.
-4. **viel** (Nhiều)
-    
-    - **Ví dụ:** Ich habe viel zu tun.
-    - **Giải nghĩa:** Tôi có rất nhiều việc phải làm.
-5. **wenig** (Ít)
-    
-    - **Ví dụ:** Er hat wenig Zeit für Hobbys.
-    - **Giải nghĩa:** Anh ấy có ít thời gian cho sở thích cá nhân.
-6. **nehmen** (Lấy, chọn)
-    
-    - **Ví dụ:** Ich nehme einen Kaffee, bitte.
-    - **Giải nghĩa:** Tôi lấy một cốc cà phê, làm ơn.
-7. **gern** (Thích làm gì đó)
-    
-    - **Ví dụ:** Ich trinke gern Tee.
-    - **Giải nghĩa:** Tôi thích uống trà.
+1. **Deutschland** (Đức)
+    - **Ví dụ:** Ich komme aus Deutschland.
+    - **Giải nghĩa:** Tôi đến từ Đức.
+
+2. **Vietnam** (Việt Nam)
+    - **Ví dụ:** Er ist aus Vietnam.
+    - **Giải nghĩa:** Anh ấy đến từ Việt Nam.
+
+3. **Österreich** (Áo)
+    - **Ví dụ:** Sie wohnt in Österreich.
+    - **Giải nghĩa:** Cô ấy sống ở Áo.
+
+4. **Englisch** (Tiếng Anh)
+    - **Ví dụ:** Sprichst du Englisch?
+    - **Giải nghĩa:** Bạn có nói tiếng Anh không?
+
+5. **Deutsch** (Tiếng Đức)
+    - **Ví dụ:** Ich lerne Deutsch.
+    - **Giải nghĩa:** Tôi đang học tiếng Đức.
 
 ---
-## **📈 Từ Vựng Liên Quan Đến Học Tập và Tiến Trình**
+
+## **� Từ Vựng Về Nghề Nghiệp và Thông Tin Cá Nhân**
 
 |**Từ vựng**|**Số nhiều**|**Loại từ**|**Phát âm**|**Nghĩa tiếng Việt**|
 |---|---|---|---|---|
-|**bilden**|-|Động từ|[ˈbɪldən]|Tạo thành|
-|**die Gruppe**|die Gruppen|Danh từ|[ˈɡʁʊpə]|Nhóm|
-|**beginnen**|-|Động từ|[bəˈɡɪnən]|Bắt đầu|
-|**der Fehler**|die Fehler|Danh từ|[ˈfeːlɐ]|Lỗi|
-|**dran sein**|-|Cụm động từ|[dʁan zaɪ̯n]|Đến lượt|
-|**fertig**|-|Tính từ|[ˈfɛʁtɪç]|Hoàn thành|
+|**der Student**|die Studenten|Danh từ|[ʃtuˈdɛnt]|Sinh viên (nam)|
+|**die Studentin**|die Studentinnen|Danh từ|[ʃtuˈdɛntɪn]|Sinh viên (nữ)|
+|**der Lehrer**|die Lehrer|Danh từ|[ˈleːʁɐ]|Giáo viên (nam)|
+|**die Lehrerin**|die Lehrerinnen|Danh từ|[ˈleːʁəʁɪn]|Giáo viên (nữ)|
+|**der Arzt**|die Ärzte|Danh từ|[aʁtst]|Bác sĩ (nam)|
+|**die Ärztin**|die Ärztinnen|Danh từ|[ˈɛʁtstɪn]|Bác sĩ (nữ)|
+|**arbeiten**|-|Động từ|[ˈaʁbaɪ̯tən]|Làm việc|
+|**studieren**|-|Động từ|[ʃtuˈdiːʁən]|Học đại học|
 
 ### **📌 Ví dụ và Giải nghĩa**
 
-1. **bilden** (Tạo thành)
-    
-    - **Ví dụ:** Bilden Sie Gruppen mit drei Personen.
-    - **Giải nghĩa:** Hãy tạo nhóm gồm ba người.
-2. **die Gruppe** (Nhóm)
-    
-    - **Ví dụ:** Unsere Gruppe arbeitet gut zusammen.
-    - **Giải nghĩa:** Nhóm của chúng tôi làm việc rất tốt với nhau.
-3. **beginnen** (Bắt đầu)
-    
-    - **Ví dụ:** Wann beginnt der Kurs?
-    - **Giải nghĩa:** Lớp học bắt đầu khi nào?
-4. **der Fehler** (Lỗi)
-    
-    - **Ví dụ:** Dieser Fehler ist leicht zu korrigieren.
-    - **Giải nghĩa:** Lỗi này dễ sửa chữa.
-5. **dran sein** (Đến lượt)
-    
-    - **Ví dụ:** Ich bin dran!
-    - **Giải nghĩa:** Đến lượt tôi!
-6. **fertig** (Hoàn thành)
-    
-    - **Ví dụ:** Bist du mit der Hausaufgabe fertig?
+1. **der Student/die Studentin** (Sinh viên)
+    - **Ví dụ:** Ich bin Student an der Universität.
+    - **Giải nghĩa:** Tôi là sinh viên tại trường đại học.
+
+2. **der Lehrer/die Lehrerin** (Giáo viên)
+    - **Ví dụ:** Meine Mutter ist Lehrerin.
+    - **Giải nghĩa:** Mẹ tôi là giáo viên.
+
+3. **arbeiten** (Làm việc)
+    - **Ví dụ:** Wo arbeitest du?
+    - **Giải nghĩa:** Bạn làm việc ở đâu?
+
+4. **studieren** (Học đại học)
+    - **Ví dụ:** Was studierst du?
+    - **Giải nghĩa:** Bạn học ngành gì?
+
+---
+
+## **🗣️ Câu Trả Lời Thông Dụng**
+
+|**Câu trả lời**|**Phát âm**|**Nghĩa tiếng Việt**|
+|---|---|---|
+|**Ich heiße...**|[ɪç ˈhaɪsə]|Tôi tên là...|
+|**Ich bin... Jahre alt**|[ɪç bɪn... ˈjaːʁə alt]|Tôi... tuổi|
+|**Ich wohne in...**|[ɪç ˈvoːnə ɪn]|Tôi sống ở...|
+|**Ich spreche...**|[ɪç ˈʃpʁɛçə]|Tôi nói tiếng...|
+|**Das ist richtig**|[das ɪst ˈʁɪçtɪç]|Đúng rồi|
+|**Das ist falsch**|[das ɪst falʃ]|Sai rồi|
     - **Giải nghĩa:** Bạn đã hoàn thành bài tập về nhà chưa?
 
 ---

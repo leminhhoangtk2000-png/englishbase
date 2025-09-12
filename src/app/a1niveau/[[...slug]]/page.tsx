@@ -139,9 +139,70 @@ export default async function DocPage({ params }: DocPageProps) {
       notFound();
     }
     
-    // Find the folder/item by extracting slug from href
+    // First try to get direct markdown content (for sections like grammatik)
+    const directMarkdownContent = getMarkdownBySlug('a1niveau', section, folderSlug);
+    
+    if (directMarkdownContent) {
+      // Direct article found, render it
+      const htmlContent = await markdownToHtml(directMarkdownContent.content);
+      const toc = extractTableOfContents(directMarkdownContent.content);
+      const breadcrumbItems = [section];
+
+      return (
+        <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
+          <div className="mx-auto w-full min-w-0">
+            <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+              <Link href="/a1niveau" className="hover:text-foreground">A1 Niveau</Link>
+              {breadcrumbItems.map((item, index) => (
+                <React.Fragment key={item}>
+                  <span className="font-medium text-foreground">/</span>
+                  {index === breadcrumbItems.length - 1 ? (
+                    <div className="font-medium text-foreground capitalize">{item}</div>
+                  ) : (
+                    <Link href={`/a1niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                      {item}
+                    </Link>
+                  )}
+                </React.Fragment>
+              ))}
+              <span className="font-medium text-foreground">/</span>
+              <div className="font-medium text-foreground">{directMarkdownContent.meta?.title || 'Untitled'}</div>
+            </div>
+            <div className="space-y-2">
+              <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
+                {directMarkdownContent.meta?.title || 'Untitled'}
+              </h1>
+              {directMarkdownContent.meta?.description && (
+                <p className="text-lg text-muted-foreground">{directMarkdownContent.meta.description}</p>
+              )}
+              {directMarkdownContent.meta?.tags && directMarkdownContent.meta.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {directMarkdownContent.meta.tags.map((tag) => (
+                    <Badge key={tag} variant="outline">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Separator className="my-4" />
+            <div className="prose max-w-none">
+              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </div>
+          </div>
+          <div className="hidden text-sm lg:block">
+            <div className="sticky top-16 -mt-10 pt-10">
+              <DocsTOC toc={toc} />
+            </div>
+          </div>
+        </main>
+      );
+    }
+    
+    // If no direct markdown found, try to find folder/item structure (for sections like vokabular)
     const currentItem = currentSection.items.find((item: any) => {
       // Extract slug from href (e.g., "/a1niveau/vokabular/05-station-1" -> "05-station-1")
+      if (!item.href) return false;
       const itemSlug = item.href.split('/').pop();
       return itemSlug === folderSlug;
     });
@@ -241,17 +302,12 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
-  // Get specific markdown content
+  // Get specific markdown content for nested cases
   let markdownContent;
   let breadcrumbItems: string[] = [];
   
-  if (slug.length === 2) {
-    // Direct article (e.g., /a1niveau/grammatik/01-prasens)
-    const [section, articleSlug] = slug;
-    markdownContent = getMarkdownBySlug('a1niveau', section, articleSlug);
-    breadcrumbItems = [section];
-  } else if (slug.length === 3) {
-    // Nested content (e.g., /a1niveau/vokabular/01-start-auf-deutsch or /a1niveau/vokabular/01-start-auf-deutsch/01-start)
+  if (slug.length === 3) {
+    // Nested content (e.g., /a1niveau/vokabular/01-start-auf-deutsch/01-start)
     const [section, folderSlug, fileSlug] = slug;
     
     // First try to get content from folder/file
@@ -295,16 +351,16 @@ export default async function DocPage({ params }: DocPageProps) {
             </React.Fragment>
           ))}
           <span className="font-medium text-foreground">/</span>
-          <div className="font-medium text-foreground">{markdownContent.meta.title}</div>
+          <div className="font-medium text-foreground">{markdownContent.meta?.title || 'Untitled'}</div>
         </div>
         <div className="space-y-2">
           <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
-            {markdownContent.meta.title}
+            {markdownContent.meta?.title || 'Untitled'}
           </h1>
-          {markdownContent.meta.description && (
+          {markdownContent.meta?.description && (
             <p className="text-lg text-muted-foreground">{markdownContent.meta.description}</p>
           )}
-          {markdownContent.meta.tags && markdownContent.meta.tags.length > 0 && (
+          {markdownContent.meta?.tags && markdownContent.meta.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
               {markdownContent.meta.tags.map((tag) => (
                 <Badge key={tag} variant="outline">
