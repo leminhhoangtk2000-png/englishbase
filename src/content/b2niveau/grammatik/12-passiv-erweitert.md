@@ -14,13 +14,13 @@ Thể bị động (Passiv) ở cấp độ B2 không chỉ bao gồm Vorgangspa
 
 ### Cấu trúc: werden + Partizip II
 
-| Thời gian | Aktiv | Passiv |
-|-----------|-------|--------|
-| **Präsens** | Er repariert das Auto. | Das Auto **wird repariert**. |
-| **Präteritum** | Er reparierte das Auto. | Das Auto **wurde repariert**. |
-| **Perfekt** | Er hat das Auto repariert. | Das Auto **ist repariert worden**. |
-| **Plusquamperfekt** | Er hatte das Auto repariert. | Das Auto **war repariert worden**. |
-| **Futur I** | Er wird das Auto reparieren. | Das Auto **wird repariert werden**. |
+| Thời gian           | Aktiv                        | Passiv                              |
+| ------------------- | ---------------------------- | ----------------------------------- |
+| **Präsens**         | Er repariert das Auto.       | Das Auto **wird repariert**.        |
+| **Präteritum**      | Er reparierte das Auto.      | Das Auto **wurde repariert**.       |
+| **Perfekt**         | Er hat das Auto repariert.   | Das Auto **ist repariert worden**.  |
+| **Plusquamperfekt** | Er hatte das Auto repariert. | Das Auto **war repariert worden**.  |
+| **Futur I**         | Er wird das Auto reparieren. | Das Auto **wird repariert werden**. |
 
 ## Zustandspassiv (Thể bị động trạng thái)
 
@@ -30,20 +30,22 @@ Das Zustandspassiv beschreibt das **Ergebnis** einer Handlung, nicht die Handlun
 
 ### So sánh Vorgangspassiv và Zustandspassiv:
 
-| Vorgangspassiv (Handlung) | Zustandspassiv (Zustand) |
-|---------------------------|--------------------------|
-| Das Fenster **wird geöffnet**. | Das Fenster **ist geöffnet**. |
-| (Cửa sổ đang được mở) | (Cửa sổ đang mở) |
-| Der Brief **wurde geschrieben**. | Der Brief **war geschrieben**. |
-| (Lá thư đã được viết) | (Lá thư đã ở trạng thái được viết) |
+| Vorgangspassiv (Handlung)        | Zustandspassiv (Zustand)           |
+| -------------------------------- | ---------------------------------- |
+| Das Fenster **wird geöffnet**.   | Das Fenster **ist geöffnet**.      |
+| (Cửa sổ đang được mở)            | (Cửa sổ đang mở)                   |
+| Der Brief **wurde geschrieben**. | Der Brief **war geschrieben**.     |
+| (Lá thư đã được viết)            | (Lá thư đã ở trạng thái được viết) |
 
 ### Ví dụ:
 
 **Vorgangspassiv:**
+
 - Das Auto **wird gerade repariert**. (xe đang được sửa)
 - Die Tür **wurde gestern gestrichen**. (cửa đã được sơn hôm qua)
 
 **Zustandspassiv:**
+
 - Das Auto **ist repariert**. (xe đã được sửa xong)
 - Die Tür **war schon gestrichen**. (cửa đã được sơn rồi)
 
@@ -51,11 +53,11 @@ Das Zustandspassiv beschreibt das **Ergebnis** einer Handlung, nicht die Handlun
 
 ### Cấu trúc: Modalverb + Partizip II + werden
 
-| Thời gian | Cấu trúc | Ví dụ |
-|-----------|----------|-------|
-| **Präsens** | kann/muss/soll + Partizip II + werden | Das Auto **kann repariert werden**. |
-| **Präteritum** | konnte/musste/sollte + Partizip II + werden | Das Auto **musste repariert werden**. |
-| **Perfekt** | hat + Partizip II + werden + müssen/können | Das Auto **hat repariert werden müssen**. |
+| Thời gian      | Cấu trúc                                    | Ví dụ                                     |
+| -------------- | ------------------------------------------- | ----------------------------------------- |
+| **Präsens**    | kann/muss/soll + Partizip II + werden       | Das Auto **kann repariert werden**.       |
+| **Präteritum** | konnte/musste/sollte + Partizip II + werden | Das Auto **musste repariert werden**.     |
+| **Perfekt**    | hat + Partizip II + werden + müssen/können  | Das Auto **hat repariert werden müssen**. |
 
 ### Ví dụ:
 
@@ -144,18 +146,22 @@ Das Zustandspassiv beschreibt das **Ergebnis** einer Handlung, nicht die Handlun
 ### ❌ Falsch / ✅ Richtig:
 
 **1. Verwechslung von Vorgangs- und Zustandspassiv:**
+
 - ❌ Das Fenster ist von mir geöffnet.
 - ✅ Das Fenster ist geöffnet. / Das Fenster wird von mir geöffnet.
 
 **2. Modalverben im Passiv:**
+
 - ❌ Das Auto kann repariert.
 - ✅ Das Auto kann repariert werden.
 
 **3. Perfekt mit Modalverben:**
+
 - ❌ Das Auto hat repariert werden gekonnt.
 - ✅ Das Auto hat repariert werden können.
 
 **4. Unpersönliches Passiv:**
+
 - ❌ Die Leute wird getanzt.
 - ✅ Es wird getanzt.
 
@@ -165,12 +171,13 @@ Das Zustandspassiv beschreibt das **Ergebnis** einer Handlung, nicht die Handlun
 
 Entscheiden Sie: Handlung oder Zustand?
 
-1. Die Tür _______ gerade _______. (öffnen - Handlung)
-2. Die Tür _______ _______. (öffnen - Zustand)
-3. Das Haus _______ letztes Jahr _______. (bauen - Handlung)
-4. Das Haus _______ schon _______. (bauen - Zustand)
+1. Die Tür **\_\_\_** gerade **\_\_\_**. (öffnen - Handlung)
+2. Die Tür **\_\_\_** **\_\_\_**. (öffnen - Zustand)
+3. Das Haus **\_\_\_** letztes Jahr **\_\_\_**. (bauen - Handlung)
+4. Das Haus **\_\_\_** schon **\_\_\_**. (bauen - Zustand)
 
 **Lösungen:**
+
 1. wird geöffnet
 2. ist geöffnet
 3. wurde gebaut
@@ -185,6 +192,7 @@ Transformieren Sie die Sätze:
 3. Man sollte den Text übersetzen.
 
 **Lösungen:**
+
 1. Das Problem muss gelöst werden.
 2. Die Aufgabe kann geschafft werden.
 3. Der Text sollte übersetzt werden.
@@ -198,6 +206,7 @@ Drücken Sie anders aus:
 3. Das kann gegessen werden. (Adjektiv)
 
 **Lösungen:**
+
 1. Das lässt sich machen.
 2. Das ist zu verstehen.
 3. Das ist essbar.
@@ -211,6 +220,7 @@ Bilden Sie unpersönliches Passiv:
 3. Die Leute diskutieren laut.
 
 **Lösungen:**
+
 1. Es wird fleißig gearbeitet.
 2. Es wird im Park gespielt.
 3. Es wird laut diskutiert.
@@ -241,6 +251,7 @@ Das erweiterte Passiv im B2-Niveau umfasst:
 - **Verschiedene Anwendungsbereiche**
 
 Die Beherrschung dieser Formen ist essentiell für:
+
 - Wissenschaftliche Texte
 - Formelle Kommunikation
 - Nachrichtentexte

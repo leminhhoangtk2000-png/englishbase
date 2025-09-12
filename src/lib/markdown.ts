@@ -101,14 +101,39 @@ export function getMarkdownBySlug(
   slug: string
 ): MarkdownContent | null {
   try {
+    // Check if slug already has extension
+    const slugWithExtension = slug.endsWith('.md') || slug.endsWith('.mdx') ? slug : `${slug}.md`
+    const altSlugWithExtension = slug.endsWith('.md') ? slug.replace('.md', '.mdx') : `${slug}.mdx`
+    
     // Support nested paths like "01-start-auf-deutsch/01-start" or "01-start-auf-deutsch/index"
-    const filePath = path.join(contentDirectory, niveau, section, `${slug}.md`)
-    const altFilePath = path.join(contentDirectory, niveau, section, `${slug}.mdx`)
+    const filePath = path.join(contentDirectory, niveau, section, slugWithExtension)
+    const altFilePath = path.join(contentDirectory, niveau, section, altSlugWithExtension)
+    
+    // Also check for folder-based content with index files
+    const folderIndexPath = path.join(contentDirectory, niveau, section, slug, 'index.md')
+    const folderIndexAltPath = path.join(contentDirectory, niveau, section, slug, 'index.mdx')
+    
+    console.log(`[DEBUG] Looking for file:`, filePath)
+    console.log(`[DEBUG] Alt file:`, altFilePath)
+    console.log(`[DEBUG] Folder index:`, folderIndexPath)
+    console.log(`[DEBUG] Folder index alt:`, folderIndexAltPath)
+    console.log(`[DEBUG] File exists:`, fs.existsSync(filePath))
+    console.log(`[DEBUG] Alt file exists:`, fs.existsSync(altFilePath))
+    console.log(`[DEBUG] Folder index exists:`, fs.existsSync(folderIndexPath))
+    console.log(`[DEBUG] Folder index alt exists:`, fs.existsSync(folderIndexAltPath))
     
     let actualPath = filePath
-    if (!fs.existsSync(filePath) && fs.existsSync(altFilePath)) {
+    
+    // Priority: direct file > alt extension > folder index > folder index alt
+    if (fs.existsSync(filePath)) {
+      actualPath = filePath
+    } else if (fs.existsSync(altFilePath)) {
       actualPath = altFilePath
-    } else if (!fs.existsSync(filePath)) {
+    } else if (fs.existsSync(folderIndexPath)) {
+      actualPath = folderIndexPath
+    } else if (fs.existsSync(folderIndexAltPath)) {
+      actualPath = folderIndexAltPath
+    } else {
       return null
     }
     
@@ -118,7 +143,7 @@ export function getMarkdownBySlug(
     return {
       meta: {
         ...data,
-        slug: slug.split('/').pop() || slug, // Use the last part as slug
+        slug: slug.split('/').pop()?.replace(/\.(md|mdx)$/, '') || slug, // Use the last part as slug, remove extension
       } as MarkdownMeta,
       content,
     }
@@ -481,6 +506,37 @@ export function getNiveauContent(niveau: string) {
       }
     } catch (error) {
       console.warn('Could not load a1niveau config, falling back to file scanning')
+    }
+  }
+  
+  // For a2niveau, use the static config instead of dynamic file scanning
+  if (niveau === 'a2niveau') {
+    try {
+      const configPath = path.join(process.cwd(), 'src', 'config', 'a2niveau.ts')
+      if (fs.existsSync(configPath)) {
+        // Use the static config
+        const { docsConfig } = require('@/config/a2niveau')
+        return {
+          niveau,
+          sections: docsConfig.items.map((section: any) => ({
+            name: section.title.toLowerCase(),
+            title: section.title,
+            slug: section.href.split('/').pop(),
+            itemCount: section.items.length,
+            items: section.items.map((item: any) => ({
+              title: item.title,
+              description: item.description,
+              slug: item.href ? item.href.split('/').pop() : '',
+              href: item.href,
+              tags: [],
+              order: 0,
+              items: item.items || [], // Preserve sub-items for folder structure
+            })),
+          })),
+        }
+      }
+    } catch (error) {
+      console.warn('Could not load a2niveau config, falling back to file scanning')
     }
   }
   

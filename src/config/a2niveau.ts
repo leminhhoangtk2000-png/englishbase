@@ -83,23 +83,191 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Wortschatz",
-      href: "/a2niveau/wortschatz",
+      title: "Vokabular",
+      href: "/a2niveau/vokabular",
       items: [
         {
-          title: "Familie und Beziehungen",
-          description: "Từ vựng về gia đình và các mối quan hệ",
-          href: "/a2niveau/wortschatz/01-familie",
+          title: "1. Willkommen A2",
+          description: "Chào mừng đến với khóa học tiếng Đức A2 - Bài học đầu tiên",
+          href: "/a2niveau/vokabular/1-willkommen-a2",
+          items: [
+            {
+              title: "Uhrzeiten",
+              description: "Học về thời gian trong tiếng Đức",
+              href: "/a2niveau/vokabular/1-willkommen-a2/01-grundwortschatz",
+            },
+            {
+              title: "Die Brücke von A1 zu A2",
+              description: "Cầu nối từ A1 đến A2",
+              href: "/a2niveau/vokabular/1-willkommen-a2/02-begrussung",
+            },
+            {
+              title: "Fit für A2",
+              description: "Chuẩn bị sẵn sàng cho A2",
+              href: "/a2niveau/vokabular/1-willkommen-a2/03-fit-a2",
+            },
+            {
+              title: "Verb-Adj-Adv 1-A2",
+              description: "Động từ, tính từ, trạng từ cơ bản A2",
+              href: "/a2niveau/vokabular/1-willkommen-a2/verb-adj-adv",
+            },
+          ],
         },
         {
-          title: "Wohnen und Haushalt",
-          description: "Từ vựng về nhà ở và việc nhà",
-          href: "/a2niveau/wortschatz/02-wohnen",
+          title: "2. Leben und Lernen",
+          description: "Từ vựng về cuộc sống và học tập trong tiếng Đức A2",
+          href: "/a2niveau/vokabular/2-leben-und-lernen",
+          items: [
+            {
+              title: "Cuộc sống hàng ngày",
+              description: "Từ vựng về cuộc sống hàng ngày",
+              href: "/a2niveau/vokabular/2-leben-und-lernen/01-alltag",
+            },
+            {
+              title: "Học tập",
+              description: "Từ vựng về học tập và giáo dục",
+              href: "/a2niveau/vokabular/2-leben-und-lernen/02-lernen",
+            },
+          ],
         },
         {
-          title: "Gesundheit und Körper",
-          description: "Từ vựng về sức khỏe và cơ thể",
-          href: "/a2niveau/wortschatz/03-gesundheit",
+          title: "3. Familiengeschichten",
+          description: "Từ vựng về gia đình và những câu chuyện gia đình",
+          href: "/a2niveau/vokabular/3-familiengeschichten",
+          items: [
+            {
+              title: "Thành viên gia đình",
+              description: "Từ vựng về các thành viên trong gia đình",
+              href: "/a2niveau/vokabular/3-familiengeschichten/01-familienmitglieder",
+            },
+            {
+              title: "Mối quan hệ",
+              description: "Từ vựng về các mối quan hệ trong gia đình",
+              href: "/a2niveau/vokabular/3-familiengeschichten/02-beziehungen",
+            },
+          ],
+        },
+        {
+          title: "4. Unterwegs",
+          description: "Từ vựng về phương tiện giao thông và đi lại",
+          href: "/a2niveau/vokabular/4-unterwegs",
+          items: [
+            {
+              title: "Phương tiện giao thông",
+              description: "Từ vựng về các loại phương tiện giao thông",
+              href: "/a2niveau/vokabular/4-unterwegs/01-verkehrsmittel",
+            },
+          ],
+        },
+        {
+          title: "5. Station 1-A2",
+          description: "Trạm dừng đầu tiên - Ôn tập và củng cố kiến thức",
+          href: "/a2niveau/vokabular/5-station-1-a2",
+          items: [
+            {
+              title: "Ôn tập từ vựng",
+              description: "Ôn tập lại từ vựng đã học",
+              href: "/a2niveau/vokabular/5-station-1-a2/01-review",
+            },
+          ],
+        },
+        {
+          title: "6. Freizeit und Hobby",
+          description: "Từ vựng về thời gian rảnh và sở thích",
+          href: "/a2niveau/vokabular/6-freizeit-und-hobby",
+          items: [
+            {
+              title: "Hoạt động giải trí",
+              description: "Từ vựng về các hoạt động trong thời gian rảnh",
+              href: "/a2niveau/vokabular/6-freizeit-und-hobby/01-activities",
+            },
+          ],
+        },
+        {
+          title: "7. Medien im Alltag",
+          description: "Từ vựng về phương tiện truyền thông hàng ngày",
+          href: "/a2niveau/vokabular/7-medien-im-alltag",
+          items: [
+            {
+              title: "Phương tiện truyền thông",
+              description: "Từ vựng về các loại phương tiện truyền thông",
+              href: "/a2niveau/vokabular/7-medien-im-alltag/01-medien",
+            },
+          ],
+        },
+        {
+          title: "8. Ausgehen Leute treffen",
+          description: "Từ vựng về đi chơi và gặp gỡ mọi người",
+          href: "/a2niveau/vokabular/8-ausgehen-leute-treffen",
+          items: [
+            {
+              title: "Đi chơi",
+              description: "Từ vựng về các hoạt động đi chơi",
+              href: "/a2niveau/vokabular/8-ausgehen-leute-treffen/01-ausgehen",
+            },
+          ],
+        },
+        {
+          title: "9. Station 2-A2",
+          description: "Trạm dừng thứ hai - Ôn tập và củng cố",
+          href: "/a2niveau/vokabular/9-station-2-a2",
+          items: [
+            {
+              title: "Ôn tập nâng cao",
+              description: "Ôn tập và củng cố kiến thức nâng cao",
+              href: "/a2niveau/vokabular/9-station-2-a2/01-review-advanced",
+            },
+          ],
+        },
+        {
+          title: "10. Vom Land in die Stadt",
+          description: "Từ vựng về sự thay đổi từ nông thôn đến thành phố",
+          href: "/a2niveau/vokabular/10-vom-land-in-die-stadt",
+          items: [
+            {
+              title: "Nông thôn và thành phố",
+              description: "Từ vựng về đời sống nông thôn và thành thị",
+              href: "/a2niveau/vokabular/10-vom-land-in-die-stadt/01-stadt-land",
+            },
+          ],
+        },
+        {
+          title: "11. Kultur erleben",
+          description: "Từ vựng về trải nghiệm văn hóa và nghệ thuật",
+          href: "/a2niveau/vokabular/11-kultur-erleben",
+          items: [
+            {
+              title: "Văn hóa và nghệ thuật",
+              description: "Từ vựng về văn hóa và nghệ thuật",
+              href: "/a2niveau/vokabular/11-kultur-erleben/01-kultur",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Vokabular Thema",
+      href: "/a2niveau/vokabular-thema",
+      items: [
+        {
+          title: "100 adj pho bien A2",
+          description: "100 tính từ phổ biến và quan trọng nhất trong tiếng Đức A2",
+          href: "/a2niveau/vokabular-thema/100-adj-pho-bien-a2",
+        },
+        {
+          title: "100 adv pho bien A2",
+          description: "100 trạng từ phổ biến và quan trọng nhất trong tiếng Đức A2",
+          href: "/a2niveau/vokabular-thema/100-adv-pho-bien-a2",
+        },
+        {
+          title: "100 verb pho bien A2",
+          description: "100 động từ phổ biến và quan trọng nhất trong tiếng Đức A2",
+          href: "/a2niveau/vokabular-thema/100-verb-pho-bien-a2",
+        },
+        {
+          title: "Monate und Jahreszeiten",
+          description: "Tháng và mùa trong năm - Kiến thức cơ bản về thời gian",
+          href: "/a2niveau/vokabular-thema/1-monaten",
         },
       ],
     },

@@ -68,11 +68,15 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
-  // If we have slug, try to get markdown content
-  const [section, articleSlug] = slug;
+  // If we have slug, handle different cases
+  const [section, ...rest] = slug;
   
-  if (!section || !articleSlug) {
-    // Show section overview
+  if (!section) {
+    notFound();
+  }
+
+  // Case 1: Only section (e.g., /a2niveau/vokabular)
+  if (rest.length === 0) {
     const niveauContent = getNiveauContent('a2niveau');
     const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
     
@@ -127,8 +131,135 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
-  // Get specific markdown content
-  const markdownContent = getMarkdownBySlug('a2niveau', section, articleSlug);
+  // Case 2: Section with subsection - handle different levels
+  const articleSlug = rest.join('/');
+  
+  // Try to find markdown content - handle folder structure
+  let markdownContent;
+  
+  // Handle 3-level paths (e.g., /a2niveau/vokabular/1-willkommen-a2/01-grundwortschatz)
+  if (rest.length === 2 && section === 'vokabular') {
+    const [folderSlug, fileSlug] = rest;
+    const folderMapping: { [key: string]: string } = {
+      '1-willkommen-a2': '1. Willkommen A2',
+      '2-leben-und-lernen': '2. Leben und Lernen', 
+      '3-familiengeschichten': '3. Familiengeschichten',
+      '4-unterwegs': '4. Unterwegs',
+      '5-station-1-a2': '5. Station 1-A2',
+      '6-freizeit-und-hobby': '6. Freizeit und Hobby',
+      '7-medien-im-alltag': '7. Medien im Alltag',
+      '8-ausgehen-leute-treffen': '8. Ausgehen Leute treffen',
+      '9-station-2-a2': '9. Station 2-A2',
+      '10-vom-land-in-die-stadt': '10. Vom Land in die Stadt',
+      '11-kultur-erleben': '11. Kultur erleben',
+    };
+    
+    // File mapping for actual file names in the folders
+    const fileMapping: { [key: string]: { [key: string]: string } } = {
+      '1-willkommen-a2': {
+        '01-grundwortschatz': '1. Uhrzeiten.md',
+        '02-begrussung': '2. Die Brücke von A1 zu A2.md',
+        '03-fit-a2': '3. Fit fur A2.md',
+        'verb-adj-adv': 'Verb-Adj-Adv 1-A2.md'
+      },
+      '2-leben-und-lernen': {
+        '01-alltag': '1. Leben und lernen in Europa.md',
+        '02-lernen': '2. Die neue Arbeismigration.md'
+      },
+      '3-familiengeschichten': {
+        '01-familienmitglieder': '1. Familie Saalfeld.md',
+        '02-beziehungen': '2. Meine Verwandten.md'
+      },
+      '4-unterwegs': {
+        '01-verkehrsmittel': '1. Unterwegs.md'
+      },
+      '5-station-1-a2': {
+        '01-review': '1. Berufsbilder 1-A2.md'
+      },
+      '6-freizeit-und-hobby': {
+        '01-activities': '1. Hobbys.md'
+      },
+      '7-medien-im-alltag': {
+        '01-medien': '1. Medien im Alltag.md'
+      },
+      '8-ausgehen-leute-treffen': {
+        '01-ausgehen': '1. Ausgehen - nicht nur am Wochenende.md'
+      },
+      '9-station-2-a2': {
+        '01-review-advanced': '1. Berufbilder 2-A2.md'
+      },
+      '10-vom-land-in-die-stadt': {
+        '01-stadt-land': '1. Stadtleben oder Landluft.md'
+      },
+      '11-kultur-erleben': {
+        '01-kultur': '1. Kulturhauptstädte Europas.md'
+      }
+    };
+    
+    const folderName = folderMapping[folderSlug];
+    if (folderName) {
+      // Check if we have specific file mapping
+      if (fileMapping[folderSlug] && fileMapping[folderSlug][fileSlug]) {
+        const fileName = fileMapping[folderSlug][fileSlug];
+        console.log(`[DEBUG] Trying to load file: ${fileName} from folder: ${folderName}`);
+        markdownContent = getMarkdownBySlug('a2niveau', `vokabular/${folderName}`, fileName);
+      } else {
+        // Try direct file mapping
+        console.log(`[DEBUG] Trying direct file mapping: ${fileSlug}`);
+        markdownContent = getMarkdownBySlug('a2niveau', `vokabular/${folderName}`, fileSlug);
+      }
+    }
+  }
+  
+  // Only try other options if we haven't found content yet
+  if (!markdownContent) {
+    // Try direct file first
+    markdownContent = getMarkdownBySlug('a2niveau', section, articleSlug);
+    
+    // If not found, try with folder mapping for Vokabular section
+    if (!markdownContent && section === 'vokabular') {
+      // Map URL slug to actual folder name
+      const folderMapping: { [key: string]: string } = {
+        '1-willkommen-a2': '1. Willkommen A2',
+        '2-leben-und-lernen': '2. Leben und Lernen', 
+        '3-familiengeschichten': '3. Familiengeschichten',
+        '4-unterwegs': '4. Unterwegs',
+        '5-station-1-a2': '5. Station 1-A2',
+        '6-freizeit-und-hobby': '6. Freizeit und Hobby',
+        '7-medien-im-alltag': '7. Medien im Alltag',
+        '8-ausgehen-leute-treffen': '8. Ausgehen Leute treffen',
+        '9-station-2-a2': '9. Station 2-A2',
+        '10-vom-land-in-die-stadt': '10. Vom Land in die Stadt',
+        '11-kultur-erleben': '11. Kultur erleben',
+      };
+      
+      const folderName = folderMapping[articleSlug];
+      if (folderName) {
+        markdownContent = getMarkdownBySlug('a2niveau', `vokabular/${folderName}`, 'index');
+      }
+    }
+    
+    // If still not found, try with folder mapping for Vokabular Thema section  
+    if (!markdownContent && section === 'vokabular-thema') {
+      const folderMapping: { [key: string]: string } = {
+        '100-adj-pho-bien-a2': '100 adj pho bien A2',
+        '100-adv-pho-bien-a2': '100 adv pho bien A2',
+        '100-verb-pho-bien-a2': '100 verb pho bien A2',
+        '1-monaten': '1. Monaten',
+      };
+      
+      const folderName = folderMapping[articleSlug];
+      if (folderName) {
+        // Try to get index.md from the folder
+        markdownContent = getMarkdownBySlug('a2niveau', `Vokabular Thema/${folderName}`, 'index');
+        
+        // If index.md doesn't exist, try the .md file directly
+        if (!markdownContent && articleSlug === '1-monaten') {
+          markdownContent = getMarkdownBySlug('a2niveau', 'Vokabular Thema', '1. Monaten');
+        }
+      }
+    }
+  }
   
   if (!markdownContent) {
     notFound();
@@ -137,26 +268,42 @@ export default async function DocPage({ params }: DocPageProps) {
   const htmlContent = await markdownToHtml(markdownContent.content);
   const toc = extractTableOfContents(markdownContent.content);
 
+  // Create breadcrumb items dynamically
+  const breadcrumbItems = [section];
+  if (rest.length > 0) {
+    breadcrumbItems.push(...rest);
+  }
+
   return (
     <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
           <Link href="/a2niveau" className="hover:text-foreground">A2 Niveau</Link>
+          {breadcrumbItems.map((item: any, index: number) => (
+            <React.Fragment key={item}>
+              <span className="font-medium text-foreground">/</span>
+              {index === breadcrumbItems.length - 1 ? (
+                <div className="font-medium text-foreground capitalize">{item}</div>
+              ) : (
+                <Link href={`/a2niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                  {item}
+                </Link>
+              )}
+            </React.Fragment>
+          ))}
           <span className="font-medium text-foreground">/</span>
-          <Link href={`/a2niveau/${section}`} className="hover:text-foreground capitalize">{section}</Link>
-          <span className="font-medium text-foreground">/</span>
-          <div className="font-medium text-foreground">{markdownContent.meta.title}</div>
+          <div className="font-medium text-foreground">{markdownContent.meta?.title || 'Untitled'}</div>
         </div>
         <div className="space-y-2">
           <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
-            {markdownContent.meta.title}
+            {markdownContent.meta?.title || 'Untitled'}
           </h1>
-          {markdownContent.meta.description && (
+          {markdownContent.meta?.description && (
             <p className="text-lg text-muted-foreground">{markdownContent.meta.description}</p>
           )}
-          {markdownContent.meta.tags && markdownContent.meta.tags.length > 0 && (
+          {markdownContent.meta?.tags && markdownContent.meta.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
-              {markdownContent.meta.tags.map((tag) => (
+              {markdownContent.meta.tags.map((tag: any) => (
                 <Badge key={tag} variant="outline">
                   {tag}
                 </Badge>

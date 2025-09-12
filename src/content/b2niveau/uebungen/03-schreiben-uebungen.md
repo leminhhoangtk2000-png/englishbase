@@ -15,6 +15,7 @@ Kỹ năng viết ở cấp độ B2 đòi hỏi khả năng diễn đạt ý ki
 ### 1. Thư chính thức (Formeller Brief)
 
 #### Cấu trúc thư chính thức:
+
 - **Địa chỉ người gửi** (trên cùng bên phải)
 - **Địa chỉ người nhận** (bên trái)
 - **Ngày tháng** (bên phải)
@@ -42,7 +43,7 @@ Betreff: Bewerbung um die Stelle als Marketing-Manager
 
 Sehr geehrte Damen und Herren,
 
-hiermit bewerbe ich mich um die in Ihrer Anzeige ausgeschriebene Stelle als Marketing-Manager. 
+hiermit bewerbe ich mich um die in Ihrer Anzeige ausgeschriebene Stelle als Marketing-Manager.
 
 Nach meinem Studium der Betriebswirtschaftslehre konnte ich bereits drei Jahre Berufserfahrung im Marketing sammeln. Dabei habe ich erfolgreich mehrere Kampagnen geleitet und den Umsatz um 20% gesteigert.
 
@@ -57,12 +58,14 @@ Max Mustermann
 #### Nützliche Wendungen für thư chính thức:
 
 **Mở đầu:**
+
 - hiermit bewerbe ich mich...
 - ich schreibe Ihnen, weil...
 - bezugnehmend auf Ihre Anzeige...
 - ich möchte mich über... informieren
 
 **Kết thúc:**
+
 - ich würde mich über eine Antwort freuen
 - vielen Dank für Ihre Aufmerksamkeit
 - für weitere Fragen stehe ich gerne zur Verfügung
@@ -70,6 +73,7 @@ Max Mustermann
 ### 2. Bài luận (Erörterung)
 
 #### Cấu trúc bài luận:
+
 1. **Einleitung** (Giới thiệu)
 2. **Hauptteil** (Nội dung chính)
 3. **Schluss** (Kết luận)
@@ -77,11 +81,13 @@ Max Mustermann
 #### Ví dụ về chủ đề: "Sollten Handys in der Schule verboten werden?"
 
 **Einleitung:**
+
 ```
 In der heutigen Zeit sind Handys aus unserem Leben nicht mehr wegzudenken. Auch in Schulen sieht man immer mehr Schüler mit Smartphones. Dies führt zu der Frage, ob Handys in der Schule verboten werden sollten. Im Folgenden möchte ich die Vor- und Nachteile eines solchen Verbots erörtern.
 ```
 
 **Hauptteil:**
+
 ```
 Einerseits sprechen mehrere Argumente für ein Handyverbot in Schulen. Zunächst einmal können Handys den Unterricht stören. Wenn Schüler ständig auf ihre Geräte schauen, können sie sich nicht auf den Lernstoff konzentrieren. Außerdem entstehen durch teure Smartphones oft soziale Unterschiede zwischen den Schülern.
 
@@ -89,6 +95,7 @@ Andererseits gibt es auch gewichtige Argumente gegen ein Verbot. Handys können 
 ```
 
 **Schluss:**
+
 ```
 Meiner Meinung nach sollte ein komplettes Handyverbot vermieden werden. Stattdessen sollten klare Regeln aufgestellt werden, wann und wie Handys in der Schule benutzt werden dürfen. So können die Vorteile genutzt und die Nachteile minimiert werden.
 ```
@@ -96,18 +103,21 @@ Meiner Meinung nach sollte ein komplettes Handyverbot vermieden werden. Stattdes
 #### Redemittel für Erörterungen:
 
 **Pro-Argumente:**
+
 - Ein Argument dafür ist...
 - Dafür spricht auch...
 - Außerdem ist zu bedenken...
 - Ein weiterer Vorteil ist...
 
 **Contra-Argumente:**
+
 - Dagegen spricht...
 - Ein Nachteil ist...
 - Kritisch zu sehen ist...
 - Problematisch ist...
 
 **Eigene Meinung:**
+
 - Meiner Ansicht nach...
 - Ich bin der Meinung, dass...
 - Meines Erachtens...
@@ -116,6 +126,7 @@ Meiner Meinung nach sollte ein komplettes Handyverbot vermieden werden. Stattdes
 ### 3. Bericht (Bericht)
 
 #### Merkmale eines Berichts:
+
 - Sachlich und objektiv
 - Verwendung von Präteritum
 - W-Fragen beantworten (Wer? Was? Wann? Wo? Wie? Warum?)
@@ -135,6 +146,7 @@ Die Polizei sperrte die Straße für zwei Stunden. Der Sachschaden beläuft sich
 ### 4. Kommentar
 
 #### Merkmale:
+
 - Subjektive Meinungsäußerung
 - Verwendung von Präsens
 - Persönliche Stellungnahme
@@ -154,24 +166,28 @@ Die Politik allein kann das Problem nicht lösen. Wir alle müssen handeln – u
 ## Wichtige Konnektoren für B2-Texte
 
 ### Temporale Konnektoren:
+
 - **zunächst** (trước tiên)
 - **anschließend** (sau đó)
 - **währenddessen** (trong khi đó)
 - **schließlich** (cuối cùng)
 
 ### Kausale Konnektoren:
+
 - **daher** (do đó)
 - **deshalb** (vì vậy)
 - **folglich** (do đó)
 - **aufgrund** (+ Gen.) (do)
 
 ### Konzessive Konnektoren:
+
 - **trotzdem** (mặc dù vậy)
 - **dennoch** (tuy nhiên)
 - **allerdings** (tuy nhiên)
 - **gleichwohl** (tuy vậy)
 
 ### Adversative Konnektoren:
+
 - **hingegen** (ngược lại)
 - **dagegen** (ngược lại)
 - **im Gegensatz zu** (trái ngược với)
@@ -180,34 +196,42 @@ Die Politik allein kann das Problem nicht lösen. Wir alle müssen handeln – u
 ## Bài tập thực hành
 
 ### Übung 1: Formeller Brief
+
 Schreiben Sie einen formellen Brief an Ihre Stadtverwaltung. Sie beschweren sich über den Lärm einer Baustelle vor Ihrem Haus.
 
 **Leitpunkte:**
+
 - Beschreiben Sie das Problem
 - Erklären Sie, wie Sie sich fühlen
 - Schlagen Sie eine Lösung vor
 
 ### Übung 2: Erörterung
+
 Erörtern Sie das Thema: "Sollen Studiengebühren an deutschen Universitäten eingeführt werden?"
 
 **Struktur:**
+
 - Einleitung mit Problemstellung
 - Pro- und Contra-Argumente
 - Eigene Meinung mit Begründung
 
 ### Übung 3: Bericht
+
 Schreiben Sie einen Bericht über eine Veranstaltung in Ihrer Stadt (z.B. Stadtfest, Konzert, Ausstellung).
 
 **W-Fragen beachten:**
+
 - Wer hat teilgenommen?
 - Was ist passiert?
 - Wann und wo fand es statt?
 - Wie war die Atmosphäre?
 
 ### Übung 4: Kommentar
+
 Schreiben Sie einen Kommentar zum Thema: "Digitalisierung in der Bildung - Chance oder Risiko?"
 
 **Struktur:**
+
 - Einleitender Gedanke
 - Ihre Meinung mit Argumenten
 - Abschließende Bewertung
@@ -215,21 +239,25 @@ Schreiben Sie einen Kommentar zum Thema: "Digitalisierung in der Bildung - Chanc
 ## Bewertungskriterien für B2-Texte
 
 ### Inhalt (25%)
+
 - Aufgabe vollständig bearbeitet
 - Angemessene Länge (150-200 Wörter)
 - Relevante Punkte behandelt
 
 ### Textaufbau (25%)
+
 - Klare Struktur
 - Logische Verbindungen
 - Passende Einleitung und Schluss
 
 ### Ausdruck (25%)
+
 - Angemessener Wortschatz
 - Variierte Satzstrukturen
 - Stilistische Sicherheit
 
 ### Sprache (25%)
+
 - Grammatische Korrektheit
 - Rechtschreibung und Zeichensetzung
 - Angemessenes Sprachniveau

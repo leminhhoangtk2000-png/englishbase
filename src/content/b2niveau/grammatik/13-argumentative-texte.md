@@ -17,6 +17,7 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 **Mục đích:** Trình bày quan điểm cá nhân về một vấn đề
 
 **Cấu trúc:**
+
 1. Einleitung: Giới thiệu chủ đề
 2. Hauptteil: Lập luận chính
 3. Schluss: Kết luận và quan điểm
@@ -26,6 +27,7 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 **Mục đích:** Cân nhắc các mặt khác nhau của vấn đề
 
 **Cấu trúc:**
+
 1. Einleitung: Problemstellung
 2. Hauptteil: Pro- und Contra-Argumente
 3. Schluss: Eigene Meinung
@@ -35,6 +37,7 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 **Mục đích:** Phân tích và đánh giá một tình huống
 
 **Cấu trúc:**
+
 1. Einleitung: Bezug auf Anlass
 2. Hauptteil: Analyse und Bewertung
 3. Schluss: Ausblick oder Fazit
@@ -44,15 +47,19 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Aufbau eines Arguments:
 
 **1. These** (Luận đề)
+
 - Ihre Hauptbehauptung
 
 **2. Argument** (Lập luận)
+
 - Begründung für die These
 
 **3. Beispiel/Beleg** (Ví dụ/Bằng chứng)
+
 - Konkrete Beispiele oder Belege
 
 **4. Schlussfolgerung** (Kết luận)
+
 - Zusammenfassung der Argumentation
 
 ### Beispiel:
@@ -70,12 +77,14 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Einleitung
 
 **Themenbezug herstellen:**
+
 - In der heutigen Zeit ist... ein aktuelles Thema
 - Immer häufiger wird diskutiert, ob...
 - Die Frage, ob... beschäftigt viele Menschen
 - Angesichts der aktuellen Entwicklung...
 
 **Problemstellung:**
+
 - Dabei stellt sich die Frage...
 - Es ist umstritten, ob...
 - Kontrovers diskutiert wird...
@@ -84,6 +93,7 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Argumente einführen
 
 **Pro-Argumente:**
+
 - Ein wichtiger Punkt ist...
 - Dafür spricht...
 - Ein weiterer Vorteil ist...
@@ -91,6 +101,7 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 - Hinzu kommt, dass...
 
 **Contra-Argumente:**
+
 - Dagegen spricht...
 - Ein Nachteil ist...
 - Problematisch ist jedoch...
@@ -100,12 +111,14 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Beispiele und Belege
 
 **Beispiele anführen:**
+
 - Ein Beispiel dafür ist...
 - So zeigt sich zum Beispiel...
 - Dies wird deutlich, wenn man... betrachtet
 - Konkret bedeutet das...
 
 **Statistiken/Studien:**
+
 - Studien belegen, dass...
 - Statistiken zeigen...
 - Untersuchungen haben ergeben...
@@ -114,16 +127,19 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Verknüpfungen
 
 **Verstärkung:**
+
 - außerdem, darüber hinaus, zudem
 - nicht nur... sondern auch
 - vor allem, insbesondere
 
 **Kontrast:**
+
 - jedoch, allerdings, dennoch
 - im Gegensatz zu, während
 - einerseits... andererseits
 
 **Folge:**
+
 - daher, deshalb, folglich
 - infolgedessen, somit
 - das führt dazu, dass...
@@ -131,12 +147,14 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Meinung äußern
 
 **Persönliche Meinung:**
+
 - Meiner Meinung nach...
 - Ich bin der Ansicht, dass...
 - Meines Erachtens...
 - Ich halte es für wichtig/richtig/problematisch...
 
 **Bewertung:**
+
 - Es ist bedenklich/erfreulich/verständlich...
 - Besonders positiv/negativ ist...
 - Hervorzuheben ist...
@@ -145,16 +163,19 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 ### Schluss
 
 **Zusammenfassung:**
+
 - Zusammenfassend lässt sich sagen...
 - Alles in allem...
 - Unter Berücksichtigung aller Aspekte...
 
 **Fazit:**
+
 - Daher komme ich zu dem Schluss...
 - Mein Fazit ist...
 - Letztendlich überwiegen die Vorteile/Nachteile...
 
 **Ausblick:**
+
 - Es bleibt zu hoffen, dass...
 - In Zukunft sollte...
 - Es wäre wünschenswert, wenn...
@@ -164,11 +185,13 @@ Văn bản lập luận (argumentative Texte) là một dạng viết quan trọ
 **Thema:** "Sollten soziale Medien für Jugendliche unter 16 Jahren verboten werden?"
 
 ### Einleitung:
+
 ```
 Soziale Medien sind aus dem Leben vieler Jugendlicher nicht mehr wegzudenken. Täglich verbringen sie stundenlang auf Plattformen wie Instagram, TikTok oder Snapchat. Diese Entwicklung führt zu einer kontroversen Diskussion: Sollten soziale Medien für Jugendliche unter 16 Jahren verboten werden? Im Folgenden möchte ich die wichtigsten Argumente für und gegen ein solches Verbot erörtern.
 ```
 
 ### Hauptteil - Pro-Argumente:
+
 ```
 Für ein Verbot sprechen mehrere gewichtige Argumente. Zunächst einmal ist der Schutz der psychischen Gesundheit zu nennen. Studien belegen, dass exzessive Nutzung sozialer Medien zu Depressionen und Angststörungen führen kann. Besonders problematisch sind unrealistische Schönheitsideale und der ständige Vergleich mit anderen.
 
@@ -178,6 +201,7 @@ Darüber hinaus leiden oft die schulischen Leistungen unter der intensiven Medie
 ```
 
 ### Hauptteil - Contra-Argumente:
+
 ```
 Andererseits gibt es auch wichtige Argumente gegen ein Verbot. Soziale Medien ermöglichen es Jugendlichen, Kontakte zu knüpfen und zu pflegen. Gerade für schüchterne Teenager kann dies eine wichtige Möglichkeit sein, soziale Verbindungen aufzubauen.
 
@@ -187,6 +211,7 @@ Nicht zu vergessen ist auch die Meinungsfreiheit. Ein pauschales Verbot würde e
 ```
 
 ### Schluss:
+
 ```
 Unter Berücksichtigung aller Aspekte bin ich der Meinung, dass ein komplettes Verbot nicht der richtige Weg ist. Stattdessen sollten bessere Aufklärungs- und Bildungsprogramme entwickelt werden, die Jugendlichen einen verantwortungsvollen Umgang mit sozialen Medien vermitteln. Außerdem könnten strengere Altersbeschränkungen und bessere Schutzmaßnahmen der Plattformen selbst zum Schutz minderjähriger Nutzer beitragen.
 ```
@@ -216,6 +241,7 @@ Alles in allem überwiegen jedoch die Vorteile deutlich. Flexible Arbeitszeiten 
 Ordnen Sie die folgenden Elemente zu einem Argument:
 
 **Elemente:**
+
 - Beispiel: In Skandinavien funktioniert das 4-Tage-Modell bereits erfolgreich
 - These: Die 4-Tage-Woche sollte eingeführt werden
 - Argument: Weil sie die Produktivität steigert
@@ -227,12 +253,13 @@ Ordnen Sie die folgenden Elemente zu einem Argument:
 
 Verbinden Sie die Sätze mit passenden Redemitteln:
 
-1. Homeoffice hat Vorteile. _____ können Probleme entstehen.
-2. _____ spricht, dass man flexibler arbeiten kann.
-3. _____ zeigt sich bei der Kinderbetreuung.
-4. _____ bin ich für mehr Homeoffice-Möglichkeiten.
+1. Homeoffice hat Vorteile. **\_** können Probleme entstehen.
+2. **\_** spricht, dass man flexibler arbeiten kann.
+3. **\_** zeigt sich bei der Kinderbetreuung.
+4. **\_** bin ich für mehr Homeoffice-Möglichkeiten.
 
 **Lösungen:**
+
 1. Allerdings/Jedoch
 2. Dafür
 3. Dies/Das
@@ -247,6 +274,7 @@ Schreiben Sie eine kurze Stellungnahme (150 Wörter) zu einem der folgenden Them
 - Sollten alle Innenstädte autofrei werden?
 
 **Struktur beachten:**
+
 - Einleitung mit Themenbezug
 - 2-3 Hauptargumente
 - Schluss mit eigener Meinung
@@ -254,21 +282,25 @@ Schreiben Sie eine kurze Stellungnahme (150 Wörter) zu einem der folgenden Them
 ## Bewertungskriterien
 
 ### Inhaltliche Angemessenheit (25%)
+
 - Thema vollständig behandelt
 - Argumente relevant und überzeugend
 - Beispiele passend gewählt
 
 ### Textaufbau (25%)
+
 - Klare Struktur erkennbar
 - Logische Gedankenführung
 - Angemessene Länge
 
 ### Ausdruck (25%)
+
 - Angemessene Redemittel
 - Abwechslungsreiche Formulierungen
 - Stilistische Sicherheit
 
 ### Sprache (25%)
+
 - Grammatische Korrektheit
 - Reichhaltiger Wortschatz
 - Angemessenes Sprachniveau
@@ -276,16 +308,19 @@ Schreiben Sie eine kurze Stellungnahme (150 Wörter) zu einem der folgenden Them
 ## Tipps für bessere Argumentationen
 
 ### Vor dem Schreiben:
+
 1. **Brainstorming:** Sammeln Sie Pro- und Contra-Argumente
 2. **Gewichtung:** Entscheiden Sie, welche Argumente am stärksten sind
 3. **Gliederung:** Erstellen Sie eine logische Reihenfolge
 
 ### Beim Schreiben:
+
 1. **Klarheit:** Formulieren Sie Ihre Thesen präzise
 2. **Belege:** Untermauern Sie Argumente mit Beispielen
 3. **Verknüpfung:** Verwenden Sie angemessene Konnektoren
 
 ### Nach dem Schreiben:
+
 1. **Überprüfung:** Ist die Argumentation logisch?
 2. **Korrektur:** Grammatik und Rechtschreibung prüfen
 3. **Optimierung:** Formulierungen verbessern
