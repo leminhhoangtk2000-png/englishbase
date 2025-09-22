@@ -13,13 +13,14 @@ order: 7
 
 ## **1. Tổng quan về 4 quy tắc chính**
 
-> 💡 ****Có 4 quy tắc quan trọng cần nhớ khi sắp xếp câu trong tiếng Đức:****
->
-> **Quy tắc 1:** Tân ngữ gián tiếp (Dativ) đứng trước tân ngữ trực tiếp (Akkusativ).
-> **Quy tắc 2:** Nếu tân ngữ trực tiếp là đại từ nhân xưng, nó sẽ đứng trước tân ngữ gián tiếp.
-> **Quy tắc 3:** Cụm trạng từ tuân theo quy tắc **TeKaMoLo** (Temporal – Kausal – Modal – Lokal).
-> **Quy tắc 4:** Bộ phận quan trọng nhất thường xuất hiện ở đầu hoặc cuối câu.
+:::note[**Có 4 quy tắc quan trọng cần nhớ khi sắp xếp câu ]
+💡 ****Có 4 quy tắc quan trọng cần nhớ khi sắp xếp câu trong tiếng Đức:****
 
+**Quy tắc 1:** Tân ngữ gián tiếp (Dativ) đứng trước tân ngữ trực tiếp (Akkusativ).
+**Quy tắc 2:** Nếu tân ngữ trực tiếp là đại từ nhân xưng, nó sẽ đứng trước tân ngữ gián tiếp.
+**Quy tắc 3:** Cụm trạng từ tuân theo quy tắc **TeKaMoLo** (Temporal – Kausal – Modal – Lokal).
+**Quy tắc 4:** Bộ phận quan trọng nhất thường xuất hiện ở đầu hoặc cuối câu.
+:::
 
 ---
 
@@ -28,10 +29,11 @@ order: 7
 
 **Khi câu có cả tân ngữ Dativ (gián tiếp) và Akkusativ (trực tiếp), tân ngữ Dativ sẽ đứng trước.**
 
-> 💡 ****Công thức:****
->
-> **Chủ ngữ + Động từ + Tân ngữ Dativ + Tân ngữ Akkusativ**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Chủ ngữ + Động từ + Tân ngữ Dativ + Tân ngữ Akkusativ**
+:::
 **Ví dụ:**
 
 - **Ich gebe dem Kind ein Buch.** _(Tôi đưa đứa trẻ một cuốn sách.)_
@@ -46,10 +48,11 @@ order: 7
 
 **Nếu tân ngữ Akkusativ là đại từ nhân xưng (mich, dich, ihn, sie, es, uns, euch, sie/Sie), nó sẽ đứng trước tân ngữ Dativ.**
 
-> 💡 ****Công thức:****
->
-> **Chủ ngữ + Động từ + Tân ngữ Akkusativ (đại từ) + Tân ngữ Dativ**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Chủ ngữ + Động từ + Tân ngữ Akkusativ (đại từ) + Tân ngữ Dativ**
+:::
 Ví dụ:
 
 - Ich gebe es dem Kind. _(Tôi đưa nó cho đứa trẻ.)_
@@ -63,13 +66,14 @@ Lưu ý:
 
 ## **4. Quy tắc 3: Cụm trạng từ tuân theo quy tắc TeKaMoLo**
 
-> 💡 ****Thứ tự của các trạng từ trong câu theo nguyên tắc TeKaMoLo:****
->
-> - **Te** → **Temporal (thời gian)** (khi nào?)
-> - **Ka** → **Kausal (nguyên nhân)** (tại sao?)
-> - **Mo** → **Modal (cách thức)** (như thế nào?)
-> - **Lo** → **Lokal (địa điểm)** (ở đâu?)
+:::note[**Thứ tự của các trạng từ trong câu theo nguyên tắ]
+💡 ****Thứ tự của các trạng từ trong câu theo nguyên tắc TeKaMoLo:****
 
+- **Te** → **Temporal (thời gian)** (khi nào?)
+- **Ka** → **Kausal (nguyên nhân)** (tại sao?)
+- **Mo** → **Modal (cách thức)** (như thế nào?)
+- **Lo** → **Lokal (địa điểm)** (ở đâu?)
+:::
 Ví dụ:
 
 - Ich fahre morgen wegen der Arbeit mit dem Auto nach Berlin.  
@@ -103,9 +107,11 @@ Lưu ý:
 
 ## **📍 6. Tổng kết: Những lưu ý quan trọng**
 
-> 💡
->
-> **Quy tắc 1:** **Tân ngữ Dativ đứng trước tân ngữ Akkusativ**.
-> **Quy tắc 2:** **Nếu tân ngữ Akkusativ là đại từ nhân xưng, nó sẽ đứng trước tân ngữ Dativ**.
-> **Quy tắc 3:** **Cụm trạng từ theo trật tự TeKaMoLo (Thời gian – Nguyên nhân – Cách thức – Địa điểm)**.
-> **Quy tắc 4:** **Bộ phận quan trọng nhất có thể được đặt lên đầu hoặc cuối câu để nhấn mạnh.**
+:::note[Ghi chú]
+💡
+
+**Quy tắc 1:** **Tân ngữ Dativ đứng trước tân ngữ Akkusativ**.
+**Quy tắc 2:** **Nếu tân ngữ Akkusativ là đại từ nhân xưng, nó sẽ đứng trước tân ngữ Dativ**.
+**Quy tắc 3:** **Cụm trạng từ theo trật tự TeKaMoLo (Thời gian – Nguyên nhân – Cách thức – Địa điểm)**.
+**Quy tắc 4:** **Bộ phận quan trọng nhất có thể được đặt lên đầu hoặc cuối câu để nhấn mạnh.**
+:::

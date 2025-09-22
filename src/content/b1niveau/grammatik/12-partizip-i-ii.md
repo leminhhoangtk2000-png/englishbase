@@ -54,10 +54,11 @@ Lưu ý:
 
 ## **🔹 3.1. Cách xây dựng Partizip I**
 
-> 💡 ****Công thức:****
->
-> **Verbstamm + -d**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Verbstamm + -d**
+:::
 **Ví dụ:**
 
 |**Nguyên thể (Infinitiv)**|**Partizip I**|
@@ -137,10 +138,11 @@ Lưu ý:
 
 ## **🔹 4.1. Cách xây dựng Partizip II**
 
-> 💡 ****Công thức:****
->
-> **ge + Verbstamm + -(e)t/en**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**ge + Verbstamm + -(e)t/en**
+:::
 **Ví dụ:**
 
 |**Nguyên thể (Infinitiv)**|**Partizip II**|
@@ -219,9 +221,11 @@ Lưu ý:
 
 ## **🎯 Tổng kết: Những lưu ý quan trọng**
 
-> 💡
->
-> - **Partizip I diễn tả hành động đang diễn ra.**
-> - **Partizip II diễn tả hành động đã hoàn thành.**
-> - **Cả hai có thể dùng như tính từ, thay thế mệnh đề quan hệ.**
-> - **Partizip II được sử dụng trong thể bị động và thì hoàn thành.**
+:::note[Ghi chú]
+💡
+
+- **Partizip I diễn tả hành động đang diễn ra.**
+- **Partizip II diễn tả hành động đã hoàn thành.**
+- **Cả hai có thể dùng như tính từ, thay thế mệnh đề quan hệ.**
+- **Partizip II được sử dụng trong thể bị động và thì hoàn thành.**
+:::

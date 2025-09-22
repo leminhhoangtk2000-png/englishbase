@@ -17,10 +17,11 @@ Có hai cách để hình thành Konjunktiv II ở thì hiện tại:
 
 ### **🔹 Cách 1: Dùng dạng Konjunktiv II của động từ mạnh (starke Verben)**
 
-> 💡 ****Công thức:****
->
-> **Verbstamm (gốc động từ ở dạng Prateritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Verbstamm (gốc động từ ở dạng Prateritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
+:::
 Ví dụ:
 
 |**Ngôi**|**Sein** (Là)|**Haben** (Có)|**Gehen** (Đi)|**Kommen** (Đến)|
@@ -42,10 +43,11 @@ Lưu ý:
 
 **Đây là cách thường được sử dụng trong văn nói vì dễ dùng hơn.**
 
-> 💡 ****Công thức:****
->
-> **würde + Infinitiv (nguyên mẫu của động từ chính)**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**würde + Infinitiv (nguyên mẫu của động từ chính)**
+:::
 Ví dụ:
 
 - Ich **würde** nach Deutschland **reisen**, wenn ich Geld hätte. 
@@ -140,10 +142,11 @@ Lưu ý:
 
 Được hình thành bằng "hätte" hoặc "wäre" + Partizip II (phân từ II).
 
-> 💡 ****Công thức:****
->
-> **hätte / wäre + Partizip II**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**hätte / wäre + Partizip II**
+:::
 **Ví dụ:**
 
 - Ich **hätte** das Buch gelesen. 
@@ -174,10 +177,11 @@ Lưu ý:
 
 ### **🔹 Cách sử dụng với động từ khiếm khuyết**
 
-> 💡 ****Công thức:****
->
-> **hätte + Modalverb (Infinitiv) + Partizip II**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**hätte + Modalverb (Infinitiv) + Partizip II**
+:::
 **Ví dụ:**
 
 - Ich **hätte** das machen **müssen**. 

@@ -1,0 +1,604 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import admonition styles */
+@import '../styles/admonitions.css';
+
+@layer base {
+  :root,
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  .nude {
+    --background: 34 33% 92%; /* Light beige */
+    --foreground: 34 10% 25%; /* Dark brown */
+    --card: 34 33% 88%; /* Slightly darker beige */
+    --card-foreground: 34 10% 25%;
+    --popover: 34 33% 88%;
+    --popover-foreground: 34 10% 25%;
+    --primary: 15 65% 55%; /* Muted orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 34 33% 82%; /* Light grayish beige */
+    --secondary-foreground: 34 10% 25%;
+    --muted: 34 33% 82%;
+    --muted-foreground: 34 10% 45%;
+    --accent: 34 33% 80%;
+    --accent-foreground: 15 65% 55%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 34 33% 80%;
+    --input: 34 33% 80%;
+    --ring: 15 65% 55%;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.8), 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-gradient-x {
+  animation: gradient-x 8s ease infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .nude ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer utilities {
+  .box-decoration-clone {
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* Custom styles for markdown content */
+@layer components {
+  /* Note boxes styling */
+  .prose blockquote {
+    @apply border-l-4 border-l-primary bg-muted/50 px-4 py-3 my-4 rounded-r-lg;
+  }
+  
+  /* Table styling - Very Basic */
+  .prose table {
+    @apply w-full border-collapse;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .prose th {
+    @apply px-4 py-2 text-left font-semibold;
+    background-color: #DCDCDC !important; /* Gainsboro background */
+    border: 1px solid #e5e7eb;
+    color: #000000 !important; /* Black text */
+  }
+  
+  .prose td {
+    @apply px-4 py-2;
+    border: 1px solid #e5e7eb;
+    color: #374151 !important; /* Medium gray for light theme */
+  }
+  
+  .prose thead {
+    background: none !important;
+    background-color: transparent !important;
+  }
+  
+  .prose thead th {
+    background-color: #DCDCDC !important; /* Gainsboro background */
+    color: #000000 !important; /* Black text */
+  }
+
+  /* Dark theme table colors */
+  .dark .prose th {
+    background-color: #374151 !important; /* Dark gray background */
+    color: #f9fafb !important; /* Light text for dark theme */
+    border-color: #4b5563 !important;
+  }
+  
+  .dark .prose td {
+    color: #e5e7eb !important; /* Light gray for dark theme */
+    border-color: #4b5563 !important;
+  }
+  
+  .dark .prose table {
+    border-color: #4b5563 !important;
+  }
+
+  /* Nude theme table colors */
+  .nude .prose th {
+    background-color: #DCDCDC !important; /* Gainsboro background */
+    color: #000000 !important; /* Black text for nude theme headers */
+    border-color: #d6d3d1 !important;
+  }
+  
+  .nude .prose td {
+    color: #78716c !important; /* Warm gray for nude theme */
+    border-color: #d6d3d1 !important;
+  }
+  
+  .nude .prose table {
+    border-color: #d6d3d1 !important;
+  }
+  
+  /* Code blocks */
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  .prose pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+
+  /* Fix code text color for nude theme */
+  .nude .prose code,
+  .nude .prose pre code {
+    color: hsl(34 10% 15%) !important; /* Dark brown for nude theme */
+  }
+  
+  /* Lists - Basic styling */
+  .prose ul, .prose ol {
+    @apply my-4;
+  }
+
+  .prose ul > li {
+    @apply mb-2;
+  }
+
+  .prose ol > li {
+    @apply mb-2;
+  }
+
+  /* List item content styling */
+  .prose li > p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Strong text in lists */
+  .prose li strong {
+    @apply font-bold;
+  }
+
+  /* Italic text in lists (Vietnamese translations) */
+  .prose li em {
+    @apply italic text-gray-600 dark:text-gray-400 text-sm;
+    display: inline;
+    margin-top: 0.25rem;
+  }
+  
+  /* Typography with Inter font - Clean & Simple */
+  .prose {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px; /* 1rem - Body text */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+  }
+
+  /* Headings */
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: inherit;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .prose h1 {
+    font-size: 40px; /* 2.5rem */
+    font-weight: 700; /* Bold */
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  .prose h2 {
+    font-size: 32px; /* 2rem */
+    font-weight: 600; /* Semibold */
+    margin-bottom: 1.25rem;
+    margin-top: 2rem;
+  }
+  
+  .prose h3 {
+    font-size: 24px; /* 1.5rem */
+    font-weight: 600; /* Semibold */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Body text */
+  .prose p {
+    font-size: 16px; /* 1rem */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .prose h1 {
+      font-size: 32px; /* Mobile H1 */
+    }
+    
+    .prose h2 {
+      font-size: 28px; /* Mobile H2 */
+    }
+    
+    .prose h3 {
+      font-size: 20px; /* Mobile H3 */
+    }
+  }
+  
+  /* Links */
+  .prose a {
+    @apply text-primary hover:underline;
+  }
+  
+  /* Strong text - Basic styling */
+  .prose strong {
+    @apply font-bold;
+    display: inline !important;
+    white-space: normal;
+  }
+
+  /* Strong text in examples */
+  .prose li strong {
+    @apply font-bold;
+    display: inline !important;
+    white-space: normal;
+  }
+  
+  /* Emphasis - Force inline display for italic text */
+  .prose em,
+  .prose i {
+    font-style: italic !important;
+    display: inline !important;
+    white-space: normal !important;
+    line-height: inherit !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    float: none !important;
+  }
+
+  /* German-Vietnamese Examples Styling */
+  .prose li em,
+  .prose li i,
+  .prose p em,
+  .prose p i,
+  .prose td em,
+  .prose td i {
+    font-style: italic !important;
+    color: rgb(75 85 99) !important;
+    display: inline !important;
+    white-space: normal !important;
+    line-height: inherit !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    float: none !important;
+  }
+
+  /* Dark mode for italic text */
+  .dark .prose li em,
+  .dark .prose li i,
+  .dark .prose p em,
+  .dark .prose p i,
+  .dark .prose td em,
+  .dark .prose td i {
+    color: rgb(156 163 175) !important;
+  }
+
+  /* Force inline for all italic text in admonitions */
+  .prose .admonition em,
+  .prose .admonition i {
+    display: inline !important;
+    white-space: normal !important;
+    line-height: inherit !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    float: none !important;
+  }
+
+  .dark .prose li em {
+    border-left-color: #374151;
+  }
+
+  /* Example sentences styling */
+  .prose li {
+    margin-bottom: 1rem;
+  }
+
+  .prose li > em {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced Typography for German Learning Content */
+.prose {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* Better spacing for German examples */
+.prose li {
+  margin-bottom: 1.25rem;
+  padding-top: 0.25rem;
+}
+
+/* Docusaurus-style paragraph spacing */
+.prose > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Table styling improvements */
+.prose table {
+  border-collapse: collapse;
+  margin: 2rem 0;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.prose th {
+  background-color: #DCDCDC !important; /* Gainsboro background */
+  color: #000000 !important; /* Black text */
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Dark theme override */
+.dark .prose th {
+  background-color: #374151 !important; /* Dark gray for dark theme */
+  color: #f9fafb !important; /* Light text */
+}
+
+/* Nude theme same as light */
+.nude .prose th {
+  background-color: #DCDCDC !important; /* Gainsboro background */
+  color: #000000 !important; /* Black text */
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.prose tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.dark .prose tbody tr:nth-child(even) {
+  background-color: #1f2937;
+}
+
+.dark .prose td {
+  border-bottom-color: #374151;
+}
+
+/* Anchor links for headings */
+.prose .anchor {
+  float: left;
+  padding-right: 0.25rem;
+  margin-left: -1.25rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.prose h1:hover .anchor,
+.prose h2:hover .anchor,
+.prose h3:hover .anchor,
+.prose h4:hover .anchor,
+.prose h5:hover .anchor,
+.prose h6:hover .anchor {
+  opacity: 0.6;
+}
+
+.prose .anchor:hover {
+  opacity: 1 !important;
+}
+
+.prose .anchor::before {
+  content: "#";
+  color: #6b7280;
+  font-weight: normal;
+}
+
+.dark .prose .anchor::before {
+  color: #9ca3af;
+}
+
+/* 3D flip animation for vocabulary cards */
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Hide metadata text in exercise pages - more aggressive targeting */
+.exercise-content .prose p:first-child,
+.exercise-content .prose > p:first-of-type,
+.exercise-content article > p:first-child,
+.prose p:first-child,
+article p:first-child {
+  display: none !important;
+}
+
+/* Hide any paragraph containing metadata keywords */
+p:has-text("title:"),
+p:has-text("level:"),
+p:has-text("skill:") {
+  display: none !important;
+}
+
+/* CSS-based hiding for common metadata patterns */
+.prose p[data-metadata],
+.exercise-content p[data-metadata] {
+  display: none !important;
+}
+
+/* Global metadata hiding for all MDX content */
+[data-mdx-content] p:first-child {
+  display: none !important;
+}
+
+/* Hide scrollbars globally */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Hide scrollbars for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

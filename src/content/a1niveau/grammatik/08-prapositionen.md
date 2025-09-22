@@ -98,17 +98,19 @@ order: 8
 
 ## **🎯 5. Tổng Kết**
 
-> **Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai (Wechselpräpositionen).**
->
-> **Những giới từ quan trọng:**
->
-> - **Akkusativ:** durch, für, gegen, ohne, um.
-> - **Dativ:** aus, bei, mit, nach, von, zu.
-> - **Wechselpräpositionen:** an, in, auf, über.
-> - **Temporale Präpositionen:** am, im, um, von...bis.
->
-> 📌 **Mẹo nhớ nhanh:**
->
-> - **Akkusativ** → chuyển động, có hành động hướng đến nơi nào đó.
-> - **Dativ** → vị trí cố định, diễn tả nơi chốn.
-> - **Wechselpräpositionen** → chuyển động = Akkusativ, vị trí = Dativ.
+:::note[Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai]
+**Giới từ có thể đi với Akkusativ, Dativ hoặc cả hai (Wechselpräpositionen).**
+
+**Những giới từ quan trọng:**
+
+- **Akkusativ:** durch, für, gegen, ohne, um.
+- **Dativ:** aus, bei, mit, nach, von, zu.
+- **Wechselpräpositionen:** an, in, auf, über.
+- **Temporale Präpositionen:** am, im, um, von...bis.
+
+📌 **Mẹo nhớ nhanh:**
+
+- **Akkusativ** → chuyển động, có hành động hướng đến nơi nào đó.
+- **Dativ** → vị trí cố định, diễn tả nơi chốn.
+- **Wechselpräpositionen** → chuyển động = Akkusativ, vị trí = Dativ.
+:::

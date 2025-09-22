@@ -134,15 +134,17 @@ Nhận xét:
 
 ## **🎯 5. Tổng Kết**
 
-> 💡
->
-> - **Tính từ luôn thay đổi đuôi khi đứng trước danh từ.**
-> - **Có 3 cách chia đuôi tính từ:**
-> - Với **quán từ xác định (der, die, das)** → _"der nette Mann."_
-> - Với **quán từ không xác định (ein, eine)** → _"ein netter Mann."_
-> - Khi **không có quán từ** → _"netter Mann."_
->
-> 📌 **Mẹo học nhanh:**
-> - **-e** ở Nominativ số ít (trừ giống đực Akkusativ).
-> - **-en** luôn có trong **Dativ & số nhiều**.
-> - **Không có quán từ → đuôi tính từ mang nhiều thông tin về giống & cách.**
+:::note[Ghi chú]
+💡
+
+- **Tính từ luôn thay đổi đuôi khi đứng trước danh từ.**
+- **Có 3 cách chia đuôi tính từ:**
+- Với **quán từ xác định (der, die, das)** → _"der nette Mann."_
+- Với **quán từ không xác định (ein, eine)** → _"ein netter Mann."_
+- Khi **không có quán từ** → _"netter Mann."_
+
+📌 **Mẹo học nhanh:**
+- **-e** ở Nominativ số ít (trừ giống đực Akkusativ).
+- **-en** luôn có trong **Dativ & số nhiều**.
+- **Không có quán từ → đuôi tính từ mang nhiều thông tin về giống & cách.**
+:::

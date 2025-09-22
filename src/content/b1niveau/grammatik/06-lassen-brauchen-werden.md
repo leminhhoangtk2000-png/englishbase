@@ -17,10 +17,11 @@ order: 6
 
 **"Lassen" có nghĩa là "để lại", "cho phép" hoặc "bỏ lại".**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + lassen (chia) + Akkusativ + (Ort/Ergänzung)**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + lassen (chia) + Akkusativ + (Ort/Ergänzung)**
+:::
 Ví dụ:
 
 - Ich **lasse** mein Handy zu Hause. _(Tôi để điện thoại ở nhà.)_
@@ -35,10 +36,11 @@ Lưu ý:
 
 **"Lassen" có thể kết hợp với một động từ nguyên mẫu để thể hiện hành động được yêu cầu, cho phép hoặc nhờ vả.**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + lassen (chia) + Objekt (Akkusativ) + Infinitiv**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + lassen (chia) + Objekt (Akkusativ) + Infinitiv**
+:::
 Ví dụ:
 
 - Ich **lasse** mein Auto reparieren. _(Tôi để xe của tôi được sửa chữa.)_
@@ -60,10 +62,11 @@ Ví dụ (nhấn mạnh sự cho phép):
 
 **"Brauchen" có nghĩa là "cần" và đi với Akkusativ.**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + brauchen (chia) + Akkusativ**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + brauchen (chia) + Akkusativ**
+:::
 Ví dụ:
 
 - Ich **brauche** einen neuen Laptop. _(Tôi cần một chiếc laptop mới.)_
@@ -78,10 +81,11 @@ Lưu ý:
 
 **"Brauchen" có thể kết hợp với "zu + Infinitiv" để chỉ sự không cần thiết.**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + brauchen (chia) + nicht/kein + zu + Infinitiv**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + brauchen (chia) + nicht/kein + zu + Infinitiv**
+:::
 Ví dụ:
 
 - Du **brauchst** nicht zu kommen. _(Bạn không cần phải đến.)_
@@ -99,10 +103,11 @@ Lưu ý:
 
 **"Werden" có nghĩa là "trở thành" hoặc "biến đổi thành".**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + werden (chia) + Nominativ**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + werden (chia) + Nominativ**
+:::
 Ví dụ:
 
 - Er **wird** Arzt. _(Anh ấy trở thành bác sĩ.)_
@@ -119,10 +124,11 @@ Lưu ý:
 
 ### **3.2.1. "Werden" trong thì tương lai (Futur I)**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + werden (chia) + Infinitiv**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + werden (chia) + Infinitiv**
+:::
 Ví dụ:
 
 - Ich **werde** morgen nach Berlin fahren. _(Tôi sẽ đi Berlin vào ngày mai.)_
@@ -135,10 +141,11 @@ Lưu ý:
 
 ### **3.2.2. "Werden" trong thể bị động (Passiv)**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + werden (chia) + Partizip II**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + werden (chia) + Partizip II**
+:::
 Ví dụ:
 
 - Das Haus **wird** gebaut. _(Ngôi nhà đang được xây.)_

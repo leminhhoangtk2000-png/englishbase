@@ -23,11 +23,12 @@ order: 7
 |---|---|
 |**Ich nehme einen Regenschirm, wenn es regnet.** _(Tôi mang ô nếu trời mưa.)_|**Wenn es regnet, nehme ich einen Regenschirm.** _(Nếu trời mưa, tôi mang ô.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + wenn + S + O + V**
-> **Wenn + S + O + V, V + S + O**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + wenn + S + O + V**
+**Wenn + S + O + V, V + S + O**
+:::
 **Giải thích chi tiết:**  
   **"Wenn" dùng khi một điều kiện có thể xảy ra.**  
   Nếu câu phụ đứng trước, động từ của câu chính **đảo lên vị trí số 1**.
@@ -40,11 +41,12 @@ order: 7
 |---|---|
 |**Ich rufe dich an, falls ich Hilfe brauche.** _(Tôi sẽ gọi bạn nếu tôi cần giúp đỡ.)_|**Falls ich Hilfe brauche, rufe ich dich an.** _(Nếu tôi cần giúp đỡ, tôi sẽ gọi bạn.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + falls + S + O + V**
-> **Falls + S + O + V, V + S + O**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + falls + S + O + V**
+**Falls + S + O + V, V + S + O**
+:::
 **Giải thích chi tiết:**  
   **"Falls" nhấn mạnh khả năng thấp hơn "wenn"**, dùng trong những tình huống **không chắc chắn**.  
   **Câu phụ đứng trước thì động từ của câu chính đảo lên đầu.**
@@ -59,11 +61,12 @@ order: 7
 |---|---|
 |**Ich bleibe zu Hause, weil ich krank bin.** _(Tôi ở nhà vì tôi bị ốm.)_|**Weil ich krank bin, bleibe ich zu Hause.** _(Vì tôi bị ốm, tôi ở nhà.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + weil + S + O + V**
-> **Weil + S + O + V, V + S + O**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + weil + S + O + V**
+**Weil + S + O + V, V + S + O**
+:::
 **Giải thích chi tiết:**  
   **"Weil" nhấn mạnh lý do của hành động**, thường dùng trong văn nói.  
   Nếu câu phụ đứng trước, động từ của câu chính đảo lên đầu.
@@ -76,11 +79,12 @@ order: 7
 |---|---|
 |**Ich gehe nicht raus, da es regnet.** _(Tôi không ra ngoài vì trời mưa.)_|**Da es regnet, gehe ich nicht raus.** _(Vì trời mưa, tôi không ra ngoài.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + da + S + O + V**
-> **Da + S + O + V, V + S + O**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + da + S + O + V**
+**Da + S + O + V, V + S + O**
+:::
 **Giải thích chi tiết:**  
   **"Da" được dùng phổ biến trong văn viết.**  
   **"Da" có thể đứng đầu câu mà không làm thay đổi ý nghĩa.**
@@ -93,11 +97,12 @@ order: 7
 |---|---|
 |**Er geht zur Arbeit, obwohl er krank ist.** _(Anh ấy vẫn đi làm mặc dù anh ấy bị ốm.)_|**Obwohl er krank ist, geht er zur Arbeit.** _(Mặc dù anh ấy bị ốm, anh ấy vẫn đi làm.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + obwohl + S + O + V**
-> **Obwohl + S + O + V, V + S + O**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + obwohl + S + O + V**
+**Obwohl + S + O + V, V + S + O**
+:::
 **Giải thích chi tiết:**  
   **"Obwohl" diễn tả sự tương phản giữa hai mệnh đề.**  
   Có thể thay thế bằng **"trotzdem"** trong câu chính.
@@ -110,10 +115,11 @@ order: 7
 |---|
 |**Du lernst Deutsch, indem du jeden Tag übst.** _(Bạn học tiếng Đức bằng cách luyện tập mỗi ngày.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + indem + S + O + V**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + indem + S + O + V**
+:::
 **Giải thích chi tiết:**  
   "Indem" mô tả cách thức thực hiện một hành động.
 
@@ -125,10 +131,11 @@ order: 7
 |---|
 |**Er spricht leise, sodass niemand ihn hört.** _(Anh ấy nói nhỏ đến mức không ai nghe thấy.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + sodass + S + O + V**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + sodass + S + O + V**
+:::
 **Giải thích chi tiết:**  
   "Sodass" diễn tả hậu quả của hành động ở câu chính.
 
@@ -141,10 +148,11 @@ order: 7
 |**bis** _(cho đến khi)_|Warte hier, bis ich zurückkomme. _(Hãy đợi đây cho đến khi tôi quay lại.)_|
 |**nachdem** _(sau khi)_|Nachdem er gegessen hatte, ging er ins Bett. _(Sau khi ăn xong, anh ấy đi ngủ.)_|
 
-> 💡 **📌 **Công thức:****
->
-> **Hauptsatz + Zeit-Konjunktion + S + O + V**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Hauptsatz + Zeit-Konjunktion + S + O + V**
+:::
 **Lưu ý:**  
   "Nachdem" đi kèm với Plusquamperfekt.
 
@@ -174,14 +182,15 @@ order: 7
 ---
 
 ### **7.3. Công thức sử dụng**
-> 💡 **📌 **Công thức:****
->
-> **Câu chính trước, câu phụ sau:**
-> **Hauptsatz + Zeit-Konjunktion + S + O + V**
->
-> **Câu phụ trước, câu chính sau:**
-> **Zeit-Konjunktion + S + O + V, V + S + O**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Câu chính trước, câu phụ sau:**
+**Hauptsatz + Zeit-Konjunktion + S + O + V**
+
+**Câu phụ trước, câu chính sau:**
+**Zeit-Konjunktion + S + O + V, V + S + O**
+:::
 ---
 
 ### **7.4. Ví dụ chi tiết**
@@ -220,14 +229,15 @@ order: 7
 ---
 
 ### **8.3. Công thức sử dụng**
-> 💡 **📌 **Công thức:****
->
-> **Câu phụ với "damit":**
-> **Hauptsatz + damit + S + O + V**
->
-> **Câu phụ với "um...zu":**
-> **Hauptsatz + um + O + zu + Infinitiv**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Câu phụ với "damit":**
+**Hauptsatz + damit + S + O + V**
+
+**Câu phụ với "um...zu":**
+**Hauptsatz + um + O + zu + Infinitiv**
+:::
 ---
 
 ### **8.4. Ví dụ chi tiết**
@@ -266,14 +276,15 @@ order: 7
 ---
 
 ### **9.3. Công thức sử dụng**
-> 💡 **📌 **Công thức:****
->
-> **Câu phụ với "dass":**
-> **Hauptsatz + dass + S + O + V**
->
-> **Câu phụ với "ob":**
-> **Hauptsatz + ob + S + O + V**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Câu phụ với "dass":**
+**Hauptsatz + dass + S + O + V**
+
+**Câu phụ với "ob":**
+**Hauptsatz + ob + S + O + V**
+:::
 ---
 
 ### **9.4. Ví dụ chi tiết**
@@ -295,9 +306,11 @@ order: 7
 ---
 ## **🎯 10. Tổng Kết**
 
-> 💡 **📌 **Công thức:****
->
-> **Câu phụ không thể đứng một mình và bổ sung ý nghĩa cho câu chính.**
-> **Động từ của câu phụ luôn đứng cuối câu.**
-> **Nếu câu phụ đứng trước, động từ của câu chính sẽ đảo lên vị trí số 1.**
-> **Có nhiều loại câu phụ với các liên từ khác nhau.**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
+
+**Câu phụ không thể đứng một mình và bổ sung ý nghĩa cho câu chính.**
+**Động từ của câu phụ luôn đứng cuối câu.**
+**Nếu câu phụ đứng trước, động từ của câu chính sẽ đảo lên vị trí số 1.**
+**Có nhiều loại câu phụ với các liên từ khác nhau.**
+:::

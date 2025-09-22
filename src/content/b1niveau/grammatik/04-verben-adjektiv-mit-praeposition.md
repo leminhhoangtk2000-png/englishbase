@@ -158,11 +158,12 @@ order: 4
 ---
 ## **3. Cụm từ "Da-"**
 
-> 💡 **📌 **Cách xây dựng cụm từ "Da-"****
->
-> **Da + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
-> **Da + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
+:::note[ Cách xây dựng cụm từ "Da-"****]
+💡 **📌 **Cách xây dựng cụm từ "Da-"****
 
+**Da + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
+**Da + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
+:::
 **Ví dụ:**
 
 - **Ich warte auf den Brief.** → **Ich warte darauf.** _(Tôi đang chờ bức thư đó.)_
@@ -176,11 +177,12 @@ order: 4
 
 ## **4. Cụm từ "Wo-"**
 
-> 💡 **📌 **Cách xây dựng cụm từ "Wo-"****
->
-> **Wo + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
-> **Wo + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
+:::note[ Cách xây dựng cụm từ "Wo-"****]
+💡 **📌 **Cách xây dựng cụm từ "Wo-"****
 
+**Wo + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
+**Wo + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
+:::
 **Ví dụ:**
 
 - **Worauf wartest du?** _(Bạn đang chờ cái gì?)_
@@ -194,9 +196,11 @@ order: 4
 
 ### **🎯 5. Tổng kết: Những lưu ý quan trọng**
 
-> 💡
->
-> **Nhiều động từ và tính từ trong tiếng Đức luôn đi kèm với một giới từ nhất định.**
-> **Cần phân biệt rõ động từ đi với Akkusativ hay Dativ.**
-> **Cụm từ "Da-" dùng để thay thế danh từ trong câu có giới từ.**
-> **Cụm từ "Wo-" dùng để đặt câu hỏi liên quan đến giới từ.**
+:::note[Ghi chú]
+💡
+
+**Nhiều động từ và tính từ trong tiếng Đức luôn đi kèm với một giới từ nhất định.**
+**Cần phân biệt rõ động từ đi với Akkusativ hay Dativ.**
+**Cụm từ "Da-" dùng để thay thế danh từ trong câu có giới từ.**
+**Cụm từ "Wo-" dùng để đặt câu hỏi liên quan đến giới từ.**
+:::

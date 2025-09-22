@@ -98,9 +98,11 @@ order: 13
 
 ## **🎯 4. Tổng kết: Các lưu ý quan trọng**
 
-> 💡
->
-> **Genitiv dùng để chỉ sự sở hữu, quan hệ giữa các danh từ.**
-> **Danh từ giống đực và trung tính thêm "-s" hoặc "-es" trong Genitiv.**
-> **Danh từ giống cái và số nhiều không thay đổi đuôi, chỉ thay đổi quán từ.**
-> **Một số giới từ như "wegen", "trotz", "während" luôn đi với Genitiv.**
+:::note[Ghi chú]
+💡
+
+**Genitiv dùng để chỉ sự sở hữu, quan hệ giữa các danh từ.**
+**Danh từ giống đực và trung tính thêm "-s" hoặc "-es" trong Genitiv.**
+**Danh từ giống cái và số nhiều không thay đổi đuôi, chỉ thay đổi quán từ.**
+**Một số giới từ như "wegen", "trotz", "während" luôn đi với Genitiv.**
+:::

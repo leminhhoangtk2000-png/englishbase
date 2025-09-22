@@ -10,9 +10,10 @@ sidebar_position: 3
 
 🔎 Ví dụ cơ bản:
 
-> Ich habe **vor, morgen ins Kino zu gehen**.  
-> (Tôi dự định đi xem phim vào ngày mai.)
-
+:::note[Ich habe vor, morgen ins Kino zu gehen.]
+Ich habe **vor, morgen ins Kino zu gehen**.  
+(Tôi dự định đi xem phim vào ngày mai.)
+:::
 ---
 
 ## 📘 **2. Cấu trúc phổ biến cần nắm vững ở trình độ B2**
@@ -31,8 +32,9 @@ sidebar_position: 3
 
 ### 🔹 **B. Sau tính từ + “zu”**
 
-> **Es ist + Adjektiv + zu + Infinitiv**
-
+:::note[Es ist + Adjektiv + zu + Infinitiv]
+**Es ist + Adjektiv + zu + Infinitiv**
+:::
 |**Tính từ**|**Ví dụ câu**|
 |---|---|
 |wichtig|Es ist **wichtig, regelmäßig zu üben**.|
@@ -44,8 +46,9 @@ sidebar_position: 3
 
 ### 🔹 **C. Sau danh từ + „zu“**
 
-> **(Es ist) + Substantiv + zu + Infinitiv**
-
+:::note[(Es ist) + Substantiv + zu + Infinitiv]
+**(Es ist) + Substantiv + zu + Infinitiv**
+:::
 |**Danh từ**|**Ví dụ**|
 |---|---|
 |das Ziel|**Das Ziel ist, die Leistung zu verbessern.**|

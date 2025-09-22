@@ -8,15 +8,16 @@ order: 5
 
 - Modalverben (động từ khuyết thiếu) giúp bổ sung ý nghĩa cho động từ chính, thể hiện **khả năng, sự cho phép, nghĩa vụ, mong muốn hoặc sở thích**.
 
-> **Trong trình độ A1, có 7 động từ khuyết thiếu quan trọng:**  
-> **können** (có thể)  
-> **dürfen** (được phép)  
-> **müssen** (phải, cần)  
-> **sollen** (nên)  
-> **wollen** (muốn)  
-> **mögen** (thích)  
-> **möchten** (muốn - lịch sự)
-
+:::note[Trong trình độ A1, có 7 động từ khuyết thiếu quan ]
+**Trong trình độ A1, có 7 động từ khuyết thiếu quan trọng:**  
+**können** (có thể)  
+**dürfen** (được phép)  
+**müssen** (phải, cần)  
+**sollen** (nên)  
+**wollen** (muốn)  
+**mögen** (thích)  
+**möchten** (muốn - lịch sự)
+:::
 **Cùng tìm hiểu cách sử dụng từng Modalverb nhé!**
 
 ---
@@ -140,11 +141,13 @@ order: 5
 
 ## **🎯 4. Tổng Kết**
 
-> - **Modalverben giúp diễn tả khả năng, sự cho phép, nghĩa vụ, mong muốn và sở thích.**
-> - **Luôn đi kèm với động từ chính ở dạng nguyên mẫu (Infinitiv).**
-> - **Nhớ chia Modalverben theo bảng và đặt đúng vị trí trong câu!**
->
-> 📌 **Mẹo học nhanh:**
->
-> - **Dùng "möchten" thay vì "wollen" khi muốn lịch sự.**
-> - **Nhớ bảng chia Modalverben để sử dụng chính xác!**
+:::note[- Modalverben giúp diễn tả khả năng, sự cho phép, ]
+- **Modalverben giúp diễn tả khả năng, sự cho phép, nghĩa vụ, mong muốn và sở thích.**
+- **Luôn đi kèm với động từ chính ở dạng nguyên mẫu (Infinitiv).**
+- **Nhớ chia Modalverben theo bảng và đặt đúng vị trí trong câu!**
+
+📌 **Mẹo học nhanh:**
+
+- **Dùng "möchten" thay vì "wollen" khi muốn lịch sự.**
+- **Nhớ bảng chia Modalverben để sử dụng chính xác!**
+:::

@@ -24,12 +24,13 @@ order: 2
 - Ich kenne die Frau, die neben dir wohnt. 
 	_(Tôi biết người phụ nữ sống cạnh bạn.)_
 
-> 💡 **📌 **Lưu ý:****
->
-> - **Đại từ quan hệ luôn đứng đầu mệnh đề quan hệ (Relativsatz).**
-> - **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**
-> - **Đại từ quan hệ thay đổi theo giống (Maskulin, Feminin, Neutrum), số (Số ít, Số nhiều) và cách (Kasus).**
+:::note[ Lưu ý:****]
+💡 **📌 **Lưu ý:****
 
+- **Đại từ quan hệ luôn đứng đầu mệnh đề quan hệ (Relativsatz).**
+- **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**
+- **Đại từ quan hệ thay đổi theo giống (Maskulin, Feminin, Neutrum), số (Số ít, Số nhiều) và cách (Kasus).**
+:::
 ---
 
 ## **2. Cách xác định chính xác đại từ quan hệ cần dùng**
@@ -71,26 +72,29 @@ order: 2
 - Der Mann, dessen Auto vor dem Haus steht, ist mein Onkel. 
 	_(Người đàn ông có chiếc xe đậu trước nhà là chú tôi.)_
 
-> 💡 **📌 **Lưu ý:****
->
-> - **Nếu danh từ được thay thế đóng vai trò chủ ngữ trong câu quan hệ → dùng Nominativ.**
-> - **Nếu danh từ là tân ngữ trực tiếp → dùng Akkusativ.**
-> - **Nếu danh từ là tân ngữ gián tiếp (với giới từ như "mit", "von", "bei") → dùng Dativ.**
-> - **Nếu danh từ thể hiện sự sở hữu → dùng Genitiv ("dessen" hoặc "deren").**
+:::note[ Lưu ý:****]
+💡 **📌 **Lưu ý:****
 
+- **Nếu danh từ được thay thế đóng vai trò chủ ngữ trong câu quan hệ → dùng Nominativ.**
+- **Nếu danh từ là tân ngữ trực tiếp → dùng Akkusativ.**
+- **Nếu danh từ là tân ngữ gián tiếp (với giới từ như "mit", "von", "bei") → dùng Dativ.**
+- **Nếu danh từ thể hiện sự sở hữu → dùng Genitiv ("dessen" hoặc "deren").**
+:::
 ---
 ## **🎯 3. Tổng kết: Các lưu ý quan trọng**
 
-> 💡
->
-> - **Đại từ quan hệ (Relativpronomen) luôn đứng đầu mệnh đề quan hệ và thay thế cho danh từ đã nhắc đến trước đó.**
-> - **Khác với quán từ xác định, đại từ quan hệ không cần đi kèm với danh từ.**
-> - **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**
->
-> **Để chọn đúng đại từ quan hệ, cần xác định:**
->
-> - Giống của danh từ được thay thế (**Maskulin, Feminin, Neutrum**).
-> - Số của danh từ (**Số ít hay số nhiều**).
-> - Cách của danh từ trong mệnh đề quan hệ (**Nominativ, Akkusativ, Dativ, Genitiv**).
-> **Trong văn viết trang trọng, Genitiv (dessen, deren) được dùng để chỉ sự sở hữu thay vì "von + Dativ".**
-> **Một số câu quan hệ có thể bắt đầu bằng giới từ (z.B.: mit, auf, für), khi đó giới từ đứng trước đại từ quan hệ.**
+:::note[Ghi chú]
+💡
+
+- **Đại từ quan hệ (Relativpronomen) luôn đứng đầu mệnh đề quan hệ và thay thế cho danh từ đã nhắc đến trước đó.**
+- **Khác với quán từ xác định, đại từ quan hệ không cần đi kèm với danh từ.**
+- **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**
+
+**Để chọn đúng đại từ quan hệ, cần xác định:**
+
+- Giống của danh từ được thay thế (**Maskulin, Feminin, Neutrum**).
+- Số của danh từ (**Số ít hay số nhiều**).
+- Cách của danh từ trong mệnh đề quan hệ (**Nominativ, Akkusativ, Dativ, Genitiv**).
+**Trong văn viết trang trọng, Genitiv (dessen, deren) được dùng để chỉ sự sở hữu thay vì "von + Dativ".**
+**Một số câu quan hệ có thể bắt đầu bằng giới từ (z.B.: mit, auf, für), khi đó giới từ đứng trước đại từ quan hệ.**
+:::

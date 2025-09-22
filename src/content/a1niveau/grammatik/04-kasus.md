@@ -96,6 +96,8 @@ _Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
 
 :::tip[Mẹo ghi nhớ nhanh]
 
+Nội dung ghi chú:
+
 - **Wer/Was? → Nominativ** (Ai thực hiện hành động?)
 - **Wen/Was? → Akkusativ** (Ai/cái gì chịu tác động?)
 - **Wem? → Dativ** (Ai nhận lợi ích từ hành động?)
@@ -120,14 +122,16 @@ _Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
 
 ## **🎯 4. Tổng Kết**
 
-> 📌 **Tóm tắt quan trọng**
->
-> - **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)
-> - **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)
-> - **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
->
-> 📌 **Mẹo học nhanh:**
->
-> - **Wer/Was? → Nominativ**
-> - **Wen/Was? → Akkusativ**
-> - **Wem? → Dativ**
+:::note[Tóm tắt quan trọng]
+📌 **Tóm tắt quan trọng**
+
+- **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)
+- **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)
+- **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
+
+📌 **Mẹo học nhanh:**
+
+- **Wer/Was? → Nominativ**
+- **Wen/Was? → Akkusativ**
+- **Wem? → Dativ**
+  :::

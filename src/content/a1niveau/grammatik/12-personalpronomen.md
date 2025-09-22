@@ -94,13 +94,15 @@ order: 12
 
 ## **🎯 4. Tổng Kết**
 
-> - **Personalpronomen** thay thế danh từ để tránh lặp lại.
-> - Chia theo 3 cách:
->   - **Nominativ** = chủ ngữ (_Ich bin müde._)
->   - **Akkusativ** = tân ngữ trực tiếp (_Ich sehe dich._)
->   - **Dativ** = tân ngữ gián tiếp (_Er gibt mir ein Geschenk._)
->
-> 📌 **Câu hỏi xác định:**
->
-> - Akkusativ → Wen? Was?
-> - Dativ → Wem?
+:::note[- Personalpronomen thay thế danh từ để tránh lặp l]
+- **Personalpronomen** thay thế danh từ để tránh lặp lại.
+- Chia theo 3 cách:
+  - **Nominativ** = chủ ngữ (_Ich bin müde._)
+  - **Akkusativ** = tân ngữ trực tiếp (_Ich sehe dich._)
+  - **Dativ** = tân ngữ gián tiếp (_Er gibt mir ein Geschenk._)
+
+📌 **Câu hỏi xác định:**
+
+- Akkusativ → Wen? Was?
+- Dativ → Wem?
+:::

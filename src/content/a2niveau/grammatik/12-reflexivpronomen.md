@@ -42,11 +42,12 @@ order: 12
 - Er freut sich auf den Urlaub. 
 	_(Anh ấy mong chờ kỳ nghỉ.)_
 
-> 💡 ****Lưu ý:****
->
-> **"Sich" được dùng cho ngôi thứ ba số ít và số nhiều.**
-> **"Mich", "dich", "uns", "euch" được dùng cho các ngôi còn lại.**
+:::note[**Lưu ý:**]
+💡 ****Lưu ý:****
 
+**"Sich" được dùng cho ngôi thứ ba số ít và số nhiều.**
+**"Mich", "dich", "uns", "euch" được dùng cho các ngôi còn lại.**
+:::
 ---
 
 ## **2. Sử dụng đại từ phản thân ở cách nào?**
@@ -79,11 +80,12 @@ order: 12
 - Er kauft sich ein neues Auto. 
 	_(Anh ấy mua cho mình một chiếc xe mới.)_
 
-> 💡 ****Lưu ý:****
->
-> **Nếu không có tân ngữ Akkusativ, đại từ phản thân sẽ ở Akkusativ.**
-> **Nếu có một tân ngữ Akkusativ, đại từ phản thân sẽ ở Dativ.**
+:::note[**Lưu ý:**]
+💡 ****Lưu ý:****
 
+**Nếu không có tân ngữ Akkusativ, đại từ phản thân sẽ ở Akkusativ.**
+**Nếu có một tân ngữ Akkusativ, đại từ phản thân sẽ ở Dativ.**
+:::
 ---
 
 ## **3. Động từ phản thân (Reflexive Verben)**
@@ -102,10 +104,11 @@ order: 12
 - **Ich wasche mich.** _(Tôi tự rửa mặt.)_ → **Ich wasche das Auto.** _(Tôi rửa xe.)_
 - **Er setzt sich.** _(Anh ấy ngồi xuống.)_ → **Er setzt das Kind auf den Stuhl.** _(Anh ấy đặt đứa trẻ lên ghế.)_
 
-> 💡 ****Lưu ý:****
->
-> **Có thể bỏ đại từ phản thân nếu có tân ngữ khác.**
+:::note[**Lưu ý:**]
+💡 ****Lưu ý:****
 
+**Có thể bỏ đại từ phản thân nếu có tân ngữ khác.**
+:::
 ---
 
 ### **3.2. Động từ phản thân thực thụ (Echt reflexive Verben)**
@@ -140,11 +143,12 @@ order: 12
 - **Der Manager stellt das neue Produkt vor.** 
 	_(Người quản lý giới thiệu sản phẩm mới.)_
 
-> 💡 ****Lưu ý:****
->
-> **Không cần đại từ phản thân.**
-> **Có nghĩa là "giới thiệu một cái gì đó".**
+:::note[**Lưu ý:**]
+💡 ****Lưu ý:****
 
+**Không cần đại từ phản thân.**
+**Có nghĩa là "giới thiệu một cái gì đó".**
+:::
 ---
 
 ### **4.2. "Vorstellen" như một động từ phản thân với đại từ phản thân Akkusativ**
@@ -157,10 +161,11 @@ order: 12
 - Er stellt sich seinem neuen Chef vor. 
 	_(Anh ấy tự giới thiệu với sếp mới của mình.)_
 
-> 💡 ****Lưu ý:****
->
-> **Dùng với Akkusativ khi chủ ngữ đang tự giới thiệu chính mình.**
+:::note[**Lưu ý:**]
+💡 ****Lưu ý:****
 
+**Dùng với Akkusativ khi chủ ngữ đang tự giới thiệu chính mình.**
+:::
 ---
 
 ### **4.3. "Vorstellen" như một động từ phản thân với đại từ phản thân Dativ**
@@ -173,18 +178,21 @@ order: 12
 - **Er stellt sich ein Leben ohne Internet vor.** 
 	_(Anh ấy tưởng tượng một cuộc sống không có Internet.)_
 
-> 💡 ****Lưu ý:****
->
-> **Dùng với Dativ khi có nghĩa là "tưởng tượng".**
-> **Người thực hiện hành động luôn ở Dativ.**
+:::note[**Lưu ý:**]
+💡 ****Lưu ý:****
 
+**Dùng với Dativ khi có nghĩa là "tưởng tượng".**
+**Người thực hiện hành động luôn ở Dativ.**
+:::
 ---
 
 ## **🎯 5. Tổng kết: Các lưu ý quan trọng**
 
-> 💡
->
-> - **Đại từ phản thân thay đổi theo ngôi, ở Akkusativ hoặc Dativ.**
-> - **Dùng Akkusativ khi không có tân ngữ khác, Dativ khi có tân ngữ khác.**
-> - **Có hai loại động từ phản thân: thực thụ và không thực thụ.**
-> - **Một số động từ như "vorstellen" có nghĩa khác nhau tùy theo cách sử dụng đại từ phản thân.**
+:::note[Ghi chú]
+💡
+
+- **Đại từ phản thân thay đổi theo ngôi, ở Akkusativ hoặc Dativ.**
+- **Dùng Akkusativ khi không có tân ngữ khác, Dativ khi có tân ngữ khác.**
+- **Có hai loại động từ phản thân: thực thụ và không thực thụ.**
+- **Một số động từ như "vorstellen" có nghĩa khác nhau tùy theo cách sử dụng đại từ phản thân.**
+:::

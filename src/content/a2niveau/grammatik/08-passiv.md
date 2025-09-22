@@ -87,15 +87,16 @@ order: 8
 
 ## **3. Cách xây dựng câu bị động điển hình ở thì hiện tại (Präsens)**
 
-> 💡 **📌 **Công thức:****
->
-> **Subjekt (Akkusativ im Aktiv) + werden (Präsens) + Partizip II + (von + Urheber)**
->
-> | **Aktiv** (Chủ động)                                            | **Passiv** (Bị động)                                      |
-> | --------------------------------------------------------------- | --------------------------------------------------------- |
-> | Der Lehrer erklärt die Regel. _(Giáo viên giải thích quy tắc.)_ | Die Regel **wird** erklärt. _(Quy tắc được giải thích.)_  |
-> | Der Koch bereitet das Essen zu. _(Đầu bếp chuẩn bị thức ăn.)_   | Das Essen **wird** zubereitet. _(Thức ăn được chuẩn bị.)_ |
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Subjekt (Akkusativ im Aktiv) + werden (Präsens) + Partizip II + (von + Urheber)**
+
+| **Aktiv** (Chủ động)                                            | **Passiv** (Bị động)                                      |
+| --------------------------------------------------------------- | --------------------------------------------------------- |
+| Der Lehrer erklärt die Regel. _(Giáo viên giải thích quy tắc.)_ | Die Regel **wird** erklärt. _(Quy tắc được giải thích.)_  |
+| Der Koch bereitet das Essen zu. _(Đầu bếp chuẩn bị thức ăn.)_   | Das Essen **wird** zubereitet. _(Thức ăn được chuẩn bị.)_ |
+:::
 Lưu ý:  
   - **"werden" là trợ động từ, chia theo chủ ngữ.**  
   - **Partizip II luôn đứng cuối câu.**
@@ -168,10 +169,11 @@ Lưu ý:
 
 ### **🔹 Vorgangspassiv với động từ khiếm khuyết (Modalverben)**
 
-> 💡 **📌 **Công thức:****
->
-> **Subjekt + Modalverb + Partizip II + werden (Infinitiv)**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Subjekt + Modalverb + Partizip II + werden (Infinitiv)**
+:::
 Ví dụ:
 
 - Das Problem **muss gelöst werden**. _(Vấn đề phải được giải quyết.)_
@@ -180,10 +182,11 @@ Ví dụ:
 
 ### **🔹 Zustandspassiv (Bị động trạng thái)**
 
-> 💡 **📌 **Công thức:****
->
-> **Subjekt + sein + Partizip II**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Subjekt + sein + Partizip II**
+:::
 Ví dụ:
 
 - Die Tür **ist geöffnet**. _(Cánh cửa đã mở.)_
@@ -192,10 +195,11 @@ Ví dụ:
 
 ### **🔹 Zustandspassiv với động từ khiếm khuyết**
 
-> 💡 **📌 **Công thức:****
->
-> **Subjekt + Modalverb + Partizip II + sein (Infinitiv)**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Subjekt + Modalverb + Partizip II + sein (Infinitiv)**
+:::
 Ví dụ:
 
 - Das Haus **muss renoviert sein**. _(Ngôi nhà phải được cải tạo xong.)_
@@ -203,10 +207,12 @@ Ví dụ:
 ---
 
 ## **🎯 8. Tổng kết: Các lưu ý quan trọng**
-> 💡
->
-> - **Chỉ có tân ngữ Akkusativ mới trở thành chủ ngữ trong câu bị động.**
-> -  **Nếu chỉ có tân ngữ Dativ, nó vẫn giữ nguyên trong câu bị động.**
-> - **"Vorgangspassiv" nhấn mạnh quá trình, "Zustandspassiv" nhấn mạnh trạng thái.**
-> - **"Von" chỉ người thực hiện hành động, "durch" chỉ tác nhân phi nhân.**
-> - **Bị động có thể kết hợp với động từ khuyết thiếu.**
+:::note[Ghi chú]
+💡
+
+- **Chỉ có tân ngữ Akkusativ mới trở thành chủ ngữ trong câu bị động.**
+-  **Nếu chỉ có tân ngữ Dativ, nó vẫn giữ nguyên trong câu bị động.**
+- **"Vorgangspassiv" nhấn mạnh quá trình, "Zustandspassiv" nhấn mạnh trạng thái.**
+- **"Von" chỉ người thực hiện hành động, "durch" chỉ tác nhân phi nhân.**
+- **Bị động có thể kết hợp với động từ khuyết thiếu.**
+:::

@@ -110,15 +110,17 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 ## **🎯 4. Tổng Kết**
 
-> **"Nicht" dùng để phủ định:**
->
-> - Động từ → _Ich gehe nicht._
-> - Tính từ/trạng từ → _Das ist nicht gut._
-> - Một phần câu → _Ich fahre nicht nach Berlin._
->
-> **"Kein" dùng để phủ định:**
->
-> - Danh từ không có mạo từ → _Ich habe kein Auto._
-> - Danh từ có quán từ không xác định (ein/eine) → _Ich habe keinen Hund._
->
-> 📌 **Hãy nhớ bảng biến cách của "kein" để dùng chính xác!**
+:::note["Nicht" dùng để phủ định:]
+**"Nicht" dùng để phủ định:**
+
+- Động từ → _Ich gehe nicht._
+- Tính từ/trạng từ → _Das ist nicht gut._
+- Một phần câu → _Ich fahre nicht nach Berlin._
+
+**"Kein" dùng để phủ định:**
+
+- Danh từ không có mạo từ → _Ich habe kein Auto._
+- Danh từ có quán từ không xác định (ein/eine) → _Ich habe keinen Hund._
+
+📌 **Hãy nhớ bảng biến cách của "kein" để dùng chính xác!**
+:::

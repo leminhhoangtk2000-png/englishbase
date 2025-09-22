@@ -16,10 +16,11 @@ order: 3
 
 Dùng để diễn tả một sự tương phản giữa hai vế câu.
 
-> 💡 ****Công thức:****
->
-> **Subjekt + zwar + Verb + Subjekt + …, aber + Subjekt + Verb + …**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + zwar + Verb + Subjekt + …, aber + Subjekt + Verb + …**
+:::
 **Ví dụ:**
 
 - Er ist zwar müde, aber er arbeitet weiter. 
@@ -38,10 +39,11 @@ Dùng để diễn tả một sự tương phản giữa hai vế câu.
 
 Dùng khi có hai khả năng lựa chọn.
 
-> 💡 ****Công thức:****
->
-> **Subjekt + entweder + Verb + Subjekt + …, oder + Subjekt + Verb + …**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + entweder + Verb + Subjekt + …, oder + Subjekt + Verb + …**
+:::
 **Ví dụ:**
 
 - Entweder gehen wir ins Kino, oder wir bleiben zu Hause. 
@@ -60,10 +62,11 @@ Dùng khi có hai khả năng lựa chọn.
 
 Dùng để bổ sung thêm một thông tin có tính nhấn mạnh.
 
-> 💡 ****Công thức:****
->
-> **Subjekt + nicht nur + Subjekt + Verb + …, sondern auch + Subjekt + Verb + …**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + nicht nur + Subjekt + Verb + …, sondern auch + Subjekt + Verb + …**
+:::
 **Ví dụ:**
 
 - Er ist nicht nur intelligent, sondern auch fleißig. 
@@ -82,10 +85,11 @@ Dùng để bổ sung thêm một thông tin có tính nhấn mạnh.
 
 Dùng để diễn tả cả hai khả năng đều đúng.
 
-> 💡 ****Công thức:****
->
-> **Subjekt + sowohl + Subjekt + Verb + … als auch + Subjekt + Verb + …**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + sowohl + Subjekt + Verb + … als auch + Subjekt + Verb + …**
+:::
 **Ví dụ:**
 
 - Er spricht sowohl Deutsch als auch Englisch. 
@@ -104,10 +108,11 @@ Dùng để diễn tả cả hai khả năng đều đúng.
 
 Dùng để diễn tả sự phủ định của cả hai khả năng.
 
-> 💡 ****Công thức:****
->
-> **Subjekt + weder + Subjekt + Verb + …, noch + Subjekt + Verb + …**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + weder + Subjekt + Verb + …, noch + Subjekt + Verb + …**
+:::
 **Ví dụ:**
 
 - Er kann weder Deutsch noch Englisch sprechen. 
@@ -126,10 +131,11 @@ Dùng để diễn tả sự phủ định của cả hai khả năng.
 
 Dùng để diễn tả mối quan hệ tỷ lệ thuận giữa hai vế câu.
 
-> 💡 ****Công thức:****
->
-> **Subjekt + je + Komparativ + Subjekt + Verb + …, desto + Komparativ + Verb + Subjekt + …**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + je + Komparativ + Subjekt + Verb + …, desto + Komparativ + Verb + Subjekt + …**
+:::
 **Ví dụ:**
 
 - Je mehr du lernst, desto besser wirst du. 
@@ -146,10 +152,12 @@ Dùng để diễn tả mối quan hệ tỷ lệ thuận giữa hai vế câu.
 
 ## **🎯 7. Tổng kết: Các lưu ý quan trọng**
 
-> 💡
->
-> - **Liên từ đôi luôn đi theo cặp và ảnh hưởng đến trật tự từ trong câu.**
-> - **"Zwar … aber" diễn tả sự tương phản, "nicht nur … sondern auch" diễn tả sự bổ sung.**
-> - **"Entweder … oder" đưa ra hai khả năng lựa chọn, "weder … noch" phủ định cả hai.**
-> - **"Sowohl … als auch" nhấn mạnh sự kết hợp, "je … desto" diễn tả mối quan hệ tỷ lệ thuận.**
-> - **Một số liên từ đôi như "je … desto" làm thay đổi trật tự câu, cần chú ý vị trí động từ.**
+:::note[Ghi chú]
+💡
+
+- **Liên từ đôi luôn đi theo cặp và ảnh hưởng đến trật tự từ trong câu.**
+- **"Zwar … aber" diễn tả sự tương phản, "nicht nur … sondern auch" diễn tả sự bổ sung.**
+- **"Entweder … oder" đưa ra hai khả năng lựa chọn, "weder … noch" phủ định cả hai.**
+- **"Sowohl … als auch" nhấn mạnh sự kết hợp, "je … desto" diễn tả mối quan hệ tỷ lệ thuận.**
+- **Một số liên từ đôi như "je … desto" làm thay đổi trật tự câu, cần chú ý vị trí động từ.**
+:::

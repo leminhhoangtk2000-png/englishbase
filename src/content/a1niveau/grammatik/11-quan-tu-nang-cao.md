@@ -8,14 +8,15 @@ order: 11
 
 📌 **Quán từ (Artikel)** trong tiếng Đức giúp xác định danh từ về **giống (Genus), số (Numerus), cách (Kasus) và ngữ cảnh sử dụng.**
 
-> Có 5 loại quán từ quan trọng:
->
-> - **Quán từ xác định (Bestimmter Artikel)**
-> - **Quán từ không xác định (Unbestimmter Artikel)**
-> - **Quán từ trống (Nullartikel)**
-> - **Quán từ sở hữu (Possessivartikel)**
-> - **Quán từ phủ định (Negationsartikel)**
+:::note[Có 5 loại quán từ quan trọng:]
+Có 5 loại quán từ quan trọng:
 
+- **Quán từ xác định (Bestimmter Artikel)**
+- **Quán từ không xác định (Unbestimmter Artikel)**
+- **Quán từ trống (Nullartikel)**
+- **Quán từ sở hữu (Possessivartikel)**
+- **Quán từ phủ định (Negationsartikel)**
+:::
 ---
 
 ## **1. Quán từ xác định (Bestimmter Artikel)**
@@ -57,8 +58,9 @@ order: 11
 | **Dativ**     | einem Mann   | einer Frau  | einem Kind   | _(không có)_ |
 | **Genitiv**   | eines Mannes | einer Frau  | eines Kindes | _(không có)_ |
 
-> 📌 **Mẹo nhớ:** thêm đuôi giống vào **ein** để giúp người nghe nhận biết giống danh từ.
-
+:::note[Mẹo nhớ: thêm đuôi giống vào ein để giúp người ngh]
+📌 **Mẹo nhớ:** thêm đuôi giống vào **ein** để giúp người nghe nhận biết giống danh từ.
+:::
 **Ví dụ:**
 
 - Ich habe **einen Hund**.<br>_Tôi có một con chó._
@@ -132,10 +134,12 @@ order: 11
 
 ## **🎯 6. Tổng Kết**
 
-> - **Bestimmter Artikel** = cái đã biết rõ (_der, die, das_).
-> - **Unbestimmter Artikel** = một cái chưa xác định (_ein/eine_).
-> - **Nullartikel** = không có mạo từ (số nhiều, nghề nghiệp, nước…).
-> - **Possessivartikel** = thể hiện sở hữu (_mein, dein, sein..._).
-> - **Negationsartikel** = phủ định (_kein_).
->
-> 📌 Nhớ bảng biến cách để dùng đúng trong mọi ngữ cảnh!
+:::note[- Bestimmter Artikel = cái đã biết rõ (_der, die, ]
+- **Bestimmter Artikel** = cái đã biết rõ (_der, die, das_).
+- **Unbestimmter Artikel** = một cái chưa xác định (_ein/eine_).
+- **Nullartikel** = không có mạo từ (số nhiều, nghề nghiệp, nước…).
+- **Possessivartikel** = thể hiện sở hữu (_mein, dein, sein..._).
+- **Negationsartikel** = phủ định (_kein_).
+
+📌 Nhớ bảng biến cách để dùng đúng trong mọi ngữ cảnh!
+:::

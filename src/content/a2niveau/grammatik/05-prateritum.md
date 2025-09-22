@@ -46,10 +46,11 @@ order: 5
 
 ### **2.1. Các động từ có quy tắc (Schwache Verben)**
 
-> 💡 **📌 **Công thức:****
->
-> **Verbstamm (gốc động từ) + -te + đuôi chia theo ngôi**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Verbstamm (gốc động từ) + -te + đuôi chia theo ngôi**
+:::
 |**Ngôi**|**spielen (chơi)**|**lernen (học)**|**machen (làm)**|
 |---|---|---|---|
 |Ich|spielte|lernte|machte|
@@ -73,10 +74,11 @@ order: 5
 
 📌 **Các động từ bất quy tắc không thêm -te mà thay đổi gốc từ**.
 
-> 💡 **📌 **Công thức:****
->
-> **Động từ thay đổi gốc + đuôi chia theo ngôi**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Động từ thay đổi gốc + đuôi chia theo ngôi**
+:::
 |**Ngôi**|**sehen (nhìn)**|**gehen (đi)**|**schreiben (viết)**|
 |---|---|---|---|
 |Ich|sah|ging|schrieb|
@@ -99,10 +101,11 @@ order: 5
 
 📌 **Các động từ khuyết thiếu (Modalverben) được chia theo quy tắc riêng.**  
 
-> 💡 **📌 **Công thức:****
->
-> **Bỏ đuôi -en + thêm -te**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Bỏ đuôi -en + thêm -te**
+:::
 |**Nguyên thể**|**Ich**|**Du**|**Er/sie/es**|**Wir**|**Ihr**|**Sie/sie**|
 |---|---|---|---|---|---|---|
 |können|konnte|konntest|konnte|konnten|konntet|konnten|
@@ -159,8 +162,10 @@ order: 5
 
 ## **🎯 5. Tổng Kết**
 
-> 💡
->
-> **Präteritum được dùng chủ yếu trong văn viết, Perfekt được dùng trong văn nói.**
-> **Các động từ đặc biệt như "sein", "haben", "werden" có dạng riêng.**
-> **Động từ khuyết thiếu chia theo quy tắc riêng.**
+:::note[Ghi chú]
+💡
+
+**Präteritum được dùng chủ yếu trong văn viết, Perfekt được dùng trong văn nói.**
+**Các động từ đặc biệt như "sein", "haben", "werden" có dạng riêng.**
+**Động từ khuyết thiếu chia theo quy tắc riêng.**
+:::

@@ -148,10 +148,12 @@ Lưu ý:
 
 ## **🎯 3. Tổng kết: Các lưu ý quan trọng**
 
-> 💡
->
-> - **Danh từ yếu (N-Deklination) chủ yếu là danh từ giống đực kết thúc bằng "-e", "-af", "-ant", "-at", "-ent", "-ist".**
-> - **Danh từ yếu thêm "-en" vào Genitiv, Dativ, Akkusativ.**
-> - **Danh từ mạnh bao gồm tất cả danh từ giống cái, hầu hết danh từ giống đực và trung.**
-> - **Danh từ mạnh giống đực & trung thêm "-s" hoặc "-es" vào Genitiv.**
-> - **Danh từ số nhiều luôn thêm "-n" vào Dativ, trừ khi kết thúc bằng "-s" hoặc "-n".**
+:::note[Ghi chú]
+💡
+
+- **Danh từ yếu (N-Deklination) chủ yếu là danh từ giống đực kết thúc bằng "-e", "-af", "-ant", "-at", "-ent", "-ist".**
+- **Danh từ yếu thêm "-en" vào Genitiv, Dativ, Akkusativ.**
+- **Danh từ mạnh bao gồm tất cả danh từ giống cái, hầu hết danh từ giống đực và trung.**
+- **Danh từ mạnh giống đực & trung thêm "-s" hoặc "-es" vào Genitiv.**
+- **Danh từ số nhiều luôn thêm "-n" vào Dativ, trừ khi kết thúc bằng "-s" hoặc "-n".**
+:::

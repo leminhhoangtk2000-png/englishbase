@@ -111,13 +111,15 @@ Các **tiền tố hay gặp**: **durch-, hinter-, um-, unter-, wieder-**
 
 ## **🎯 5. Tổng Kết**
 
-> - **Trennbare Verben:** Tiền tố **tách rời** khi chia động từ.
-> - **Nicht Trennbare Verben:** Tiền tố **luôn đi liền với động từ**.
-> - **Một số động từ có thể vừa tách vừa không tách**, tùy theo **ngữ cảnh**.
->
-> **Quy tắc chung:**
->
-> - **Trennbare Verben** có **21 tiền tố phổ biến** (_ab-, auf-, an-..._).
-> - **Nicht trennbare Verben** có **8 tiền tố chính** (_be-, ge-, er-..._).
->
-> 📌 **Học mẹo:** Không cần nhớ tất cả một lúc! Hãy **luyện tập với câu thực tế** để quen dần!
+:::note[- Trennbare Verben: Tiền tố tách rời khi chia động]
+- **Trennbare Verben:** Tiền tố **tách rời** khi chia động từ.
+- **Nicht Trennbare Verben:** Tiền tố **luôn đi liền với động từ**.
+- **Một số động từ có thể vừa tách vừa không tách**, tùy theo **ngữ cảnh**.
+
+**Quy tắc chung:**
+
+- **Trennbare Verben** có **21 tiền tố phổ biến** (_ab-, auf-, an-..._).
+- **Nicht trennbare Verben** có **8 tiền tố chính** (_be-, ge-, er-..._).
+
+📌 **Học mẹo:** Không cần nhớ tất cả một lúc! Hãy **luyện tập với câu thực tế** để quen dần!
+:::

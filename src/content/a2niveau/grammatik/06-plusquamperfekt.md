@@ -16,10 +16,11 @@ Thì này thường được sử dụng trong văn viết, kể chuyện hoặc
 
 ## **1. Cách xây dựng thì Plusquamperfekt**
 
-> 💡 **📌 **Công thức:****
->
-> **haben/sein ở Präteritum + Partizip II**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**haben/sein ở Präteritum + Partizip II**
+:::
 |**Ngôi**|**haben** + Partizip II|**sein** + Partizip II|
 |---|---|---|
 |Ich|hatte gemacht|war gegangen|
@@ -54,10 +55,11 @@ Thì này thường được sử dụng trong văn viết, kể chuyện hoặc
 
 ### **2.1. "Nachdem" (Sau khi...)**
 
-> 💡 **📌 **Công thức:****
->
-> **Nachdem + Plusquamperfekt, Präteritum/Perfekt**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Nachdem + Plusquamperfekt, Präteritum/Perfekt**
+:::
 |**Plusquamperfekt (Hành động trước)**|**Präteritum/Perfekt (Hành động sau)**|
 |---|---|
 |Nachdem ich gegessen **hatte**,|ging ich ins Bett.|
@@ -80,10 +82,11 @@ Lưu ý:
 
 ### **2.2. "Bevor" (Trước khi...)**
 
-> 💡 **📌 **Công thức:****
->
-> **Präteritum/Perfekt + bevor + Plusquamperfekt**
+:::note[ Công thức:****]
+💡 **📌 **Công thức:****
 
+**Präteritum/Perfekt + bevor + Plusquamperfekt**
+:::
 |**Präteritum/Perfekt (Hành động sau)**|**bevor + Plusquamperfekt (Hành động trước)**|
 |---|---|
 |Ich ging ins Bett,|bevor ich gegessen **hatte**.|
@@ -106,9 +109,11 @@ Lưu ý:
 
 ## **🎯 3. Tổng Kết**
 
-> 💡
->
-> **Thì Plusquamperfekt diễn tả hành động xảy ra trước một hành động khác trong quá khứ.**
-> **Công thức:** haben/sein ở **Präteritum** + **Partizip II**.
-> **Dùng "nachdem" để nhấn mạnh hành động xảy ra trước, "bevor" để nhấn mạnh hành động xảy ra sau.**
-> **Thì này phổ biến trong văn viết, kể chuyện và mô tả sự kiện trong quá khứ.**
+:::note[Ghi chú]
+💡
+
+**Thì Plusquamperfekt diễn tả hành động xảy ra trước một hành động khác trong quá khứ.**
+**Công thức:** haben/sein ở **Präteritum** + **Partizip II**.
+**Dùng "nachdem" để nhấn mạnh hành động xảy ra trước, "bevor" để nhấn mạnh hành động xảy ra sau.**
+**Thì này phổ biến trong văn viết, kể chuyện và mô tả sự kiện trong quá khứ.**
+:::

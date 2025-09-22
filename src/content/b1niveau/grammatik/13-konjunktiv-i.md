@@ -15,10 +15,11 @@ order: 13
 
 **Konjunktiv I được hình thành từ gốc động từ nguyên thể (Infinitiv) nhưng có một số thay đổi về đuôi động từ.**
 
-> 💡 ****Công thức:****
->
-> **Verbstamm + -e, -est, -e, -en, -et, -en**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Verbstamm + -e, -est, -e, -en, -et, -en**
+:::
  **Bảng chia động từ "sein" (là) ở Konjunktiv I:**
 
 |**Ngôi**|**Konjunktiv I (sein)**|
@@ -61,10 +62,11 @@ order: 13
 
 **Được hình thành bằng trợ động từ "haben" hoặc "sein" ở Konjunktiv I + Partizip II.**
 
-> 💡 ****Công thức:****
->
-> **habe/sei + Partizip II**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**habe/sei + Partizip II**
+:::
 **Ví dụ:**
 
 - Er sagt, er **habe gearbeitet**. 
@@ -85,10 +87,11 @@ order: 13
 
 ### **🔹 3.1. Thì tương lai I (Futur I)**
 
-> 💡 ****Công thức:****
->
-> **werde + Infinitiv**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**werde + Infinitiv**
+:::
 **Ví dụ:**
 
 - Er sagt, er **werde kommen**. _(Anh ấy nói rằng anh ấy sẽ đến.)_
@@ -97,10 +100,11 @@ order: 13
 
 ### **🔹 3.2. Thì tương lai II (Futur II - Hành động đã hoàn thành trong tương lai)**
 
-> 💡 ****Công thức:****
->
-> **werde + Partizip II + haben/sein**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**werde + Partizip II + haben/sein**
+:::
 **Ví dụ:**
 
 - Er sagt, er **werde die Arbeit beendet haben**.
@@ -116,10 +120,11 @@ order: 13
 
 **Konjunktiv I có thể được dùng thay cho mệnh lệnh (Imperativ) trong văn phong trang trọng hoặc trong các văn bản chính thức.**
 
-> 💡 ****Công thức:****
->
-> **Subjekt + Konjunktiv I (3. Person Singular oder Plural)**
+:::note[**Công thức:**]
+💡 ****Công thức:****
 
+**Subjekt + Konjunktiv I (3. Person Singular oder Plural)**
+:::
 **Ví dụ:**
 
 - **Er gehe sofort nach Hause!**

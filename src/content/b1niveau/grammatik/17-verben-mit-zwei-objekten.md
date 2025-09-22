@@ -16,9 +16,10 @@ order: 17
 
 Ví dụ:
 
-> Ich **gebe** **dir** (Dativ) **ein Buch** (Akkusativ).  
-> – Tôi đưa bạn một quyển sách.
-
+:::note[Ich gebe dir (Dativ) ein Buch (Akkusativ).]
+Ich **gebe** **dir** (Dativ) **ein Buch** (Akkusativ).  
+– Tôi đưa bạn một quyển sách.
+:::
 ---
 
 ## 📘 **2. Cấu trúc chuẩn**
@@ -74,14 +75,16 @@ Ví dụ:
 
 📌 Câu bị động với hai tân ngữ thường giữ lại **Akkusativ** làm chủ ngữ:
 
-> Das Buch **wird dem Schüler erklärt**.  
-> – Quyển sách được giải thích cho học sinh.
-
+:::note[Das Buch wird dem Schüler erklärt.]
+Das Buch **wird dem Schüler erklärt**.  
+– Quyển sách được giải thích cho học sinh.
+:::
 📌 Hoặc giữ lại **Dativ** làm chủ ngữ (ít dùng hơn – văn viết):
 
-> Dem Schüler **wird das Buch erklärt**.  
-> – Cho học sinh quyển sách được giải thích.
-
+:::note[Dem Schüler wird das Buch erklärt.]
+Dem Schüler **wird das Buch erklärt**.  
+– Cho học sinh quyển sách được giải thích.
+:::
 ---
 
 ## 🧩 **5. Dạng danh từ hóa (trong văn viết)**

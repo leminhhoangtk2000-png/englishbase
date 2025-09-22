@@ -8,12 +8,13 @@ sidebar_position: 1
 Trình độ **A1** là bước khởi đầu quan trọng giúp bạn làm quen với tiếng Đức, từ cách chia động từ, mạo từ, giới từ đến giao tiếp cơ bản trong cuộc sống hàng ngày. Đây là nền tảng để bạn tự tin giới thiệu bản thân, hỏi đường, mua sắm, hoặc thực hiện các nhu cầu cơ bản trong giao tiếp.
 
 ---
-> ℹ️ ****Mục tiêu:****
->
-> - Hiểu và giao tiếp trong các tình huống cơ bản như chào hỏi, giới thiệu bản thân, đặt câu hỏi.
-> - Nắm chắc các cấu trúc câu đơn giản và sử dụng đúng các thì cơ bản.
-> - **Đừng quá áp lực vì mục tiêu lớn nhất của A1 là đặt câu sao cho đúng.**
----
+:::note[ℹ️ **Mục tiêu:**]
+ℹ️ ****Mục tiêu:****
+
+- Hiểu và giao tiếp trong các tình huống cơ bản như chào hỏi, giới thiệu bản thân, đặt câu hỏi.
+- Nắm chắc các cấu trúc câu đơn giản và sử dụng đúng các thì cơ bản.
+- **Đừng quá áp lực vì mục tiêu lớn nhất của A1 là đặt câu sao cho đúng.**
+:::---
 ### **📚 Mục lục Ngữ pháp A1 (Grammatik A1)**
 
 |**📌 Chủ đề ngữ pháp**|**📖 Nội dung chính**|**📝 Ví dụ minh họa**|

@@ -23,11 +23,12 @@ Thì **Perfekt** là một trong những thì quan trọng nhất trong tiếng 
 **Thứ tự:** `Subject` + **_haben/sein_** + ~~object~~ + **Partizip II**
 :::>
 
-> Ví dụ:
->
-> - Ich **habe** gespielt. _(Tôi đã chơi.)_
-> - Er **ist** gekommen. _(Anh ấy đã đến.)_
+:::note[Ví dụ:]
+Ví dụ:
 
+- Ich **habe** gespielt. _(Tôi đã chơi.)_
+- Er **ist** gekommen. _(Anh ấy đã đến.)_
+:::
 ## 🔍 Khi nào dùng haben, khi nào dùng sein?
 
 ### Dùng với **haben** (phần lớn động từ)

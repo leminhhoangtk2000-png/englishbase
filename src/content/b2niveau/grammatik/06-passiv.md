@@ -10,20 +10,23 @@ sidebar_position: 6
 
 ### 🔸 Câu chủ động (Aktiv):
 
-> Die Polizei **kontrolliert** die Autos.  
-> → Cảnh sát kiểm tra xe hơi.
-
+:::note[Die Polizei kontrolliert die Autos.]
+Die Polizei **kontrolliert** die Autos.  
+→ Cảnh sát kiểm tra xe hơi.
+:::
 ### 🔸 Câu bị động (Passiv):
 
-> Die Autos **werden kontrolliert**.  
-> → Xe hơi **được kiểm tra**.
-
+:::note[Die Autos werden kontrolliert.]
+Die Autos **werden kontrolliert**.  
+→ Xe hơi **được kiểm tra**.
+:::
 ---
 
 ## 📘 **2. Các thì của câu bị động (Vorgangspassiv)**
 
-> ✅ Cấu trúc: **werden** (chia theo thì) + **Partizip II** (quá khứ phân từ)
-
+:::note[✅ Cấu trúc: werden (chia theo thì) + Partizip II (]
+✅ Cấu trúc: **werden** (chia theo thì) + **Partizip II** (quá khứ phân từ)
+:::
 |**Thì**|**Cấu trúc**|**Ví dụ**|
 |---|---|---|
 |Präsens|werden + Partizip II|Die Tür **wird geöffnet**.|
@@ -48,9 +51,10 @@ sidebar_position: 6
 
 ## 🧠 **3. Câu bị động với Modalverben (Passiv mit Modalverben)**
 
-> ✅ Cấu trúc:  
-> **Modalverb + Partizip II + werden**
-
+:::note[✅ Cấu trúc:]
+✅ Cấu trúc:  
+**Modalverb + Partizip II + werden**
+:::
 |**Thì**|**Cấu trúc**|**Ví dụ**|
 |---|---|---|
 |Präsens|muss + gelesen + werden|Das Buch **muss gelesen werden**.|
@@ -65,12 +69,14 @@ sidebar_position: 6
 
 📌 Dùng khi **hai chủ thể tác động lẫn nhau**, không nêu rõ ai làm – ai nhận.
 
-> **Es wird viel gestritten.**  
-> → Mọi người đang cãi nhau (một cách chung chung).
-
-> **Es wird getanzt, gesungen und gefeiert.**  
-> → Có khiêu vũ, ca hát và ăn mừng (nhưng không nói ai làm gì).
-
+:::note[Es wird viel gestritten.]
+**Es wird viel gestritten.**  
+→ Mọi người đang cãi nhau (một cách chung chung).
+:::
+:::note[Es wird getanzt, gesungen und gefeiert.]
+**Es wird getanzt, gesungen und gefeiert.**  
+→ Có khiêu vũ, ca hát và ăn mừng (nhưng không nói ai làm gì).
+:::
 📌 Đây là kiểu bị động **vô chủ** → rất hay dùng trong mô tả bối cảnh, sự kiện, báo cáo.
 
 ---
