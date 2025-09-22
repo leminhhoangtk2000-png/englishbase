@@ -17,9 +17,9 @@ Có hai cách để hình thành Konjunktiv II ở thì hiện tại:
 
 ### **🔹 Cách 1: Dùng dạng Konjunktiv II của động từ mạnh (starke Verben)**
 
-:::note[**Công thức:**]
-**Verbstamm (gốc động từ ở dạng Prateritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
-:::
+> 💡 ****Công thức:****
+>
+> **Verbstamm (gốc động từ ở dạng Prateritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
 
 Ví dụ:
 
@@ -42,9 +42,9 @@ Lưu ý:
 
 **Đây là cách thường được sử dụng trong văn nói vì dễ dùng hơn.**
 
-:::note[**Công thức:**]
- **würde + Infinitiv (nguyên mẫu của động từ chính)**
-:::
+> 💡 ****Công thức:****
+>
+> **würde + Infinitiv (nguyên mẫu của động từ chính)**
 
 Ví dụ:
 
@@ -140,9 +140,9 @@ Lưu ý:
 
 Được hình thành bằng "hätte" hoặc "wäre" + Partizip II (phân từ II).
 
-:::note[**Công thức:**]
-**hätte / wäre + Partizip II**
-:::
+> 💡 ****Công thức:****
+>
+> **hätte / wäre + Partizip II**
 
 **Ví dụ:**
 
@@ -174,9 +174,9 @@ Lưu ý:
 
 ### **🔹 Cách sử dụng với động từ khiếm khuyết**
 
-:::note[**Công thức:**]
-**hätte + Modalverb (Infinitiv) + Partizip II**
-:::
+> 💡 ****Công thức:****
+>
+> **hätte + Modalverb (Infinitiv) + Partizip II**
 
 **Ví dụ:**
 

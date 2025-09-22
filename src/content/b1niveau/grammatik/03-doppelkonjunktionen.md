@@ -16,9 +16,9 @@ order: 3
 
 Dùng để diễn tả một sự tương phản giữa hai vế câu.
 
-:::note[**Công thức:**]
-**Subjekt + zwar + Verb + Subjekt + …, aber + Subjekt + Verb + …**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + zwar + Verb + Subjekt + …, aber + Subjekt + Verb + …**
 
 **Ví dụ:**
 
@@ -38,9 +38,9 @@ Dùng để diễn tả một sự tương phản giữa hai vế câu.
 
 Dùng khi có hai khả năng lựa chọn.
 
-:::note[**Công thức:**]
-**Subjekt + entweder + Verb + Subjekt + …, oder + Subjekt + Verb + …**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + entweder + Verb + Subjekt + …, oder + Subjekt + Verb + …**
 
 **Ví dụ:**
 
@@ -60,9 +60,9 @@ Dùng khi có hai khả năng lựa chọn.
 
 Dùng để bổ sung thêm một thông tin có tính nhấn mạnh.
 
-:::note[**Công thức:**]
-**Subjekt + nicht nur + Subjekt + Verb + …, sondern auch + Subjekt + Verb + …**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + nicht nur + Subjekt + Verb + …, sondern auch + Subjekt + Verb + …**
 
 **Ví dụ:**
 
@@ -82,9 +82,9 @@ Dùng để bổ sung thêm một thông tin có tính nhấn mạnh.
 
 Dùng để diễn tả cả hai khả năng đều đúng.
 
-:::note[**Công thức:**]
-**Subjekt + sowohl + Subjekt + Verb + … als auch + Subjekt + Verb + …**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + sowohl + Subjekt + Verb + … als auch + Subjekt + Verb + …**
 
 **Ví dụ:**
 
@@ -104,9 +104,9 @@ Dùng để diễn tả cả hai khả năng đều đúng.
 
 Dùng để diễn tả sự phủ định của cả hai khả năng.
 
-:::note[**Công thức:**]
-**Subjekt + weder + Subjekt + Verb + …, noch + Subjekt + Verb + …**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + weder + Subjekt + Verb + …, noch + Subjekt + Verb + …**
 
 **Ví dụ:**
 
@@ -126,9 +126,9 @@ Dùng để diễn tả sự phủ định của cả hai khả năng.
 
 Dùng để diễn tả mối quan hệ tỷ lệ thuận giữa hai vế câu.
 
-:::note[**Công thức:**]
-**Subjekt + je + Komparativ + Subjekt + Verb + …, desto + Komparativ + Verb + Subjekt + …**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + je + Komparativ + Subjekt + Verb + …, desto + Komparativ + Verb + Subjekt + …**
 
 **Ví dụ:**
 
@@ -146,10 +146,10 @@ Dùng để diễn tả mối quan hệ tỷ lệ thuận giữa hai vế câu.
 
 ## **🎯 7. Tổng kết: Các lưu ý quan trọng**
 
-:::note
-  - **Liên từ đôi luôn đi theo cặp và ảnh hưởng đến trật tự từ trong câu.**  
-  - **"Zwar … aber" diễn tả sự tương phản, "nicht nur … sondern auch" diễn tả sự bổ sung.**  
-  - **"Entweder … oder" đưa ra hai khả năng lựa chọn, "weder … noch" phủ định cả hai.**  
-  - **"Sowohl … als auch" nhấn mạnh sự kết hợp, "je … desto" diễn tả mối quan hệ tỷ lệ thuận.** 
-  - **Một số liên từ đôi như "je … desto" làm thay đổi trật tự câu, cần chú ý vị trí động từ.**
-:::
+> 💡
+>
+> - **Liên từ đôi luôn đi theo cặp và ảnh hưởng đến trật tự từ trong câu.**
+> - **"Zwar … aber" diễn tả sự tương phản, "nicht nur … sondern auch" diễn tả sự bổ sung.**
+> - **"Entweder … oder" đưa ra hai khả năng lựa chọn, "weder … noch" phủ định cả hai.**
+> - **"Sowohl … als auch" nhấn mạnh sự kết hợp, "je … desto" diễn tả mối quan hệ tỷ lệ thuận.**
+> - **Một số liên từ đôi như "je … desto" làm thay đổi trật tự câu, cần chú ý vị trí động từ.**

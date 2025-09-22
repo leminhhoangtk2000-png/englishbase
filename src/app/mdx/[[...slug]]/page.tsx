@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getMDXFile, getMDXTableOfContents } from '@/lib/mdx'
 import { DocsTOC } from '@/components/docs-toc-client'
+import { preprocessAdmonitions } from '@/lib/preprocess-admonitions'
+import { mdxOptions } from '@/lib/mdx-options'
 
 // Import tất cả exercise components
 import { 
@@ -76,7 +78,7 @@ export default async function MDXPage({ params }: PageProps) {
 
               {/* MDX Content */}
               <MDXRemote 
-                source={mdxFile.content} 
+                source={preprocessAdmonitions(mdxFile.content)} 
                 components={components}
               />
             </div>

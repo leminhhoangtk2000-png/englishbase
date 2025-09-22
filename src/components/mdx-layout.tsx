@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import mdxComponents from './mdx-provider'
 import { DocsTOC } from './docs-toc-client'
 import { type MDXTableOfContentsItem } from '../lib/mdx'
+import { preprocessAdmonitions } from '../lib/preprocess-admonitions'
 
 interface MDXLayoutProps {
   source: any // MDX source from next-mdx-remote/rsc

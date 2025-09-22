@@ -146,9 +146,9 @@ order: 11
 
 ## **🎯 4. Tổng kết: Các lưu ý quan trọng**
 
-:::note
-  **Quán từ sở hữu luôn đi kèm với danh từ, đại từ sở hữu có thể đứng một mình.**  
-  **Đại từ sở hữu thay đổi theo giống, số, và cách của danh từ được thay thế.**  
-  **Giống trung và số nhiều thường thêm -s khi dùng đại từ sở hữu.**  
-  **Đại từ sở hữu giúp tránh lặp lại danh từ và làm cho câu súc tích hơn.**
-:::
+> 💡
+>
+> **Quán từ sở hữu luôn đi kèm với danh từ, đại từ sở hữu có thể đứng một mình.**
+> **Đại từ sở hữu thay đổi theo giống, số, và cách của danh từ được thay thế.**
+> **Giống trung và số nhiều thường thêm -s khi dùng đại từ sở hữu.**
+> **Đại từ sở hữu giúp tránh lặp lại danh từ và làm cho câu súc tích hơn.**

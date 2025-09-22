@@ -1,0 +1,506 @@
+/* Docusaurus-style Admonitions CSS */
+
+/* FORCE DISPLAY - Maximum priority */
+.admonition,
+div.admonition,
+.prose .admonition,
+.prose div.admonition {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: white;
+}
+
+.admonition-header,
+div.admonition-header,
+.prose .admonition-header,
+.prose div.admonition-header {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.admonition-icon,
+span.admonition-icon,
+.prose .admonition-icon,
+.prose span.admonition-icon {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 1.125rem;
+}
+
+.admonition-title,
+span.admonition-title,
+.prose .admonition-title, 
+.prose span.admonition-title {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 1rem;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.admonition-content,
+div.admonition-content,
+.prose .admonition-content,
+.prose div.admonition-content {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit;
+  line-height: 1.6;
+  white-space: normal;
+}
+
+/* Force all content inside admonitions to be visible */
+.admonition *,
+.prose .admonition * {
+  display: initial !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit !important;
+}
+
+.admonition p,
+.prose .admonition p {
+  display: block !important;
+  margin: 0.5rem 0 !important;
+  color: inherit !important;
+}
+
+.admonition-content p {
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.admonition-content p:last-child {
+  margin-bottom: 0;
+}
+
+.admonition-content p:first-child {
+  margin-top: 0;
+}
+
+.admonition-content strong {
+  font-weight: 700;
+  color: inherit;
+  display: inline;
+  white-space: normal;
+}
+
+.admonition-content em {
+  font-style: italic;
+  color: inherit;
+  display: inline;
+  white-space: normal;
+}
+
+.admonition-content code {
+  background-color: rgba(175, 184, 193, 0.2);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875em;
+  color: inherit;
+  display: inline;
+  white-space: nowrap;
+}
+
+.admonition-content pre {
+  background-color: rgba(175, 184, 193, 0.1);
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  display: block;
+  white-space: pre;
+}
+
+.admonition-content pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875rem;
+  white-space: pre;
+}
+
+.admonition-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  opacity: 0.8;
+  display: inline;
+}
+
+.admonition-content a:hover {
+  opacity: 1;
+}
+
+.admonition-content ul,
+.admonition-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  display: block;
+}
+
+.admonition-content li {
+  margin: 0.25rem 0;
+  display: list-item;
+}
+
+.admonition-content blockquote {
+  border-left: 3px solid currentColor;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  opacity: 0.8;
+  display: block;
+}
+
+/* Nested formatting support - ensure inline display */
+.admonition-content strong em,
+.admonition-content em strong {
+  font-weight: 700;
+  font-style: italic;
+  display: inline;
+}
+
+/* Strikethrough support */
+.admonition-content del,
+.admonition-content s {
+  text-decoration: line-through;
+  opacity: 0.7;
+  display: inline;
+}
+
+/* Force inline for all text formatting */
+.admonition-content b,
+.admonition-content i,
+.admonition-content u,
+.admonition-content mark {
+  display: inline;
+}
+
+/* Prevent line breaks within formatted text */
+.admonition-content strong,
+.admonition-content em,
+.admonition-content code {
+  word-break: keep-all;
+  hyphens: none;
+}
+
+/* Override any global prose styles that might cause line breaks */
+.admonition-content strong,
+.admonition-content b {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+.admonition-content em,
+.admonition-content i {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+.admonition-content code {
+  display: inline !important;
+  white-space: nowrap !important;
+}
+
+/* ULTIMATE FIX for inline text - Maximum specificity */
+.prose .admonition .admonition-content p strong,
+.prose .admonition .admonition-content p b,
+.prose .admonition .admonition-content p em,
+.prose .admonition .admonition-content p i,
+.prose .admonition .admonition-content p code,
+.prose .admonition .admonition-content li strong,
+.prose .admonition .admonition-content li b,
+.prose .admonition .admonition-content li em,
+.prose .admonition .admonition-content li i,
+.prose .admonition .admonition-content li code,
+.prose .admonition .admonition-content strong,
+.prose .admonition .admonition-content b,
+.prose .admonition .admonition-content em,
+.prose .admonition .admonition-content i,
+.prose .admonition .admonition-content code {
+  display: inline !important;
+  white-space: normal !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  float: none !important;
+  clear: none !important;
+  width: auto !important;
+  height: auto !important;
+  position: static !important;
+}
+
+/* Force code to have proper padding but stay inline */
+.prose .admonition .admonition-content code {
+  padding: 0.125rem 0.25rem !important;
+  background-color: rgba(175, 184, 193, 0.2) !important;
+  border-radius: 0.25rem !important;
+  white-space: nowrap !important;
+}
+
+/* Prevent any possible CSS that might cause display issues */
+.prose .admonition .admonition-content * {
+  box-sizing: border-box !important;
+}
+
+/* Remove any transforms or positioning that might affect layout */
+.prose .admonition .admonition-content strong,
+.prose .admonition .admonition-content em,
+.prose .admonition .admonition-content code {
+  transform: none !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+/* Higher specificity overrides */
+.prose .admonition .admonition-content strong,
+.prose .admonition .admonition-content b,
+.prose .admonition .admonition-content em,
+.prose .admonition .admonition-content i,
+.prose .admonition .admonition-content code {
+  display: inline !important;
+  white-space: normal !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: none !important;
+  float: none !important;
+}
+
+/* Force inline for code specifically */
+.prose .admonition .admonition-content code {
+  white-space: nowrap !important;
+  background-color: rgba(175, 184, 193, 0.2) !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+}
+
+/* Ensure text flows naturally */
+.admonition-content * {
+  line-height: inherit;
+}
+
+/* Specific fix for inline elements */
+.admonition-content p strong,
+.admonition-content p em,
+.admonition-content p code,
+.admonition-content li strong,
+.admonition-content li em,
+.admonition-content li code {
+  display: inline !important;
+  vertical-align: baseline;
+}
+
+/* Note - Blue theme */
+.admonition-note {
+  border-left-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+/* .admonition-note .admonition-header {
+  color: #1d4ed8;
+} */
+
+.admonition-note .admonition-content {
+  color: #1e40af;
+}
+
+/* Tip - Green theme */
+.admonition-tip {
+  border-left-color: #10b981;
+  background-color: #ecfdf5;
+}
+
+/* .admonition-tip .admonition-header {
+  color: #047857;
+} */
+
+.admonition-tip .admonition-content {
+  color: #065f46;
+}
+
+/* Warning - Yellow theme */
+.admonition-warning {
+  border-left-color: #f59e0b;
+  background-color: #fffbeb;
+}
+
+/* .admonition-warning .admonition-header {
+  color: #b45309;
+} */
+
+.admonition-warning .admonition-content {
+  color: #92400e;
+}
+
+/* Info - Cyan theme */
+.admonition-info {
+  border-left-color: #06b6d4;
+  background-color: #ecfeff;
+}
+
+/* .admonition-info .admonition-header {
+  color: #0891b2;
+} */
+
+.admonition-info .admonition-content {
+  color: #0e7490;
+}
+
+/* Caution - Orange theme */
+.admonition-caution {
+  border-left-color: #ea580c;
+  background-color: #fff7ed;
+}
+
+/* .admonition-caution .admonition-header {
+  color: #c2410c;
+} */
+
+.admonition-caution .admonition-content {
+  color: #9a3412;
+}
+
+/* Danger - Red theme */
+.admonition-danger {
+  border-left-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+/* .admonition-danger .admonition-header {
+  color: #b91c1c;
+} */
+
+.admonition-danger .admonition-content {
+  color: #991b1b;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .admonition {
+    background-color: #1f2937;
+    border-color: #4b5563;
+  }
+  
+  .admonition-note {
+    background-color: #172554;
+    border-left-color: #60a5fa;
+  }
+  
+  .admonition-note .admonition-header {
+    color: #93c5fd;
+  }
+  
+  .admonition-note .admonition-content {
+    color: #bfdbfe;
+  }
+  
+  .admonition-tip {
+    background-color: #064e3b;
+    border-left-color: #34d399;
+  }
+  
+  .admonition-tip .admonition-header {
+    color: #6ee7b7;
+  }
+  
+  .admonition-tip .admonition-content {
+    color: #a7f3d0;
+  }
+  
+  .admonition-warning {
+    background-color: #451a03;
+    border-left-color: #fbbf24;
+  }
+  
+  .admonition-warning .admonition-header {
+    color: #fcd34d;
+  }
+  
+  .admonition-warning .admonition-content {
+    color: #fde68a;
+  }
+  
+  .admonition-info {
+    background-color: #164e63;
+    border-left-color: #22d3ee;
+  }
+  
+  .admonition-info .admonition-header {
+    color: #67e8f9;
+  }
+  
+  .admonition-info .admonition-content {
+    color: #a5f3fc;
+  }
+  
+  .admonition-caution {
+    background-color: #431407;
+    border-left-color: #fb923c;
+  }
+  
+  .admonition-caution .admonition-header {
+    color: #fdba74;
+  }
+  
+  .admonition-caution .admonition-content {
+    color: #fed7aa;
+  }
+  
+  .admonition-danger {
+    background-color: #450a0a;
+    border-left-color: #f87171;
+  }
+  
+  .admonition-danger .admonition-header {
+    color: #fca5a5;
+  }
+  
+  .admonition-danger .admonition-content {
+    color: #fecaca;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .admonition {
+    margin: 1rem 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .admonition-header {
+    font-size: 0.875rem;
+  }
+  
+  .admonition-content {
+    font-size: 0.875rem;
+  }
+}

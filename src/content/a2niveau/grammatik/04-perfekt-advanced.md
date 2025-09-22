@@ -16,16 +16,16 @@ order: 4
 
 ## **1. Công thức xây dựng câu ở thì Perfekt**
 
-:::note[📌 **Công thức:**]
-  **Câu khẳng định:**  
-**Chủ ngữ + haben/sein (chia theo chủ ngữ) + ... + Partizip II**
-
-  **Câu phủ định:**  
-**Chủ ngữ + haben/sein (chia theo chủ ngữ) + nicht + ... + Partizip II**
-
-  **Câu hỏi:**  
-**(W-Frage) + haben/sein + chủ ngữ + ... + Partizip II?**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Câu khẳng định:**
+> **Chủ ngữ + haben/sein (chia theo chủ ngữ) + ... + Partizip II**
+>
+> **Câu phủ định:**
+> **Chủ ngữ + haben/sein (chia theo chủ ngữ) + nicht + ... + Partizip II**
+>
+> **Câu hỏi:**
+> **(W-Frage) + haben/sein + chủ ngữ + ... + Partizip II?**
 
 **Ví dụ:**
 
@@ -49,9 +49,9 @@ order: 4
 
 ### **2.1. Nhóm động từ có quy tắc (Regelmäßige Verben)**
 
-:::note[📌 **Công thức tạo Partizip II cho động từ có quy tắc:** ]
- **ge + Verbstamm + (e)t**
-:::
+> 💡 **📌 **Công thức tạo Partizip II cho động từ có quy tắc:****
+>
+> **ge + Verbstamm + (e)t**
 
 |**Nguyên thể (Infinitiv)**|**Partizip II**|**Nghĩa**|
 |---|---|---|
@@ -91,9 +91,9 @@ order: 4
 
 ### **2.2. Nhóm động từ bất quy tắc (Unregelmäßige Verben)**
 
-:::note[📌 **Động từ bất quy tắc không theo quy tắc trên mà có sự thay đổi về gốc từ.** ]
- **ge + Verbstamm (thay đổi) + en**
-:::
+> 💡 **📌 **Động từ bất quy tắc không theo quy tắc trên mà có sự thay đổi về gốc từ.****
+>
+> **ge + Verbstamm (thay đổi) + en**
 
 |**Nguyên thể (Infinitiv)**|**Partizip II**|**Nghĩa**|
 |---|---|---|
@@ -103,9 +103,9 @@ order: 4
 |schreiben|geschrieben|viết|
 |sehen|gesehen|nhìn|
 
-:::note 
-**Chúng ta không có bất cứ luật lệ gì cho các động từ này**, và bạn cũng ko nên kiếm mẹo cho dễ học để làm gì đâu. Vì nó không hiệu quả, tôi tổng hợp các động từ bất quy tắc thành bảng, và có sẵn bài đục lỗ nằm ở phần **"bài tập".**
-:::
+> 💡
+>
+> **Chúng ta không có bất cứ luật lệ gì cho các động từ này**, và bạn cũng ko nên kiếm mẹo cho dễ học để làm gì đâu. Vì nó không hiệu quả, tôi tổng hợp các động từ bất quy tắc thành bảng, và có sẵn bài đục lỗ nằm ở phần **"bài tập".**
 
  **Ví dụ:**
 
@@ -176,10 +176,10 @@ order: 4
 
 ## **🎯 5. Tổng Kết**
 
-:::note 
-  **Thì Perfekt được hình thành bằng trợ động từ "haben" hoặc "sein" + Partizip II**.  
-  **Partizip II của động từ có quy tắc:** _ge + Verbstamm + (e)t_ (_gespielt, gelernt_).  
-  **Partizip II của động từ bất quy tắc:** _ge + Verbstamm (thay đổi) + en_ (_gesehen, geschrieben_).  
-  **Dùng "haben" với hầu hết động từ**, nhưng **dùng "sein" với động từ di chuyển hoặc thay đổi trạng thái**.  
-  **Ba động từ đặc biệt luôn đi với "sein"**: _bleiben, sein, werden_.
-:::
+> 💡
+>
+> **Thì Perfekt được hình thành bằng trợ động từ "haben" hoặc "sein" + Partizip II**.
+> **Partizip II của động từ có quy tắc:** _ge + Verbstamm + (e)t_ (_gespielt, gelernt_).
+> **Partizip II của động từ bất quy tắc:** _ge + Verbstamm (thay đổi) + en_ (_gesehen, geschrieben_).
+> **Dùng "haben" với hầu hết động từ**, nhưng **dùng "sein" với động từ di chuyển hoặc thay đổi trạng thái**.
+> **Ba động từ đặc biệt luôn đi với "sein"**: _bleiben, sein, werden_.

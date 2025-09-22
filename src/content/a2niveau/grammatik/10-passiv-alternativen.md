@@ -111,10 +111,10 @@ order: 10
 
 ## **🎯 3. Tổng kết: Các lưu ý quan trọng**
 
-:::note
-- **Có nhiều cách thay thế câu bị động, giúp câu trở nên tự nhiên hơn trong văn nói và viết.**  
-- **"Man" hoặc "jemand" giúp diễn đạt bị động theo cách chủ động hơn.**  
-- **Cấu trúc "sein + zu + Infinitiv" thường dùng trong văn viết để thay thế bị động.**  
-- **"Lassen + sich + Infinitiv" dùng khi hành động có thể thực hiện dễ dàng.**  
-- **Hậu tố "-bar" giúp tạo tính từ mang nghĩa bị động một cách tự nhiên.**
-:::
+> 💡
+>
+> - **Có nhiều cách thay thế câu bị động, giúp câu trở nên tự nhiên hơn trong văn nói và viết.**
+> - **"Man" hoặc "jemand" giúp diễn đạt bị động theo cách chủ động hơn.**
+> - **Cấu trúc "sein + zu + Infinitiv" thường dùng trong văn viết để thay thế bị động.**
+> - **"Lassen + sich + Infinitiv" dùng khi hành động có thể thực hiện dễ dàng.**
+> - **Hậu tố "-bar" giúp tạo tính từ mang nghĩa bị động một cách tự nhiên.**

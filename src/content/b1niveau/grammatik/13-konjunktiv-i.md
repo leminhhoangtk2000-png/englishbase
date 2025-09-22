@@ -15,9 +15,9 @@ order: 13
 
 **Konjunktiv I được hình thành từ gốc động từ nguyên thể (Infinitiv) nhưng có một số thay đổi về đuôi động từ.**
 
-:::note[**Công thức:**]
-**Verbstamm + -e, -est, -e, -en, -et, -en**
-:::
+> 💡 ****Công thức:****
+>
+> **Verbstamm + -e, -est, -e, -en, -et, -en**
 
  **Bảng chia động từ "sein" (là) ở Konjunktiv I:**
 
@@ -61,9 +61,9 @@ order: 13
 
 **Được hình thành bằng trợ động từ "haben" hoặc "sein" ở Konjunktiv I + Partizip II.**
 
-:::note[**Công thức:**]
-**habe/sei + Partizip II**
-:::
+> 💡 ****Công thức:****
+>
+> **habe/sei + Partizip II**
 
 **Ví dụ:**
 
@@ -85,9 +85,9 @@ order: 13
 
 ### **🔹 3.1. Thì tương lai I (Futur I)**
 
-:::note[**Công thức:**] 
-**werde + Infinitiv**
-:::
+> 💡 ****Công thức:****
+>
+> **werde + Infinitiv**
 
 **Ví dụ:**
 
@@ -97,9 +97,9 @@ order: 13
 
 ### **🔹 3.2. Thì tương lai II (Futur II - Hành động đã hoàn thành trong tương lai)**
 
-:::note[**Công thức:**]  
-**werde + Partizip II + haben/sein**
-:::
+> 💡 ****Công thức:****
+>
+> **werde + Partizip II + haben/sein**
 
 **Ví dụ:**
 
@@ -116,9 +116,9 @@ order: 13
 
 **Konjunktiv I có thể được dùng thay cho mệnh lệnh (Imperativ) trong văn phong trang trọng hoặc trong các văn bản chính thức.**
 
-:::note[**Công thức:**]
-**Subjekt + Konjunktiv I (3. Person Singular oder Plural)**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + Konjunktiv I (3. Person Singular oder Plural)**
 
 **Ví dụ:**
 

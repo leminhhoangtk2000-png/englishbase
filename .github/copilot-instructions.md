@@ -99,6 +99,32 @@ This is a **German-Vietnamese language learning platform** built with Next.js 15
 - **Dynamic Routing**: `[[...slug]]` pattern used consistently across content sections
 - **Theme Integration**: All components auto-adapt to selected theme (light/dark/nude)
 
+### Vocabulary Content System (FIXED)
+
+**Location**: `/src/content/a2niveau/vokabular/`
+**Status**: ✅ RECENTLY FIXED - Frontmatter display issues resolved
+
+**Fixed Files**:
+
+- All vocabulary section `index.md` files now have proper frontmatter
+- Required frontmatter structure:
+  ```yaml
+  ---
+  title: "Section Title - Vietnamese Translation"
+  description: "Brief description of content"
+  level: "A2"
+  topic: "Vokabular"
+  order: 1
+  ---
+  ```
+
+**Issues Resolved**:
+
+- Navigation sidebar now displays correct section titles
+- Pages show proper headings instead of "Untitled"
+- Breadcrumb navigation works correctly
+- Consistent title display across all vocabulary sections
+
 ## Development Workflows
 
 ### Essential Commands
@@ -147,16 +173,27 @@ npm run watch:content
 
 ```yaml
 ---
-title: "Lesson Title"
+title: "Lesson Title - Vietnamese Translation"
 description: "Lesson description"
-level: "A1"
-topic: "Grammatik"
+level: "A1" | "A2" | "B1" | "B2"
+topic: "Grammatik" | "Vokabular" | "Übungen"
 order: 3
+difficulty: "beginner" | "intermediate" | "advanced"
+tags: ["grammar", "vocabulary", "exercises"]
 ---
 ```
 
 3. **Update navigation** in `src/config/[niveau].ts`
 4. **Auto-save triggers** Next.js reload → immediate preview
+5. **Follow markdown standards** - See `MARKDOWN-FEATURES.md` for complete guide
+
+### Markdown Content System (NEW)
+
+- **Documentation**: `MARKDOWN-FEATURES.md` - Complete guide to supported features
+- **Features**: Standard Markdown + Language learning extensions + Theme support
+- **Custom Elements**: Vocabulary lists, grammar examples, exercises, progress indicators
+- **Responsive**: Auto-adapts to mobile devices and all theme variants
+- **SEO Optimized**: Semantic structure with proper meta tags and accessibility
 
 ### Theme Development Pattern (NEW)
 

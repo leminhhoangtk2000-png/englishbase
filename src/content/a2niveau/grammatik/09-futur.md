@@ -15,9 +15,9 @@ order: 9
 
 ## **1. Công thức xây dựng thì tương lai đơn (Futur I)**
 
-:::note[📌 **Công thức:**]
-**Subjekt (chủ ngữ) + werden (chia theo chủ ngữ) + động từ chính ở dạng nguyên mẫu (Infinitiv)**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt (chủ ngữ) + werden (chia theo chủ ngữ) + động từ chính ở dạng nguyên mẫu (Infinitiv)**
 
 |**Ngôi**|**werden** + Infinitiv|
 |---|---|
@@ -77,9 +77,9 @@ order: 9
 
 📌 **Trong câu có động từ khiếm khuyết, động từ khiếm khuyết giữ nguyên dạng nguyên mẫu (Infinitiv) và đứng trước động từ chính.**
 
-:::note[📌 **Công thức:**]
-**Subjekt (chủ ngữ) + werden (chia) + Modalverb (nguyên mẫu) + Hauptverb (nguyên mẫu)**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt (chủ ngữ) + werden (chia) + Modalverb (nguyên mẫu) + Hauptverb (nguyên mẫu)**
 
 **Ví dụ:**
 
@@ -99,9 +99,9 @@ order: 9
 
 📌 **Dùng để diễn tả một hành động trong tương lai mà không cần biết ai thực hiện hành động đó.**
 
-:::note[📌 **Công thức:**]
- **Subjekt (chủ ngữ) + werden (Präsens) + Partizip II + werden (Infinitiv)**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt (chủ ngữ) + werden (Präsens) + Partizip II + werden (Infinitiv)**
 
 **Ví dụ:**
 
@@ -121,9 +121,9 @@ order: 9
 
 📌 **Dùng để diễn tả một hành động sẽ hoàn thành vào một thời điểm cụ thể trong tương lai.**
 
-:::note[📌 **Công thức:**]
-**Subjekt (chủ ngữ) + werden (Präsens) + Partizip II + haben/sein (Infinitiv)**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt (chủ ngữ) + werden (Präsens) + Partizip II + haben/sein (Infinitiv)**
 
 **Ví dụ:**
 
@@ -142,10 +142,10 @@ order: 9
 
 ## **🎯 7. Tổng kết: Các lưu ý quan trọng**
 
-:::note
-- **Futur I = werden + Infinitiv, dùng để diễn tả kế hoạch hoặc dự đoán trong tương lai.**  
-- **Có thể dùng Präsens để diễn tả tương lai khi có mốc thời gian rõ ràng.**  
-- **Futur I với Modalverben = werden + Modalverb + Infinitiv.**  
-- **Bị động ở thì tương lai = werden (Präsens) + Partizip II + werden (Infinitiv).**  
-- **Futur II = werden + Partizip II + haben/sein, dùng để diễn tả hành động sẽ hoàn thành trong tương lai.**
-:::
+> 💡
+>
+> - **Futur I = werden + Infinitiv, dùng để diễn tả kế hoạch hoặc dự đoán trong tương lai.**
+> - **Có thể dùng Präsens để diễn tả tương lai khi có mốc thời gian rõ ràng.**
+> - **Futur I với Modalverben = werden + Modalverb + Infinitiv.**
+> - **Bị động ở thì tương lai = werden (Präsens) + Partizip II + werden (Infinitiv).**
+> - **Futur II = werden + Partizip II + haben/sein, dùng để diễn tả hành động sẽ hoàn thành trong tương lai.**

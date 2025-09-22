@@ -13,13 +13,12 @@ order: 7
 
 ## **1. Tổng quan về 4 quy tắc chính**
 
-:::note[**Có 4 quy tắc quan trọng cần nhớ khi sắp xếp câu trong tiếng Đức:**]
-
-**Quy tắc 1:** Tân ngữ gián tiếp (Dativ) đứng trước tân ngữ trực tiếp (Akkusativ).  
-**Quy tắc 2:** Nếu tân ngữ trực tiếp là đại từ nhân xưng, nó sẽ đứng trước tân ngữ gián tiếp.  
-**Quy tắc 3:** Cụm trạng từ tuân theo quy tắc **TeKaMoLo** (Temporal – Kausal – Modal – Lokal).  
-**Quy tắc 4:** Bộ phận quan trọng nhất thường xuất hiện ở đầu hoặc cuối câu.
-:::
+> 💡 ****Có 4 quy tắc quan trọng cần nhớ khi sắp xếp câu trong tiếng Đức:****
+>
+> **Quy tắc 1:** Tân ngữ gián tiếp (Dativ) đứng trước tân ngữ trực tiếp (Akkusativ).
+> **Quy tắc 2:** Nếu tân ngữ trực tiếp là đại từ nhân xưng, nó sẽ đứng trước tân ngữ gián tiếp.
+> **Quy tắc 3:** Cụm trạng từ tuân theo quy tắc **TeKaMoLo** (Temporal – Kausal – Modal – Lokal).
+> **Quy tắc 4:** Bộ phận quan trọng nhất thường xuất hiện ở đầu hoặc cuối câu.
 
 
 ---
@@ -29,9 +28,9 @@ order: 7
 
 **Khi câu có cả tân ngữ Dativ (gián tiếp) và Akkusativ (trực tiếp), tân ngữ Dativ sẽ đứng trước.**
 
-:::note[**Công thức:**]
-**Chủ ngữ + Động từ + Tân ngữ Dativ + Tân ngữ Akkusativ**
-:::
+> 💡 ****Công thức:****
+>
+> **Chủ ngữ + Động từ + Tân ngữ Dativ + Tân ngữ Akkusativ**
 
 **Ví dụ:**
 
@@ -47,9 +46,9 @@ order: 7
 
 **Nếu tân ngữ Akkusativ là đại từ nhân xưng (mich, dich, ihn, sie, es, uns, euch, sie/Sie), nó sẽ đứng trước tân ngữ Dativ.**
 
-:::note[**Công thức:**]
-**Chủ ngữ + Động từ + Tân ngữ Akkusativ (đại từ) + Tân ngữ Dativ**
-:::
+> 💡 ****Công thức:****
+>
+> **Chủ ngữ + Động từ + Tân ngữ Akkusativ (đại từ) + Tân ngữ Dativ**
 
 Ví dụ:
 
@@ -64,13 +63,12 @@ Lưu ý:
 
 ## **4. Quy tắc 3: Cụm trạng từ tuân theo quy tắc TeKaMoLo**
 
-:::note[**Thứ tự của các trạng từ trong câu theo nguyên tắc TeKaMoLo:**]
-
-- **Te** → **Temporal (thời gian)** (khi nào?)  
-- **Ka** → **Kausal (nguyên nhân)** (tại sao?)  
-- **Mo** → **Modal (cách thức)** (như thế nào?)  
-- **Lo** → **Lokal (địa điểm)** (ở đâu?)
-:::
+> 💡 ****Thứ tự của các trạng từ trong câu theo nguyên tắc TeKaMoLo:****
+>
+> - **Te** → **Temporal (thời gian)** (khi nào?)
+> - **Ka** → **Kausal (nguyên nhân)** (tại sao?)
+> - **Mo** → **Modal (cách thức)** (như thế nào?)
+> - **Lo** → **Lokal (địa điểm)** (ở đâu?)
 
 Ví dụ:
 
@@ -105,9 +103,9 @@ Lưu ý:
 
 ## **📍 6. Tổng kết: Những lưu ý quan trọng**
 
-:::note
-  **Quy tắc 1:** **Tân ngữ Dativ đứng trước tân ngữ Akkusativ**.  
-  **Quy tắc 2:** **Nếu tân ngữ Akkusativ là đại từ nhân xưng, nó sẽ đứng trước tân ngữ Dativ**.  
-  **Quy tắc 3:** **Cụm trạng từ theo trật tự TeKaMoLo (Thời gian – Nguyên nhân – Cách thức – Địa điểm)**.  
-  **Quy tắc 4:** **Bộ phận quan trọng nhất có thể được đặt lên đầu hoặc cuối câu để nhấn mạnh.**
-:::
+> 💡
+>
+> **Quy tắc 1:** **Tân ngữ Dativ đứng trước tân ngữ Akkusativ**.
+> **Quy tắc 2:** **Nếu tân ngữ Akkusativ là đại từ nhân xưng, nó sẽ đứng trước tân ngữ Dativ**.
+> **Quy tắc 3:** **Cụm trạng từ theo trật tự TeKaMoLo (Thời gian – Nguyên nhân – Cách thức – Địa điểm)**.
+> **Quy tắc 4:** **Bộ phận quan trọng nhất có thể được đặt lên đầu hoặc cuối câu để nhấn mạnh.**

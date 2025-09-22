@@ -25,10 +25,13 @@ Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
 - **Der Hund** spielt.<br>_Ai chơi? → Con chó chơi._
 - **Das Kind** liest ein Buch.<br>_Ai đọc? → Đứa trẻ đọc sách._
 
-:::note[Mẹo nhớ]
+:::note[Mẹo nhớ - Advanced]
+Mọi **chủ ngữ** trong câu đều ở dạng **_Nominativ_**.
 
-Mọi **chủ ngữ** trong câu đều ở dạng **Nominativ**.  
- :::
+**Công thức:** _Wer/Was_ + **Verb** = **_Nominativ_**
+
+`Ví dụ:` **Der Hund** _spielt_ → Who plays? **_The dog plays_**
+:::
 
 ---
 
@@ -42,10 +45,15 @@ Trả lời câu hỏi: **Wen? (Ai?) / Was? (Cái gì?)**
 - **Ich sehe den Mann.**<br>_Tôi nhìn thấy người đàn ông._
 - **Sie kauft das Buch.**<br>_Cô ấy mua cuốn sách._
 
-:::note[Mẹo nhớ]
+:::note[Mẹo nhớ - Akkusativ]
+Akkusativ
 
-Động từ tác động trực tiếp vào đối tượng nào → đối tượng đó ở **Akkusativ**.  
- :::
+Động từ tác động trực tiếp vào đối tượng nào → đối tượng đó ở **_Akkusativ_**.
+
+**Câu hỏi kiểm tra:** _Wen?_ (ai) / _Was?_ (cái gì)
+
+**Pattern:** `Subject` + **Verb** + **_Direct Object (Akkusativ)_**
+:::
 
 ---
 
@@ -61,10 +69,22 @@ Trả lời câu hỏi: **Wem? (Cho ai?)**
 
 :::note[Mẹo nhớ]
 
-Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.  
- :::
+Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 
----
+sdd
+:::
+
+:::tip[Tóm tắt All-in-One]
+**Nhớ nhanh 3 Kasus:**
+
+1. **_Nominativ_** = **Wer/Was?** → _Chủ ngữ_ làm gì đó
+2. **_Akkusativ_** = **Wen/Was?** → _Tân ngữ_ bị tác động
+3. **_Dativ_** = **Wem?** → _Ai_ nhận được lợi ích
+
+**Thứ tự trong câu:** `Nominativ` + **Verb** + **_Dativ_** + **_Akkusativ_**
+
+_Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
+:::
 
 ## **2. Bảng so sánh 3 Kasus quan trọng**
 
@@ -78,10 +98,9 @@ Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 
 - **Wer/Was? → Nominativ** (Ai thực hiện hành động?)
 - **Wen/Was? → Akkusativ** (Ai/cái gì chịu tác động?)
-- **Wem? → Dativ** (Ai nhận lợi ích từ hành động?)  
-  :::
+- **Wem? → Dativ** (Ai nhận lợi ích từ hành động?)
 
----
+:::
 
 ## **3. Bảng biến đổi quán từ theo Kasus**
 
@@ -91,26 +110,24 @@ Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 | **Akkusativ** | **den** Mann             | **die** Frau            | **das** Kind              | **die** Kinder        |
 | **Dativ**     | **dem** Mann             | **der** Frau            | **dem** Kind              | **den** Kindern (+n)  |
 
-:::note[Lưu ý]
+:::warning[Lưu ý]
 
 - **Akkusativ:** Chỉ **danh từ giống đực** thay đổi → "der" → "den".
 - **Dativ:** Tất cả danh từ đều thay đổi.
-- **Dativ số nhiều:** Danh từ **luôn thêm -n**.  
-  :::
+- **Dativ số nhiều:** Danh từ **luôn thêm -n**.
 
----
+:::
 
 ## **🎯 4. Tổng Kết**
 
-:::note
-
-- **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)
-- **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)
-- **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
-
-📌 **Mẹo học nhanh:**
-
-- **Wer/Was? → Nominativ**
-- **Wen/Was? → Akkusativ**
-- **Wem? → Dativ**  
-  :::
+> 📌 **Tóm tắt quan trọng**
+>
+> - **Nominativ = Chủ ngữ** (_Ai thực hiện hành động?_)
+> - **Akkusativ = Tân ngữ trực tiếp** (_Ai/cái gì bị tác động?_)
+> - **Dativ = Tân ngữ gián tiếp** (_Ai nhận lợi ích từ hành động?_)
+>
+> 📌 **Mẹo học nhanh:**
+>
+> - **Wer/Was? → Nominativ**
+> - **Wen/Was? → Akkusativ**
+> - **Wem? → Dativ**

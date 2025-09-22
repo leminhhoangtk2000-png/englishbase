@@ -17,18 +17,22 @@ Bài học này bao gồm các chủ đề sau:
 ### 📕 Các bài học chi tiết:
 
 1. **[Leben und lernen in Europa](./1.%20Leben%20und%20lernen%20in%20Europa.md)** - Cuộc sống và học tập ở châu Âu
+
    - Từ vựng về học tập: Auslandssemester, Examen, Intensivkurs
    - Cách sử dụng **weil**, **damit**, **aber** trong ngữ cảnh học tập
 
 2. **[Die neue Arbeitsimigration](./2.%20Die%20neue%20Arbeismigration.md)** - Di cư lao động mới
+
    - Từ vựng về việc làm và di cư
    - Thảo luận về xu hướng lao động hiện đại
 
 3. **[Mehrsprachigkeit oder Englisch für alle](./3.%20Mehrsprachigkeit%20oder%20Englisch%20fur%20alle.md)** - Đa ngôn ngữ hay tiếng Anh cho tất cả
+
    - Từ vựng về ngôn ngữ và giao tiếp
    - Tranh luận về chính sách ngôn ngữ
 
 4. **[Übung 1-A2](./4.%20Ubung%201-A2.md)** - Bài tập 1 A2
+
    - Bài tập thực hành từ vựng và ngữ pháp
    - Ứng dụng kiến thức đã học
 
@@ -38,19 +42,22 @@ Bài học này bao gồm các chủ đề sau:
 ## Từ vựng trọng tâm
 
 ### 🎓 Giáo dục và đào tạo
+
 - **das Auslandssemester** - kỳ học ở nước ngoài
-- **das Examen** - kỳ thi tốt nghiệp  
+- **das Examen** - kỳ thi tốt nghiệp
 - **der Intensivkurs** - khóa học chuyên sâu
 - **das Praktikum** - thực tập
 - **weiterlernen** - học tiếp
 
 ### 💼 Công việc và di cư
+
 - **die Arbeitsmigration** - di cư lao động
 - **der Arbeitsmarkt** - thị trường lao động
 - **die Qualifikation** - trình độ chuyên môn
 - **sich integrieren** - hòa nhập
 
 ### 🗣️ Ngôn ngữ và giao tiếp
+
 - **die Mehrsprachigkeit** - đa ngôn ngữ
 - **die Muttersprache** - tiếng mẹ đẻ
 - **die Fremdsprache** - ngoại ngữ
@@ -64,7 +71,7 @@ Sau khi hoàn thành bài học này, bạn sẽ có thể:
 ✅ **Thảo luận** về xu hướng di cư lao động  
 ✅ **Bày tỏ ý kiến** về chính sách ngôn ngữ  
 ✅ **Sử dụng các liên từ** phức tạp như "weil", "damit", "obwohl"  
-✅ **Viết và nói** về kế hoạch học tập của bản thân  
+✅ **Viết và nói** về kế hoạch học tập của bản thân
 
 ## Ngữ pháp trọng tâm
 
@@ -82,11 +89,13 @@ Sau khi hoàn thành bài học này, bạn sẽ có thể:
 ## Bài tập thực hành
 
 ### 1. Ergänzen Sie die Sätze:
-1. Ich mache ein Auslandssemester, **_____** ich andere Kulturen kennenlernen möchte. (weil)
-2. Sie besucht einen Sprachkurs, **_____** sie sich besser verständigen kann. (damit)
-3. Er arbeitet Teilzeit, **_____** er gleichzeitig studiert. (obwohl)
+
+1. Ich mache ein Auslandssemester, ****\_**** ich andere Kulturen kennenlernen möchte. (weil)
+2. Sie besucht einen Sprachkurs, ****\_**** sie sich besser verständigen kann. (damit)
+3. Er arbeitet Teilzeit, ****\_**** er gleichzeitig studiert. (obwohl)
 
 ### 2. Sprechen Sie über:
+
 - Ihre Erfahrungen mit dem Deutschlernen
 - Ihre Pläne für die Zukunft
 - Die Bedeutung von Fremdsprachen in Ihrem Land

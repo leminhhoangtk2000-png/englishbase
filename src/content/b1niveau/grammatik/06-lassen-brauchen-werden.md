@@ -17,9 +17,9 @@ order: 6
 
 **"Lassen" có nghĩa là "để lại", "cho phép" hoặc "bỏ lại".**
 
-:::note[**Công thức:**]
-**Subjekt + lassen (chia) + Akkusativ + (Ort/Ergänzung)**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + lassen (chia) + Akkusativ + (Ort/Ergänzung)**
 
 Ví dụ:
 
@@ -35,9 +35,9 @@ Lưu ý:
 
 **"Lassen" có thể kết hợp với một động từ nguyên mẫu để thể hiện hành động được yêu cầu, cho phép hoặc nhờ vả.**
 
-:::note[**Công thức:**]
-**Subjekt + lassen (chia) + Objekt (Akkusativ) + Infinitiv**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + lassen (chia) + Objekt (Akkusativ) + Infinitiv**
 
 Ví dụ:
 
@@ -60,9 +60,9 @@ Ví dụ (nhấn mạnh sự cho phép):
 
 **"Brauchen" có nghĩa là "cần" và đi với Akkusativ.**
 
-:::note[**Công thức:**]
-**Subjekt + brauchen (chia) + Akkusativ**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + brauchen (chia) + Akkusativ**
 
 Ví dụ:
 
@@ -78,9 +78,9 @@ Lưu ý:
 
 **"Brauchen" có thể kết hợp với "zu + Infinitiv" để chỉ sự không cần thiết.**
 
-:::note[**Công thức:**]
-**Subjekt + brauchen (chia) + nicht/kein + zu + Infinitiv**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + brauchen (chia) + nicht/kein + zu + Infinitiv**
 
 Ví dụ:
 
@@ -99,9 +99,9 @@ Lưu ý:
 
 **"Werden" có nghĩa là "trở thành" hoặc "biến đổi thành".**
 
-:::note[**Công thức:**]
-**Subjekt + werden (chia) + Nominativ**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + werden (chia) + Nominativ**
 
 Ví dụ:
 
@@ -119,9 +119,9 @@ Lưu ý:
 
 ### **3.2.1. "Werden" trong thì tương lai (Futur I)**
 
-:::note[**Công thức:**]
-**Subjekt + werden (chia) + Infinitiv**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + werden (chia) + Infinitiv**
 
 Ví dụ:
 
@@ -135,9 +135,9 @@ Lưu ý:
 
 ### **3.2.2. "Werden" trong thể bị động (Passiv)**
 
-:::note[**Công thức:**]
-**Subjekt + werden (chia) + Partizip II**
-:::
+> 💡 ****Công thức:****
+>
+> **Subjekt + werden (chia) + Partizip II**
 
 Ví dụ:
 

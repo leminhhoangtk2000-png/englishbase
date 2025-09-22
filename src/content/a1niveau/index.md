@@ -20,9 +20,10 @@ Sau khi hoàn thành cấp độ A1, bạn sẽ có thể:
 - ✅ **Từ vựng thiết yếu**: Khoảng 500-600 từ vựng cơ bản
 
 :::info[Lời khuyên quan trọng]
-**Đừng quá áp lực vì mục tiêu lớn nhất của A1 là đặt câu sao cho đúng.** Tập trung vào việc hiểu và sử dụng đúng cấu trúc cơ bản trước khi chuyển sang các chủ đề phức tạp hơn.
-:::
 
+**Đừng quá áp lực vì mục tiêu lớn nhất của A1 là đặt câu sao cho đúng.** Tập trung vào việc hiểu và sử dụng đúng cấu trúc cơ bản trước khi chuyển sang các chủ đề phức tạp hơn.
+
+:::
 ## 📚 Nội dung khóa học
 
 ### 🔹 [Grammatik - Ngữ pháp](./grammatik/)

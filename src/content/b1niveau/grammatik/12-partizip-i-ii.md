@@ -54,9 +54,9 @@ Lưu ý:
 
 ## **🔹 3.1. Cách xây dựng Partizip I**
 
-:::note[**Công thức:**]
-**Verbstamm + -d**
-:::
+> 💡 ****Công thức:****
+>
+> **Verbstamm + -d**
 
 **Ví dụ:**
 
@@ -137,9 +137,9 @@ Lưu ý:
 
 ## **🔹 4.1. Cách xây dựng Partizip II**
 
-:::note[**Công thức:**]
-**ge + Verbstamm + -(e)t/en**
-:::
+> 💡 ****Công thức:****
+>
+> **ge + Verbstamm + -(e)t/en**
 
 **Ví dụ:**
 
@@ -219,9 +219,9 @@ Lưu ý:
 
 ## **🎯 Tổng kết: Những lưu ý quan trọng**
 
-:::note
-  - **Partizip I diễn tả hành động đang diễn ra.**  
-  - **Partizip II diễn tả hành động đã hoàn thành.**  
-  - **Cả hai có thể dùng như tính từ, thay thế mệnh đề quan hệ.**  
-  - **Partizip II được sử dụng trong thể bị động và thì hoàn thành.**
-:::
+> 💡
+>
+> - **Partizip I diễn tả hành động đang diễn ra.**
+> - **Partizip II diễn tả hành động đã hoàn thành.**
+> - **Cả hai có thể dùng như tính từ, thay thế mệnh đề quan hệ.**
+> - **Partizip II được sử dụng trong thể bị động và thì hoàn thành.**

@@ -12,6 +12,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from 'rehype-stringify'
+import { preprocessAdmonitions } from './preprocess-admonitions'
 
 const contentDirectory = path.join(process.cwd(), 'src/content')
 
@@ -157,8 +158,11 @@ export function getMarkdownBySlug(
  * Process markdown content to HTML with all enhanced features
  */
 export async function markdownToHtml(markdown: string): Promise<string> {
-  // Process custom syntaxes first (before markdown parsing)
-  const processedMarkdown = processAdvancedFeatures(markdown)
+  // Process admonitions first (before markdown parsing)
+  const withAdmonitions = preprocessAdmonitions(markdown)
+  
+  // Process custom syntaxes (after admonitions)
+  const processedMarkdown = processAdvancedFeatures(withAdmonitions)
   
   const result = await unified()
     .use(remarkParse)

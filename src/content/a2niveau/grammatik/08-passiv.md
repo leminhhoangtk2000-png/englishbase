@@ -87,14 +87,14 @@ order: 8
 
 ## **3. Cách xây dựng câu bị động điển hình ở thì hiện tại (Präsens)**
 
-:::note[📌 **Công thức:**]
-**Subjekt (Akkusativ im Aktiv) + werden (Präsens) + Partizip II + (von + Urheber)**
-
-| **Aktiv** (Chủ động)                                            | **Passiv** (Bị động)                                      |
-| --------------------------------------------------------------- | --------------------------------------------------------- |
-| Der Lehrer erklärt die Regel. _(Giáo viên giải thích quy tắc.)_ | Die Regel **wird** erklärt. _(Quy tắc được giải thích.)_  |
-| Der Koch bereitet das Essen zu. _(Đầu bếp chuẩn bị thức ăn.)_   | Das Essen **wird** zubereitet. _(Thức ăn được chuẩn bị.)_ |
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt (Akkusativ im Aktiv) + werden (Präsens) + Partizip II + (von + Urheber)**
+>
+> | **Aktiv** (Chủ động)                                            | **Passiv** (Bị động)                                      |
+> | --------------------------------------------------------------- | --------------------------------------------------------- |
+> | Der Lehrer erklärt die Regel. _(Giáo viên giải thích quy tắc.)_ | Die Regel **wird** erklärt. _(Quy tắc được giải thích.)_  |
+> | Der Koch bereitet das Essen zu. _(Đầu bếp chuẩn bị thức ăn.)_   | Das Essen **wird** zubereitet. _(Thức ăn được chuẩn bị.)_ |
 
 Lưu ý:  
   - **"werden" là trợ động từ, chia theo chủ ngữ.**  
@@ -168,9 +168,9 @@ Lưu ý:
 
 ### **🔹 Vorgangspassiv với động từ khiếm khuyết (Modalverben)**
 
-:::note[📌 **Công thức:**]  
- **Subjekt + Modalverb + Partizip II + werden (Infinitiv)**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt + Modalverb + Partizip II + werden (Infinitiv)**
 
 Ví dụ:
 
@@ -180,9 +180,9 @@ Ví dụ:
 
 ### **🔹 Zustandspassiv (Bị động trạng thái)**
 
-:::note[📌 **Công thức:**]
- **Subjekt + sein + Partizip II**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt + sein + Partizip II**
 
 Ví dụ:
 
@@ -192,9 +192,9 @@ Ví dụ:
 
 ### **🔹 Zustandspassiv với động từ khiếm khuyết**
 
-:::note[📌 **Công thức:**] 
- **Subjekt + Modalverb + Partizip II + sein (Infinitiv)**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Subjekt + Modalverb + Partizip II + sein (Infinitiv)**
 
 Ví dụ:
 
@@ -203,10 +203,10 @@ Ví dụ:
 ---
 
 ## **🎯 8. Tổng kết: Các lưu ý quan trọng**
-:::note
-- **Chỉ có tân ngữ Akkusativ mới trở thành chủ ngữ trong câu bị động.**  
--  **Nếu chỉ có tân ngữ Dativ, nó vẫn giữ nguyên trong câu bị động.**  
-- **"Vorgangspassiv" nhấn mạnh quá trình, "Zustandspassiv" nhấn mạnh trạng thái.**  
-- **"Von" chỉ người thực hiện hành động, "durch" chỉ tác nhân phi nhân.**  
-- **Bị động có thể kết hợp với động từ khuyết thiếu.**
-:::
+> 💡
+>
+> - **Chỉ có tân ngữ Akkusativ mới trở thành chủ ngữ trong câu bị động.**
+> -  **Nếu chỉ có tân ngữ Dativ, nó vẫn giữ nguyên trong câu bị động.**
+> - **"Vorgangspassiv" nhấn mạnh quá trình, "Zustandspassiv" nhấn mạnh trạng thái.**
+> - **"Von" chỉ người thực hiện hành động, "durch" chỉ tác nhân phi nhân.**
+> - **Bị động có thể kết hợp với động từ khuyết thiếu.**

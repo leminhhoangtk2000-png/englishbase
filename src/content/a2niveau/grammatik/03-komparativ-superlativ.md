@@ -22,9 +22,9 @@ order: 3
 
 ### **🔹 1.1. Loại cơ bản**
 
-:::note[📌 **Công thức:**]
-**so + Tính từ + wie**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **so + Tính từ + wie**
 
 **Ví dụ:**
 
@@ -97,9 +97,9 @@ Lưu ý:
 
 ### **🔹 2.1. Loại bình thường**
 
-:::note[📌 **Công thức:**]
-**Tính từ + "-er" + als**
-:::
+> 💡 **📌 **Công thức:****
+>
+> **Tính từ + "-er" + als**
 
 **Ví dụ:**
 
@@ -135,10 +135,10 @@ Lưu ý:
 
 📌 **So sánh nhất diễn tả mức độ cao nhất trong một nhóm.**
 
-:::note[📌 **Công thức:**]
-**am + Tính từ + "-sten"** (dạng trạng từ)  
-**der/die/das + Tính từ + "-ste"** (dạng tính từ)
-:::
+> 💡 **📌 **Công thức:****
+>
+> **am + Tính từ + "-sten"** (dạng trạng từ)
+> **der/die/das + Tính từ + "-ste"** (dạng tính từ)
 
 **Ví dụ:**
 
@@ -183,13 +183,13 @@ Lưu ý:
 
 ## **🎯 5. Tổng kết: Những lưu ý quan trọng**
 
-:::note
-  **So sánh bằng:** **so + Adj + wie** _(Maria ist so klug wie Tom.)_  
-  **So sánh hơn:** **Adj + "-er" + als** _(Maria ist klüger als Tom.)_  
-  **So sánh nhất:** **am + Adj + "-sten"** _(Maria ist am klügsten.)_  
-  
-  **So sánh số lượng:**
-- **so viel(e) ... wie** _(so viele Bücher wie ...)_
-- **mehr ... als** _(mehr Geld als ...)_  
-      **Một số tính từ thay đổi bất quy tắc trong so sánh hơn và so sánh nhất.**
-:::
+> 💡
+>
+> **So sánh bằng:** **so + Adj + wie** _(Maria ist so klug wie Tom.)_
+> **So sánh hơn:** **Adj + "-er" + als** _(Maria ist klüger als Tom.)_
+> **So sánh nhất:** **am + Adj + "-sten"** _(Maria ist am klügsten.)_
+>
+> **So sánh số lượng:**
+> - **so viel(e) ... wie** _(so viele Bücher wie ...)_
+> - **mehr ... als** _(mehr Geld als ...)_
+> **Một số tính từ thay đổi bất quy tắc trong so sánh hơn và so sánh nhất.**

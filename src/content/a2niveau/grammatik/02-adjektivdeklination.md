@@ -35,9 +35,10 @@ order: 2
  **-en** luôn ở **số nhiều**
 
 :::note[Lưu ý]
-Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en" ở những danh từ mà quán từ của nó thay đổi và số nhiều**. Như den (akku), dem (dativ),... **Còn lại sẽ là "e"**.
-:::
 
+Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en" ở những danh từ mà quán từ của nó thay đổi và số nhiều**. Như den (akku), dem (dativ),... **Còn lại sẽ là "e"**.
+
+:::
 **Ví dụ:**
 
 - Der kluge Lehrer erklärt die Grammatik. 
@@ -67,9 +68,10 @@ Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en
  **Số nhiều luôn đi với "keine"** và tính từ chia **-en**.
 
 :::note[Lưu ý]
-Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en" ở những danh từ mà quán từ của nó thay đổi và số nhiều**. Như den (akku), dem (dativ),... **Còn lại sẽ chia theo đuôi của giống**.
-:::
 
+Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en" ở những danh từ mà quán từ của nó thay đổi và số nhiều**. Như den (akku), dem (dativ),... **Còn lại sẽ chia theo đuôi của giống**.
+
+:::
 **Ví dụ:**
 
 - Ich habe einen großen Hund. 
@@ -99,9 +101,10 @@ Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en
  **Danh từ số nhiều không có quán từ → tính từ luôn thêm "-en" trong Dativ!**
 
 :::note[Lưu ý]
-Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia thêm phần đuôi của giống đã được chia vào tính từ**. Vì một lý do đơn giản là làm việc này để giúp người nghe hiểu được từ đó đang ở giống nào.
-:::
 
+Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia thêm phần đuôi của giống đã được chia vào tính từ**. Vì một lý do đơn giản là làm việc này để giúp người nghe hiểu được từ đó đang ở giống nào.
+
+:::
 **Ví dụ:**
 
 - Starker Kaffee schmeckt gut. 
@@ -131,15 +134,15 @@ Nhận xét:
 
 ## **🎯 5. Tổng Kết**
 
-:::note
-- **Tính từ luôn thay đổi đuôi khi đứng trước danh từ.**  
-- **Có 3 cách chia đuôi tính từ:**  
-	 - Với **quán từ xác định (der, die, das)** → _"der nette Mann."_  
-	 - Với **quán từ không xác định (ein, eine)** → _"ein netter Mann."_  
-	 - Khi **không có quán từ** → _"netter Mann."_
-
-📌 **Mẹo học nhanh:**  
- - **-e** ở Nominativ số ít (trừ giống đực Akkusativ).  
- - **-en** luôn có trong **Dativ & số nhiều**.  
- - **Không có quán từ → đuôi tính từ mang nhiều thông tin về giống & cách.**
-:::
+> 💡
+>
+> - **Tính từ luôn thay đổi đuôi khi đứng trước danh từ.**
+> - **Có 3 cách chia đuôi tính từ:**
+> - Với **quán từ xác định (der, die, das)** → _"der nette Mann."_
+> - Với **quán từ không xác định (ein, eine)** → _"ein netter Mann."_
+> - Khi **không có quán từ** → _"netter Mann."_
+>
+> 📌 **Mẹo học nhanh:**
+> - **-e** ở Nominativ số ít (trừ giống đực Akkusativ).
+> - **-en** luôn có trong **Dativ & số nhiều**.
+> - **Không có quán từ → đuôi tính từ mang nhiều thông tin về giống & cách.**

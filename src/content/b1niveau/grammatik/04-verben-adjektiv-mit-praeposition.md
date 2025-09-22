@@ -158,10 +158,10 @@ order: 4
 ---
 ## **3. Cụm từ "Da-"**
 
-:::note[📌 **Cách xây dựng cụm từ "Da-"**]
- **Da + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).  
- **Da + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
-:::
+> 💡 **📌 **Cách xây dựng cụm từ "Da-"****
+>
+> **Da + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
+> **Da + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
 
 **Ví dụ:**
 
@@ -176,10 +176,10 @@ order: 4
 
 ## **4. Cụm từ "Wo-"**
 
-:::note[📌 **Cách xây dựng cụm từ "Wo-"**]
- **Wo + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).  
- **Wo + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
-:::
+> 💡 **📌 **Cách xây dựng cụm từ "Wo-"****
+>
+> **Wo + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
+> **Wo + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
 
 **Ví dụ:**
 
@@ -194,9 +194,9 @@ order: 4
 
 ### **🎯 5. Tổng kết: Những lưu ý quan trọng**
 
-:::note
-  **Nhiều động từ và tính từ trong tiếng Đức luôn đi kèm với một giới từ nhất định.**  
-  **Cần phân biệt rõ động từ đi với Akkusativ hay Dativ.**  
-  **Cụm từ "Da-" dùng để thay thế danh từ trong câu có giới từ.**  
-  **Cụm từ "Wo-" dùng để đặt câu hỏi liên quan đến giới từ.**
-:::
+> 💡
+>
+> **Nhiều động từ và tính từ trong tiếng Đức luôn đi kèm với một giới từ nhất định.**
+> **Cần phân biệt rõ động từ đi với Akkusativ hay Dativ.**
+> **Cụm từ "Da-" dùng để thay thế danh từ trong câu có giới từ.**
+> **Cụm từ "Wo-" dùng để đặt câu hỏi liên quan đến giới từ.**

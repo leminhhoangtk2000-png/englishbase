@@ -73,9 +73,9 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 :::info[Ghi chú]
 
 - Không có quy tắc cố định cho số nhiều, cần **học thuộc**.
-- Khi học danh từ, hãy học kèm **giống và dạng số nhiều**.  
-  :::
+- Khi học danh từ, hãy học kèm **giống và dạng số nhiều**.
 
+:::
 ### **📝 12 Cách Biến Đổi Danh Từ từ Số Ít Sang Số Nhiều**
 
 | **Cách Biến Đổi**     | 📖 **Quy Tắc Nhận Diện**                                              | ✏ **Ví Dụ** (Số ít → Số nhiều)     |
@@ -112,9 +112,9 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 
 - **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).
 - **Dativ:** Danh từ số nhiều thêm **-n**.
-- **Genitiv:** Danh từ **đực và trung** thêm **-es**.  
-  :::
+- **Genitiv:** Danh từ **đực và trung** thêm **-es**.
 
+:::
 ---
 
 ## **🎯 5. Tổng Kết**

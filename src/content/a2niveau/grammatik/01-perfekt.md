@@ -12,18 +12,37 @@ Thì **Perfekt** là một trong những thì quan trọng nhất trong tiếng 
 
 ## 🏗️ Cấu trúc cơ bản
 
-:::tip[📌 Công thức Perfekt]
-**haben/sein (chia theo chủ ngữ) + Partizip II**
+:::tip[📌 Công thức Perfekt - Nâng cao]
+**Formula:** **_haben/sein_** _(chia theo chủ ngữ)_ + **Partizip II**
 
-Ví dụ:
+**2 loại động từ phụ:**
 
-- Ich **habe** gespielt. _(Tôi đã chơi.)_
-- Er **ist** gekommen. _(Anh ấy đã đến.)_
-:::
+1. **_haben_** → `Hầu hết động từ` + _động từ có tân ngữ_
+2. **_sein_** → `Động từ di chuyển` + _thay đổi trạng thái_
+
+**Thứ tự:** `Subject` + **_haben/sein_** + ~~object~~ + **Partizip II**
+:::>
+
+> Ví dụ:
+>
+> - Ich **habe** gespielt. _(Tôi đã chơi.)_
+> - Er **ist** gekommen. _(Anh ấy đã đến.)_
 
 ## 🔍 Khi nào dùng haben, khi nào dùng sein?
 
 ### Dùng với **haben** (phần lớn động từ)
+
+:::warning[⚠️ Chú ý haben vs sein]
+**Phần lớn động từ** dùng với **_haben_**, **NHƯNG** có **_ngoại lệ quan trọng_**!
+
+**Luôn dùng `haben`:**
+
+- _Động từ có tân ngữ trực tiếp_: `essen` → **gegessen**
+- _Động từ phản thân_: `sich waschen` → **gewaschen**
+- _Động từ khuyết thiếu_: `müssen` → **gemusst**
+
+**Cẩn thận:** ~~Không bao giờ~~ dùng **_sein_** với động từ có _tân ngữ trực tiếp_!
+:::
 
 - Động từ có tân ngữ trực tiếp
 - Động từ phản thân
@@ -57,4 +76,5 @@ _[Đây là nơi bạn có thể thêm các bài tập thực hành]_
 - Phần lớn động từ dùng với haben
 - Động từ di chuyển và thay đổi trạng thái dùng với sein
 - Đây là thì được dùng nhiều nhất trong giao tiếp hàng ngày
+
 :::

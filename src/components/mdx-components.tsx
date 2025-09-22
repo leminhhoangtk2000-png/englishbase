@@ -1,7 +1,7 @@
 import React from 'react'
 import { CodeBlock } from '@/components/markdown/code-block'
 import { Tabs, TabItem } from '@/components/markdown/tabs'
-import { Admonition } from '@/components/markdown/admonition'
+import Admonition, { Note, Tip, Warning, InfoAdmonition, Caution, Danger } from '@/components/admonition'
 
 export const MDXComponents = {
   // Enhanced code blocks
@@ -43,8 +43,14 @@ export const MDXComponents = {
   Tabs,
   TabItem,
   
-  // Admonitions
+  // Admonitions - Full Docusaurus-style components
   Admonition,
+  Note,
+  Tip,
+  Warning,
+  Info: InfoAdmonition,
+  Caution,
+  Danger,
   
   // Enhanced headings with anchor links
   h1: ({ children, id, ...props }: any) => (
