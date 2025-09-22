@@ -164,6 +164,7 @@ order: 4
 **Da + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
 **Da + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
 :::
+
 **Ví dụ:**
 
 - **Ich warte auf den Brief.** → **Ich warte darauf.** _(Tôi đang chờ bức thư đó.)_
@@ -183,6 +184,7 @@ order: 4
 **Wo + Giới từ** (nếu giới từ bắt đầu bằng phụ âm).
 **Wo + r + Giới từ** (nếu giới từ bắt đầu bằng nguyên âm).
 :::
+
 **Ví dụ:**
 
 - **Worauf wartest du?** _(Bạn đang chờ cái gì?)_

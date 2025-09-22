@@ -22,6 +22,7 @@ Có hai cách để hình thành Konjunktiv II ở thì hiện tại:
 
 **Verbstamm (gốc động từ ở dạng Prateritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
 :::
+
 Ví dụ:
 
 |**Ngôi**|**Sein** (Là)|**Haben** (Có)|**Gehen** (Đi)|**Kommen** (Đến)|
@@ -48,6 +49,7 @@ Lưu ý:
 
 **würde + Infinitiv (nguyên mẫu của động từ chính)**
 :::
+
 Ví dụ:
 
 - Ich **würde** nach Deutschland **reisen**, wenn ich Geld hätte. 
@@ -147,6 +149,7 @@ Lưu ý:
 
 **hätte / wäre + Partizip II**
 :::
+
 **Ví dụ:**
 
 - Ich **hätte** das Buch gelesen. 
@@ -182,6 +185,7 @@ Lưu ý:
 
 **hätte + Modalverb (Infinitiv) + Partizip II**
 :::
+
 **Ví dụ:**
 
 - Ich **hätte** das machen **müssen**. 

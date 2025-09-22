@@ -28,6 +28,7 @@ order: 4
 **Câu hỏi:**
 **(W-Frage) + haben/sein + chủ ngữ + ... + Partizip II?**
 :::
+
 **Ví dụ:**
 
 - Ich habe gestern ein Buch gelesen. 
@@ -55,6 +56,7 @@ order: 4
 
 **ge + Verbstamm + (e)t**
 :::
+
 |**Nguyên thể (Infinitiv)**|**Partizip II**|**Nghĩa**|
 |---|---|---|
 |machen|gemacht|làm|
@@ -98,6 +100,7 @@ order: 4
 
 **ge + Verbstamm (thay đổi) + en**
 :::
+
 |**Nguyên thể (Infinitiv)**|**Partizip II**|**Nghĩa**|
 |---|---|---|
 |gehen|gegangen|đi|
@@ -111,6 +114,7 @@ order: 4
 
 **Chúng ta không có bất cứ luật lệ gì cho các động từ này**, và bạn cũng ko nên kiếm mẹo cho dễ học để làm gì đâu. Vì nó không hiệu quả, tôi tổng hợp các động từ bất quy tắc thành bảng, và có sẵn bài đục lỗ nằm ở phần **"bài tập".**
 :::
+
  **Ví dụ:**
 
 - Er ist nach Hause **gegangen**. 

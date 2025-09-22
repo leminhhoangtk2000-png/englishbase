@@ -43,6 +43,7 @@ Chương trình B1 tập trung vào các chủ đề ngữ pháp nâng cao:
 Sau khi hoàn thành B1, bạn sẽ có thể:
 
 :::tip[📌 Kỹ năng đạt được]
+💡
 
 - Sử dụng thành thạo tất cả các thì trong tiếng Đức
 - Tường thuật lại lời nói của người khác một cách chính xác
@@ -51,9 +52,11 @@ Sau khi hoàn thành B1, bạn sẽ có thể:
 - Sử dụng các cấu trúc danh từ hóa trong văn viết
 
 :::
+
 ## 📈 Đặc điểm cấp độ B1
 
 :::note[🎯 Trọng tâm B1]
+💡
 
 - **Chính xác hơn**: Sử dụng ngữ pháp một cách chính xác và phù hợp
 - **Phong phú hơn**: Đa dạng cấu trúc câu và cách diễn đạt
@@ -61,6 +64,7 @@ Sau khi hoàn thành B1, bạn sẽ có thể:
 - **Học thuật hơn**: Chuẩn bị cho các văn bản chính thức
 
 :::
+
 ## 📚 Phương pháp học hiệu quả
 
 1. **Phân tích cấu trúc** - Hiểu sâu nguyên lý của từng quy tắc
@@ -73,6 +77,7 @@ Sau khi hoàn thành B1, bạn sẽ có thể:
 Hãy bắt đầu với **Plusquamperfekt** - thì quan trọng để diễn tả thứ tự các sự kiện trong quá khứ!
 
 :::info[💭 Lưu ý quan trọng]
+💡
 
 B1 là cấp độ then chốt để từ "học tiếng Đức" chuyển thành "sử dụng tiếng Đức". Hãy kiên trì và thực hành nhiều để đạt được sự thành thạo!
 

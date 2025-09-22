@@ -26,11 +26,14 @@ order: 16
 
 **Tính từ + giới từ + danh từ (Dativ/Akkusativ)**
 
-:::note[Ich bin interessiert an Politik.]
+:::note[💡]
+💡
+
 Ich bin **interessiert an** Politik.  
 Sie ist **stolz auf** ihre Leistungen.  
 Wir sind **abhängig von** der finanziellen Unterstützung.
 :::
+
 ---
 
 ## 📚 **3. Bảng Adjektiv mit Präposition – nâng cao (chuẩn B2)**
@@ -75,16 +78,22 @@ Wir sind **abhängig von** der finanziellen Unterstützung.
 
 📌 **Mệnh đề quan hệ với giới từ:**
 
-:::note[Die Themen, an denen die Studenten interessiert si]
+:::note[💡]
+💡
+
 Die Themen, **an denen die Studenten interessiert sind**, betreffen die Gesellschaft direkt.  
 Der Kollege, **mit dem sie sehr zufrieden war**, hat gekündigt.
 :::
+
 📌 **Dạng câu gián tiếp hoặc bị động học thuật:**
 
-:::note[Es ist unklar, ob die Regierung mit dem Vorschlag ]
+:::note[💡]
+💡
+
 Es ist unklar, **ob die Regierung mit dem Vorschlag einverstanden ist**.  
 Die Entscheidung war stark **von politischen Einflüssen abhängig**.
 :::
+
 ---
 
 ## ❗ **6. Lỗi thường gặp**

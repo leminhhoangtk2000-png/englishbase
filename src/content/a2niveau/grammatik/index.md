@@ -41,6 +41,7 @@ Chương trình A2 bao gồm các chủ đề ngữ pháp quan trọng:
 Sau khi hoàn thành A2, bạn sẽ có thể:
 
 :::tip[📌 Kỹ năng đạt được]
+💡
 
 - Diễn tả các sự kiện trong quá khứ một cách chính xác
 - Mô tả và so sánh người, vật, hiện tượng
@@ -49,6 +50,7 @@ Sau khi hoàn thành A2, bạn sẽ có thể:
 - Diễn tả mong muốn và tình huống giả định
 
 :::
+
 ## 📚 Cách sử dụng khóa học
 
 1. **Học tuần tự** - Bắt đầu từ bài 1 và học theo thứ tự
@@ -61,6 +63,7 @@ Sau khi hoàn thành A2, bạn sẽ có thể:
 Hãy bắt đầu với bài đầu tiên về **Perfekt** - một thì rất quan trọng trong tiếng Đức!
 
 :::note[💡 Lời khuyên]
+💡
 
 A2 là cấp độ quan trọng để xây dựng nền tảng ngữ pháp vững chắc. Hãy học từ từ và thực hành nhiều để hiểu sâu từng quy tắc.
 

@@ -48,6 +48,7 @@ order: 12
 **"Sich" được dùng cho ngôi thứ ba số ít và số nhiều.**
 **"Mich", "dich", "uns", "euch" được dùng cho các ngôi còn lại.**
 :::
+
 ---
 
 ## **2. Sử dụng đại từ phản thân ở cách nào?**
@@ -86,6 +87,7 @@ order: 12
 **Nếu không có tân ngữ Akkusativ, đại từ phản thân sẽ ở Akkusativ.**
 **Nếu có một tân ngữ Akkusativ, đại từ phản thân sẽ ở Dativ.**
 :::
+
 ---
 
 ## **3. Động từ phản thân (Reflexive Verben)**
@@ -109,6 +111,7 @@ order: 12
 
 **Có thể bỏ đại từ phản thân nếu có tân ngữ khác.**
 :::
+
 ---
 
 ### **3.2. Động từ phản thân thực thụ (Echt reflexive Verben)**
@@ -123,7 +126,9 @@ order: 12
 - Du beschwerst dich über das Essen. 
 	_(Bạn phàn nàn về thức ăn.)_
 
-:::note[**Lưu ý:**]]
+:::note[**Lưu ý:**]
+💡 **Lưu ý:**
+
   **Không thể sử dụng mà không có đại từ phản thân.**  
   **Nếu bỏ đại từ phản thân, câu sẽ không có nghĩa hoặc sai ngữ pháp.**
 :::
@@ -149,6 +154,7 @@ order: 12
 **Không cần đại từ phản thân.**
 **Có nghĩa là "giới thiệu một cái gì đó".**
 :::
+
 ---
 
 ### **4.2. "Vorstellen" như một động từ phản thân với đại từ phản thân Akkusativ**
@@ -166,6 +172,7 @@ order: 12
 
 **Dùng với Akkusativ khi chủ ngữ đang tự giới thiệu chính mình.**
 :::
+
 ---
 
 ### **4.3. "Vorstellen" như một động từ phản thân với đại từ phản thân Dativ**
@@ -184,6 +191,7 @@ order: 12
 **Dùng với Dativ khi có nghĩa là "tưởng tượng".**
 **Người thực hiện hành động luôn ở Dativ.**
 :::
+
 ---
 
 ## **🎯 5. Tổng kết: Các lưu ý quan trọng**

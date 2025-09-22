@@ -29,6 +29,7 @@ order: 7
 **Hauptsatz + wenn + S + O + V**
 **Wenn + S + O + V, V + S + O**
 :::
+
 **Giải thích chi tiết:**  
   **"Wenn" dùng khi một điều kiện có thể xảy ra.**  
   Nếu câu phụ đứng trước, động từ của câu chính **đảo lên vị trí số 1**.
@@ -47,6 +48,7 @@ order: 7
 **Hauptsatz + falls + S + O + V**
 **Falls + S + O + V, V + S + O**
 :::
+
 **Giải thích chi tiết:**  
   **"Falls" nhấn mạnh khả năng thấp hơn "wenn"**, dùng trong những tình huống **không chắc chắn**.  
   **Câu phụ đứng trước thì động từ của câu chính đảo lên đầu.**
@@ -67,6 +69,7 @@ order: 7
 **Hauptsatz + weil + S + O + V**
 **Weil + S + O + V, V + S + O**
 :::
+
 **Giải thích chi tiết:**  
   **"Weil" nhấn mạnh lý do của hành động**, thường dùng trong văn nói.  
   Nếu câu phụ đứng trước, động từ của câu chính đảo lên đầu.
@@ -85,6 +88,7 @@ order: 7
 **Hauptsatz + da + S + O + V**
 **Da + S + O + V, V + S + O**
 :::
+
 **Giải thích chi tiết:**  
   **"Da" được dùng phổ biến trong văn viết.**  
   **"Da" có thể đứng đầu câu mà không làm thay đổi ý nghĩa.**
@@ -103,6 +107,7 @@ order: 7
 **Hauptsatz + obwohl + S + O + V**
 **Obwohl + S + O + V, V + S + O**
 :::
+
 **Giải thích chi tiết:**  
   **"Obwohl" diễn tả sự tương phản giữa hai mệnh đề.**  
   Có thể thay thế bằng **"trotzdem"** trong câu chính.
@@ -120,6 +125,7 @@ order: 7
 
 **Hauptsatz + indem + S + O + V**
 :::
+
 **Giải thích chi tiết:**  
   "Indem" mô tả cách thức thực hiện một hành động.
 
@@ -136,6 +142,7 @@ order: 7
 
 **Hauptsatz + sodass + S + O + V**
 :::
+
 **Giải thích chi tiết:**  
   "Sodass" diễn tả hậu quả của hành động ở câu chính.
 
@@ -153,6 +160,7 @@ order: 7
 
 **Hauptsatz + Zeit-Konjunktion + S + O + V**
 :::
+
 **Lưu ý:**  
   "Nachdem" đi kèm với Plusquamperfekt.
 
@@ -191,6 +199,7 @@ order: 7
 **Câu phụ trước, câu chính sau:**
 **Zeit-Konjunktion + S + O + V, V + S + O**
 :::
+
 ---
 
 ### **7.4. Ví dụ chi tiết**
@@ -238,6 +247,7 @@ order: 7
 **Câu phụ với "um...zu":**
 **Hauptsatz + um + O + zu + Infinitiv**
 :::
+
 ---
 
 ### **8.4. Ví dụ chi tiết**
@@ -276,6 +286,7 @@ order: 7
 ---
 
 ### **9.3. Công thức sử dụng**
+
 :::note[ Công thức:****]
 💡 **📌 **Công thức:****
 
@@ -285,6 +296,7 @@ order: 7
 **Câu phụ với "ob":**
 **Hauptsatz + ob + S + O + V**
 :::
+
 ---
 
 ### **9.4. Ví dụ chi tiết**

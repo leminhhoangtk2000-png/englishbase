@@ -10,10 +10,13 @@ sidebar_position: 3
 
 🔎 Ví dụ cơ bản:
 
-:::note[Ich habe vor, morgen ins Kino zu gehen.]
+:::note[💡]
+💡
+
 Ich habe **vor, morgen ins Kino zu gehen**.  
 (Tôi dự định đi xem phim vào ngày mai.)
 :::
+
 ---
 
 ## 📘 **2. Cấu trúc phổ biến cần nắm vững ở trình độ B2**
@@ -46,9 +49,11 @@ Ich habe **vor, morgen ins Kino zu gehen**.
 
 ### 🔹 **C. Sau danh từ + „zu“**
 
-:::note[(Es ist) + Substantiv + zu + Infinitiv]
+:::note[💡]
+💡
 **(Es ist) + Substantiv + zu + Infinitiv**
 :::
+
 |**Danh từ**|**Ví dụ**|
 |---|---|
 |das Ziel|**Das Ziel ist, die Leistung zu verbessern.**|

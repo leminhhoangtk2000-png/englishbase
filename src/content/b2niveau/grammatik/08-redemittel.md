@@ -13,9 +13,12 @@ sidebar_position: 10
 - **So sánh – kết luận**
 - **Tạo mạch liên kết trong văn bản**
 
-:::note[Trong các kỳ thi B2 (Goethe, TELC, ÖSD…), sử dụng ]
+:::note[💡]
+💡
+
 💡 Trong các kỳ thi B2 (Goethe, TELC, ÖSD…), sử dụng tốt **Redemittel** sẽ **tăng điểm phần "Zusammenhang, Kohärenz"** (mạch lạc văn bản).
 :::
+
 ---
 
 ## 📘 **2. Các nhóm Redemittel phổ biến trong lập luận**
@@ -104,13 +107,16 @@ sidebar_position: 10
 
 ## 📚 **4. Ví dụ đoạn lập luận mẫu (chuẩn B2)**
 
-:::note[Meiner Meinung nach sollte der öffentliche Verkehr]
+:::note[💡]
+💡
+
 **Meiner Meinung nach** sollte der öffentliche Verkehr gefördert werden.  
 **Das liegt daran, dass** er umweltfreundlich ist und viele Menschen davon profitieren.  
 **Ein gutes Beispiel dafür ist**, dass in Städten mit gutem Nahverkehr weniger Autos unterwegs sind.  
 **Auf der anderen Seite** muss man auch beachten, dass der Ausbau teuer ist.  
 **Zusammenfassend lässt sich sagen, dass** Investitionen in den öffentlichen Verkehr langfristig sinnvoll sind.
 :::
+
 ---
 
 ## 🔧 **5. Lỗi thường gặp**

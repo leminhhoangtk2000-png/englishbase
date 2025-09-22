@@ -21,6 +21,7 @@ Dùng để diễn tả một sự tương phản giữa hai vế câu.
 
 **Subjekt + zwar + Verb + Subjekt + …, aber + Subjekt + Verb + …**
 :::
+
 **Ví dụ:**
 
 - Er ist zwar müde, aber er arbeitet weiter. 
@@ -44,6 +45,7 @@ Dùng khi có hai khả năng lựa chọn.
 
 **Subjekt + entweder + Verb + Subjekt + …, oder + Subjekt + Verb + …**
 :::
+
 **Ví dụ:**
 
 - Entweder gehen wir ins Kino, oder wir bleiben zu Hause. 
@@ -67,6 +69,7 @@ Dùng để bổ sung thêm một thông tin có tính nhấn mạnh.
 
 **Subjekt + nicht nur + Subjekt + Verb + …, sondern auch + Subjekt + Verb + …**
 :::
+
 **Ví dụ:**
 
 - Er ist nicht nur intelligent, sondern auch fleißig. 
@@ -90,6 +93,7 @@ Dùng để diễn tả cả hai khả năng đều đúng.
 
 **Subjekt + sowohl + Subjekt + Verb + … als auch + Subjekt + Verb + …**
 :::
+
 **Ví dụ:**
 
 - Er spricht sowohl Deutsch als auch Englisch. 
@@ -113,6 +117,7 @@ Dùng để diễn tả sự phủ định của cả hai khả năng.
 
 **Subjekt + weder + Subjekt + Verb + …, noch + Subjekt + Verb + …**
 :::
+
 **Ví dụ:**
 
 - Er kann weder Deutsch noch Englisch sprechen. 
@@ -136,6 +141,7 @@ Dùng để diễn tả mối quan hệ tỷ lệ thuận giữa hai vế câu.
 
 **Subjekt + je + Komparativ + Subjekt + Verb + …, desto + Komparativ + Verb + Subjekt + …**
 :::
+
 **Ví dụ:**
 
 - Je mehr du lernst, desto besser wirst du. 

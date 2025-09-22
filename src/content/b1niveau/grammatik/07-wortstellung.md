@@ -34,6 +34,7 @@ order: 7
 
 **Chủ ngữ + Động từ + Tân ngữ Dativ + Tân ngữ Akkusativ**
 :::
+
 **Ví dụ:**
 
 - **Ich gebe dem Kind ein Buch.** _(Tôi đưa đứa trẻ một cuốn sách.)_
@@ -53,6 +54,7 @@ order: 7
 
 **Chủ ngữ + Động từ + Tân ngữ Akkusativ (đại từ) + Tân ngữ Dativ**
 :::
+
 Ví dụ:
 
 - Ich gebe es dem Kind. _(Tôi đưa nó cho đứa trẻ.)_
@@ -74,6 +76,7 @@ Lưu ý:
 - **Mo** → **Modal (cách thức)** (như thế nào?)
 - **Lo** → **Lokal (địa điểm)** (ở đâu?)
 :::
+
 Ví dụ:
 
 - Ich fahre morgen wegen der Arbeit mit dem Auto nach Berlin.  

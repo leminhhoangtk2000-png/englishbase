@@ -20,6 +20,7 @@ order: 13
 
 **Verbstamm + -e, -est, -e, -en, -et, -en**
 :::
+
  **Bảng chia động từ "sein" (là) ở Konjunktiv I:**
 
 |**Ngôi**|**Konjunktiv I (sein)**|
@@ -67,6 +68,7 @@ order: 13
 
 **habe/sei + Partizip II**
 :::
+
 **Ví dụ:**
 
 - Er sagt, er **habe gearbeitet**. 
@@ -92,6 +94,7 @@ order: 13
 
 **werde + Infinitiv**
 :::
+
 **Ví dụ:**
 
 - Er sagt, er **werde kommen**. _(Anh ấy nói rằng anh ấy sẽ đến.)_
@@ -105,6 +108,7 @@ order: 13
 
 **werde + Partizip II + haben/sein**
 :::
+
 **Ví dụ:**
 
 - Er sagt, er **werde die Arbeit beendet haben**.
@@ -125,6 +129,7 @@ order: 13
 
 **Subjekt + Konjunktiv I (3. Person Singular oder Plural)**
 :::
+
 **Ví dụ:**
 
 - **Er gehe sofort nach Hause!**

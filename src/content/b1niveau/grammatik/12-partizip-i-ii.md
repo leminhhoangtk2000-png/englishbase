@@ -59,6 +59,7 @@ Lưu ý:
 
 **Verbstamm + -d**
 :::
+
 **Ví dụ:**
 
 |**Nguyên thể (Infinitiv)**|**Partizip I**|
@@ -143,6 +144,7 @@ Lưu ý:
 
 **ge + Verbstamm + -(e)t/en**
 :::
+
 **Ví dụ:**
 
 |**Nguyên thể (Infinitiv)**|**Partizip II**|

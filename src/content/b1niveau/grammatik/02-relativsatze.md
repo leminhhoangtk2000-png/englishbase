@@ -31,6 +31,7 @@ order: 2
 - **Động từ trong câu quan hệ luôn đứng ở cuối mệnh đề.**
 - **Đại từ quan hệ thay đổi theo giống (Maskulin, Feminin, Neutrum), số (Số ít, Số nhiều) và cách (Kasus).**
 :::
+
 ---
 
 ## **2. Cách xác định chính xác đại từ quan hệ cần dùng**
@@ -80,6 +81,7 @@ order: 2
 - **Nếu danh từ là tân ngữ gián tiếp (với giới từ như "mit", "von", "bei") → dùng Dativ.**
 - **Nếu danh từ thể hiện sự sở hữu → dùng Genitiv ("dessen" hoặc "deren").**
 :::
+
 ---
 ## **🎯 3. Tổng kết: Các lưu ý quan trọng**
 

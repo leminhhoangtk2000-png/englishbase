@@ -13,6 +13,7 @@ Thì **Perfekt** là một trong những thì quan trọng nhất trong tiếng 
 ## 🏗️ Cấu trúc cơ bản
 
 :::tip[📌 Công thức Perfekt - Nâng cao]
+💡
 **Formula:** **_haben/sein_** _(chia theo chủ ngữ)_ + **Partizip II**
 
 **2 loại động từ phụ:**
@@ -21,7 +22,7 @@ Thì **Perfekt** là một trong những thì quan trọng nhất trong tiếng 
 2. **_sein_** → `Động từ di chuyển` + _thay đổi trạng thái_
 
 **Thứ tự:** `Subject` + **_haben/sein_** + ~~object~~ + **Partizip II**
-:::>
+:::
 
 :::note[Ví dụ:]
 Ví dụ:
@@ -72,6 +73,7 @@ _[Đây là nơi bạn có thể thêm các bài tập thực hành]_
 ## 🎯 Tóm tắt
 
 :::note[📝 Điểm quan trọng]
+💡
 
 - Perfekt = haben/sein + Partizip II
 - Phần lớn động từ dùng với haben

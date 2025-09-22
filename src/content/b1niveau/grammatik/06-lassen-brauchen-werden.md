@@ -22,6 +22,7 @@ order: 6
 
 **Subjekt + lassen (chia) + Akkusativ + (Ort/Ergänzung)**
 :::
+
 Ví dụ:
 
 - Ich **lasse** mein Handy zu Hause. _(Tôi để điện thoại ở nhà.)_
@@ -41,6 +42,7 @@ Lưu ý:
 
 **Subjekt + lassen (chia) + Objekt (Akkusativ) + Infinitiv**
 :::
+
 Ví dụ:
 
 - Ich **lasse** mein Auto reparieren. _(Tôi để xe của tôi được sửa chữa.)_
@@ -67,6 +69,7 @@ Ví dụ (nhấn mạnh sự cho phép):
 
 **Subjekt + brauchen (chia) + Akkusativ**
 :::
+
 Ví dụ:
 
 - Ich **brauche** einen neuen Laptop. _(Tôi cần một chiếc laptop mới.)_
@@ -86,6 +89,7 @@ Lưu ý:
 
 **Subjekt + brauchen (chia) + nicht/kein + zu + Infinitiv**
 :::
+
 Ví dụ:
 
 - Du **brauchst** nicht zu kommen. _(Bạn không cần phải đến.)_
@@ -108,6 +112,7 @@ Lưu ý:
 
 **Subjekt + werden (chia) + Nominativ**
 :::
+
 Ví dụ:
 
 - Er **wird** Arzt. _(Anh ấy trở thành bác sĩ.)_
@@ -129,6 +134,7 @@ Lưu ý:
 
 **Subjekt + werden (chia) + Infinitiv**
 :::
+
 Ví dụ:
 
 - Ich **werde** morgen nach Berlin fahren. _(Tôi sẽ đi Berlin vào ngày mai.)_
@@ -146,6 +152,7 @@ Lưu ý:
 
 **Subjekt + werden (chia) + Partizip II**
 :::
+
 Ví dụ:
 
 - Das Haus **wird** gebaut. _(Ngôi nhà đang được xây.)_

@@ -97,6 +97,7 @@ order: 8
 | Der Lehrer erklärt die Regel. _(Giáo viên giải thích quy tắc.)_ | Die Regel **wird** erklärt. _(Quy tắc được giải thích.)_  |
 | Der Koch bereitet das Essen zu. _(Đầu bếp chuẩn bị thức ăn.)_   | Das Essen **wird** zubereitet. _(Thức ăn được chuẩn bị.)_ |
 :::
+
 Lưu ý:  
   - **"werden" là trợ động từ, chia theo chủ ngữ.**  
   - **Partizip II luôn đứng cuối câu.**
@@ -174,6 +175,7 @@ Lưu ý:
 
 **Subjekt + Modalverb + Partizip II + werden (Infinitiv)**
 :::
+
 Ví dụ:
 
 - Das Problem **muss gelöst werden**. _(Vấn đề phải được giải quyết.)_
@@ -187,6 +189,7 @@ Ví dụ:
 
 **Subjekt + sein + Partizip II**
 :::
+
 Ví dụ:
 
 - Die Tür **ist geöffnet**. _(Cánh cửa đã mở.)_
@@ -200,6 +203,7 @@ Ví dụ:
 
 **Subjekt + Modalverb + Partizip II + sein (Infinitiv)**
 :::
+
 Ví dụ:
 
 - Das Haus **muss renoviert sein**. _(Ngôi nhà phải được cải tạo xong.)_

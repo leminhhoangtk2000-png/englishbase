@@ -12,12 +12,15 @@ sidebar_position: 11
 - Thêm **hậu tố (Suffix)** vào cuối từ
 - Kết hợp các từ đơn lại thành **từ ghép (Komposita)**
 
-:::note[Hiểu rõ cấu trúc này giúp bạn:]
+:::note[💡]
+💡
+
 💡 Hiểu rõ cấu trúc này giúp bạn:
 - **Đoán nghĩa từ chưa biết**
 - **Mở rộng vốn từ nhanh gấp đôi**
 - Viết bài học thuật chính xác hơn
 :::
+
 ---
 
 ## 📘 **2. Tạo từ bằng tiền tố (Präfixe)**
@@ -84,9 +87,12 @@ sidebar_position: 11
 |Sprachkurs|Sprache (ngôn ngữ)|Kurs (khóa học)|Khóa học ngôn ngữ|
 |Flugticket|Flug (chuyến bay)|Ticket (vé)|Vé máy bay|
 
-:::note[Danh từ cuối cùng quyết định giống (der/die/das) v]
+:::note[💡]
+💡
+
 💡 Danh từ **cuối cùng** quyết định **giống (der/die/das)** và **số nhiều**
 :::
+
 ---
 
 ## 🧠 **5. Cách học từ hiệu quả với Wortbildung**
@@ -97,10 +103,12 @@ sidebar_position: 11
 **Unfreundlichkeit**  
 → _un-_ (phủ định) + _freundlich_ (thân thiện) + _-keit_ → "sự không thân thiện"
 :::
+
 :::note[Verarbeitung]
 **Verarbeitung**  
 → _ver-_ + _arbeiten_ + _-ung_ → "quá trình xử lý"
 :::
+
 ---
 
 ## 🔧 **6. Lỗi thường gặp**

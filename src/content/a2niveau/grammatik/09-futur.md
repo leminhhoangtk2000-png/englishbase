@@ -20,6 +20,7 @@ order: 9
 
 **Subjekt (chủ ngữ) + werden (chia theo chủ ngữ) + động từ chính ở dạng nguyên mẫu (Infinitiv)**
 :::
+
 |**Ngôi**|**werden** + Infinitiv|
 |---|---|
 |Ich|werde gehen|
@@ -83,6 +84,7 @@ order: 9
 
 **Subjekt (chủ ngữ) + werden (chia) + Modalverb (nguyên mẫu) + Hauptverb (nguyên mẫu)**
 :::
+
 **Ví dụ:**
 
 - Ich **werde** morgen länger **arbeiten müssen**. 
@@ -106,6 +108,7 @@ order: 9
 
 **Subjekt (chủ ngữ) + werden (Präsens) + Partizip II + werden (Infinitiv)**
 :::
+
 **Ví dụ:**
 
 - Die Arbeit **wird** morgen **gemacht werden**. 
@@ -129,6 +132,7 @@ order: 9
 
 **Subjekt (chủ ngữ) + werden (Präsens) + Partizip II + haben/sein (Infinitiv)**
 :::
+
 **Ví dụ:**
 
 - Bis morgen **wird er die Arbeit beendet haben**. 

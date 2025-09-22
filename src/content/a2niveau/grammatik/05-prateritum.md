@@ -51,6 +51,7 @@ order: 5
 
 **Verbstamm (gốc động từ) + -te + đuôi chia theo ngôi**
 :::
+
 |**Ngôi**|**spielen (chơi)**|**lernen (học)**|**machen (làm)**|
 |---|---|---|---|
 |Ich|spielte|lernte|machte|
@@ -79,6 +80,7 @@ order: 5
 
 **Động từ thay đổi gốc + đuôi chia theo ngôi**
 :::
+
 |**Ngôi**|**sehen (nhìn)**|**gehen (đi)**|**schreiben (viết)**|
 |---|---|---|---|
 |Ich|sah|ging|schrieb|
@@ -106,6 +108,7 @@ order: 5
 
 **Bỏ đuôi -en + thêm -te**
 :::
+
 |**Nguyên thể**|**Ich**|**Du**|**Er/sie/es**|**Wir**|**Ihr**|**Sie/sie**|
 |---|---|---|---|---|---|---|
 |können|konnte|konntest|konnte|konnten|konntet|konnten|

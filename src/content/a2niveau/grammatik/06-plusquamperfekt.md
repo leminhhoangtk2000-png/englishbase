@@ -21,6 +21,7 @@ Thì này thường được sử dụng trong văn viết, kể chuyện hoặc
 
 **haben/sein ở Präteritum + Partizip II**
 :::
+
 |**Ngôi**|**haben** + Partizip II|**sein** + Partizip II|
 |---|---|---|
 |Ich|hatte gemacht|war gegangen|
@@ -60,6 +61,7 @@ Thì này thường được sử dụng trong văn viết, kể chuyện hoặc
 
 **Nachdem + Plusquamperfekt, Präteritum/Perfekt**
 :::
+
 |**Plusquamperfekt (Hành động trước)**|**Präteritum/Perfekt (Hành động sau)**|
 |---|---|
 |Nachdem ich gegessen **hatte**,|ging ich ins Bett.|
@@ -87,6 +89,7 @@ Lưu ý:
 
 **Präteritum/Perfekt + bevor + Plusquamperfekt**
 :::
+
 |**Präteritum/Perfekt (Hành động sau)**|**bevor + Plusquamperfekt (Hành động trước)**|
 |---|---|
 |Ich ging ins Bett,|bevor ich gegessen **hatte**.|
