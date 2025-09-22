@@ -67,11 +67,12 @@ Trả lời câu hỏi: **Wem? (Cho ai?)**
 - **Er gibt dem Mann ein Buch.**<br>_Anh ấy đưa quyển sách cho người đàn ông._
 - **Kannst du mir helfen?**<br>_Bạn có thể giúp tôi không?_
 
-:::note[Mẹo nhớ]
-
+:::note[Mẹo nhớ - Dativ]
 Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 
-sdd
+**Câu hỏi kiểm tra:** _Wem?_ (cho ai)
+
+**Pattern:** `Subject` + **Verb** + **_Indirect Object (Dativ)_** + Direct Object
 :::
 
 :::tip[Tóm tắt All-in-One]
@@ -95,8 +96,6 @@ _Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
 | **Dativ**     | Tân ngữ gián tiếp (nhận lợi ích từ hành động) | Wem?        | Ich gebe **dem Hund** das Futter. _(Tôi đưa thức ăn cho con chó.)_ |
 
 :::tip[Mẹo ghi nhớ nhanh]
-
-Nội dung ghi chú:
 
 - **Wer/Was? → Nominativ** (Ai thực hiện hành động?)
 - **Wen/Was? → Akkusativ** (Ai/cái gì chịu tác động?)

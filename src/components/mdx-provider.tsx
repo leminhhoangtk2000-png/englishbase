@@ -187,10 +187,9 @@ const mdxComponents: MDXComponents = {
   ),
   
   hr: (props) => (
-    <hr 
-      className="my-8 border-gray-300 dark:border-gray-600" 
-      {...props} 
-    />
+    <div className="my-12 flex justify-center">
+      <div className="w-32 h-1 bg-gray-400 dark:bg-gray-500 rounded-full shadow-sm"></div>
+    </div>
   ),
   
   img: (props) => (

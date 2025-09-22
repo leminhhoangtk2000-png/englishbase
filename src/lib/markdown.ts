@@ -5,6 +5,7 @@ import { remark } from 'remark'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
+import remarkDirective from 'remark-directive'
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
@@ -13,6 +14,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from 'rehype-stringify'
 import { preprocessAdmonitions } from './preprocess-admonitions'
+import { remarkAdmonitionDirective } from './remark-admonition-directive'
 
 const contentDirectory = path.join(process.cwd(), 'src/content')
 
@@ -166,6 +168,8 @@ export async function markdownToHtml(markdown: string): Promise<string> {
   
   const result = await unified()
     .use(remarkParse)
+    .use(remarkDirective) // Add directive support
+    .use(remarkAdmonitionDirective) // Transform admonition directives
     .use(remarkGfm) // GitHub Flavored Markdown
     .use(remarkMath) // Math equations support
     .use(remarkRehype, { allowDangerousHtml: true })

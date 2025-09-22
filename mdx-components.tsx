@@ -4,6 +4,7 @@ import { Lueckentext } from '@/components/ui/lueckentext';
 import { AuthorCredit } from '@/components/ui/author-credit';
 import { Comments } from '@/components/ui/comments';
 import { ExerciseMetadataHider } from '@/components/exercise-metadata-hider';
+import { AdmonitionCleaner } from '@/components/admonition-cleaner';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -11,6 +12,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     wrapper: ({ children }) => (
       <div data-mdx-content>
         <ExerciseMetadataHider />
+        <AdmonitionCleaner />
         {children}
       </div>
     ),
@@ -60,10 +62,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </div>
     ),
 
-    // Horizontal rule styling
+    // Horizontal rule styling - Thicker and more prominent
     hr: () => (
-      <div className="my-12 flex justify-center">
-        <div className="w-24 h-px bg-gray-300 dark:bg-gray-600"></div>
+      <div className="my-16 flex justify-center">
+        <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
       </div>
     ),
 

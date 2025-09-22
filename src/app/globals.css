@@ -639,3 +639,26 @@ body::-webkit-scrollbar {
 *::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+/* Hide raw admonition syntax using JavaScript hook class */
+.prose p.hidden-admonition {
+  display: none !important;
+}
+
+/* Hide empty paragraphs that might contain only whitespace */
+.prose p:empty {
+  display: none !important;
+}
+
+/* Force hide any remaining standalone ::: text */
+.prose *[data-admonition-marker] {
+  display: none !important;
+}
+
+/* Additional CSS rule to hide ::: paragraphs */
+.prose p:has-text(":::") {
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

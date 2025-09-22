@@ -4,11 +4,22 @@
  */
 
 export function preprocessAdmonitions(content: string): string {
-  // Replace admonition blocks with styled HTML
-  const admonitionRegex = /:::(\w+)(?:\[([^\]]+)\])?\s*\n([\s\S]*?)\n:::/g
+  // Replace admonition blocks with styled HTML  
+  // Updated regex to handle lists and various content types better
+  const admonitionRegex = /:::(\w+)(?:\[([^\]]+)\])?\s*\n([\s\S]*?)(?=\n:::|\n$|$)/g
   
   return content.replace(admonitionRegex, (match, type, title, innerContent) => {
-    const cleanContent = innerContent.trim()
+    // Clean content while preserving structure for lists and other markdown
+    let cleanContent = innerContent.replace(/^\n+/, '') // Remove leading newlines only
+    cleanContent = cleanContent.replace(/\n+$/, '') // Remove trailing newlines only
+    
+    // Ensure list items are properly spaced for markdown parsing
+    cleanContent = cleanContent.replace(/^(-|\*|\+|\d+\.)\s/gm, '$1 ')
+    
+    // Add extra spacing for better list parsing if content starts with list
+    if (cleanContent.match(/^(-|\*|\+|\d+\.)\s/)) {
+      cleanContent = '\n' + cleanContent
+    }
     
     // Define admonition configs
     const configs = {

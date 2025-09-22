@@ -1,5 +1,7 @@
 import type {NextConfig} from 'next';
 import createMDX from '@next/mdx';
+import remarkDirective from 'remark-directive';
+import { remarkAdmonitionDirective } from './src/lib/remark-admonition-directive';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -103,7 +105,10 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
   options: {
-    remarkPlugins: [],
+    remarkPlugins: [
+      remarkDirective,
+      remarkAdmonitionDirective,
+    ],
     rehypePlugins: [],
   },
 });
