@@ -118,7 +118,7 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
             )}
           </div>
 
-          <Separator className="my-4 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+          <Separator className="my-4 bg-gradient-to-r from-transparent via-gray-400 to-transparent h-[3px]" />
 
           {/* Định nghĩa */}
           <div className="space-y-4">
@@ -168,7 +168,7 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
           {/* Ví dụ */}
           {entry.examples && entry.examples.length > 0 && (
             <div className="space-y-3">
-              <Separator className="bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
+              <Separator className="bg-gradient-to-r from-transparent via-gray-400 dark:via-gray-500 to-transparent h-[3px]" />
               <div className="flex items-center gap-2 mb-3">
                 <BookOpen className="h-5 w-5 text-slate-600 dark:text-slate-400" />
                 <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Ví dụ</h4>

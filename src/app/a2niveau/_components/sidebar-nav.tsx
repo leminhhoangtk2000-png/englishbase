@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { type NavItem } from "@/types";
 import { cn } from "@/lib/utils";
 import {
@@ -17,11 +18,42 @@ interface SidebarNavProps {
 
 export function SidebarNav({ items }: SidebarNavProps) {
   const pathname = usePathname();
+  const [openSections, setOpenSections] = useState<Set<number>>(new Set());
+
+  // Automatically open section that contains current page
+  useEffect(() => {
+    const newOpenSections = new Set<number>();
+    
+    items.forEach((item, index) => {
+      if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+        newOpenSections.add(index);
+      }
+    });
+    
+    setOpenSections(newOpenSections);
+  }, [pathname, items]);
+
+  const toggleSection = (index: number) => {
+    setOpenSections(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
 
   return items.length ? (
     <div className="w-full">
       {items.map((item, index) => (
-        <Collapsible key={index} className="w-full" defaultOpen>
+        <Collapsible 
+          key={index} 
+          className="w-full" 
+          open={openSections.has(index)}
+          onOpenChange={() => toggleSection(index)}
+        >
           <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm font-semibold font-headline hover:bg-secondary [&[data-state=open]>svg]:rotate-90">
             {item.title}
             {item.items && (
