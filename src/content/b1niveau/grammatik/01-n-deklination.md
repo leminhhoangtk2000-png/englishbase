@@ -6,13 +6,14 @@ topic: "Grammatik"
 order: 1
 ---
 
-Trong tiếng Đức, danh từ được chia thành hai nhóm chính khi biến đổi theo cách (Kasus):  
-	- **Nhóm danh từ yếu (N-Deklination)** – chủ yếu là danh từ giống đực có quy tắc đặc biệt.  
-	- **Nhóm danh từ mạnh** – bao gồm hầu hết các danh từ khác, có cách biến đổi phổ biến hơn.
+# N-Deklination - Biến cách danh từ yếu
 
+Trong tiếng Đức, danh từ được chia thành hai nhóm chính khi biến đổi theo cách (Kasus):
+
+- **Nhóm danh từ yếu (N-Deklination)** – chủ yếu là danh từ giống đực có quy tắc đặc biệt.
+- **Nhóm danh từ mạnh** – bao gồm hầu hết các danh từ khác, có cách biến đổi phổ biến hơn.
 
 ---
-
 
 ## **1. Nhóm các danh từ yếu (N-Deklination)**
 
@@ -21,79 +22,68 @@ Trong tiếng Đức, danh từ được chia thành hai nhóm chính khi biến
 N-Deklination là **nhóm danh từ yếu (schwache Nomen)**, chủ yếu là danh từ **giống đực (Maskulin)** **và có quy tắc chia đặc biệt.**  
 Các danh từ này **giữ nguyên ở Nominativ nhưng thêm "-n" hoặc "-en" vào Genitiv, Dativ, và Akkusativ.**
 
-Ví dụ:
+**Ví dụ:**
 
-- **Nominativ:** Der Student lernt Deutsch. 
-	_(Sinh viên học tiếng Đức.)_
+**Nominativ:** Der Student lernt Deutsch.  
+ _(Sinh viên học tiếng Đức.)_
 
-- **Akkusativ:** Ich sehe **den Studenten**. 
-	_(Tôi thấy sinh viên đó.)_
+**Akkusativ:** Ich sehe **den Studenten**.  
+ _(Tôi thấy sinh viên đó.)_
 
-- **Dativ:** Ich gebe **dem Studenten** ein Buch. 
-	_(Tôi đưa sinh viên một quyển sách.)_
+**Dativ:** Ich gebe **dem Studenten** ein Buch.  
+ _(Tôi đưa sinh viên một quyển sách.)_
 
-- **Genitiv:** Das Buch **des Studenten** ist interessant. 
-	_(Cuốn sách của sinh viên rất thú vị.)_
-
+**Genitiv:** Das Buch **des Studenten** ist interessant.  
+ _(Cuốn sách của sinh viên rất thú vị.)_
 
 ---
-
 
 ### **🔹 Cách nhận biết danh từ yếu**
 
 📌 **Hầu hết danh từ giống đực (Maskulin) kết thúc bằng -e hoặc một số hậu tố đặc biệt thuộc nhóm N-Deklination.**
 
-
 ---
 
+#### **Dấu hiệu 1: Tất cả danh từ giống đực có đuôi -e đều là danh từ yếu**
 
-####  **Dấu hiệu 1: Tất cả danh từ giống đực có đuôi -e đều là danh từ yếu**
+**Ví dụ:**
 
-**Danh từ đực kết thúc bằng "-e" thường thuộc nhóm danh từ yếu.**
-
-Ví dụ:
-
-|**Kasus**|**Singular** (Số ít)|**Plural** (Số nhiều)|
-|---|---|---|
-|**Nominativ**|der Junge _(cậu bé)_|die Jungen|
-|**Akkusativ**|den Jungen|die Jungen|
-|**Dativ**|dem Jungen|den Jungen|
-|**Genitiv**|des Jungen|der Jungen|
+| **Kasus**     | **Singular** (Số ít) | **Plural** (Số nhiều) |
+| ------------- | -------------------- | --------------------- |
+| **Nominativ** | der Junge _(cậu bé)_ | die Jungen            |
+| **Akkusativ** | den Jungen           | die Jungen            |
+| **Dativ**     | dem Jungen           | den Jungen            |
+| **Genitiv**   | des Jungen           | der Jungen            |
 
 ---
 
 #### **Dấu hiệu 2: Danh từ giống đực kết thúc bằng -af, -ant, -at, -ent, -ist thuộc nhóm danh từ yếu**
 
-**Các danh từ có những hậu tố này cũng thuộc nhóm N-Deklination.**
+**Ví dụ:**
 
-Ví dụ:
-
-|**Kasus**|**der Polizist** _(cảnh sát)_|**der Präsident** _(tổng thống)_|
-|---|---|---|
-|**Nominativ**|der Polizist|der Präsident|
-|**Akkusativ**|den Polizisten|den Präsidenten|
-|**Dativ**|dem Polizisten|dem Präsidenten|
-|**Genitiv**|des Polizisten|des Präsidenten|
+| **Kasus**     | **der Polizist** _(cảnh sát)_ | **der Präsident** _(tổng thống)_ |
+| ------------- | ----------------------------- | -------------------------------- |
+| **Nominativ** | der Polizist                  | der Präsident                    |
+| **Akkusativ** | den Polizisten                | den Präsidenten                  |
+| **Dativ**     | dem Polizisten                | dem Präsidenten                  |
+| **Genitiv**   | des Polizisten                | des Präsidenten                  |
 
 **Lưu ý:**  
-  **Những danh từ này đều thêm "-en" vào Genitiv, Dativ, Akkusativ.**
+Những danh từ này đều thêm "-en" vào Genitiv, Dativ, Akkusativ.
 
 ---
 
 ### **🔹 Một vài ngoại lệ của danh từ yếu**
 
-**Một số danh từ không tuân theo quy tắc này hoàn toàn nhưng vẫn thuộc nhóm N-Deklination.**
+Một số danh từ không tuân theo quy tắc này hoàn toàn nhưng vẫn thuộc nhóm N-Deklination.
 
-Ví dụ:
+| **Danh từ**             | **Nominativ** | **Akkusativ** | **Dativ**   | **Genitiv**  |
+| ----------------------- | ------------- | ------------- | ----------- | ------------ |
+| der Name _(tên)_        | der Name      | den Namen     | dem Namen   | des Namens   |
+| der Friede _(hòa bình)_ | der Friede    | den Frieden   | dem Frieden | des Friedens |
 
-|**Danh từ**|**Nominativ**|**Akkusativ**|**Dativ**|**Genitiv**|
-|---|---|---|---|---|
-|der Name _(tên)_|der Name|den Namen|dem Namen|des Namens|
-|der Friede _(hòa bình)_|der Friede|den Frieden|dem Frieden|des Friedens|
-
-Lưu ý:  
-  **Một số danh từ như "der Name", "der Friede" thêm "-ns" vào Genitiv thay vì "-en".**
-
+**Lưu ý:**  
+Một số danh từ như **"der Name"**, **"der Friede"** thêm "-ns" vào Genitiv thay vì "-en".
 
 ---
 
@@ -101,12 +91,11 @@ Lưu ý:
 
 ### **🔹 Cách nhận biết danh từ mạnh**
 
-Danh từ mạnh bao gồm:  
+Danh từ mạnh bao gồm:
 
-- **Tất cả các danh từ giống đực không chứa các dấu hiệu nhận biết của danh từ yếu.**  
-- **Tất cả các danh từ giống cái (Feminin).**  
-- **Tất cả các danh từ giống trung (Neutrum) ngoại trừ "das Herz" (có cách chia đặc biệt).**
-
+- **Tất cả các danh từ giống đực không chứa các dấu hiệu nhận biết của danh từ yếu.**
+- **Tất cả các danh từ giống cái (Feminin).**
+- **Tất cả các danh từ giống trung (Neutrum) ngoại trừ "das Herz".**
 
 ---
 
@@ -114,34 +103,32 @@ Danh từ mạnh bao gồm:
 
 #### **Quy tắc 1: Danh từ số ít giống đực & trung ở Genitiv → thêm "-s" hoặc "-es"**
 
-Trong cách **Genitiv**, **danh từ mạnh giống đực và trung tính** thường thêm **"-s"** hoặc **"-es"**.
+**Ví dụ:**
 
-Ví dụ:
+| **Danh từ**           | **Nominativ** | **Genitiv** |
+| --------------------- | ------------- | ----------- |
+| der Tisch _(cái bàn)_ | der Tisch     | des Tisches |
+| das Auto _(chiếc xe)_ | das Auto      | des Autos   |
 
-|**Danh từ**|**Nominativ**|**Genitiv**|
-|---|---|---|
-|der Tisch _(cái bàn)_|der Tisch|des Tisches|
-|das Auto _(chiếc xe)_|das Auto|des Autos|
+**Lưu ý:**
 
-Lưu ý:  
-  - Danh từ kết thúc bằng một phụ âm thường thêm **"-es".**  
-  - Danh từ kết thúc bằng nguyên âm thường thêm **"-s".**
+- Danh từ kết thúc bằng một phụ âm thường thêm "-es".
+- Danh từ kết thúc bằng nguyên âm thường thêm "-s".
 
 ---
 
 #### **Quy tắc 2: Danh từ số nhiều ở Dativ luôn thêm "-n"**
 
-**Ở cách Dativ số nhiều, tất cả danh từ mạnh đều thêm "-n", trừ những từ đã kết thúc bằng "-s" hoặc "-n".**
+**Ví dụ:**
 
-Ví dụ:
+| **Kasus**     | **Singular** (Số ít)   | **Plural** (Số nhiều) |
+| ------------- | ---------------------- | --------------------- |
+| **Nominativ** | die Blume _(bông hoa)_ | die Blumen            |
+| **Dativ**     | der Blume              | den Blumen            |
 
-|**Kasus**|**Singular** (Số ít)|**Plural** (Số nhiều)|
-|---|---|---|
-|**Nominativ**|die Blume _(bông hoa)_|die Blumen|
-|**Dativ**|der Blume|den Blumen|
+**Lưu ý:**
 
-Lưu ý:  
-- Quy tắc này áp dụng cho tất cả danh từ mạnh ở số nhiều.  
+- Quy tắc này áp dụng cho tất cả danh từ mạnh ở số nhiều.
 - Các danh từ đã kết thúc bằng "-n" hoặc "-s" không cần thêm đuôi.
 
 ---
@@ -156,4 +143,4 @@ Lưu ý:
 - **Danh từ mạnh bao gồm tất cả danh từ giống cái, hầu hết danh từ giống đực và trung.**
 - **Danh từ mạnh giống đực & trung thêm "-s" hoặc "-es" vào Genitiv.**
 - **Danh từ số nhiều luôn thêm "-n" vào Dativ, trừ khi kết thúc bằng "-s" hoặc "-n".**
-:::
+  :::

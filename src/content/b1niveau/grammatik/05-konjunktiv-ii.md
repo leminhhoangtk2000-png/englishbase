@@ -6,7 +6,9 @@ topic: "Grammatik"
 order: 5
 ---
 
- - **Konjunktiv II** là một dạng thức ngữ pháp được sử dụng để diễn tả các tình huống không có thật, ước muốn, khả năng hoặc yêu cầu lịch sự.  
+# Konjunktiv II - Thể giả định loại hai
+
+- **Konjunktiv II** là một dạng thức ngữ pháp được sử dụng để diễn tả các tình huống không có thật, ước muốn, khả năng hoặc yêu cầu lịch sự.
 - Konjunktiv II có thể **được sử dụng ở cả thì hiện tại và quá khứ**.
 
 ---
@@ -17,202 +19,179 @@ Có hai cách để hình thành Konjunktiv II ở thì hiện tại:
 
 ### **🔹 Cách 1: Dùng dạng Konjunktiv II của động từ mạnh (starke Verben)**
 
-:::note[**Công thức:**]
-💡 ****Công thức:****
+:::note[**Công thức**]
+💡
 
-**Verbstamm (gốc động từ ở dạng Prateritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
+**Verbstamm (gốc động từ ở dạng Präteritum) + Umlaut (nếu có) + Konjunktiv II-Endung (-e, -est, -e, -en, -et, -en)**
 :::
 
-Ví dụ:
+**Ví dụ:**
 
-|**Ngôi**|**Sein** (Là)|**Haben** (Có)|**Gehen** (Đi)|**Kommen** (Đến)|
-|---|---|---|---|---|
-|Ich|wäre|hätte|ginge|käme|
-|Du|wär(e)st|hättest|gingest|kämest|
-|Er/sie/es|wäre|hätte|ginge|käme|
-|Wir|wären|hätten|gingen|kämen|
-|Ihr|wär(e)t|hättet|ginget|kämet|
-|Sie/sie|wären|hätten|gingen|kämen|
+| **Ngôi**  | **Sein** (Là) | **Haben** (Có) | **Gehen** (Đi) | **Kommen** (Đến) |
+| --------- | ------------- | -------------- | -------------- | ---------------- |
+| Ich       | wäre          | hätte          | ginge          | käme             |
+| Du        | wär(e)st      | hättest        | gingest        | kämest           |
+| Er/sie/es | wäre          | hätte          | ginge          | käme             |
+| Wir       | wären         | hätten         | gingen         | kämen            |
+| Ihr       | wär(e)t       | hättet         | ginget         | kämet            |
+| Sie/sie   | wären         | hätten         | gingen         | kämen            |
 
-Lưu ý:  
-  - Một số động từ mạnh thay đổi nguyên âm (a → ä, o → ö, u → ü).  
-  - Dạng này phổ biến trong văn viết, nhưng ít dùng trong văn nói.
+**Lưu ý:**
+
+- Một số động từ mạnh thay đổi nguyên âm (a → ä, o → ö, u → ü).
+- Dạng này phổ biến trong văn viết, nhưng ít dùng trong văn nói.
 
 ---
 
 ### **🔹 Cách 2: Dùng würde + Infinitiv (phổ biến hơn)**
 
-**Đây là cách thường được sử dụng trong văn nói vì dễ dùng hơn.**
-
-:::note[**Công thức:**]
-💡 ****Công thức:****
+:::note[**Công thức**]
+💡
 
 **würde + Infinitiv (nguyên mẫu của động từ chính)**
 :::
 
-Ví dụ:
+**Ví dụ:**
 
-- Ich **würde** nach Deutschland **reisen**, wenn ich Geld hätte. 
-	_(Tôi sẽ đi Đức nếu tôi có tiền.)_
+Ich **würde** nach Deutschland **reisen**, wenn ich Geld hätte.  
+  _(Tôi sẽ đi Đức nếu tôi có tiền.)_
 
-- Sie **würde** gern ein neues Auto **kaufen**. 
-	_(Cô ấy muốn mua một chiếc xe mới.)_
+Sie **würde** gern ein neues Auto **kaufen**.  
+  _(Cô ấy muốn mua một chiếc xe mới.)_
 
-Lưu ý:  
-  - Cách này có thể dùng với hầu hết các động từ, trừ "sein", "haben" và động từ khuyết thiếu.  
-  - Trong văn nói, "würde + Infinitiv" phổ biến hơn Konjunktiv II nguyên gốc của động từ mạnh.
+**Lưu ý:**
+
+- Cách này có thể dùng với hầu hết các động từ, trừ "sein", "haben" và động từ khuyết thiếu.
+- Trong văn nói, "würde + Infinitiv" phổ biến hơn Konjunktiv II nguyên gốc của động từ mạnh.
 
 ---
 
 ## **2. Cách sử dụng Konjunktiv II ở thì hiện tại**
 
- **Konjunktiv II ở hiện tại có 5 công dụng chính:**
+Konjunktiv II ở hiện tại có 5 công dụng chính:
 
 ### **🔹 2.1. Dùng để nói lên ước muốn, một nguyện vọng**
 
-Ví dụ:
+Ich **hätte** gern ein Haus am Meer.  
+  _(Tôi ước có một căn nhà bên biển.)_
 
-- Ich **hätte** gern ein Haus am Meer. 
-	_(Tôi ước có một căn nhà bên biển.)_
-
-- Sie **wäre** glücklich, wenn sie einen besseren Job hätte. 
-	_(Cô ấy sẽ hạnh phúc nếu có một công việc tốt hơn.)_
+Sie **wäre** glücklich, wenn sie einen besseren Job hätte.  
+  _(Cô ấy sẽ hạnh phúc nếu có một công việc tốt hơn.)_
 
 ---
 
 ### **🔹 2.2. Dùng để nói lên một điều kiện không có thật**
 
-Ví dụ:
+Wenn ich mehr Zeit **hätte**, **würde** ich mehr reisen.  
+  _(Nếu tôi có nhiều thời gian hơn, tôi sẽ đi du lịch nhiều hơn.)_
 
-- Wenn ich mehr Zeit **hätte**, **würde** ich mehr reisen. 
-	_(Nếu tôi có nhiều thời gian hơn, tôi sẽ đi du lịch nhiều hơn.)_
-
-- Wenn er klüger **wäre**, **würde** er nicht so viele Fehler machen. 
-	_(Nếu anh ấy thông minh hơn, anh ấy sẽ không mắc nhiều lỗi như vậy.)_
-
-Lưu ý:  
-  - Luôn dùng trong câu điều kiện không có thật (nếu… thì…).
+Wenn er klüger **wäre**, **würde** er nicht so viele Fehler machen.  
+  _(Nếu anh ấy thông minh hơn, anh ấy sẽ không mắc nhiều lỗi như vậy.)_
 
 ---
 
 ### **🔹 2.3. Dùng để nhờ vả một việc rất lịch sự**
 
-Ví dụ:
+**Könnten** Sie mir bitte helfen?  
+  _(Ngài có thể giúp tôi được không?)_
 
-- **Könnten** Sie mir bitte helfen? 
-	_(Ngài có thể giúp tôi được không?)_
-
-- Ich **hätte** gern einen Kaffee. 
-	_(Tôi muốn một tách cà phê.)_
-
-Lưu ý:  
-  - Dạng này phổ biến trong giao tiếp lịch sự.
+Ich **hätte** gern einen Kaffee.  
+  _(Tôi muốn một tách cà phê.)_
 
 ---
 
 ### **🔹 2.4. Dùng để so sánh với một sự việc không có thật**
 
-Ví dụ:
+Er tut so, als **wäre** er ein Experte.  
+  _(Anh ấy hành động như thể anh ấy là một chuyên gia.)_
 
-- Er tut so, als **wäre** er ein Experte. 
-	_(Anh ấy hành động như thể anh ấy là một chuyên gia vậy.)_
-
-- Sie spricht, als **hätte** sie alles verstanden. 
-	_(Cô ấy nói như thể cô ấy đã hiểu hết.)_
-
-Lưu ý:  
-  - Thường đi với "als ob" hoặc "als wenn".
+Sie spricht, als **hätte** sie alles verstanden.  
+  _(Cô ấy nói như thể cô ấy đã hiểu hết.)_
 
 ---
 
 ### **🔹 2.5. Dùng để đưa ra lời khuyên**
 
-Ví dụ:
+Du **solltest** mehr Sport machen.  
+  _(Bạn nên tập thể thao nhiều hơn.)_
 
-- Du **solltest** mehr Sport machen. 
-	_(Bạn nên tập thể thao nhiều hơn.)_
-
-- Er **könnte** seine Zeit besser nutzen. 
-	_(Anh ấy có thể sử dụng thời gian tốt hơn.)_
-
-Lưu ý:  
-  - Thường đi với động từ khuyết thiếu "sollte", "könnte".
+Er **könnte** seine Zeit besser nutzen.  
+  _(Anh ấy có thể sử dụng thời gian tốt hơn.)_
 
 ---
 
 ## **3. Cách xây dựng Konjunktiv II ở thì quá khứ (Vergangenheit)**
 
-Được hình thành bằng "hätte" hoặc "wäre" + Partizip II (phân từ II).
-
-:::note[**Công thức:**]
-💡 ****Công thức:****
+:::note[**Công thức**]
+💡
 
 **hätte / wäre + Partizip II**
 :::
 
 **Ví dụ:**
 
-- Ich **hätte** das Buch gelesen. 
-	_(Tôi đã có thể đọc cuốn sách.)_
+Ich **hätte** das Buch gelesen.  
+  _(Tôi đã có thể đọc cuốn sách.)_
 
-- Er **wäre** nach Berlin gefahren. 
-	_(Anh ấy đáng lẽ đã đi đến Berlin.)_
+Er **wäre** nach Berlin gefahren.  
+  _(Anh ấy đáng lẽ đã đi đến Berlin.)_
 
-**Lưu ý:**  
-  - "Hätte" dùng với hầu hết các động từ.  
-  - "Wäre" dùng với các động từ di chuyển hoặc thay đổi trạng thái.
+**Lưu ý:**
+
+- "hätte" dùng với hầu hết các động từ.
+- "wäre" dùng với các động từ di chuyển hoặc thay đổi trạng thái.
 
 ---
 
 ## **4. Cách sử dụng Konjunktiv II ở thì quá khứ**
 
-**Dùng để diễn tả các tình huống không có thật trong quá khứ.**
+Dùng để diễn tả các tình huống không có thật trong quá khứ.
 
 **Ví dụ:**
 
-- Wenn ich mehr gelernt **hätte**, **hätte** ich die Prüfung bestanden. 
-	_(Nếu tôi học nhiều hơn, tôi đã đỗ kỳ thi.)_
+Wenn ich mehr gelernt **hätte**, **hätte** ich die Prüfung bestanden.  
+  _(Nếu tôi học nhiều hơn, tôi đã đỗ kỳ thi.)_
 
-- Wenn er schneller **gefahren wäre**, **wäre** er früher angekommen. 
-	_(Nếu anh ấy lái xe nhanh hơn, anh ấy đã đến sớm hơn.)_
+Wenn er schneller **gefahren wäre**, **wäre** er früher angekommen.  
+  _(Nếu anh ấy lái xe nhanh hơn, anh ấy đã đến sớm hơn.)_
 
 ---
 
 ### **🔹 Cách sử dụng với động từ khiếm khuyết**
 
-:::note[**Công thức:**]
-💡 ****Công thức:****
+:::note[**Công thức**]
+💡
 
 **hätte + Modalverb (Infinitiv) + Partizip II**
 :::
 
 **Ví dụ:**
 
-- Ich **hätte** das machen **müssen**. 
-	_(Tôi lẽ ra phải làm điều đó.)_
+Ich **hätte** das machen **müssen**.  
+  _(Tôi lẽ ra phải làm điều đó.)_
 
-- Er **hätte** mehr lernen **sollen**. 
-	_(Anh ấy đáng lẽ nên học nhiều hơn.)_
+Er **hätte** mehr lernen **sollen**.  
+  _(Anh ấy đáng lẽ nên học nhiều hơn.)_
 
 ---
 
 ## **5. Cấu trúc bị động ở thì hiện tại Konjunktiv II**
 
-**Loại bình thường:**  
- - Es würde gemacht werden. _(Nó sẽ được làm.)_
+Es **würde** gemacht **werden**.  
+  _(Nó sẽ được làm.)_
 
-**Loại sử dụng với động từ khiếm khuyết:**  
- - Es müsste gemacht werden. _(Nó đáng lẽ phải được làm.)_
+Es **müsste** gemacht **werden**.  
+  _(Nó đáng lẽ phải được làm.)_
 
 ---
 
 ## **6. Cấu trúc bị động ở thì quá khứ Konjunktiv II**
 
-**Loại bình thường:**  
- - Es wäre gemacht worden. _(Nó đã có thể được làm.)_
+Es **wäre** gemacht **worden**.  
+  _(Nó đã có thể được làm.)_
 
-**Loại sử dụng với động từ khiếm khuyết:**  
- - Es hätte gemacht werden müssen. _(Nó đáng lẽ phải được làm.)_
+Es **hätte** gemacht werden **müssen**.  
+  _(Nó đáng lẽ phải được làm.)_
 
 ---
 

@@ -25,69 +25,69 @@ sidebar_position: 10
 
 ### 🔹 A. **Mở đầu – Giới thiệu quan điểm**
 
-|**Cấu trúc**|**Ý nghĩa**|
-|---|---|
-|Meiner Meinung nach …|Theo ý kiến của tôi|
-|Ich bin der Meinung, dass …|Tôi cho rằng…|
-|Aus meiner Sicht …|Từ góc nhìn của tôi|
-|Ich vertrete die Auffassung, dass …|Tôi giữ quan điểm rằng… _(trang trọng)_|
-|Es lässt sich nicht leugnen, dass …|Không thể phủ nhận rằng…|
+| **Cấu trúc**                        | **Ý nghĩa**                             |
+| ----------------------------------- | --------------------------------------- |
+| Meiner Meinung nach …               | Theo ý kiến của tôi                     |
+| Ich bin der Meinung, dass …         | Tôi cho rằng…                           |
+| Aus meiner Sicht …                  | Từ góc nhìn của tôi                     |
+| Ich vertrete die Auffassung, dass … | Tôi giữ quan điểm rằng… _(trang trọng)_ |
+| Es lässt sich nicht leugnen, dass … | Không thể phủ nhận rằng…                |
 
 ---
 
 ### 🔹 B. **Diễn đạt nguyên nhân – kết quả**
 
-|**Cấu trúc**|**Ý nghĩa**|
-|---|---|
-|Deshalb / Daher …|Vì vậy|
-|Aus diesem Grund …|Vì lý do này|
-|Das liegt daran, dass …|Điều này là do…|
-|Folglich / Infolgedessen …|Do đó / Kết quả là…|
+| **Cấu trúc**               | **Ý nghĩa**         |
+| -------------------------- | ------------------- |
+| Deshalb / Daher …          | Vì vậy              |
+| Aus diesem Grund …         | Vì lý do này        |
+| Das liegt daran, dass …    | Điều này là do…     |
+| Folglich / Infolgedessen … | Do đó / Kết quả là… |
 
 ---
 
 ### 🔹 C. **Diễn đạt quan hệ đối lập – phản biện**
 
-|**Cấu trúc**|**Ý nghĩa**|
-|---|---|
-|Einerseits …, andererseits …|Một mặt…, mặt khác…|
-|Zwar …, aber …|Tuy…, nhưng…|
-|Im Gegensatz dazu …|Trái ngược với điều đó…|
-|Dennoch / Trotzdem …|Tuy nhiên…|
-|Auf der einen Seite … auf der anderen Seite …|Một mặt … mặt khác|
+| **Cấu trúc**                                  | **Ý nghĩa**             |
+| --------------------------------------------- | ----------------------- |
+| Einerseits …, andererseits …                  | Một mặt…, mặt khác…     |
+| Zwar …, aber …                                | Tuy…, nhưng…            |
+| Im Gegensatz dazu …                           | Trái ngược với điều đó… |
+| Dennoch / Trotzdem …                          | Tuy nhiên…              |
+| Auf der einen Seite … auf der anderen Seite … | Một mặt … mặt khác      |
 
 ---
 
 ### 🔹 D. **So sánh – nêu ví dụ**
 
-|**Cấu trúc**|**Ý nghĩa**|
-|---|---|
-|Im Vergleich zu …|So với…|
-|Im Gegensatz zu …|Trái với…|
-|Zum Beispiel / Beispielsweise …|Ví dụ như…|
-|Ein gutes Beispiel dafür ist …|Một ví dụ điển hình cho điều đó là…|
+| **Cấu trúc**                    | **Ý nghĩa**                         |
+| ------------------------------- | ----------------------------------- |
+| Im Vergleich zu …               | So với…                             |
+| Im Gegensatz zu …               | Trái với…                           |
+| Zum Beispiel / Beispielsweise … | Ví dụ như…                          |
+| Ein gutes Beispiel dafür ist …  | Một ví dụ điển hình cho điều đó là… |
 
 ---
 
 ### 🔹 E. **Nhấn mạnh – làm rõ quan điểm**
 
-|**Cấu trúc**|**Ý nghĩa**|
-|---|---|
-|Besonders wichtig ist …|Điều đặc biệt quan trọng là…|
-|Man sollte nicht vergessen, dass …|Không nên quên rằng…|
-|Es ist zu betonen, dass …|Cần nhấn mạnh rằng…|
-|Entscheidend ist, dass …|Điều mang tính quyết định là…|
+| **Cấu trúc**                       | **Ý nghĩa**                   |
+| ---------------------------------- | ----------------------------- |
+| Besonders wichtig ist …            | Điều đặc biệt quan trọng là…  |
+| Man sollte nicht vergessen, dass … | Không nên quên rằng…          |
+| Es ist zu betonen, dass …          | Cần nhấn mạnh rằng…           |
+| Entscheidend ist, dass …           | Điều mang tính quyết định là… |
 
 ---
 
 ### 🔹 F. **Kết luận – tổng hợp ý**
 
-|**Cấu trúc**|**Ý nghĩa**|
-|---|---|
-|Abschließend lässt sich sagen, dass …|Kết luận lại có thể nói rằng…|
-|Zusammenfassend kann man feststellen, dass …|Tổng kết lại có thể khẳng định rằng…|
-|Insgesamt betrachtet …|Nhìn chung…|
-|Letztendlich …|Cuối cùng thì…|
+| **Cấu trúc**                                 | **Ý nghĩa**                          |
+| -------------------------------------------- | ------------------------------------ |
+| Abschließend lässt sich sagen, dass …        | Kết luận lại có thể nói rằng…        |
+| Zusammenfassend kann man feststellen, dass … | Tổng kết lại có thể khẳng định rằng… |
+| Insgesamt betrachtet …                       | Nhìn chung…                          |
+| Letztendlich …                               | Cuối cùng thì…                       |
 
 ---
 
@@ -97,8 +97,8 @@ sidebar_position: 10
 
 ✅ Dùng **Redemittel**:
 
-- Ở đầu mỗi đoạn văn  
-- Khi cần chuyển ý (ví dụ → lập luận → phản biện)  
+- Ở đầu mỗi đoạn văn
+- Khi cần chuyển ý (ví dụ → lập luận → phản biện)
 - Khi **đưa ra quan điểm rõ ràng**
 
 📌 **Tránh lạm dụng** cùng một mẫu → thay đổi để bài viết tự nhiên.
@@ -121,17 +121,17 @@ sidebar_position: 10
 
 ## 🔧 **5. Lỗi thường gặp**
 
-|❌ **Lỗi sai**|✅ **Sửa đúng**|📌 **Giải thích**|
-|---|---|---|
-|Ich denke, der Umwelt ist wichtig.|Ich denke, **dass die Umwelt wichtig ist**.|Cần mệnh đề hoàn chỉnh|
-|Deswegen ich bin dafür.|**Deswegen bin ich dafür.**|Đảo ngữ sau trạng từ liên kết|
-|Ich bin Meinung, das ist nicht gut.|Ich **bin der Meinung, dass** das nicht gut ist.|Sai cấu trúc danh từ|
+| ❌ **Lỗi sai**                      | ✅ **Sửa đúng**                                  | 📌 **Giải thích**             |
+| ----------------------------------- | ------------------------------------------------ | ----------------------------- |
+| Ich denke, der Umwelt ist wichtig.  | Ich denke, **dass die Umwelt wichtig ist**.      | Cần mệnh đề hoàn chỉnh        |
+| Deswegen ich bin dafür.             | **Deswegen bin ich dafür.**                      | Đảo ngữ sau trạng từ liên kết |
+| Ich bin Meinung, das ist nicht gut. | Ich **bin der Meinung, dass** das nicht gut ist. | Sai cấu trúc danh từ          |
 
 ---
 
 ## 📝 **6. Tóm tắt nhanh**
 
-- **Redemittel** là mẫu câu học thuật giúp **nối đoạn, lập luận, phản biện rõ ràng**.  
-- Gồm nhiều nhóm: **mở đầu – nguyên nhân – đối lập – ví dụ – kết luận**  
-- Bắt buộc dùng nếu muốn bài viết ở trình độ **B2+ trở lên có tính học thuật**.  
+- **Redemittel** là mẫu câu học thuật giúp **nối đoạn, lập luận, phản biện rõ ràng**.
+- Gồm nhiều nhóm: **mở đầu – nguyên nhân – đối lập – ví dụ – kết luận**
+- Bắt buộc dùng nếu muốn bài viết ở trình độ **B2+ trở lên có tính học thuật**.
 - Cần luyện kỹ cấu trúc câu + đúng trật tự động từ trong câu có Redemittel.

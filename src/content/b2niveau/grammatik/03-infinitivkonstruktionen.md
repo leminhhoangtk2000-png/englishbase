@@ -8,14 +8,9 @@ sidebar_position: 3
 
 📌 **Infinitivkonstruktionen mit „zu“** là cấu trúc **sử dụng động từ nguyên thể có “zu”**, đóng vai trò như một mệnh đề phụ trong câu, thường đi sau một động từ, tính từ hoặc danh từ.
 
-🔎 Ví dụ cơ bản:
-
-:::note[💡]
-💡
-
-Ich habe **vor, morgen ins Kino zu gehen**.  
-(Tôi dự định đi xem phim vào ngày mai.)
-:::
+| Ví dụ                                       | Nghĩa                                 |
+| ------------------------------------------- | ------------------------------------- |
+| Ich habe **vor, morgen ins Kino zu gehen**. | Tôi dự định đi xem phim vào ngày mai. |
 
 ---
 
@@ -23,58 +18,88 @@ Ich habe **vor, morgen ins Kino zu gehen**.
 
 ### 🔹 **A. Sau các động từ + “zu”**
 
-|**Động từ**|**Cấu trúc**|**Ví dụ học thuật**|
-|---|---|---|
-|anfangen / beginnen|... **zu + Infinitiv**|Er beginnt **zu arbeiten**.|
-|versuchen|... **zu + Infinitiv**|Sie versucht **zu lernen**.|
-|hoffen|... **zu + Infinitiv**|Wir hoffen, **die Prüfung zu bestehen**.|
-|aufhören|... **zu + Infinitiv**|Er hört **auf zu sprechen**.|
-|vorhaben|... **zu + Infinitiv**|Ich habe **vor, ein Projekt zu starten**.|
+| **Động từ**         | **Cấu trúc**           | **Ví dụ học thuật**                       |
+| ------------------- | ---------------------- | ----------------------------------------- |
+| anfangen / beginnen | ... **zu + Infinitiv** | Er beginnt **zu arbeiten**.               |
+| versuchen           | ... **zu + Infinitiv** | Sie versucht **zu lernen**.               |
+| hoffen              | ... **zu + Infinitiv** | Wir hoffen, **die Prüfung zu bestehen**.  |
+| aufhören            | ... **zu + Infinitiv** | Er hört **auf zu sprechen**.              |
+| vorhaben            | ... **zu + Infinitiv** | Ich habe **vor, ein Projekt zu starten**. |
 
 ---
 
 ### 🔹 **B. Sau tính từ + “zu”**
 
-:::note[Es ist + Adjektiv + zu + Infinitiv]
-**Es ist + Adjektiv + zu + Infinitiv**
-:::
-|**Tính từ**|**Ví dụ câu**|
-|---|---|
-|wichtig|Es ist **wichtig, regelmäßig zu üben**.|
-|schwierig|Es ist **schwierig, sich zu konzentrieren**.|
-|erlaubt|Es ist **nicht erlaubt, hier zu rauchen**.|
-|leicht / schwer|Es ist **leicht, das zu verstehen**.|
+**Cấu trúc:** Es ist + Adjektiv + zu + Infinitiv
+
+| **Tính từ**     | **Ví dụ câu**                                |
+| --------------- | -------------------------------------------- |
+| wichtig         | Es ist **wichtig, regelmäßig zu üben**.      |
+| schwierig       | Es ist **schwierig, sich zu konzentrieren**. |
+| erlaubt         | Es ist **nicht erlaubt, hier zu rauchen**.   |
+| leicht / schwer | Es ist **leicht, das zu verstehen**.         |
 
 ---
 
 ### 🔹 **C. Sau danh từ + „zu“**
 
-:::note[💡]
-💡
-**(Es ist) + Substantiv + zu + Infinitiv**
-:::
+**Cấu trúc:** (Es ist) + Substantiv + zu + Infinitiv
 
-|**Danh từ**|**Ví dụ**|
-|---|---|
-|das Ziel|**Das Ziel ist, die Leistung zu verbessern.**|
-|die Möglichkeit|**Es gibt die Möglichkeit, online zu lernen.**|
-|der Wunsch|**Ein häufiger Wunsch ist, im Ausland zu arbeiten.**|
+| **Danh từ**     | **Ví dụ**                                            |
+| --------------- | ---------------------------------------------------- |
+| das Ziel        | **Das Ziel ist, die Leistung zu verbessern.**        |
+| die Möglichkeit | **Es gibt die Möglichkeit, online zu lernen.**       |
+| der Wunsch      | **Ein häufiger Wunsch ist, im Ausland zu arbeiten.** |
 
 ---
 
 ### 🔹 **D. Cấu trúc đặc biệt: um…zu / ohne…zu / anstatt…zu**
 
-|**Cấu trúc**|**Ý nghĩa**|**Ví dụ học thuật**|
-|---|---|---|
-|**um ... zu** + Inf|để làm gì|Ich lerne viel, **um die Prüfung zu bestehen**.|
-|**ohne ... zu** + Inf|mà không làm gì|Er ging, **ohne ein Wort zu sagen**.|
-|**anstatt ... zu** + Inf|thay vì làm gì|Sie ruht sich aus, **anstatt zu arbeiten**.|
+| **Cấu trúc**             | **Ý nghĩa**     | **Ví dụ học thuật**                             |
+| ------------------------ | --------------- | ----------------------------------------------- |
+| **um ... zu** + Inf      | để làm gì       | Ich lerne viel, **um die Prüfung zu bestehen**. |
+| **ohne ... zu** + Inf    | mà không làm gì | Er ging, **ohne ein Wort zu sagen**.            |
+| **anstatt ... zu** + Inf | thay vì làm gì  | Sie ruht sich aus, **anstatt zu arbeiten**.     |
 
 ---
 
 ## 🧠 **3. Cấu trúc rút gọn: Infinitivsatz làm chủ ngữ hoặc tân ngữ**
 
-### 🔸 Cấu trúc:
+### 🔸 Làm chủ ngữ
 
-```text
-Zu + Verb + Ergänzung + ist/sind + ...
+| Ví dụ                                 | Nghĩa                                          |
+| ------------------------------------- | ---------------------------------------------- |
+| **Zu viel zu arbeiten ist ungesund.** | Làm việc quá nhiều thì không tốt cho sức khỏe. |
+| **Zu reisen macht Spaß.**             | Đi du lịch thì vui.                            |
+
+---
+
+### 🔸 Làm tân ngữ
+
+**Cấu trúc:** Es + Verb + Subjekt + , + zu + Infinitiv ...
+
+| Ví dụ                                        | Nghĩa                             |
+| -------------------------------------------- | --------------------------------- |
+| **Es ist wichtig, die Regeln zu verstehen.** | Việc hiểu luật lệ thì quan trọng. |
+| **Es fällt mir schwer, früh aufzustehen.**   | Với tôi thì khó dậy sớm.          |
+
+---
+
+## ❗ **4. Lỗi thường gặp**
+
+| ❌ **Lỗi sai**                               | ✅ **Cách đúng**                                | 📌 **Giải thích**                     |
+| -------------------------------------------- | ----------------------------------------------- | ------------------------------------- |
+| Ich muss **zu gehen**.                       | Ich muss **gehen**.                             | Sau Modalverb **không có “zu”**.      |
+| Ich lerne viel, **zu die Prüfung bestehen**. | Ich lerne viel, **um die Prüfung zu bestehen**. | Thiếu **um** trong cấu trúc mục đích. |
+| Er ging, **ohne dass er sagt**.              | Er ging, **ohne etwas zu sagen**.               | Dùng sai – phải dùng **ohne ... zu**. |
+
+---
+
+## 🎯 **5. Tổng kết**
+
+📌 Ghi nhớ:
+
+- **zu + Infinitiv** thường theo sau động từ, tính từ hoặc danh từ.
+- Các cấu trúc đặc biệt: **um…zu**, **ohne…zu**, **anstatt…zu** để diễn đạt mục đích, phủ định, hoặc thay thế.
+- Infinitivsatz có thể đóng vai trò như **chủ ngữ** hoặc **tân ngữ** trong câu.
+- Cẩn thận tránh nhầm với **Modalverben** (không dùng “zu”).
