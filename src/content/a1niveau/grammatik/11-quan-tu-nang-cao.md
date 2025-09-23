@@ -59,7 +59,7 @@ Có 5 loại quán từ quan trọng:
 | **Dativ**     | einem Mann   | einer Frau  | einem Kind   | _(không có)_ |
 | **Genitiv**   | eines Mannes | einer Frau  | eines Kindes | _(không có)_ |
 
-:::note[Mẹo nhớ: thêm đuôi giống vào ein để giúp người ngh]
+:::note[Mẹo nhớ]
 💡
 
 📌 **Mẹo nhớ:** thêm đuôi giống vào **ein** để giúp người nghe nhận biết giống danh từ.
@@ -138,7 +138,7 @@ Có 5 loại quán từ quan trọng:
 
 ## **🎯 6. Tổng Kết**
 
-:::note[- Bestimmter Artikel = cái đã biết rõ (_der, die, ]
+:::note[Tổng Kết]
 💡
 
 - **Bestimmter Artikel** = cái đã biết rõ (_der, die, das_).

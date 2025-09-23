@@ -10,10 +10,11 @@ order: 2
 
 📌 Trong tiếng Đức, tính từ (Adjektiv) khi đứng trước danh từ phải thay đổi đuôi để phù hợp với **giống (der, die, das), số (số ít, số nhiều) và cách (Kasus) của danh từ đó**.
 
- Việc chia đuôi tính từ phụ thuộc vào loại quán từ đi kèm:  
- - **Chia theo quán từ xác định (der, die, das)**  
- - **Chia theo quán từ không xác định (ein, eine)**  
- - **Chia khi không có quán từ (trống, "Nullartikel")**
+Việc chia đuôi tính từ phụ thuộc vào loại quán từ đi kèm:
+
+- **Chia theo quán từ xác định (der, die, das)**
+- **Chia theo quán từ không xác định (ein, eine)**
+- **Chia khi không có quán từ (trống, "Nullartikel")**
 
 👉 Cùng tìm hiểu chi tiết cách chia đuôi tính từ nhé! 🚀
 
@@ -23,11 +24,11 @@ order: 2
 
 **Dùng khi danh từ có quán từ xác định "der, die, das, die (số nhiều)"**
 
-|**Kasus**|**Maskulin (der)**|**Feminin (die)**|**Neutrum (das)**|**Plural (die)**|
-|---|---|---|---|---|
-|**Nominativ**|**der** nette Mann|**die** nette Frau|**das** nette Kind|**die** netten Kinder|
-|**Akkusativ**|**den** netten Mann|**die** nette Frau|**das** nette Kind|**die** netten Kinder|
-|**Dativ**|**dem** netten Mann|**der** netten Frau|**dem** netten Kind|**den** netten Kindern|
+| **Kasus**     | **Maskulin (der)**  | **Feminin (die)**   | **Neutrum (das)**   | **Plural (die)**       |
+| ------------- | ------------------- | ------------------- | ------------------- | ---------------------- |
+| **Nominativ** | **der** nette Mann  | **die** nette Frau  | **das** nette Kind  | **die** netten Kinder  |
+| **Akkusativ** | **den** netten Mann | **die** nette Frau  | **das** nette Kind  | **die** netten Kinder  |
+| **Dativ**     | **dem** netten Mann | **der** netten Frau | **dem** netten Kind | **den** netten Kindern |
 
 **Mẹo nhớ nhanh:**  
  **-e** ở Nominativ (số ít)  
@@ -35,22 +36,21 @@ order: 2
  **-en** luôn ở **số nhiều**
 
 :::note[Lưu ý]
-💡
+Lưu ý
 
 Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en" ở những danh từ mà quán từ của nó thay đổi và số nhiều**. Như den (akku), dem (dativ),... **Còn lại sẽ là "e"**.
-
 :::
 
 **Ví dụ:**
 
-- Der kluge Lehrer erklärt die Grammatik. 
-	_(Thầy giáo thông minh giải thích ngữ pháp.)_
+**Der kluge Lehrer erklärt die Grammatik.**  
+ _(Thầy giáo thông minh giải thích ngữ pháp.)_
 
-- Ich sehe den netten Mann. 
-	_(Tôi thấy người đàn ông tốt bụng.)_
+**Ich sehe den netten Mann.**  
+ _(Tôi thấy người đàn ông tốt bụng.)_
 
-- Sie hilft dem kleinen Kind. 
-	_(Cô ấy giúp đứa trẻ nhỏ.)_
+**Sie hilft dem kleinen Kind.**  
+ _(Cô ấy giúp đứa trẻ nhỏ.)_
 
 ---
 
@@ -70,22 +70,21 @@ Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en
  **Số nhiều luôn đi với "keine"** và tính từ chia **-en**.
 
 :::note[Lưu ý]
-💡
+Lưu ý
 
 Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en" ở những danh từ mà quán từ của nó thay đổi và số nhiều**. Như den (akku), dem (dativ),... **Còn lại sẽ chia theo đuôi của giống**.
-
 :::
 
 **Ví dụ:**
 
-- Ich habe einen großen Hund. 
-	_(Tôi có một con chó lớn.)_
+**Ich habe einen großen Hund.**  
+ _(Tôi có một con chó lớn.)_
 
-- Sie kauft eine schöne Tasche. 
-	_(Cô ấy mua một cái túi đẹp.)_
+**Sie kauft eine schöne Tasche.**  
+ _(Cô ấy mua một cái túi đẹp.)_
 
-- Wir sprechen mit einem netten Lehrer. 
-	_(Chúng tôi nói chuyện với một thầy giáo tốt bụng.)_
+**Wir sprechen mit einem netten Lehrer.**  
+ _(Chúng tôi nói chuyện với một thầy giáo tốt bụng.)_
 
 ---
 
@@ -93,11 +92,11 @@ Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en
 
 **Dùng khi danh từ không có quán từ, như trong các câu tổng quát hoặc danh từ số nhiều không xác định**.
 
-|**Kasus**|**Maskulin**|**Feminin**|**Neutrum**|**Plural**|
-|---|---|---|---|---|
-|**Nominativ**|großer Mann|schöne Frau|kleines Kind|nette Kinder|
-|**Akkusativ**|großen Mann|schöne Frau|kleines Kind|nette Kinder|
-|**Dativ**|großem Mann|schöner Frau|kleinem Kind|netten Kindern|
+| **Kasus**     | **Maskulin** | **Feminin**  | **Neutrum**  | **Plural**     |
+| ------------- | ------------ | ------------ | ------------ | -------------- |
+| **Nominativ** | großer Mann  | schöne Frau  | kleines Kind | nette Kinder   |
+| **Akkusativ** | großen Mann  | schöne Frau  | kleines Kind | nette Kinder   |
+| **Dativ**     | großem Mann  | schöner Frau | kleinem Kind | netten Kindern |
 
 **Mẹo nhớ nhanh:**  
  **-er, -e, -es** trong Nominativ (giống quán từ xác định).  
@@ -105,52 +104,53 @@ Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia đuôi "en
  **Danh từ số nhiều không có quán từ → tính từ luôn thêm "-en" trong Dativ!**
 
 :::note[Lưu ý]
-💡
+Lưu ý
 
 Có một cách để ghi nhớ hơn là, **chúng ta sẽ luôn chia thêm phần đuôi của giống đã được chia vào tính từ**. Vì một lý do đơn giản là làm việc này để giúp người nghe hiểu được từ đó đang ở giống nào.
-
 :::
 
 **Ví dụ:**
 
-- Starker Kaffee schmeckt gut. 
-	_(Cà phê mạnh thì ngon.)_
+**Starker Kaffee schmeckt gut.**  
+ _(Cà phê mạnh thì ngon.)_
 
-- Ich brauche frisches Brot. 
-	_(Tôi cần bánh mì tươi.)_
+**Ich brauche frisches Brot.**  
+ _(Tôi cần bánh mì tươi.)_
 
-- Mit netten Freunden macht Reisen Spaß. 
-	_(Đi du lịch với những người bạn tốt thì vui.)_
+**Mit netten Freunden macht Reisen Spaß.**  
+ _(Đi du lịch với những người bạn tốt thì vui.)_
 
 ---
 
 ## **4. So sánh nhanh 3 bảng chia đuôi tính từ**
 
-|**Kasus**|**Quán từ xác định**|**Quán từ không xác định**|**Không có quán từ**|
-|---|---|---|---|
-|**Nom.**|der **nette** Mann|ein **netter** Mann|**großer** Mann|
-|**Akk.**|den **netten** Mann|einen **netten** Mann|**großen** Mann|
-|**Dat.**|dem **netten** Mann|einem **netten** Mann|**großem** Mann|
+| **Kasus** | **Quán từ xác định** | **Quán từ không xác định** | **Không có quán từ** |
+| --------- | -------------------- | -------------------------- | -------------------- |
+| **Nom.**  | der **nette** Mann   | ein **netter** Mann        | **großer** Mann      |
+| **Akk.**  | den **netten** Mann  | einen **netten** Mann      | **großen** Mann      |
+| **Dat.**  | dem **netten** Mann  | einem **netten** Mann      | **großem** Mann      |
 
-Nhận xét:  
- - **Tính từ luôn có đuôi -e hoặc -en.**  
- - **Số nhiều và Dativ luôn chia -en.**
+Nhận xét:
+
+- **Tính từ luôn có đuôi -e hoặc -en.**
+- **Số nhiều và Dativ luôn chia -en.**
 
 ---
 
 ## **🎯 5. Tổng Kết**
 
 :::note[Ghi chú]
-💡
+Ghi chú
 
 - **Tính từ luôn thay đổi đuôi khi đứng trước danh từ.**
 - **Có 3 cách chia đuôi tính từ:**
-- Với **quán từ xác định (der, die, das)** → _"der nette Mann."_
-- Với **quán từ không xác định (ein, eine)** → _"ein netter Mann."_
-- Khi **không có quán từ** → _"netter Mann."_
+  - Với **quán từ xác định (der, die, das)** → _"der nette Mann."_
+  - Với **quán từ không xác định (ein, eine)** → _"ein netter Mann."_
+  - Khi **không có quán từ** → _"netter Mann."_
 
 📌 **Mẹo học nhanh:**
+
 - **-e** ở Nominativ số ít (trừ giống đực Akkusativ).
 - **-en** luôn có trong **Dativ & số nhiều**.
 - **Không có quán từ → đuôi tính từ mang nhiều thông tin về giống & cách.**
-:::
+  :::

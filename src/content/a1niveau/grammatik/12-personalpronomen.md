@@ -94,7 +94,9 @@ order: 12
 
 ## **🎯 4. Tổng Kết**
 
-:::note[- Personalpronomen thay thế danh từ để tránh lặp l]
+:::note[Tổng Kết]
+Tổng Kết
+
 - **Personalpronomen** thay thế danh từ để tránh lặp lại.
 - Chia theo 3 cách:
   - **Nominativ** = chủ ngữ (_Ich bin müde._)
@@ -105,4 +107,4 @@ order: 12
 
 - Akkusativ → Wen? Was?
 - Dativ → Wem?
-:::
+  :::

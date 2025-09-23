@@ -6,9 +6,7 @@ topic: "Grammatik"
 order: 10
 ---
 
-# Passiv Alternativen - Dạng thay thế bị động
-
-- Trong tiếng Đức, có nhiều cách để diễn đạt câu bị động mà không cần sử dụng trực tiếp dạng bị động (Passiv).  
+- Trong tiếng Đức, có nhiều cách để diễn đạt câu bị động mà không cần sử dụng trực tiếp dạng bị động (Passiv).
 - Những cách thay thế này thường giúp câu trở nên tự nhiên hơn trong văn nói và viết.
 
 ---
@@ -25,9 +23,10 @@ order: 10
 - **Aktiv mit "man"**: Man kann das Problem lösen. _(Người ta có thể giải quyết vấn đề.)_
 - **Aktiv mit "jemand"**: Jemand kann das Problem lösen. _(Ai đó có thể giải quyết vấn đề.)_
 
-**Lưu ý:**  
-  - "Man" hoặc "jemand" có thể thay thế cho chủ ngữ bị động.  
-  - Dạng này phổ biến trong văn nói hơn so với câu bị động tiêu chuẩn.
+**Lưu ý:**
+
+- "Man" hoặc "jemand" có thể thay thế cho chủ ngữ bị động.
+- Dạng này phổ biến trong văn nói hơn so với câu bị động tiêu chuẩn.
 
 ---
 
@@ -38,9 +37,10 @@ order: 10
 - **Passiv:** Das Problem kann gelöst werden.
 - **Alternativ:** Das Problem **ist zu lösen**. _(Vấn đề có thể được giải quyết.)_
 
-**Lưu ý:**  
-  - Dạng này giúp câu ngắn gọn hơn và thường thấy trong văn viết.  
-  - Chỉ dùng khi hành động mang ý nghĩa chung chung, không nhấn mạnh người thực hiện.
+**Lưu ý:**
+
+- Dạng này giúp câu ngắn gọn hơn và thường thấy trong văn viết.
+- Chỉ dùng khi hành động mang ý nghĩa chung chung, không nhấn mạnh người thực hiện.
 
 ---
 
@@ -51,9 +51,10 @@ order: 10
 - **Passiv:** Das Problem kann gelöst werden.
 - **Alternativ:** Das Problem **lässt sich lösen**. _(Vấn đề có thể giải quyết được.)_
 
-**Lưu ý:**  
-  - Dạng này diễn tả khả năng thực hiện một hành động một cách dễ dàng.  
-  - "Sich lassen" dùng thay thế cho câu bị động khi có thể thực hiện một hành động nào đó.
+**Lưu ý:**
+
+- Dạng này diễn tả khả năng thực hiện một hành động một cách dễ dàng.
+- "Sich lassen" dùng thay thế cho câu bị động khi có thể thực hiện một hành động nào đó.
 
 ---
 
@@ -63,21 +64,22 @@ order: 10
 
 **Ví dụ:**
 
-|**Động từ**|**Danh từ**|**Tính từ (-bar)**|**Câu ví dụ**|
-|---|---|---|---|
-|heilen _(chữa khỏi)_|die Heilung _(sự chữa lành)_|heilbar _(có thể chữa khỏi)_|Die Krankheit ist heilbar. _(Căn bệnh này có thể chữa khỏi.)_|
-|verstehen _(hiểu)_|das Verständnis _(sự hiểu biết)_|verständlich _(có thể hiểu được)_|Der Text ist verständlich. _(Văn bản này có thể hiểu được.)_|
-|vermeiden _(tránh)_|die Vermeidung _(sự tránh né)_|vermeidbar _(có thể tránh được)_|Der Fehler ist vermeidbar. _(Lỗi này có thể tránh được.)_|
+| **Động từ**          | **Danh từ**                      | **Tính từ (-bar)**                | **Câu ví dụ**                                                 |
+| -------------------- | -------------------------------- | --------------------------------- | ------------------------------------------------------------- |
+| heilen _(chữa khỏi)_ | die Heilung _(sự chữa lành)_     | heilbar _(có thể chữa khỏi)_      | Die Krankheit ist heilbar. _(Căn bệnh này có thể chữa khỏi.)_ |
+| verstehen _(hiểu)_   | das Verständnis _(sự hiểu biết)_ | verständlich _(có thể hiểu được)_ | Der Text ist verständlich. _(Văn bản này có thể hiểu được.)_  |
+| vermeiden _(tránh)_  | die Vermeidung _(sự tránh né)_   | vermeidbar _(có thể tránh được)_  | Der Fehler ist vermeidbar. _(Lỗi này có thể tránh được.)_     |
 
-**Lưu ý:**  
-  - Dạng này phổ biến trong văn viết và mang tính trang trọng hơn.  
-  - Giúp diễn đạt bị động một cách tự nhiên và ngắn gọn hơn.
+**Lưu ý:**
+
+- Dạng này phổ biến trong văn viết và mang tính trang trọng hơn.
+- Giúp diễn đạt bị động một cách tự nhiên và ngắn gọn hơn.
 
 ---
 
 ## **2. Câu bị động với các động từ khiếm khuyết "müssen, sollen, dürfen"**
 
-- **Những động từ khiếm khuyết này diễn tả sự bắt buộc, trách nhiệm hoặc sự cho phép.**  
+- **Những động từ khiếm khuyết này diễn tả sự bắt buộc, trách nhiệm hoặc sự cho phép.**
 - **Có nhiều cách để diễn đạt câu bị động mà không cần sử dụng "werden".**
 
 ---
@@ -90,9 +92,10 @@ order: 10
 - **Aktiv mit "man"**: Man muss die Regeln einhalten. _(Người ta phải tuân thủ các quy tắc.)_
 - **Aktiv mit "jemand"**: Jemand muss die Regeln einhalten. _(Ai đó phải tuân thủ các quy tắc.)_
 
-**Lưu ý:**  
-  - "Man" thay thế cho chủ ngữ bị động một cách tự nhiên hơn.  
-  - Dạng này thường dùng trong văn nói.
+**Lưu ý:**
+
+- "Man" thay thế cho chủ ngữ bị động một cách tự nhiên hơn.
+- Dạng này thường dùng trong văn nói.
 
 ---
 
@@ -103,9 +106,10 @@ order: 10
 - **Passiv:** Die Regeln müssen eingehalten werden.
 - **Alternativ:** Die Regeln **sind einzuhalten**. _(Các quy tắc cần được tuân thủ.)_
 
-**Lưu ý:**  
-  - Cấu trúc này giúp câu ngắn gọn và trang trọng hơn.  
-  - Dùng khi không cần nhấn mạnh vào người thực hiện hành động.
+**Lưu ý:**
+
+- Cấu trúc này giúp câu ngắn gọn và trang trọng hơn.
+- Dùng khi không cần nhấn mạnh vào người thực hiện hành động.
 
 ---
 
@@ -119,4 +123,4 @@ order: 10
 - **Cấu trúc "sein + zu + Infinitiv" thường dùng trong văn viết để thay thế bị động.**
 - **"Lassen + sich + Infinitiv" dùng khi hành động có thể thực hiện dễ dàng.**
 - **Hậu tố "-bar" giúp tạo tính từ mang nghĩa bị động một cách tự nhiên.**
-:::
+  :::

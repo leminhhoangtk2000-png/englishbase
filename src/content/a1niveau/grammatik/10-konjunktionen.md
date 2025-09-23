@@ -49,7 +49,7 @@ _Công thức_: **Chủ ngữ + động từ + (phần còn lại) + Konjunktion
 - Ich spiele Gitarre, und mein Bruder spielt Klavier.<br>_Tôi chơi guitar và anh trai tôi chơi piano._
 - Sie kauft Gemüse, und er kocht das Mittagessen.<br>_Cô ấy mua rau, và anh ấy nấu bữa trưa._
 
-:::note[Công thức: Chủ ngữ 1 + động từ + phần còn lại + un]
+:::note[Công thức]
 Công thức: Chủ ngữ 1 + động từ + phần còn lại + un
 
 📌 Công thức: **Chủ ngữ 1 + động từ + phần còn lại + und + chủ ngữ 2 + động từ...**
@@ -67,7 +67,7 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + un
 - Möchtest du Tee oder Kaffee?<br>_Bạn muốn trà hay cà phê?_
 - Wir können ins Kino gehen, oder wir bleiben zu Hause.<br>_Chúng ta có thể đi xem phim, hoặc ở nhà._
 
-:::note[Công thức: Chủ ngữ 1 + động từ + phần còn lại + od]
+:::note[Công thức]
 Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
 
 📌 Công thức: **Chủ ngữ 1 + động từ + phần còn lại + oder + chủ ngữ 2 + động từ...**
@@ -115,7 +115,7 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
 
 ## **🎯 3. Tổng Kết**
 
-:::note[Liên từ đẳng lập kết nối hai mệnh đề chính mà khôn]
+:::note[Tổng Kết]
 💡
 **Liên từ đẳng lập kết nối hai mệnh đề chính mà không làm thay đổi trật tự từ.**
 

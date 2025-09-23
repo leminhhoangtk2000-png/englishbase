@@ -5,6 +5,14 @@
 /* Import admonition styles */
 @import '../styles/admonitions.css';
 
+/* Ensure list items are always visible */
+.prose ul li, 
+.prose ol li {
+  display: list-item !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 @layer base {
   :root,
   .light {
@@ -502,6 +510,20 @@
 /* Docusaurus-style paragraph spacing */
 .prose > * + * {
   margin-top: 1.5rem;
+}
+
+/* German example styling */
+.prose .german-example {
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.dark .prose .german-example {
+  background-color: #1e293b;
+  border-left-color: #60a5fa;
 }
 
 /* Table styling improvements */

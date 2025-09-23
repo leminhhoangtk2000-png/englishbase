@@ -5,14 +5,15 @@ import { AuthorCredit } from '@/components/ui/author-credit';
 import { Comments } from '@/components/ui/comments';
 import { ExerciseMetadataHider } from '@/components/exercise-metadata-hider';
 import { AdmonitionCleaner } from '@/components/admonition-cleaner';
+import { GermanExampleList } from '@/components/ui/german-example-list';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Wrapper to add metadata hider to all MDX content
     wrapper: ({ children }) => (
       <div data-mdx-content>
-        <ExerciseMetadataHider />
-        <AdmonitionCleaner />
+        {/* <ExerciseMetadataHider /> */}
+        {/* <AdmonitionCleaner /> */}
         {children}
       </div>
     ),
@@ -84,6 +85,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Lueckentext,
     AuthorCredit,
     Comments,
+    GermanExampleList,
     
     // Deprecated - kept for backward compatibility
     FacebookComments: Comments,

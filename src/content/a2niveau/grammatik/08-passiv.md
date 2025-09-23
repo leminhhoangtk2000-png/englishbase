@@ -8,33 +8,36 @@ order: 8
 
 # Passiv - Thể bị động
 
-- **Thể bị động (Passiv)** được sử dụng khi **hành động quan trọng hơn chủ thể thực hiện hành động**.  
-- **Câu bị động nhấn mạnh quá trình hoặc trạng thái của sự vật, thay vì người thực hiện hành động.**
+📌 **Thể bị động (Passiv)** được sử dụng khi **hành động quan trọng hơn chủ thể thực hiện hành động**.
+
+- Câu bị động nhấn mạnh quá trình hoặc trạng thái của sự vật, thay vì người thực hiện hành động.
 
 ---
 
 ## **1. Cách sử dụng thể bị động**
 
- **Khi hành động quan trọng hơn chủ thể thực hiện:**
+**Khi hành động quan trọng hơn chủ thể thực hiện:**
 
-- Das Buch wird gelesen. 
-	_(Quyển sách đang được đọc.)_
+**Das Buch wird gelesen.**  
+_(Quyển sách đang được đọc.)_
 
- **Khi không biết hoặc không muốn nhắc đến người thực hiện hành động:**
+**Khi không biết hoặc không muốn nhắc đến người thực hiện hành động:**
 
-- Das Auto wurde gestohlen. 
-	_(Chiếc xe đã bị đánh cắp.)_
+**Das Auto wurde gestohlen.**  
+_(Chiếc xe đã bị đánh cắp.)_
 
- **Trong văn bản trang trọng, thông báo hoặc quy định:**
+`Trong văn bản trang trọng, thông báo hoặc quy định:`
 
-- Hier darf nicht geparkt werden. 
-	_(Không được đỗ xe ở đây.)_
+**Hier darf nicht geparkt werden.**  
+_(Không được đỗ xe ở đây.)_
 
 ---
 
 ## **2. Tân ngữ trực tiếp và tân ngữ gián tiếp**
 
-:::cautionWarning! 
+:::caution[Chú ý]
+Chú ý
+
 🔹 **Câu chủ động có thể có tân ngữ trực tiếp (Akkusativobjekt) hoặc tân ngữ gián tiếp (Dativobjekt).**  
 🔹 **Chỉ có tân ngữ trực tiếp (Akkusativ) mới có thể chuyển thành chủ ngữ của câu bị động.**
 :::
@@ -43,180 +46,153 @@ order: 8
 
 ### **2.1. Tân ngữ trực tiếp (Akkusativobjekt)**
 
-📌 **Câu có tân ngữ Akkusativ có thể chuyển thành bị động.**
+**Aktiv:** Der Lehrer erklärt die Grammatik.  
+_(Giáo viên giải thích ngữ pháp.)_
 
-**Ví dụ:**
-
-- **Aktiv:** Der Lehrer erklärt die Grammatik. 
-		_(Giáo viên giải thích ngữ pháp.)_
-
-- **Passiv:** Die Grammatik wird erklärt. 
-		_(Ngữ pháp được giải thích.)_
+**Passiv:** Die Grammatik wird erklärt.  
+_(Ngữ pháp được giải thích.)_
 
 ---
 
 ### **2.2. Tân ngữ gián tiếp (Dativobjekt)**
 
-📌 **Nếu câu chỉ có tân ngữ gián tiếp (Dativ), thì nó không thể trở thành chủ ngữ của câu bị động.**
+**Aktiv:** Der Lehrer gibt dem Schüler ein Buch.  
+_(Giáo viên đưa cho học sinh một quyển sách.)_
 
-**Ví dụ:**
-
-- **Aktiv:** Der Lehrer gibt dem Schüler ein Buch. 
-		_(Giáo viên đưa cho học sinh một quyển sách.)_
-
-- **Passiv:** Ein Buch wird dem Schüler gegeben. 
-		_(Một quyển sách được đưa cho học sinh.)_  
-	    _(Dativobjekt "dem Schüler" vẫn giữ nguyên.)_
+**Passiv:** Ein Buch wird dem Schüler gegeben.  
+_(Một quyển sách được đưa cho học sinh.)_  
+_(Dativobjekt "dem Schüler" vẫn giữ nguyên.)_
 
 ---
 
 ### **2.3. Ý nghĩa của tân ngữ trong câu bị động**
 
-📌 **Nếu vẫn muốn nhắc đến người thực hiện hành động, có thể dùng giới từ "von" hoặc "durch".**
+**Das Buch wird von dem Lehrer gelesen.**  
+_(Cuốn sách được đọc bởi giáo viên.)_
 
-**Ví dụ:**
+**Die Tür wurde durch den Wind geöffnet.**  
+_(Cánh cửa được mở bởi gió.)_
 
-- Das Buch wird von dem Lehrer gelesen. 
-	_(Cuốn sách được đọc bởi giáo viên.)_
-- Die Tür wurde durch den Wind geöffnet. 
-	_(Cánh cửa được mở bởi gió.)_
-
-**"Von" dùng cho chủ thể là người, "durch" dùng khi tác nhân là một yếu tố phi nhân.**
+📌 **"Von" dùng cho chủ thể là người, "durch" dùng khi tác nhân là yếu tố phi nhân.**
 
 ---
 
 ## **3. Cách xây dựng câu bị động điển hình ở thì hiện tại (Präsens)**
 
-:::note[ Công thức:****]
-💡 **📌 **Công thức:****
+:::note[Công thức]
+💡 **📌 Công thức:**
 
 **Subjekt (Akkusativ im Aktiv) + werden (Präsens) + Partizip II + (von + Urheber)**
+:::
 
 | **Aktiv** (Chủ động)                                            | **Passiv** (Bị động)                                      |
 | --------------------------------------------------------------- | --------------------------------------------------------- |
 | Der Lehrer erklärt die Regel. _(Giáo viên giải thích quy tắc.)_ | Die Regel **wird** erklärt. _(Quy tắc được giải thích.)_  |
 | Der Koch bereitet das Essen zu. _(Đầu bếp chuẩn bị thức ăn.)_   | Das Essen **wird** zubereitet. _(Thức ăn được chuẩn bị.)_ |
-:::
-
-Lưu ý:  
-  - **"werden" là trợ động từ, chia theo chủ ngữ.**  
-  - **Partizip II luôn đứng cuối câu.**
 
 ---
 
-## **4. Câu chủ động không có tân ngữ trực tiếp (chỉ có tân ngữ gián tiếp)**
+## **4. Câu chủ động không có tân ngữ trực tiếp**
 
-📌 **Nếu câu chủ động chỉ có tân ngữ Dativ, nó vẫn giữ nguyên khi chuyển sang câu bị động.**
+**Aktiv:** Man hilft dem Kind.  
+_(Người ta giúp đỡ đứa trẻ.)_
 
-**Ví dụ:**
+**Passiv:** Dem Kind wird geholfen.  
+_(Đứa trẻ được giúp đỡ.)_
 
-- **Aktiv:** Man hilft dem Kind. 
-		_(Người ta giúp đỡ đứa trẻ.)_
-
-- **Passiv:** Dem Kind wird geholfen. 
-		_(Đứa trẻ được giúp đỡ.)_
-
-Lưu ý:  
-  - **Tân ngữ Dativ không thể trở thành chủ ngữ trong câu bị động.**  
-  - **Chủ ngữ giả "es" có thể được thêm vào khi cần thiết.**
+📌 **Tân ngữ Dativ không thể trở thành chủ ngữ trong câu bị động.**  
+Trong một số trường hợp có thể thêm **chủ ngữ giả "es"**.
 
 ---
 
-## **5. Câu chủ động có tân ngữ trực tiếp nhưng vẫn dùng chủ ngữ giả "es"**
+## **5. Câu bị động với chủ ngữ giả "es"**
 
-📌 **Khi không có chủ ngữ thực tế hoặc cần nhấn mạnh hành động, ta dùng chủ ngữ giả "es".**
+**Aktiv:** Man hat die Straße gesperrt.  
+_(Người ta đã chặn con đường.)_
 
-**Ví dụ:**
-
-- **Aktiv:** Man hat die Straße gesperrt. 
-		_(Người ta đã chặn con đường.)_
-- **Passiv:** Es **wurde** die Straße gesperrt. 
-		_(Con đường đã bị chặn lại.)_
-
-Lưu ý:  
-  - **"Es" chỉ là chủ ngữ giả, không có nghĩa thực sự.**  
-  - **Câu bị động không nhất thiết phải có "es", nhưng nó làm cho câu rõ ràng hơn.**
+**Passiv:** Es wurde die Straße gesperrt.  
+_(Con đường đã bị chặn lại.)_
 
 ---
 
 ## **6. Hai dạng câu bị động: Vorgangspassiv và Zustandspassiv**
 
-📌 **Có hai loại bị động trong tiếng Đức:**
+| **Loại**                                | **Mô tả**                     | **Ví dụ**                                                  |
+| --------------------------------------- | ----------------------------- | ---------------------------------------------------------- |
+| **Vorgangspassiv** (bị động quá trình)  | Nhấn mạnh quá trình hành động | Das Buch **wird** gelesen. _(Quyển sách đang được đọc.)_   |
+| **Zustandspassiv** (bị động trạng thái) | Nhấn mạnh kết quả/trạng thái  | Das Buch **ist** gelesen. _(Quyển sách đã được đọc xong.)_ |
 
-| **Loại bị động**                          | **Mô tả**                                       | **Ví dụ**                                                 |
-| ----------------------------------------- | ----------------------------------------------- | --------------------------------------------------------- |
-| **Vorgangspassiv** _(Bị động quá trình)_  | Nhấn mạnh quá trình của hành động               | Das Buch **wird** gelesen. _(Quyển sách đang được đọc.)_  |
-| **Zustandspassiv** _(Bị động trạng thái)_ | Nhấn mạnh kết quả hoặc trạng thái sau hành động | Das Buch **ist** gelesen. _(Cuốn sách đã được đọc xong.)_ |
-
-Lưu ý:  
-  - **Vorgangspassiv dùng "werden", Zustandspassiv dùng "sein".**  
-  - **Vorgangspassiv nhấn mạnh quá trình, Zustandspassiv nhấn mạnh trạng thái kết quả.**
+📌 Vorgangspassiv dùng **werden**, Zustandspassiv dùng **sein**.
 
 ---
 
-## **7. Tổng hợp các công thức xây dựng câu bị động**
+## **7. Các công thức Passiv theo thì**
 
-### **🔹 Vorgangspassiv (Bị động quá trình)**
+### **🔹 Vorgangspassiv (bị động quá trình)**
 
-| **Thì**             | **Công thức**                          |
-| ------------------- | -------------------------------------- |
-| **Präsens**         | **werden (Präsens) + Partizip II**     |
-| **Präteritum**      | **wurden (Präteritum) + Partizip II**  |
-| **Perfekt**         | **ist / sind + Partizip II + worden**  |
-| **Plusquamperfekt** | **war / waren + Partizip II + worden** |
-| **Futur I**         | **wird + Partizip II + werden**        |
+| **Thì**         | **Công thức**                     |
+| --------------- | --------------------------------- |
+| Präsens         | werden (Präsens) + Partizip II    |
+| Präteritum      | wurden (Präteritum) + Partizip II |
+| Perfekt         | ist/sind + Partizip II + worden   |
+| Plusquamperfekt | war/waren + Partizip II + worden  |
+| Futur I         | wird + Partizip II + werden       |
 
 ---
 
-### **🔹 Vorgangspassiv với động từ khiếm khuyết (Modalverben)**
+### **🔹 Vorgangspassiv với Modalverben**
 
-:::note[ Công thức:****]
-💡 **📌 **Công thức:****
+:::note[Công thức]
+💡 **📌 Công thức:**
 
 **Subjekt + Modalverb + Partizip II + werden (Infinitiv)**
 :::
 
-Ví dụ:
+**Ví dụ:**
 
-- Das Problem **muss gelöst werden**. _(Vấn đề phải được giải quyết.)_
+**Das Problem muss gelöst werden.**  
+_(Vấn đề phải được giải quyết.)_
 
 ---
 
-### **🔹 Zustandspassiv (Bị động trạng thái)**
+### **🔹 Zustandspassiv (bị động trạng thái)**
 
-:::note[ Công thức:****]
-💡 **📌 **Công thức:****
+:::note[Công thức]
+💡 **📌 Công thức:**
 
 **Subjekt + sein + Partizip II**
 :::
 
-Ví dụ:
+**Ví dụ:**
 
-- Die Tür **ist geöffnet**. _(Cánh cửa đã mở.)_
+**Die Tür ist geöffnet.**  
+_(Cánh cửa đã mở.)_
 
 ---
 
-### **🔹 Zustandspassiv với động từ khiếm khuyết**
+### **🔹 Zustandspassiv với Modalverben**
 
-:::note[ Công thức:****]
-💡 **📌 **Công thức:****
+:::note[Công thức]
+💡 **📌 Công thức:**
 
 **Subjekt + Modalverb + Partizip II + sein (Infinitiv)**
 :::
 
-Ví dụ:
+**Ví dụ:**
 
-- Das Haus **muss renoviert sein**. _(Ngôi nhà phải được cải tạo xong.)_
+**Das Haus muss renoviert sein.**  
+_(Ngôi nhà phải được cải tạo xong.)_
 
 ---
 
-## **🎯 8. Tổng kết: Các lưu ý quan trọng**
+## **🎯 8. Tổng kết**
+
 :::note[Ghi chú]
 💡
 
-- **Chỉ có tân ngữ Akkusativ mới trở thành chủ ngữ trong câu bị động.**
--  **Nếu chỉ có tân ngữ Dativ, nó vẫn giữ nguyên trong câu bị động.**
-- **"Vorgangspassiv" nhấn mạnh quá trình, "Zustandspassiv" nhấn mạnh trạng thái.**
-- **"Von" chỉ người thực hiện hành động, "durch" chỉ tác nhân phi nhân.**
-- **Bị động có thể kết hợp với động từ khuyết thiếu.**
-:::
+- **Chỉ tân ngữ Akkusativ mới trở thành chủ ngữ trong câu bị động.**
+- **Nếu chỉ có tân ngữ Dativ, nó vẫn giữ nguyên trong câu bị động.**
+- **Vorgangspassiv = quá trình (werden), Zustandspassiv = trạng thái (sein).**
+- **Von** chỉ người thực hiện hành động, **durch** chỉ tác nhân phi nhân.
+- **Passiv có thể kết hợp với Modalverben.**
+  :::

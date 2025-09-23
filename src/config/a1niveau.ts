@@ -66,11 +66,6 @@ export const docsConfig: DocsConfig = {
           description: "Tìm hiểu về đại từ nhân xưng trong tiếng Đức và cách chia theo các Kasus",
           href: "/a1niveau/grammatik/12-personalpronomen",
         },
-        {
-          title: "Demo: Docusaurus Features",
-          description: "Minh họa tất cả tính năng markdown nâng cao như Docusaurus",
-          href: "/a1niveau/grammatik/demo-docusaurus-features",
-        },
       ],
     },
     {
