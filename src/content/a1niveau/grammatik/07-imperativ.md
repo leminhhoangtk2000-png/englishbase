@@ -7,12 +7,14 @@ order: 7
 ---
 
 :::note[Câu mệnh lệnh (Imperativ) được sử dụng để ra lệnh,]
+💡
 Câu mệnh lệnh (**Imperativ**) được sử dụng để ra lệnh, đề nghị, mời gọi hoặc hướng dẫn.  
 Câu mệnh lệnh chỉ được chia cho các ngôi **du** (bạn), **ihr** (các bạn), và **Sie** (trang trọng).
 
 💡 _Vì sao lại vậy?_  
 Vì bạn chỉ có thể ra lệnh cho người đối diện. Những người không nói chuyện trực tiếp sẽ không áp dụng được câu mệnh lệnh.
 :::
+
 ---
 
 ## **✨ 1. Cấu Trúc Câu Imperativ**
@@ -112,10 +114,12 @@ Thêm **"nicht"** hoặc **"kein"** để phủ định mệnh lệnh.
 ## **🎯 4. Tổng Kết**
 
 :::note[- Câu Imperativ được dùng để ra lệnh, yêu cầu hoặc]
+💡
+
 - **Câu Imperativ** được dùng để **ra lệnh, yêu cầu hoặc đề nghị**.
 - **Ngôi "du"**: Lấy **Verbstamm**, bỏ **-st** → _Geh! Schreib! Iss!_
 - **Ngôi "ihr"**: Dùng động từ ở dạng **ihr**, giữ nguyên **-t** → _Geht! Schreibt! Esst!_
 - **Ngôi "Sie"**: Dùng động từ như ngôi **Sie**, thêm **"Sie"** → _Gehen Sie! Schreiben Sie!_
 - **Thêm "bitte"** để lịch sự → _Warten Sie bitte!_
 - **Phủ định**: thêm **nicht/kein** → _Geh nicht! Esst das nicht!_
-:::
+  :::

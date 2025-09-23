@@ -29,12 +29,14 @@ Ví dụ:
 
 - Ich **habe** gespielt. _(Tôi đã chơi.)_
 - Er **ist** gekommen. _(Anh ấy đã đến.)_
-:::
+  :::
+
 ## 🔍 Khi nào dùng haben, khi nào dùng sein?
 
 ### Dùng với **haben** (phần lớn động từ)
 
 :::warning[⚠️ Chú ý haben vs sein]
+💡
 **Phần lớn động từ** dùng với **_haben_**, **NHƯNG** có **_ngoại lệ quan trọng_**!
 
 **Luôn dùng `haben`:**

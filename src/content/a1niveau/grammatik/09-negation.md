@@ -111,6 +111,7 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 ## **🎯 4. Tổng Kết**
 
 :::note["Nicht" dùng để phủ định:]
+💡
 **"Nicht" dùng để phủ định:**
 
 - Động từ → _Ich gehe nicht._

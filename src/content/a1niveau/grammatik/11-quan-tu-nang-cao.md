@@ -16,7 +16,8 @@ Có 5 loại quán từ quan trọng:
 - **Quán từ trống (Nullartikel)**
 - **Quán từ sở hữu (Possessivartikel)**
 - **Quán từ phủ định (Negationsartikel)**
-:::
+  :::
+
 ---
 
 ## **1. Quán từ xác định (Bestimmter Artikel)**
@@ -59,8 +60,11 @@ Có 5 loại quán từ quan trọng:
 | **Genitiv**   | eines Mannes | einer Frau  | eines Kindes | _(không có)_ |
 
 :::note[Mẹo nhớ: thêm đuôi giống vào ein để giúp người ngh]
+💡
+
 📌 **Mẹo nhớ:** thêm đuôi giống vào **ein** để giúp người nghe nhận biết giống danh từ.
 :::
+
 **Ví dụ:**
 
 - Ich habe **einen Hund**.<br>_Tôi có một con chó._
@@ -135,6 +139,8 @@ Có 5 loại quán từ quan trọng:
 ## **🎯 6. Tổng Kết**
 
 :::note[- Bestimmter Artikel = cái đã biết rõ (_der, die, ]
+💡
+
 - **Bestimmter Artikel** = cái đã biết rõ (_der, die, das_).
 - **Unbestimmter Artikel** = một cái chưa xác định (_ein/eine_).
 - **Nullartikel** = không có mạo từ (số nhiều, nghề nghiệp, nước…).

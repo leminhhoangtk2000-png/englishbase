@@ -112,6 +112,8 @@ Các **tiền tố hay gặp**: **durch-, hinter-, um-, unter-, wieder-**
 ## **🎯 5. Tổng Kết**
 
 :::note[- Trennbare Verben: Tiền tố tách rời khi chia động]
+💡
+
 - **Trennbare Verben:** Tiền tố **tách rời** khi chia động từ.
 - **Nicht Trennbare Verben:** Tiền tố **luôn đi liền với động từ**.
 - **Một số động từ có thể vừa tách vừa không tách**, tùy theo **ngữ cảnh**.

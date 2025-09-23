@@ -68,6 +68,7 @@ Trả lời câu hỏi: **Wem? (Cho ai?)**
 - **Kannst du mir helfen?**<br>_Bạn có thể giúp tôi không?_
 
 :::note[Mẹo nhớ - Dativ]
+💡
 Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 
 **Câu hỏi kiểm tra:** _Wem?_ (cho ai)
@@ -76,6 +77,7 @@ Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 :::
 
 :::tip[Tóm tắt All-in-One]
+💡
 **Nhớ nhanh 3 Kasus:**
 
 1. **_Nominativ_** = **Wer/Was?** → _Chủ ngữ_ làm gì đó
@@ -96,6 +98,7 @@ _Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
 | **Dativ**     | Tân ngữ gián tiếp (nhận lợi ích từ hành động) | Wem?        | Ich gebe **dem Hund** das Futter. _(Tôi đưa thức ăn cho con chó.)_ |
 
 :::tip[Mẹo ghi nhớ nhanh]
+💡
 
 - **Wer/Was? → Nominativ** (Ai thực hiện hành động?)
 - **Wen/Was? → Akkusativ** (Ai/cái gì chịu tác động?)
@@ -112,6 +115,7 @@ _Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
 | **Dativ**     | **dem** Mann             | **der** Frau            | **dem** Kind              | **den** Kindern (+n)  |
 
 :::warning[Lưu ý]
+💡
 
 - **Akkusativ:** Chỉ **danh từ giống đực** thay đổi → "der" → "den".
 - **Dativ:** Tất cả danh từ đều thay đổi.

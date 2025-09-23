@@ -76,6 +76,7 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 - Khi học danh từ, hãy học kèm **giống và dạng số nhiều**.
 
 :::
+
 ### **📝 12 Cách Biến Đổi Danh Từ từ Số Ít Sang Số Nhiều**
 
 | **Cách Biến Đổi**     | 📖 **Quy Tắc Nhận Diện**                                              | ✏ **Ví Dụ** (Số ít → Số nhiều)     |
@@ -114,16 +115,17 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 - **Dativ:** Danh từ số nhiều thêm **-n**.
 - **Genitiv:** Danh từ **đực và trung** thêm **-es**.
 
-:::
----
+## :::
 
 ## **🎯 5. Tổng Kết**
 
 :::note[Tóm tắt]
+💡
 
 - **Danh từ tiếng Đức có ba giống:** đực (**der**), cái (**die**), trung (**das**)
 - **Số nhiều của danh từ có nhiều cách biến đổi**, không có quy tắc chung tuyệt đối.
 - **Quán từ biến đổi theo Kasus:** Nominativ, Akkusativ, Dativ, Genitiv
 - **Danh từ luôn viết hoa chữ cái đầu.**
 - **Danh từ số nhiều luôn đi với quán từ xác định "die".**
-- 📌 **Học danh từ phải học kèm giống và số nhiều ngay từ đầu!** :::
+- 📌 **Học danh từ phải học kèm giống và số nhiều ngay từ đầu!**
+  :::
