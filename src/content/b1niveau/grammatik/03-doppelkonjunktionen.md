@@ -26,11 +26,9 @@ Dùng để diễn tả một sự tương phản giữa hai vế câu.
 
 **Ví dụ:**
 
-**Er ist zwar müde, aber er arbeitet weiter.**  
- _(Anh ấy tuy mệt nhưng vẫn làm việc tiếp.)_
+- **Er ist zwar müde, aber er arbeitet weiter.** _(Anh ấy tuy mệt nhưng vẫn làm việc tiếp.)_
 
-**Das Wetter ist zwar kalt, aber die Sonne scheint.**  
- _(Thời tiết tuy lạnh nhưng mặt trời vẫn chiếu sáng.)_
+- **Das Wetter ist zwar kalt, aber die Sonne scheint.** _(Thời tiết tuy lạnh nhưng mặt trời vẫn chiếu sáng.)_
 
 **Lưu ý:**
 
@@ -51,11 +49,9 @@ Dùng khi có hai khả năng lựa chọn.
 
 **Ví dụ:**
 
-**Entweder gehen wir ins Kino, oder wir bleiben zu Hause.**  
- _(Hoặc chúng ta đi xem phim, hoặc chúng ta ở nhà.)_
+- **Entweder gehen wir ins Kino, oder wir bleiben zu Hause.** _(Hoặc chúng ta đi xem phim, hoặc chúng ta ở nhà.)_
 
-**Du kannst entweder Deutsch oder Englisch sprechen.**  
- _(Bạn có thể nói hoặc tiếng Đức hoặc tiếng Anh.)_
+- **Du kannst entweder Deutsch oder Englisch sprechen.** _(Bạn có thể nói hoặc tiếng Đức hoặc tiếng Anh.)_
 
 **Lưu ý:**
 
@@ -76,11 +72,9 @@ Dùng để bổ sung thêm một thông tin có tính nhấn mạnh.
 
 **Ví dụ:**
 
-**Er ist nicht nur intelligent, sondern auch fleißig.**  
- _(Anh ấy không chỉ thông minh mà còn chăm chỉ.)_
+- **Er ist nicht nur intelligent, sondern auch fleißig.** _(Anh ấy không chỉ thông minh mà còn chăm chỉ.)_
 
-**Wir haben nicht nur in Berlin, sondern auch in München Freunde.**  
- _(Chúng tôi không chỉ có bạn bè ở Berlin mà còn ở Munich.)_
+- **Wir haben nicht nur in Berlin, sondern auch in München Freunde.** _(Chúng tôi không chỉ có bạn bè ở Berlin mà còn ở Munich.)_
 
 **Lưu ý:**
 
@@ -101,11 +95,9 @@ Dùng để diễn tả cả hai khả năng đều đúng.
 
 **Ví dụ:**
 
-**Er spricht sowohl Deutsch als auch Englisch.**  
- _(Anh ấy vừa nói được tiếng Đức vừa nói được tiếng Anh.)_
+- **Er spricht sowohl Deutsch als auch Englisch.** _(Anh ấy vừa nói được tiếng Đức vừa nói được tiếng Anh.)_
 
-**Das Buch ist sowohl spannend als auch lehrreich.**  
- _(Cuốn sách này vừa hấp dẫn vừa có tính giáo dục.)_
+- **Das Buch ist sowohl spannend als auch lehrreich.** _(Cuốn sách này vừa hấp dẫn vừa có tính giáo dục.)_
 
 **Lưu ý:**
 
@@ -126,11 +118,9 @@ Dùng để diễn tả sự phủ định của cả hai khả năng.
 
 **Ví dụ:**
 
-**Er kann weder Deutsch noch Englisch sprechen.**  
- _(Anh ấy không thể nói tiếng Đức cũng không thể nói tiếng Anh.)_
+- **Er kann weder Deutsch noch Englisch sprechen.** _(Anh ấy không thể nói tiếng Đức cũng không thể nói tiếng Anh.)_
 
-**Weder das Essen noch der Service war gut.**  
- _(Cả đồ ăn lẫn dịch vụ đều không tốt.)_
+- **Weder das Essen noch der Service war gut.** _(Cả đồ ăn lẫn dịch vụ đều không tốt.)_
 
 **Lưu ý:**
 
@@ -151,11 +141,9 @@ Dùng để diễn tả mối quan hệ tỷ lệ thuận giữa hai vế câu.
 
 **Ví dụ:**
 
-**Je mehr du lernst, desto besser wirst du.**  
- _(Càng học nhiều, bạn càng giỏi.)_
+- **Je mehr du lernst, desto besser wirst du.** _(Càng học nhiều, bạn càng giỏi.)_
 
-**Je länger ich warte, desto ungeduldiger werde ich.**  
- _(Càng chờ lâu, tôi càng mất kiên nhẫn.)_
+- **Je länger ich warte, desto ungeduldiger werde ich.** _(Càng chờ lâu, tôi càng mất kiên nhẫn.)_
 
 **Lưu ý:**
 

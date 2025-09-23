@@ -26,6 +26,8 @@ Trả lời câu hỏi: **Wer? (Ai?) / Was? (Cái gì?)**
 - **Das Kind** liest ein Buch.<br>_Ai đọc? → Đứa trẻ đọc sách._
 
 :::note[Mẹo nhớ - Advanced]
+Mẹo nhớ - Advanced
+
 Mọi **chủ ngữ** trong câu đều ở dạng **_Nominativ_**.
 
 **Công thức:** _Wer/Was_ + **Verb** = **_Nominativ_**
@@ -68,7 +70,8 @@ Trả lời câu hỏi: **Wem? (Cho ai?)**
 - **Kannst du mir helfen?**<br>_Bạn có thể giúp tôi không?_
 
 :::note[Mẹo nhớ - Dativ]
-💡
+Mẹo nhớ - Dativ
+
 Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 
 **Câu hỏi kiểm tra:** _Wem?_ (cho ai)
@@ -78,6 +81,7 @@ Danh từ nào **nhận lợi ích từ hành động** → đó là **Dativ**.
 
 :::tip[Tóm tắt All-in-One]
 💡
+
 **Nhớ nhanh 3 Kasus:**
 
 1. **_Nominativ_** = **Wer/Was?** → _Chủ ngữ_ làm gì đó

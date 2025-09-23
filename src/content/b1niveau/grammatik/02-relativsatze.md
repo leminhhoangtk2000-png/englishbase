@@ -61,23 +61,19 @@ order: 2
 
 `**Nominativ (Chủ ngữ trong câu quan hệ):**`
 
-**Der Mann, der dort steht, ist mein Vater.**  
- _(Người đàn ông đang đứng kia là bố tôi.)_
+- **Der Mann, der dort steht, ist mein Vater.** _(Người đàn ông đang đứng kia là bố tôi.)_
 
 `**Akkusativ (Tân ngữ trực tiếp trong câu quan hệ):**`
 
-**Das Buch, das ich gestern gelesen habe, war sehr spannend.**  
- _(Cuốn sách mà tôi đã đọc hôm qua rất hấp dẫn.)_
+- **Das Buch, das ich gestern gelesen habe, war sehr spannend.** _(Cuốn sách mà tôi đã đọc hôm qua rất hấp dẫn.)_
 
 `**Dativ (Tân ngữ gián tiếp trong câu quan hệ):**`
 
-**Die Frau, der ich geholfen habe, ist meine Nachbarin.**  
- _(Người phụ nữ mà tôi đã giúp đỡ là hàng xóm của tôi.)_
+- **Die Frau, der ich geholfen habe, ist meine Nachbarin.** _(Người phụ nữ mà tôi đã giúp đỡ là hàng xóm của tôi.)_
 
 `**Genitiv (Sở hữu trong câu quan hệ):**`
 
-**Der Mann, dessen Auto vor dem Haus steht, ist mein Onkel.**  
- _(Người đàn ông có chiếc xe đậu trước nhà là chú tôi.)_
+- **Der Mann, dessen Auto vor dem Haus steht, ist mein Onkel.** _(Người đàn ông có chiếc xe đậu trước nhà là chú tôi.)_
 
 :::note[Lưu ý]
 💡

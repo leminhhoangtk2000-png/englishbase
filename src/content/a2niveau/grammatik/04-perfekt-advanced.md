@@ -31,14 +31,11 @@ order: 4
 
 **Ví dụ:**
 
-**Ich habe gestern ein Buch gelesen.**  
-_(Hôm qua tôi đã đọc một cuốn sách.)_
+- **Ich habe gestern ein Buch gelesen.** _(Hôm qua tôi đã đọc một cuốn sách.)_
 
-**Er ist nach Berlin gefahren.**  
-_(Anh ấy đã đi Berlin.)_
+- **Er ist nach Berlin gefahren.** _(Anh ấy đã đi Berlin.)_
 
-**Hast du gestern Deutsch gelernt?**  
-_(Hôm qua bạn có học tiếng Đức không?)_
+- **Hast du gestern Deutsch gelernt?** _(Hôm qua bạn có học tiếng Đức không?)_
 
 **Lưu ý:**
 
@@ -65,11 +62,9 @@ _(Hôm qua bạn có học tiếng Đức không?)_
 
 **Ví dụ:**
 
-**Ich habe Fußball gespielt.**  
-_(Tôi đã chơi bóng đá.)_
+- **Ich habe Fußball gespielt.** _(Tôi đã chơi bóng đá.)_
 
-**Er hat Deutsch gelernt.**  
-_(Anh ấy đã học tiếng Đức.)_
+- **Er hat Deutsch gelernt.** _(Anh ấy đã học tiếng Đức.)_
 
 ---
 
@@ -85,11 +80,9 @@ _(Anh ấy đã học tiếng Đức.)_
 
 **Ví dụ:**
 
-**Er hat in einer Firma gearbeitet.**  
-_(Anh ấy đã làm việc ở một công ty.)_
+- **Er hat in einer Firma gearbeitet.** _(Anh ấy đã làm việc ở một công ty.)_
 
-**Wir haben ein Bild gezeichnet.**  
-_(Chúng tôi đã vẽ một bức tranh.)_
+- **Wir haben ein Bild gezeichnet.** _(Chúng tôi đã vẽ một bức tranh.)_
 
 ---
 
@@ -119,11 +112,9 @@ _(Chúng tôi đã vẽ một bức tranh.)_
 
 **Ví dụ:**
 
-**Er ist nach Hause gegangen.**  
-_(Anh ấy đã đi về nhà.)_
+- **Er ist nach Hause gegangen.** _(Anh ấy đã đi về nhà.)_
 
-**Ich habe einen Brief geschrieben.**  
-_(Tôi đã viết một lá thư.)_
+- **Ich habe einen Brief geschrieben.** _(Tôi đã viết một lá thư.)_
 
 ---
 
@@ -173,14 +164,11 @@ _(Tôi đã viết một lá thư.)_
 
 **Ví dụ:**
 
-**Er ist Arzt geworden.**  
-_(Anh ấy đã trở thành bác sĩ.)_
+- **Er ist Arzt geworden.** _(Anh ấy đã trở thành bác sĩ.)_
 
-**Ich bin in Deutschland gewesen.**  
-_(Tôi đã từng ở Đức.)_
+- **Ich bin in Deutschland gewesen.** _(Tôi đã từng ở Đức.)_
 
-**Sie ist zu Hause geblieben.**  
-_(Cô ấy đã ở nhà.)_
+- **Sie ist zu Hause geblieben.** _(Cô ấy đã ở nhà.)_
 
 ---
 

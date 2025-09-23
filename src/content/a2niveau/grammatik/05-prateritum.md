@@ -28,11 +28,9 @@ order: 5
 
 **Ví dụ so sánh:**
 
-**Perfekt: Gestern habe ich einen Film gesehen.**  
-_(Hôm qua tôi đã xem một bộ phim.)_
+- **Perfekt: Gestern habe ich einen Film gesehen.** _(Hôm qua tôi đã xem một bộ phim.)_
 
-**Präteritum: Gestern sah ich einen Film.**  
-_(Hôm qua tôi xem một bộ phim.)_
+- **Präteritum: Gestern sah ich einen Film.** _(Hôm qua tôi xem một bộ phim.)_
 
 ---
 
@@ -64,11 +62,9 @@ _(Hôm qua tôi xem một bộ phim.)_
 
 **Ví dụ:**
 
-**Ich spielte gestern Fußball.**  
-_(Tôi đã chơi bóng đá hôm qua.)_
+- **Ich spielte gestern Fußball.** _(Tôi đã chơi bóng đá hôm qua.)_
 
-**Sie lernte Deutsch in der Schule.**  
-_(Cô ấy đã học tiếng Đức ở trường.)_
+- **Sie lernte Deutsch in der Schule.** _(Cô ấy đã học tiếng Đức ở trường.)_
 
 ---
 
@@ -93,11 +89,9 @@ _(Cô ấy đã học tiếng Đức ở trường.)_
 
 **Ví dụ:**
 
-**Ich sah einen schönen Film.**  
-_(Tôi đã xem một bộ phim hay.)_
+- **Ich sah einen schönen Film.** _(Tôi đã xem một bộ phim hay.)_
 
-**Sie gingen in den Park.**  
-_(Họ đã đi vào công viên.)_
+- **Sie gingen in den Park.** _(Họ đã đi vào công viên.)_
 
 ---
 
@@ -129,11 +123,9 @@ _(Họ đã đi vào công viên.)_
 
 **Ví dụ:**
 
-**Ich konnte gestern nicht kommen.**  
-_(Hôm qua tôi không thể đến.)_
+- **Ich konnte gestern nicht kommen.** _(Hôm qua tôi không thể đến.)_
 
-**Er musste früh aufstehen.**  
-_(Anh ấy đã phải dậy sớm.)_
+- **Er musste früh aufstehen.** _(Anh ấy đã phải dậy sớm.)_
 
 ---
 
@@ -155,14 +147,11 @@ _(Anh ấy đã phải dậy sớm.)_
 
 **Ví dụ:**
 
-**Ich war gestern zu Hause.**  
-_(Hôm qua tôi đã ở nhà.)_
+- **Ich war gestern zu Hause.** _(Hôm qua tôi đã ở nhà.)_
 
-**Sie hatte ein schönes Kleid.**  
-_(Cô ấy đã có một chiếc váy đẹp.)_
+- **Sie hatte ein schönes Kleid.** _(Cô ấy đã có một chiếc váy đẹp.)_
 
-**Er wurde Arzt.**  
-_(Anh ấy đã trở thành bác sĩ.)_
+- **Er wurde Arzt.** _(Anh ấy đã trở thành bác sĩ.)_
 
 ---
 

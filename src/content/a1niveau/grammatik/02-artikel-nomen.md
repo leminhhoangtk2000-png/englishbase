@@ -71,10 +71,10 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 ## **🔹 3. Các Dạng Số Nhiều của Danh Từ**
 
 :::info[Ghi chú]
+Ghi chú
 
 - Không có quy tắc cố định cho số nhiều, cần **học thuộc**.
 - Khi học danh từ, hãy học kèm **giống và dạng số nhiều**.
-
 :::
 
 ### **📝 12 Cách Biến Đổi Danh Từ từ Số Ít Sang Số Nhiều**
@@ -110,12 +110,12 @@ Danh từ trong tiếng Đức có **ba giống chính**:
 | **Genitiv**   | des Mannes               | der Frau                | des Kindes               | der Kinder            |
 
 :::tip[Ghi nhớ nhanh]
+Ghi nhớ nhanh
 
 - **Akkusativ:** Chỉ danh từ **giống đực** thay đổi (**der → den**).
 - **Dativ:** Danh từ số nhiều thêm **-n**.
 - **Genitiv:** Danh từ **đực và trung** thêm **-es**.
-
-## :::
+:::
 
 ## **🎯 5. Tổng Kết**
 

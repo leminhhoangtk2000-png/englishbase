@@ -20,11 +20,9 @@ order: 11
 
 ➡ Luôn đi kèm với danh từ.
 
-**Das ist mein Buch.**  
-_(Đây là cuốn sách của tôi.)_
+- **Das ist mein Buch.** _(Đây là cuốn sách của tôi.)_
 
-**Ich suche meine Tasche.**  
-_(Tôi đang tìm túi của tôi.)_
+- **Ich suche meine Tasche.** _(Tôi đang tìm túi của tôi.)_
 
 ---
 
@@ -32,11 +30,9 @@ _(Tôi đang tìm túi của tôi.)_
 
 ➡ Thay thế danh từ để tránh lặp lại.
 
-**Das ist meins.**  
-_(Đây là của tôi.)_
+- **Das ist meins.** _(Đây là của tôi.)_
 
-**Ich suche meine.**  
-_(Tôi đang tìm cái của tôi.)_
+- **Ich suche meine.** _(Tôi đang tìm cái của tôi.)_
 
 📌 **Tóm lại:**
 
