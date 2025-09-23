@@ -7,19 +7,19 @@ Component `GermanExampleList` được thiết kế để hiển thị danh sác
 ## Cách sử dụng trong Markdown (.md files)
 
 ```jsx
-<GermanExampleList 
+<GermanExampleList
   title="Ví dụ với 'dass' và 'ob'"
   examples={[
     {
       german: "Ich denke, dass Deutsch schwierig ist.",
       vietnamese: "Tôi nghĩ rằng tiếng Đức khó.",
-      highlight: "dass"
+      highlight: "dass",
     },
     {
       german: "Ich weiß nicht, ob er kommt.",
       vietnamese: "Tôi không biết liệu anh ấy có đến hay không.",
-      highlight: "ob"
-    }
+      highlight: "ob",
+    },
   ]}
 />
 ```
@@ -27,11 +27,13 @@ Component `GermanExampleList` được thiết kế để hiển thị danh sác
 ## Props
 
 ### `title` (optional)
+
 - **Type**: `string`
 - **Mô tả**: Tiêu đề cho danh sách ví dụ
 - **Ví dụ**: `"Ví dụ với 'dass' và 'ob'"`
 
 ### `examples` (required)
+
 - **Type**: `ExampleItem[]`
 - **Mô tả**: Mảng các ví dụ tiếng Đức
 
@@ -42,6 +44,7 @@ Component `GermanExampleList` được thiết kế để hiển thị danh sác
 - **`highlight`** (optional): Từ hoặc cụm từ cần highlight (màu vàng)
 
 ### `className` (optional)
+
 - **Type**: `string`
 - **Mô tả**: CSS classes bổ sung
 - **Default**: `''`
@@ -49,72 +52,78 @@ Component `GermanExampleList` được thiết kế để hiển thị danh sác
 ## Tính năng
 
 ### 1. Highlighting
+
 - Tự động highlight từ khóa quan trọng
 - Màu nền vàng cho từ được highlight
 - Hỗ trợ cả light và dark mode
 
 ### 2. Responsive Design
+
 - Tự động adapt với màn hình mobile
 - Border trái màu xanh để dễ nhận biết
 - Spacing hợp lý giữa các ví dụ
 
 ### 3. Dark Mode Support
+
 - Tự động thay đổi màu theo theme
 - Contrast tốt trong cả hai chế độ
 
 ## Ví dụ thực tế
 
 ### Ví dụ cơ bản (không highlight)
+
 ```jsx
-<GermanExampleList 
+<GermanExampleList
   examples={[
     {
       german: "Ich gehe nach Hause.",
-      vietnamese: "Tôi về nhà."
-    }
+      vietnamese: "Tôi về nhà.",
+    },
   ]}
 />
 ```
 
 ### Ví dụ với tiêu đề và highlight
+
 ```jsx
-<GermanExampleList 
+<GermanExampleList
   title="Câu điều kiện với 'wenn'"
   examples={[
     {
       german: "Wenn es regnet, bleibe ich zu Hause.",
       vietnamese: "Nếu trời mưa, tôi ở nhà.",
-      highlight: "wenn"
+      highlight: "wenn",
     },
     {
       german: "Ich nehme einen Regenschirm, wenn es regnet.",
       vietnamese: "Tôi mang ô nếu trời mưa.",
-      highlight: "wenn"
-    }
+      highlight: "wenn",
+    },
   ]}
 />
 ```
 
 ### Ví dụ phức tạp
+
 ```jsx
-<GermanExampleList 
+<GermanExampleList
   title="Các loại mệnh đề phụ"
   examples={[
     {
       german: "Ich bleibe zu Hause, weil ich krank bin.",
       vietnamese: "Tôi ở nhà vì tôi bị bệnh.",
-      highlight: "weil"
+      highlight: "weil",
     },
     {
       german: "Sie lernt viel, damit sie die Prüfung besteht.",
       vietnamese: "Cô ấy học nhiều để đỗ kỳ thi.",
-      highlight: "damit"
+      highlight: "damit",
     },
     {
       german: "Er sagt, dass er morgen kommt.",
       vietnamese: "Anh ấy nói rằng anh ấy sẽ đến ngày mai.",
-      highlight: "dass"
-    }
+      highlight: "dass",
+    },
   ]}
 />
 ```
@@ -125,7 +134,7 @@ Component `GermanExampleList` được thiết kế để hiển thị danh sác
 - `.border-blue-400`: Màu border xanh
 - `.bg-gray-50`: Background sáng
 - `.dark:bg-gray-800`: Background tối cho dark mode
-- `.bg-yellow-200`: Background highlight sáng  
+- `.bg-yellow-200`: Background highlight sáng
 - `.dark:bg-yellow-700`: Background highlight tối
 
 ## Best Practices
@@ -140,7 +149,7 @@ Component `GermanExampleList` được thiết kế để hiển thị danh sác
 Nếu cần style khác, có thể truyền `className`:
 
 ```jsx
-<GermanExampleList 
+<GermanExampleList
   className="border-2 border-red-300 bg-red-50"
   examples={[...]}
 />
