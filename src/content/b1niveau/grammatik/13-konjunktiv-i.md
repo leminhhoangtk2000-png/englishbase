@@ -51,8 +51,11 @@ Công thức
 
 **Ví dụ:**
 
-- Er sagt, er **sei** müde. _(Anh ấy nói rằng anh ấy mệt.)_
-- Sie meint, sie **habe** keine Zeit. _(Cô ấy nghĩ rằng cô ấy không có thời gian.)_
+Er sagt, er **sei** müde.  
+ _(Anh ấy nói rằng anh ấy mệt.)_
+
+Sie meint, sie **habe** keine Zeit.  
+ _(Cô ấy nghĩ rằng cô ấy không có thời gian.)_
 
 ---
 
@@ -68,8 +71,11 @@ Công thức
 
 **Ví dụ:**
 
-- Er sagt, er **habe gearbeitet**. _(Anh ấy nói rằng anh ấy đã làm việc.)_
-- Sie sagt, sie **sei nach Berlin gefahren**. _(Cô ấy nói rằng cô ấy đã đi Berlin.)_
+Er sagt, er **habe gearbeitet**.  
+ _(Anh ấy nói rằng anh ấy đã làm việc.)_
+
+Sie sagt, sie **sei nach Berlin gefahren**.  
+ _(Cô ấy nói rằng cô ấy đã đi Berlin.)_
 
 **Lưu ý:**
 
@@ -90,7 +96,8 @@ Công thức
 
 **Ví dụ:**
 
-- Er sagt, er **werde kommen**. _(Anh ấy nói rằng anh ấy sẽ đến.)_
+Er sagt, er **werde kommen**.  
+ _(Anh ấy nói rằng anh ấy sẽ đến.)_
 
 ---
 
@@ -104,7 +111,8 @@ Công thức
 
 **Ví dụ:**
 
-- Er sagt, er **werde die Arbeit beendet haben**. _(Anh ấy nói rằng anh ấy sẽ hoàn thành công việc.)_
+Er sagt, er **werde die Arbeit beendet haben**.  
+_(Anh ấy nói rằng anh ấy sẽ hoàn thành công việc.)_
 
 **Lưu ý:**
 
@@ -125,8 +133,11 @@ Công thức
 
 **Ví dụ:**
 
-- **Er gehe sofort nach Hause!** _(Hãy để anh ấy về nhà ngay lập tức!)_
-- **Es lebe der König!** _(Nhà vua muôn năm!)_
+**Er gehe sofort nach Hause!**  
+ _(Hãy để anh ấy về nhà ngay lập tức!)_
+
+**Es lebe der König!**  
+ _(Nhà vua muôn năm!)_
 
 **Lưu ý:**
 
@@ -141,8 +152,11 @@ Công thức
 
 **Ví dụ:**
 
-- **Wissen Sie, wann er komme?** _(Ngài có biết khi nào anh ấy đến không?)_
-- **Könnten Sie mir sagen, wo die Post sei?** _(Ngài có thể nói cho tôi biết bưu điện ở đâu không?)_
+**Wissen Sie, wann er komme?**  
+ _(Ngài có biết khi nào anh ấy đến không?)_
+
+**Könnten Sie mir sagen, wo die Post sei?**  
+ _(Ngài có thể nói cho tôi biết bưu điện ở đâu không?)_
 
 **Lưu ý:**
 

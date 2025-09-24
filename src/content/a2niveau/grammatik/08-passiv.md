@@ -46,9 +46,11 @@ Chú ý
 
 ### **2.1. Tân ngữ trực tiếp (Akkusativobjekt)**
 
-- **Aktiv:** Der Lehrer erklärt die Grammatik. _(Giáo viên giải thích ngữ pháp.)_
+**Aktiv:** Der Lehrer erklärt die Grammatik.  
+ _(Giáo viên giải thích ngữ pháp.)_
 
-- **Passiv:** Die Grammatik wird erklärt. _(Ngữ pháp được giải thích.)_
+**Passiv:** Die Grammatik wird erklärt.  
+ _(Ngữ pháp được giải thích.)_
 
 ---
 
@@ -65,9 +67,11 @@ _(Dativobjekt "dem Schüler" vẫn giữ nguyên.)_
 
 ### **2.3. Ý nghĩa của tân ngữ trong câu bị động**
 
-- **Das Buch wird von dem Lehrer gelesen.** _(Cuốn sách được đọc bởi giáo viên.)_
+**Das Buch wird von dem Lehrer gelesen.**  
+ _(Cuốn sách được đọc bởi giáo viên.)_
 
-- **Die Tür wurde durch den Wind geöffnet.** _(Cánh cửa được mở bởi gió.)_
+**Die Tür wurde durch den Wind geöffnet.**  
+ _(Cánh cửa được mở bởi gió.)_
 
 📌 **"Von" dùng cho chủ thể là người, "durch" dùng khi tác nhân là yếu tố phi nhân.**
 
@@ -90,9 +94,11 @@ _(Dativobjekt "dem Schüler" vẫn giữ nguyên.)_
 
 ## **4. Câu chủ động không có tân ngữ trực tiếp**
 
-- **Aktiv:** Man hilft dem Kind. _(Người ta giúp đỡ đứa trẻ.)_
+**Aktiv:** Man hilft dem Kind.  
+ _(Người ta giúp đỡ đứa trẻ.)_
 
-- **Passiv:** Dem Kind wird geholfen. _(Đứa trẻ được giúp đỡ.)_
+**Passiv:** Dem Kind wird geholfen.  
+ _(Đứa trẻ được giúp đỡ.)_
 
 📌 **Tân ngữ Dativ không thể trở thành chủ ngữ trong câu bị động.**  
 Trong một số trường hợp có thể thêm **chủ ngữ giả "es"**.
@@ -101,9 +107,11 @@ Trong một số trường hợp có thể thêm **chủ ngữ giả "es"**.
 
 ## **5. Câu bị động với chủ ngữ giả "es"**
 
-- **Aktiv:** Man hat die Straße gesperrt. _(Người ta đã chặn con đường.)_
+**Aktiv:** Man hat die Straße gesperrt.  
+ _(Người ta đã chặn con đường.)_
 
-- **Passiv:** Es wurde die Straße gesperrt. _(Con đường đã bị chặn lại.)_
+**Passiv:** Es wurde die Straße gesperrt.  
+ _(Con đường đã bị chặn lại.)_
 
 ---
 
@@ -142,7 +150,8 @@ Trong một số trường hợp có thể thêm **chủ ngữ giả "es"**.
 
 **Ví dụ:**
 
-- **Das Problem muss gelöst werden.** _(Vấn đề phải được giải quyết.)_
+**Das Problem muss gelöst werden.**  
+ _(Vấn đề phải được giải quyết.)_
 
 ---
 
@@ -156,7 +165,8 @@ Trong một số trường hợp có thể thêm **chủ ngữ giả "es"**.
 
 **Ví dụ:**
 
-- **Die Tür ist geöffnet.** _(Cánh cửa đã mở.)_
+**Die Tür ist geöffnet.**  
+ _(Cánh cửa đã mở.)_
 
 ---
 
@@ -170,7 +180,8 @@ Trong một số trường hợp có thể thêm **chủ ngữ giả "es"**.
 
 **Ví dụ:**
 
-- **Das Haus muss renoviert sein.** _(Ngôi nhà phải được cải tạo xong.)_
+**Das Haus muss renoviert sein.**  
+ _(Ngôi nhà phải được cải tạo xong.)_
 
 ---
 

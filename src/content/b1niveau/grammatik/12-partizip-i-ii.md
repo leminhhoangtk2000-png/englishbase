@@ -118,16 +118,21 @@ Công thức
 
 ### 1️⃣ Như tính từ (Attribut)
 
-- **Das gekochte Essen** ist lecker. _(Thức ăn đã nấu rất ngon.)_
+**Das gekochte Essen** ist lecker.  
+ _(Thức ăn đã nấu rất ngon.)_
 
 ### 2️⃣ Trong thể bị động (Passiv)
 
-- **Das Auto wurde repariert.** _(Chiếc xe đã được sửa chữa.)_
+**Das Auto wurde repariert.**  
+ _(Chiếc xe đã được sửa chữa.)_
 
 ### 3️⃣ Trong thì hoàn thành (Perfekt/Plusquamperfekt/Futur II)
 
-- **Ich habe das Buch gelesen.** _(Tôi đã đọc cuốn sách.)_
-- **Er hatte das Essen gekocht.** _(Anh ấy đã nấu ăn xong.)_
+**Ich habe das Buch gelesen.**  
+ _(Tôi đã đọc cuốn sách.)_
+
+**Er hatte das Essen gekocht.**  
+ _(Anh ấy đã nấu ăn xong.)_
 
 ---
 
@@ -137,8 +142,11 @@ Công thức
 
 **Ví dụ:**
 
-- **Das geschriebene Buch** _(Cuốn sách đã được viết)_
-- **Die abgeschlossene Arbeit** _(Công việc đã hoàn thành)_
+**Das geschriebene Buch**  
+ _(Cuốn sách đã được viết)_
+
+**Die abgeschlossene Arbeit**  
+ _(Công việc đã hoàn thành)_
 
 ---
 
@@ -148,8 +156,11 @@ Công thức
 
 **Ví dụ:**
 
-- **Ich bin eingeschlafen.** _(Tôi đã ngủ thiếp đi.)_
-- **Das Wasser ist gefroren.** _(Nước đã bị đóng băng.)_
+**Ich bin eingeschlafen.**  
+ _(Tôi đã ngủ thiếp đi.)_
+
+**Das Wasser ist gefroren.**  
+ _(Nước đã bị đóng băng.)_
 
 ---
 

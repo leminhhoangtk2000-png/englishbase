@@ -46,8 +46,8 @@ _Công thức_: **Chủ ngữ + động từ + (phần còn lại) + Konjunktion
 
 **Ví dụ:**
 
-- Ich spiele Gitarre, und mein Bruder spielt Klavier.<br>_Tôi chơi guitar và anh trai tôi chơi piano._
-- Sie kauft Gemüse, und er kocht das Mittagessen.<br>_Cô ấy mua rau, và anh ấy nấu bữa trưa._
+- **Ich spiele Gitarre, und mein Bruder spielt Klavier.**<br>_Tôi chơi guitar và anh trai tôi chơi piano._
+- **Sie kauft Gemüse, und er kocht das Mittagessen.**<br>_Cô ấy mua rau, và anh ấy nấu bữa trưa._
 
 :::note[Công thức]
 Công thức: Chủ ngữ 1 + động từ + phần còn lại + un
@@ -64,8 +64,8 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + un
 
 **Ví dụ:**
 
-- Möchtest du Tee oder Kaffee?<br>_Bạn muốn trà hay cà phê?_
-- Wir können ins Kino gehen, oder wir bleiben zu Hause.<br>_Chúng ta có thể đi xem phim, hoặc ở nhà._
+- **Möchtest du Tee oder Kaffee?**<br>_Bạn muốn trà hay cà phê?_
+- **Wir können ins Kino gehen, oder wir bleiben zu Hause.**<br>_Chúng ta có thể đi xem phim, hoặc ở nhà._
 
 :::note[Công thức]
 Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
@@ -82,8 +82,8 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
 
 **Ví dụ:**
 
-- Das Wetter ist schön, aber es ist kalt.<br>_Thời tiết đẹp nhưng lạnh._
-- Ich habe Hunger, aber ich habe keine Zeit zu essen.<br>_Tôi đói nhưng không có thời gian ăn._
+- **Das Wetter ist schön, aber es ist kalt.**<br>_Thời tiết đẹp nhưng lạnh._
+- **Ich habe Hunger, aber ich habe keine Zeit zu essen.**<br>_Tôi đói nhưng không có thời gian ăn._
 
 ---
 
@@ -94,8 +94,8 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
 
 **Ví dụ:**
 
-- Ich kann nicht kommen, denn ich bin krank.<br>_Tôi không thể đến vì tôi bị ốm._
-- Er bleibt zu Hause, denn er ist müde.<br>_Anh ấy ở nhà vì anh ấy mệt._
+- **Ich kann nicht kommen, denn ich bin krank.**<br>_Tôi không thể đến vì tôi bị ốm._
+- **Er bleibt zu Hause, denn er ist müde.**<br>_Anh ấy ở nhà vì anh ấy mệt._
 
 📌 **Mẹo nhớ:** Nếu muốn dùng liên từ lý do **có đảo ngữ** → dùng **weil** thay vì **denn**.
 
@@ -108,8 +108,8 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
 
 **Ví dụ:**
 
-- Ich trinke keinen Kaffee, sondern Tee.<br>_Tôi không uống cà phê, mà là trà._
-- Er ist nicht mein Bruder, sondern mein Freund.<br>_Anh ấy không phải anh trai tôi, mà là bạn tôi._
+- **Ich trinke keinen Kaffee, sondern Tee.**<br>_Tôi không uống cà phê, mà là trà._
+- **Er ist nicht mein Bruder, sondern mein Freund.**<br>_Anh ấy không phải anh trai tôi, mà là bạn tôi._
 
 ---
 

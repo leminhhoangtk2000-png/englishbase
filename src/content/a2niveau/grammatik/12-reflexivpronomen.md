@@ -33,11 +33,14 @@ order: 12
 
 **Ví dụ:**
 
-- **Ich wasche mich.** _(Tôi tự rửa mặt.)_
+**Ich wasche mich.**  
+ _(Tôi tự rửa mặt.)_
 
-- **Du interessierst dich für Musik.** _(Bạn quan tâm đến âm nhạc.)_
+**Du interessierst dich für Musik.**  
+ _(Bạn quan tâm đến âm nhạc.)_
 
-- **Er freut sich auf den Urlaub.** _(Anh ấy mong chờ kỳ nghỉ.)_
+**Er freut sich auf den Urlaub.**  
+ _(Anh ấy mong chờ kỳ nghỉ.)_
 
 :::note[**Lưu ý:**]
 💡
@@ -60,9 +63,11 @@ Dùng Akkusativ khi không có tân ngữ trực tiếp nào khác trong câu.
 
 **Ví dụ:**
 
-- **Ich wasche mich.** _(Tôi tự rửa mặt.)_
+**Ich wasche mich.**  
+ _(Tôi tự rửa mặt.)_
 
-- **Er erinnert sich an seine Kindheit.** _(Anh ấy nhớ lại thời thơ ấu của mình.)_
+**Er erinnert sich an seine Kindheit.**  
+ _(Anh ấy nhớ lại thời thơ ấu của mình.)_
 
 ---
 
@@ -72,9 +77,11 @@ Dùng Dativ khi có một tân ngữ Akkusativ khác trong câu.
 
 **Ví dụ:**
 
-- **Ich wasche mir die Hände.** _(Tôi rửa tay cho mình.)_
+**Ich wasche mir die Hände.**  
+ _(Tôi rửa tay cho mình.)_
 
-- **Er kauft sich ein neues Auto.** _(Anh ấy mua cho mình một chiếc xe mới.)_
+**Er kauft sich ein neues Auto.**  
+ _(Anh ấy mua cho mình một chiếc xe mới.)_
 
 :::note[**Lưu ý:**]
 💡
@@ -115,9 +122,11 @@ Những động từ này luôn đi kèm với đại từ phản thân và khô
 
 **Ví dụ:**
 
-- **Ich freue mich auf den Urlaub.** _(Tôi mong chờ kỳ nghỉ.)_
+**Ich freue mich auf den Urlaub.**  
+ _(Tôi mong chờ kỳ nghỉ.)_
 
-- **Du beschwerst dich über das Essen.** _(Bạn phàn nàn về thức ăn.)_
+**Du beschwerst dich über das Essen.**  
+ _(Bạn phàn nàn về thức ăn.)_
 
 :::note[**Lưu ý:**]
 💡
@@ -138,7 +147,8 @@ Những động từ này luôn đi kèm với đại từ phản thân và khô
 
 **Ví dụ:**
 
-- **Der Manager stellt das neue Produkt vor.** _(Người quản lý giới thiệu sản phẩm mới.)_
+**Der Manager stellt das neue Produkt vor.**  
+ _(Người quản lý giới thiệu sản phẩm mới.)_
 
 :::note[**Lưu ý:**]
 💡
@@ -153,9 +163,11 @@ Những động từ này luôn đi kèm với đại từ phản thân và khô
 
 **Ví dụ:**
 
-- **Ich stelle mich der Klasse vor.** _(Tôi tự giới thiệu với lớp học.)_
+**Ich stelle mich der Klasse vor.**  
+ _(Tôi tự giới thiệu với lớp học.)_
 
-- **Er stellt sich seinem neuen Chef vor. ** _(Anh ấy tự giới thiệu với sếp mới của mình.)_
+**Er stellt sich seinem neuen Chef vor. **  
+ _(Anh ấy tự giới thiệu với sếp mới của mình.)_
 
 :::note[**Lưu ý:**]
 💡
@@ -169,9 +181,11 @@ Những động từ này luôn đi kèm với đại từ phản thân và khô
 
 **Ví dụ:**
 
-- **Ich stelle mir eine Reise nach Japan vor.** _(Tôi tưởng tượng một chuyến du lịch đến Nhật Bản.)_
+**Ich stelle mir eine Reise nach Japan vor.**  
+ _(Tôi tưởng tượng một chuyến du lịch đến Nhật Bản.)_
 
-- **Er stellt sich ein Leben ohne Internet vor.** _(Anh ấy tưởng tượng một cuộc sống không có Internet.)_
+**Er stellt sich ein Leben ohne Internet vor.**  
+ _(Anh ấy tưởng tượng một cuộc sống không có Internet.)_
 
 :::note[**Lưu ý:**]
 💡

@@ -30,9 +30,11 @@ order: 9
 | Ihr       | werdet gehen           |
 | Sie/sie   | werden gehen           |
 
-- **Ich werde morgen Deutsch lernen.** _(Tôi sẽ học tiếng Đức vào ngày mai.)_
+**Ich werde morgen Deutsch lernen.**  
+ _(Tôi sẽ học tiếng Đức vào ngày mai.)_
 
-- **Er wird nächstes Jahr nach Deutschland reisen.** _(Anh ấy sẽ đi Đức vào năm sau.)_
+**Er wird nächstes Jahr nach Deutschland reisen.**  
+ _(Anh ấy sẽ đi Đức vào năm sau.)_
 
 📌 **Lưu ý:**
 
@@ -45,9 +47,11 @@ order: 9
 
 📌 **Trong tiếng Đức, Präsens cũng có thể diễn tả tương lai khi có mốc thời gian rõ ràng.**
 
-- **Morgen gehe ich ins Kino.** _(Ngày mai tôi đi xem phim.)_
+**Morgen gehe ich ins Kino.**  
+ _(Ngày mai tôi đi xem phim.)_
 
-- **Nächstes Jahr fangen wir ein neues Projekt an.** _(Năm tới chúng tôi bắt đầu một dự án mới.)_
+**Nächstes Jahr fangen wir ein neues Projekt an.**  
+ _(Năm tới chúng tôi bắt đầu một dự án mới.)_
 
 ---
 
@@ -68,9 +72,11 @@ order: 9
 **Subjekt + werden + Modalverb (Infinitiv) + Hauptverb (Infinitiv)**
 :::
 
-- **Ich werde morgen länger arbeiten müssen.** _(Ngày mai tôi sẽ phải làm việc lâu hơn.)_
+**Ich werde morgen länger arbeiten müssen.**  
+ _(Ngày mai tôi sẽ phải làm việc lâu hơn.)_
 
-- **Du wirst das Buch noch einmal lesen können.** _(Bạn sẽ có thể đọc cuốn sách này lại lần nữa.)_
+**Du wirst das Buch noch einmal lesen können.**  
+ _(Bạn sẽ có thể đọc cuốn sách này lại lần nữa.)_
 
 ---
 
@@ -82,9 +88,11 @@ order: 9
 **Subjekt + werden (Präsens) + Partizip II + werden (Infinitiv)**
 :::
 
-- **Die Arbeit wird morgen gemacht werden.** _(Công việc sẽ được hoàn thành vào ngày mai.)_
+**Die Arbeit wird morgen gemacht werden.**  
+ _(Công việc sẽ được hoàn thành vào ngày mai.)_
 
-- **Das Haus wird in zwei Jahren gebaut werden.** _(Ngôi nhà sẽ được xây trong hai năm tới.)_
+**Das Haus wird in zwei Jahren gebaut werden.**  
+ _(Ngôi nhà sẽ được xây trong hai năm tới.)_
 
 ---
 
@@ -96,9 +104,11 @@ order: 9
 **Subjekt + werden (Präsens) + Partizip II + haben/sein (Infinitiv)**
 :::
 
-- **Bis morgen wird er die Arbeit beendet haben.** _(Cho đến ngày mai, anh ấy sẽ hoàn thành công việc.)_
+**Bis morgen wird er die Arbeit beendet haben.**  
+ _(Cho đến ngày mai, anh ấy sẽ hoàn thành công việc.)_
 
-- **Nächstes Jahr um diese Zeit werde ich mein Studium abgeschlossen haben.** _(Vào thời điểm này năm sau, tôi sẽ hoàn thành việc học.)_
+**Nächstes Jahr um diese Zeit werde ich mein Studium abgeschlossen haben.**  
+ _(Vào thời điểm này năm sau, tôi sẽ hoàn thành việc học.)_
 
 📌 **Lưu ý:**
 

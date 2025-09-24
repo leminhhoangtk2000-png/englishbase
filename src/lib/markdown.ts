@@ -548,6 +548,37 @@ export function getNiveauContent(niveau: string) {
     }
   }
   
+  // For b1niveau, use the static config instead of dynamic file scanning
+  if (niveau === 'b1niveau') {
+    try {
+      const configPath = path.join(process.cwd(), 'src', 'config', 'b1niveau.ts')
+      if (fs.existsSync(configPath)) {
+        // Use the static config
+        const { docsConfig } = require('@/config/b1niveau')
+        return {
+          niveau,
+          sections: docsConfig.items.map((section: any) => ({
+            name: section.title.toLowerCase(),
+            title: section.title,
+            slug: section.href.split('/').pop(),
+            itemCount: section.items.length,
+            items: section.items.map((item: any) => ({
+              title: item.title,
+              description: item.description,
+              slug: item.href ? item.href.split('/').pop() : '',
+              href: item.href,
+              tags: [],
+              order: 0,
+              items: item.items || [], // Preserve sub-items for folder structure
+            })),
+          })),
+        }
+      }
+    } catch (error) {
+      console.warn('Could not load b1niveau config, falling back to file scanning')
+    }
+  }
+  
   // Fallback to dynamic file scanning for other niveaux
   const sections = getMarkdownFiles(niveau)
   

@@ -31,8 +31,8 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich schlafe nicht.<br>_Tôi không ngủ._
-- Er arbeitet heute nicht.<br>_Hôm nay anh ấy không làm việc._
+- **Ich schlafe nicht.**<br>_Tôi không ngủ._
+- **Er arbeitet heute nicht.**<br>_Hôm nay anh ấy không làm việc._
 
 ---
 
@@ -42,8 +42,8 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Der Film ist nicht interessant.<br>_Bộ phim không hay._
-- Das Wetter ist nicht schön.<br>_Thời tiết không đẹp._
+- **Der Film ist nicht interessant.**<br>_Bộ phim không hay._
+- **Das Wetter ist nicht schön.**<br>_Thời tiết không đẹp._
 
 ---
 
@@ -53,8 +53,8 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich gehe nicht nach Hause.<br>_Tôi không đi về nhà._
-- Wir fahren nicht mit dem Bus.<br>_Chúng tôi không đi bằng xe buýt._
+- **Ich gehe nicht nach Hause.**<br>_Tôi không đi về nhà._
+- **Wir fahren nicht mit dem Bus.**<br>_Chúng tôi không đi bằng xe buýt._
 
 ---
 
@@ -71,8 +71,8 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich habe keinen Hund.<br>_Tôi không có chó._
-- Sie trinkt keinen Kaffee.<br>_Cô ấy không uống cà phê._
+- **Ich habe keinen Hund.**<br>_Tôi không có chó._
+- **Sie trinkt keinen Kaffee.**<br>_Cô ấy không uống cà phê._
 
 ---
 
@@ -86,9 +86,9 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 **Ví dụ:**
 
-- Ich habe kein Geld.<br>_Tôi không có tiền._ → (Nominativ)
-- Ich sehe keinen Hund.<br>_Tôi không thấy con chó nào._ → (Akkusativ)
-- Ich spreche mit keiner Frau.<br>_Tôi không nói chuyện với bất kỳ người phụ nữ nào._ → (Dativ)
+- **Ich habe kein Geld.**<br>_Tôi không có tiền._ → (Nominativ)
+- **Ich sehe keinen Hund.**<br>_Tôi không thấy con chó nào._ → (Akkusativ)
+- **Ich spreche mit keiner Frau.**<br>_Tôi không nói chuyện với bất kỳ người phụ nữ nào._ → (Dativ)
 
 ---
 

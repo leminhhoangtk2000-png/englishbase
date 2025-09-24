@@ -24,13 +24,17 @@ Các danh từ này **giữ nguyên ở Nominativ nhưng thêm "-n" hoặc "-en"
 
 **Ví dụ:**
 
-- **Nominativ:** Der Student lernt Deutsch. _(Sinh viên học tiếng Đức.)_
+**Nominativ:** Der Student lernt Deutsch.  
+_(Sinh viên học tiếng Đức.)_
 
-- **Akkusativ:** Ich sehe **den Studenten**. _(Tôi thấy sinh viên đó.)_
+**Akkusativ:** Ich sehe **den Studenten**.  
+_(Tôi thấy sinh viên đó.)_
 
-- **Dativ:** Ich gebe **dem Studenten** ein Buch. _(Tôi đưa sinh viên một quyển sách.)_
+**Dativ:** Ich gebe **dem Studenten** ein Buch.  
+_(Tôi đưa sinh viên một quyển sách.)_
 
-- **Genitiv:** Das Buch **des Studenten** ist interessant. _(Cuốn sách của sinh viên rất thú vị.)_
+**Genitiv:** Das Buch **des Studenten** ist interessant.  
+_(Cuốn sách của sinh viên rất thú vị.)_
 
 ---
 

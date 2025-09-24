@@ -50,8 +50,8 @@ order: 5
 
 **Ví dụ:**
 
-- Ich kann Deutsch sprechen.<br>_Tôi có thể nói tiếng Đức._
-- Kannst du mir helfen?<br>_Bạn có thể giúp tôi không?_
+- **Ich kann Deutsch sprechen.**<br>_Tôi có thể nói tiếng Đức._
+- **Kannst du mir helfen?**<br>_Bạn có thể giúp tôi không?_
 
 ---
 
@@ -61,8 +61,8 @@ order: 5
 
 **Ví dụ:**
 
-- Du darfst hier parken.<br>_Bạn được phép đậu xe ở đây._
-- Er darf nicht rauchen.<br>_Anh ấy không được phép hút thuốc._
+- **Du darfst hier parken.**<br>_Bạn được phép đậu xe ở đây._
+- **Er darf nicht rauchen.**<br>_Anh ấy không được phép hút thuốc._
 
 ---
 
@@ -72,8 +72,8 @@ order: 5
 
 **Ví dụ:**
 
-- Ich muss heute arbeiten.<br>_Tôi phải làm việc hôm nay._
-- Wir müssen die Hausaufgaben machen.<br>_Chúng tôi phải làm bài tập về nhà._
+- **Ich muss heute arbeiten.**<br>_Tôi phải làm việc hôm nay._
+- **Wir müssen die Hausaufgaben machen.**<br>_Chúng tôi phải làm bài tập về nhà._
 
 ---
 
@@ -83,8 +83,8 @@ order: 5
 
 **Ví dụ:**
 
-- Du sollst mehr lernen.<br>_Bạn nên học nhiều hơn._
-- Soll ich mitkommen?<br>_Tôi nên đi cùng không?_
+- **Du sollst mehr lernen.**<br>_Bạn nên học nhiều hơn._
+- **Soll ich mitkommen?**<br>_Tôi nên đi cùng không?_
 
 ---
 
@@ -94,8 +94,8 @@ order: 5
 
 **Ví dụ:**
 
-- Ich will ins Kino gehen.<br>_Tôi muốn đi xem phim._
-- Was willst du essen?<br>_Bạn muốn ăn gì?_
+- **Ich will ins Kino gehen.**<br>_Tôi muốn đi xem phim._
+- **Was willst du essen?**<br>_Bạn muốn ăn gì?_
 
 **Lưu ý:** "wollen" thể hiện **mong muốn mạnh mẽ, quyết tâm hơn "möchten".**
 
@@ -107,8 +107,8 @@ order: 5
 
 **Ví dụ:**
 
-- Ich mag Schokolade.<br>_Tôi thích sô-cô-la._
-- Magst du Musik?<br>_Bạn thích nhạc không?_
+- **Ich mag Schokolade.**<br>_Tôi thích sô-cô-la._
+- **Magst du Musik?**<br>_Bạn thích nhạc không?_
 
 ---
 
@@ -119,8 +119,8 @@ order: 5
 
 **Ví dụ:**
 
-- Ich möchte einen Kaffee.<br>_Tôi muốn một cốc cà phê._
-- Möchtest du etwas essen?<br>_Bạn muốn ăn gì đó không?_
+- **Ich möchte einen Kaffee.**<br>_Tôi muốn một cốc cà phê._
+- **Möchtest du etwas essen?**<br>_Bạn muốn ăn gì đó không?_
 
 **Lưu ý:** "möchten" là dạng Konjunktiv II của "mögen" và mang ý nghĩa **lịch sự hơn "wollen"**.
 

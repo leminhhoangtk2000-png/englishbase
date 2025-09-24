@@ -33,9 +33,11 @@ Thì này thường được sử dụng trong văn viết, kể chuyện hoặc
 
 **Ví dụ:**
 
-- **Ich hatte mein Frühstück gegessen, bevor er ankam.** _(Tôi đã ăn sáng xong trước khi anh ấy đến.)_
+**Ich hatte mein Frühstück gegessen, bevor er ankam.**  
+ _(Tôi đã ăn sáng xong trước khi anh ấy đến.)_
 
-- **Nachdem sie nach Hause gekommen war, rief sie mich an.** _(Sau khi cô ấy về nhà, cô ấy đã gọi cho tôi.)_
+**Nachdem sie nach Hause gekommen war, rief sie mich an.**  
+ _(Sau khi cô ấy về nhà, cô ấy đã gọi cho tôi.)_
 
 **Lưu ý quan trọng:**
 
@@ -67,9 +69,11 @@ Plusquamperfekt thường xuất hiện trong câu có hai mệnh đề, thể h
 
 **Ví dụ:**
 
-- **Nachdem ich die Prüfung bestanden hatte, feierte ich mit meinen Freunden.** _(Sau khi tôi đỗ kỳ thi, tôi đã ăn mừng với bạn bè.)_
+**Nachdem ich die Prüfung bestanden hatte, feierte ich mit meinen Freunden.**  
+ _(Sau khi tôi đỗ kỳ thi, tôi đã ăn mừng với bạn bè.)_
 
-- **Nachdem sie nach Hause gekommen war, machte sie das Abendessen.** _(Sau khi cô ấy về nhà, cô ấy đã làm bữa tối.)_
+**Nachdem sie nach Hause gekommen war, machte sie das Abendessen.**  
+ _(Sau khi cô ấy về nhà, cô ấy đã làm bữa tối.)_
 
 **Lưu ý:**
 
@@ -94,9 +98,11 @@ Plusquamperfekt thường xuất hiện trong câu có hai mệnh đề, thể h
 
 **Ví dụ:**
 
-- **Ich ging zur Schule, bevor ich gefrühstückt hatte.** _(Tôi đã đi học trước khi tôi ăn sáng.)_
+**Ich ging zur Schule, bevor ich gefrühstückt hatte.**  
+ _(Tôi đã đi học trước khi tôi ăn sáng.)_
 
-- **Er schrieb den Bericht, bevor er nach Hause gegangen war.** _(Anh ấy đã viết báo cáo trước khi anh ấy về nhà.)_
+**Er schrieb den Bericht, bevor er nach Hause gegangen war.**  
+ _(Anh ấy đã viết báo cáo trước khi anh ấy về nhà.)_
 
 **Lưu ý:**
 

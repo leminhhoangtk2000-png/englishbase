@@ -30,9 +30,11 @@ order: 3
 
 **Ví dụ:**
 
-- **Peter ist so groß wie Maria.** _(Peter cao như Maria.)_
+**Peter ist so groß wie Maria.**  
+ _(Peter cao như Maria.)_
 
-- **Dieses Auto ist so teuer wie das andere.** _(Chiếc xe này đắt như chiếc xe kia.)_
+**Dieses Auto ist so teuer wie das andere.**  
+ _(Chiếc xe này đắt như chiếc xe kia.)_
 
 Lưu ý:
 
@@ -64,9 +66,11 @@ Lưu ý:
 
 **Ví dụ:**
 
-- **Er hat so viel Geld wie sein Freund.** _(Anh ấy có nhiều tiền như bạn của mình.)_
+**Er hat so viel Geld wie sein Freund.**  
+ _(Anh ấy có nhiều tiền như bạn của mình.)_
 
-- **Wir haben so viele Bücher wie ihr.** _(Chúng tôi có nhiều sách như các bạn.)_
+**Wir haben so viele Bücher wie ihr.**  
+ _(Chúng tôi có nhiều sách như các bạn.)_
 
 **Lưu ý:**
 
@@ -81,9 +85,11 @@ Lưu ý:
 
 **Ví dụ:**
 
-- **Ich kenne ihn so gut wie dich.** _(Tôi biết anh ấy cũng tốt như bạn.)_ _(Akkusativ)_
+**Ich kenne ihn so gut wie dich.**  
+ _(Tôi biết anh ấy cũng tốt như bạn.)_ _(Akkusativ)_
 
-- **Sie hilft mir so oft wie dir.** _(Cô ấy giúp tôi thường xuyên như giúp bạn.)_ _(Dativ)_
+**Sie hilft mir so oft wie dir.**  
+ _(Cô ấy giúp tôi thường xuyên như giúp bạn.)_ _(Dativ)_
 
 **Lưu ý:**
 
@@ -105,9 +111,11 @@ Lưu ý:
 
 **Ví dụ:**
 
-- **Tom ist größer als Paul.** _(Tom cao hơn Paul.)_
+**Tom ist größer als Paul.**  
+ _(Tom cao hơn Paul.)_
 
-- **Dieses Auto ist teurer als das andere.** _(Chiếc xe này đắt hơn chiếc xe kia.)_
+**Dieses Auto ist teurer als das andere.**  
+ _(Chiếc xe này đắt hơn chiếc xe kia.)_
 
 **Lưu ý:**
 
@@ -121,9 +129,11 @@ Lưu ý:
 
 **Ví dụ:**
 
-- **Er hat mehr Geld als ich.** _(Anh ấy có nhiều tiền hơn tôi.)_
+**Er hat mehr Geld als ich.**  
+ _(Anh ấy có nhiều tiền hơn tôi.)_
 
-- **Sie liest mehr Bücher als ihr Bruder.** _(Cô ấy đọc nhiều sách hơn anh trai cô ấy.)_
+**Sie liest mehr Bücher als ihr Bruder.**  
+ _(Cô ấy đọc nhiều sách hơn anh trai cô ấy.)_
 
 **Lưu ý:**
 
@@ -144,9 +154,11 @@ Lưu ý:
 
 **Ví dụ:**
 
-- **Tom ist am größten.** _(Tom là cao nhất.)_
+**Tom ist am größten.**  
+ _(Tom là cao nhất.)_
 
-- **Das ist das teuerste Auto.** _(Đây là chiếc xe đắt nhất.)_
+**Das ist das teuerste Auto.**  
+ _(Đây là chiếc xe đắt nhất.)_
 
 **Lưu ý:**
 
@@ -171,9 +183,11 @@ Lưu ý:
 
 **Ví dụ:**
 
-- **Dieser Film ist besser als der andere.** _(Bộ phim này hay hơn bộ phim kia.)_
+**Dieser Film ist besser als der andere.**  
+ _(Bộ phim này hay hơn bộ phim kia.)_
 
-- **Das ist das beste Buch, das ich je gelesen habe.** _(Đây là cuốn sách hay nhất mà tôi từng đọc.)_
+**Das ist das beste Buch, das ich je gelesen habe.**  
+ _(Đây là cuốn sách hay nhất mà tôi từng đọc.)_
 
 **Lưu ý:**  
 **Một số tính từ thay đổi gốc khi ở so sánh hơn và so sánh nhất.**

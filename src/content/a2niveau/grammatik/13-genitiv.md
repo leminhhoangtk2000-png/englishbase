@@ -48,13 +48,17 @@ order: 13
 
 **Ví dụ:**
 
-- **Das Auto des Mannes ist rot.** _(Chiếc xe của người đàn ông màu đỏ.)_
+**Das Auto des Mannes ist rot.**  
+ _(Chiếc xe của người đàn ông màu đỏ.)_
 
-- **Die Tasche der Frau ist teuer.** _(Chiếc túi của người phụ nữ đắt tiền.)_
+**Die Tasche der Frau ist teuer.**  
+ _(Chiếc túi của người phụ nữ đắt tiền.)_
 
-- **Die Spielsachen des Kindes sind überall.** _(Đồ chơi của đứa trẻ ở khắp nơi.)_
+**Die Spielsachen des Kindes sind überall.**  
+ _(Đồ chơi của đứa trẻ ở khắp nơi.)_
 
-- **Die Meinung der Leute ist wichtig.** _(Ý kiến của mọi người rất quan trọng.)_
+**Die Meinung der Leute ist wichtig.**  
+ _(Ý kiến của mọi người rất quan trọng.)_
 
 **Lưu ý:**
 
@@ -78,11 +82,14 @@ order: 13
 
 **Ví dụ thêm:**
 
-- **Wegen des Unfalls war die Straße gesperrt.** _(Do tai nạn, con đường bị phong tỏa.)_
+**Wegen des Unfalls war die Straße gesperrt.**  
+ _(Do tai nạn, con đường bị phong tỏa.)_
 
-- **Anstatt eines Kaffees bestellte sie einen Tee.** _(Thay vì cà phê, cô ấy gọi trà.)_
+**Anstatt eines Kaffees bestellte sie einen Tee.**  
+ _(Thay vì cà phê, cô ấy gọi trà.)_
 
-- **Innerhalb einer Stunde bin ich fertig.** _(Tôi sẽ xong trong vòng một giờ.)_
+**Innerhalb einer Stunde bin ich fertig.**  
+ _(Tôi sẽ xong trong vòng một giờ.)_
 
 **Lưu ý:**
 

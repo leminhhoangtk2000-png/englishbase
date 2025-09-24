@@ -81,8 +81,11 @@ Cả hai đều có nghĩa là **“thích làm gì đó”**, có thể thay th
 
 **Ví dụ:**
 
-- Ich trinke **gern** Kaffee. _(Tôi thích uống cà phê.)_
-- Ich spiele **gerne** Fußball. _(Tôi thích chơi bóng đá.)_
+Ich trinke **gern** Kaffee.  
+ _(Tôi thích uống cà phê.)_
+
+Ich spiele **gerne** Fußball.  
+ _(Tôi thích chơi bóng đá.)_
 
 **Lưu ý:**
 

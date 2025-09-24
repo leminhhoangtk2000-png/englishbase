@@ -18,10 +18,12 @@ order: 14
 
 **Ví dụ:**
 
-- Ich habe vergessen, **das Licht auszumachen**. _(Tôi quên tắt đèn.)_
+Ich habe vergessen, **das Licht auszumachen**.  
+ _(Tôi quên tắt đèn.)_
 
-**Tại sao không dùng luôn 2 động từ như tiếng Việt?**  
-👉 Vì tiếng Đức cần có cấu trúc rõ ràng để giữ trật tự câu và ngữ pháp chuẩn. Khi không có **Modalverb** (như _können, müssen..._), ta cần dùng **“zu + Infinitiv”**.
+**Tại sao không dùng luôn 2 động từ như tiếng Việt?**
+
+`👉 Vì tiếng Đức cần có cấu trúc rõ ràng để giữ trật tự câu và ngữ pháp chuẩn. Khi không có Modalverb (như _können, müssen..._), ta cần dùng “zu + Infinitiv”.`
 
 ---
 
@@ -44,9 +46,11 @@ Công thức
 
 **Ví dụ:**
 
-- Ich lerne Deutsch, **um in Deutschland zu studieren.** _(Tôi học tiếng Đức để học đại học ở Đức.)_
+Ich lerne Deutsch, **um in Deutschland zu studieren.**  
+ _(Tôi học tiếng Đức để học đại học ở Đức.)_
 
-- Er spart Geld, **um ein neues Auto zu kaufen.** _(Anh ấy tiết kiệm tiền để mua một chiếc xe mới.)_
+Er spart Geld, **um ein neues Auto zu kaufen.**  
+ _(Anh ấy tiết kiệm tiền để mua một chiếc xe mới.)_
 
 :::note[Lưu ý]
 Lưu ý
@@ -88,9 +92,11 @@ Nói một cách dễ hiểu: bạn muốn dùng 2 động từ, và một độ
 
 **Ví dụ:**
 
-- Ich habe angefangen, **Deutsch zu lernen.** _(Tôi đã bắt đầu học tiếng Đức.)_
+Ich habe angefangen, **Deutsch zu lernen.**  
+ _(Tôi đã bắt đầu học tiếng Đức.)_
 
-- Er vergisst oft, **die Tür abzuschließen.** _(Anh ấy thường quên khóa cửa.)_
+Er vergisst oft, **die Tür abzuschließen.**  
+ _(Anh ấy thường quên khóa cửa.)_
 
 ---
 

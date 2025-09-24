@@ -41,20 +41,50 @@ export default async function DocPage({ params }: DocPageProps) {
                   {section.title}
                 </h2>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {section.items.map((item: any) => (
-                    <Link
-                      key={item.slug}
-                      href={`/b1niveau/${section.slug}/${item.slug}`}
-                      className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
-                    >
-                      <h3 className="font-medium group-hover:text-primary">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {item.description}
-                      </p>
-                    </Link>
-                  ))}
+                  {section.items.map((item: any) => {
+                    // Check if this item has sub-items (folder structure)
+                    const hasSubItems = item.items && item.items.length > 0;
+                    
+                    // Extract slug from href if no direct slug
+                    const itemSlug = item.slug || (item.href ? item.href.split('/').pop() : '');
+                    const href = hasSubItems ? `/b1niveau/${section.slug}/${itemSlug}` : (item.href || '#');
+                    
+                    return (
+                      <Link
+                        key={item.slug || item.href || item.title}
+                        href={href}
+                        className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="font-medium group-hover:text-primary">
+                            {item.title}
+                          </h3>
+                          {hasSubItems && (
+                            <Badge variant="outline" className="text-xs">
+                              {item.items.length} bài
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          {item.description}
+                        </p>
+                        {hasSubItems && (
+                          <div className="mt-3 text-xs text-muted-foreground">
+                            📁 Folder - {item.items.length} lessons inside
+                          </div>
+                        )}
+                        {item.tags && item.tags.length > 0 && (
+                          <div className="flex flex-wrap gap-1 mt-2">
+                            {item.tags.map((tag: any) => (
+                              <Badge key={tag} variant="secondary" className="text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             ))}

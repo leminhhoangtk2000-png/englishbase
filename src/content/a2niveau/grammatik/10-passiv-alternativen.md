@@ -19,9 +19,14 @@ order: 10
 
 **Ví dụ:**
 
-- **Passiv:** Das Problem kann gelöst werden. _(Vấn đề có thể được giải quyết.)_
-- **Aktiv mit "man"**: Man kann das Problem lösen. _(Người ta có thể giải quyết vấn đề.)_
-- **Aktiv mit "jemand"**: Jemand kann das Problem lösen. _(Ai đó có thể giải quyết vấn đề.)_
+**Passiv:** Das Problem kann gelöst werden.  
+ _(Vấn đề có thể được giải quyết.)_
+
+**Aktiv mit "man"**: Man kann das Problem lösen.  
+ _(Người ta có thể giải quyết vấn đề.)_
+
+**Aktiv mit "jemand"**: Jemand kann das Problem lösen.  
+ _(Ai đó có thể giải quyết vấn đề.)_
 
 **Lưu ý:**
 
@@ -35,7 +40,9 @@ order: 10
 **Ví dụ:**
 
 - **Passiv:** Das Problem kann gelöst werden.
-- **Alternativ:** Das Problem **ist zu lösen**. _(Vấn đề có thể được giải quyết.)_
+
+**Alternativ:** Das Problem **ist zu lösen**.  
+_(Vấn đề có thể được giải quyết.)_
 
 **Lưu ý:**
 
@@ -49,7 +56,9 @@ order: 10
 **Ví dụ:**
 
 - **Passiv:** Das Problem kann gelöst werden.
-- **Alternativ:** Das Problem **lässt sich lösen**. _(Vấn đề có thể giải quyết được.)_
+
+**Alternativ:** Das Problem **lässt sich lösen**.  
+ _(Vấn đề có thể giải quyết được.)_
 
 **Lưu ý:**
 
@@ -88,9 +97,14 @@ order: 10
 
 **Ví dụ:**
 
-- **Passiv:** Die Regeln müssen eingehalten werden. _(Các quy tắc phải được tuân thủ.)_
-- **Aktiv mit "man"**: Man muss die Regeln einhalten. _(Người ta phải tuân thủ các quy tắc.)_
-- **Aktiv mit "jemand"**: Jemand muss die Regeln einhalten. _(Ai đó phải tuân thủ các quy tắc.)_
+**Passiv:** Die Regeln müssen eingehalten werden.  
+ _(Các quy tắc phải được tuân thủ.)_
+
+**Aktiv mit "man"**: Man muss die Regeln einhalten.  
+ _(Người ta phải tuân thủ các quy tắc.)_
+
+**Aktiv mit "jemand"**: Jemand muss die Regeln einhalten.  
+ _(Ai đó phải tuân thủ các quy tắc.)_
 
 **Lưu ý:**
 
@@ -104,7 +118,9 @@ order: 10
 **Ví dụ:**
 
 - **Passiv:** Die Regeln müssen eingehalten werden.
-- **Alternativ:** Die Regeln **sind einzuhalten**. _(Các quy tắc cần được tuân thủ.)_
+
+**Alternativ:** Die Regeln **sind einzuhalten**.  
+ _(Các quy tắc cần được tuân thủ.)_
 
 **Lưu ý:**
 

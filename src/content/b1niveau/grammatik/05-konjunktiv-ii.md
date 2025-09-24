@@ -53,9 +53,11 @@ Có hai cách để hình thành Konjunktiv II ở thì hiện tại:
 
 **Ví dụ:**
 
-- Ich **würde** nach Deutschland **reisen**, wenn ich Geld hätte. _(Tôi sẽ đi Đức nếu tôi có tiền.)_
+Ich **würde** nach Deutschland **reisen**, wenn ich Geld hätte.  
+ _(Tôi sẽ đi Đức nếu tôi có tiền.)_
 
-- Sie **würde** gern ein neues Auto **kaufen**. _(Cô ấy muốn mua một chiếc xe mới.)_
+Sie **würde** gern ein neues Auto **kaufen**.  
+ _(Cô ấy muốn mua một chiếc xe mới.)_
 
 **Lưu ý:**
 
@@ -70,25 +72,31 @@ Konjunktiv II ở hiện tại có 5 công dụng chính:
 
 ### **🔹 2.1. Dùng để nói lên ước muốn, một nguyện vọng**
 
-- Ich **hätte** gern ein Haus am Meer. _(Tôi ước có một căn nhà bên biển.)_
+Ich **hätte** gern ein Haus am Meer.  
+ _(Tôi ước có một căn nhà bên biển.)_
 
-- Sie **wäre** glücklich, wenn sie einen besseren Job hätte. _(Cô ấy sẽ hạnh phúc nếu có một công việc tốt hơn.)_
+Sie **wäre** glücklich, wenn sie einen besseren Job hätte.  
+ _(Cô ấy sẽ hạnh phúc nếu có một công việc tốt hơn.)_
 
 ---
 
 ### **🔹 2.2. Dùng để nói lên một điều kiện không có thật**
 
-- Wenn ich mehr Zeit **hätte**, **würde** ich mehr reisen. _(Nếu tôi có nhiều thời gian hơn, tôi sẽ đi du lịch nhiều hơn.)_
+Wenn ich mehr Zeit **hätte**, **würde** ich mehr reisen.  
+ _(Nếu tôi có nhiều thời gian hơn, tôi sẽ đi du lịch nhiều hơn.)_
 
-- Wenn er klüger **wäre**, **würde** er nicht so viele Fehler machen. _(Nếu anh ấy thông minh hơn, anh ấy sẽ không mắc nhiều lỗi như vậy.)_
+Wenn er klüger **wäre**, **würde** er nicht so viele Fehler machen.  
+ _(Nếu anh ấy thông minh hơn, anh ấy sẽ không mắc nhiều lỗi như vậy.)_
 
 ---
 
 ### **🔹 2.3. Dùng để nhờ vả một việc rất lịch sự**
 
-- **Könnten** Sie mir bitte helfen? _(Ngài có thể giúp tôi được không?)_
+**Könnten** Sie mir bitte helfen?  
+ _(Ngài có thể giúp tôi được không?)_
 
-- Ich **hätte** gern einen Kaffee. _(Tôi muốn một tách cà phê.)_
+Ich **hätte** gern einen Kaffee.  
+ _(Tôi muốn một tách cà phê.)_
 
 ---
 
@@ -135,9 +143,11 @@ Dùng để diễn tả các tình huống không có thật trong quá khứ.
 
 **Ví dụ:**
 
-- Wenn ich mehr gelernt **hätte**, **hätte** ich die Prüfung bestanden. _(Nếu tôi học nhiều hơn, tôi đã đỗ kỳ thi.)_
+Wenn ich mehr gelernt **hätte**, **hätte** ich die Prüfung bestanden.  
+ _(Nếu tôi học nhiều hơn, tôi đã đỗ kỳ thi.)_
 
-- Wenn er schneller **gefahren wäre**, **wäre** er früher angekommen. _(Nếu anh ấy lái xe nhanh hơn, anh ấy đã đến sớm hơn.)_
+Wenn er schneller **gefahren wäre**, **wäre** er früher angekommen.  
+ _(Nếu anh ấy lái xe nhanh hơn, anh ấy đã đến sớm hơn.)_
 
 ---
 
@@ -151,25 +161,31 @@ Dùng để diễn tả các tình huống không có thật trong quá khứ.
 
 **Ví dụ:**
 
-- Ich **hätte** das machen **müssen**. _(Tôi lẽ ra phải làm điều đó.)_
+Ich **hätte** das machen **müssen**.  
+ _(Tôi lẽ ra phải làm điều đó.)_
 
-- Er **hätte** mehr lernen **sollen**. _(Anh ấy đáng lẽ nên học nhiều hơn.)_
+Er **hätte** mehr lernen **sollen**.  
+ _(Anh ấy đáng lẽ nên học nhiều hơn.)_
 
 ---
 
 ## **5. Cấu trúc bị động ở thì hiện tại Konjunktiv II**
 
-- Es **würde** gemacht **werden**. _(Nó sẽ được làm.)_
+Es **würde** gemacht **werden**.  
+ _(Nó sẽ được làm.)_
 
-- Es **müsste** gemacht **werden**. _(Nó đáng lẽ phải được làm.)_
+Es **müsste** gemacht **werden**.  
+ _(Nó đáng lẽ phải được làm.)_
 
 ---
 
 ## **6. Cấu trúc bị động ở thì quá khứ Konjunktiv II**
 
-- Es **wäre** gemacht **worden**. _(Nó đã có thể được làm.)_
+Es **wäre** gemacht **worden**.  
+ _(Nó đã có thể được làm.)_
 
-- Es **hätte** gemacht werden **müssen**. _(Nó đáng lẽ phải được làm.)_
+Es **hätte** gemacht werden **müssen**.  
+ _(Nó đáng lẽ phải được làm.)_
 
 ---
 
