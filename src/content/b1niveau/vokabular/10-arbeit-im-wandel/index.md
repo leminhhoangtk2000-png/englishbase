@@ -11,6 +11,7 @@ order: 10
 Chương này tập trung vào từ vựng về sự thay đổi trong thế giới công việc hiện đại.
 
 ## Chủ đề từ vựng:
+
 - Công nghệ và tự động hóa
 - Làm việc từ xa (Homeoffice)
 - Kỹ năng số và kỹ năng mềm

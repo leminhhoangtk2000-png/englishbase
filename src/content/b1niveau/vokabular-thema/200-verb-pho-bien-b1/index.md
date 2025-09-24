@@ -11,6 +11,7 @@ order: 3
 Tập hợp 200 động từ thiết yếu được sử dụng thường xuyên nhất trong giao tiếp và viết lách tiếng Đức cấp độ B1.
 
 ## Cấu trúc:
+
 Được chia thành 6 nhóm, mỗi nhóm 50 động từ (tổng cộng 300 động từ):
 
 1. **50 Verb nhóm 1** - Động từ cơ bản và hành động hàng ngày
@@ -21,6 +22,7 @@ Tập hợp 200 động từ thiết yếu được sử dụng thường xuyên
 6. **50 Verb nhóm 6** - Động từ chuyên biệt và nâng cao
 
 ## Mỗi động từ bao gồm:
+
 - Phiên âm chuẩn IPA
 - Nghĩa tiếng Việt
 - Ví dụ câu với cấu trúc ngữ pháp B1

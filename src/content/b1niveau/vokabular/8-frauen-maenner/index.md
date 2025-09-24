@@ -11,6 +11,7 @@ order: 8
 Chương này tập trung vào từ vựng về giới tính và vai trò xã hội của nam và nữ.
 
 ## Chủ đề từ vựng:
+
 - Vai trò truyền thống của nam và nữ
 - Bình đẳng giới trong xã hội hiện đại
 - Công việc và gia đình

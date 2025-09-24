@@ -11,6 +11,7 @@ order: 6
 Chương này tập trung vào từ vựng về các vấn đề và tình huống trong cuộc sống hàng ngày.
 
 ## Nội dung bao gồm:
+
 1. **Alltagprobleme** - Các vấn đề hàng ngày
 2. **Notfälle** - Tình huống khẩn cấp
 3. **Stress im Beruf** - Căng thẳng trong công việc

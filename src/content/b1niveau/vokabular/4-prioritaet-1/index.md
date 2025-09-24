@@ -11,6 +11,7 @@ order: 4
 Chương này tập trung vào từ vựng quan trọng nhất cần ưu tiên học trong cấp độ B1.
 
 ## Nội dung bao gồm:
+
 1. **TrainingBeruf1** - Từ vựng nghề nghiệp và training
 2. **Wörter - Spiele - Training** - Từ vựng, trò chơi và luyện tập
 3. **Grammatik und Evaluation** - Ngữ pháp và đánh giá

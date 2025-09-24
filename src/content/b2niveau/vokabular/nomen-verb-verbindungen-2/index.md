@@ -11,6 +11,7 @@ order: 2
 Phần thứ hai về **Nomen-Verb-Verbindungen** với 50 kết hợp nâng cao và chuyên nghiệp.
 
 ## 📋 Cấu trúc:
+
 - **Teil 6**: 10 kết hợp về tác động và ảnh hưởng
 - **Teil 7**: 10 kết hợp về hoạt động chuyên nghiệp
 - **Teil 8**: 10 kết hợp về đánh giá và nhận xét
@@ -18,6 +19,7 @@ Phần thứ hai về **Nomen-Verb-Verbindungen** với 50 kết hợp nâng cao
 - **Teil 10**: 10 kết hợp về mối quan hệ phức tạp
 
 ## 🎯 Đặc điểm:
+
 - Mang tính trang trọng và học thuật cao
 - Thường xuất hiện trong văn bản chuyên nghiệp
 - Cần thiết cho giao tiếp trong môi trường công việc

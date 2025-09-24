@@ -13,6 +13,7 @@ Chào mừng đến với phần từ vựng cấp độ B2! Ở mức độ nà
 ## 🎯 Nomen-Verb-Verbindungen
 
 **Nomen-Verb-Verbindungen** là những cụm từ cố định kết hợp giữa danh từ và động từ, thường được sử dụng trong:
+
 - Văn bản trang trọng và học thuật
 - Giao tiếp chuyên nghiệp và công việc
 - Báo chí và truyền thông
@@ -21,14 +22,17 @@ Chào mừng đến với phần từ vựng cấp độ B2! Ở mức độ nà
 ## 📚 Cấu trúc chương trình:
 
 ### 1. **Nomen-Verb-Verbindungen 1** (Teil 1-5)
+
 - 50 kết hợp cơ bản và thông dụng nhất
 - Từ Teil 1 đến Teil 5, mỗi phần 10 kết hợp
 
-### 2. **Nomen-Verb-Verbindungen 2** (Teil 6-10)  
+### 2. **Nomen-Verb-Verbindungen 2** (Teil 6-10)
+
 - 50 kết hợp nâng cao và chuyên nghiệp
 - Từ Teil 6 đến Teil 10, tập trung vào ngữ cảnh trang trọng
 
 ### 3. **Nomen-Verb-Verbindungen 3** (Teil 11-15)
+
 - 50 kết hợp học thuật và hành chính
 - Từ Teil 11 đến Teil 15, dành cho văn bản chuyên sâu
 
@@ -40,12 +44,15 @@ Chào mừng đến với phần từ vựng cấp độ B2! Ở mức độ nà
 ✅ **Đa dạng hơn**: Tăng khả năng biến hóa trong cách diễn đạt
 
 ## 📖 Cách sử dụng:
+
 Mỗi **Nomen-Verb-Verbindung** đều có:
+
 - Nghĩa tiếng Đức đơn giản tương đương
 - Nghĩa tiếng Việt chi tiết
 - Ví dụ câu thực tế
 - Giải thích ngữ cảnh sử dụng
 
-**Ví dụ**: 
+**Ví dụ**:
+
 - **eine Entscheidung treffen** (đưa ra quyết định) thay vì **entscheiden**
 - **unter Druck stehen** (chịu áp lực) thay vì **gestresst sein**

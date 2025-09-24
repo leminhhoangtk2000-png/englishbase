@@ -11,6 +11,7 @@ order: 3
 Chương này tập trung vào từ vựng về cảm xúc xấu hổ và các tình huống khó xử trong giao tiếp.
 
 ## Nội dung bao gồm:
+
 1. **Hauptwort (peinlich)** - Từ vựng chính về sự xấu hổ
 2. **Was ist Ihnen (nicht) peinlich** - Điều gì làm bạn (không) xấu hổ
 3. **Was sagt der Knigge** - Quy tắc ứng xử theo Knigge
