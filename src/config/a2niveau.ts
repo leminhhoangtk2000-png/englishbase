@@ -271,5 +271,233 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Übungen",
+      href: "/a2niveau/Übungen",
+      items: [
+        {
+          title: "Adjektivendungen",
+          description: "Bài tập về đuôi tính từ sau các mạo từ khác nhau",
+          href: "/a2niveau/Übungen/adjektivendungen",
+          items: [
+            {
+              title: "Teil 1: Nach bestimmtem Artikel",
+              href: "/a2niveau/Übungen/adjektivendungen/teil1",
+            },
+            {
+              title: "Teil 2: Nach unbestimmtem Artikel",
+              href: "/a2niveau/Übungen/adjektivendungen/teil2",
+            },
+            {
+              title: "Teil 3: Nach Nullartikel",
+              href: "/a2niveau/Übungen/adjektivendungen/teil3",
+            },
+            {
+              title: "Teil 4: Gemischte Übungen",
+              href: "/a2niveau/Übungen/adjektivendungen/teil4",
+            },
+          ],
+        },
+        {
+          title: "Steigerung",
+          description: "Bài tập về so sánh (Komparativ và Superlativ)",
+          href: "/a2niveau/Übungen/steigerung",
+          items: [
+            {
+              title: "Teil 1: So sánh bằng",
+              href: "/a2niveau/Übungen/steigerung/teil1",
+            },
+            {
+              title: "Teil 2: So sánh hơn (Komparativ)",
+              href: "/a2niveau/Übungen/steigerung/teil2",
+            },
+            {
+              title: "Teil 3: So sánh nhất (Superlativ)",
+              href: "/a2niveau/Übungen/steigerung/teil3",
+            },
+          ],
+        },
+        {
+          title: "Perfekt Präteritum",
+          description: "Bài tập về thì quá khứ Perfekt và Präteritum",
+          href: "/a2niveau/Übungen/perfekt-prateritum",
+          items: [
+            {
+              title: "Teil 1: Perfekt Grundlagen",
+              href: "/a2niveau/Übungen/perfekt-prateritum/teil1",
+            },
+            {
+              title: "Teil 2: Präteritum Formen",
+              href: "/a2niveau/Übungen/perfekt-prateritum/teil2",
+            },
+            {
+              title: "Teil 3: Perfekt vs Präteritum",
+              href: "/a2niveau/Übungen/perfekt-prateritum/teil3",
+            },
+            {
+              title: "Teil 4: Irregular Verbs",
+              href: "/a2niveau/Übungen/perfekt-prateritum/teil4",
+            },
+            {
+              title: "Teil 5: Advanced Exercises",
+              href: "/a2niveau/Übungen/perfekt-prateritum/teil5",
+            },
+          ],
+        },
+        {
+          title: "Plusquamperfekt",
+          description: "Bài tập về thì quá khứ hoàn thành Plusquamperfekt",
+          href: "/a2niveau/Übungen/plusquamperfekt",
+          items: [
+            {
+              title: "Teil 1: Grundlagen",
+              href: "/a2niveau/Übungen/plusquamperfekt/teil1",
+            },
+            {
+              title: "Teil 2: Mit haben und sein",
+              href: "/a2niveau/Übungen/plusquamperfekt/teil2",
+            },
+            {
+              title: "Teil 3: Erweiterte Übungen",
+              href: "/a2niveau/Übungen/plusquamperfekt/teil3",
+            },
+          ],
+        },
+        {
+          title: "Nebensätze",
+          description: "Bài tập về mệnh đề phụ và liên từ",
+          href: "/a2niveau/Übungen/nebensatze",
+          items: [
+            {
+              title: "Teil 1: Temporalsätze",
+              href: "/a2niveau/Übungen/nebensatze/teil1",
+            },
+            {
+              title: "Teil 2: Kausalsätze",
+              href: "/a2niveau/Übungen/nebensatze/teil2",
+            },
+            {
+              title: "Teil 3: Konditionalsätze",
+              href: "/a2niveau/Übungen/nebensatze/teil3",
+            },
+            {
+              title: "Teil 4: Relativsätze",
+              href: "/a2niveau/Übungen/nebensatze/teil4",
+            },
+            {
+              title: "Teil 5: Finalsätze",
+              href: "/a2niveau/Übungen/nebensatze/teil5",
+            },
+            {
+              title: "Teil 6: Modalsätze",
+              href: "/a2niveau/Übungen/nebensatze/teil6",
+            },
+            {
+              title: "Teil 7: Gemischte Übungen",
+              href: "/a2niveau/Übungen/nebensatze/teil7",
+            },
+          ],
+        },
+        {
+          title: "Passiv",
+          description: "Bài tập về thể bị động (Passiv)",
+          href: "/a2niveau/Übungen/passiv",
+          items: [
+            {
+              title: "Teil 1: Präsens Passiv",
+              href: "/a2niveau/Übungen/passiv/teil1",
+            },
+            {
+              title: "Teil 2: Präteritum Passiv",
+              href: "/a2niveau/Übungen/passiv/teil2",
+            },
+            {
+              title: "Teil 3: Perfekt Passiv",
+              href: "/a2niveau/Übungen/passiv/teil3",
+            },
+            {
+              title: "Teil 4: Modalverben im Passiv",
+              href: "/a2niveau/Übungen/passiv/teil4",
+            },
+          ],
+        },
+        {
+          title: "Futur I & II",
+          description: "Bài tập về thì tương lai Futur I và Futur II",
+          href: "/a2niveau/Übungen/futur",
+          items: [
+            {
+              title: "Teil 1: Futur I",
+              href: "/a2niveau/Übungen/futur/teil1",
+            },
+            {
+              title: "Teil 2: Futur II",
+              href: "/a2niveau/Übungen/futur/teil2",
+            },
+          ],
+        },
+        {
+          title: "Possessivpronomen",
+          description: "Bài tập về đại từ sở hữu",
+          href: "/a2niveau/Übungen/possessivpronomen",
+          items: [
+            {
+              title: "Teil 1: Grundformen",
+              href: "/a2niveau/Übungen/possessivpronomen/teil1",
+            },
+            {
+              title: "Teil 2: Deklination",
+              href: "/a2niveau/Übungen/possessivpronomen/teil2",
+            },
+          ],
+        },
+        {
+          title: "Reflexivpronomen",
+          description: "Bài tập về đại từ phản thân",
+          href: "/a2niveau/Übungen/reflexivpronomen",
+          items: [
+            {
+              title: "Teil 1: Reflexive Verben",
+              href: "/a2niveau/Übungen/reflexivpronomen/teil1",
+            },
+            {
+              title: "Teil 2: Akkusativ vs Dativ",
+              href: "/a2niveau/Übungen/reflexivpronomen/teil2",
+            },
+            {
+              title: "Teil 3: Reziproke Verben",
+              href: "/a2niveau/Übungen/reflexivpronomen/teil3",
+            },
+            {
+              title: "Teil 4: Gemischte Übungen",
+              href: "/a2niveau/Übungen/reflexivpronomen/teil4",
+            },
+            {
+              title: "Teil 5: Advanced Reflexive",
+              href: "/a2niveau/Übungen/reflexivpronomen/teil5",
+            },
+          ],
+        },
+        {
+          title: "Genitiv",
+          description: "Bài tập về cách Genitiv (sở hữu cách)",
+          href: "/a2niveau/Übungen/genitiv",
+          items: [
+            {
+              title: "Teil 1: Genitiv Grundlagen",
+              href: "/a2niveau/Übungen/genitiv/teil1",
+            },
+            {
+              title: "Teil 2: Präpositionen mit Genitiv",
+              href: "/a2niveau/Übungen/genitiv/teil2",
+            },
+            {
+              title: "Teil 3: Genitiv Attribute",
+              href: "/a2niveau/Übungen/genitiv/teil3",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
