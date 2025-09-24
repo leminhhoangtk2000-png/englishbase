@@ -103,6 +103,93 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Vokabular",
+      href: "/b1niveau/vokabular",
+      items: [
+        {
+          title: "1. Körperteile",
+          description: "Từ vựng về các bộ phận cơ thể",
+          href: "/b1niveau/vokabular/1-koerperteile",
+        },
+        {
+          title: "2. Zeitpunkt",
+          description: "Từ vựng về thời gian và cảm giác thời gian",
+          href: "/b1niveau/vokabular/2-zeitpunkt",
+        },
+        {
+          title: "3. Das ist mir aber peinlich",
+          description: "Từ vựng về cảm xúc xấu hổ và tình huống khó xử",
+          href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich",
+        },
+        {
+          title: "4. Priorität 1",
+          description: "Từ vựng ưu tiên cấp độ 1",
+          href: "/b1niveau/vokabular/4-prioritaet-1",
+        },
+        {
+          title: "5. Migration",
+          description: "Từ vựng về di cư và hội nhập",
+          href: "/b1niveau/vokabular/5-migration",
+        },
+        {
+          title: "6. Alltag",
+          description: "Từ vựng về cuộc sống hàng ngày",
+          href: "/b1niveau/vokabular/6-alltag",
+        },
+        {
+          title: "7. Europa",
+          description: "Từ vựng về châu Âu và văn hóa",
+          href: "/b1niveau/vokabular/7-europa",
+        },
+        {
+          title: "8. Frauen & Männer",
+          description: "Từ vựng về giới tính và vai trò xã hội",
+          href: "/b1niveau/vokabular/8-frauen-maenner",
+        },
+        {
+          title: "9. Priorität 2",
+          description: "Từ vựng ưu tiên cấp độ 2",
+          href: "/b1niveau/vokabular/9-prioritaet-2",
+        },
+        {
+          title: "10. Arbeit im Wandel",
+          description: "Từ vựng về sự thay đổi trong công việc",
+          href: "/b1niveau/vokabular/10-arbeit-im-wandel",
+        },
+        {
+          title: "11. Klima und Umwelt",
+          description: "Từ vựng về khí hậu và môi trường",
+          href: "/b1niveau/vokabular/11-klima-und-unwelt",
+        },
+        {
+          title: "12. Schule und Lernen",
+          description: "Từ vựng về trường học và việc học",
+          href: "/b1niveau/vokabular/12-schule-und-lernen",
+        },
+      ],
+    },
+    {
+      title: "Vokabular Thema",
+      href: "/b1niveau/vokabular-thema",
+      items: [
+        {
+          title: "200 phổ biến Adjektiv",
+          description: "200 tính từ phổ biến nhất trong tiếng Đức B1",
+          href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1",
+        },
+        {
+          title: "200 phổ biến Adverb",
+          description: "200 trạng từ phổ biến nhất trong tiếng Đức B1", 
+          href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1",
+        },
+        {
+          title: "200 phổ biến Verb",
+          description: "200 động từ phổ biến nhất trong tiếng Đức B1",
+          href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1",
+        },
+      ],
+    },
+    {
       title: "Wortschatz",
       href: "/b1niveau/wortschatz",
       items: [

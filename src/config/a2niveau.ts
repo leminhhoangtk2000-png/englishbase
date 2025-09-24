@@ -88,7 +88,7 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "1. Willkommen A2",
-          description: "Chào mừng đến với khóa học tiếng Đức A2 - Bài học đầu tiên",
+          description: "Chào mừng đến với khóa học tiếng Đức A2 - Bài học đầu tiên • Đang cập nhật",
           href: "/a2niveau/vokabular/1-willkommen-a2",
           items: [
             {
@@ -115,7 +115,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "2. Leben und Lernen",
-          description: "Từ vựng về cuộc sống và học tập trong tiếng Đức A2",
+          description: "Từ vựng về cuộc sống và học tập trong tiếng Đức A2 • 6 bài học",
           href: "/a2niveau/vokabular/2-leben-und-lernen",
           items: [
             {
@@ -132,7 +132,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "3. Familiengeschichten",
-          description: "Từ vựng về gia đình và những câu chuyện gia đình",
+          description: "Từ vựng về gia đình và những câu chuyện gia đình • 7 bài học",
           href: "/a2niveau/vokabular/3-familiengeschichten",
           items: [
             {
@@ -149,7 +149,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "4. Unterwegs",
-          description: "Từ vựng về phương tiện giao thông và đi lại",
+          description: "Từ vựng về phương tiện giao thông và đi lại • 6 bài học",
           href: "/a2niveau/vokabular/4-unterwegs",
           items: [
             {
@@ -161,7 +161,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "5. Station 1-A2",
-          description: "Trạm dừng đầu tiên - Ôn tập và củng cố kiến thức",
+          description: "Trạm dừng đầu tiên - Ôn tập và củng cố kiến thức • 5 bài học",
           href: "/a2niveau/vokabular/5-station-1-a2",
           items: [
             {
@@ -173,7 +173,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "6. Freizeit und Hobby",
-          description: "Từ vựng về thời gian rảnh và sở thích",
+          description: "Từ vựng về thời gian rảnh và sở thích • 6 bài học",
           href: "/a2niveau/vokabular/6-freizeit-und-hobby",
           items: [
             {
@@ -185,7 +185,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "7. Medien im Alltag",
-          description: "Từ vựng về phương tiện truyền thông hàng ngày",
+          description: "Từ vựng về phương tiện truyền thông hàng ngày • 7 bài học",
           href: "/a2niveau/vokabular/7-medien-im-alltag",
           items: [
             {
@@ -197,7 +197,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "8. Ausgehen Leute treffen",
-          description: "Từ vựng về đi chơi và gặp gỡ mọi người",
+          description: "Từ vựng về đi chơi và gặp gỡ mọi người • 6 bài học",
           href: "/a2niveau/vokabular/8-ausgehen-leute-treffen",
           items: [
             {
@@ -209,7 +209,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "9. Station 2-A2",
-          description: "Trạm dừng thứ hai - Ôn tập và củng cố",
+          description: "Trạm dừng thứ hai - Ôn tập và củng cố • 5 bài học",
           href: "/a2niveau/vokabular/9-station-2-a2",
           items: [
             {
@@ -221,7 +221,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "10. Vom Land in die Stadt",
-          description: "Từ vựng về sự thay đổi từ nông thôn đến thành phố",
+          description: "Từ vựng về sự thay đổi từ nông thôn đến thành phố • 5 bài học",
           href: "/a2niveau/vokabular/10-vom-land-in-die-stadt",
           items: [
             {
@@ -233,7 +233,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "11. Kultur erleben",
-          description: "Từ vựng về trải nghiệm văn hóa và nghệ thuật",
+          description: "Từ vựng về trải nghiệm văn hóa và nghệ thuật • 4 bài học",
           href: "/a2niveau/vokabular/11-kultur-erleben",
           items: [
             {
@@ -251,22 +251,22 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "100 adj pho bien A2",
-          description: "100 tính từ phổ biến và quan trọng nhất trong tiếng Đức A2",
+          description: "100 tính từ phổ biến và quan trọng nhất trong tiếng Đức A2 • 4 nhóm × 25 từ",
           href: "/a2niveau/vokabular-thema/100-adj-pho-bien-a2",
         },
         {
-          title: "100 adv pho bien A2",
-          description: "100 trạng từ phổ biến và quan trọng nhất trong tiếng Đức A2",
+          title: "100 adv pho bien A2", 
+          description: "100 trạng từ phổ biến và quan trọng nhất trong tiếng Đức A2 • 4 nhóm × 25 từ",
           href: "/a2niveau/vokabular-thema/100-adv-pho-bien-a2",
         },
         {
           title: "100 verb pho bien A2",
-          description: "100 động từ phổ biến và quan trọng nhất trong tiếng Đức A2",
+          description: "100 động từ phổ biến và quan trọng nhất trong tiếng Đức A2 • 4 nhóm × 25 từ",
           href: "/a2niveau/vokabular-thema/100-verb-pho-bien-a2",
         },
         {
           title: "Monate und Jahreszeiten",
-          description: "Tháng và mùa trong năm - Kiến thức cơ bản về thời gian",
+          description: "Tháng và mùa trong năm - Kiến thức cơ bản về thời gian • 12 tháng + 4 mùa",
           href: "/a2niveau/vokabular-thema/1-monaten",
         },
       ],
@@ -277,7 +277,7 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Adjektivendungen",
-          description: "Bài tập về đuôi tính từ sau các mạo từ khác nhau",
+          description: "Bài tập về đuôi tính từ sau các mạo từ khác nhau • 4 bài tập",
           href: "/a2niveau/Übungen/adjektivendungen",
           items: [
             {
@@ -300,7 +300,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Steigerung",
-          description: "Bài tập về so sánh (Komparativ và Superlativ)",
+          description: "Bài tập về so sánh (Komparativ và Superlativ) • 3 bài tập",
           href: "/a2niveau/Übungen/steigerung",
           items: [
             {
@@ -319,7 +319,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Perfekt Präteritum",
-          description: "Bài tập về thì quá khứ Perfekt và Präteritum",
+          description: "Bài tập về thì quá khứ Perfekt và Präteritum • 5 bài tập",
           href: "/a2niveau/Übungen/perfekt-prateritum",
           items: [
             {
@@ -346,7 +346,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Plusquamperfekt",
-          description: "Bài tập về thì quá khứ hoàn thành Plusquamperfekt",
+          description: "Bài tập về thì quá khứ hoàn thành Plusquamperfekt • 3 bài tập",
           href: "/a2niveau/Übungen/plusquamperfekt",
           items: [
             {
@@ -365,7 +365,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Nebensätze",
-          description: "Bài tập về mệnh đề phụ và liên từ",
+          description: "Bài tập về mệnh đề phụ và liên từ • 7 bài tập",
           href: "/a2niveau/Übungen/nebensatze",
           items: [
             {
@@ -400,7 +400,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Passiv",
-          description: "Bài tập về thể bị động (Passiv)",
+          description: "Bài tập về thể bị động (Passiv) • 4 bài tập",
           href: "/a2niveau/Übungen/passiv",
           items: [
             {
@@ -423,7 +423,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Futur I & II",
-          description: "Bài tập về thì tương lai Futur I và Futur II",
+          description: "Bài tập về thì tương lai Futur I và Futur II • 2 bài tập",
           href: "/a2niveau/Übungen/futur",
           items: [
             {
@@ -438,7 +438,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Possessivpronomen",
-          description: "Bài tập về đại từ sở hữu",
+          description: "Bài tập về đại từ sở hữu • 2 bài tập",
           href: "/a2niveau/Übungen/possessivpronomen",
           items: [
             {
@@ -453,7 +453,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Reflexivpronomen",
-          description: "Bài tập về đại từ phản thân",
+          description: "Bài tập về đại từ phản thân • 5 bài tập",
           href: "/a2niveau/Übungen/reflexivpronomen",
           items: [
             {
@@ -480,7 +480,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Genitiv",
-          description: "Bài tập về cách Genitiv (sở hữu cách)",
+          description: "Bài tập về cách Genitiv (sở hữu cách) • 3 bài tập",
           href: "/a2niveau/Übungen/genitiv",
           items: [
             {

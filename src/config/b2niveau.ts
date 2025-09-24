@@ -73,7 +73,28 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Từ vựng - Wortschatz",
+      title: "Vokabular",
+      href: "/b2niveau/vokabular",
+      items: [
+        {
+          title: "Nomen-Verb-Verbindungen 1",
+          description: "50 kết hợp danh từ-động từ cơ bản và thông dụng nhất (Teil 1-5)",
+          href: "/b2niveau/vokabular/nomen-verb-verbindungen",
+        },
+        {
+          title: "Nomen-Verb-Verbindungen 2", 
+          description: "50 kết hợp danh từ-động từ nâng cao và chuyên nghiệp (Teil 6-10)",
+          href: "/b2niveau/vokabular/nomen-verb-verbindungen-2",
+        },
+        {
+          title: "Nomen-Verb-Verbindungen 3",
+          description: "50 kết hợp danh từ-động từ học thuật và hành chính (Teil 11-15)",
+          href: "/b2niveau/vokabular/nomen-verb-verbindungen-3",
+        },
+      ],
+    },
+    {
+      title: "Từ vựng - Wortschatz", 
       items: [
         {
           title: "Kinh tế - Wirtschaft",
@@ -98,22 +119,23 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Bài tập - Übungen",
+      title: "Übungen",
+      href: "/b2niveau/Übungen",
       items: [
         {
-          title: "Luyện ngữ pháp B2",
-          description: "Bài tập thực hành ngữ pháp cấp độ B2",
-          href: "/b2niveau/uebungen/01-grammatik-uebungen",
+          title: "Teil 1: Doppelkonnektoren",
+          description: "Luyện tập điền đúng các Doppelkonnektoren như sowohl...als auch, nicht nur...sondern auch",
+          href: "/b2niveau/Übungen/teil1",
         },
         {
-          title: "Luyện từ vựng B2",
-          description: "Bài tập thực hành từ vựng cấp độ B2",
-          href: "/b2niveau/uebungen/02-wortschatz-uebungen",
+          title: "Teil 2: Doppelkonnektoren Erweitert",
+          description: "Bài tập mở rộng về Doppelkonnektoren trong các ngữ cảnh khác nhau",
+          href: "/b2niveau/Übungen/teil2",
         },
         {
-          title: "Luyện viết B2",
-          description: "Bài tập thực hành viết cấp độ B2",
-          href: "/b2niveau/uebungen/03-schreiben-uebungen",
+          title: "Teil 3: Temporal und Kausal",
+          description: "Bài tập về cấu trúc thời gian và nguyên nhân với Präpositionen, Konnektoren, Adverbien",
+          href: "/b2niveau/Übungen/teil3",
         },
       ],
     },
