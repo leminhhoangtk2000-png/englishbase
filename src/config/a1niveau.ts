@@ -341,5 +341,204 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Übungen",
+      href: "/a1niveau/Übungen",
+      items: [
+        {
+          title: "Bài tập ngữ pháp A1",
+          description: "Tổng quan về bài tập ngữ pháp A1 và hướng dẫn học tập",
+          href: "/a1niveau/Übungen/0-bai-tap-ngu-phap-a1",
+        },
+        {
+          title: "Artikel - Mạo từ",
+          description: "Bài tập luyện tập mạo từ der, die, das",
+          href: "/a1niveau/Übungen/artikel",
+          items: [
+            {
+              title: "Teil 1: der, die, das in Präsens",
+              href: "/a1niveau/Übungen/artikel/teil-1",
+            },
+            {
+              title: "Teil 2: Artikel Übungen",
+              href: "/a1niveau/Übungen/artikel/teil-2",
+            },
+          ],
+        },
+        {
+          title: "Übungsfragen - Câu hỏi bài tập",
+          description: "Câu hỏi bài tập tổng hợp với W-Fragen",
+          href: "/a1niveau/Übungen/ubungsfragen",
+          items: [
+            {
+              title: "Teil 1: W-Fragen",
+              href: "/a1niveau/Übungen/ubungsfragen/teil-1",
+            },
+            {
+              title: "Teil 2: Fragewörter Übungen",
+              href: "/a1niveau/Übungen/ubungsfragen/teil-2",
+            },
+            {
+              title: "Teil 3: Gemischte Fragen",
+              href: "/a1niveau/Übungen/ubungsfragen/teil-3",
+            },
+            {
+              title: "Teil 4: Erweiterte Übungen",
+              href: "/a1niveau/Übungen/ubungsfragen/teil-4",
+            },
+          ],
+        },
+        {
+          title: "Weiterführende Artikel",
+          description: "Các bài tập mở rộng về mạo từ xác định",
+          href: "/a1niveau/Übungen/weiterfuhrende-artikel",
+          items: [
+            {
+              title: "Teil 1: Quán từ Xác định",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil1",
+            },
+            {
+              title: "Teil 2: Der/Die/Das Übungen",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil2",
+            },
+            {
+              title: "Teil 3: Artikel mit Kasus",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil3",
+            },
+            {
+              title: "Teil 4: Gemischte Artikel",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil4",
+            },
+            {
+              title: "Teil 5: Erweiterte Artikel",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil5",
+            },
+            {
+              title: "Teil 6: Komplexe Übungen",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil6",
+            },
+            {
+              title: "Teil 7: Abschlusstest",
+              href: "/a1niveau/Übungen/weiterfuhrende-artikel/teil7",
+            },
+          ],
+        },
+        {
+          title: "Trennbare Verben",
+          description: "Bài tập về động từ tách được và viết lại câu",
+          href: "/a1niveau/Übungen/trennbare-verben",
+          items: [
+            {
+              title: "Teil 1: Satzbildung",
+              href: "/a1niveau/Übungen/trennbare-verben/teil1",
+            },
+            {
+              title: "Teil 2: Trennbare Verben Übungen",
+              href: "/a1niveau/Übungen/trennbare-verben/teil2",
+            },
+            {
+              title: "Teil 3: Erweiterte Übungen",
+              href: "/a1niveau/Übungen/trennbare-verben/teil3",
+            },
+          ],
+        },
+        {
+          title: "Nicht und kein",
+          description: "Bài tập về phủ định với nicht và kein",
+          href: "/a1niveau/Übungen/nicht-und-kein",
+          items: [
+            {
+              title: "Teil 1: Negation Grundlagen",
+              href: "/a1niveau/Übungen/nicht-und-kein/teil1",
+            },
+            {
+              title: "Teil 2: Nicht vs Kein",
+              href: "/a1niveau/Übungen/nicht-und-kein/teil2",
+            },
+          ],
+        },
+        {
+          title: "Präposition Personalpronomen",
+          description: "Bài tập về giới từ và đại từ nhân xưng",
+          href: "/a1niveau/Übungen/praposition-personalpronomen",
+          items: [
+            {
+              title: "Teil 1: Präpositionen Grundlagen",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil1",
+            },
+            {
+              title: "Teil 2: Personalpronomen",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil2",
+            },
+            {
+              title: "Teil 3: Kombination Übungen",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil3",
+            },
+            {
+              title: "Teil 4: Erweiterte Präpositionen",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil4",
+            },
+            {
+              title: "Teil 5: Komplexe Strukturen",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil5",
+            },
+            {
+              title: "Teil 6: Anwendungsübungen",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil6",
+            },
+            {
+              title: "Teil 7: Abschlusstest",
+              href: "/a1niveau/Übungen/praposition-personalpronomen/teil7",
+            },
+          ],
+        },
+        {
+          title: "Imperativ",
+          description: "Bài tập về câu mệnh lệnh",
+          href: "/a1niveau/Übungen/imperativ",
+          items: [
+            {
+              title: "Teil 1: Imperativ Grundformen",
+              href: "/a1niveau/Übungen/imperativ/teil1",
+            },
+            {
+              title: "Teil 2: Höfliche Imperativ",
+              href: "/a1niveau/Übungen/imperativ/teil2",
+            },
+          ],
+        },
+        {
+          title: "Perfekt Übungen",
+          description: "Bài tập về thì Perfekt",
+          href: "/a1niveau/Übungen/perfekt-ubungen",
+          items: [
+            {
+              title: "Teil 1: Perfekt mit haben",
+              href: "/a1niveau/Übungen/perfekt-ubungen/teil1",
+            },
+            {
+              title: "Teil 2: Perfekt mit sein",
+              href: "/a1niveau/Übungen/perfekt-ubungen/teil2",
+            },
+            {
+              title: "Teil 3: Partizip II Formen",
+              href: "/a1niveau/Übungen/perfekt-ubungen/teil3",
+            },
+            {
+              title: "Teil 4: Gemischte Perfekt",
+              href: "/a1niveau/Übungen/perfekt-ubungen/teil4",
+            },
+            {
+              title: "Teil 5: Erweiterte Übungen",
+              href: "/a1niveau/Übungen/perfekt-ubungen/teil5",
+            },
+            {
+              title: "Teil 6: Abschlusstest",
+              href: "/a1niveau/Übungen/perfekt-ubungen/teil6",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
