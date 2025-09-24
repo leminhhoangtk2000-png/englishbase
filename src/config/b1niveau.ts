@@ -1,104 +1,15 @@
 import type { DocsConfig } from "@/types";
-import { getNavigationStructure } from "@/lib/markdown";
-
-// Get dynamic navigation from markdown files
-const markdownNavigation = getNavigationStructure('b1niveau');
 
 export const docsConfig: DocsConfig = {
-  items: markdownNavigation.length > 0 ? markdownNavigation : [
+  items: [
     {
       title: "Grammatik",
       href: "/b1niveau/grammatik",
       items: [
         {
           title: "B1 Niveau - Grammatik",
-          description: "Các bài học ngữ pháp tiếng Đức cấp độ B1 - Từ trung cấp đến nâng cao",
+          description: "Các bài học ngữ pháp tiếng Đức cấp độ B1",
           href: "/b1niveau/grammatik/index",
-        },
-        {
-          title: "N-Deklination - Biến cách danh từ yếu",
-          description: "Tìm hiểu về nhóm danh từ yếu (N-Deklination) trong tiếng Đức và cách biến đổi theo cách",
-          href: "/b1niveau/grammatik/01-n-deklination",
-        },
-        {
-          title: "Relativsätze - Câu quan hệ",
-          description: "Học cách sử dụng đại từ quan hệ và câu quan hệ trong tiếng Đức",
-          href: "/b1niveau/grammatik/02-relativsatze",
-        },
-        {
-          title: "Doppelkonjunktionen - Liên từ đôi",
-          description: "Tìm hiểu về liên từ đôi trong tiếng Đức và cách sử dụng chúng",
-          href: "/b1niveau/grammatik/03-doppelkonjunktionen",
-        },
-        {
-          title: "Verben und Adjektive mit Präpositionen",
-          description: "Học các động từ và tính từ đi kèm với giới từ trong tiếng Đức",
-          href: "/b1niveau/grammatik/04-verben-adjektiv-mit-praeposition",
-        },
-        {
-          title: "Konjunktiv II - Thể giả định loại hai",
-          description: "Tìm hiểu về thể giả định Konjunktiv II và cách sử dụng trong tiếng Đức",
-          href: "/b1niveau/grammatik/05-konjunktiv-ii",
-        },
-        {
-          title: "Động từ lassen, brauchen và werden",
-          description: "Tìm hiểu về cách sử dụng đặc biệt của các động từ lassen, brauchen và werden",
-          href: "/b1niveau/grammatik/06-lassen-brauchen-werden",
-        },
-        {
-          title: "Wortstellung - Trật tự từ trong tiếng Đức",
-          description: "Học các quy tắc sắp xếp từ trong câu tiếng Đức",
-          href: "/b1niveau/grammatik/07-wortstellung",
-        },
-        {
-          title: "Các cặp từ dễ nhầm lẫn - Phần 1",
-          description: "Phân biệt các từ và cụm từ dễ nhầm lẫn trong tiếng Đức",
-          href: "/b1niveau/grammatik/08-verwechselbare-worter-teil1",
-        },
-        {
-          title: "Các cặp từ dễ nhầm lẫn - Phần 2",
-          description: "Tiếp tục phân biệt các từ và cụm từ dễ nhầm lẫn trong tiếng Đức",
-          href: "/b1niveau/grammatik/09-verwechselbare-worter-teil2",
-        },
-        {
-          title: "Các cặp từ dễ nhầm lẫn - Phần 3",
-          description: "Phần 3 về các từ và cụm từ dễ nhầm lẫn trong tiếng Đức",
-          href: "/b1niveau/grammatik/10-verwechselbare-worter-teil3",
-        },
-        {
-          title: "Các cặp từ dễ nhầm lẫn - Phần 4",
-          description: "Phần cuối về các từ và cụm từ dễ nhầm lẫn trong tiếng Đức",
-          href: "/b1niveau/grammatik/11-verwechselbare-worter-teil4",
-        },
-        {
-          title: "Partizip I & Partizip II",
-          description: "Tìm hiểu về phân từ loại 1 và phân từ loại 2 trong tiếng Đức",
-          href: "/b1niveau/grammatik/12-partizip-i-ii",
-        },
-        {
-          title: "Konjunktiv I - Thể giả định loại một",
-          description: "Tìm hiểu về thể giả định Konjunktiv I và cách sử dụng trong lời nói gián tiếp",
-          href: "/b1niveau/grammatik/13-konjunktiv-i",
-        },
-        {
-          title: "Câu với 'zu + Infinitiv' và 'um... zu'",
-          description: "Học cách sử dụng cấu trúc zu + Infinitiv và um... zu trong tiếng Đức",
-          href: "/b1niveau/grammatik/14-zu-infinitiv-um-zu",
-        },
-        {
-          title: "Verben mit festen Präpositionen",
-          description: "Học các động từ đi với giới từ cố định trong tiếng Đức",
-          href: "/b1niveau/grammatik/15-verben-mit-festen-praeposition",
-        },
-        {
-          title: "Adjektiv mit Präposition",
-          description: "Học các tính từ đi với giới từ trong tiếng Đức",
-          href: "/b1niveau/grammatik/16-adjektiv-mit-praeposition",
-        },
-        {
-          title: "Verben mit zwei Objekten",
-          description: "Học về động từ với hai tân ngữ trong tiếng Đức",
-          href: "/b1niveau/grammatik/17-verben-mit-zwei-objekten",
         },
       ],
     },
@@ -171,29 +82,39 @@ export const docsConfig: DocsConfig = {
           href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich",
           items: [
             {
-              title: "Das tut mir leid",
-              description: "Tôi xin lỗi",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/01-das-tut-mir-leid",
+              title: "Hauptwort (peinlich)",
+              description: "Từ chính về cảm xúc xấu hổ",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/01-hauptwort-peinlich",
             },
             {
-              title: "Entschuldigung! Es tut mir leid!",
-              description: "Xin lỗi! Tôi xin lỗi!",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/02-entschuldigung-es-tut-mir-leid",
+              title: "Was ist Ihnen (nicht) peinlich",
+              description: "Điều gì khiến bạn (không) xấu hổ",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/02-was-ist-ihnen-nicht-peinlich",
             },
             {
-              title: "Das ist mir aber peinlich!",
-              description: "Tôi thật xấu hổ!",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/03-das-ist-mir-aber-peinlich",
+              title: "Was sagt der Knigge",
+              description: "Phép lịch sự nói gì",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/03-was-sagt-der-knigge",
             },
             {
-              title: "Bitte um Hilfe",
-              description: "Xin giúp đỡ",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/04-bitte-um-hilfe",
+              title: "Knigge International",
+              description: "Phép lịch sự quốc tế",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/04-knigge-international",
             },
             {
-              title: "Übung (Das ist mir aber peinlich!)",
+              title: "Ich muss um sieben Uhr aufstehen",
+              description: "Tôi phải dậy lúc 7 giờ",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/05-ich-muss-um-sieben-uhr-aufstehen",
+            },
+            {
+              title: "Übungen (peinlich)",
               description: "Bài tập về chủ đề xấu hổ",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/05-uebung-das-ist-mir-aber-peinlich",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/06-uebungen-peinlich",
+            },
+            {
+              title: "Tổng hợp động từ và tính từ bài 3",
+              description: "Tổng hợp từ vựng bài 3",
+              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/tong-hop-dong-tu-va-tinh-tu-bai-3",
             },
           ],
         },
@@ -263,12 +184,12 @@ export const docsConfig: DocsConfig = {
           items: [
             {
               title: "Alltagsprobleme",
-              description: "Vấn đề hàng ngày",
+              description: "Các vấn đề hàng ngày",
               href: "/b1niveau/vokabular/6-alltag/01-alltagprobleme",
             },
             {
               title: "Notfälle",
-              description: "Tình huống khẩn cấp",
+              description: "Trường hợp khẩn cấp",
               href: "/b1niveau/vokabular/6-alltag/02-notfaelle",
             },
             {
@@ -277,8 +198,8 @@ export const docsConfig: DocsConfig = {
               href: "/b1niveau/vokabular/6-alltag/03-stress-im-beruf",
             },
             {
-              title: "Gute Ratschläge & Lachen ist gesund",
-              description: "Lời khuyên tốt & Cười có lợi cho sức khỏe",
+              title: "Gute Ratschläge und Lachen ist gesund",
+              description: "Lời khuyên tốt và cười có lợi cho sức khỏe",
               href: "/b1niveau/vokabular/6-alltag/04-gute-ratschlaege-und-lachen-ist-gesund",
             },
             {
@@ -295,7 +216,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "7. Europa",
-          description: "Từ vựng về châu Âu và văn hóa",
+          description: "Từ vựng về châu Âu",
           href: "/b1niveau/vokabular/7-europa",
           items: [
             {
@@ -326,13 +247,13 @@ export const docsConfig: DocsConfig = {
           ],
         },
         {
-          title: "8. Frauen & Männer",
-          description: "Từ vựng về giới tính và vai trò xã hội",
+          title: "8. Frauen - Männer",
+          description: "Từ vựng về nam và nữ",
           href: "/b1niveau/vokabular/8-frauen-maenner",
           items: [
             {
-              title: "Frauen und Männerberufe",
-              description: "Nghề của phụ nữ và nam giới",
+              title: "Frauen- und Männerberufe",
+              description: "Nghề của nữ và nam",
               href: "/b1niveau/vokabular/8-frauen-maenner/01-frauen-und-maennerberufe",
             },
             {
@@ -359,7 +280,7 @@ export const docsConfig: DocsConfig = {
           items: [
             {
               title: "Training für den Beruf",
-              description: "Huấn luyện cho nghề nghiệp",
+              description: "Huấn luyện nghề nghiệp",
               href: "/b1niveau/vokabular/9-prioritaet-2/01-training-fuer-den-beruf",
             },
             {
@@ -378,8 +299,8 @@ export const docsConfig: DocsConfig = {
               href: "/b1niveau/vokabular/9-prioritaet-2/04-filmstation",
             },
             {
-              title: "Magazin - Ankunft",
-              description: "Tạp chí - Sự đến",
+              title: "Magazin Ankunft",
+              description: "Tạp chí Ankunft",
               href: "/b1niveau/vokabular/9-prioritaet-2/05-magazin-ankunft",
             },
           ],
@@ -391,7 +312,7 @@ export const docsConfig: DocsConfig = {
           items: [
             {
               title: "Die größte Stadt Deutschlands",
-              description: "Thành phố lớn nhất Đức",
+              description: "Thành phố lớn nhất nước Đức",
               href: "/b1niveau/vokabular/10-arbeit-im-wandel/01-die-groesste-stadt-deutschlands",
             },
             {
@@ -401,7 +322,7 @@ export const docsConfig: DocsConfig = {
             },
             {
               title: "Übungen (Arbeit im Wandel)",
-              description: "Bài tập về sự thay đổi trong công việc",
+              description: "Bài tập về công việc trong quá trình thay đổi",
               href: "/b1niveau/vokabular/10-arbeit-im-wandel/03-uebungen-arbeit-im-wandel",
             },
             {
@@ -423,7 +344,7 @@ export const docsConfig: DocsConfig = {
             },
             {
               title: "Der UN-Klimareport",
-              description: "Báo cáo khí hậu LHQ",
+              description: "Báo cáo khí hậu của Liên Hợp Quốc",
               href: "/b1niveau/vokabular/11-klima-und-unwelt/02-der-un-klimareport",
             },
             {
@@ -478,49 +399,13 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Vokabular Thema",
-      href: "/b1niveau/vokabular-thema",
+      title: "Übungen",
+      href: "/b1niveau/Übungen",
       items: [
         {
-          title: "200 phổ biến Adjektiv",
-          description: "200 tính từ phổ biến nhất trong tiếng Đức B1",
-          href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1",
-        },
-        {
-          title: "200 phổ biến Adverb",
-          description: "200 trạng từ phổ biến nhất trong tiếng Đức B1", 
-          href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1",
-        },
-        {
-          title: "200 phổ biến Verb",
-          description: "200 động từ phổ biến nhất trong tiếng Đức B1",
-          href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1",
-        },
-      ],
-    },
-    {
-      title: "Wortschatz",
-      href: "/b1niveau/wortschatz",
-      items: [
-        {
-          title: "Beruf und Karriere",
-          description: "Từ vựng về nghề nghiệp và sự nghiệp",
-          href: "/b1niveau/wortschatz/01-beruf",
-        },
-        {
-          title: "Medien und Kommunikation",
-          description: "Từ vựng về truyền thông và giao tiếp",
-          href: "/b1niveau/wortschatz/02-medien",
-        },
-        {
-          title: "Umwelt und Natur",
-          description: "Từ vựng về môi trường và thiên nhiên",
-          href: "/b1niveau/wortschatz/03-umwelt",
-        },
-        {
-          title: "Politik und Gesellschaft",
-          description: "Từ vựng về chính trị và xã hội",
-          href: "/b1niveau/wortschatz/04-politik",
+          title: "B1 Übungen - Bài tập thực hành",
+          description: "Tổng hợp bài tập thực hành ngữ pháp tiếng Đức cấp độ B1",
+          href: "/b1niveau/Übungen/index",
         },
       ],
     },
