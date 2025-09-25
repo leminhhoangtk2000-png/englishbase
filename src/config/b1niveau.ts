@@ -7,9 +7,89 @@ export const docsConfig: DocsConfig = {
       href: "/b1niveau/grammatik",
       items: [
         {
-          title: "B1 Niveau - Grammatik",
-          description: "Các bài học ngữ pháp tiếng Đức cấp độ B1",
-          href: "/b1niveau/grammatik/index",
+          title: "1. N-Deklination",
+          description: "Biến cách danh từ đặc biệt trong tiếng Đức",
+          href: "/b1niveau/grammatik/01-n-deklination",
+        },
+        {
+          title: "2. Relativsätze",
+          description: "Câu quan hệ và đại từ quan hệ",
+          href: "/b1niveau/grammatik/02-relativsatze",
+        },
+        {
+          title: "3. Doppelkonjunktionen",
+          description: "Liên từ kép: entweder...oder, sowohl...als auch",
+          href: "/b1niveau/grammatik/03-doppelkonjunktionen",
+        },
+        {
+          title: "4. Verben + Adjektiv mit Präposition",
+          description: "Động từ và tính từ đi với giới từ",
+          href: "/b1niveau/grammatik/04-verben-adjektiv-mit-praeposition",
+        },
+        {
+          title: "5. Konjunktiv II",
+          description: "Cách diễn đạt ước muốn và điều kiện",
+          href: "/b1niveau/grammatik/05-konjunktiv-ii",
+        },
+        {
+          title: "6. lassen - brauchen - werden",
+          description: "Các động từ đặc biệt và cách sử dụng",
+          href: "/b1niveau/grammatik/06-lassen-brauchen-werden",
+        },
+        {
+          title: "7. Wortstellung",
+          description: "Trật tự từ trong câu tiếng Đức",
+          href: "/b1niveau/grammatik/07-wortstellung",
+        },
+        {
+          title: "8. Verwechselbare Wörter Teil 1",
+          description: "Những từ dễ nhầm lẫn phần 1",
+          href: "/b1niveau/grammatik/08-verwechselbare-worter-teil1",
+        },
+        {
+          title: "9. Verwechselbare Wörter Teil 2",
+          description: "Những từ dễ nhầm lẫn phần 2",
+          href: "/b1niveau/grammatik/09-verwechselbare-worter-teil2",
+        },
+        {
+          title: "10. Verwechselbare Wörter Teil 3",
+          description: "Những từ dễ nhầm lẫn phần 3",
+          href: "/b1niveau/grammatik/10-verwechselbare-worter-teil3",
+        },
+        {
+          title: "11. Verwechselbare Wörter Teil 4",
+          description: "Những từ dễ nhầm lẫn phần 4",
+          href: "/b1niveau/grammatik/11-verwechselbare-worter-teil4",
+        },
+        {
+          title: "12. Partizip I & II",
+          description: "Phân từ 1 và phân từ 2 trong tiếng Đức",
+          href: "/b1niveau/grammatik/12-partizip-i-ii",
+        },
+        {
+          title: "13. Konjunktiv I",
+          description: "Lời nói gián tiếp và báo cáo",
+          href: "/b1niveau/grammatik/13-konjunktiv-i",
+        },
+        {
+          title: "14. zu + Infinitiv, um...zu",
+          description: "Cấu trúc nguyên mẫu có 'zu' và mục đích",
+          href: "/b1niveau/grammatik/14-zu-infinitiv-um-zu",
+        },
+        {
+          title: "15. Verben mit festen Präposition",
+          description: "Động từ đi với giới từ cố định",
+          href: "/b1niveau/grammatik/15-verben-mit-festen-praeposition",
+        },
+        {
+          title: "16. Adjektiv mit Präposition",
+          description: "Tính từ đi với giới từ",
+          href: "/b1niveau/grammatik/16-adjektiv-mit-praeposition",
+        },
+        {
+          title: "17. Verben mit zwei Objekten",
+          description: "Động từ với hai tân ngữ",
+          href: "/b1niveau/grammatik/17-verben-mit-zwei-objekten",
         },
       ],
     },
@@ -40,7 +120,7 @@ export const docsConfig: DocsConfig = {
           ],
         },
         {
-          title: "2. Zeitpunkt",
+          title: "2. Zeitpunkt", 
           description: "Từ vựng về thời gian và cảm giác thời gian",
           href: "/b1niveau/vokabular/2-zeitpunkt",
           items: [
@@ -77,44 +157,44 @@ export const docsConfig: DocsConfig = {
           ],
         },
         {
-          title: "3. Das ist mir aber peinlich",
+          title: "3. Das ist mir",
           description: "Từ vựng về cảm xúc xấu hổ và tình huống khó xử",
-          href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich",
+          href: "/b1niveau/vokabular/3-das-ist-mir", 
           items: [
             {
               title: "Hauptwort (peinlich)",
               description: "Từ chính về cảm xúc xấu hổ",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/01-hauptwort-peinlich",
+              href: "/b1niveau/vokabular/3-das-ist-mir/01-hauptwort-peinlich",
             },
             {
               title: "Was ist Ihnen (nicht) peinlich",
               description: "Điều gì khiến bạn (không) xấu hổ",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/02-was-ist-ihnen-nicht-peinlich",
+              href: "/b1niveau/vokabular/3-das-ist-mir/02-was-ist-ihnen-nicht-peinlich",
             },
             {
               title: "Was sagt der Knigge",
               description: "Phép lịch sự nói gì",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/03-was-sagt-der-knigge",
+              href: "/b1niveau/vokabular/3-das-ist-mir/03-was-sagt-der-knigge",
             },
             {
               title: "Knigge International",
               description: "Phép lịch sự quốc tế",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/04-knigge-international",
+              href: "/b1niveau/vokabular/3-das-ist-mir/04-knigge-international",
             },
             {
               title: "Ich muss um sieben Uhr aufstehen",
               description: "Tôi phải dậy lúc 7 giờ",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/05-ich-muss-um-sieben-uhr-aufstehen",
+              href: "/b1niveau/vokabular/3-das-ist-mir/05-ich-muss-um-sieben-uhr-aufstehen",
             },
             {
               title: "Übungen (peinlich)",
               description: "Bài tập về chủ đề xấu hổ",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/06-uebungen-peinlich",
+              href: "/b1niveau/vokabular/3-das-ist-mir/06-uebungen-peinlich",
             },
             {
               title: "Tổng hợp động từ và tính từ bài 3",
               description: "Tổng hợp từ vựng bài 3",
-              href: "/b1niveau/vokabular/3-das-ist-mir-aber-peinlich/tong-hop-dong-tu-va-tinh-tu-bai-3",
+              href: "/b1niveau/vokabular/3-das-ist-mir/tong-hop-dong-tu-va-tinh-tu-bai-3",
             },
           ],
         },
@@ -399,13 +479,166 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Vokabular-Thema",
+      href: "/b1niveau/vokabular-thema",
+      items: [
+        {
+          title: "200 Adjektiv phổ biến B1",
+          description: "200 tính từ phổ biến nhất trong tiếng Đức B1",
+          href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1",
+          items: [
+            {
+              title: "50 adj phổ biến 1-A2",
+              description: "50 tính từ đầu tiên",
+              href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1/1.%2050%20adj%20pho%20bien%201-A2",
+            },
+            {
+              title: "50 adj phổ biến 2-A2",
+              description: "50 tính từ thứ hai",
+              href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1/2.%2050%20adj%20pho%20bien%202-A2",
+            },
+            {
+              title: "50 adj phổ biến 3-A2",
+              description: "50 tính từ thứ ba",
+              href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1/3.%2050%20adj%20pho%20bien%203-A2",
+            },
+            {
+              title: "50 adj phổ biến 4-A2",
+              description: "50 tính từ thứ tư",
+              href: "/b1niveau/vokabular-thema/200-adj-pho-bien-b1/4.%2050%20adj%20pho%20bien%204-A2",
+            },
+          ],
+        },
+        {
+          title: "200 Adverb phổ biến B1",
+          description: "200 trạng từ phổ biến nhất trong tiếng Đức B1",
+          href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1",
+          items: [
+            {
+              title: "50 adv phổ biến 1-A2",
+              description: "50 trạng từ đầu tiên",
+              href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1/1.%2050%20adv%20pho%20bien%201-A2",
+            },
+            {
+              title: "50 adv phổ biến 2-A2",
+              description: "50 trạng từ thứ hai",
+              href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1/2.%2050%20adv%20pho%20bien%202-A2",
+            },
+            {
+              title: "50 adv phổ biến 3-A2",
+              description: "50 trạng từ thứ ba",
+              href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1/3.%2050%20adv%20pho%20bien%203-A2",
+            },
+            {
+              title: "50 adv phổ biến 4-A2",
+              description: "50 trạng từ thứ tư",
+              href: "/b1niveau/vokabular-thema/200-adv-pho-bien-b1/4.%2050%20adv%20pho%20bien%204-A2",
+            },
+          ],
+        },
+        {
+          title: "200 Verb phổ biến B1",
+          description: "200 động từ phổ biến nhất trong tiếng Đức B1",
+          href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1",
+          items: [
+            {
+              title: "50 verb phổ biến 1-A2",
+              description: "50 động từ đầu tiên",
+              href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1/1.%2050%20verb%20pho%20bien%201-A2",
+            },
+            {
+              title: "50 verb phổ biến 2-A2",
+              description: "50 động từ thứ hai",
+              href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1/2.%2050%20verb%20pho%20bien%202-A2",
+            },
+            {
+              title: "50 verb phổ biến 3-A2",
+              description: "50 động từ thứ ba",
+              href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1/3.%2050%20verb%20pho%20bien%203-A2",
+            },
+            {
+              title: "50 verb phổ biến 4-A2",
+              description: "50 động từ thứ tư",
+              href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1/4.%2050%20verb%20pho%20bien%204-A2",
+            },
+            {
+              title: "50 verb phổ biến 5-A2",
+              description: "50 động từ thứ năm",
+              href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1/5.%2050%20verb%20pho%20bien%205-A2",
+            },
+            {
+              title: "50 verb phổ biến 6-A2",
+              description: "50 động từ thứ sáu",
+              href: "/b1niveau/vokabular-thema/200-verb-pho-bien-b1/6.%2050%20verb%20pho%20bien%206-A2",
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: "Übungen",
       href: "/b1niveau/Übungen",
       items: [
         {
-          title: "B1 Übungen - Bài tập thực hành",
-          description: "Tổng hợp bài tập thực hành ngữ pháp tiếng Đức cấp độ B1",
-          href: "/b1niveau/Übungen/index",
+          title: "N-Deklination Übungen",
+          description: "Bài tập thực hành biến cách danh từ đặc biệt",
+          href: "/b1niveau/Übungen/n-deklination",
+          items: [
+            {
+              title: "Tổng quan N-Deklination",
+              description: "Giới thiệu chung về N-Deklination",
+              href: "/b1niveau/Übungen/n-deklination/index",
+            },
+            {
+              title: "Teil 1 - Cơ bản",
+              description: "Bài tập cơ bản về N-Deklination",
+              href: "/b1niveau/Übungen/n-deklination/teil1",
+            },
+            {
+              title: "Teil 2 - Nâng cao",
+              description: "Bài tập nâng cao về N-Deklination",
+              href: "/b1niveau/Übungen/n-deklination/teil2",
+            },
+          ],
+        },
+        {
+          title: "Relativsätze Übungen",
+          description: "Bài tập thực hành câu quan hệ",
+          href: "/b1niveau/Übungen/relativsatze",
+          items: [
+            {
+              title: "Tổng quan Relativsätze",
+              description: "Giới thiệu về câu quan hệ",
+              href: "/b1niveau/Übungen/relativsatze/index",
+            },
+            {
+              title: "Teil 1 - Thực hành",
+              description: "Bài tập thực hành câu quan hệ",
+              href: "/b1niveau/Übungen/relativsatze/teil1",
+            },
+          ],
+        },
+        {
+          title: "Konjunktiv II Übungen", 
+          description: "Bài tập thực hành cách diễn đạt ước muốn",
+          href: "/b1niveau/Übungen/konjunktiv-ii",
+          items: [
+            {
+              title: "Konjunktiv II - Lý thuyết và thực hành",
+              description: "Học và luyện tập Konjunktiv II",
+              href: "/b1niveau/Übungen/konjunktiv-ii/index",
+            },
+          ],
+        },
+        {
+          title: "Doppelkonjunktionen Übungen",
+          description: "Bài tập về liên từ kép",
+          href: "/b1niveau/Übungen/doppelkonjunktionen",
+        },
+        {
+          title: "Passiv Erweitert Übungen",
+          description: "Bài tập về câu bị động mở rộng",
+          href: "/b1niveau/Übungen/passiv-erweitert",
         },
       ],
     },

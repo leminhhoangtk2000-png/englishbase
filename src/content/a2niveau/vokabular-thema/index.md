@@ -5,25 +5,33 @@ Chào mừng bạn đến với bộ từ vựng tiếng Đức A2 được tổ
 ## 📚 Các chủ đề từ vựng A2
 
 ### 🔹 [100 adj pho bien A2](./100-adj-pho-bien-a2/)
+
 **100 tính từ phổ biến và quan trọng nhất trong tiếng Đức A2**
+
 - 2 phần × 50 từ
 - Có ví dụ và cách sử dụng cụ thể
 - Phân loại theo chủ đề thông dụng
 
-### 🔹 [100 adv pho bien A2](./100-adv-pho-bien-a2/) 
+### 🔹 [100 adv pho bien A2](./100-adv-pho-bien-a2/)
+
 **100 trạng từ phổ biến và quan trọng nhất trong tiếng Đức A2**
+
 - 2 phần × 50 từ
 - Giúp bạn diễn đạt ý tưởng một cách chính xác hơn
 - Có ví dụ câu thực tế
 
 ### 🔹 [100 verb pho bien A2](./100-verb-pho-bien-a2/)
+
 **100 động từ phổ biến và quan trọng nhất trong tiếng Đức A2**
+
 - 4 phần × 25 từ
 - Bao gồm động từ thường và động từ bất quy tắc
 - Có bảng chia động từ cơ bản
 
 ### 🔹 [Monate und Jahreszeiten](./1.-monaten)
+
 **Tháng và mùa trong năm - Kiến thức cơ bản về thời gian**
+
 - 12 tháng trong năm
 - 4 mùa và đặc điểm của từng mùa
 - Cách đọc và viết ngày tháng năm

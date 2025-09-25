@@ -80,28 +80,68 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
   return items?.length ? (
     <div className="grid grid-flow-row auto-rows-max text-sm py-1">
       {items.map((item, index) =>
-        item.href && !item.disabled ? (
-          <Link
-            key={index}
-            href={item.href}
-            className={cn(
-              "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
-              {
-                "bg-secondary/80 font-medium text-foreground": pathname === item.href,
-              }
-            )}
-            target={item.external ? "_blank" : ""}
-            rel={item.external ? "noreferrer" : ""}
-          >
-            {item.title}
-          </Link>
+        item.items && item.items.length > 0 ? (
+          // If item has sub-items, render as collapsible
+          <Collapsible key={index} className="w-full" defaultOpen>
+            <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/50 [&[data-state=open]>svg]:rotate-90">
+              {item.title}
+              <ChevronRight className="h-3 w-3 shrink-0 transition-transform duration-200" />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pl-4">
+              <div className="grid grid-flow-row auto-rows-max text-sm py-1">
+                {item.items.map((subItem, subIndex) => (
+                  subItem.href && !subItem.disabled ? (
+                    <Link
+                      key={subIndex}
+                      href={subItem.href}
+                      className={cn(
+                        "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                        {
+                          "bg-secondary/80 font-medium text-foreground": pathname === subItem.href,
+                        }
+                      )}
+                      target={subItem.external ? "_blank" : ""}
+                      rel={subItem.external ? "noreferrer" : ""}
+                    >
+                      {subItem.title}
+                    </Link>
+                  ) : (
+                    <span
+                      key={subIndex}
+                      className="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground opacity-60"
+                    >
+                      {subItem.title}
+                    </span>
+                  )
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
         ) : (
-          <span
-            key={index}
-            className="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground opacity-60"
-          >
-            {item.title}
-          </span>
+          // If no sub-items, render as regular link
+          item.href && !item.disabled ? (
+            <Link
+              key={index}
+              href={item.href}
+              className={cn(
+                "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                {
+                  "bg-secondary/80 font-medium text-foreground": pathname === item.href,
+                }
+              )}
+              target={item.external ? "_blank" : ""}
+              rel={item.external ? "noreferrer" : ""}
+            >
+              {item.title}
+            </Link>
+          ) : (
+            <span
+              key={index}
+              className="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground opacity-60"
+            >
+              {item.title}
+            </span>
+          )
         )
       )}
     </div>

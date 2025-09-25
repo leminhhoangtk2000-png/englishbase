@@ -9,21 +9,21 @@ description: "Luyện tập biến cách N-Deklination trong các Kasus khác nh
 
 N-Deklination có đuôi **-n** hoặc **-en** ở tất cả các cách trừ Nominativ số ít:
 
-| Kasus | Singular | Plural |
-|-------|----------|---------|
-| **Nominativ** | der Student | die Studenten |
+| Kasus         | Singular          | Plural        |
+| ------------- | ----------------- | ------------- |
+| **Nominativ** | der Student       | die Studenten |
 | **Akkusativ** | den Student**en** | die Studenten |
-| **Dativ** | dem Student**en** | den Studenten |
-| **Genitiv** | des Student**en** | der Studenten |
+| **Dativ**     | dem Student**en** | den Studenten |
+| **Genitiv**   | des Student**en** | der Studenten |
 
 ## Bài tập 1: Điền đuôi đúng
 
 **Hướng dẫn:** Điền đuôi -n hoặc -en vào chỗ trống:
 
 1. Ich spreche mit dem Kolleg**en**. (Dativ)
-2. Das Auto des Nachbar**n** ist rot. (Genitiv) 
+2. Das Auto des Nachbar**n** ist rot. (Genitiv)
 3. Sie sieht den Bär**en** im Zoo. (Akkusativ)
-4. Der Präsident**__** kommt heute. (Nominativ - không có đuôi)
+4. Der Präsident**\_\_** kommt heute. (Nominativ - không có đuôi)
 5. Wir helfen dem Tourist**en**. (Dativ)
 6. Das Haus des Mensch**en** ist groß. (Genitiv)
 
@@ -31,19 +31,21 @@ N-Deklination có đuôi **-n** hoặc **-en** ở tất cả các cách trừ N
 
 **Chọn dạng đúng cho mỗi câu:**
 
-1. Ich kenne _____ schon lange.
+1. Ich kenne **\_** schon lange.
+
    - a) der Kunde ❌
    - b) den Kunden ✅
    - c) dem Kunden ❌
 
-2. Das Büro _____ ist sehr modern.
-   - a) der Kollege ❌  
+2. Das Büro **\_** ist sehr modern.
+
+   - a) der Kollege ❌
    - b) den Kollegen ❌
    - c) des Kollegen ✅
 
-3. Sie gibt _____ ein Geschenk.
+3. Sie gibt **\_** ein Geschenk.
    - a) der Junge ❌
-   - b) den Jungen ❌  
+   - b) den Jungen ❌
    - c) dem Jungen ✅
 
 ## Bài tập 3: Dịch câu

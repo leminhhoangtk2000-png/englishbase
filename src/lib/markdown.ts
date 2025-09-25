@@ -104,17 +104,20 @@ export function getMarkdownBySlug(
   slug: string
 ): MarkdownContent | null {
   try {
+    // Decode URL-encoded slug first
+    const decodedSlug = decodeURIComponent(slug)
+    
     // Check if slug already has extension
-    const slugWithExtension = slug.endsWith('.md') || slug.endsWith('.mdx') ? slug : `${slug}.md`
-    const altSlugWithExtension = slug.endsWith('.md') ? slug.replace('.md', '.mdx') : `${slug}.mdx`
+    const slugWithExtension = decodedSlug.endsWith('.md') || decodedSlug.endsWith('.mdx') ? decodedSlug : `${decodedSlug}.md`
+    const altSlugWithExtension = decodedSlug.endsWith('.md') ? decodedSlug.replace('.md', '.mdx') : `${decodedSlug}.mdx`
     
     // Support nested paths like "01-start-auf-deutsch/01-start" or "01-start-auf-deutsch/index"
     const filePath = path.join(contentDirectory, niveau, section, slugWithExtension)
     const altFilePath = path.join(contentDirectory, niveau, section, altSlugWithExtension)
     
     // Also check for folder-based content with index files
-    const folderIndexPath = path.join(contentDirectory, niveau, section, slug, 'index.md')
-    const folderIndexAltPath = path.join(contentDirectory, niveau, section, slug, 'index.mdx')
+    const folderIndexPath = path.join(contentDirectory, niveau, section, decodedSlug, 'index.md')
+    const folderIndexAltPath = path.join(contentDirectory, niveau, section, decodedSlug, 'index.mdx')
     
     console.log(`[DEBUG] Looking for file:`, filePath)
     console.log(`[DEBUG] Alt file:`, altFilePath)
@@ -146,7 +149,7 @@ export function getMarkdownBySlug(
     return {
       meta: {
         ...data,
-        slug: slug.split('/').pop()?.replace(/\.(md|mdx)$/, '') || slug, // Use the last part as slug, remove extension
+        slug: decodedSlug.split('/').pop()?.replace(/\.(md|mdx)$/, '') || decodedSlug, // Use the last part as slug, remove extension
       } as MarkdownMeta,
       content,
     }

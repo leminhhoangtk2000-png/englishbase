@@ -18,15 +18,19 @@ Sau khi hoàn thành các bài tập này, bạn sẽ:
 ## Danh sách bài tập
 
 ### Teil 1: Cơ bản
+
 Nhận biết và phân loại danh từ N-Deklination
 
 ### Teil 2: Thực hành
+
 Biến cách trong các Kasus khác nhau
 
 ### Teil 3: Ứng dụng
+
 Sử dụng trong câu hoàn chỉnh
 
 ### Teil 4: Tổng hợp
+
 Bài tập tổng hợp và kiểm tra
 
 ---

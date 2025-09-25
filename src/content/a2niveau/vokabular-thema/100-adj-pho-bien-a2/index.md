@@ -5,13 +5,17 @@
 ## 📋 Danh sách các phần
 
 ### [1. 50 adj pho bien 1-A2](./1.-50-adj-pho-bien-1-a2)
+
 **50 tính từ phổ biến phần 1**
+
 - Các tính từ cơ bản nhất trong giao tiếp hàng ngày
 - Mô tả tính cách, cảm xúc, và trạng thái
 - Có ví dụ và cách sử dụng
 
 ### [2. 50 adj pho bien 2-A2](./2.-50-adj-pho-bien-2-a2)
-**50 tính từ phổ biến phần 2**  
+
+**50 tính từ phổ biến phần 2**
+
 - Mở rộng vốn từ vựng mô tả
 - Tính từ về màu sắc, kích thước, hình dạng
 - Ứng dụng trong nhiều tình huống khác nhau

@@ -12,7 +12,7 @@ description: "Bài tập nhận biết các danh từ thuộc nhóm N-Deklinatio
 ### Các nhóm chính:
 
 1. **Danh từ chỉ người nam** kết thúc bằng -e: der Junge, der Kollege, der Deutsche
-2. **Danh từ một âm tiết** kết thúc bằng -r: der Bär, der Herr  
+2. **Danh từ một âm tiết** kết thúc bằng -r: der Bär, der Herr
 3. **Danh từ có nguồn gốc nước ngoài** kết thúc bằng -t, -nt, -st: der Student, der Präsident
 4. **Một số danh từ đặc biệt**: der Nachbar, der Mensch, der Name
 
@@ -26,15 +26,15 @@ description: "Bài tập nhận biết các danh từ thuộc nhóm N-Deklinatio
 4. der Student ✅ (thuộc nhóm -nt)
 5. der Bruder ❌ (không phải)
 6. der Löwe ✅ (thuộc nhóm -e)
-7. der Computer ❌ (không phải)  
+7. der Computer ❌ (không phải)
 8. der Präsident ✅ (thuộc nhóm -nt)
 
 ## Bài tập 2: Hoàn thành bảng
 
-| Nominativ | Akkusativ | Dativ | Genitiv |
-|-----------|-----------|--------|---------|
-| der Junge | den Jungen | dem Jungen | des Jungen |
-| der Bär | den Bären | dem Bären | des Bären |
+| Nominativ   | Akkusativ     | Dativ         | Genitiv       |
+| ----------- | ------------- | ------------- | ------------- |
+| der Junge   | den Jungen    | dem Jungen    | des Jungen    |
+| der Bär     | den Bären     | dem Bären     | des Bären     |
 | der Student | den Studenten | dem Studenten | des Studenten |
 
 ## Bài tập 3: Điền vào chỗ trống

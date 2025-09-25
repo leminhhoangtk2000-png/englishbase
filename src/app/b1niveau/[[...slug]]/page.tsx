@@ -111,10 +111,10 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
-  // If we have slug, try to get markdown content
-  const [section, articleSlug] = slug;
+  // If we have slug, try to get markdown content  
+  const [section, ...restSlug] = slug;
   
-  if (!section || !articleSlug) {
+  if (!section || restSlug.length === 0) {
     // Show section overview
     const niveauContent = getNiveauContent('b1niveau');
     const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
@@ -170,8 +170,11 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
+  // Build the complete path for nested content
+  const completePath = restSlug.join('/');
+  
   // Get specific markdown content
-  const markdownContent = getMarkdownBySlug('b1niveau', section, articleSlug);
+  const markdownContent = getMarkdownBySlug('b1niveau', section, completePath);
   
   if (!markdownContent) {
     notFound();

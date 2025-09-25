@@ -17,31 +17,41 @@ Chào mừng bạn đến với khu vực **bài tập thực hành** dành cho 
 ## 📚 Danh sách chủ đề bài tập
 
 ### 🏗️ N-Deklination
+
 **Biến cách danh từ yếu** - Một trong những chủ đề khó nhất của B1
+
 - Nhận biết danh từ N-Deklination
 - Biến cách trong các Kasus
 - Ứng dụng trong câu thực tế
 
-### 🔗 Relativsätze  
+### 🔗 Relativsätze
+
 **Mệnh đề quan hệ** - Tạo câu phức tạp và tinh tế
+
 - Đại từ quan hệ cơ bản (der, die, das)
 - Mệnh đề quan hệ với giới từ
 - Các trường hợp đặc biệt (was, wo, womit...)
 
 ### 🎭 Konjunktiv II
+
 **Thể giả định loại hai** - Diễn đạt mong muốn và lịch sự
+
 - Tạo dạng Konjunktiv II
 - Sử dụng würde + Infinitiv
 - Câu điều kiện không có thật
 
 ### ⚖️ Doppelkonjunktionen
+
 **Liên từ đôi** - Nối các ý tưởng phức tạp
+
 - entweder...oder (hoặc...hoặc)
-- sowohl...als auch (vừa...vừa)  
+- sowohl...als auch (vừa...vừa)
 - weder...noch (không...cũng không)
 
 ### 🔄 Passiv erweitert
+
 **Câu bị động nâng cao** - Sử dụng linh hoạt trong văn viết
+
 - Passiv với các thì khác nhau
 - Passiv với Modalverben
 - Zustandspassiv và các cách thay thế
@@ -63,7 +73,7 @@ Chào mừng bạn đến với khu vực **bài tập thực hành** dành cho 
 
 ## 📊 Đánh giá tiến độ
 
-- **🥉 Cơ bản**: Hoàn thành Teil 1-2 của mỗi chủ đề  
+- **🥉 Cơ bản**: Hoàn thành Teil 1-2 của mỗi chủ đề
 - **🥈 Trung cấp**: Hoàn thành Teil 1-3 của mỗi chủ đề
 - **🥇 Nâng cao**: Hoàn thành tất cả 4 Teil với độ chính xác >90%
 

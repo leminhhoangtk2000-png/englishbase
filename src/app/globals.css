@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import admonition styles */
 @import '../styles/admonitions.css';
 
 /* Ensure list items are always visible */

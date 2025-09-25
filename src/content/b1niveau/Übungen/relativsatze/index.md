@@ -18,15 +18,19 @@ Sau khi hoàn thành các bài tập này, bạn sẽ:
 ## Danh sách bài tập
 
 ### Teil 1: Đại từ quan hệ cơ bản
+
 Sử dụng der, die, das trong mệnh đề quan hệ
 
 ### Teil 2: Với giới từ
+
 Mệnh đề quan hệ kết hợp với các giới từ
 
 ### Teil 3: Trường hợp đặc biệt
+
 was, wo, womit và các trường hợp đặc biệt khác
 
 ### Teil 4: Thực hành tổng hợp
+
 Kết hợp tất cả kiến thức trong bài tập thực tế
 
 ---

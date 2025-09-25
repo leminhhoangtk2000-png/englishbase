@@ -18,15 +18,19 @@ Sau khi hoàn thành các bài tập này, bạn sẽ:
 ## Danh sách bài tập
 
 ### Teil 1: Formen bilden
+
 Tạo dạng Konjunktiv II của các động từ
 
 ### Teil 2: würde + Infinitiv
+
 Sử dụng cấu trúc thay thế phổ biến
 
 ### Teil 3: Höflichkeit
+
 Sử dụng Konjunktiv II để thể hiện sự lịch sự
 
 ### Teil 4: Irreale Bedingungen
+
 Câu điều kiện không có thật
 
 ---

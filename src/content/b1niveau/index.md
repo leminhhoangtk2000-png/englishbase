@@ -21,15 +21,17 @@ Sau khi hoàn thành cấp độ B1, bạn sẽ có thể:
 ## 📚 Nội dung khóa học
 
 ### 🏛️ Ngữ pháp (Grammatik)
+
 Nắm vững các cấu trúc ngữ pháp phức tạp của tiếng Đức cấp độ B1:
 
 - **N-Deklination**: Biến cách danh từ yếu
-- **Relativsätze**: Mệnh đề quan hệ nâng cao  
+- **Relativsätze**: Mệnh đề quan hệ nâng cao
 - **Konjunktiv II**: Thể giả định loại hai
 - **Doppelkonjunktionen**: Liên từ đôi
 - **Passiv**: Câu bị động nâng cao
 
 ### 📖 Từ vựng (Vokabular)
+
 Mở rộng vốn từ vựng với 12 chủ đề chính:
 
 - **Körperteile**: Các bộ phận cơ thể
@@ -39,6 +41,7 @@ Mở rộng vốn từ vựng với 12 chủ đề chính:
 - **Arbeit im Wandel**: Sự thay đổi trong công việc
 
 ### 🎯 Bài tập (Übungen)
+
 Luyện tập thực hành với các dạng bài tập đa dạng:
 
 - **Ngữ pháp thực hành**: Củng cố kiến thức lý thuyết
@@ -48,18 +51,22 @@ Luyện tập thực hành với các dạng bài tập đa dạng:
 ## 🏆 Đặc điểm cấp độ B1
 
 ### Kỹ năng nghe hiểu
+
 - Hiểu ý chính của các bài nói về chủ đề quen thuộc
 - Theo dõi được các chương trình radio, TV về chủ đề quan tâm
 
-### Kỹ năng đọc hiểu  
+### Kỹ năng đọc hiểu
+
 - Đọc hiểu văn bản về chủ đề quen thuộc
 - Hiểu được thư từ cá nhân đơn giản
 
 ### Kỹ năng nói
+
 - Giao tiếp trong hầu hết các tình huống khi đi du lịch
 - Diễn đạt được ý kiến cá nhân về chủ đề quen thuộc
 
 ### Kỹ năng viết
+
 - Viết được văn bản đơn giản về chủ đề quen thuộc
 - Viết thư cá nhân mô tả trải nghiệm và ấn tượng
 

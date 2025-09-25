@@ -3,7 +3,8 @@ import type { DocsConfig } from "@/types";
 export const docsConfig: DocsConfig = {
   items: [
     {
-      title: "Ngữ pháp - Grammatik",
+      title: "Grammatik",
+      href: "/b2niveau/grammatik",
       items: [
         {
           title: "Der Konjunktiv II",
@@ -77,44 +78,46 @@ export const docsConfig: DocsConfig = {
       href: "/b2niveau/vokabular",
       items: [
         {
-          title: "Nomen-Verb-Verbindungen 1",
+          title: "1. Nomen-Verb-Verbindungen",
           description: "50 kết hợp danh từ-động từ cơ bản và thông dụng nhất (Teil 1-5)",
           href: "/b2niveau/vokabular/nomen-verb-verbindungen",
+          items: [
+            {
+              title: "Teil 1",
+              description: "Nomen-Verb-Verbindungen cơ bản phần 1",
+              href: "/b2niveau/vokabular/nomen-verb-verbindungen/teil1",
+            },
+            {
+              title: "Teil 2",
+              description: "Nomen-Verb-Verbindungen cơ bản phần 2", 
+              href: "/b2niveau/vokabular/nomen-verb-verbindungen/teil2",
+            },
+            {
+              title: "Teil 3",
+              description: "Nomen-Verb-Verbindungen cơ bản phần 3",
+              href: "/b2niveau/vokabular/nomen-verb-verbindungen/teil3",
+            },
+            {
+              title: "Teil 4",
+              description: "Nomen-Verb-Verbindungen cơ bản phần 4",
+              href: "/b2niveau/vokabular/nomen-verb-verbindungen/teil4",
+            },
+            {
+              title: "Teil 5", 
+              description: "Nomen-Verb-Verbindungen cơ bản phần 5",
+              href: "/b2niveau/vokabular/nomen-verb-verbindungen/teil5",
+            },
+          ],
         },
         {
-          title: "Nomen-Verb-Verbindungen 2", 
+          title: "2. Nomen-Verb-Verbindungen 2", 
           description: "50 kết hợp danh từ-động từ nâng cao và chuyên nghiệp (Teil 6-10)",
           href: "/b2niveau/vokabular/nomen-verb-verbindungen-2",
         },
         {
-          title: "Nomen-Verb-Verbindungen 3",
+          title: "3. Nomen-Verb-Verbindungen 3",
           description: "50 kết hợp danh từ-động từ học thuật và hành chính (Teil 11-15)",
           href: "/b2niveau/vokabular/nomen-verb-verbindungen-3",
-        },
-      ],
-    },
-    {
-      title: "Từ vựng - Wortschatz", 
-      items: [
-        {
-          title: "Kinh tế - Wirtschaft",
-          description: "Từ vựng về kinh tế và kinh doanh",
-          href: "/b2niveau/wortschatz/01-wirtschaft",
-        },
-        {
-          title: "Chính trị - Politik",
-          description: "Từ vựng về chính trị và xã hội",
-          href: "/b2niveau/wortschatz/02-politik",
-        },
-        {
-          title: "Khoa học - Wissenschaft",
-          description: "Từ vựng về khoa học và công nghệ",
-          href: "/b2niveau/wortschatz/03-wissenschaft",
-        },
-        {
-          title: "Văn hóa - Kultur",
-          description: "Từ vựng về văn hóa và nghệ thuật",
-          href: "/b2niveau/wortschatz/04-kultur",
         },
       ],
     },
