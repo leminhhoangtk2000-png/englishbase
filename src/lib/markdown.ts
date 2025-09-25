@@ -32,6 +32,7 @@ export interface MarkdownMeta {
 export interface MarkdownContent {
   meta: MarkdownMeta
   content: string
+  filePath?: string
 }
 
 export interface MarkdownSection {
@@ -152,6 +153,7 @@ export function getMarkdownBySlug(
         slug: decodedSlug.split('/').pop()?.replace(/\.(md|mdx)$/, '') || decodedSlug, // Use the last part as slug, remove extension
       } as MarkdownMeta,
       content,
+      filePath: actualPath,
     }
   } catch (error) {
     console.error('Error reading markdown file:', error)

@@ -1,10 +1,13 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
+import { MDXComponentsRenderer } from '@/components/mdx-components-renderer';
 import { DocsTOC } from "@/components/docs-toc-client";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import fs from "fs";
+import path from "path";
 
 interface DocPageProps {
   params: Promise<{
@@ -13,7 +16,10 @@ interface DocPageProps {
 }
 
 export default async function DocPage({ params }: DocPageProps) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  
+  // Decode URL components to handle German characters like Ü in Übungen
+  const slug = rawSlug ? rawSlug.map(segment => decodeURIComponent(segment)) : rawSlug;
 
   // If no slug, show main niveau page
   if (!slug || slug.length === 0) {
@@ -164,6 +170,23 @@ export default async function DocPage({ params }: DocPageProps) {
     const directMarkdownContent = getMarkdownBySlug('a1niveau', section, folderSlug);
     
     if (directMarkdownContent) {
+      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
+      const hasExerciseTable = directMarkdownContent.content.includes('<ExerciseTable');
+      const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
+      const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
+      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz;
+      const isMDX = directMarkdownContent.filePath && directMarkdownContent.filePath.endsWith('.mdx');
+      
+      console.log('[Server] MDX Detection:', { 
+        filePath: directMarkdownContent.filePath, 
+        isMDX, 
+        contentLength: directMarkdownContent.content.length, 
+        hasExerciseTable,
+        hasFormingQuestions,
+        hasMatchingQuiz,
+        hasInteractiveComponents
+      });
+      
       // Direct article found, render it
       const htmlContent = await markdownToHtml(directMarkdownContent.content);
       const toc = extractTableOfContents(directMarkdownContent.content);
@@ -208,7 +231,11 @@ export default async function DocPage({ params }: DocPageProps) {
             </div>
             <Separator className="my-4" />
             <div className="prose max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              {(isMDX && hasInteractiveComponents) ? (
+                <MDXComponentsRenderer content={directMarkdownContent.content} />
+              ) : (
+                <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              )}
             </div>
           </div>
           <div className="hidden text-sm lg:block">
@@ -323,6 +350,9 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
+  // Note: NextJS automatically handles dedicated page components over catch-all routes
+  // No need to manually redirect - the direct page components will be used automatically
+
   // Get specific markdown content for nested cases
   let markdownContent;
   let breadcrumbItems: string[] = [];
@@ -351,8 +381,38 @@ export default async function DocPage({ params }: DocPageProps) {
     notFound();
   }
 
-  const htmlContent = await markdownToHtml(markdownContent.content);
+  // Check if this is an MDX file and process components
+  const isMDX = markdownContent.filePath && markdownContent.filePath.endsWith('.mdx');
+  console.log('[Server] MDX Detection:', { 
+    filePath: markdownContent.filePath, 
+    isMDX, 
+    contentLength: markdownContent.content.length,
+    hasExerciseTable: markdownContent.content.includes('ExerciseTable'),
+    hasFormingQuestions: markdownContent.content.includes('FormingQuestions'),
+    hasMatchingQuiz: markdownContent.content.includes('MatchingQuiz'),
+    hasInteractiveComponents: markdownContent.content.includes('ExerciseTable') || markdownContent.content.includes('FormingQuestions') || markdownContent.content.includes('MatchingQuiz')
+  });
+  console.log('[Server] Raw content passed to client:', markdownContent.content.substring(0, 300));
   const toc = extractTableOfContents(markdownContent.content);
+
+  let contentElement;
+  let exerciseComponents: any[] = [];
+
+  if (isMDX) {
+    // For MDX files, pass raw content to client-side renderer which will process both markdown and components
+    contentElement = (
+      <MDXComponentsRenderer content={markdownContent.content} />
+    );
+  } else {
+    // Regular markdown processing
+    const htmlContent = await markdownToHtml(markdownContent.content);
+    contentElement = (
+      <div 
+        className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
+    );
+  }
 
   return (
     <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
@@ -392,14 +452,13 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
         </div>
         <Separator className="my-4 md:my-6" />
-        <div 
-          className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline"
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
+        <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline">
+          {contentElement}
+        </div>
       </div>
       <div className="hidden text-sm lg:block">
         <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-y-auto py-12 pl-4">
-          <DocsTOC />
+          <DocsTOC toc={toc} />
         </div>
       </div>
     </main>

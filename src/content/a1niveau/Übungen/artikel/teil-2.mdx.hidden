@@ -1,13 +1,18 @@
 ---
-id: uebung-1-teil-2-der-die-das-in-präsens
-title: 2. der, die, das in Präsens
-description: Luyện tập mạo từ (der, die, das) và chia động từ (Präsens).
+title: "Teil 2: der, die, das in Präsens - Textübungen"
+description: "Luyện tập mạo từ (der, die, das) và chia động từ (Präsens) thông qua bài khóa"
+level: "A1"
+topic: "Übungen"
+order: 2
+difficulty: "beginner"
+tags: ["artikel", "präsens", "exercises", "lueckentext"]
 ---
 
-import Lueckentext from '@site/src/components/Quiz/Lueckentext/Lueckentext';
-import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+import { Lueckentext } from "@/components/ui/lueckentext";
+import { ExerciseAuthor } from "@/components/exercises/exercise-author";
 
 ### Danh sách từ vựng sẽ dùng
+
 backen, sein, spielen, die, helfen, nehmen, lesen, arbeiten, stehen, mischen, besuchen, wohnen, kochen, schmecken, laufen, geben, machen, haben, schlafen, fahren, bestellen, lernen, trinken, gehen, erzählen, aufstehen, heißen, bleiben, essen, lieben, treffen, sehen
 
 ## Teil 1: Mein Zimmer
@@ -16,7 +21,31 @@ Trong phần này, bạn sẽ dùng: die (mạo từ); và các động từ: se
 
 <Lueckentext
   textParts={[
-    "Mein Name ", { type: "blank", correctAnswer: "ist" }, " Lisa. Ich ", { type: "blank", correctAnswer: "wohne" }, " in einem Haus. In meinem Zimmer ", { type: "blank", correctAnswer: "gibt" }, " es das Bett, den Schrank und die Lampe. ", { type: "blank", correctAnswer: "Die" }, " Lampe ", { type: "blank", correctAnswer: "steht" }, " auf dem Tisch. Jeden Morgen ", { type: "blank", correctAnswer: "mache" }, " ich mein Bett. Mein Bruder ", { type: "blank", correctAnswer: "heißt" }, " Tim. Er ", { type: "blank", correctAnswer: "hat" }, " ein großes Zimmer. In seinem Zimmer gibt es einen Computer und einen Stuhl. Tim ", { type: "blank", correctAnswer: "spielt" }, " gern Videospiele. Unsere Eltern ", { type: "blank", correctAnswer: "arbeiten" }, " in einer Firma. Wir ", { type: "blank", correctAnswer: "lernen" }, " Deutsch in der Schule und ", { type: "blank", correctAnswer: "machen" }, " jeden Tag Hausaufgaben."
+    "Mein Name ",
+    { type: "blank", correctAnswer: "ist" },
+    " Lisa. Ich ",
+    { type: "blank", correctAnswer: "wohne" },
+    " in einem Haus. In meinem Zimmer ",
+    { type: "blank", correctAnswer: "gibt" },
+    " es das Bett, den Schrank und die Lampe. ",
+    { type: "blank", correctAnswer: "Die" },
+    " Lampe ",
+    { type: "blank", correctAnswer: "steht" },
+    " auf dem Tisch. Jeden Morgen ",
+    { type: "blank", correctAnswer: "mache" },
+    " ich mein Bett. Mein Bruder ",
+    { type: "blank", correctAnswer: "heißt" },
+    " Tim. Er ",
+    { type: "blank", correctAnswer: "hat" },
+    " ein großes Zimmer. In seinem Zimmer gibt es einen Computer und einen Stuhl. Tim ",
+    { type: "blank", correctAnswer: "spielt" },
+    " gern Videospiele. Unsere Eltern ",
+    { type: "blank", correctAnswer: "arbeiten" },
+    " in einer Firma. Wir ",
+    { type: "blank", correctAnswer: "lernen" },
+    " Deutsch in der Schule und ",
+    { type: "blank", correctAnswer: "machen" },
+    " jeden Tag Hausaufgaben.",
   ]}
 />
 
@@ -31,10 +60,11 @@ Trong phần này, bạn sẽ dùng các động từ: sein, aufstehen, essen, t
     "Am Nachmittag ", { type: "blank", correctAnswer: "treffe" }, " ich meine Freunde. Wir ", { type: "blank", correctAnswer: "fahren" }, " mit dem Bus in die Stadt. Mein bester Freund ", { type: "blank", correctAnswer: "nimmt" }, " immer seine Kamera mit und ", { type: "blank", correctAnswer: "macht" }, " viele Fotos. Wir ", { type: "blank", correctAnswer: "laufen" }, " durch die Straßen und ", { type: "blank", correctAnswer: "sehen" }, " schöne Gebäude.", "\n\n",
 
     "Am Abend ", { type: "blank", correctAnswer: "sehe" }, " ich mit meiner Familie einen Film. Meine Schwester ", { type: "blank", correctAnswer: "schläft" }, " oft früh ein, aber ich ", { type: "blank", correctAnswer: "bleibe" }, " lange wach und ", { type: "blank", correctAnswer: "lese" }, " noch ein Buch. Dann ", { type: "blank", correctAnswer: "gehe" }, " ich ins Bett."
-  ]}
+
+]}
 />
 
-## Teil 3: Mein Lieblingsessen 
+## Teil 3: Mein Lieblingsessen
 
 Trong phần này, bạn sẽ dùng các động từ: sein, wohnen, gehen, trinken, nehmen, bestellen, schmecken, essen, backen, haben, mischen.
 
@@ -45,7 +75,8 @@ Trong phần này, bạn sẽ dùng các động từ: sein, wohnen, gehen, trin
     "Ich ", { type: "blank", correctAnswer: "bestelle" }, " immer eine große Pizza mit Käse und Tomaten. Sie ", { type: "blank", correctAnswer: "schmeckt" }, " sehr gut. Mein Bruder ", { type: "blank", correctAnswer: "isst" }, " lieber Spaghetti.", "\n\n",
 
     "Am Wochenende ", { type: "blank", correctAnswer: "backe" }, " ich mit meiner Oma einen Kuchen. Sie ", { type: "blank", correctAnswer: "hat" }, " ein tolles Rezept. Wir ", { type: "blank", correctAnswer: "mischen" }, " Mehl, Zucker und Eier und ", { type: "blank", correctAnswer: "backen" }, " den Kuchen im Ofen. Danach ", { type: "blank", correctAnswer: "essen" }, " wir ein Stück mit Sahne."
-  ]}
+
+]}
 />
 
 ## Teil 4: Meine Familie
@@ -59,7 +90,8 @@ Trong phần này, bạn sẽ dùng các động từ: sein, haben, arbeiten, ge
     "Wir ", { type: "blank", correctAnswer: "essen" }, " jeden Abend zusammen. Mein Vater ", { type: "blank", correctAnswer: "kocht" }, " oft Spaghetti und meine Mutter ", { type: "blank", correctAnswer: "macht" }, " einen Salat. Danach ", { type: "blank", correctAnswer: "sehen" }, " wir einen Film oder ", { type: "blank", correctAnswer: "spielen" }, " ein Spiel.", "\n\n",
 
     "Am Wochenende ", { type: "blank", correctAnswer: "besuchen" }, " wir unsere Großeltern. Mein Opa ", { type: "blank", correctAnswer: "erzählt" }, " lustige Geschichten und meine Oma ", { type: "blank", correctAnswer: "bäckt" }, " einen Kuchen. Ich ", { type: "blank", correctAnswer: "helfe" }, " ihr gern in der Küche."
-  ]}
+
+]}
 />
 
 ## Teil 5: Mein Haus
@@ -73,22 +105,10 @@ Trong phần này, bạn sẽ dùng các động từ: sein, wohnen, haben, sehe
     "Im ersten Stock ", { type: "blank", correctAnswer: "sind" }, " mein Zimmer und das Zimmer meiner Schwester. Mein Zimmer ", { type: "blank", correctAnswer: "ist" }, " groß und hat ein Bett, einen Schreibtisch und einen Schrank. Am Fenster ", { type: "blank", correctAnswer: "steht" }, " eine Lampe.", "\n\n",
 
     "Im Garten ", { type: "blank", correctAnswer: "gibt" }, " es viele Blumen und einen Baum. Im Sommer ", { type: "blank", correctAnswer: "spielen" }, " wir dort Fußball. Ich ", { type: "blank", correctAnswer: "liebe" }, " mein Haus, weil es sehr gemütlich ", { type: "blank", correctAnswer: "ist" }, "."
-  ]}
+
+]}
 />
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Lonia" />
-
----
-
-### **Hỏi đáp ❓💬**
-
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
-
-import FacebookComments from '@site/src/components/Forms/FacebookComments/FacebookComments';
-
-<FacebookComments url='https://deutsch.vn/docs/A%20Niveau/A1%20Niveau/Übungen/Artikel%20/uebung-1-teil-2-der-die-das-in-präsens'/>
+<ExerciseAuthor author="Lonia" />
