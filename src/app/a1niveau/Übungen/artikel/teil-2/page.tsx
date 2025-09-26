@@ -129,8 +129,6 @@ export default function ArtikelTeil2Page() {
             <CardContent>
               <Lueckentext
                 textParts={section.textParts}
-                showHints={true}
-                showProgress={true}
               />
             </CardContent>
           </Card>
