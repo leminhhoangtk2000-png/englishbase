@@ -577,68 +577,163 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Übungen",
-      href: "/b1niveau/Übungen",
+      href: "/b1niveau/übungen",
       items: [
         {
-          title: "N-Deklination Übungen",
-          description: "Bài tập thực hành biến cách danh từ đặc biệt",
-          href: "/b1niveau/Übungen/n-deklination",
+          title: "Verben mit Präpositionen Übungen",
+          description: "Bài tập về động từ đi với giới từ",
+          href: "/b1niveau/übungen/verben-mit-praepositionen",
           items: [
-            {
-              title: "Tổng quan N-Deklination",
-              description: "Giới thiệu chung về N-Deklination",
-              href: "/b1niveau/Übungen/n-deklination/index",
-            },
             {
               title: "Teil 1 - Cơ bản",
-              description: "Bài tập cơ bản về N-Deklination",
-              href: "/b1niveau/Übungen/n-deklination/teil1",
+              href: "/b1niveau/übungen/verben-mit-praepositionen/teil1",
             },
             {
-              title: "Teil 2 - Nâng cao",
-              description: "Bài tập nâng cao về N-Deklination",
-              href: "/b1niveau/Übungen/n-deklination/teil2",
+              title: "Teil 2 - Fragewörter", 
+              href: "/b1niveau/übungen/verben-mit-praepositionen/teil2",
+            },
+            {
+              title: "Teil 3 - Fehlerkorrektur",
+              href: "/b1niveau/übungen/verben-mit-praepositionen/teil3",
             },
           ],
         },
         {
-          title: "Relativsätze Übungen",
+          title: "Relativsätze Übungen", 
           description: "Bài tập thực hành câu quan hệ",
-          href: "/b1niveau/Übungen/relativsatze",
+          href: "/b1niveau/übungen/relativsatze",
           items: [
             {
-              title: "Tổng quan Relativsätze",
-              description: "Giới thiệu về câu quan hệ",
-              href: "/b1niveau/Übungen/relativsatze/index",
+              title: "Teil 1 - Relativpronomen",
+              href: "/b1niveau/übungen/relativsatze/teil1",
             },
             {
-              title: "Teil 1 - Thực hành",
-              description: "Bài tập thực hành câu quan hệ",
-              href: "/b1niveau/Übungen/relativsatze/teil1",
+              title: "Teil 2 - Thực hành",
+              href: "/b1niveau/übungen/relativsatze/teil2",
+            },
+            {
+              title: "Teil 3 - Nâng cao",
+              href: "/b1niveau/übungen/relativsatze/teil3",
+            },
+            {
+              title: "Teil 4 - Ứng dụng",
+              href: "/b1niveau/übungen/relativsatze/teil4",
+            },
+            {
+              title: "Teil 5 - Tổng hợp",
+              href: "/b1niveau/übungen/relativsatze/teil5",
             },
           ],
         },
         {
-          title: "Konjunktiv II Übungen", 
-          description: "Bài tập thực hành cách diễn đạt ước muốn",
-          href: "/b1niveau/Übungen/konjunktiv-ii",
+          title: "Konjunktiv II Übungen",
+          description: "Bài tập thực hành cách diễn đạt ước muốn", 
+          href: "/b1niveau/übungen/konjunktiv-ii",
           items: [
             {
-              title: "Konjunktiv II - Lý thuyết và thực hành",
-              description: "Học và luyện tập Konjunktiv II",
-              href: "/b1niveau/Übungen/konjunktiv-ii/index",
+              title: "Teil 1 - Lý thuyết và thực hành",
+              href: "/b1niveau/übungen/konjunktiv-ii/teil1",
             },
           ],
         },
         {
           title: "Doppelkonjunktionen Übungen",
           description: "Bài tập về liên từ kép",
-          href: "/b1niveau/Übungen/doppelkonjunktionen",
+          href: "/b1niveau/übungen/doppelkonjunktionen",
+          items: [
+            {
+              title: "Teil 1 - entweder...oder",
+              href: "/b1niveau/übungen/doppelkonjunktionen/teil1",
+            },
+            {
+              title: "Teil 2 - sowohl...als auch", 
+              href: "/b1niveau/übungen/doppelkonjunktionen/teil2",
+            },
+            {
+              title: "Teil 3 - weder...noch",
+              href: "/b1niveau/übungen/doppelkonjunktionen/teil3",
+            },
+            {
+              title: "Teil 4 - nicht nur...sondern auch",
+              href: "/b1niveau/übungen/doppelkonjunktionen/teil4", 
+            },
+            {
+              title: "Teil 5 - zwar...aber",
+              href: "/b1niveau/übungen/doppelkonjunktionen/teil5",
+            },
+            {
+              title: "Teil 6 - Tổng hợp liên từ kép", 
+              href: "/b1niveau/übungen/doppelkonjunktionen/teil6",
+            },
+          ],
         },
         {
           title: "Passiv Erweitert Übungen",
-          description: "Bài tập về câu bị động mở rộng",
-          href: "/b1niveau/Übungen/passiv-erweitert",
+          description: "Bài tập về câu bị động mở rộng", 
+          href: "/b1niveau/übungen/passiv",
+          items: [
+            {
+              title: "Teil 1 - Passiv Perfekt",
+              href: "/b1niveau/übungen/passiv/teil1",
+            },
+            {
+              title: "Teil 2 - Passiv mit Modalverben",
+              href: "/b1niveau/übungen/passiv/teil2", 
+            },
+          ],
+        },
+        {
+          title: "Adjektive Übungen",
+          description: "Bài tập về tính từ và cấu trúc Infinitiv",
+          href: "/b1niveau/übungen/adjektive", 
+          items: [
+            {
+              title: "Teil 1 - Infinitiv mit zu",
+              href: "/b1niveau/übungen/adjektive/teil1",
+            },
+            {
+              title: "Teil 2 - Adjektivendungen",
+              href: "/b1niveau/übungen/adjektive/teil2", 
+            },
+            {
+              title: "Teil 3 - Partizip als Adjektiv", 
+              href: "/b1niveau/übungen/adjektive/teil3",
+            },
+          ],
+        },
+        {
+          title: "Präpositionen Übungen",
+          description: "Bài tập về các giới từ",
+          href: "/b1niveau/übungen/praepositionen",
+          items: [
+            {
+              title: "Teil 1 - trotz, wegen + Genitiv",
+              href: "/b1niveau/übungen/praepositionen/teil1",
+            },
+            {
+              title: "Teil 2 - Wechselpräpositionen",
+              href: "/b1niveau/übungen/praepositionen/teil2", 
+            },
+            {
+              title: "Teil 3 - Lokale Präpositionen",
+              href: "/b1niveau/übungen/praepositionen/teil3",
+            },
+          ],
+        },
+        {
+          title: "Artikelwörter und Pronomen Übungen",
+          description: "Bài tập về từ hạn định và đại từ",
+          href: "/b1niveau/übungen/artikelwoerter-pronomen",
+          items: [
+            {
+              title: "Teil 1 - dieser, jener, welcher",
+              href: "/b1niveau/übungen/artikelwoerter-pronomen/teil1",
+            },
+            {
+              title: "Teil 2 - Indefinitpronomen", 
+              href: "/b1niveau/übungen/artikelwoerter-pronomen/teil2",
+            },
+          ],
         },
       ],
     },
