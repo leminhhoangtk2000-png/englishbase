@@ -1,12 +1,13 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
-import { parseExerciseTables, hasExerciseTables } from "@/lib/exercise-parser";
-import { ExerciseRenderer } from "../_components/exercise-renderer";
-import { DocsTOC } from "../_components/docs-toc";
+import { MDXComponentsRenderer } from '@/components/mdx-components-renderer';
+import { DocsTOC } from "@/components/docs-toc-client";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import fs from "fs";
+import path from "path";
 
 interface DocPageProps {
   params: Promise<{
@@ -94,15 +95,10 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
-  // If we have slug, handle different cases
-  const [section, ...rest] = slug;
-  
-  if (!section) {
-    notFound();
-  }
-
-  // Case 1: Only section (e.g., /a2niveau/vokabular)
-  if (rest.length === 0) {
+  // Handle different slug lengths
+  if (slug.length === 1) {
+    // Show section overview (e.g., /a2niveau/vokabular)
+    const [section] = slug;
     const niveauContent = getNiveauContent('a2niveau');
     const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
     
@@ -123,11 +119,11 @@ export default async function DocPage({ params }: DocPageProps) {
               {currentSection.title}
             </h1>
             <p className="text-lg text-muted-foreground">
-              {currentSection.itemCount} bài học
+              {currentSection.itemCount} chủ đề
             </p>
           </div>
           
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {currentSection.items.map((item: any) => (
               <Link
                 key={item.slug}
@@ -157,157 +153,262 @@ export default async function DocPage({ params }: DocPageProps) {
     );
   }
 
-  // Case 2: Section with subsection - handle different levels
-  const articleSlug = rest.join('/');
-  
-  // Try to find markdown content - handle folder structure
-  let markdownContent;
-  
-  // Handle 3-level paths (e.g., /a2niveau/vokabular/1-willkommen-a2/01-grundwortschatz)
-  if (rest.length === 2 && section === 'vokabular') {
-    const [folderSlug, fileSlug] = rest;
-    const folderMapping: { [key: string]: string } = {
-      '1-willkommen-a2': '1. Willkommen A2',
-      '2-leben-und-lernen': '2. Leben und Lernen', 
-      '3-familiengeschichten': '3. Familiengeschichten',
-      '4-unterwegs': '4. Unterwegs',
-      '5-station-1-a2': '5. Station 1-A2',
-      '6-freizeit-und-hobby': '6. Freizeit und Hobby',
-      '7-medien-im-alltag': '7. Medien im Alltag',
-      '8-ausgehen-leute-treffen': '8. Ausgehen Leute treffen',
-      '9-station-2-a2': '9. Station 2-A2',
-      '10-vom-land-in-die-stadt': '10. Vom Land in die Stadt',
-      '11-kultur-erleben': '11. Kultur erleben',
-    };
+  if (slug.length === 2) {
+    // Could be folder overview (e.g., /a2niveau/vokabular/01-start-auf-deutsch) or direct article
+    const [section, folderSlug] = slug;
+    const niveauContent = getNiveauContent('a2niveau');
+    const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
     
-    // File mapping for actual file names in the folders
-    const fileMapping: { [key: string]: { [key: string]: string } } = {
-      '1-willkommen-a2': {
-        '01-grundwortschatz': '1. Uhrzeiten.md',
-        '02-begrussung': '2. Die Brücke von A1 zu A2.md',
-        '03-fit-a2': '3. Fit fur A2.md',
-        'verb-adj-adv': 'Verb-Adj-Adv 1-A2.md'
-      },
-      '2-leben-und-lernen': {
-        '01-alltag': '1. Leben und lernen in Europa.md',
-        '02-lernen': '2. Die neue Arbeismigration.md'
-      },
-      '3-familiengeschichten': {
-        '01-familienmitglieder': '1. Familie Saalfeld.md',
-        '02-beziehungen': '2. Meine Verwandten.md'
-      },
-      '4-unterwegs': {
-        '01-verkehrsmittel': '1. Unterwegs.md'
-      },
-      '5-station-1-a2': {
-        '01-review': '1. Berufsbilder 1-A2.md'
-      },
-      '6-freizeit-und-hobby': {
-        '01-activities': '1. Hobbys.md'
-      },
-      '7-medien-im-alltag': {
-        '01-medien': '1. Medien im Alltag.md'
-      },
-      '8-ausgehen-leute-treffen': {
-        '01-ausgehen': '1. Ausgehen - nicht nur am Wochenende.md'
-      },
-      '9-station-2-a2': {
-        '01-review-advanced': '1. Berufbilder 2-A2.md'
-      },
-      '10-vom-land-in-die-stadt': {
-        '01-stadt-land': '1. Stadtleben oder Landluft.md'
-      },
-      '11-kultur-erleben': {
-        '01-kultur': '1. Kulturhauptstädte Europas.md'
-      }
-    };
-    
-    const folderName = folderMapping[folderSlug];
-    if (folderName) {
-      // Check if we have specific file mapping
-      if (fileMapping[folderSlug] && fileMapping[folderSlug][fileSlug]) {
-        const fileName = fileMapping[folderSlug][fileSlug];
-        console.log(`[DEBUG] Trying to load file: ${fileName} from folder: ${folderName}`);
-        markdownContent = getMarkdownBySlug('a2niveau', `vokabular/${folderName}`, fileName);
-      } else {
-        // Try direct file mapping
-        console.log(`[DEBUG] Trying direct file mapping: ${fileSlug}`);
-        markdownContent = getMarkdownBySlug('a2niveau', `vokabular/${folderName}`, fileSlug);
-      }
+    if (!currentSection) {
+      notFound();
     }
+    
+    // First try to get direct markdown content (for sections like grammatik)
+    const directMarkdownContent = getMarkdownBySlug('a2niveau', section, folderSlug);
+    
+    if (directMarkdownContent) {
+      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
+      const hasExerciseTable = directMarkdownContent.content.includes('<ExerciseTable');
+      const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
+      const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
+      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz;
+      const isMDX = directMarkdownContent.filePath && directMarkdownContent.filePath.endsWith('.mdx');
+      
+      console.log('[Server] MDX Detection:', { 
+        filePath: directMarkdownContent.filePath, 
+        isMDX, 
+        contentLength: directMarkdownContent.content.length, 
+        hasExerciseTable,
+        hasFormingQuestions,
+        hasMatchingQuiz,
+        hasInteractiveComponents
+      });
+      
+      // Direct article found, render it
+      const htmlContent = await markdownToHtml(directMarkdownContent.content);
+      const toc = extractTableOfContents(directMarkdownContent.content);
+      const breadcrumbItems = [section];
+
+      return (
+        <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
+          <div className="mx-auto w-full min-w-0">
+            <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+              <Link href="/a2niveau" className="hover:text-foreground">A2 Niveau</Link>
+              {breadcrumbItems.map((item: any, index: number) => (
+                <React.Fragment key={item}>
+                  <span className="font-medium text-foreground">/</span>
+                  {index === breadcrumbItems.length - 1 ? (
+                    <div className="font-medium text-foreground capitalize">{item}</div>
+                  ) : (
+                    <Link href={`/a2niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                      {item}
+                    </Link>
+                  )}
+                </React.Fragment>
+              ))}
+              <span className="font-medium text-foreground">/</span>
+              <div className="font-medium text-foreground">{directMarkdownContent.meta?.title || 'Untitled'}</div>
+            </div>
+            <div className="space-y-2">
+              <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
+                {directMarkdownContent.meta?.title || 'Untitled'}
+              </h1>
+              {directMarkdownContent.meta?.description && (
+                <p className="text-lg text-muted-foreground">{directMarkdownContent.meta.description}</p>
+              )}
+              {directMarkdownContent.meta?.tags && directMarkdownContent.meta.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {directMarkdownContent.meta.tags.map((tag: any) => (
+                    <Badge key={tag} variant="outline">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Separator className="my-4" />
+            <div className="prose max-w-none">
+              {(isMDX && hasInteractiveComponents) ? (
+                <MDXComponentsRenderer content={directMarkdownContent.content} />
+              ) : (
+                <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              )}
+            </div>
+          </div>
+          <div className="hidden text-sm lg:block">
+            <div className="sticky top-16 -mt-10 pt-10">
+              <DocsTOC toc={toc} />
+            </div>
+          </div>
+        </main>
+      );
+    }
+    
+    // If no direct markdown found, try to find folder/item structure (for sections like vokabular)
+    const currentItem = currentSection.items.find((item: any) => {
+      // Extract slug from href (e.g., "/a2niveau/vokabular/05-station-1" -> "05-station-1")
+      if (!item.href) return false;
+      const itemSlug = item.href.split('/').pop();
+      return itemSlug === folderSlug;
+    });
+    
+    if (!currentItem) {
+      notFound();
+    }
+    
+    // If this item has sub-items, show them
+    if (currentItem.items && currentItem.items.length > 0) {
+      return (
+        <main className="relative py-6 lg:py-8">
+          <div className="mx-auto w-full min-w-0">
+            <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+              <Link href="/a2niveau" className="hover:text-foreground">A2 Niveau</Link>
+              <span className="font-medium text-foreground">/</span>
+              <Link href={`/a2niveau/${section}`} className="hover:text-foreground capitalize">{currentSection.title}</Link>
+              <span className="font-medium text-foreground">/</span>
+              <div className="font-medium text-foreground">{currentItem.title}</div>
+            </div>
+            <div className="space-y-2 mb-8">
+              <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
+                {currentItem.title}
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                {currentItem.description}
+              </p>
+            </div>
+            
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {currentItem.items.map((subItem: any) => (
+                <Link
+                  key={subItem.href}
+                  href={subItem.href}
+                  className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
+                >
+                  <h3 className="font-medium group-hover:text-primary">
+                    {subItem.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </main>
+      );
+    }
+    
+    // Otherwise, try to get markdown content for direct article
+    const markdownContent = getMarkdownBySlug('a2niveau', section, folderSlug);
+    if (!markdownContent) {
+      notFound();
+    }
+
+    const htmlContent = await markdownToHtml(markdownContent.content);
+    const toc = extractTableOfContents(markdownContent.content);
+    const breadcrumbItems = [section];
+
+    return (
+      <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
+        <div className="mx-auto w-full min-w-0">
+          <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+            <Link href="/a2niveau" className="hover:text-foreground">A2 Niveau</Link>
+            {breadcrumbItems.map((item: any, index: number) => (
+              <React.Fragment key={item}>
+                <span className="font-medium text-foreground">/</span>
+                {index === breadcrumbItems.length - 1 ? (
+                  <div className="font-medium text-foreground capitalize">{item}</div>
+                ) : (
+                  <Link href={`/a2niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                    {item}
+                  </Link>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="space-y-2">
+            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight font-headline">
+              {markdownContent.meta?.title || 'Untitled'}
+            </h1>
+            {markdownContent.meta?.description && (
+              <p className="text-xl text-muted-foreground">
+                {markdownContent.meta.description}
+              </p>
+            )}
+          </div>
+          <Separator className="my-4" />
+          <div className="mdx">
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          </div>
+        </div>
+        <div className="hidden text-sm lg:block">
+          <div className="sticky top-16 -mt-10 pt-10">
+            <DocsTOC toc={toc} />
+          </div>
+        </div>
+      </main>
+    );
   }
+
+  // Note: NextJS automatically handles dedicated page components over catch-all routes
+  // No need to manually redirect - the direct page components will be used automatically
+
+  // Get specific markdown content for nested cases
+  let markdownContent;
+  let breadcrumbItems: string[] = [];
   
-  // Only try other options if we haven't found content yet
-  if (!markdownContent) {
-    // Try direct file first
-    markdownContent = getMarkdownBySlug('a2niveau', section, articleSlug);
+  if (slug.length === 3) {
+    // Nested content (e.g., /a2niveau/vokabular/01-start-auf-deutsch/01-start)
+    const [section, folderSlug, fileSlug] = slug;
     
-    // If not found, try with folder mapping for Vokabular section
-    if (!markdownContent && section === 'vokabular') {
-      // Map URL slug to actual folder name
-      const folderMapping: { [key: string]: string } = {
-        '1-willkommen-a2': '1. Willkommen A2',
-        '2-leben-und-lernen': '2. Leben und Lernen', 
-        '3-familiengeschichten': '3. Familiengeschichten',
-        '4-unterwegs': '4. Unterwegs',
-        '5-station-1-a2': '5. Station 1-A2',
-        '6-freizeit-und-hobby': '6. Freizeit und Hobby',
-        '7-medien-im-alltag': '7. Medien im Alltag',
-        '8-ausgehen-leute-treffen': '8. Ausgehen Leute treffen',
-        '9-station-2-a2': '9. Station 2-A2',
-        '10-vom-land-in-die-stadt': '10. Vom Land in die Stadt',
-        '11-kultur-erleben': '11. Kultur erleben',
-      };
-      
-      const folderName = folderMapping[articleSlug];
-      if (folderName) {
-        markdownContent = getMarkdownBySlug('a2niveau', `vokabular/${folderName}`, 'index');
-      }
+    // First try to get content from folder/file
+    markdownContent = getMarkdownBySlug('a2niveau', section, `${folderSlug}/${fileSlug}`);
+    
+    // If not found, try to get folder index
+    if (!markdownContent) {
+      markdownContent = getMarkdownBySlug('a2niveau', section, `${folderSlug}/index`);
     }
     
-    // If still not found, try with folder mapping for Vokabular Thema section  
-    if (!markdownContent && section === 'vokabular-thema') {
-      const folderMapping: { [key: string]: string } = {
-        '100-adj-pho-bien-a2': '100 adj pho bien A2',
-        '100-adv-pho-bien-a2': '100 adv pho bien A2',
-        '100-verb-pho-bien-a2': '100 verb pho bien A2',
-        '1-monaten': '1. Monaten',
-      };
-      
-      const folderName = folderMapping[articleSlug];
-      if (folderName) {
-        // Try to get index.md from the folder
-        markdownContent = getMarkdownBySlug('a2niveau', `Vokabular Thema/${folderName}`, 'index');
-        
-        // If index.md doesn't exist, try the .md file directly
-        if (!markdownContent && articleSlug === '1-monaten') {
-          markdownContent = getMarkdownBySlug('a2niveau', 'Vokabular Thema', '1. Monaten');
-        }
-      }
-    }
+    breadcrumbItems = [section, folderSlug];
+  } else if (slug.length === 4) {
+    // Deep nested content (e.g., /a2niveau/vokabular/01-start-auf-deutsch/01-start)
+    const [section, folderSlug, , fileSlug] = slug;
+    markdownContent = getMarkdownBySlug('a2niveau', section, `${folderSlug}/${fileSlug}`);
+    breadcrumbItems = [section, folderSlug];
   }
   
   if (!markdownContent) {
     notFound();
   }
 
-  // Check if content has ExerciseTable components and parse them
-  let processedContent = markdownContent.content;
-  
-  // Remove import statements from MDX content
-  processedContent = processedContent.replace(/import\s+{[^}]+}\s+from\s+"[^"]+";?\s*/g, '');
-  
-  if (hasExerciseTables(markdownContent.content)) {
-    processedContent = parseExerciseTables(processedContent);
-  }
-
-  const htmlContent = await markdownToHtml(processedContent);
+  // Check if this is an MDX file and process components
+  const isMDX = markdownContent.filePath && markdownContent.filePath.endsWith('.mdx');
+  console.log('[Server] MDX Detection:', { 
+    filePath: markdownContent.filePath, 
+    isMDX, 
+    contentLength: markdownContent.content.length,
+    hasExerciseTable: markdownContent.content.includes('ExerciseTable'),
+    hasFormingQuestions: markdownContent.content.includes('FormingQuestions'),
+    hasMatchingQuiz: markdownContent.content.includes('MatchingQuiz'),
+    hasInteractiveComponents: markdownContent.content.includes('ExerciseTable') || markdownContent.content.includes('FormingQuestions') || markdownContent.content.includes('MatchingQuiz')
+  });
+  console.log('[Server] Raw content passed to client:', markdownContent.content.substring(0, 300));
   const toc = extractTableOfContents(markdownContent.content);
 
-  // Create breadcrumb items dynamically
-  const breadcrumbItems = [section];
-  if (rest.length > 0) {
-    breadcrumbItems.push(...rest);
+  let contentElement;
+  let exerciseComponents: any[] = [];
+
+  if (isMDX) {
+    // For MDX files, pass raw content to client-side renderer which will process both markdown and components
+    contentElement = (
+      <MDXComponentsRenderer content={markdownContent.content} />
+    );
+  } else {
+    // Regular markdown processing
+    const htmlContent = await markdownToHtml(markdownContent.content);
+    contentElement = (
+      <div 
+        className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
+    );
   }
 
   return (
@@ -348,14 +449,9 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
         </div>
         <Separator className="my-4 md:my-6" />
-        {hasExerciseTables(markdownContent.content) ? (
-          <ExerciseRenderer htmlContent={htmlContent} />
-        ) : (
-          <div 
-            className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
-        )}
+        <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline">
+          {contentElement}
+        </div>
       </div>
       <div className="hidden text-sm lg:block">
         <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-y-auto py-12 pl-4">
