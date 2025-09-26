@@ -309,8 +309,15 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
   const [htmlContent, setHtmlContent] = useState('');
   const [isProcessing, setIsProcessing] = useState(true);
   const [componentsCount, setComponentsCount] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+    
     // Processing content for interactive components
     
     try {
@@ -347,7 +354,8 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     // Content processing complete
     
     // Extract and parse ExerciseTable, Lueckentext, MatchingQuiz, and FormingQuestions components (JSX format)
-    const exerciseTableRegex = /<ExerciseTable\s+([\s\S]*?)exercises=\{\[([\s\S]*?)\]\}([\s\S]*?)\s*\/>/g;
+    // Updated regex to match single-line format
+    const exerciseTableRegex = /<ExerciseTable\s+title="([^"]*?)"\s+subtitle="([^"]*?)"\s+exercises=\{(\[[\s\S]*?\])\}\s*\/>/g;
     const lueckentextRegex = /<Lueckentext\s+([^>]*?)textParts=\{\[([\s\S]*?)\]\}([^>]*?)\s*\/>/g;
     const matchingQuizRegex = /<MatchingQuiz\s+([\s\S]*?)\s*\/>/g;
     const formingQuestionsRegex = /<FormingQuestions\s+([\s\S]*?)\s*\/>/g;
@@ -363,21 +371,18 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     formingQuestionsRegex.lastIndex = 0;
 
     while ((match = exerciseTableRegex.exec(cleanContent)) !== null) {
-      const [fullMatch, beforeExercises, exercisesStr] = match;
+      const [fullMatch, title, subtitle, exercisesStr] = match;
       
       console.log('[MDX Client] Found ExerciseTable:', { 
         fullMatch: fullMatch.substring(0, 200) + '...', 
-        beforeExercises, 
+        title, 
+        subtitle,
         exercisesStr: exercisesStr.substring(0, 200) + '...' 
       });
       
       try {
-        // Parse title and subtitle from beforeExercises
-        const titleMatch = beforeExercises.match(/title="([^"]+)"/);
-        const subtitleMatch = beforeExercises.match(/subtitle="([^"]+)"/);
-        
-        const title = titleMatch ? titleMatch[1] : 'Exercise';
-        const subtitle = subtitleMatch ? subtitleMatch[1] : undefined;
+        // Title and subtitle are now directly captured by regex
+        // title and subtitle are already extracted from the match
         
         // Parse exercises
         const exercises = parseExercisesArray(exercisesStr);
@@ -534,7 +539,12 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
       console.error('[MDX Client] Error processing content:', error);
       setIsProcessing(false);
     }
-  }, [content]);
+  }, [content, isMounted]);
+
+  // Don't render anything until mounted to prevent hydration errors
+  if (!isMounted) {
+    return null;
+  }
 
   // Show processing state for very brief moment
   if (isProcessing) {
