@@ -17,7 +17,7 @@ Bài tập về mệnh đề phụ và liên từ trong tiếng Đức - **Chủ
 ### 7 bài tập chính:
 
 1. **Teil 1: Temporalsätze** - Mệnh đề thời gian (wenn, als, während...)
-2. **Teil 2: Kausalsätze** - Mệnh đề nguyên nhân (weil, da...)  
+2. **Teil 2: Kausalsätze** - Mệnh đề nguyên nhân (weil, da...)
 3. **Teil 3: Konditionalsätze** - Mệnh đề điều kiện (wenn, falls...)
 4. **Teil 4: Relativsätze** - Mệnh đề quan hệ (der, die, das...)
 5. **Teil 5: Finalsätze** - Mệnh đề mục đích (damit, um...zu)

@@ -36,12 +36,14 @@ Bài tập về thì Plusquamperfekt - **Thì phức tạp nhất trong tiếng 
 - 🔴 **Thường đi với Präteritum hoặc Perfekt**
 
 **Công thức:**
+
 - `hatte + Partizip II` (cho hầu hết động từ)
 - `war + Partizip II` (cho động từ di chuyển và sein)
 
 **Ví dụ:**
-- *Nachdem er gegessen hatte, ging er spazieren.*
-- *Als ich ankam, war sie schon gegangen.*
+
+- _Nachdem er gegessen hatte, ging er spazieren._
+- _Als ich ankam, war sie schon gegangen._
 
 ---
 

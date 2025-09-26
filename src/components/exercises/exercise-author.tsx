@@ -36,3 +36,19 @@ export function ExerciseAuthor({ name = 'Tác giả bài tập', bio, children }
     </Card>
   );
 }
+
+interface ExerciseHelpProps {
+  children?: React.ReactNode;
+}
+
+export function ExerciseHelp({ children }: ExerciseHelpProps) {
+  return (
+    <Card className="w-full max-w-4xl mx-auto my-6 bg-amber-50 dark:bg-amber-950/20">
+      <CardContent className="p-4">
+        <div className="text-sm text-amber-800 dark:text-amber-200">
+          {children}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}

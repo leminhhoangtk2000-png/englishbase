@@ -17,7 +17,7 @@ Bài tập về thì quá khứ Perfekt và Präteritum - **Học phân biệt v
 ### 5 bài tập chính:
 
 1. **Teil 1: Perfekt Grundlagen** - Cơ bản về thì Perfekt
-2. **Teil 2: Präteritum Formen** - Các dạng của thì Präteritum  
+2. **Teil 2: Präteritum Formen** - Các dạng của thì Präteritum
 3. **Teil 3: Perfekt vs Präteritum** - So sánh và phân biệt 2 thì
 4. **Teil 4: Irregular Verbs** - Động từ bất quy tắc
 5. **Teil 5: Advanced Exercises** - Bài tập nâng cao

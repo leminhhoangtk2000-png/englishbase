@@ -17,7 +17,7 @@ Bài tập về đuôi tính từ trong tiếng Đức - Học cách chia đuôi
 ### 4 bài tập chính:
 
 1. **Teil 1: Nach bestimmtem Artikel** - Đuôi tính từ sau mạo từ xác định
-2. **Teil 2: Nach unbestimmtem Artikel** - Đuôi tính từ sau mạo từ không xác định  
+2. **Teil 2: Nach unbestimmtem Artikel** - Đuôi tính từ sau mạo từ không xác định
 3. **Teil 3: Nach Nullartikel** - Đuôi tính từ khi không có mạo từ
 4. **Teil 4: Gemischte Übungen** - Bài tập tổng hợp
 

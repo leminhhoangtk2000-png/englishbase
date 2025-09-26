@@ -23,6 +23,11 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
   const [userAnswers, setUserAnswers] = useState<{ [key: number]: string[] }>({});
   const [checkedAnswers, setCheckedAnswers] = useState<{ [key: number]: boolean }>({});
   const [showResults, setShowResults] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Get number of blanks in a sentence
   const getBlankCount = (german: string) => {
@@ -84,6 +89,24 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
     return `${correctCount}/${exercises.length}`;
   };
 
+  if (!mounted) {
+    return (
+      <Card className="w-full max-w-4xl mx-auto my-6">
+        <CardHeader>
+          <CardTitle className="text-xl font-bold">{title}</CardTitle>
+          {subtitle && (
+            <p className="text-sm text-muted-foreground">{subtitle}</p>
+          )}
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="text-center p-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <Card className="w-full max-w-4xl mx-auto my-6">
       <CardHeader>
@@ -98,7 +121,7 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
             const isCorrect = checkedAnswers[exercise.id];
             const sentenceParts = parseSentence(exercise.german);
             const blankCount = getBlankCount(exercise.german);
-            const currentAnswers = userAnswers[exercise.id] || new Array(blankCount).fill('');
+            const currentAnswers = userAnswers[exercise.id] || Array.from({ length: blankCount }, () => '');
             const correctAnswers = getCorrectAnswers(exercise);
             
             return (
