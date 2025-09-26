@@ -548,6 +548,11 @@ export const docsConfig: DocsConfig = {
       href: "/a2niveau/Übungen",
       items: [
         {
+          title: "Bài tập ngữ pháp A2",
+          description: "Tổng quan về bài tập ngữ pháp A2 và hướng dẫn học tập nâng cao",
+          href: "/a2niveau/Übungen/0-bai-tap-ngu-phap-a2",
+        },
+        {
           title: "Adjektivendungen",
           description: "Bài tập về đuôi tính từ sau các mạo từ khác nhau • 4 bài tập",
           href: "/a2niveau/Übungen/adjektivendungen",

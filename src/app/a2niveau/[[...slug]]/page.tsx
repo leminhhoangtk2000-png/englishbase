@@ -13,7 +13,10 @@ interface DocPageProps {
 }
 
 export default async function DocPage({ params }: DocPageProps) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  
+  // Decode URL components to handle German characters like Ü in Übungen
+  const slug = rawSlug ? rawSlug.map(segment => decodeURIComponent(segment)) : rawSlug;
 
   // If no slug, show main niveau page
   if (!slug || slug.length === 0) {
