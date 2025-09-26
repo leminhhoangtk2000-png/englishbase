@@ -118,8 +118,9 @@ export default async function DocPage({ params }: DocPageProps) {
   if (slug.length === 1) {
     // Show section overview (e.g., /b1niveau/übungen)
     const [section] = slug;
+    const decodedSection = decodeURIComponent(section);
     const niveauContent = getNiveauContent('b1niveau');
-    const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
+    const currentSection = niveauContent.sections.find((s: any) => s.slug === decodedSection);
     
     if (!currentSection) {
       notFound();
@@ -175,15 +176,17 @@ export default async function DocPage({ params }: DocPageProps) {
   if (slug.length === 2) {
     // Could be folder overview (e.g., /b1niveau/übungen/adjektive) or direct article
     const [section, folderSlug] = slug;
+    const decodedSection = decodeURIComponent(section);
+    const decodedFolderSlug = decodeURIComponent(folderSlug);
     const niveauContent = getNiveauContent('b1niveau');
-    const currentSection = niveauContent.sections.find((s: any) => s.slug === section);
+    const currentSection = niveauContent.sections.find((s: any) => s.slug === decodedSection);
     
     if (!currentSection) {
       notFound();
     }
     
     // First try to get direct markdown content (for sections like grammatik)
-    const directMarkdownContent = getMarkdownBySlug('b1niveau', section, folderSlug);
+    const directMarkdownContent = getMarkdownBySlug('b1niveau', decodedSection, decodedFolderSlug);
     
     if (directMarkdownContent) {
       // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
@@ -315,14 +318,14 @@ export default async function DocPage({ params }: DocPageProps) {
     }
     
     // Otherwise, try to get markdown content for direct article
-    const markdownContent = getMarkdownBySlug('b1niveau', section, folderSlug);
+    const markdownContent = getMarkdownBySlug('b1niveau', decodedSection, decodedFolderSlug);
     if (!markdownContent) {
       notFound();
     }
 
     const htmlContent = await markdownToHtml(markdownContent.content);
     const toc = extractTableOfContents(markdownContent.content);
-    const breadcrumbItems = [section];
+    const breadcrumbItems = [decodedSection];
 
     return (
       <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
@@ -376,21 +379,27 @@ export default async function DocPage({ params }: DocPageProps) {
   if (slug.length === 3) {
     // Nested content (e.g., /b1niveau/übungen/adjektive/teil1)
     const [section, folderSlug, fileSlug] = slug;
+    const decodedSection = decodeURIComponent(section);
+    const decodedFolderSlug = decodeURIComponent(folderSlug);
+    const decodedFileSlug = decodeURIComponent(fileSlug);
     
     // First try to get content from folder/file
-    markdownContent = getMarkdownBySlug('b1niveau', section, `${folderSlug}/${fileSlug}`);
+    markdownContent = getMarkdownBySlug('b1niveau', decodedSection, `${decodedFolderSlug}/${decodedFileSlug}`);
     
     // If not found, try to get folder index
     if (!markdownContent) {
-      markdownContent = getMarkdownBySlug('b1niveau', section, `${folderSlug}/index`);
+      markdownContent = getMarkdownBySlug('b1niveau', decodedSection, `${decodedFolderSlug}/index`);
     }
     
-    breadcrumbItems = [section, folderSlug];
+    breadcrumbItems = [decodedSection, decodedFolderSlug];
   } else if (slug.length === 4) {
     // Deep nested content (e.g., /b1niveau/übungen/adjektive/teil1/subtopic)
     const [section, folderSlug, , fileSlug] = slug;
-    markdownContent = getMarkdownBySlug('b1niveau', section, `${folderSlug}/${fileSlug}`);
-    breadcrumbItems = [section, folderSlug];
+    const decodedSection = decodeURIComponent(section);
+    const decodedFolderSlug = decodeURIComponent(folderSlug);
+    const decodedFileSlug = decodeURIComponent(fileSlug);
+    markdownContent = getMarkdownBySlug('b1niveau', decodedSection, `${decodedFolderSlug}/${decodedFileSlug}`);
+    breadcrumbItems = [decodedSection, decodedFolderSlug];
   }
   
   if (!markdownContent) {
