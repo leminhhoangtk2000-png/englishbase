@@ -1,70 +1,161 @@
 ---
-title: "Teil 3: Chuyển câu thành W-Fragen"
-description: "Luyện tập chuyển câu khẳng định thành câu hỏi W-Fragen trong tiếng Đức"
-level: "A1"
-topic: "Übungen"
-order: 3
-difficulty: "beginner"
-tags: ["w-fragen", "questions", "forming", "exercises"]
+id: uebung-2-teil-3-w-fragen
+title: 3. Chuyển câu thành W-Fragen
+description: Luyện tập chuyển câu thành câu hỏi W-Fragen trong tiếng Đức.
 ---
 
-import { FormingQuestionsSimple } from "@/components/exercises/forming-questions-simple";
-import { teil3ExerciseData } from "@/data/teil3-exercises";
-import { ExerciseAuthor } from "@/components/exercises/exercise-author";
+import FormingQuestions from "@/components/exercises/FormingQuestions";
+import AuthorCredit from "@/components/exercises/author-credit";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập: Chuyển câu thành W-Fragen
 
-Luyện tập chuyển câu khẳng định thành câu hỏi W-Fragen trong tiếng Đức.
+## Teil 3: Chuyển các câu sau thành câu hỏi W-Fragen
 
-<div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-2xl mx-auto my-6">
-  💡 **Mẹo:** Phần được <mark className="bg-yellow-200 px-1 rounded">highlight màu vàng</mark> trong câu là phần bạn cần đặt câu hỏi cho!
+Hãy chuyển các câu khẳng định dưới đây thành câu hỏi W-Fragen.
+
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
 </div>
 
----
+### Phần 1: Câu 1-5
 
-## Phần 1: Câu 1-5
-
-<FormingQuestionsSimple
+<FormingQuestions
   title="Phần 1: Câu 1-5"
-  exercises={teil3ExerciseData.sections[0].exercises}
+  statements={[
+    "Sie lernt Deutsch in der Schule.",
+    "Er kauft ein Buch <mark>im Supermarkt</mark>.",
+    "Wir fahren im Sommer <mark>nach Frankreich</mark>.",
+    "Du spielst Fußball <mark>mit deinen Freunden</mark>.",
+    "Der Zug fährt <mark>um 9 Uhr</mark> ab.",
+  ]}
+  correctQuestions={[
+    "Wo lernt sie Deutsch?",
+    "Wo kauft er ein Buch?",
+    "Wohin fahren wir im Sommer?",
+    "Mit wem spielst du Fußball?",
+    "Wann fährt der Zug ab?",
+  ]}
 />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
-## Phần 2: Câu 6-10
+### Phần 2: Câu 6-10
 
-<FormingQuestionsSimple
+<FormingQuestions
   title="Phần 2: Câu 6-10"
-  exercises={teil3ExerciseData.sections[1].exercises}
+  statements={[
+    "Mein Bruder isst gern <mark>Spaghetti</mark>.",
+    "Sie liest <mark>ein interessantes Buch</mark>.",
+    "Peter kommt <mark>aus Deutschland</mark>.",
+    "Ich stehe <mark>um 6 Uhr</mark> auf.",
+    "Ihr seht einen Film <mark>im Kino</mark>.",
+  ]}
+  correctQuestions={[
+    "Was isst mein Bruder gern?",
+    "Was liest sie?",
+    "Woher kommt Peter?",
+    "Wann stehe ich auf?",
+    "Wo seht ihr einen Film?",
+  ]}
 />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
-## Phần 3: Câu 11-15
+### Phần 3: Câu 11-15
 
-<FormingQuestionsSimple
+<FormingQuestions
   title="Phần 3: Câu 11-15"
-  exercises={teil3ExerciseData.sections[2].exercises}
+  statements={[
+    "Sie wohnt <mark>in einer großen Wohnung</mark>.",
+    "Ich trinke morgens <mark>Kaffee</mark>.",
+    "Meine Eltern arbeiten <mark>in einer Bank</mark>.",
+    "Du fährst <mark>mit dem Bus</mark> zur Schule.",
+    "Der Lehrer erklärt <mark>die Aufgabe</mark>.",
+  ]}
+  correctQuestions={[
+    "Wo wohnt sie?",
+    "Was trinke ich morgens?",
+    "Wo arbeiten deine Eltern?",
+    "Wie fährst du zur Schule?",
+    "Was erklärt der Lehrer?",
+  ]}
 />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
-## Phần 4: Câu 16-20
+### Phần 4: Câu 16-20
 
-<FormingQuestionsSimple
+<FormingQuestions
   title="Phần 4: Câu 16-20"
-  exercises={teil3ExerciseData.sections[3].exercises}
+  statements={[
+    "Wir gehen am Wochenende <mark>ins Museum</mark>.",
+    "<mark>Dein Freund</mark> hilft dir bei den Hausaufgaben.",
+    "Sie besucht ihre Großeltern <mark>am Sonntag</mark>.",
+    "Er schreibt einen Brief <mark>an seine Mutter</mark>.",
+    "Ich höre gern <mark>klassische</mark> Musik.",
+  ]}
+  correctQuestions={[
+    "Wohin gehen wir am Wochenende?",
+    "Wer hilft dir bei den Hausaufgaben?",
+    "Wann besucht sie ihre Großeltern?",
+    "Wem schreibt er einen Brief?",
+    "Welche Musik hörst du gern?",
+  ]}
 />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
-## Phần 5: Câu 21-25
+### Phần 5: Câu 21-25
 
-<FormingQuestionsSimple
+<FormingQuestions
   title="Phần 5: Câu 21-25"
-  exercises={teil3ExerciseData.sections[4].exercises}
+  statements={[
+    "Du lernst <mark>mit deiner Schwester</mark>.",
+    "Er fährt <mark>mit dem Auto</mark> zur Arbeit.",
+    "Wir treffen uns <mark>um 10 Uhr</mark>.",
+    "Sie kocht <mark>ein leckeres Essen</mark>.",
+    "Mein Hund spielt <mark>im Garten</mark>.",
+  ]}
+  correctQuestions={[
+    "Mit wem lernst du?",
+    "Wie fährt er zur Arbeit?",
+    "Wann treffen wir uns?",
+    "Was kocht sie?",
+    "Wo spielt mein Hund?",
+  ]}
 />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
-<ExerciseAuthor author="Lonia" />
+### **Tác giả ✍️**
+
+<AuthorCredit author="Lonia" />
+
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
+
+### **Hỏi đáp ❓💬**
+
+:::tip VITAMIN ĐỘNG LỰC 🌱
+Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
+:::
+
+<ExerciseComments exerciseId="a1-ubungsfragen-teil-3" url="/a1niveau/Übungen/ubungsfragen/teil-3" />
+
+<Comments url="/a1niveau/Übungen/ubungsfragen/teil-3" exerciseId="a1-ubungsfragen-teil-3" />
+
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>

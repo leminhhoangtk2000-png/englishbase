@@ -4,9 +4,13 @@ import React, { useEffect, useState } from 'react';
 import { ExerciseTable } from '@/components/exercises/exercise-table';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { MatchingQuiz } from '@/components/exercises/matching-quiz';
+import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { FormingQuestions } from '@/components/exercises/forming-questions';
 import { FormingQuestionsSimple } from '@/components/exercises/forming-questions-simple';
 import { TestFormingQuestions } from '@/components/exercises/test-forming-questions';
+import Satzbildung from '@/components/exercises/satzbildung';
+import AuthorCredit from '@/components/exercises/author-credit';
+import ExerciseComments from '@/components/exercises/ExerciseComments';
 
 interface MDXComponentsRendererProps {
   content: string;
@@ -21,39 +25,55 @@ function parseFormingQuestionsProps(propsStr: string): {
   correctQuestions: string[];
 } | null {
   try {
-    // Clean up the props string - normalize whitespace but preserve structure
-    const cleanedProps = propsStr.replace(/\s+/g, ' ').trim();
+    console.log('[Debug] Parsing FormingQuestions props:', propsStr.substring(0, 300));
+    
+    // Clean up the props string - preserve newlines for proper array parsing
+    const cleanedProps = propsStr.trim();
     
     // Extract title - handle both quoted and unquoted
     const titleMatch = cleanedProps.match(/title=["']([^"']*?)["']/);
     const title = titleMatch ? titleMatch[1] : 'Forming Questions Exercise';
+    console.log('[Debug] Parsed title:', title);
     
-    // Extract statements array - handle multiline arrays better
-    const statementsMatch = cleanedProps.match(/statements=\{\s*\[\s*((?:"[^"]*"\s*,?\s*)*)\s*\]\s*\}/);
+    // Extract statements array - improved regex to handle multiline with proper escaping
+    const statementsMatch = cleanedProps.match(/statements=\{\s*\[([\s\S]*?)\]\s*\}/);
     
     let statements: string[] = [];
     if (statementsMatch && statementsMatch[1]) {
-      // Extract quoted strings from the array content
       const arrayContent = statementsMatch[1];
-      const stringMatches = arrayContent.match(/"([^"]*)"/g);
+      console.log('[Debug] Statements array content:', arrayContent.substring(0, 200));
+      
+      // More robust regex to extract quoted strings, handling escaped quotes and multiline
+      const stringMatches = arrayContent.match(/"([^"\\]*(\\.[^"\\]*)*)"/g);
+      console.log('[Debug] Statements string matches:', stringMatches);
       
       if (stringMatches) {
-        statements = stringMatches.map(match => match.slice(1, -1)); // Remove quotes
+        statements = stringMatches.map(match => {
+          // Remove outer quotes and handle escaped characters
+          return match.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+        });
       }
     }
+    console.log('[Debug] Parsed statements:', statements);
     
-    // Extract correctQuestions array
-    const correctQuestionsMatch = cleanedProps.match(/correctQuestions=\{\s*\[\s*((?:"[^"]*"\s*,?\s*)*)\s*\]\s*\}/);
+    // Extract correctQuestions array with same improved logic
+    const correctQuestionsMatch = cleanedProps.match(/correctQuestions=\{\s*\[([\s\S]*?)\]\s*\}/);
     
     let correctQuestions: string[] = [];
     if (correctQuestionsMatch && correctQuestionsMatch[1]) {
       const arrayContent = correctQuestionsMatch[1];
-      const stringMatches = arrayContent.match(/"([^"]*)"/g);
+      console.log('[Debug] CorrectQuestions array content:', arrayContent.substring(0, 200));
+      
+      const stringMatches = arrayContent.match(/"([^"\\]*(\\.[^"\\]*)*)"/g);
+      console.log('[Debug] CorrectQuestions string matches:', stringMatches);
       
       if (stringMatches) {
-        correctQuestions = stringMatches.map(match => match.slice(1, -1)); // Remove quotes
+        correctQuestions = stringMatches.map(match => {
+          return match.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+        });
       }
     }
+    console.log('[Debug] Parsed correctQuestions:', correctQuestions);
     
     const result = {
       title,
@@ -61,8 +81,11 @@ function parseFormingQuestionsProps(propsStr: string): {
       correctQuestions
     };
     
+    console.log('[Debug] Final parsed result:', result);
+    
     // Return null if we don't have the essential data
     if (statements.length === 0) {
+      console.log('[Debug] No statements found, returning null');
       return null;
     }
     
@@ -107,6 +130,79 @@ function parseMatchingQuizProps(propsStr: string): {
     };
   } catch (error) {
     console.error('Error parsing MatchingQuiz props:', error);
+    return null;
+  }
+}
+
+/**
+ * Parse MultipleChoiceQuiz props from component string
+ */
+function parseMultipleChoiceQuizProps(propsStr: string): {
+  questions: Array<{
+    question: string;
+    options: string[];
+    correctAnswer: string;
+  }>;
+} | null {
+  try {
+    // Extract questions array
+    const questionsMatch = propsStr.match(/questions=\{(\[[\s\S]*?\])\}/);
+    if (!questionsMatch) {
+      console.error('No questions found in MultipleChoiceQuiz props');
+      return null;
+    }
+
+    let questionsStr = questionsMatch[1];
+    console.log('[Debug] Raw questionsStr:', questionsStr.substring(0, 300));
+    
+    // Manual parsing approach - safer than eval
+    const questions: Array<{
+      question: string;
+      options: string[];
+      correctAnswer: string;
+    }> = [];
+    
+    // Extract each question object manually
+    const questionBlocks = questionsStr.match(/\{[\s\S]*?\}(?=\s*[,\]])/g);
+    if (!questionBlocks) {
+      console.error('No question blocks found');
+      return null;
+    }
+    
+    for (const block of questionBlocks) {
+      try {
+        // Extract question
+        const questionMatch = block.match(/question:\s*["'](.*?)["']/);
+        if (!questionMatch) continue;
+        
+        // Extract options array
+        const optionsMatch = block.match(/options:\s*\[([\s\S]*?)\]/);
+        if (!optionsMatch) continue;
+        
+        // Extract correctAnswer
+        const correctAnswerMatch = block.match(/correctAnswer:\s*["'](.*?)["']/);
+        if (!correctAnswerMatch) continue;
+        
+        // Parse options
+        const optionsStr = optionsMatch[1];
+        const options = optionsStr.match(/["'](.*?)["']/g)?.map(opt => 
+          opt.replace(/^["']|["']$/g, '')
+        ) || [];
+        
+        questions.push({
+          question: questionMatch[1],
+          options: options,
+          correctAnswer: correctAnswerMatch[1]
+        });
+      } catch (blockError) {
+        console.warn('Error parsing question block:', blockError);
+        continue;
+      }
+    }
+    
+    return { questions };
+  } catch (error) {
+    console.error('Error parsing MultipleChoiceQuiz props:', error);
     return null;
   }
 }
@@ -280,6 +376,91 @@ function parseExercisesArray(exercisesStr: string): any[] {
 }
 
 /**
+ * Parse Satzbildung props from component string
+ */
+function parseSatzbildungProps(propsStr: string): {
+  sentences: Array<{
+    parts: string[];
+    correctAnswer: string;
+    instruction?: string;
+  }>;
+  title?: string;
+} | null {
+  try {
+    // Extract title
+    const titleMatch = propsStr.match(/title=["']([^"']*?)["']/);
+    const title = titleMatch ? titleMatch[1] : 'Satzbildung Exercise';
+    
+    // Extract sentences array
+    const sentencesMatch = propsStr.match(/sentences=\{(\[[\s\S]*?\])\}/);
+    if (!sentencesMatch) {
+      console.error('No sentences found in Satzbildung props');
+      return null;
+    }
+
+    let sentencesStr = sentencesMatch[1];
+    console.log('[Debug] Raw sentencesStr:', sentencesStr.substring(0, 300));
+    
+    const sentences: Array<{
+      parts: string[];
+      correctAnswer: string;
+      instruction?: string;
+    }> = [];
+    
+    // Extract each sentence object manually
+    const sentenceBlocks = sentencesStr.match(/\{[\s\S]*?\}(?=\s*[,\]])/g);
+    if (!sentenceBlocks) {
+      console.error('No sentence blocks found');
+      return null;
+    }
+    
+    for (const block of sentenceBlocks) {
+      try {
+        // Extract parts array
+        const partsMatch = block.match(/parts:\s*\[([\s\S]*?)\]/);
+        if (!partsMatch) continue;
+        
+        // Extract correctAnswer
+        const correctAnswerMatch = block.match(/correctAnswer:\s*["'](.*?)["']/);
+        if (!correctAnswerMatch) continue;
+        
+        // Extract optional instruction
+        const instructionMatch = block.match(/instruction:\s*["'](.*?)["']/);
+        
+        // Parse parts
+        const partsStr = partsMatch[1];
+        const parts = partsStr.match(/["'](.*?)["']/g)?.map(part => 
+          part.replace(/^["']|["']$/g, '')
+        ) || [];
+        
+        const sentenceObj: {
+          parts: string[];
+          correctAnswer: string;
+          instruction?: string;
+        } = {
+          parts: parts,
+          correctAnswer: correctAnswerMatch[1]
+        };
+        
+        if (instructionMatch) {
+          sentenceObj.instruction = instructionMatch[1];
+        }
+        
+        sentences.push(sentenceObj);
+      } catch (blockError) {
+        console.warn('Error parsing sentence block:', blockError);
+        continue;
+      }
+    }
+    
+    return { sentences, title };
+  } catch (error) {
+    console.error('Error parsing Satzbildung props:', error);
+    return null;
+  }
+}
+
+/**
  * Simple markdown to HTML converter
  */
 function markdownToHtml(markdown: string): string {
@@ -327,6 +508,8 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     console.log('[MDX Client] ExerciseTable search:', content.includes('<ExerciseTable'));
     console.log('[MDX Client] ExerciseTable search (encoded):', content.includes('\\u003cExerciseTable'));
     console.log('[MDX Client] Full content matches:', content.match(/<ExerciseTable/g)?.length || 0);
+    console.log('[MDX Client] FormingQuestions search:', content.includes('<FormingQuestions'));
+    console.log('[MDX Client] FormingQuestions matches:', content.match(/<FormingQuestions/g)?.length || 0);
     
     // Decode HTML entities first
     console.log('[MDX Client] Before decoding:', content.includes('<ExerciseTable'), content.includes('\\u003cExerciseTable'));
@@ -353,12 +536,31 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     
     // Content processing complete
     
-    // Extract and parse ExerciseTable, Lueckentext, MatchingQuiz, and FormingQuestions components (JSX format)
+    // Extract and parse ExerciseTable, Lueckentext, MatchingQuiz, MultipleChoiceQuiz and FormingQuestions components (JSX format)
     // Updated regex to match single-line format
     const exerciseTableRegex = /<ExerciseTable\s+title="([^"]*?)"\s+subtitle="([^"]*?)"\s+exercises=\{(\[[\s\S]*?\])\}\s*\/>/g;
     const lueckentextRegex = /<Lueckentext\s+([^>]*?)textParts=\{\[([\s\S]*?)\]\}([^>]*?)\s*\/>/g;
     const matchingQuizRegex = /<MatchingQuiz\s+([\s\S]*?)\s*\/>/g;
-    const formingQuestionsRegex = /<FormingQuestions\s+([\s\S]*?)\s*\/>/g;
+    const multipleChoiceQuizRegex = /<MultipleChoiceQuiz\s+([\s\S]*?)\s*\/>/g;
+    const formingQuestionsRegex = /<FormingQuestions\s+([\s\S]*?)(?:\s*\/>|>\s*<\/FormingQuestions>)/g;
+    const satzbildungRegex = /<Satzbildung\s+([\s\S]*?)\s*\/>/g;
+    const authorCreditRegex = /<AuthorCredit\s+author=["']([^"']*?)["']\s*\/>/g;
+    
+    console.log('[MDX Client] Full content length:', cleanContent.length);
+    console.log('[MDX Client] First 500 chars:', cleanContent.substring(0, 500));
+    console.log('[MDX Client] Last 500 chars:', cleanContent.substring(cleanContent.length - 500));
+    console.log('[MDX Client] FormingQuestions search:', cleanContent.includes('<FormingQuestions'));
+    console.log('[MDX Client] FormingQuestions matches:', cleanContent.match(/<FormingQuestions/g)?.length || 0);
+    
+    // Sample test of the regex
+    formingQuestionsRegex.lastIndex = 0;
+    const testMatch = formingQuestionsRegex.exec(cleanContent);
+    if (testMatch) {
+      console.log('[MDX Client] First FormingQuestions match found:', testMatch[0].substring(0, 200));
+    } else {
+      console.log('[MDX Client] No FormingQuestions match found by regex');
+    }
+    
     let processedContent = cleanContent;
     const components: JSX.Element[] = [];
     let componentIndex = 0;
@@ -368,7 +570,10 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     exerciseTableRegex.lastIndex = 0;
     lueckentextRegex.lastIndex = 0;
     matchingQuizRegex.lastIndex = 0;
+    multipleChoiceQuizRegex.lastIndex = 0;
     formingQuestionsRegex.lastIndex = 0;
+    satzbildungRegex.lastIndex = 0;
+    authorCreditRegex.lastIndex = 0;
 
     while ((match = exerciseTableRegex.exec(cleanContent)) !== null) {
       const [fullMatch, title, subtitle, exercisesStr] = match;
@@ -489,6 +694,40 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
       }
     }
 
+    // Process MultipleChoiceQuiz components
+    multipleChoiceQuizRegex.lastIndex = 0;
+    while ((match = multipleChoiceQuizRegex.exec(cleanContent)) !== null) {
+      const [fullMatch, propsStr] = match;
+      
+      console.log('[MDX Client] Found MultipleChoiceQuiz:', { 
+        fullMatch: fullMatch.substring(0, 200) + '...', 
+        propsStr: propsStr.substring(0, 200) + '...' 
+      });
+      
+      try {
+        // Parse props from the component
+        const props = parseMultipleChoiceQuizProps(propsStr);
+        
+        if (props && props.questions.length > 0) {
+          const multipleChoiceQuizComponent = (
+            <MultipleChoiceQuiz
+              key={`multiple-choice-quiz-${componentIndex}`}
+              questions={props.questions}
+            />
+          );
+          
+          components.push(multipleChoiceQuizComponent);
+          
+          // Replace the MDX syntax with a placeholder
+          const placeholder = `\n\n[EXERCISE_PLACEHOLDER_${componentIndex}]\n\n`;
+          processedContent = processedContent.replace(fullMatch, placeholder);
+          componentIndex++;
+        }
+      } catch (error) {
+        console.error('Error processing MultipleChoiceQuiz:', error);
+      }
+    }
+
     // Process FormingQuestions components
     formingQuestionsRegex.lastIndex = 0;
     
@@ -498,11 +737,23 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     for (const match of formingQuestionsMatches) {
       const [fullMatch, propsStr] = match;
       
+      console.log('[Debug] Processing FormingQuestions:', { 
+        fullMatch: fullMatch.substring(0, 200) + '...', 
+        propsStr: propsStr.substring(0, 200) + '...' 
+      });
+      
       try {
         // Parse props from the component
         const props = parseFormingQuestionsProps(propsStr);
         
         if (props && props.statements.length > 0) {
+          console.log('[Success] FormingQuestions component created with:', {
+            title: props.title,
+            statementsCount: props.statements.length,
+            statements: props.statements,
+            correctQuestionsCount: props.correctQuestions.length,
+            correctQuestions: props.correctQuestions
+          });
           
           const formingQuestionsComponent = (
             <FormingQuestions
@@ -523,6 +774,119 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
         
       } catch (error) {
         console.error('Error processing FormingQuestions:', error);
+      }
+    }
+
+    // Process Satzbildung components
+    satzbildungRegex.lastIndex = 0;
+    
+    // Use matchAll instead of while loop for reliable regex matching
+    const satzbildungMatches = Array.from(cleanContent.matchAll(satzbildungRegex));
+    
+    for (const match of satzbildungMatches) {
+      const [fullMatch, propsStr] = match;
+      
+      console.log('[Debug] Processing Satzbildung:', { 
+        fullMatch: fullMatch.substring(0, 200) + '...', 
+        propsStr: propsStr.substring(0, 200) + '...' 
+      });
+      
+      try {
+        // Parse props from the component
+        const props = parseSatzbildungProps(propsStr);
+        
+        if (props && props.sentences.length > 0) {
+          
+          const satzbildungComponent = (
+            <Satzbildung
+              key={`satzbildung-${componentIndex}`}
+              exercises={props.sentences.map(sentence => ({
+                words: sentence.parts,
+                correctSentence: sentence.correctAnswer,
+                instruction: sentence.instruction
+              }))}
+              title={props.title}
+            />
+          );
+          
+          components.push(satzbildungComponent);
+          
+          // Replace the MDX syntax with a placeholder
+          const placeholder = `\n\n[EXERCISE_PLACEHOLDER_${componentIndex}]\n\n`;
+          processedContent = processedContent.replace(fullMatch, placeholder);
+          componentIndex++;
+        }
+        
+      } catch (error) {
+        console.error('Error processing Satzbildung:', error);
+      }
+    }
+
+    // Process AuthorCredit components
+    authorCreditRegex.lastIndex = 0;
+    
+    // Use matchAll instead of while loop for reliable regex matching
+    const authorCreditMatches = Array.from(cleanContent.matchAll(authorCreditRegex));
+    
+    for (const match of authorCreditMatches) {
+      const [fullMatch, author] = match;
+      
+      console.log('[Debug] Processing AuthorCredit:', { fullMatch, author });
+      
+      try {
+        const authorCreditComponent = (
+          <AuthorCredit
+            key={`author-credit-${componentIndex}`}
+            author={author}
+          />
+        );
+        
+        components.push(authorCreditComponent);
+        
+        // Replace the MDX syntax with a placeholder
+        const placeholder = `\n\n[EXERCISE_PLACEHOLDER_${componentIndex}]\n\n`;
+        processedContent = processedContent.replace(fullMatch, placeholder);
+        componentIndex++;
+        
+      } catch (error) {
+        console.error('Error processing AuthorCredit:', error);
+      }
+    }
+
+    // Process ExerciseComments components  
+    const exerciseCommentsRegex = /<ExerciseComments\s+exerciseId=["']([^"']*?)["']\s*(?:url=["']([^"']*?)["'])?\s*\/>/g;
+    exerciseCommentsRegex.lastIndex = 0;
+    
+    console.log('[Debug] Looking for ExerciseComments in content:', cleanContent.includes('ExerciseComments'));
+    console.log('[Debug] ExerciseComments regex test:', exerciseCommentsRegex.test(cleanContent));
+    exerciseCommentsRegex.lastIndex = 0; // Reset after test
+    
+    const exerciseCommentsMatches = Array.from(cleanContent.matchAll(exerciseCommentsRegex));
+    console.log('[Debug] ExerciseComments matches found:', exerciseCommentsMatches.length);
+    
+    for (const match of exerciseCommentsMatches) {
+      const [fullMatch, exerciseId, url] = match;
+      
+      console.log('[Debug] Processing ExerciseComments:', { fullMatch, exerciseId, url });
+      
+      try {
+        const exerciseCommentsComponent = (
+          <ExerciseComments
+            key={`exercise-comments-${componentIndex}`}
+            exerciseId={exerciseId}
+            url={url}
+          />
+        );
+        
+        components.push(exerciseCommentsComponent);
+        
+        // Replace the MDX syntax with a placeholder
+        const placeholder = `\n\n[EXERCISE_PLACEHOLDER_${componentIndex}]\n\n`;
+        processedContent = processedContent.replace(fullMatch, placeholder);
+        componentIndex++;
+        
+      } catch (error) {
+        console.error('Error processing ExerciseComments:', error);
       }
     }
 

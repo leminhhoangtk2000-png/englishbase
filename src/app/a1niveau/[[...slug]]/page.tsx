@@ -393,6 +393,7 @@ export default async function DocPage({ params }: DocPageProps) {
     hasInteractiveComponents: markdownContent.content.includes('ExerciseTable') || markdownContent.content.includes('FormingQuestions') || markdownContent.content.includes('MatchingQuiz')
   });
   console.log('[Server] Raw content passed to client:', markdownContent.content.substring(0, 300));
+  console.log('[Server] Content includes FormingQuestions:', markdownContent.content.includes('<FormingQuestions'));
   const toc = extractTableOfContents(markdownContent.content);
 
   let contentElement;

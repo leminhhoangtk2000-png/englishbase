@@ -1,341 +1,360 @@
 ---
 id: uebung-2-teil-4-ja-nein
-title: 4. Ja Nein
-description: Luyện tập lựa chọn câu hỏi Ja/Nein phù hợp trong tiếng Đức.
+title: 4. Ja/Nein Fragen - Chọn câu hỏi phù hợp
+description: Luyện tập lựa chọn câu hỏi Ja/Nein phù hợp từ câu trả lời cho trước trong tiếng Đức.
 ---
 
-## Teil 1: Wähle die passende Ja-/Nein-Frage zur Antwort
+import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
+import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
-import MultipleChoiceQuiz from '@site/src/components/Quiz/MultipleChoiceQuiz/MultipleChoiceQuiz';
-import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+# Bài tập: Ja/Nein Fragen
+
+## Teil 4: Chọn câu hỏi Ja/Nein phù hợp với câu trả lời
+
+Hãy đọc câu trả lời và chọn câu hỏi Ja/Nein phù hợp nhất từ 4 lựa chọn cho sẵn.
+
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
+
+### Phần 1: Câu 1-10
 
 <MultipleChoiceQuiz
   questions={[
     {
-      question: 'Ja, ich trinke gern Kaffee.',
+      question: "Ja, ich trinke gern Kaffee.",
       options: [
-        'Magst du Tee?',
-        'Trinkst du Wasser?',
-        'Kochst du gern?',
-        'Trinkst du gern Kaffee?',
+        "Magst du Tee?",
+        "Trinkst du Wasser?",
+        "Kochst du gern?",
+        "Trinkst du gern Kaffee?",
       ],
-      correctAnswer: 'Trinkst du gern Kaffee?',
+      correctAnswer: "Trinkst du gern Kaffee?",
     },
     {
-      question: 'Nein, sie spielt kein Klavier.',
+      question: "Nein, sie spielt kein Klavier.",
       options: [
-        'Spielt sie Gitarre?',
-        'Spielt sie Klavier?',
-        'Hört sie Musik?',
-        'Liest sie gern Bücher?',
+        "Spielt sie Gitarre?",
+        "Spielt sie Klavier?",
+        "Hört sie Musik?",
+        "Liest sie gern Bücher?",
       ],
-      correctAnswer: 'Spielt sie Klavier?',
+      correctAnswer: "Spielt sie Klavier?",
     },
     {
-      question: 'Ja, wir haben ein Auto.',
+      question: "Ja, wir haben ein Auto.",
       options: [
-        'Fahrt ihr Fahrrad?',
-        'Geht ihr zu Fuß?',
-        'Habt ihr ein Auto?',
-        'Habt ihr ein Haus?',
+        "Fahrt ihr Fahrrad?",
+        "Geht ihr zu Fuß?",
+        "Habt ihr ein Auto?",
+        "Habt ihr ein Haus?",
       ],
-      correctAnswer: 'Habt ihr ein Auto?',
+      correctAnswer: "Habt ihr ein Auto?",
     },
     {
-      question: 'Nein, er arbeitet nicht in einer Bank.',
+      question: "Nein, er arbeitet nicht in einer Bank.",
       options: [
-        'Arbeitet er in einer Bank?',
-        'Wohnt er in einer Stadt?',
-        'Arbeitet er in einem Café?',
-        'Ist er Lehrer?',
+        "Arbeitet er in einer Bank?",
+        "Wohnt er in einer Stadt?",
+        "Arbeitet er in einem Café?",
+        "Ist er Lehrer?",
       ],
-      correctAnswer: 'Arbeitet er in einer Bank?',
+      correctAnswer: "Arbeitet er in einer Bank?",
     },
     {
-      question: 'Ja, ich sehe oft Filme.',
+      question: "Ja, ich sehe oft Filme.",
       options: [
-        'Liest du viele Bücher?',
-        'Gehst du gern ins Theater?',
-        'Siehst du oft Filme?',
-        'Spielst du Videospiele?',
+        "Liest du viele Bücher?",
+        "Gehst du gern ins Theater?",
+        "Siehst du oft Filme?",
+        "Spielst du Videospiele?",
       ],
-      correctAnswer: 'Siehst du oft Filme?',
+      correctAnswer: "Siehst du oft Filme?",
     },
     {
-      question: 'Nein, mein Vater kocht nicht gern.',
+      question: "Nein, mein Vater kocht nicht gern.",
       options: [
-        'Geht dein Vater gern ins Kino?',
-        'Fährt dein Vater gern Rad?',
-        'Arbeitet dein Vater im Restaurant?',
-        'Kocht dein Vater gern?',
+        "Geht dein Vater gern ins Kino?",
+        "Fährt dein Vater gern Rad?",
+        "Arbeitet dein Vater im Restaurant?",
+        "Kocht dein Vater gern?",
       ],
-      correctAnswer: 'Kocht dein Vater gern?',
+      correctAnswer: "Kocht dein Vater gern?",
     },
     {
-      question: 'Ja, wir gehen morgen ins Kino.',
+      question: "Ja, wir gehen morgen ins Kino.",
       options: [
-        'Geht ihr morgen ins Kino?',
-        'Fahrt ihr morgen ans Meer?',
-        'Bleibt ihr morgen zu Hause?',
-        'Seht ihr morgen einen Film?',
+        "Geht ihr morgen ins Kino?",
+        "Fahrt ihr morgen ans Meer?",
+        "Bleibt ihr morgen zu Hause?",
+        "Seht ihr morgen einen Film?",
       ],
-      correctAnswer: 'Geht ihr morgen ins Kino?',
+      correctAnswer: "Geht ihr morgen ins Kino?",
     },
     {
-      question: 'Nein, sie kommen nicht aus Spanien.',
+      question: "Nein, sie kommen nicht aus Spanien.",
       options: [
-        'Reisen sie nach Spanien?',
-        'Kommen sie aus Spanien?',
-        'Wohnen sie in Spanien?',
-        'Sprechen sie Spanisch?',
+        "Reisen sie nach Spanien?",
+        "Kommen sie aus Spanien?",
+        "Wohnen sie in Spanien?",
+        "Sprechen sie Spanisch?",
       ],
-      correctAnswer: 'Kommen sie aus Spanien?',
+      correctAnswer: "Kommen sie aus Spanien?",
     },
     {
-      question: 'Ja, ich habe einen Hund.',
+      question: "Ja, ich habe einen Hund.",
       options: [
-        'Magst du Katzen?',
-        'Bist du allergisch gegen Hunde?',
-        'Gassi du oft?',
-        'Hast du einen Hund?',
+        "Magst du Katzen?",
+        "Bist du allergisch gegen Hunde?",
+        "Gassi du oft?",
+        "Hast du einen Hund?",
       ],
-      correctAnswer: 'Hast du einen Hund?',
+      correctAnswer: "Hast du einen Hund?",
     },
     {
-      question: 'Nein, mein Bruder ist nicht 20 Jahre alt.',
+      question: "Nein, mein Bruder ist nicht 20 Jahre alt.",
       options: [
-        'Hat dein Bruder eine Katze?',
-        'Arbeitet dein Bruder?',
-        'Ist dein Bruder 20 Jahre alt?',
-        'Wohnt dein Bruder in Berlin?',
+        "Hat dein Bruder eine Katze?",
+        "Arbeitet dein Bruder?",
+        "Ist dein Bruder 20 Jahre alt?",
+        "Wohnt dein Bruder in Berlin?",
       ],
-      correctAnswer: 'Ist dein Bruder 20 Jahre alt?',
+      correctAnswer: "Ist dein Bruder 20 Jahre alt?",
     },
   ]}
 />
 
-## Teil 2: Wähle die passende Ja-/Nein-Frage zur Antwort
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
+
+### Phần 2: Câu 11-20
 
 <MultipleChoiceQuiz
   questions={[
-   {
-      question: 'Ja, ich fahre jeden Tag mit dem Fahrrad.',
+    {
+      question: "Ja, ich fahre jeden Tag mit dem Fahrrad.",
       options: [
-        'Fährst du jeden Tag mit dem Fahrrad?',
-        'Gehst du oft spazieren?',
-        'Magst du Sport?',
-        'Arbeitest du in der Stadt?',
+        "Fährst du jeden Tag mit dem Fahrrad?",
+        "Gehst du oft spazieren?",
+        "Magst du Sport?",
+        "Arbeitest du in der Stadt?",
       ],
-      correctAnswer: 'Fährst du jeden Tag mit dem Fahrrad?',
+      correctAnswer: "Fährst du jeden Tag mit dem Fahrrad?",
     },
     {
-      question: 'Nein, meine Schwester liest keine Bücher.',
+      question: "Nein, meine Schwester liest keine Bücher.",
       options: [
-        'Schreibt deine Schwester gern?',
-        'Spielt deine Schwester Klavier?',
-        'Mag deine Schwester Tiere?',
-        'Liest deine Schwester Bücher?',
+        "Schreibt deine Schwester gern?",
+        "Spielt deine Schwester Klavier?",
+        "Mag deine Schwester Tiere?",
+        "Liest deine Schwester Bücher?",
       ],
-      correctAnswer: 'Liest deine Schwester Bücher?',
+      correctAnswer: "Liest deine Schwester Bücher?",
     },
     {
-      question: 'Ja, wir essen heute Pizza.',
+      question: "Ja, wir essen heute Pizza.",
       options: [
-        'Trinkt ihr Kaffee?',
-        'Esst ihr gern Pasta?',
-        'Esst ihr heute Pizza?',
-        'Kocht ihr jeden Tag?',
+        "Trinkt ihr Kaffee?",
+        "Esst ihr gern Pasta?",
+        "Esst ihr heute Pizza?",
+        "Kocht ihr jeden Tag?",
       ],
-      correctAnswer: 'Esst ihr heute Pizza?',
+      correctAnswer: "Esst ihr heute Pizza?",
     },
     {
-      question: 'Nein, er ist kein Lehrer.',
+      question: "Nein, er ist kein Lehrer.",
       options: [
-        'Arbeitet er als Arzt?',
-        'Ist er Pilot?',
-        'Hat er viele Schüler?',
-        'Ist er Lehrer?',
+        "Arbeitet er als Arzt?",
+        "Ist er Pilot?",
+        "Hat er viele Schüler?",
+        "Ist er Lehrer?",
       ],
-      correctAnswer: 'Ist er Lehrer?',
+      correctAnswer: "Ist er Lehrer?",
     },
     {
-      question: 'Ja, ich kann Englisch sprechen.',
+      question: "Ja, ich kann Englisch sprechen.",
       options: [
-        'Lernst du Französisch?',
-        'Kannst du Englisch sprechen?',
-        'Sprichst du Spanisch?',
-        'Liest du englische Bücher?',
+        "Lernst du Französisch?",
+        "Kannst du Englisch sprechen?",
+        "Sprichst du Spanisch?",
+        "Liest du englische Bücher?",
       ],
-      correctAnswer: 'Kannst du Englisch sprechen?',
+      correctAnswer: "Kannst du Englisch sprechen?",
     },
     {
-      question: 'Nein, sie gehen heute nicht zur Schule.',
+      question: "Nein, sie gehen heute nicht zur Schule.",
       options: [
-        'Fahren sie morgen in die Stadt?',
-        'Bleiben sie zu Hause?',
-        'Lernen sie Deutsch?',
-        'Gehen sie heute zur Schule?',
+        "Fahren sie morgen in die Stadt?",
+        "Bleiben sie zu Hause?",
+        "Lernen sie Deutsch?",
+        "Gehen sie heute zur Schule?",
       ],
-      correctAnswer: 'Gehen sie heute zur Schule?',
+      correctAnswer: "Gehen sie heute zur Schule?",
     },
     {
-      question: 'Ja, ich komme später.',
+      question: "Ja, ich komme später.",
       options: [
-        'Bleibst du zu Hause?',
-        'Arbeitest du heute?',
-        'Kommst du später?',
-        'Trinkst du noch Kaffee?',
+        "Bleibst du zu Hause?",
+        "Arbeitest du heute?",
+        "Kommst du später?",
+        "Trinkst du noch Kaffee?",
       ],
-      correctAnswer: 'Kommst du später?',
+      correctAnswer: "Kommst du später?",
     },
     {
-      question: 'Nein, wir sehen heute keinen Film.',
+      question: "Nein, wir sehen heute keinen Film.",
       options: [
-        'Seht ihr heute einen Film?',
-        'Esst ihr heute Pizza?',
-        'Hört ihr Musik?',
-        'Geht ihr ins Kino?',
+        "Seht ihr heute einen Film?",
+        "Esst ihr heute Pizza?",
+        "Hört ihr Musik?",
+        "Geht ihr ins Kino?",
       ],
-      correctAnswer: 'Seht ihr heute einen Film?',
+      correctAnswer: "Seht ihr heute einen Film?",
     },
     {
-      question: 'Ja, ich bin 25 Jahre alt.',
+      question: "Ja, ich bin 25 Jahre alt.",
       options: [
-        'Hast du ein Auto?',
-        'Bist du 25 Jahre alt?',
-        'Wohnst du in Berlin?',
-        'Lernst du Deutsch?',
+        "Hast du ein Auto?",
+        "Bist du 25 Jahre alt?",
+        "Wohnst du in Berlin?",
+        "Lernst du Deutsch?",
       ],
-      correctAnswer: 'Bist du 25 Jahre alt?',
+      correctAnswer: "Bist du 25 Jahre alt?",
     },
     {
-      question: 'Nein, mein Freund wohnt nicht in Berlin.',
+      question: "Nein, mein Freund wohnt nicht in Berlin.",
       options: [
-        'Hat dein Freund ein Auto?',
-        'Arbeitet dein Freund in einer Bank?',
-        'Wohnt dein Freund in Berlin?',
-        'Mag dein Freund Hunde?',
+        "Hat dein Freund ein Auto?",
+        "Arbeitet dein Freund in einer Bank?",
+        "Wohnt dein Freund in Berlin?",
+        "Mag dein Freund Hunde?",
       ],
-      correctAnswer: 'Wohnt dein Freund in Berlin?',
+      correctAnswer: "Wohnt dein Freund in Berlin?",
     },
   ]}
 />
 
 ## Teil 3: Wähle die passende Ja-/Nein-Frage zur Antwort
 
-
 <MultipleChoiceQuiz
   questions={[
     // ... existing questions ...
     {
-      question: 'Ja, sie mag Schokolade.',
+      question: "Ja, sie mag Schokolade.",
       options: [
-        'Trinkt sie Kaffee?',
-        'Mag sie Schokolade?',
-        'Isst sie Eis?',
-        'Kauft sie gern Süßigkeiten?',
+        "Trinkt sie Kaffee?",
+        "Mag sie Schokolade?",
+        "Isst sie Eis?",
+        "Kauft sie gern Süßigkeiten?",
       ],
-      correctAnswer: 'Mag sie Schokolade?',
+      correctAnswer: "Mag sie Schokolade?",
     },
     {
-      question: 'Nein, mein Vater fährt kein Auto.',
+      question: "Nein, mein Vater fährt kein Auto.",
       options: [
-        'Hat dein Vater eine Katze?',
-        'Geht dein Vater spazieren?',
-        'Fährt dein Vater Auto?',
-        'Arbeitet dein Vater als Fahrer?',
+        "Hat dein Vater eine Katze?",
+        "Geht dein Vater spazieren?",
+        "Fährt dein Vater Auto?",
+        "Arbeitet dein Vater als Fahrer?",
       ],
-      correctAnswer: 'Fährt dein Vater Auto?',
+      correctAnswer: "Fährt dein Vater Auto?",
     },
     {
-      question: 'Ja, wir bleiben zu Hause.',
+      question: "Ja, wir bleiben zu Hause.",
       options: [
-        'Geht ihr ins Kino?',
-        'Fahrt ihr ans Meer?',
-        'Spielt ihr draußen?',
-        'Bleibt ihr zu Hause?',
+        "Geht ihr ins Kino?",
+        "Fahrt ihr ans Meer?",
+        "Spielt ihr draußen?",
+        "Bleibt ihr zu Hause?",
       ],
-      correctAnswer: 'Bleibt ihr zu Hause?',
+      correctAnswer: "Bleibt ihr zu Hause?",
     },
     {
-      question: 'Nein, er trinkt keinen Wein.',
+      question: "Nein, er trinkt keinen Wein.",
       options: [
-        'Isst er Fleisch?',
-        'Trinkt er Wein?',
-        'Mag er Käse?',
-        'Hat er Durst?',
+        "Isst er Fleisch?",
+        "Trinkt er Wein?",
+        "Mag er Käse?",
+        "Hat er Durst?",
       ],
-      correctAnswer: 'Trinkt er Wein?',
+      correctAnswer: "Trinkt er Wein?",
     },
     {
-      question: 'Ja, ich lerne Deutsch.',
+      question: "Ja, ich lerne Deutsch.",
       options: [
-        'Arbeitest du in Deutschland?',
-        'Lebst du in Berlin?',
-        'Lernst du Deutsch?',
-        'Magst du Englisch?',
+        "Arbeitest du in Deutschland?",
+        "Lebst du in Berlin?",
+        "Lernst du Deutsch?",
+        "Magst du Englisch?",
       ],
-      correctAnswer: 'Lernst du Deutsch?',
+      correctAnswer: "Lernst du Deutsch?",
     },
     {
-      question: 'Nein, meine Mutter arbeitet nicht am Wochenende.',
+      question: "Nein, meine Mutter arbeitet nicht am Wochenende.",
       options: [
-        'Arbeitet deine Mutter am Wochenende?',
-        'Macht deine Mutter gern Sport?',
-        'Kocht deine Mutter oft?',
-        'Fährt deine Mutter Auto?',
+        "Arbeitet deine Mutter am Wochenende?",
+        "Macht deine Mutter gern Sport?",
+        "Kocht deine Mutter oft?",
+        "Fährt deine Mutter Auto?",
       ],
-      correctAnswer: 'Arbeitet deine Mutter am Wochenende?',
+      correctAnswer: "Arbeitet deine Mutter am Wochenende?",
     },
     {
-      question: 'Ja, ich höre Musik.',
+      question: "Ja, ich höre Musik.",
       options: [
-        'Spielst du Fußball?',
-        'Magst du Fernsehen?',
-        'Singst du gern?',
-        'Hörst du Musik?',
+        "Spielst du Fußball?",
+        "Magst du Fernsehen?",
+        "Singst du gern?",
+        "Hörst du Musik?",
       ],
-      correctAnswer: 'Hörst du Musik?',
+      correctAnswer: "Hörst du Musik?",
     },
     {
-      question: 'Nein, wir haben kein Haustier.',
+      question: "Nein, wir haben kein Haustier.",
       options: [
-        'Mögt ihr Hunde?',
-        'Habt ihr ein Aquarium?',
-        'Habt ihr ein Haustier?',
-        'Spielt ihr mit eurer Katze?',
+        "Mögt ihr Hunde?",
+        "Habt ihr ein Aquarium?",
+        "Habt ihr ein Haustier?",
+        "Spielt ihr mit eurer Katze?",
       ],
-      correctAnswer: 'Habt ihr ein Haustier?',
+      correctAnswer: "Habt ihr ein Haustier?",
     },
     {
-      question: 'Ja, sie tanzt gern.',
+      question: "Ja, sie tanzt gern.",
       options: [
-        'Tanzt sie gern?',
-        'Spielt sie Tennis?',
-        'Hört sie Musik?',
-        'Geht sie ins Kino?',
+        "Tanzt sie gern?",
+        "Spielt sie Tennis?",
+        "Hört sie Musik?",
+        "Geht sie ins Kino?",
       ],
-      correctAnswer: 'Tanzt sie gern?',
+      correctAnswer: "Tanzt sie gern?",
     },
     {
-      question: 'Nein, mein Opa raucht nicht.',
+      question: "Nein, mein Opa raucht nicht.",
       options: [
-        'Trinkt dein Opa Kaffee?',
-        'Raucht dein Opa?',
-        'Mag dein Opa Kuchen?',
-        'Liest dein Opa Zeitung?',
+        "Trinkt dein Opa Kaffee?",
+        "Raucht dein Opa?",
+        "Mag dein Opa Kuchen?",
+        "Liest dein Opa Zeitung?",
       ],
-      correctAnswer: 'Raucht dein Opa?',
+      correctAnswer: "Raucht dein Opa?",
     },
   ]}
 />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
+
 ### **Tác giả ✍️**
 
 <AuthorCredit author="Lonia" />
 
----
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
 ### **Hỏi đáp ❓💬**
 
@@ -343,8 +362,10 @@ import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
 :::
 
-import FacebookComments from '@site/src/components/Forms/FacebookComments/FacebookComments';
+<ExerciseComments exerciseId="a1-ubungsfragen-teil-4" url="/a1niveau/Übungen/ubungsfragen/teil-4" />
 
-<FacebookComments url='https://deutsch.vn/docs/A%20Niveau/A1%20Niveau/Übungen/Übungsfragen/uebung-2-teil-4-ja-nein'/>
+<Comments url="/a1niveau/Übungen/ubungsfragen/teil-4" exerciseId="a1-ubungsfragen-teil-4" />
 
---- 
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>{" "}
