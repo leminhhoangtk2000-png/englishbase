@@ -55,7 +55,18 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
 
   const renderTextPart = (part: TextPart, partIndex: number) => {
     if (typeof part === 'string') {
-      return <span key={partIndex}>{part}</span>;
+      // Split by newlines and render with <br> tags
+      const lines = part.split(/\\n/);
+      return (
+        <span key={partIndex}>
+          {lines.map((line, lineIndex) => (
+            <React.Fragment key={`${partIndex}-${lineIndex}`}>
+              {line}
+              {lineIndex < lines.length - 1 && <br />}
+            </React.Fragment>
+          ))}
+        </span>
+      );
     }
 
     if (part.type === 'blank') {
@@ -121,7 +132,7 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-5 space-y-4">
-        <div className="text-base leading-relaxed bg-gray-50 p-4 rounded-lg border border-gray-200">
+        <div className="text-base leading-relaxed bg-gray-50 p-4 rounded-lg border border-gray-200 whitespace-pre-line">
           {textParts.map((part, index) => renderTextPart(part, index))}
         </div>
 

@@ -1,215 +1,83 @@
 ---
-title: "Teil 2: Adjektivendungen nach unbestimmtem Artikel"
-description: "Luyện tập điền đuôi tính từ đúng sau các mạo từ bất định (ein, eine, ein...)"
-level: "A2"
-topic: "Übungen"
-order: 2
-difficulty: "intermediate"
-tags: ["adjektivendungen", "unbestimmter-artikel", "exercises", "grammar"]
+id: uebung-3-teil-2-adjektivendungen-nach-unbestimmtem-artikel
+title: 2. Adjektivendungen nach unbestimmtem Artikel
+description: Luyện tập điền đuôi tính từ đúng sau các mạo từ bất định (ein, eine, ein...).
 ---
 
-import { ExerciseTable } from "@/components/exercises/exercise-table";
-import {
-  ExerciseAuthor,
-  ExerciseHelp,
-} from "@/components/exercises/exercise-author";
-import ExerciseComments from "@/components/exercises/ExerciseComments";
+import Lueckentext from "@site/src/components/Quiz/Lueckentext/Lueckentext";
+import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
+import ExerciseComments from "@/components/exercise-comments";
 
-# Bài tập: Adjektivendungen nach unbestimmtem Artikel
+## Teil 1: Câu 1-10
 
-## Teil 1: Điền đuôi tính từ sau mạo từ bất định (Câu 1-10)
-
-<ExerciseTable
-  title="Teil 1: Điền đuôi tính từ sau mạo từ bất định"
-  subtitle="Hoàn thành câu với đuôi tính từ đúng sau ein, eine, ein"
-  exercises={[
-    {
-      id: 1,
-      german: "Ich sehe einen __ Film. (interessant)",
-      correctAnswer: "interessanten",
-    },
-    {
-      id: 2,
-      german: "Sie hat eine __ Wohnung. (schön)",
-      correctAnswer: "schöne",
-    },
-    { id: 3, german: "Wir kaufen ein __ Auto. (neu)", correctAnswer: "neues" },
-    {
-      id: 4,
-      german: "Er trägt einen __ Anzug. (teuer)",
-      correctAnswer: "teuren",
-    },
-    {
-      id: 5,
-      german: "Ich trinke einen __ Saft. (kalt)",
-      correctAnswer: "kalten",
-    },
-    {
-      id: 6,
-      german: "Du liest ein __ Buch. (spannend)",
-      correctAnswer: "spannendes",
-    },
-    {
-      id: 7,
-      german: "Sie besucht eine __ Freundin. (nett)",
-      correctAnswer: "nette",
-    },
-    {
-      id: 8,
-      german: "Ich esse einen __ Apfel. (lecker)",
-      correctAnswer: "leckeren",
-    },
-    {
-      id: 9,
-      german: "Wir wohnen in einem __ Haus. (alt)",
-      correctAnswer: "alten",
-    },
-    {
-      id: 10,
-      german: "Sie spricht mit einer __ Kollegin. (freundlich)",
-      correctAnswer: "freundlichen",
-    },
+<Lueckentext
+  title="Adjektivendungen - Điền đuôi tính từ"
+  textParts={[
+    "1. Ich sehe einen ", { type: "blank", correctAnswer: "interessanten" }, " Film. (interessant)\n\n",
+    "2. Sie hat eine ", { type: "blank", correctAnswer: "schöne" }, " Wohnung. (schön)\n\n",
+    "3. Wir kaufen ein ", { type: "blank", correctAnswer: "neues" }, " Auto. (neu)\n\n",
+    "4. Er trägt einen ", { type: "blank", correctAnswer: "teuren" }, " Anzug. (teuer)\n\n",
+    "5. Ich trinke einen ", { type: "blank", correctAnswer: "kalten" }, " Saft. (kalt)\n\n",
+    "6. Du liest ein ", { type: "blank", correctAnswer: "spannendes" }, " Buch. (spannend)\n\n",
+    "7. Sie besucht eine ", { type: "blank", correctAnswer: "nette" }, " Freundin. (nett)\n\n",
+    "8. Ich esse einen ", { type: "blank", correctAnswer: "leckeren" }, " Apfel. (lecker)\n\n",
+    "9. Wir wohnen in einem ", { type: "blank", correctAnswer: "alten" }, " Haus. (alt)\n\n",
+    "10. Sie spricht mit einer ", { type: "blank", correctAnswer: "freundlichen" }, " Kollegin. (freundlich)"
   ]}
 />
 
-## Teil 2: Tiếp tục luyện tập (Câu 11-20)
+## Teil 2: Câu 11-20
 
-<ExerciseTable
-  title="Teil 2: Tiếp tục luyện tập với mạo từ bất định"
-  subtitle="Luyện tập với các trường hợp phức tạp hơn"
-  exercises={[
-    {
-      id: 11,
-      german: "Ich schenke einem __ Kind ein Spielzeug. (klein)",
-      correctAnswer: "kleinen",
-    },
-    {
-      id: 12,
-      german: "Er fährt mit einem __ Auto. (schnell)",
-      correctAnswer: "schnellen",
-    },
-    {
-      id: 13,
-      german: "Ich habe eine __ Jacke gekauft. (rot)",
-      correctAnswer: "rote",
-    },
-    {
-      id: 14,
-      german: "Wir besuchen einen __ Ort. (berühmt)",
-      correctAnswer: "berühmten",
-    },
-    {
-      id: 15,
-      german: "Du brauchst ein __ Wörterbuch. (gut)",
-      correctAnswer: "gutes",
-    },
-    { id: 16, german: "Ich sehe eine __ Kirche. (alt)", correctAnswer: "alte" },
-    {
-      id: 17,
-      german: "Sie hat einen __ Bruder. (lustig)",
-      correctAnswer: "lustigen",
-    },
-    {
-      id: 18,
-      german: "Ich spreche mit einem __ Mann. (nett)",
-      correctAnswer: "netten",
-    },
-    {
-      id: 19,
-      german: "Sie schreibt eine __ E-Mail. (lang)",
-      correctAnswer: "lange",
-    },
-    {
-      id: 20,
-      german: "Er liest ein __ Buch. (deutsch)",
-      correctAnswer: "deutsches",
-    },
+<Lueckentext
+  textParts={[
+    "11. Ich schenke einem ", { type: "blank", correctAnswer: "kleinen" }, " Kind ein Spielzeug. (klein)\n\n",
+    "12. Er fährt mit einem ", { type: "blank", correctAnswer: "schnellen" }, " Auto. (schnell)\n\n",
+    "13. Ich habe eine ", { type: "blank", correctAnswer: "rote" }, " Jacke gekauft. (rot)\n\n",
+    "14. Wir besuchen einen ", { type: "blank", correctAnswer: "berühmten" }, " Ort. (berühmt)\n\n",
+    "15. Du brauchst ein ", { type: "blank", correctAnswer: "gutes" }, " Wörterbuch. (gut)\n\n",
+    "16. Ich sehe eine ", { type: "blank", correctAnswer: "alte" }, " Kirche. (alt)\n\n",
+    "17. Sie hat einen ", { type: "blank", correctAnswer: "lustigen" }, " Bruder. (lustig)\n\n",
+    "18. Ich spreche mit einem ", { type: "blank", correctAnswer: "netten" }, " Mann. (nett)\n\n",
+    "19. Sie schreibt eine ", { type: "blank", correctAnswer: "lange" }, " E-Mail. (lang)\n\n",
+    "20. Er liest ein ", { type: "blank", correctAnswer: "deutsches" }, " Buch. (deutsch)"
   ]}
 />
 
-## Teil 3: Bài tập nâng cao (Câu 21-30)
+## Teil 3: Câu 21-30
 
-<ExerciseTable
-  title="Teil 3: Bài tập nâng cao"
-  subtitle="Thực hành với các tình huống thực tế"
-  exercises={[
-    {
-      id: 21,
-      german: "Ich trinke aus einer __ Tasse. (sauber)",
-      correctAnswer: "sauberen",
-    },
-    {
-      id: 22,
-      german: "Wir geben einem __ Nachbarn das Medikament. (krank)",
-      correctAnswer: "kranken",
-    },
-    {
-      id: 23,
-      german: "Ich sehe einen __ Hund im Garten. (groß)",
-      correctAnswer: "großen",
-    },
-    {
-      id: 24,
-      german: "Du brauchst eine __ Umgebung. (ruhig)",
-      correctAnswer: "ruhige",
-    },
-    {
-      id: 25,
-      german: "Sie wohnt in einem __ Gebäude. (modern)",
-      correctAnswer: "modernen",
-    },
-    {
-      id: 26,
-      german: "Ich kenne einen __ Mann aus Spanien. (interessant)",
-      correctAnswer: "interessanten",
-    },
-    {
-      id: 27,
-      german: "Sie sucht eine __ Wohnung. (günstig)",
-      correctAnswer: "günstige",
-    },
-    {
-      id: 28,
-      german: "Wir treffen einen __ Herrn im Park. (alt)",
-      correctAnswer: "älteren",
-    },
-    {
-      id: 29,
-      german: "Er arbeitet mit einem __ Kollegen. (kompetent)",
-      correctAnswer: "kompetenten",
-    },
-    {
-      id: 30,
-      german: "Ich sehe ein __ Licht am Himmel. (hell)",
-      correctAnswer: "helles",
-    },
+<Lueckentext
+  textParts={[
+    "21. Ich trinke aus einer ", { type: "blank", correctAnswer: "sauberen" }, " Tasse. (sauber)\n\n",
+    "22. Wir geben einem ", { type: "blank", correctAnswer: "kranken" }, " Nachbarn das Medikament. (krank)\n\n",
+    "23. Ich sehe einen ", { type: "blank", correctAnswer: "großen" }, " Hund im Garten. (groß)\n\n",
+    "24. Du brauchst eine ", { type: "blank", correctAnswer: "ruhige" }, " Umgebung. (ruhig)\n\n",
+    "25. Sie wohnt in einem ", { type: "blank", correctAnswer: "modernen" }, " Gebäude. (modern)\n\n",
+    "26. Ich kenne einen ", { type: "blank", correctAnswer: "interessanten" }, " Mann aus Spanien. (interessant)\n\n",
+    "27. Sie sucht eine ", { type: "blank", correctAnswer: "günstige" }, " Wohnung. (günstig)\n\n",
+    "28. Wir treffen einen ", { type: "blank", correctAnswer: "älteren" }, " Herrn im Park. (alt)\n\n",
+    "29. Er arbeitet mit einem ", { type: "blank", correctAnswer: "kompetenten" }, " Kollegen. (kompetent)\n\n",
+    "30. Ich sehe ein ", { type: "blank", correctAnswer: "helles" }, " Licht am Himmel. (hell)"
   ]}
 />
 
 ---
 
-## Tổng kết bài học
+### **Tác giả ✍️**
 
-Bạn đã hoàn thành 30 câu luyện tập về đuôi tính từ sau mạo từ bất định (ein, eine, ein)!
-
-**Điểm quan trọng cần nhớ:**
-
-- **ein/einen** + tính từ + danh từ giống đực
-- **eine** + tính từ + danh từ giống cái
-- **ein** + tính từ + danh từ giống trung
-- **einem/einer** trong dạng Dativ
-
-<ExerciseAuthor
-  name="Lonia"
-  description="Mình là một Gen Z đang đồng hành cùng các bạn trên hành trình chinh phục tiếng Đức 🇩🇪. Mình mong rằng những đóng góp của mình sẽ mang lại phần nào đó giá trị cho mọi người."
-/>
-
-<ExerciseHelp />
+<AuthorCredit author="Lonia" />
 
 ---
 
-<ExerciseComments exerciseId="a2-adjektivendungen-teil2" url="/a2niveau/Übungen/adjektivendungen/teil2" />
+### **Hỏi đáp ❓💬**
 
-<ExerciseHelp />
+:::tip VITAMIN ĐỘNG LỰC 🌱
+Hãy tiếp tục luyện tập và cải thiện kỹ năng tiếng Đức của bạn mỗi ngày nhé! 😊
+:::
+
+<ExerciseComments exerciseId="uebung-3-teil-2-adjektivendungen-nach-unbestimmtem-artikel" />
+
+import FacebookComments from "@site/src/components/Forms/FacebookComments/FacebookComments";
+
+<FacebookComments url="https://deutsch.vn/docs/A%20Niveau/A2%20Niveau/Übungen/Adjektivendungen/uebung-3-teil-2-adjektivendungen-nach-unbestimmtem-artikel" />
 
 ---
