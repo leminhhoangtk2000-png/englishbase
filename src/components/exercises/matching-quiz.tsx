@@ -167,7 +167,7 @@ export function MatchingQuiz({ title, questions, answers, correctPairs }: Matchi
                     {/* Connection indicator */}
                     {hasAnswer && (
                       <div className="flex items-center gap-1">
-                        <span className="text-xs text-muted-foreground">→ {userAnswer + 1}</span>
+                        <span className="text-xs text-muted-foreground">→ {String.fromCharCode(97 + userAnswer)}</span>
                         {showResults && (
                           result === 'correct' ? (
                             <CheckCircle className="h-4 w-4 text-green-600" />
