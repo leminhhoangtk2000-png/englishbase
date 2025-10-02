@@ -371,20 +371,16 @@ export const docsConfig: DocsConfig = {
           href: "/a1niveau/Übungen/ubungsfragen",
           items: [
             {
-              title: "Teil 1: W-Fragen",
+              title: "1. W-Fragen",
               href: "/a1niveau/Übungen/ubungsfragen/teil-1",
             },
             {
-              title: "Teil 2: Fragewörter Übungen",
+              title: "2. Fragewörter Übungen",
               href: "/a1niveau/Übungen/ubungsfragen/teil-2",
             },
             {
-              title: "Teil 3: Gemischte Fragen",
+              title: "3. Ja/Nein Fragen",
               href: "/a1niveau/Übungen/ubungsfragen/teil-3",
-            },
-            {
-              title: "Teil 4: Erweiterte Übungen",
-              href: "/a1niveau/Übungen/ubungsfragen/teil-4",
             },
           ],
         },

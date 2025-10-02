@@ -536,8 +536,8 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     // Content processing complete
     
     // Extract and parse ExerciseTable, Lueckentext, MatchingQuiz, MultipleChoiceQuiz and FormingQuestions components (JSX format)
-    // Updated regex to match single-line format
-    const exerciseTableRegex = /<ExerciseTable\s+title="([^"]*?)"\s+subtitle="([^"]*?)"\s+exercises=\{(\[[\s\S]*?\])\}\s*\/>/g;
+    // Updated regex to match single-line format with flexible attribute order
+    const exerciseTableRegex = /<ExerciseTable\s+([^>]*?)\s*\/>/g;
     const lueckentextRegex = /<Lueckentext\s+([^>]*?)textParts=\{\[([\s\S]*?)\]\}([^>]*?)\s*\/>/g;
     const matchingQuizRegex = /<MatchingQuiz\s+([\s\S]*?)\s*\/>/g;
     const multipleChoiceQuizRegex = /<MultipleChoiceQuiz\s+([\s\S]*?)\s*\/>/g;
@@ -575,18 +575,29 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     authorCreditRegex.lastIndex = 0;
 
     while ((match = exerciseTableRegex.exec(cleanContent)) !== null) {
-      const [fullMatch, title, subtitle, exercisesStr] = match;
+      const [fullMatch, attributesStr] = match;
       
       console.log('[MDX Client] Found ExerciseTable:', { 
         fullMatch: fullMatch.substring(0, 200) + '...', 
-        title, 
-        subtitle,
-        exercisesStr: exercisesStr.substring(0, 200) + '...' 
+        attributesStr: attributesStr.substring(0, 200) + '...'
       });
       
       try {
-        // Title and subtitle are now directly captured by regex
-        // title and subtitle are already extracted from the match
+        // Parse attributes from string
+        const titleMatch = attributesStr.match(/title="([^"]*)"/);
+        const subtitleMatch = attributesStr.match(/subtitle="([^"]*)"/);
+        const exercisesMatch = attributesStr.match(/exercises=\{(\[[\s\S]*?\])\}/);
+        
+        if (!titleMatch || !subtitleMatch || !exercisesMatch) {
+          console.error('[MDX Client] Could not parse ExerciseTable attributes');
+          continue;
+        }
+        
+        const title = titleMatch[1];
+        const subtitle = subtitleMatch[1];
+        const exercisesStr = exercisesMatch[1];
+        
+        console.log('[MDX Client] Extracted attributes:', { title, subtitle, exercisesLength: exercisesStr.length });
         
         // Parse exercises
         const exercises = parseExercisesArray(exercisesStr);

@@ -1,40 +1,137 @@
 ---
-id: uebung-2-teil-3-w-fragen
-title: 3. Chuyển câu thành W-Fragen
-description: Luyện tập chuyển câu thành câu hỏi W-Fragen trong tiếng Đức.
+id: uebung-2-teil-3-ja-nein
+title: 3. Ja/Nein Fragen - Chọn câu hỏi phù hợp
+description: Luyện tập lựa chọn câu hỏi Ja/Nein phù hợp từ câu trả lời cho trước trong tiếng Đức.
 ---
 
-import FormingQuestions from "@/components/exercises/FormingQuestions";
-import AuthorCredit from "@/components/exercises/author-credit";
-import ExerciseComments from "@/components/exercises/ExerciseComments";
+import { MultipleChoiceQuiz } from "@/components/ui/multiple-choice-quiz";
+import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
+import Exerci<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
 
-# Bài tập: Chuyển câu thành W-Fragen
+### **Hỏi đáp ❓💬**
 
-## Teil 3: Chuyển các câu sau thành câu hỏi W-Fragen
+<ExerciseComments
+  exerciseId="a1-ubungsfragen-teil-3"
+  url="/a1niveau/Übungen/ubungsfragen/teil-3"
+/>
+m "@/components/exercises/ExerciseComments";
 
-Hãy chuyển các câu khẳng định dưới đây thành câu hỏi W-Fragen.
+# Bài tập: Ja/Nein Fragen
+
+## Teil 3: Chọn câu hỏi Ja/Nein phù hợp với câu trả lời
+
+Hãy đọc câu trả lời và chọn câu hỏi Ja/Nein phù hợp nhất từ 4 lựa chọn cho sẵn.
 
 <div className="my-16 flex justify-center">
   <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
 </div>
 
-### Phần 1: Câu 1-5
+### Phần 1: Câu 1-10
 
-<FormingQuestions
-  title="Phần 1: Câu 1-5"
-  statements={[
-    "Sie lernt Deutsch in der Schule.",
-    "Er kauft ein Buch <mark>im Supermarkt</mark>.",
-    "Wir fahren im Sommer <mark>nach Frankreich</mark>.",
-    "Du spielst Fußball <mark>mit deinen Freunden</mark>.",
-    "Der Zug fährt <mark>um 9 Uhr</mark> ab.",
-  ]}
-  correctQuestions={[
-    "Wo lernt sie Deutsch?",
-    "Wo kauft er ein Buch?",
-    "Wohin fahren wir im Sommer?",
-    "Mit wem spielst du Fußball?",
-    "Wann fährt der Zug ab?",
+<MultipleChoiceQuiz
+  questions={[
+    {
+      question: "Ja, ich trinke gern Kaffee.",
+      options: [
+        "Magst du Tee?",
+        "Trinkst du Wasser?",
+        "Kochst du gern?",
+        "Trinkst du gern Kaffee?",
+      ],
+      correctAnswer: "Trinkst du gern Kaffee?",
+    },
+    {
+      question: "Nein, sie spielt kein Klavier.",
+      options: [
+        "Spielt sie Gitarre?",
+        "Spielt sie Klavier?",
+        "Hört sie Musik?",
+        "Liest sie gern Bücher?",
+      ],
+      correctAnswer: "Spielt sie Klavier?",
+    },
+    {
+      question: "Ja, wir haben ein Auto.",
+      options: [
+        "Fahrt ihr Fahrrad?",
+        "Geht ihr zu Fuß?",
+        "Habt ihr ein Auto?",
+        "Habt ihr ein Haus?",
+      ],
+      correctAnswer: "Habt ihr ein Auto?",
+    },
+    {
+      question: "Nein, er arbeitet nicht in einer Bank.",
+      options: [
+        "Arbeitet er in einer Bank?",
+        "Wohnt er in einer Stadt?",
+        "Arbeitet er in einem Café?",
+        "Ist er Lehrer?",
+      ],
+      correctAnswer: "Arbeitet er in einer Bank?",
+    },
+    {
+      question: "Ja, ich sehe oft Filme.",
+      options: [
+        "Liest du viele Bücher?",
+        "Gehst du gern ins Theater?",
+        "Siehst du oft Filme?",
+        "Spielst du Videospiele?",
+      ],
+      correctAnswer: "Siehst du oft Filme?",
+    },
+    {
+      question: "Nein, mein Vater kocht nicht gern.",
+      options: [
+        "Geht dein Vater gern ins Kino?",
+        "Fährt dein Vater gern Rad?",
+        "Arbeitet dein Vater im Restaurant?",
+        "Kocht dein Vater gern?",
+      ],
+      correctAnswer: "Kocht dein Vater gern?",
+    },
+    {
+      question: "Ja, wir gehen morgen ins Kino.",
+      options: [
+        "Geht ihr morgen ins Kino?",
+        "Fahrt ihr morgen ans Meer?",
+        "Bleibt ihr morgen zu Hause?",
+        "Seht ihr morgen einen Film?",
+      ],
+      correctAnswer: "Geht ihr morgen ins Kino?",
+    },
+    {
+      question: "Nein, sie kommen nicht aus Spanien.",
+      options: [
+        "Reisen sie nach Spanien?",
+        "Kommen sie aus Spanien?",
+        "Wohnen sie in Spanien?",
+        "Sprechen sie Spanisch?",
+      ],
+      correctAnswer: "Kommen sie aus Spanien?",
+    },
+    {
+      question: "Ja, ich habe einen Hund.",
+      options: [
+        "Magst du Katzen?",
+        "Bist du allergisch gegen Hunde?",
+        "Gassi du oft?",
+        "Hast du einen Hund?",
+      ],
+      correctAnswer: "Hast du einen Hund?",
+    },
+    {
+      question: "Nein, mein Bruder ist nicht 20 Jahre alt.",
+      options: [
+        "Hat dein Bruder eine Katze?",
+        "Arbeitet dein Bruder?",
+        "Ist dein Bruder 20 Jahre alt?",
+        "Wohnt dein Bruder in Berlin?",
+      ],
+      correctAnswer: "Ist dein Bruder 20 Jahre alt?",
+    },
   ]}
 />
 
@@ -42,95 +139,218 @@ Hãy chuyển các câu khẳng định dưới đây thành câu hỏi W-Fragen
   <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
 </div>
 
-### Phần 2: Câu 6-10
+### Phần 2: Câu 11-20
 
-<FormingQuestions
-  title="Phần 2: Câu 6-10"
-  statements={[
-    "Mein Bruder isst gern <mark>Spaghetti</mark>.",
-    "Sie liest <mark>ein interessantes Buch</mark>.",
-    "Peter kommt <mark>aus Deutschland</mark>.",
-    "Ich stehe <mark>um 6 Uhr</mark> auf.",
-    "Ihr seht einen Film <mark>im Kino</mark>.",
-  ]}
-  correctQuestions={[
-    "Was isst mein Bruder gern?",
-    "Was liest sie?",
-    "Woher kommt Peter?",
-    "Wann stehe ich auf?",
-    "Wo seht ihr einen Film?",
+<MultipleChoiceQuiz
+  questions={[
+    {
+      question: "Ja, ich fahre jeden Tag mit dem Fahrrad.",
+      options: [
+        "Fährst du jeden Tag mit dem Fahrrad?",
+        "Gehst du oft spazieren?",
+        "Magst du Sport?",
+        "Arbeitest du in der Stadt?",
+      ],
+      correctAnswer: "Fährst du jeden Tag mit dem Fahrrad?",
+    },
+    {
+      question: "Nein, meine Schwester liest keine Bücher.",
+      options: [
+        "Schreibt deine Schwester gern?",
+        "Spielt deine Schwester Klavier?",
+        "Mag deine Schwester Tiere?",
+        "Liest deine Schwester Bücher?",
+      ],
+      correctAnswer: "Liest deine Schwester Bücher?",
+    },
+    {
+      question: "Ja, wir essen heute Pizza.",
+      options: [
+        "Trinkt ihr Kaffee?",
+        "Esst ihr gern Pasta?",
+        "Esst ihr heute Pizza?",
+        "Kocht ihr jeden Tag?",
+      ],
+      correctAnswer: "Esst ihr heute Pizza?",
+    },
+    {
+      question: "Nein, er ist kein Lehrer.",
+      options: [
+        "Arbeitet er als Arzt?",
+        "Ist er Pilot?",
+        "Hat er viele Schüler?",
+        "Ist er Lehrer?",
+      ],
+      correctAnswer: "Ist er Lehrer?",
+    },
+    {
+      question: "Ja, ich kann Englisch sprechen.",
+      options: [
+        "Lernst du Französisch?",
+        "Kannst du Englisch sprechen?",
+        "Sprichst du Spanisch?",
+        "Liest du englische Bücher?",
+      ],
+      correctAnswer: "Kannst du Englisch sprechen?",
+    },
+    {
+      question: "Nein, sie gehen heute nicht zur Schule.",
+      options: [
+        "Fahren sie morgen in die Stadt?",
+        "Bleiben sie zu Hause?",
+        "Lernen sie Deutsch?",
+        "Gehen sie heute zur Schule?",
+      ],
+      correctAnswer: "Gehen sie heute zur Schule?",
+    },
+    {
+      question: "Ja, ich komme später.",
+      options: [
+        "Bleibst du zu Hause?",
+        "Arbeitest du heute?",
+        "Kommst du später?",
+        "Trinkst du noch Kaffee?",
+      ],
+      correctAnswer: "Kommst du später?",
+    },
+    {
+      question: "Nein, wir sehen heute keinen Film.",
+      options: [
+        "Seht ihr heute einen Film?",
+        "Esst ihr heute Pizza?",
+        "Hört ihr Musik?",
+        "Geht ihr ins Kino?",
+      ],
+      correctAnswer: "Seht ihr heute einen Film?",
+    },
+    {
+      question: "Ja, ich bin 25 Jahre alt.",
+      options: [
+        "Hast du ein Auto?",
+        "Bist du 25 Jahre alt?",
+        "Wohnst du in Berlin?",
+        "Lernst du Deutsch?",
+      ],
+      correctAnswer: "Bist du 25 Jahre alt?",
+    },
+    {
+      question: "Nein, mein Freund wohnt nicht in Berlin.",
+      options: [
+        "Hat dein Freund ein Auto?",
+        "Arbeitet dein Freund in einer Bank?",
+        "Wohnt dein Freund in Berlin?",
+        "Mag dein Freund Hunde?",
+      ],
+      correctAnswer: "Wohnt dein Freund in Berlin?",
+    },
   ]}
 />
 
-<div className="my-16 flex justify-center">
-  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
-</div>
+## Teil 3: Wähle die passende Ja-/Nein-Frage zur Antwort
 
-### Phần 3: Câu 11-15
-
-<FormingQuestions
-  title="Phần 3: Câu 11-15"
-  statements={[
-    "Sie wohnt <mark>in einer großen Wohnung</mark>.",
-    "Ich trinke morgens <mark>Kaffee</mark>.",
-    "Meine Eltern arbeiten <mark>in einer Bank</mark>.",
-    "Du fährst <mark>mit dem Bus</mark> zur Schule.",
-    "Der Lehrer erklärt <mark>die Aufgabe</mark>.",
-  ]}
-  correctQuestions={[
-    "Wo wohnt sie?",
-    "Was trinke ich morgens?",
-    "Wo arbeiten deine Eltern?",
-    "Wie fährst du zur Schule?",
-    "Was erklärt der Lehrer?",
-  ]}
-/>
-
-<div className="my-16 flex justify-center">
-  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
-</div>
-
-### Phần 4: Câu 16-20
-
-<FormingQuestions
-  title="Phần 4: Câu 16-20"
-  statements={[
-    "Wir gehen am Wochenende <mark>ins Museum</mark>.",
-    "<mark>Dein Freund</mark> hilft dir bei den Hausaufgaben.",
-    "Sie besucht ihre Großeltern <mark>am Sonntag</mark>.",
-    "Er schreibt einen Brief <mark>an seine Mutter</mark>.",
-    "Ich höre gern <mark>klassische</mark> Musik.",
-  ]}
-  correctQuestions={[
-    "Wohin gehen wir am Wochenende?",
-    "Wer hilft dir bei den Hausaufgaben?",
-    "Wann besucht sie ihre Großeltern?",
-    "Wem schreibt er einen Brief?",
-    "Welche Musik hörst du gern?",
-  ]}
-/>
-
-<div className="my-16 flex justify-center">
-  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
-</div>
-
-### Phần 5: Câu 21-25
-
-<FormingQuestions
-  title="Phần 5: Câu 21-25"
-  statements={[
-    "Du lernst <mark>mit deiner Schwester</mark>.",
-    "Er fährt <mark>mit dem Auto</mark> zur Arbeit.",
-    "Wir treffen uns <mark>um 10 Uhr</mark>.",
-    "Sie kocht <mark>ein leckeres Essen</mark>.",
-    "Mein Hund spielt <mark>im Garten</mark>.",
-  ]}
-  correctQuestions={[
-    "Mit wem lernst du?",
-    "Wie fährt er zur Arbeit?",
-    "Wann treffen wir uns?",
-    "Was kocht sie?",
-    "Wo spielt mein Hund?",
+<MultipleChoiceQuiz
+  questions={[
+    // ... existing questions ...
+    {
+      question: "Ja, sie mag Schokolade.",
+      options: [
+        "Trinkt sie Kaffee?",
+        "Mag sie Schokolade?",
+        "Isst sie Eis?",
+        "Kauft sie gern Süßigkeiten?",
+      ],
+      correctAnswer: "Mag sie Schokolade?",
+    },
+    {
+      question: "Nein, mein Vater fährt kein Auto.",
+      options: [
+        "Hat dein Vater eine Katze?",
+        "Geht dein Vater spazieren?",
+        "Fährt dein Vater Auto?",
+        "Arbeitet dein Vater als Fahrer?",
+      ],
+      correctAnswer: "Fährt dein Vater Auto?",
+    },
+    {
+      question: "Ja, wir bleiben zu Hause.",
+      options: [
+        "Geht ihr ins Kino?",
+        "Fahrt ihr ans Meer?",
+        "Spielt ihr draußen?",
+        "Bleibt ihr zu Hause?",
+      ],
+      correctAnswer: "Bleibt ihr zu Hause?",
+    },
+    {
+      question: "Nein, er trinkt keinen Wein.",
+      options: [
+        "Isst er Fleisch?",
+        "Trinkt er Wein?",
+        "Mag er Käse?",
+        "Hat er Durst?",
+      ],
+      correctAnswer: "Trinkt er Wein?",
+    },
+    {
+      question: "Ja, ich lerne Deutsch.",
+      options: [
+        "Arbeitest du in Deutschland?",
+        "Lebst du in Berlin?",
+        "Lernst du Deutsch?",
+        "Magst du Englisch?",
+      ],
+      correctAnswer: "Lernst du Deutsch?",
+    },
+    {
+      question: "Nein, meine Mutter arbeitet nicht am Wochenende.",
+      options: [
+        "Arbeitet deine Mutter am Wochenende?",
+        "Macht deine Mutter gern Sport?",
+        "Kocht deine Mutter oft?",
+        "Fährt deine Mutter Auto?",
+      ],
+      correctAnswer: "Arbeitet deine Mutter am Wochenende?",
+    },
+    {
+      question: "Ja, ich höre Musik.",
+      options: [
+        "Spielst du Fußball?",
+        "Magst du Fernsehen?",
+        "Singst du gern?",
+        "Hörst du Musik?",
+      ],
+      correctAnswer: "Hörst du Musik?",
+    },
+    {
+      question: "Nein, wir haben kein Haustier.",
+      options: [
+        "Mögt ihr Hunde?",
+        "Habt ihr ein Aquarium?",
+        "Habt ihr ein Haustier?",
+        "Spielt ihr mit eurer Katze?",
+      ],
+      correctAnswer: "Habt ihr ein Haustier?",
+    },
+    {
+      question: "Ja, sie tanzt gern.",
+      options: [
+        "Tanzt sie gern?",
+        "Spielt sie Tennis?",
+        "Hört sie Musik?",
+        "Geht sie ins Kino?",
+      ],
+      correctAnswer: "Tanzt sie gern?",
+    },
+    {
+      question: "Nein, mein Opa raucht nicht.",
+      options: [
+        "Trinkt dein Opa Kaffee?",
+        "Raucht dein Opa?",
+        "Mag dein Opa Kuchen?",
+        "Liest dein Opa Zeitung?",
+      ],
+      correctAnswer: "Raucht dein Opa?",
+    },
   ]}
 />
 
@@ -148,20 +368,7 @@ Hãy chuyển các câu khẳng định dưới đây thành câu hỏi W-Fragen
 
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
-
 <ExerciseComments
   exerciseId="a1-ubungsfragen-teil-3"
   url="/a1niveau/Übungen/ubungsfragen/teil-3"
-/>
-
-<Comments
-  url="/a1niveau/Übungen/ubungsfragen/teil-3"
-  exerciseId="a1-ubungsfragen-teil-3"
-/>
-
-<div className="my-16 flex justify-center">
-  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
-</div>
+/>{" "}

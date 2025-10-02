@@ -22,27 +22,13 @@ export function FormingQuestions({ title, statements, correctQuestions }: Formin
   const [isChecked, setIsChecked] = useState(false);
   const [exerciseStarted, setExerciseStarted] = useState(false);
 
-  // Debug: Log props received
-  console.log('🔥 [FormingQuestions] Props:', {
-    title,
-    statements,
-    correctQuestions,
-    statementsLength: statements?.length,
-    firstStatement: statements?.[0],
-  });
-
   // Validate props
   if (!statements || statements.length === 0) {
     return (
       <Card className="border-red-300 bg-red-50">
         <CardContent className="pt-6">
-          <p className="text-red-600 font-bold text-lg">⚠️ PROPS KHÔNG CÓ DATA</p>
-          <div className="mt-3 space-y-2 text-xs">
-            <p className="text-red-600">title: {title}</p>
-            <p className="text-red-600">statements type: {typeof statements}</p>
-            <p className="text-red-600">statements value: {JSON.stringify(statements)}</p>
-            <p className="text-red-600">statements length: {statements?.length || 0}</p>
-          </div>
+          <p className="text-red-600">⚠️ Không có dữ liệu bài tập</p>
+          <p className="text-xs text-red-500 mt-2">statements: {JSON.stringify(statements)}</p>
         </CardContent>
       </Card>
     );
