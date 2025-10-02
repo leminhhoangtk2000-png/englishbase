@@ -4,8 +4,9 @@ title: 2. Bài tập Giới từ với Dativ
 description: Luyện tập sử dụng giới từ với Dativ trong tiếng Đức.
 ---
 
-import Lueckentext from '@site/src/components/Quiz/Lueckentext/Lueckentext';
+import { ExerciseTable } from "@/components/exercises/exercise-table";
 import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập Giới từ với Dativ
 
@@ -13,63 +14,35 @@ Dưới đây là bài tập luyện tập sử dụng **giới từ với Dativ
 
 ## Phần 1: Câu 1-8
 
-<Lueckentext
-  title="Phần 1: Điền giới từ với Dativ (Câu 1-8)"
-  textParts={[
-    "1. Ich komme gerade ",
-    { type: "blank", correctAnswer: "aus" },
-    " dem Kino.\n",
-    "2. Wir wohnen ",
-    { type: "blank", correctAnswer: "bei" },
-    " meinen Eltern.\n",
-    "3. Er fährt ",
-    { type: "blank", correctAnswer: "mit" },
-    " dem Fahrrad.\n",
-    "4. Ich gehe ",
-    { type: "blank", correctAnswer: "zu" },
-    " dem Arzt.\n",
-    "5. Sie ist nett ",
-    { type: "blank", correctAnswer: "zu" },
-    " allen Leuten.\n",
-    "6. Ich arbeite ",
-    { type: "blank", correctAnswer: "bei" },
-    " der Bank.\n",
-    "7. Wir sprechen ",
-    { type: "blank", correctAnswer: "mit" },
-    " dem Lehrer.\n",
-    "8. Ich bleibe heute ",
-    { type: "blank", correctAnswer: "zu" },
-    " Hause."
-  ]}
+<ExerciseTable 
+  title="Phần 1: Điền giới từ với Dativ (Câu 1-8)" 
+  subtitle="Chọn giới từ đúng: aus, bei, mit, zu, von, gegenüber" 
+  exercises={[
+    {id: 1, german: "Ich komme gerade __ dem Kino.", correctAnswer: ["aus"]},
+    {id: 2, german: "Wir wohnen __ meinen Eltern.", correctAnswer: ["bei"]},
+    {id: 3, german: "Er fährt __ dem Fahrrad.", correctAnswer: ["mit"]},
+    {id: 4, german: "Ich gehe __ dem Arzt.", correctAnswer: ["zu"]},
+    {id: 5, german: "Sie ist nett __ allen Leuten.", correctAnswer: ["zu"]},
+    {id: 6, german: "Ich arbeite __ der Bank.", correctAnswer: ["bei"]},
+    {id: 7, german: "Wir sprechen __ dem Lehrer.", correctAnswer: ["mit"]},
+    {id: 8, german: "Ich bleibe heute __ Hause.", correctAnswer: ["zu"]}
+  ]} 
 />
 
 ## Phần 2: Câu 9-15
 
-<Lueckentext
-  title="Phần 2: Điền giới từ với Dativ (Câu 9-15)"
-  textParts={[
-    "9. Das Geschenk ist ",
-    { type: "blank", correctAnswer: "von" },
-    " meiner Schwester.\n",
-    "10. Der Bus fährt ",
-    { type: "blank", correctAnswer: "von" },
-    " dem Bahnhof ab.\n",
-    "11. Ich bin zufrieden ",
-    { type: "blank", correctAnswer: "mit" },
-    " meinem Zimmer.\n",
-    "12. Ich esse gern Pizza ",
-    { type: "blank", correctAnswer: "mit" },
-    " Käse.\n",
-    "13. Er kommt ",
-    { type: "blank", correctAnswer: "aus" },
-    " Deutschland.\n",
-    "14. Ich gehe spazieren ",
-    { type: "blank", correctAnswer: "mit" },
-    " meinem Hund.\n",
-    "15. Der Supermarkt ist ",
-    { type: "blank", correctAnswer: "gegenüber" },
-    " der Schule."
-  ]}
+<ExerciseTable 
+  title="Phần 2: Điền giới từ với Dativ (Câu 9-15)" 
+  subtitle="Tiếp tục luyện tập với giới từ Dativ" 
+  exercises={[
+    {id: 9, german: "Das Geschenk ist __ meiner Schwester.", correctAnswer: ["von"]},
+    {id: 10, german: "Der Bus fährt __ dem Bahnhof ab.", correctAnswer: ["von"]},
+    {id: 11, german: "Ich bin zufrieden __ meinem Zimmer.", correctAnswer: ["mit"]},
+    {id: 12, german: "Ich esse gern Pizza __ Käse.", correctAnswer: ["mit"]},
+    {id: 13, german: "Er kommt __ Deutschland.", correctAnswer: ["aus"]},
+    {id: 14, german: "Ich gehe spazieren __ meinem Hund.", correctAnswer: ["mit"]},
+    {id: 15, german: "Der Supermarkt ist __ der Schule.", correctAnswer: ["gegenüber"]}
+  ]} 
 />
 
 ## Hướng dẫn
@@ -90,6 +63,8 @@ Dưới đây là bài tập luyện tập sử dụng **giới từ với Dativ
 ---
 
 ### **Hỏi đáp ❓💬**
+
+<ExerciseComments exerciseId="a1-praposition-personalpronomen-teil2" url="/a1niveau/Übungen/praposition-personalpronomen/teil2" />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊

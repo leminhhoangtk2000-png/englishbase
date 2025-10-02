@@ -8,146 +8,65 @@ difficulty: "beginner"
 tags: ["w-fragen", "questions", "exercises"]
 ---
 
-import Lueckentext from "@/components/ui/lueckentext";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
 import AuthorCredit from "@/components/exercises/author-credit";
 import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Fragewörter - Teil 1
 
-<Lueckentext
-  textParts={[
-    "1. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " heißt du?",
-    "\n",
-    "2. ",
-    { type: "blank", correctAnswer: "Wo" },
-    " wohnst du?",
-    "\n",
-    "3. ",
-    { type: "blank", correctAnswer: "Wann" },
-    " ist dein Geburtstag?",
-    "\n",
-    "4. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " alt bist du?",
-    "\n",
-    "5. ",
-    { type: "blank", correctAnswer: "Was" },
-    " machst du am Abend?",
-    "\n",
-    "6. ",
-    { type: "blank", correctAnswer: "Warum" },
-    " kommst du heute nicht?",
-    "\n",
-    "7. ",
-    { type: "blank", correctAnswer: "Wer" },
-    " ist dein bester Freund?",
-    "\n",
-    "8. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " groß ist dein Haus?",
-    "\n",
-    "9. ",
-    { type: "blank", correctAnswer: "Wann" },
-    " triffst du deine Freunde?",
-    "\n",
-    "10. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " gehst du zur Arbeit?",
-  ]}
+<ExerciseTable 
+  title="Fragewörter - Teil 1" 
+  subtitle="Điền từ để hỏi thích hợp vào chỗ trống" 
+  exercises={[
+    {id: 1, german: "__ heißt du?", correctAnswer: ["Wie"]},
+    {id: 2, german: "__ wohnst du?", correctAnswer: ["Wo"]},
+    {id: 3, german: "__ ist dein Geburtstag?", correctAnswer: ["Wann"]},
+    {id: 4, german: "__ alt bist du?", correctAnswer: ["Wie"]},
+    {id: 5, german: "__ machst du am Abend?", correctAnswer: ["Was"]},
+    {id: 6, german: "__ kommst du heute nicht?", correctAnswer: ["Warum"]},
+    {id: 7, german: "__ ist dein bester Freund?", correctAnswer: ["Wer"]},
+    {id: 8, german: "__ groß ist dein Haus?", correctAnswer: ["Wie"]},
+    {id: 9, german: "__ triffst du deine Freunde?", correctAnswer: ["Wann"]},
+    {id: 10, german: "__ gehst du zur Arbeit?", correctAnswer: ["Wie"]}
+  ]} 
 />
 
 ## Fragewörter - Teil 2
 
-<Lueckentext
-  textParts={[
-    "11. ",
-    { type: "blank", correctAnswer: "Wann" },
-    " bist du geboren?",
-    "\n",
-    "12. ",
-    { type: "blank", correctAnswer: "Was" },
-    " ist dein Lieblingsessen?",
-    "\n",
-    "13. ",
-    { type: "blank", correctAnswer: "Wo" },
-    " wohnen deine Eltern?",
-    "\n",
-    "14. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " groß bist du?",
-    "\n",
-    "15. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " kommst du zur Schule?",
-    "\n",
-    "16. ",
-    { type: "blank", correctAnswer: "Wer" },
-    " ist dein Chef?",
-    "\n",
-    "17. ",
-    { type: "blank", correctAnswer: "Was" },
-    " trinkst du gern?",
-    "\n",
-    "18. ",
-    { type: "blank", correctAnswer: "Warum" },
-    " bist du so glücklich?",
-    "\n",
-    "19. ",
-    { type: "blank", correctAnswer: "Wo" },
-    " bist du gestern gewesen?",
-    "\n",
-    "20. ",
-    { type: "blank", correctAnswer: "Wo" },
-    " ist deine Tasche?",
-  ]}
+<ExerciseTable 
+  title="Fragewörter - Teil 2" 
+  subtitle="Tiếp tục luyện tập với các từ để hỏi" 
+  exercises={[
+    {id: 11, german: "__ bist du geboren?", correctAnswer: ["Wann"]},
+    {id: 12, german: "__ ist dein Lieblingsessen?", correctAnswer: ["Was"]},
+    {id: 13, german: "__ wohnen deine Eltern?", correctAnswer: ["Wo"]},
+    {id: 14, german: "__ groß bist du?", correctAnswer: ["Wie"]},
+    {id: 15, german: "__ kommst du zur Schule?", correctAnswer: ["Wie"]},
+    {id: 16, german: "__ ist dein Chef?", correctAnswer: ["Wer"]},
+    {id: 17, german: "__ trinkst du gern?", correctAnswer: ["Was"]},
+    {id: 18, german: "__ bist du so glücklich?", correctAnswer: ["Warum"]},
+    {id: 19, german: "__ bist du gestern gewesen?", correctAnswer: ["Wo"]},
+    {id: 20, german: "__ ist deine Tasche?", correctAnswer: ["Wo"]}
+  ]} 
 />
 
 ## Fragewörter - Teil 3
 
-<Lueckentext
-  textParts={[
-    "21. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " heißt dein Haustier?",
-    "\n",
-    "22. ",
-    { type: "blank", correctAnswer: "Was" },
-    " spielst du am Wochenende?",
-    "\n",
-    "23. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " alt ist dein Bruder?",
-    "\n",
-    "24. ",
-    { type: "blank", correctAnswer: "Wann" },
-    " gehst du einkaufen?",
-    "\n",
-    "25. ",
-    { type: "blank", correctAnswer: "Was" },
-    " ist dein Lieblingsfilm?",
-    "\n",
-    "26. ",
-    { type: "blank", correctAnswer: "Wann" },
-    " bist du heute Morgen aufgestanden?",
-    "\n",
-    "27. ",
-    { type: "blank", correctAnswer: "Wer" },
-    " ist dein Lieblingslehrer?",
-    "\n",
-    "28. ",
-    { type: "blank", correctAnswer: "Wo" },
-    " lernst du Deutsch?",
-    "\n",
-    "29. ",
-    { type: "blank", correctAnswer: "Wie" },
-    " heiß ist es heute?",
-    "\n",
-    "30. ",
-    { type: "blank", correctAnswer: "Wann" },
-    " machst du Urlaub?",
-  ]}
+<ExerciseTable 
+  title="Fragewörter - Teil 3" 
+  subtitle="Bài tập nâng cao với các từ để hỏi" 
+  exercises={[
+    {id: 21, german: "__ heißt dein Haustier?", correctAnswer: ["Wie"]},
+    {id: 22, german: "__ spielst du am Wochenende?", correctAnswer: ["Was"]},
+    {id: 23, german: "__ alt ist dein Bruder?", correctAnswer: ["Wie"]},
+    {id: 24, german: "__ gehst du einkaufen?", correctAnswer: ["Wann"]},
+    {id: 25, german: "__ ist dein Lieblingsfilm?", correctAnswer: ["Was"]},
+    {id: 26, german: "__ bist du heute Morgen aufgestanden?", correctAnswer: ["Wann"]},
+    {id: 27, german: "__ ist dein Lieblingslehrer?", correctAnswer: ["Wer"]},
+    {id: 28, german: "__ lernst du Deutsch?", correctAnswer: ["Wo"]},
+    {id: 29, german: "__ heiß ist es heute?", correctAnswer: ["Wie"]},
+    {id: 30, german: "__ machst du Urlaub?", correctAnswer: ["Wann"]}
+  ]} 
 />
 
 ---

@@ -8,8 +8,9 @@ difficulty: "intermediate"
 tags: ["präpositionen", "zeit", "time-prepositions"]
 ---
 
-import Lueckentext from "@/components/ui/lueckentext";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
 import AuthorCredit from "@/components/exercises/author-credit";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập Giới từ chỉ thời gian
 
@@ -17,65 +18,35 @@ Dưới đây là bài tập luyện tập sử dụng **giới từ chỉ thờ
 
 ## Phần 1: Câu 1-8
 
-<Lueckentext
-  title="Phần 1: Điền giới từ chỉ thời gian (Câu 1-8)"
-  textParts={[
-    "1. Ich lebe ",
-    { type: "blank", correctAnswer: "seit" },
-    " 2015 in Berlin.\n",
-    "2. Der Kurs beginnt ",
-    { type: "blank", correctAnswer: "um" },
-    " 8 Uhr.\n",
-    "3. Wir machen Urlaub ",
-    { type: "blank", correctAnswer: "im" },
-    " August.\n",
-    "4. Die Schule dauert ",
-    { type: "blank", correctAnswer: "von" },
-    " 8 ",
-    { type: "blank", correctAnswer: "bis" },
-    " 13 Uhr.\n",
-    "5. ",
-    { type: "blank", correctAnswer: "Am" },
-    " Montag habe ich keine Zeit.\n",
-    "6. Wir treffen uns ",
-    { type: "blank", correctAnswer: "an" },
-    " dem Wochenende.\n",
-    "7. Ich arbeite ",
-    { type: "blank", correctAnswer: "seit" },
-    " 3 Stunden.\n",
-    "8. Ich bin ",
-    { type: "blank", correctAnswer: "seit" },
-    " gestern krank.",
-  ]}
+<ExerciseTable 
+  title="Phần 1: Điền giới từ chỉ thời gian (Câu 1-8)" 
+  subtitle="Chọn giới từ đúng: seit, um, im, von, bis, am, an" 
+  exercises={[
+    {id: 1, german: "Ich lebe __ 2015 in Berlin.", correctAnswer: ["seit"]},
+    {id: 2, german: "Der Kurs beginnt __ 8 Uhr.", correctAnswer: ["um"]},
+    {id: 3, german: "Wir machen Urlaub __ August.", correctAnswer: ["im"]},
+    {id: 4, german: "Die Schule dauert __ 8 __ 13 Uhr.", correctAnswer: ["von", "bis"]},
+    {id: 5, german: "__ Montag habe ich keine Zeit.", correctAnswer: ["Am"]},
+    {id: 6, german: "Wir treffen uns __ dem Wochenende.", correctAnswer: ["an"]},
+    {id: 7, german: "Ich arbeite __ 3 Stunden.", correctAnswer: ["seit"]},
+    {id: 8, german: "Ich bin __ gestern krank.", correctAnswer: ["seit"]}
+  ]} 
 />
 
 ## Phần 2: Câu 9-15
 
-<Lueckentext
-  title="Phần 2: Điền giới từ chỉ thời gian (Câu 9-15)"
-  textParts={[
-    "9. Die Prüfung ist ",
-    { type: "blank", correctAnswer: "am" },
-    " Freitag.\n",
-    "10. Er kommt ",
-    { type: "blank", correctAnswer: "in" },
-    " einer Woche zurück.\n",
-    "11. Ich fahre ",
-    { type: "blank", correctAnswer: "in" },
-    " zwei Wochen nach Italien.\n",
-    "12. Ich habe Geburtstag ",
-    { type: "blank", correctAnswer: "im" },
-    " Dezember.\n",
-    "13. Sie kommt ",
-    { type: "blank", correctAnswer: "um" },
-    " 14 Uhr.\n",
-    "14. ",
-    { type: "blank", correctAnswer: "Um" },
-    " wie viel Uhr beginnt der Film?\n",
-    "15. Er ist erst ",
-    { type: "blank", correctAnswer: "seit" },
-    " 1 Monat in Deutschland.",
-  ]}
+<ExerciseTable 
+  title="Phần 2: Điền giới từ chỉ thời gian (Câu 9-15)" 
+  subtitle="Tiếp tục luyện tập giới từ thời gian" 
+  exercises={[
+    {id: 9, german: "Die Prüfung ist __ Freitag.", correctAnswer: ["am"]},
+    {id: 10, german: "Er kommt __ einer Woche zurück.", correctAnswer: ["in"]},
+    {id: 11, german: "Ich fahre __ zwei Wochen nach Italien.", correctAnswer: ["in"]},
+    {id: 12, german: "Ich habe Geburtstag __ Dezember.", correctAnswer: ["im"]},
+    {id: 13, german: "Sie kommt __ 14 Uhr.", correctAnswer: ["um"]},
+    {id: 14, german: "__ wie viel Uhr beginnt der Film?", correctAnswer: ["Um"]},
+    {id: 15, german: "Er ist erst __ 1 Monat in Deutschland.", correctAnswer: ["seit"]}
+  ]} 
 />
 
 ## Hướng dẫn
@@ -99,6 +70,8 @@ Dưới đây là bài tập luyện tập sử dụng **giới từ chỉ thờ
 ---
 
 ### **Hỏi đáp ❓💬**
+
+<ExerciseComments exerciseId="a1-praposition-personalpronomen-teil3" url="/a1niveau/Übungen/praposition-personalpronomen/teil3" />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊

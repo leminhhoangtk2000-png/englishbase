@@ -4,8 +4,9 @@ title: 4. Bài tập Giới từ Akkusativ/Dativ
 description: Luyện tập sử dụng giới từ thay đổi cách (Akkusativ/Dativ) trong tiếng Đức.
 ---
 
-import Lueckentext from '@site/src/components/Quiz/Lueckentext/Lueckentext';
-import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+import ExerciseTable from '@/components/exercises/exercise-table';
+import AuthorCredit from '@/components/exercises/author-credit';
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập Giới từ Akkusativ/Dativ
 
@@ -13,62 +14,32 @@ Dưới đây là bài tập luyện tập sử dụng **giới từ thay đổi
 
 ## Phần 1: Câu 1-8
 
-<Lueckentext
+<ExerciseTable
   title="Phần 1: Điền giới từ Akkusativ/Dativ (Câu 1-8)"
-  textParts={[
-    "1. Ich lege das Buch ",
-    { type: "blank", correctAnswer: "auf" },
-    " den Tisch.\n",
-    "2. Das Buch liegt ",
-    { type: "blank", correctAnswer: "auf" },
-    " dem Tisch.\n",
-    "3. Er stellt den Stuhl ",
-    { type: "blank", correctAnswer: "an" },
-    " die Wand.\n",
-    "4. Der Stuhl steht ",
-    { type: "blank", correctAnswer: "an" },
-    " der Wand.\n",
-    "5. Ich gehe ",
-    { type: "blank", correctAnswer: "in" },
-    " das Haus.\n",
-    "6. Ich bin ",
-    { type: "blank", correctAnswer: "in" },
-    " dem Haus.\n",
-    "7. Sie hängt das Bild ",
-    { type: "blank", correctAnswer: "an" },
-    " die Wand.\n",
-    "8. Das Bild hängt schon ",
-    { type: "blank", correctAnswer: "an" },
-    " der Wand."
+  exercises={[
+    { id: "1", german: "Ich lege das Buch __ den Tisch.", correctAnswer: ["auf"] },
+    { id: "2", german: "Das Buch liegt __ dem Tisch.", correctAnswer: ["auf"] },
+    { id: "3", german: "Er stellt den Stuhl __ die Wand.", correctAnswer: ["an"] },
+    { id: "4", german: "Der Stuhl steht __ der Wand.", correctAnswer: ["an"] },
+    { id: "5", german: "Ich gehe __ das Haus.", correctAnswer: ["in"] },
+    { id: "6", german: "Ich bin __ dem Haus.", correctAnswer: ["in"] },
+    { id: "7", german: "Sie hängt das Bild __ die Wand.", correctAnswer: ["an"] },
+    { id: "8", german: "Das Bild hängt schon __ der Wand.", correctAnswer: ["an"] }
   ]}
 />
 
 ## Phần 2: Câu 9-15
 
-<Lueckentext
+<ExerciseTable
   title="Phần 2: Điền giới từ Akkusativ/Dativ (Câu 9-15)"
-  textParts={[
-    "9. Wir fahren ",
-    { type: "blank", correctAnswer: "in" },
-    " die Stadt.\n",
-    "10. Wir sind ",
-    { type: "blank", correctAnswer: "in" },
-    " der Stadt.\n",
-    "11. Er läuft ",
-    { type: "blank", correctAnswer: "zu / in" },
-    " die Schule.\n",
-    "12. Er ist schon ",
-    { type: "blank", correctAnswer: "in" },
-    " der Schule.\n",
-    "13. Ich stelle die Tasche ",
-    { type: "blank", correctAnswer: "auf" },
-    " den Stuhl.\n",
-    "14. Die Tasche liegt ",
-    { type: "blank", correctAnswer: "auf" },
-    " dem Stuhl.\n",
-    "15. Sie setzt sich ",
-    { type: "blank", correctAnswer: "in" },
-    " den Sessel."
+  exercises={[
+    { id: "9", german: "Wir fahren __ die Stadt.", correctAnswer: ["in"] },
+    { id: "10", german: "Wir sind __ der Stadt.", correctAnswer: ["in"] },
+    { id: "11", german: "Er läuft __ die Schule.", correctAnswer: ["zu", "in"] },
+    { id: "12", german: "Er ist schon __ der Schule.", correctAnswer: ["in"] },
+    { id: "13", german: "Ich stelle die Tasche __ den Stuhl.", correctAnswer: ["auf"] },
+    { id: "14", german: "Die Tasche liegt __ dem Stuhl.", correctAnswer: ["auf"] },
+    { id: "15", german: "Sie setzt sich __ den Sessel.", correctAnswer: ["in"] }
   ]}
 />
 
@@ -93,6 +64,8 @@ Dưới đây là bài tập luyện tập sử dụng **giới từ thay đổi
 ---
 
 ### **Hỏi đáp ❓💬**
+
+<ExerciseComments exerciseId="a1-praposition-personalpronomen-teil4" url="/a1niveau/Übungen/praposition-personalpronomen/teil4" />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊

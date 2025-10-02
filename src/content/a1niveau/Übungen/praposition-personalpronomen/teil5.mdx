@@ -8,8 +8,9 @@ difficulty: "advanced"
 tags: ["personalpronomen", "pronouns", "substitution"]
 ---
 
-import Lueckentext from "@/components/ui/lueckentext";
+import ExerciseTable from "@/components/exercises/exercise-table";
 import AuthorCredit from "@/components/exercises/author-credit";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập Đại từ Nhân xưng
 
@@ -17,62 +18,32 @@ Dưới đây là bài tập luyện tập thay thế danh từ bằng **đại 
 
 ## Phần 1: Câu 1-8
 
-<Lueckentext
+<ExerciseTable
   title="Phần 1: Điền đại từ nhân xưng (Câu 1-8)"
-  textParts={[
-    "1. Ich sehe den Mann jeden Morgen.\n→ Ich sehe ",
-    { type: "blank", correctAnswer: "ihn" },
-    " jeden Morgen.\n",
-    "2. Kannst du meiner Schwester helfen?\n→ Kannst du ",
-    { type: "blank", correctAnswer: "ihr" },
-    " helfen?\n",
-    "3. Ich besuche meine Großeltern oft.\n→ Ich besuche ",
-    { type: "blank", correctAnswer: "sie" },
-    " oft.\n",
-    "4. Wir danken dem Lehrer für die Hilfe.\n→ Wir danken ",
-    { type: "blank", correctAnswer: "ihm" },
-    " für die Hilfe.\n",
-    "5. Ich habe deinen Bruder gestern getroffen.\n→ Ich habe ",
-    { type: "blank", correctAnswer: "ihn" },
-    " gestern getroffen.\n",
-    "6. Hilfst du meinen Eltern beim Umzug?\n→ Hilfst du ",
-    { type: "blank", correctAnswer: "ihnen" },
-    " beim Umzug?\n",
-    "7. Ich liebe meine Katze sehr.\n→ Ich liebe ",
-    { type: "blank", correctAnswer: "sie" },
-    " rất.\n",
-    "8. Ich schreibe dem Chef eine E-Mail.\n→ Ich schreibe ",
-    { type: "blank", correctAnswer: "ihm" },
-    " eine E-Mail.",
+  exercises={[
+    { id: "1", german: "Ich sehe den Mann jeden Morgen. → Ich sehe __ jeden Morgen.", correctAnswer: ["ihn"] },
+    { id: "2", german: "Kannst du meiner Schwester helfen? → Kannst du __ helfen?", correctAnswer: ["ihr"] },
+    { id: "3", german: "Ich besuche meine Großeltern oft. → Ich besuche __ oft.", correctAnswer: ["sie"] },
+    { id: "4", german: "Wir danken dem Lehrer für die Hilfe. → Wir danken __ für die Hilfe.", correctAnswer: ["ihm"] },
+    { id: "5", german: "Ich habe deinen Bruder gestern getroffen. → Ich habe __ gestern getroffen.", correctAnswer: ["ihn"] },
+    { id: "6", german: "Hilfst du meinen Eltern beim Umzug? → Hilfst du __ beim Umzug?", correctAnswer: ["ihnen"] },
+    { id: "7", german: "Ich liebe meine Katze sehr. → Ich liebe __ sehr.", correctAnswer: ["sie"] },
+    { id: "8", german: "Ich schreibe dem Chef eine E-Mail. → Ich schreibe __ eine E-Mail.", correctAnswer: ["ihm"] }
   ]}
 />
 
 ## Phần 2: Câu 9-15
 
-<Lueckentext
+<ExerciseTable
   title="Phần 2: Điền đại từ nhân xưng (Câu 9-15)"
-  textParts={[
-    "9. Kennst du die Frau dort?\n→ Kennst du ",
-    { type: "blank", correctAnswer: "sie" },
-    " dort?\n",
-    "10. Ich gebe dem Kind ein Buch.\n→ Ich gebe ",
-    { type: "blank", correctAnswer: "ihm" },
-    " ein Buch.\n",
-    "11. Er ruft seine Freundin jeden Abend an.\n→ Er ruft ",
-    { type: "blank", correctAnswer: "sie" },
-    " jeden Abend an.\n",
-    "12. Ich zeige den Touristen den Weg.\n→ Ich zeige ",
-    { type: "blank", correctAnswer: "ihnen" },
-    " den Weg.\n",
-    "13. Wir hören oft diesen Song.\n→ Wir hören ",
-    { type: "blank", correctAnswer: "ihn" },
-    " oft.\n",
-    "14. Kannst du mir bitte die Butter geben?\n→ Kannst du ",
-    { type: "blank", correctAnswer: "mir" },
-    " bitte die Butter geben?\n",
-    "15. Ich danke dir für alles.\n→ Ich danke ",
-    { type: "blank", correctAnswer: "dir" },
-    " für alles.",
+  exercises={[
+    { id: "9", german: "Kennst du die Frau dort? → Kennst du __ dort?", correctAnswer: ["sie"] },
+    { id: "10", german: "Ich gebe dem Kind ein Buch. → Ich gebe __ ein Buch.", correctAnswer: ["ihm"] },
+    { id: "11", german: "Er ruft seine Freundin jeden Abend an. → Er ruft __ jeden Abend an.", correctAnswer: ["sie"] },
+    { id: "12", german: "Ich zeige den Touristen den Weg. → Ich zeige __ den Weg.", correctAnswer: ["ihnen"] },
+    { id: "13", german: "Wir hören oft diesen Song. → Wir hören __ oft.", correctAnswer: ["ihn"] },
+    { id: "14", german: "Kannst du mir bitte die Butter geben? → Kannst du __ bitte die Butter geben?", correctAnswer: ["mir"] },
+    { id: "15", german: "Ich danke dir für alles. → Ich danke __ für alles.", correctAnswer: ["dir"] }
   ]}
 />
 
@@ -100,6 +71,8 @@ Dưới đây là bài tập luyện tập thay thế danh từ bằng **đại 
 ---
 
 ### **Hỏi đáp ❓💬**
+
+<ExerciseComments exerciseId="a1-praposition-personalpronomen-teil5" url="/a1niveau/Übungen/praposition-personalpronomen/teil5" />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊

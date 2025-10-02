@@ -8,8 +8,9 @@ difficulty: "intermediate"
 tags: ["nicht", "kein", "negation", "advanced"]
 ---
 
-import Lueckentext from "@/components/ui/lueckentext";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
 import AuthorCredit from "@/components/exercises/author-credit";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập nicht, kein và Liên từ (Teil 3)
 
@@ -17,112 +18,40 @@ Dưới đây là bài tập luyện tập sử dụng **nicht** (phủ định 
 
 ## Phần 1: Câu 1-10
 
-<Lueckentext
-  title="Phần 1: Điền nicht, kein hoặc liên từ (Câu 1-10)"
-  textParts={[
-    "Ich habe heute ",
-    { type: "blank", correctAnswer: "kein" },
-    " Frühstück gegessen, ",
-    { type: "blank", correctAnswer: "denn" },
-    " ich war spät dran.\n",
-    "– Möchtest du Tee ",
-    { type: "blank", correctAnswer: "oder" },
-    " Kaffee?\n– Ich trinke beides nicht, ich mag ",
-    { type: "blank", correctAnswer: "keine" },
-    " Heißgetränke.\n",
-    "– Ich habe das Buch gesucht, ",
-    { type: "blank", correctAnswer: "aber" },
-    " ich habe es nicht gefunden.\n– Hast du in der Tasche geschaut?\n– Ja, da ist auch ",
-    { type: "blank", correctAnswer: "kein" },
-    " Buch.\n",
-    "– Wir machen heute Pizza, ",
-    { type: "blank", correctAnswer: "denn" },
-    " wir haben Tomaten und Käse.\n– Super! Ich bringe Salat mit.\n",
-    "– Magst du Katzen ",
-    { type: "blank", correctAnswer: "oder" },
-    " Hunde?\n– Ich habe ",
-    { type: "blank", correctAnswer: "keine" },
-    " Haustiere, bin aber oft bei Freunden mit Tieren.\n",
-    "– Ich kann morgen nicht mitkommen, ",
-    { type: "blank", correctAnswer: "denn" },
-    " ich habe einen Termin.\n– Okay, dann treffen wir uns übermorgen?\n",
-    "– Hast du einen Regenschirm?\n– Nein, ich habe ",
-    { type: "blank", correctAnswer: "keinen" },
-    " dabei, ",
-    { type: "blank", correctAnswer: "aber" },
-    " es regnet gerade stark!\n",
-    "– Ich trinke oft Wasser, ",
-    { type: "blank", correctAnswer: "aber" },
-    " ich trinke ",
-    { type: "blank", correctAnswer: "keine" },
-    " Limonade.\n– Das ist gesund!\n",
-    "– Kommst du heute zum Training?\n– Nein, ich habe ",
-    { type: "blank", correctAnswer: "keine" },
-    " Zeit ",
-    { type: "blank", correctAnswer: "und keine" },
-    " Lust.\n",
-    "– Isst du lieber Pizza ",
-    { type: "blank", correctAnswer: "oder" },
-    " Pasta?\n– Pasta. Pizza esse ich ",
-    { type: "blank", correctAnswer: "nicht" },
-    ", ",
-    { type: "blank", correctAnswer: "denn" },
-    " sie ist mir zu fettig.",
-  ]}
+<ExerciseTable 
+  title="Phần 1: Điền nicht, kein hoặc liên từ (Câu 1-10)" 
+  subtitle="Chọn từ đúng: nicht, kein/keine/keinen hoặc liên từ" 
+  exercises={[
+    {id: 1, german: "Ich habe heute __ Frühstück gegessen, __ ich war spät dran.", correctAnswer: ["kein", "denn"]},
+    {id: 2, german: "Möchtest du Tee __ Kaffee? – Ich mag __ Heißgetränke.", correctAnswer: ["oder", "keine"]},
+    {id: 3, german: "Ich habe das Buch gesucht, __ ich habe es nicht gefunden. Da ist auch __ Buch.", correctAnswer: ["aber", "kein"]},
+    {id: 4, german: "Wir machen heute Pizza, __ wir haben Tomaten und Käse.", correctAnswer: ["denn"]},
+    {id: 5, german: "Magst du Katzen __ Hunde? – Ich habe __ Haustiere.", correctAnswer: ["oder", "keine"]},
+    {id: 6, german: "Ich kann morgen nicht mitkommen, __ ich habe einen Termin.", correctAnswer: ["denn"]},
+    {id: 7, german: "Hast du einen Regenschirm? – Nein, ich habe __ dabei, __ es regnet stark!", correctAnswer: ["keinen", "aber"]},
+    {id: 8, german: "Ich trinke oft Wasser, __ ich trinke __ Limonade.", correctAnswer: ["aber", "keine"]},
+    {id: 9, german: "Kommst du heute zum Training? – Nein, ich habe __ Zeit __ Lust.", correctAnswer: ["keine", "und keine"]},
+    {id: 10, german: "Isst du lieber Pizza __ Pasta? – Pasta. Pizza esse ich __, __ sie ist mir zu fettig.", correctAnswer: ["oder", "nicht", "denn"]}
+  ]} 
 />
 
 ## Phần 2: Câu 11-20
 
-<Lueckentext
-  title="Phần 2: Điền nicht, kein hoặc liên từ (Câu 11-20)"
-  textParts={[
-    "– Anna geht ins Kino, ",
-    { type: "blank", correctAnswer: "denn" },
-    " sie mag den neuen Film.\n– Ich gehe nicht mit, ich habe ",
-    { type: "blank", correctAnswer: "kein" },
-    " Interesse daran.\n",
-    "– Willst du Schokolade ",
-    { type: "blank", correctAnswer: "oder" },
-    " Kekse?\n– Ich esse ",
-    { type: "blank", correctAnswer: "keine" },
-    " Süßigkeiten mehr, ich mache Diät.\n",
-    "– Ich bin müde, ",
-    { type: "blank", correctAnswer: "denn" },
-    " ich habe gestern fast nicht geschlafen.\n– Dann mach doch ein Nickerchen!\n",
-    "– Ich wollte dir helfen, ",
-    { type: "blank", correctAnswer: "aber" },
-    " du warst schon fertig.\n– Kein Problem, danke trotzdem!\n",
-    "– Ihr habt ",
-    { type: "blank", correctAnswer: "kein" },
-    " Brot mehr zu Hause?\n– Nein, ",
-    { type: "blank", correctAnswer: "kein" },
-    " Brot, ",
-    { type: "blank", correctAnswer: "und keine" },
-    " Butter. Alles ist leer!\n",
-    "– Das ist ",
-    { type: "blank", correctAnswer: "kein" },
-    " guter Plan, ",
-    { type: "blank", correctAnswer: "aber" },
-    " ich finde ihn nicht sehr realistisch.\n– Wieso nicht?\n",
-    "– Lernst du Deutsch ",
-    { type: "blank", correctAnswer: "oder" },
-    " Spanisch?\n– Spanisch nicht, ",
-    { type: "blank", correctAnswer: "aber" },
-    " ich liebe Deutsch!\n",
-    "– Mein Bruder hat ",
-    { type: "blank", correctAnswer: "keine" },
-    " Lust auf Sport, ",
-    { type: "blank", correctAnswer: "denn" },
-    " er liegt nur auf dem Sofa.\n– Klingt entspannt!\n",
-    "– Habt ihr heute Unterricht?\n– Nein, es gibt ",
-    { type: "blank", correctAnswer: "keine" },
-    " Schule wegen der Ferien.\n",
-    "– Nimmst du den Bus ",
-    { type: "blank", correctAnswer: "oder" },
-    " das Fahrrad?\n– Ich nehme den Bus, ",
-    { type: "blank", correctAnswer: "denn" },
-    " mein Fahrrad ist kaputt.",
-  ]}
+<ExerciseTable 
+  title="Phần 2: Điền nicht, kein hoặc liên từ (Câu 11-20)" 
+  subtitle="Tiếp tục luyện tập với nicht, kein và liên từ" 
+  exercises={[
+    {id: 11, german: "Anna geht ins Kino, __ sie mag den neuen Film. – Ich habe __ Interesse daran.", correctAnswer: ["denn", "kein"]},
+    {id: 12, german: "Willst du Schokolade __ Kekse? – Ich esse __ Süßigkeiten mehr.", correctAnswer: ["oder", "keine"]},
+    {id: 13, german: "Ich bin müde, __ ich habe gestern fast nicht geschlafen.", correctAnswer: ["denn"]},
+    {id: 14, german: "Ich wollte dir helfen, __ du warst schon fertig.", correctAnswer: ["aber"]},
+    {id: 15, german: "Ihr habt __ Brot mehr zu Hause? – Nein, __ Brot, __ Butter.", correctAnswer: ["kein", "kein", "und keine"]},
+    {id: 16, german: "Das ist __ guter Plan, __ ich finde ihn nicht sehr realistisch.", correctAnswer: ["kein", "aber"]},
+    {id: 17, german: "Lernst du Deutsch __ Spanisch? – Spanisch nicht, __ ich liebe Deutsch!", correctAnswer: ["oder", "aber"]},
+    {id: 18, german: "Mein Bruder hat __ Lust auf Sport, __ er liegt nur auf dem Sofa.", correctAnswer: ["keine", "denn"]},
+    {id: 19, german: "Habt ihr heute Unterricht? – Nein, es gibt __ Schule wegen der Ferien.", correctAnswer: ["keine"]},
+    {id: 20, german: "Nimmst du den Bus __ das Fahrrad? – Ich nehme den Bus, __ mein Fahrrad ist kaputt.", correctAnswer: ["oder", "denn"]}
+  ]} 
 />
 
 ## Hướng dẫn
@@ -146,6 +75,8 @@ Dưới đây là bài tập luyện tập sử dụng **nicht** (phủ định 
 ---
 
 ### **Hỏi đáp ❓💬**
+
+<ExerciseComments exerciseId="a1-nicht-und-kein-teil2" url="/a1niveau/Übungen/nicht-und-kein/teil2" />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊

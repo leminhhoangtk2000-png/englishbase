@@ -9,29 +9,53 @@ tags: ["artikel", "präsens", "exercises", "grammar"]
 ---
 
 import { ExerciseTable } from "@/components/exercises/exercise-table";
-import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import {
+  ExerciseAuthor,
+  ExerciseHelp,
+} from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập: Điền mạo từ (der, die, das) và Chia động từ (Präsens)
 
 ## Teil 1: Điền mạo từ và chia động từ (Câu 1-10)
 
-<ExerciseTable title="Teil 1: Điền mạo từ và chia động từ" subtitle="Hoàn thành câu với mạo từ đúng (der, die, das) và chia động từ" exercises={[{id: 1, german: "__ Tisch (sein) __ groß.", correctAnswer: ["Der", "ist"]}, {id: 2, german: "__ Blume (haben) __ eine schöne Farbe.", correctAnswer: ["Die", "hat"]}, {id: 3, german: "__ Auto (fahren) __ sehr schnell.", correctAnswer: ["Das", "fährt"]}, {id: 4, german: "__ Kind (spielen) __ im Garten.", correctAnswer: ["Das", "spielt"]}, {id: 5, german: "__ Hund (laufen) __ im Park.", correctAnswer: ["Der", "läuft"]}, {id: 6, german: "__ Lampe (stehen) __ auf dem Tisch.", correctAnswer: ["Die", "steht"]}, {id: 7, german: "__ Buch (liegen) __ auf dem Stuhl.", correctAnswer: ["Das", "liegt"]}, {id: 8, german: "__ Apfel (schmecken) __ sehr gut.", correctAnswer: ["Der", "schmeckt"]}, {id: 9, german: "__ Tür (sein) __ geschlossen.", correctAnswer: ["Die", "ist"]}, {id: 10, german: "__ Stuhl (gehören) __ mir.", correctAnswer: ["Der", "gehört"]}]} />
+<ExerciseTable
+  title="Teil 1: Điền mạo từ và chia động từ"
+  subtitle="Hoàn thành câu với mạo từ đúng (der, die, das) và chia động từ"
+  exercises={[{id: 1, german: "__ Tisch (sein) __ groß.", correctAnswer: ["Der", "ist"]}, {id: 2, german: "__ Blume (haben) __ eine schöne Farbe.", correctAnswer: ["Die", "hat"]}, {id: 3, german: "__ Auto (fahren) __ sehr schnell.", correctAnswer: ["Das", "fährt"]}, {id: 4, german: "__ Kind (spielen) __ im Garten.", correctAnswer: ["Das", "spielt"]}, {id: 5, german: "__ Hund (laufen) __ im Park.", correctAnswer: ["Der", "läuft"]}, {id: 6, german: "__ Lampe (stehen) __ auf dem Tisch.", correctAnswer: ["Die", "steht"]}, {id: 7, german: "__ Buch (liegen) __ auf dem Stuhl.", correctAnswer: ["Das", "liegt"]}, {id: 8, german: "__ Apfel (schmecken) __ sehr gut.", correctAnswer: ["Der", "schmeckt"]}, {id: 9, german: "__ Tür (sein) __ geschlossen.", correctAnswer: ["Die", "ist"]}, {id: 10, german: "__ Stuhl (gehören) __ mir.", correctAnswer: ["Der", "gehört"]}]}
+/>
 
 ## Teil 2: Konjugation im Präsens (Jina)
 
-<ExerciseTable title="Teil 2: Konjugation im Präsens (Jina)" subtitle="Tiếp tục luyện tập với các động từ bất quy tắc" exercises={[{id: 11, german: "__ Vater (lesen) __ eine Zeitung.", correctAnswer: ["Der", "liest"]}, {id: 12, german: "__ Mutter (nehmen) __ eine Tasse Kaffee.", correctAnswer: ["Die", "nimmt"]}, {id: 13, german: "__ Kind (schlafen) __ tief und fest.", correctAnswer: ["Das", "schläft"]}, {id: 14, german: "__ Hund (sehen) __ eine Katze.", correctAnswer: ["Der", "sieht"]}, {id: 15, german: "__ Lampe (hängen) __ an der Decke.", correctAnswer: ["Die", "hängt"]}, {id: 16, german: "__ Auto (halten) __ an der Ampel.", correctAnswer: ["Das", "hält"]}, {id: 17, german: "__ Apfel (fallen) __ vom Baum.", correctAnswer: ["Der", "fällt"]}, {id: 18, german: "__ Lehrerin (geben) __ uns Hausaufgaben.", correctAnswer: ["Die", "gibt"]}, {id: 19, german: "__ Brot (sein) __ frisch und lecker.", correctAnswer: ["Das", "ist"]}, {id: 20, german: "__ Schlüssel (liegen) __ auf dem Tisch.", correctAnswer: ["Der", "liegt"]}]} />
+<ExerciseTable
+  title="Teil 2: Konjugation im Präsens (Jina)"
+  subtitle="Tiếp tục luyện tập với các động từ bất quy tắc"
+  exercises={[{id: 11, german: "__ Vater (lesen) __ eine Zeitung.", correctAnswer: ["Der", "liest"]}, {id: 12, german: "__ Mutter (nehmen) __ eine Tasse Kaffee.", correctAnswer: ["Die", "nimmt"]}, {id: 13, german: "__ Kind (schlafen) __ tief und fest.", correctAnswer: ["Das", "schläft"]}, {id: 14, german: "__ Hund (sehen) __ eine Katze.", correctAnswer: ["Der", "sieht"]}, {id: 15, german: "__ Lampe (hängen) __ an der Decke.", correctAnswer: ["Die", "hängt"]}, {id: 16, german: "__ Auto (halten) __ an der Ampel.", correctAnswer: ["Das", "hält"]}, {id: 17, german: "__ Apfel (fallen) __ vom Baum.", correctAnswer: ["Der", "fällt"]}, {id: 18, german: "__ Lehrerin (geben) __ uns Hausaufgaben.", correctAnswer: ["Die", "gibt"]}, {id: 19, german: "__ Brot (sein) __ frisch und lecker.", correctAnswer: ["Das", "ist"]}, {id: 20, german: "__ Schlüssel (liegen) __ auf dem Tisch.", correctAnswer: ["Der", "liegt"]}]}
+/>
 
 ## Teil 3: Konjugation im Präsens (Anne und Sarah)
 
-<ExerciseTable title="Teil 3: Konjugation im Präsens (Anne und Sarah)" subtitle="Luyện tập với các động từ khác nhau và mạo từ" exercises={[{id: 21, german: "__ Blume (blühen) __ im Frühling.", correctAnswer: ["Die", "blüht"]}, {id: 22, german: "__ Fenster (sein) __ offen.", correctAnswer: ["Das", "ist"]}, {id: 23, german: "__ Schüler (sprechen) __ mit dem Lehrer.", correctAnswer: ["Der", "spricht"]}, {id: 24, german: "__ Katze (laufen) __ durch den Garten.", correctAnswer: ["Die", "läuft"]}, {id: 25, german: "__ Wasser (gefrieren) __ im Winter.", correctAnswer: ["Das", "gefriert"]}, {id: 26, german: "__ Freund (helfen) __ mir bei den Hausaufgaben.", correctAnswer: ["Der", "hilft"]}, {id: 27, german: "__ Uhr (zeigen) __ 10 Uhr.", correctAnswer: ["Die", "zeigt"]}, {id: 28, german: "__ Haus (stehen) __ in der Stadt.", correctAnswer: ["Das", "steht"]}, {id: 29, german: "__ Bus (kommen) __ zu spät.", correctAnswer: ["Der", "kommt"]}, {id: 30, german: "__ Sonne (scheinen) __ hell.", correctAnswer: ["Die", "scheint"]}]} />
+<ExerciseTable
+  title="Teil 3: Konjugation im Präsens (Anne und Sarah)"
+  subtitle="Luyện tập với các động từ khác nhau và mạo từ"
+  exercises={[{id: 21, german: "__ Blume (blühen) __ im Frühling.", correctAnswer: ["Die", "blüht"]}, {id: 22, german: "__ Fenster (sein) __ offen.", correctAnswer: ["Das", "ist"]}, {id: 23, german: "__ Schüler (sprechen) __ mit dem Lehrer.", correctAnswer: ["Der", "spricht"]}, {id: 24, german: "__ Katze (laufen) __ durch den Garten.", correctAnswer: ["Die", "läuft"]}, {id: 25, german: "__ Wasser (gefrieren) __ im Winter.", correctAnswer: ["Das", "gefriert"]}, {id: 26, german: "__ Freund (helfen) __ mir bei den Hausaufgaben.", correctAnswer: ["Der", "hilft"]}, {id: 27, german: "__ Uhr (zeigen) __ 10 Uhr.", correctAnswer: ["Die", "zeigt"]}, {id: 28, german: "__ Haus (stehen) __ in der Stadt.", correctAnswer: ["Das", "steht"]}, {id: 29, german: "__ Bus (kommen) __ zu spät.", correctAnswer: ["Der", "kommt"]}, {id: 30, german: "__ Sonne (scheinen) __ hell.", correctAnswer: ["Die", "scheint"]}]}
+/>
 
 ## Teil 4: Konjugation im Präsens (Pablo)
 
-<ExerciseTable title="Teil 4: Konjugation im Präsens (Pablo)" subtitle="Thực hành với các động từ mạnh và yếu" exercises={[{id: 31, german: "__ Mädchen (essen) __ gern Schokolade.", correctAnswer: ["Das", "isst"]}, {id: 32, german: "__ Junge (werfen) __ den Ball.", correctAnswer: ["Der", "wirft"]}, {id: 33, german: "__ Milch (sein) __ kalt.", correctAnswer: ["Die", "ist"]}, {id: 34, german: "__ Bild (hängen) __ an der Wand.", correctAnswer: ["Das", "hängt"]}, {id: 35, german: "__ Baum (wachsen) __ sehr schnell.", correctAnswer: ["Der", "wächst"]}, {id: 36, german: "__ Tür (öffnen) __ sich langsam.", correctAnswer: ["Die", "öffnet"]}, {id: 37, german: "__ Fahrrad (stehen) __ vor dem Haus.", correctAnswer: ["Das", "steht"]}, {id: 38, german: "__ Vogel (fliegen) __ am Himmel.", correctAnswer: ["Der", "fliegt"]}, {id: 39, german: "__ Jacke (gehören) __ mir.", correctAnswer: ["Die", "gehört"]}, {id: 40, german: "__ Handy (liegen) __ auf dem Sofa.", correctAnswer: ["Das", "liegt"]}]} />
+<ExerciseTable
+  title="Teil 4: Konjugation im Präsens (Pablo)"
+  subtitle="Thực hành với các động từ mạnh và yếu"
+  exercises={[{id: 31, german: "__ Mädchen (essen) __ gern Schokolade.", correctAnswer: ["Das", "isst"]}, {id: 32, german: "__ Junge (werfen) __ den Ball.", correctAnswer: ["Der", "wirft"]}, {id: 33, german: "__ Milch (sein) __ kalt.", correctAnswer: ["Die", "ist"]}, {id: 34, german: "__ Bild (hängen) __ an der Wand.", correctAnswer: ["Das", "hängt"]}, {id: 35, german: "__ Baum (wachsen) __ sehr schnell.", correctAnswer: ["Der", "wächst"]}, {id: 36, german: "__ Tür (öffnen) __ sich langsam.", correctAnswer: ["Die", "öffnet"]}, {id: 37, german: "__ Fahrrad (stehen) __ vor dem Haus.", correctAnswer: ["Das", "steht"]}, {id: 38, german: "__ Vogel (fliegen) __ am Himmel.", correctAnswer: ["Der", "fliegt"]}, {id: 39, german: "__ Jacke (gehören) __ mir.", correctAnswer: ["Die", "gehört"]}, {id: 40, german: "__ Handy (liegen) __ auf dem Sofa.", correctAnswer: ["Das", "liegt"]}]}
+/>
 
 ## Teil 5: Konjugation im Präsens (Ich und andere)
 
-<ExerciseTable title="Teil 5: Konjugation im Präsens (Ich und andere)" subtitle="Bài tập cuối - tổng hợp tất cả kiến thức" exercises={[{id: 41, german: "__ Tisch (stehen) __ in der Küche.", correctAnswer: ["Der", "steht"]}, {id: 42, german: "__ Tasche (haben) __ viele Bücher.", correctAnswer: ["Die", "hat"]}, {id: 43, german: "__ Ei (sein) __ hart gekocht.", correctAnswer: ["Das", "ist"]}, {id: 44, german: "__ Arzt (helfen) __ den Patienten.", correctAnswer: ["Der", "hilft"]}, {id: 45, german: "__ Maus (rennen) __ schnell.", correctAnswer: ["Die", "rennt"]}, {id: 46, german: "__ Flugzeug (fliegen) __ nach Berlin.", correctAnswer: ["Das", "fliegt"]}, {id: 47, german: "__ Lehrer (fragen) __ die Schüler.", correctAnswer: ["Der", "fragt"]}, {id: 48, german: "__ Banane (schmecken) __ süß.", correctAnswer: ["Die", "schmeckt"]}, {id: 49, german: "__ Glas (fallen) __ auf den Boden.", correctAnswer: ["Das", "fällt"]}, {id: 50, german: "__ Opa (erzählen) __ eine Geschichte.", correctAnswer: ["Der", "erzählt"]}]} />
+<ExerciseTable
+  title="Teil 5: Konjugation im Präsens (Ich und andere)"
+  subtitle="Bài tập cuối - tổng hợp tất cả kiến thức"
+  exercises={[{id: 41, german: "__ Tisch (stehen) __ in der Küche.", correctAnswer: ["Der", "steht"]}, {id: 42, german: "__ Tasche (haben) __ viele Bücher.", correctAnswer: ["Die", "hat"]}, {id: 43, german: "__ Ei (sein) __ hart gekocht.", correctAnswer: ["Das", "ist"]}, {id: 44, german: "__ Arzt (helfen) __ den Patienten.", correctAnswer: ["Der", "hilft"]}, {id: 45, german: "__ Maus (rennen) __ schnell.", correctAnswer: ["Die", "rennt"]}, {id: 46, german: "__ Flugzeug (fliegen) __ nach Berlin.", correctAnswer: ["Das", "fliegt"]}, {id: 47, german: "__ Lehrer (fragen) __ die Schüler.", correctAnswer: ["Der", "fragt"]}, {id: 48, german: "__ Banane (schmecken) __ süß.", correctAnswer: ["Die", "schmeckt"]}, {id: 49, german: "__ Glas (fallen) __ auf den Boden.", correctAnswer: ["Das", "fällt"]}, {id: 50, german: "__ Opa (erzählen) __ eine Geschichte.", correctAnswer: ["Der", "erzählt"]}]}
+/>
 
 ---
 
@@ -52,5 +76,18 @@ Bạn đã hoàn thành 50 câu luyện tập về mạo từ (der, die, das) v�
 />
 
 <ExerciseHelp />
+
+---
+
+### **Hỏi đáp ❓💬**
+
+<ExerciseComments
+  exerciseId="a1-artikel-teil-1"
+  url="/a1niveau/Übungen/artikel/teil-1"
+/>
+
+import FacebookComments from "@site/src/components/Forms/FacebookComments/FacebookComments";
+
+<FacebookComments url="https://deutsch.vn/docs/A%20Niveau/A1%20Niveau/Übungen/Artikel/artikel-teil-1" />
 
 ---

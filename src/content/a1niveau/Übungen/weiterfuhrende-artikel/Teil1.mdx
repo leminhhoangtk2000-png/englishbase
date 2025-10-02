@@ -8,8 +8,9 @@ difficulty: "beginner"
 tags: ["artikel", "definite-articles", "der-die-das"]
 ---
 
-import Lueckentext from "@/components/ui/lueckentext";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
 import AuthorCredit from "@/components/exercises/author-credit";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # Bài tập Quán từ Xác định (Der, Die, Das, Dem, Den...)
 
@@ -17,90 +18,31 @@ Dưới đây là bài tập luyện tập sử dụng quán từ xác định t
 
 ## Bài tập
 
-<Lueckentext
-  title="Điền quán từ xác định vào chỗ trống"
-  textParts={[
-    { type: "blank", correctAnswer: "Die" },
-    " Mutter liest ",
-    { type: "blank", correctAnswer: "dem" },
-    " Kind ein Buch vor.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Junge bringt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Lehrer die Hausaufgaben.\n",
-    { type: "blank", correctAnswer: "Die" },
-    " Touristin fragt ",
-    { type: "blank", correctAnswer: "den" },
-    " Polizisten nach dem Weg.\n",
-    { type: "blank", correctAnswer: "Das" },
-    " Mädchen malt ",
-    { type: "blank", correctAnswer: "das" },
-    " Bild für die Schule.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Hund gibt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Baby einen Kuss.\n",
-    { type: "blank", correctAnswer: "Die" },
-    " Großmutter backt ",
-    { type: "blank", correctAnswer: "den" },
-    " Kuchen für den Geburtstag.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Arzt verschreibt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Patienten Medikamente.\n",
-    { type: "blank", correctAnswer: "Das" },
-    " Kind zeigt ",
-    { type: "blank", correctAnswer: "der" },
-    " Mutter das Spielzeug.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Busfahrer hilft ",
-    { type: "blank", correctAnswer: "der" },
-    " alten Frau beim Einsteigen.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Nachbar schenkt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Mann eine Flasche Wein.\n",
-    { type: "blank", correctAnswer: "Die" },
-    " Studentin erklärt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Freund die Aufgabe.\n",
-    { type: "blank", correctAnswer: "Die" },
-    " Katze bringt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Jungen eine Maus.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Lehrer stellt ",
-    { type: "blank", correctAnswer: "der" },
-    " Klasse eine Frage.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Vater repariert ",
-    { type: "blank", correctAnswer: "das" },
-    " Fahrrad der Tochter.\n",
-    { type: "blank", correctAnswer: "Das" },
-    " Mädchen erzählt ",
-    { type: "blank", correctAnswer: "der" },
-    " Freundin ein Geheimnis.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Kellner bringt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Gast die Rechnung.\n",
-    { type: "blank", correctAnswer: "Die" },
-    " Mutter gibt ",
-    { type: "blank", correctAnswer: "dem" },
-    " Baby die Milchflasche.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Mann zeigt ",
-    { type: "blank", correctAnswer: "der" },
-    " Frau das neue Handy.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Onkel bringt ",
-    { type: "blank", correctAnswer: "den" },
-    " Kindern Süßigkeiten.\n",
-    { type: "blank", correctAnswer: "Der" },
-    " Vogel fliegt über ",
-    { type: "blank", correctAnswer: "das" },
-    " Haus.",
-  ]}
+<ExerciseTable 
+  title="Điền quán từ xác định vào chỗ trống" 
+  subtitle="Hoàn thành câu với quán từ đúng (der, die, das, dem, den, der...)" 
+  exercises={[
+    {id: 1, german: "__ Mutter liest __ Kind ein Buch vor.", correctAnswer: ["Die", "dem"]},
+    {id: 2, german: "__ Junge bringt __ Lehrer die Hausaufgaben.", correctAnswer: ["Der", "dem"]},
+    {id: 3, german: "__ Touristin fragt __ Polizisten nach dem Weg.", correctAnswer: ["Die", "den"]},
+    {id: 4, german: "__ Mädchen malt __ Bild für die Schule.", correctAnswer: ["Das", "das"]},
+    {id: 5, german: "__ Hund gibt __ Baby einen Kuss.", correctAnswer: ["Der", "dem"]},
+    {id: 6, german: "__ Großmutter backt __ Kuchen für den Geburtstag.", correctAnswer: ["Die", "den"]},
+    {id: 7, german: "__ Arzt verschreibt __ Patienten Medikamente.", correctAnswer: ["Der", "dem"]},
+    {id: 8, german: "__ Kind zeigt __ Mutter das Spielzeug.", correctAnswer: ["Das", "der"]},
+    {id: 9, german: "__ Busfahrer hilft __ alten Frau beim Einsteigen.", correctAnswer: ["Der", "der"]},
+    {id: 10, german: "__ Nachbar schenkt __ Mann eine Flasche Wein.", correctAnswer: ["Der", "dem"]},
+    {id: 11, german: "__ Studentin erklärt __ Freund die Aufgabe.", correctAnswer: ["Die", "dem"]},
+    {id: 12, german: "__ Katze bringt __ Jungen eine Maus.", correctAnswer: ["Die", "dem"]},
+    {id: 13, german: "__ Lehrer stellt __ Klasse eine Frage.", correctAnswer: ["Der", "der"]},
+    {id: 14, german: "__ Vater repariert __ Fahrrad der Tochter.", correctAnswer: ["Der", "das"]},
+    {id: 15, german: "__ Mädchen erzählt __ Freundin ein Geheimnis.", correctAnswer: ["Das", "der"]},
+    {id: 16, german: "__ Kellner bringt __ Gast die Rechnung.", correctAnswer: ["Der", "dem"]},
+    {id: 17, german: "__ Mutter gibt __ Baby die Milchflasche.", correctAnswer: ["Die", "dem"]},
+    {id: 18, german: "__ Mann zeigt __ Frau das neue Handy.", correctAnswer: ["Der", "der"]},
+    {id: 19, german: "__ Onkel bringt __ Kindern Süßigkeiten.", correctAnswer: ["Der", "den"]},
+    {id: 20, german: "__ Vogel fliegt über __ Haus.", correctAnswer: ["Der", "das"]}
+  ]} 
 />
 
 ## Hướng dẫn
@@ -118,6 +60,8 @@ Dưới đây là bài tập luyện tập sử dụng quán từ xác định t
 ---
 
 ### **Hỏi đáp ❓💬**
+
+<ExerciseComments exerciseId="a1-weiterfuhrende-artikel-teil1" url="/a1niveau/Übungen/weiterfuhrende-artikel/Teil1" />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
