@@ -7,7 +7,6 @@ import { MatchingQuiz } from '@/components/exercises/matching-quiz';
 import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { FormingQuestions } from '@/components/exercises/forming-questions';
 import { FormingQuestionsSimple } from '@/components/exercises/forming-questions-simple';
-import { TestFormingQuestions } from '@/components/exercises/test-forming-questions';
 import Satzbildung from '@/components/exercises/satzbildung';
 import AuthorCredit from '@/components/exercises/author-credit';
 import ExerciseComments from '@/components/exercises/ExerciseComments';
