@@ -356,7 +356,7 @@ export default async function DocPage({ params }: DocPageProps) {
             )}
           </div>
           <Separator className="my-4" />
-          <div className="mdx">
+          <div className="prose max-w-none">
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
           </div>
         </div>

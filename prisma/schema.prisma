@@ -8,29 +8,31 @@ datasource db {
 }
 
 model User {
-  id         String           @id @default(cuid())
-  email      String           @unique
-  username   String?          @unique
-  name       String?
-  password   String
-  avatar     String?
-  role       Role             @default(USER)
-  isPremium  Boolean          @default(false)
-  createdAt  DateTime         @default(now())
-  updatedAt  DateTime         @updatedAt
-  bio        String?
-  facebook   String?
-  instagram  String?
-  skillLevel String?
-  threads    String?
-  tiktok     String?
-  website    String?
-  comments   Comment[]
-  posts      Post[]
-  reviews    Review[]
-  exercises  UserExercise[]
-  progress   UserProgress[]
-  vocabulary UserVocabulary[]
+  id                     String                   @id @default(cuid())
+  email                  String                   @unique
+  username               String?                  @unique
+  name                   String?
+  password               String
+  avatar                 String?
+  role                   Role                     @default(USER)
+  isPremium              Boolean                  @default(false)
+  createdAt              DateTime                 @default(now())
+  updatedAt              DateTime                 @updatedAt
+  bio                    String?
+  facebook               String?
+  instagram              String?
+  skillLevel             String?
+  threads                String?
+  tiktok                 String?
+  website                String?
+  comments               Comment[]
+  exercise_comment_likes exercise_comment_likes[]
+  exercise_comments      exercise_comments[]
+  posts                  Post[]
+  reviews                Review[]
+  exercises              UserExercise[]
+  progress               UserProgress[]
+  vocabulary             UserVocabulary[]
 
   @@map("users")
 }
@@ -302,6 +304,100 @@ model CrawlJob {
   @@map("crawl_jobs")
 }
 
+model AIProvider {
+  id           String         @id @default(cuid())
+  name         String         @unique
+  displayName  String
+  apiKey       String
+  baseUrl      String?
+  isActive     Boolean        @default(true)
+  models       String[]
+  defaultModel String?
+  maxTokens    Int?
+  temperature  Float?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  testResults  AITestResult[]
+  usage        AIUsage[]
+
+  @@map("ai_providers")
+}
+
+model AITestResult {
+  id           String     @id @default(cuid())
+  providerId   String
+  model        String
+  prompt       String
+  response     String?
+  success      Boolean
+  error        String?
+  responseTime Int?
+  tokensUsed   Int?
+  cost         Float?
+  createdAt    DateTime   @default(now())
+  provider     AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@map("ai_test_results")
+}
+
+model AIUsage {
+  id             String     @id @default(cuid())
+  providerId     String
+  model          String
+  operation      String
+  promptTokens   Int        @default(0)
+  responseTokens Int        @default(0)
+  totalTokens    Int        @default(0)
+  cost           Float      @default(0)
+  success        Boolean    @default(true)
+  error          String?
+  metadata       Json?
+  createdAt      DateTime   @default(now())
+  provider       AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@map("ai_usage")
+}
+
+model AIVocabularyConfig {
+  id                  Int      @id @default(1)
+  preferredProviderId String?
+  fallbackProviderIds String[]
+  enableAutoFallback  Boolean  @default(true)
+  maxRetries          Int      @default(3)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("ai_vocabulary_config")
+}
+
+model exercise_comment_likes {
+  id                String            @id
+  userId            String
+  commentId         String
+  createdAt         DateTime          @default(now())
+  exercise_comments exercise_comments @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  users             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, commentId])
+}
+
+model exercise_comments {
+  id                      String                   @id
+  content                 String
+  authorId                String
+  exerciseId              String
+  exerciseUrl             String?
+  parentId                String?
+  likes                   Int                      @default(0)
+  published               Boolean                  @default(true)
+  createdAt               DateTime                 @default(now())
+  updatedAt               DateTime
+  exercise_comment_likes  exercise_comment_likes[]
+  users                   User                     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  exercise_comments       exercise_comments?       @relation("exercise_commentsToexercise_comments", fields: [parentId], references: [id])
+  other_exercise_comments exercise_comments[]      @relation("exercise_commentsToexercise_comments")
+}
+
 enum Role {
   ADMIN
   USER
@@ -349,71 +445,4 @@ enum CrawlJobStatus {
   RUNNING
   COMPLETED
   FAILED
-}
-
-// AI Management Models
-model AIProvider {
-  id           String        @id @default(cuid())
-  name         String        @unique
-  displayName  String
-  apiKey       String
-  baseUrl      String?
-  isActive     Boolean       @default(true)
-  models       String[]
-  defaultModel String?
-  maxTokens    Int?
-  temperature  Float?
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  testResults  AITestResult[]
-  usage        AIUsage[]
-
-  @@map("ai_providers")
-}
-
-model AITestResult {
-  id           String     @id @default(cuid())
-  providerId   String
-  model        String
-  prompt       String
-  response     String?
-  success      Boolean
-  error        String?
-  responseTime Int?       // in milliseconds
-  tokensUsed   Int?
-  cost         Float?
-  createdAt    DateTime   @default(now())
-  provider     AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
-
-  @@map("ai_test_results")
-}
-
-model AIUsage {
-  id            String     @id @default(cuid())
-  providerId    String
-  model         String
-  operation     String     // e.g., "vocabulary_search", "translation", etc.
-  promptTokens  Int        @default(0)
-  responseTokens Int       @default(0)
-  totalTokens   Int        @default(0)
-  cost          Float      @default(0)
-  success       Boolean    @default(true)
-  error         String?
-  metadata      Json?      // Additional info like user_id, request_type, etc.
-  createdAt     DateTime   @default(now())
-  provider      AIProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
-
-  @@map("ai_usage")
-}
-
-model AIVocabularyConfig {
-  id                  Int      @id @default(1)
-  preferredProviderId String?
-  fallbackProviderIds String[]
-  enableAutoFallback  Boolean  @default(true)
-  maxRetries          Int      @default(3)
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-
-  @@map("ai_vocabulary_config")
 }
