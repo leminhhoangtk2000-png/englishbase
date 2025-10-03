@@ -2,21 +2,85 @@
 title: "Präteritum Bericht: Ein Tag ohne Strom"
 ---
 
-import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from '@site/src/components/Quiz/Lueckentext/Lueckentext';
-import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+import { ExerciseComments } from "@/components/exercise-comments";
+import Lueckentext from "@site/src/components/Quiz/Lueckentext/Lueckentext";
+import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
 
 ## Danh sách từ vựng sẽ dùng
+
 sagen, machen, lesen, aufladen, haben, sein, arbeiten, empfinden, funktionieren, reden, trinken, verschlafen, fühlen, feststellen, liegen, erleben, beschädigen, fragen, essen, basteln, aufstehen, treffen, klingeln, merken, können, geben
 
 <Lueckentext
   title="Ein Tag ohne Strom"
   textParts={[
-    "Letzten Samstag ", { type: "blank", correctAnswer: "erlebte" }, " ich etwas sehr Ungewöhnliches. Am Morgen ", { type: "blank", correctAnswer: "stellte" }, " fest ich, dass es keinen Strom ", { type: "blank", correctAnswer: "gab" }, ". Mein Wecker ", { type: "blank", correctAnswer: "klingelte" }, " nicht, weil er elektrisch ist. Ich ", { type: "blank", correctAnswer: "verschlief" }, " und ", { type: "blank", correctAnswer: "stand" }, " auf viel zu spät. In der Küche ", { type: "blank", correctAnswer: "funktionierte" }, " der Kühlschrank nicht. Ich ", { type: "blank", correctAnswer: "merkte" }, ", dass der Kaffeeautomat auch nicht ", { type: "blank", correctAnswer: "arbeitete" }, ". Also ", { type: "blank", correctAnswer: "trank" }, " ich kaltes Wasser und ", { type: "blank", correctAnswer: "aß" }, " ein trockenes Brötchen. Mein Handy ", { type: "blank", correctAnswer: "war" }, " leer, und ich ", { type: "blank", correctAnswer: "konnte" }, " es nicht aufladen. Ohne Internet ", { type: "blank", correctAnswer: "fühlte" }, " ich mich ziemlich hilflos. Ich ", { type: "blank", correctAnswer: "fragte" }, " meine Nachbarn, ob sie auch keinen Strom ", { type: "blank", correctAnswer: "hatten" }, ". Sie ", { type: "blank", correctAnswer: "sagten" }, ", dass ein Sturm in der Nacht eine Leitung ", { type: "blank", correctAnswer: "beschädigte" }, ". Am Vormittag ", { type: "blank", correctAnswer: "las" }, " ich ein Buch, das schon lange im Regal ", { type: "blank", correctAnswer: "lag" }, ". Es ", { type: "blank", correctAnswer: "machte" }, " überraschend viel Spaß. Danach ", { type: "blank", correctAnswer: "machte" }, " ich einen langen Spaziergang im Park. Viele Leute ", { type: "blank", correctAnswer: "waren" }, " draußen, weil sie zu Hause nichts ", { type: "blank", correctAnswer: "konnten" }, " machen. Im Park ", { type: "blank", correctAnswer: "traf" }, " ich eine Freundin, und wir ", { type: "blank", correctAnswer: "redeten" }, " eine Stunde lang. Am Nachmittag ", { type: "blank", correctAnswer: "bastelte" }, " ich einen Kuchen ohne Backofen – mit Joghurt und Keksen. Abends ", { type: "blank", correctAnswer: "funktionierte" }, " der Strom endlich wieder. Ich ", { type: "blank", correctAnswer: "lud" }, " mein Handy sofort auf und ", { type: "blank", correctAnswer: "las" }, " meine E-Mails. Trotzdem ", { type: "blank", correctAnswer: "empfand" }, " ich den Tag ohne Strom als etwas Besonderes."
+    "Letzten Samstag ",
+    { type: "blank", correctAnswer: "erlebte" },
+    " ich etwas sehr Ungewöhnliches. Am Morgen ",
+    { type: "blank", correctAnswer: "stellte" },
+    " fest ich, dass es keinen Strom ",
+    { type: "blank", correctAnswer: "gab" },
+    ". Mein Wecker ",
+    { type: "blank", correctAnswer: "klingelte" },
+    " nicht, weil er elektrisch ist. Ich ",
+    { type: "blank", correctAnswer: "verschlief" },
+    " und ",
+    { type: "blank", correctAnswer: "stand" },
+    " auf viel zu spät. In der Küche ",
+    { type: "blank", correctAnswer: "funktionierte" },
+    " der Kühlschrank nicht. Ich ",
+    { type: "blank", correctAnswer: "merkte" },
+    ", dass der Kaffeeautomat auch nicht ",
+    { type: "blank", correctAnswer: "arbeitete" },
+    ". Also ",
+    { type: "blank", correctAnswer: "trank" },
+    " ich kaltes Wasser und ",
+    { type: "blank", correctAnswer: "aß" },
+    " ein trockenes Brötchen. Mein Handy ",
+    { type: "blank", correctAnswer: "war" },
+    " leer, und ich ",
+    { type: "blank", correctAnswer: "konnte" },
+    " es nicht aufladen. Ohne Internet ",
+    { type: "blank", correctAnswer: "fühlte" },
+    " ich mich ziemlich hilflos. Ich ",
+    { type: "blank", correctAnswer: "fragte" },
+    " meine Nachbarn, ob sie auch keinen Strom ",
+    { type: "blank", correctAnswer: "hatten" },
+    ". Sie ",
+    { type: "blank", correctAnswer: "sagten" },
+    ", dass ein Sturm in der Nacht eine Leitung ",
+    { type: "blank", correctAnswer: "beschädigte" },
+    ". Am Vormittag ",
+    { type: "blank", correctAnswer: "las" },
+    " ich ein Buch, das schon lange im Regal ",
+    { type: "blank", correctAnswer: "lag" },
+    ". Es ",
+    { type: "blank", correctAnswer: "machte" },
+    " überraschend viel Spaß. Danach ",
+    { type: "blank", correctAnswer: "machte" },
+    " ich einen langen Spaziergang im Park. Viele Leute ",
+    { type: "blank", correctAnswer: "waren" },
+    " draußen, weil sie zu Hause nichts ",
+    { type: "blank", correctAnswer: "konnten" },
+    " machen. Im Park ",
+    { type: "blank", correctAnswer: "traf" },
+    " ich eine Freundin, und wir ",
+    { type: "blank", correctAnswer: "redeten" },
+    " eine Stunde lang. Am Nachmittag ",
+    { type: "blank", correctAnswer: "bastelte" },
+    " ich einen Kuchen ohne Backofen – mit Joghurt und Keksen. Abends ",
+    { type: "blank", correctAnswer: "funktionierte" },
+    " der Strom endlich wieder. Ich ",
+    { type: "blank", correctAnswer: "lud" },
+    " mein Handy sofort auf und ",
+    { type: "blank", correctAnswer: "las" },
+    " meine E-Mails. Trotzdem ",
+    { type: "blank", correctAnswer: "empfand" },
+    " ich den Tag ohne Strom als etwas Besonderes.",
   ]}
 />
 
 ---
+
 ### **Tác giả ✍️**
 
 <AuthorCredit author="Lonia" />
@@ -25,8 +89,7 @@ sagen, machen, lesen, aufladen, haben, sein, arbeiten, empfinden, funktionieren,
 
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Tiếp tục luyện tập để nắm vững các dạng so sánh trong tiếng Đức nhé! 😊
-:::
-
-<ExerciseComments exerciseId="a2-perfekt-prateritum-teil5" url="/a2niveau/Übungen/perfekt-prateritum/teil5" />
+<ExerciseComments
+  exerciseId="a2-perfekt-prateritum-teil5"
+  url="/a2niveau/Übungen/perfekt-prateritum/teil5"
+/>
