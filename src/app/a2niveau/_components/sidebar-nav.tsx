@@ -21,13 +21,22 @@ export function SidebarNav({ items }: SidebarNavProps) {
   const [openSections, setOpenSections] = useState<Set<number>>(new Set());
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load saved state from localStorage on mount
+  // Load saved state from localStorage on mount and when pathname changes
   useEffect(() => {
     const savedState = localStorage.getItem('a2niveau-sidebar-state');
     if (savedState) {
       try {
-        const parsed = JSON.parse(savedState);
-        setOpenSections(new Set(parsed));
+        const parsed = JSON.parse(savedState) as number[];
+        const savedSet = new Set<number>(parsed);
+        
+        // Also auto-open section containing current page
+        items.forEach((item, index) => {
+          if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+            savedSet.add(index);
+          }
+        });
+        
+        setOpenSections(savedSet);
       } catch (e) {
         // If parsing fails, auto-open current section
         const newOpenSections = new Set<number>();
@@ -49,7 +58,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
       setOpenSections(newOpenSections);
     }
     setIsInitialized(true);
-  }, []); // Only run once on mount
+  }, [pathname, items]); // Re-run when pathname changes
 
   // Save state to localStorage whenever it changes
   useEffect(() => {
@@ -105,13 +114,22 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
   const [openSubSections, setOpenSubSections] = useState<Set<number>>(new Set());
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load saved subsection state from localStorage
+  // Load saved subsection state from localStorage and when pathname changes
   useEffect(() => {
     const savedState = localStorage.getItem('a2niveau-sidebar-subsections');
     if (savedState) {
       try {
-        const parsed = JSON.parse(savedState);
-        setOpenSubSections(new Set(parsed));
+        const parsed = JSON.parse(savedState) as number[];
+        const savedSet = new Set<number>(parsed);
+        
+        // Also auto-open subsection containing current page
+        items.forEach((item, index) => {
+          if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+            savedSet.add(index);
+          }
+        });
+        
+        setOpenSubSections(savedSet);
       } catch (e) {
         // If parsing fails, auto-open current subsection
         const newOpenSubSections = new Set<number>();
@@ -133,7 +151,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
       setOpenSubSections(newOpenSubSections);
     }
     setIsInitialized(true);
-  }, []);
+  }, [pathname, items]); // Re-run when pathname changes
 
   // Save subsection state to localStorage
   useEffect(() => {
