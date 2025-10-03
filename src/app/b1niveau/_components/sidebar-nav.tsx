@@ -21,14 +21,24 @@ export function SidebarNav({ items }: SidebarNavProps) {
   const [openSections, setOpenSections] = useState<Set<number>>(new Set());
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load saved state from localStorage on mount
+  // Load saved state from localStorage on mount and when pathname changes
   useEffect(() => {
     const savedState = localStorage.getItem('b1niveau-sidebar-state');
     if (savedState) {
       try {
-        const parsed = JSON.parse(savedState);
-        setOpenSections(new Set(parsed));
+        const parsed = JSON.parse(savedState) as number[];
+        const savedSet = new Set<number>(parsed);
+        
+        // Also auto-open section containing current page
+        items.forEach((item, index) => {
+          if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+            savedSet.add(index);
+          }
+        });
+        
+        setOpenSections(savedSet);
       } catch (e) {
+        // If parsing fails, auto-open current section
         const newOpenSections = new Set<number>();
         items.forEach((item, index) => {
           if (item.items && item.items.some(subItem => pathname === subItem.href)) {
@@ -38,6 +48,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
         setOpenSections(newOpenSections);
       }
     } else {
+      // First visit: auto-open section that contains current page
       const newOpenSections = new Set<number>();
       items.forEach((item, index) => {
         if (item.items && item.items.some(subItem => pathname === subItem.href)) {
@@ -47,8 +58,9 @@ export function SidebarNav({ items }: SidebarNavProps) {
       setOpenSections(newOpenSections);
     }
     setIsInitialized(true);
-  }, []);
+  }, [pathname, items]); // Re-run when pathname changes
 
+  // Save state to localStorage whenever it changes
   useEffect(() => {
     if (isInitialized) {
       localStorage.setItem('b1niveau-sidebar-state', JSON.stringify(Array.from(openSections)));
@@ -102,13 +114,24 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
   const [openSubSections, setOpenSubSections] = useState<Set<number>>(new Set());
   const [isInitialized, setIsInitialized] = useState(false);
 
+  // Load saved subsection state from localStorage and when pathname changes
   useEffect(() => {
     const savedState = localStorage.getItem('b1niveau-sidebar-subsections');
     if (savedState) {
       try {
-        const parsed = JSON.parse(savedState);
-        setOpenSubSections(new Set(parsed));
+        const parsed = JSON.parse(savedState) as number[];
+        const savedSet = new Set<number>(parsed);
+        
+        // Also auto-open subsection containing current page
+        items.forEach((item, index) => {
+          if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+            savedSet.add(index);
+          }
+        });
+        
+        setOpenSubSections(savedSet);
       } catch (e) {
+        // If parsing fails, auto-open current subsection
         const newOpenSubSections = new Set<number>();
         items.forEach((item, index) => {
           if (item.items && item.items.some(subItem => pathname === subItem.href)) {
@@ -118,6 +141,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
         setOpenSubSections(newOpenSubSections);
       }
     } else {
+      // First visit: auto-open subsection that contains current page
       const newOpenSubSections = new Set<number>();
       items.forEach((item, index) => {
         if (item.items && item.items.some(subItem => pathname === subItem.href)) {
@@ -127,8 +151,9 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
       setOpenSubSections(newOpenSubSections);
     }
     setIsInitialized(true);
-  }, []);
+  }, [pathname, items]); // Re-run when pathname changes
 
+  // Save subsection state to localStorage
   useEffect(() => {
     if (isInitialized) {
       localStorage.setItem('b1niveau-sidebar-subsections', JSON.stringify(Array.from(openSubSections)));
@@ -158,21 +183,27 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
             open={openSubSections.has(index)}
             onOpenChange={() => toggleSubSection(index)}
           >
-            <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/50 [&[data-state=open]>svg]:rotate-90">
+            <CollapsibleTrigger className={cn(
+              "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/50 [&[data-state=open]>svg]:rotate-90 transition-colors",
+              {
+                "bg-primary/10 border-l-2 border-primary font-medium text-foreground": pathname?.startsWith(item.href || ''),
+              }
+            )}>
               {item.title}
               <ChevronRight className="h-3 w-3 shrink-0 transition-transform duration-200" />
             </CollapsibleTrigger>
             <CollapsibleContent className="pl-4">
               <div className="grid grid-flow-row auto-rows-max text-sm py-1">
-                {item.items.map((subItem, subIndex) => (
-                  subItem.href && !subItem.disabled ? (
+                {item.items.map((subItem, subIndex) => {
+                  const isActive = pathname === subItem.href;
+                  return subItem.href && !subItem.disabled ? (
                     <Link
                       key={subIndex}
                       href={subItem.href}
                       className={cn(
-                        "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                        "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
                         {
-                          "bg-secondary/80 font-medium text-foreground": pathname === subItem.href,
+                          "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": isActive,
                         }
                       )}
                       target={subItem.external ? "_blank" : ""}
@@ -187,8 +218,8 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                     >
                       {subItem.title}
                     </span>
-                  )
-                ))}
+                  );
+                })}
               </div>
             </CollapsibleContent>
           </Collapsible>
@@ -199,9 +230,9 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
               key={index}
               href={item.href}
               className={cn(
-                "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
                 {
-                  "bg-secondary/80 font-medium text-foreground": pathname === item.href,
+                  "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === item.href,
                 }
               )}
               target={item.external ? "_blank" : ""}
