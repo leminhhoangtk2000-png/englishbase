@@ -88,7 +88,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
           open={openSections.has(index)}
           onOpenChange={() => toggleSection(index)}
         >
-          <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm font-semibold font-headline hover:bg-secondary [&[data-state=open]>svg]:rotate-90">
+          <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm font-bold font-headline hover:bg-secondary [&[data-state=open]>svg]:rotate-90">
             {item.title}
             {item.items && (
               <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -190,7 +190,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
               <CollapsibleTrigger className={cn(
                 "flex w-full items-start justify-between rounded-md px-3 py-2.5 text-sm hover:bg-secondary/50 hover:text-foreground transition-colors [&[data-state=open]>svg]:rotate-90",
                 {
-                  "bg-primary/10 font-medium text-foreground": pathname?.startsWith(item.href || '') && item.items && item.items.length > 0,
+                  "bg-primary/10 text-foreground": pathname?.startsWith(item.href || '') && item.items && item.items.length > 0,
                 }
               )}>
                 <span className="text-sm font-medium text-left leading-relaxed pr-2 flex-1 break-words">{item.title}</span>

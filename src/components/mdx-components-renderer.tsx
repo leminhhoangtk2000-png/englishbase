@@ -503,10 +503,10 @@ function parseSatzbildungProps(propsStr: string): {
     const titleMatch = propsStr.match(/title=["']([^"']*?)["']/);
     const title = titleMatch ? titleMatch[1] : 'Satzbildung Exercise';
     
-    // Extract sentences array
-    const sentencesMatch = propsStr.match(/sentences=\{(\[[\s\S]*?\])\}/);
+    // Extract sentences/exercises array (support both prop names)
+    let sentencesMatch = propsStr.match(/(?:sentences|exercises)=\{(\[[\s\S]*?\])\}/);
     if (!sentencesMatch) {
-      console.error('No sentences found in Satzbildung props');
+      console.error('No sentences/exercises found in Satzbildung props');
       return null;
     }
 
@@ -528,18 +528,18 @@ function parseSatzbildungProps(propsStr: string): {
     
     for (const block of sentenceBlocks) {
       try {
-        // Extract parts array
-        const partsMatch = block.match(/parts:\s*\[([\s\S]*?)\]/);
+        // Extract parts/words array (support both property names)
+        const partsMatch = block.match(/(?:parts|words):\s*\[([\s\S]*?)\]/);
         if (!partsMatch) continue;
         
-        // Extract correctAnswer
-        const correctAnswerMatch = block.match(/correctAnswer:\s*["'](.*?)["']/);
+        // Extract correctAnswer/correctSentence (support both property names)
+        const correctAnswerMatch = block.match(/(?:correctAnswer|correctSentence):\s*["'](.*?)["']/);
         if (!correctAnswerMatch) continue;
         
         // Extract optional instruction
         const instructionMatch = block.match(/instruction:\s*["'](.*?)["']/);
         
-        // Parse parts
+        // Parse parts/words
         const partsStr = partsMatch[1];
         const parts = partsStr.match(/["'](.*?)["']/g)?.map(part => 
           part.replace(/^["']|["']$/g, '')

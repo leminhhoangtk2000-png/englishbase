@@ -1,129 +1,65 @@
----
-title: "B1 Passiv - Teil 1"
-description: "Bài tập thực hành Passiv - Cấp độ B1"
-tags: ["B1", "Passiv", "Grammatik", "Übungen"]
----
+import Satzbildung from "@/components/exercises/satzbildung";
+import { ExerciseComments } from "@/components/ExerciseComments";
 
-import ExerciseComments from "@/components/exercises/ExerciseComments";
+# B1 Passiv - Teil 1: Passiv mit Modalverben
 
-# B1 Passiv - Teil 1
-
-<ExerciseTable>
-  <ExerciseHeader>
-    <ExerciseInstruction>
-      Passiv Präsens mit Modalverben
-    </ExerciseInstruction>
-  </ExerciseHeader>
-
-  <ExerciseBody>
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das Zimmer / sauber machen / müssen
-      </ExerciseSentence>
-      <ExerciseAnswer>Das Zimmer muss sauber gemacht werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        müssen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Die Hausaufgaben / heute / erledigen / sollen
-      </ExerciseSentence>
-      <ExerciseAnswer>Die Hausaufgaben sollen heute erledigt werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        sollen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Der Brief / bis morgen / schreiben / können
-      </ExerciseSentence>
-      <ExerciseAnswer>Der Brief kann bis morgen geschrieben werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        können + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das Problem / schnell / lösen / müssen
-      </ExerciseSentence>
-      <ExerciseAnswer>Das Problem muss schnell gelöst werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        müssen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Die Tür / abschließen / sollen
-      </ExerciseSentence>
-      <ExerciseAnswer>Die Tür soll abgeschlossen werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        sollen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das Auto / reparieren / können
-      </ExerciseSentence>
-      <ExerciseAnswer>Das Auto kann repariert werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        können + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Die Fenster / putzen / müssen
-      </ExerciseSentence>
-      <ExerciseAnswer>Die Fenster müssen geputzt werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        müssen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Der Tisch / decken / sollen
-      </ExerciseSentence>
-      <ExerciseAnswer>Der Tisch soll gedeckt werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        sollen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das Paket / abholen / können
-      </ExerciseSentence>
-      <ExerciseAnswer>Das Paket kann abgeholt werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        können + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Die Rechnung / bezahlen / müssen
-      </ExerciseSentence>
-      <ExerciseAnswer>Die Rechnung muss bezahlt werden.</ExerciseAnswer>
-      <ExerciseExplanation>
-        müssen + werden + Partizip II
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-  </ExerciseBody>
-</ExerciseTable>
-
----
-
-## Hỏi đáp & Thảo luận 💬
+<Satzbildung
+  title="Bài tập: Tạo câu bị động với động từ khuyết thiếu"
+  exercises={[
+    {
+      words: ["Das Zimmer / sauber machen / müssen"],
+      correctSentence: "Das Zimmer muss sauber gemacht werden.",
+      instruction: "Passiv với 'müssen'"
+    },
+    {
+      words: ["Die Hausaufgaben / bis morgen / erledigen / sollen"],
+      correctSentence: "Die Hausaufgaben sollen bis morgen erledigt werden.",
+      instruction: "Passiv với 'sollen'"
+    },
+    {
+      words: ["Der Brief / heute noch / schreiben / müssen"],
+      correctSentence: "Der Brief muss heute noch geschrieben werden.",
+      instruction: "Passiv với 'müssen'"
+    },
+    {
+      words: ["Die Fenster / putzen / können"],
+      correctSentence: "Die Fenster können geputzt werden.",
+      instruction: "Passiv với 'können'"
+    },
+    {
+      words: ["Das Auto / reparieren / müssen"],
+      correctSentence: "Das Auto muss repariert werden.",
+      instruction: "Passiv với 'müssen'"
+    },
+    {
+      words: ["Die Rechnung / bezahlen / sollen"],
+      correctSentence: "Die Rechnung soll bezahlt werden.",
+      instruction: "Passiv với 'sollen'"
+    },
+    {
+      words: ["Der Text / übersetzen / müssen"],
+      correctSentence: "Der Text muss übersetzt werden.",
+      instruction: "Passiv với 'müssen'"
+    },
+    {
+      words: ["Die Tür / abschließen / müssen"],
+      correctSentence: "Die Tür muss abgeschlossen werden.",
+      instruction: "Passiv với 'müssen'"
+    },
+    {
+      words: ["Der Fehler / korrigieren / können"],
+      correctSentence: "Der Fehler kann korrigiert werden.",
+      instruction: "Passiv với 'können'"
+    },
+    {
+      words: ["Die Wohnung / renovieren / müssen"],
+      correctSentence: "Die Wohnung muss renoviert werden.",
+      instruction: "Passiv với 'müssen'"
+    }
+  ]}
+/>
 
 <ExerciseComments
   exerciseId="b1-passiv-teil1"
-  url="/b1niveau/übungen/passiv/teil1"
+  url="/b1niveau/Übungen/passiv/teil1"
 />
