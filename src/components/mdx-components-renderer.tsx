@@ -323,28 +323,36 @@ function parseTextPartsArray(textPartsStr: string): any[] {
 }
 
 /**
- * Parse exercises array from string
+ * Parse exercises array from string - ULTRA FLEXIBLE VERSION
+ * Works with: {id: 1, german: "...", correctAnswer: ["A", "B"]} OR {id:1,german:"...",correctAnswer:["A","B"]}
  */
 function parseExercisesArray(exercisesStr: string): any[] {
   try {
-    // Clean up the string - remove extra whitespace and handle multiline
-    const cleanStr = exercisesStr
-      .replace(/\s+/g, ' ')
-      .trim();
+    console.log('[parseExercisesArray] 🔍 Input length:', exercisesStr.length);
+    console.log('[parseExercisesArray] 📝 First 500 chars:', exercisesStr.substring(0, 500));
+    console.log('[parseExercisesArray] 📝 Last 200 chars:', exercisesStr.substring(exercisesStr.length - 200));
     
-    // Try to match individual exercise objects with array answers
-    const exerciseRegex = /\{\s*id:\s*(\d+),\s*german:\s*"([^"]+)",\s*correctAnswer:\s*\[([^\]]+)\]\s*\}/g;
+    // DON'T clean the string - regex is flexible enough with \s*
+    // This preserves the exact format from MDX
+    
+    // ULTRA FLEXIBLE regex - matches ANY spacing format
+    // Works for: {id: 1,...}, {id:1,...}, OR multiline {\n  id: 1,\n  ...}
+    const exerciseRegex = /\{\s*id\s*:\s*(\d+)\s*,\s*german\s*:\s*"([^"]+)"\s*,\s*correctAnswer\s*:\s*\[([^\]]+)\]\s*,?\s*\}/g;
     const exercises = [];
     let exerciseMatch;
+    let matchCount = 0;
     
-    while ((exerciseMatch = exerciseRegex.exec(cleanStr)) !== null) {
+    while ((exerciseMatch = exerciseRegex.exec(exercisesStr)) !== null) {
+      matchCount++;
       const id = parseInt(exerciseMatch[1]);
       const german = exerciseMatch[2];
       const answersStr = exerciseMatch[3];
       
-      // Parse the array of answers
+      // Parse the array of answers - handle both "A", "B" and "A","B" formats
       const answerMatches = answersStr.match(/"([^"]+)"/g);
       const correctAnswer = answerMatches ? answerMatches.map(match => match.replace(/"/g, '')) : [];
+      
+      console.log(`[parseExercisesArray] ✅ Match #${matchCount} - ID: ${id}, German: "${german.substring(0, 30)}...", Answers: [${correctAnswer.join(', ')}]`);
       
       exercises.push({
         id,
@@ -353,23 +361,32 @@ function parseExercisesArray(exercisesStr: string): any[] {
       });
     }
     
-    // Fallback: try to match old string format
+    console.log(`[parseExercisesArray] 🎯 TOTAL PARSED: ${exercises.length} exercises`);
+    
+    // Fallback: try to match old string format (correctAnswer as string not array)
     if (exercises.length === 0) {
-      const oldRegex = /\{\s*id:\s*(\d+),\s*german:\s*"([^"]+)",\s*correctAnswer:\s*"([^"]+)"\s*\}/g;
+      console.log('[parseExercisesArray] ⚠️ Zero matches with array format, trying fallback for string format...');
+      const oldRegex = /\{\s*id\s*:\s*(\d+)\s*,\s*german\s*:\s*"([^"]+)"\s*,\s*correctAnswer\s*:\s*"([^"]+)"\s*,?\s*\}/g;
       let oldMatch;
       
-      while ((oldMatch = oldRegex.exec(cleanStr)) !== null) {
+      while ((oldMatch = oldRegex.exec(exercisesStr)) !== null) {
         exercises.push({
           id: parseInt(oldMatch[1]),
           german: oldMatch[2],
           correctAnswer: oldMatch[3].split(' ')
         });
       }
+      
+      console.log('[parseExercisesArray] 📊 Fallback parsed:', exercises.length);
+    }
+    
+    if (exercises.length === 0) {
+      console.error('[parseExercisesArray] ❌ FAILED - No exercises parsed!');
     }
     
     return exercises;
   } catch (error) {
-    console.error('Error parsing exercises array:', error);
+    console.error('[parseExercisesArray] ❌ Error:', error);
     return [];
   }
 }
@@ -586,18 +603,55 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
         // Parse attributes from string
         const titleMatch = attributesStr.match(/title="([^"]*)"/);
         const subtitleMatch = attributesStr.match(/subtitle="([^"]*)"/);
-        const exercisesMatch = attributesStr.match(/exercises=\{(\[[\s\S]*?\])\}/);
         
-        if (!titleMatch || !subtitleMatch || !exercisesMatch) {
+        // Extract exercises with PROPER bracket matching (not greedy regex!)
+        const exercisesStart = attributesStr.indexOf('exercises={[');
+        
+        if (!titleMatch || !subtitleMatch || exercisesStart === -1) {
           console.error('[MDX Client] Could not parse ExerciseTable attributes');
+          console.error('[MDX Client] titleMatch:', !!titleMatch, 'subtitleMatch:', !!subtitleMatch, 'exercisesStart:', exercisesStart);
+          continue;
+        }
+        
+        // Find matching closing bracket by counting brackets
+        // Start from the '[' character itself
+        const startPos = exercisesStart + 'exercises={'.length;
+        let bracketCount = 1; // Start with 1 because we already have the opening '['
+        let exercisesEnd = -1;
+        
+        for (let i = startPos + 1; i < attributesStr.length; i++) {
+          if (attributesStr[i] === '[') bracketCount++;
+          else if (attributesStr[i] === ']') {
+            bracketCount--;
+            if (bracketCount === 0) {
+              exercisesEnd = i + 1;
+              break;
+            }
+          }
+        }
+        
+        if (exercisesEnd === -1) {
+          console.error('[MDX Client] ❌ Could not find matching bracket for exercises array');
+          console.error('[MDX Client] startPos:', startPos, 'attributesStr length:', attributesStr.length);
           continue;
         }
         
         const title = titleMatch[1];
         const subtitle = subtitleMatch[1];
-        const exercisesStr = exercisesMatch[1];
+        const exercisesStr = attributesStr.substring(startPos, exercisesEnd);
         
-        console.log('[MDX Client] Extracted attributes:', { title, subtitle, exercisesLength: exercisesStr.length });
+        console.log('[MDX Client] 🎯 Bracket matching successful:', {
+          startPos,
+          exercisesEnd,
+          extractedLength: exercisesStr.length
+        });
+        
+        console.log('[MDX Client] ✅ Extracted attributes:', { 
+          title: title.substring(0, 50), 
+          subtitle: subtitle.substring(0, 50), 
+          exercisesLength: exercisesStr.length,
+          exercisesPreview: exercisesStr.substring(0, 100) + '...'
+        });
         
         // Parse exercises
         const exercises = parseExercisesArray(exercisesStr);

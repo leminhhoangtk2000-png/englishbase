@@ -23,46 +23,96 @@ export function DocsTOC({ toc: serverTOC }: DocsTOCProps) {
   useEffect(() => {
     if (!mounted) return
 
-    // Extract TOC only from the main prose content area
-    const proseContainer = document.querySelector('.prose')
-    if (!proseContainer) return
-
-    const headings = proseContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')
-    const tocItems: (TOCItem & { level: number })[] = []
-
-    headings.forEach(heading => {
-      // Skip the main title (h1) as it's already shown in the page header
-      if (heading.tagName.toLowerCase() === 'h1') return
-
-      if (!heading.id) {
-        // Generate ID if not exists
-        const text = heading.textContent || ''
-        const id = text.toLowerCase()
-          .trim()
-          .replace(/\s+/g, '-')
-          .replace(/[^\w\-]+/g, '')
-          .replace(/\-\-+/g, '-')
-          .replace(/^-+/, '')
-          .replace(/-+$/, '')
-        
-        if (id) {
-          heading.id = id
-        }
+    const extractTOC = () => {
+      // Extract TOC only from the main prose content area
+      const proseContainer = document.querySelector('.prose')
+      if (!proseContainer) {
+        console.log('[DocsTOC] No .prose container found, retrying...')
+        return false
       }
 
-      if (heading.id && heading.textContent) {
-        const level = parseInt(heading.tagName.charAt(1))
-        tocItems.push({
-          title: heading.textContent.trim(),
-          url: `#${heading.id}`,
-          level
+      const headings = proseContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')
+      
+      if (headings.length === 0) {
+        console.log('[DocsTOC] No headings found yet, retrying...')
+        return false
+      }
+
+      const tocItems: (TOCItem & { level: number })[] = []
+
+      headings.forEach(heading => {
+        // Skip the main title (h1) as it's already shown in the page header
+        if (heading.tagName.toLowerCase() === 'h1') return
+
+        if (!heading.id) {
+          // Generate ID if not exists
+          const text = heading.textContent || ''
+          const id = text.toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w\-äöüß]+/g, '') // Support German characters
+            .replace(/\-\-+/g, '-')
+            .replace(/^-+/, '')
+            .replace(/-+$/, '')
+          
+          if (id) {
+            heading.id = id
+          }
+        }
+
+        if (heading.id && heading.textContent) {
+          const level = parseInt(heading.tagName.charAt(1))
+          tocItems.push({
+            title: heading.textContent.trim(),
+            url: `#${heading.id}`,
+            level
+          })
+        }
+      })
+
+      if (tocItems.length > 0) {
+        // Build hierarchical structure
+        const hierarchicalTOC = buildTOCHierarchy(tocItems)
+        setClientTOC({ items: hierarchicalTOC })
+        console.log('[DocsTOC] ✅ Extracted', tocItems.length, 'headings')
+        return true
+      }
+
+      return false
+    }
+
+    // Try immediately
+    const success = extractTOC()
+    
+    if (!success) {
+      // Retry after delays for MDX content to render
+      const timers = [
+        setTimeout(() => extractTOC(), 500),
+        setTimeout(() => extractTOC(), 1000),
+        setTimeout(() => extractTOC(), 2000),
+      ]
+
+      // Also watch for DOM changes
+      const observer = new MutationObserver(() => {
+        const success = extractTOC()
+        if (success) {
+          observer.disconnect()
+        }
+      })
+
+      const proseContainer = document.querySelector('.prose')
+      if (proseContainer) {
+        observer.observe(proseContainer, {
+          childList: true,
+          subtree: true
         })
       }
-    })
 
-    // Build hierarchical structure
-    const hierarchicalTOC = buildTOCHierarchy(tocItems)
-    setClientTOC({ items: hierarchicalTOC })
+      return () => {
+        timers.forEach(timer => clearTimeout(timer))
+        observer.disconnect()
+      }
+    }
   }, [mounted])
 
   const toc = clientTOC || serverTOC

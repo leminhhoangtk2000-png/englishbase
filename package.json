@@ -21,6 +21,9 @@
     "test:users": "tsx scripts/create-test-users.ts",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
+    "verify": "./scripts/verify-ubungen.sh",
+    "test:all-pages": "./scripts/test-all-ubungen-pages.sh",
+    "quick-start": "npm run docker:up && npm run dev",
     "auto-save": "./auto-save-reload.sh",
     "watch:content": "nodemon --watch src/content --ext md,mdx --exec 'echo Content changed at $(date)'"
   },
