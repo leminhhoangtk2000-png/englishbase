@@ -1,70 +1,82 @@
 ---
-id: uebung-2-teil-1-adjektivendungen-nach-bestimmtem-artikel
-title: 1. Adjektivendungen nach bestem Artikel
-description: Luyện tập điền đuôi tính từ đúng sau các mạo từ xác định (der, die, das).
-author: Lonia
+title: "Teil 1: Adjektivendungen nach bestem Artikel"
+description: "Luyện tập điền đuôi tính từ đúng sau các mạo từ xác định (der, die, das)"
+level: "A2"
+topic: "Übungen"
+order: 1
+difficulty: "intermediate"
+tags: ["adjektivendungen", "adjective-endings", "artikel"]
 ---
 
-import Lueckentext from "@site/src/components/Quiz/Lueckentext/Lueckentext";
-import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
-import ExerciseComments from "@site/src/components/exercise-comments";
+import { ExerciseTable } from '@/components/exercises/exercise-table'
+import { ExerciseAuthor } from '@/components/exercises/exercise-author'
+import { ExerciseHelp } from '@/components/exercises/ExerciseHelp'
+import { ExerciseComments } from '@/components/exercise-comments'
+
+<ExerciseHelp>
+Điền **đuôi tính từ đúng** sau mạo từ xác định (der, die, das).
+</ExerciseHelp>
 
 ## Teil 1: Câu 1-10
 
-<Lueckentext
-  textParts={[
-    "1. Wir besuchen die ", { type: "blank", correctAnswer: "schöne" }, " Stadt. (schön)", "\n",
-    "2. Er liest das ", { type: "blank", correctAnswer: "interessante" }, " Buch. (interessant)", "\n",
-    "3. Ich trinke den ", { type: "blank", correctAnswer: "heißen" }, " Kaffee. (heiß)", "\n",
-    "4. Sie kauft die ", { type: "blank", correctAnswer: "neue" }, " Jacke. (neu)", "\n",
-    "5. Ich wohne in der ", { type: "blank", correctAnswer: "großen" }, " Wohnung. (groß)", "\n",
-    "6. Wir essen den ", { type: "blank", correctAnswer: "leckeren" }, " Kuchen. (lecker)", "\n",
-    "7. Er kennt den ", { type: "blank", correctAnswer: "strengen" }, " Lehrer. (streng)", "\n",
-    "8. Ich spiele mit dem ", { type: "blank", correctAnswer: "lieben" }, " Hund. (lieb)", "\n",
-    "9. Sie besucht die ", { type: "blank", correctAnswer: "nette" }, " Freundin. (nett)", "\n",
-    "10. Ich sehe das ", { type: "blank", correctAnswer: "schnelle" }, " Auto. (schnell)", "\n",
+<ExerciseTable
+  title="Câu 1-10"
+  subtitle="Điền đuôi tính từ sau mạo từ xác định"
+  exercises={[
+    {id: 1, german: "Wir besuchen die __ Stadt. (schön)", correctAnswer: ["schöne"]},
+    {id: 2, german: "Er liest das __ Buch. (interessant)", correctAnswer: ["interessante"]},
+    {id: 3, german: "Ich trinke den __ Kaffee. (heiß)", correctAnswer: ["heißen"]},
+    {id: 4, german: "Sie kauft die __ Jacke. (neu)", correctAnswer: ["neue"]},
+    {id: 5, german: "Ich wohne in der __ Wohnung. (groß)", correctAnswer: ["großen"]},
+    {id: 6, german: "Wir essen den __ Kuchen. (lecker)", correctAnswer: ["leckeren"]},
+    {id: 7, german: "Er kennt den __ Lehrer. (streng)", correctAnswer: ["strengen"]},
+    {id: 8, german: "Ich spiele mit dem __ Hund. (lieb)", correctAnswer: ["lieben"]},
+    {id: 9, german: "Sie besucht die __ Freundin. (nett)", correctAnswer: ["nette"]},
+    {id: 10, german: "Ich sehe das __ Auto. (schnell)", correctAnswer: ["schnelle"]},
   ]}
 />
 
 ## Teil 2: Câu 11-20
 
-<Lueckentext
-  textParts={[
-    "11. Wir treffen den ", { type: "blank", correctAnswer: "jungen" }, " Kollegen. (jung)", "\n",
-    "12. Sie fährt mit dem ", { type: "blank", correctAnswer: "vollen" }, " Bus. (voll)", "\n",
-    "13. Das ist der ", { type: "blank", correctAnswer: "bekannte" }, " Supermarkt. (bekannt)", "\n",
-    "14. Ich höre die ", { type: "blank", correctAnswer: "laute" }, " Musik. (laut)", "\n",
-    "15. Er bringt den ", { type: "blank", correctAnswer: "kaputten" }, " Stuhl. (kaputt)", "\n",
-    "16. Ich gehe in das ", { type: "blank", correctAnswer: "saubere" }, " Zimmer. (sauber)", "\n",
-    "17. Ich spreche mit dem ", { type: "blank", correctAnswer: "alten" }, " Mann. (alt)", "\n",
-    "18. Sie liebt die ", { type: "blank", correctAnswer: "süße" }, " Katze. (süß)", "\n",
-    "19. Wir kaufen das ", { type: "blank", correctAnswer: "frische" }, " Brot. (frisch)", "\n",
-    "20. Er fotografiert die ", { type: "blank", correctAnswer: "bunten" }, " Blumen. (bunt)", "\n",
+<ExerciseTable
+  title="Câu 11-20"
+  subtitle="Điền đuôi tính từ sau mạo từ xác định"
+  exercises={[
+    {id: 11, german: "Wir treffen den __ Kollegen. (jung)", correctAnswer: ["jungen"]},
+    {id: 12, german: "Sie fährt mit dem __ Bus. (voll)", correctAnswer: ["vollen"]},
+    {id: 13, german: "Das ist der __ Supermarkt. (bekannt)", correctAnswer: ["bekannte"]},
+    {id: 14, german: "Ich höre die __ Musik. (laut)", correctAnswer: ["laute"]},
+    {id: 15, german: "Er bringt den __ Stuhl. (kaputt)", correctAnswer: ["kaputten"]},
+    {id: 16, german: "Ich gehe in das __ Zimmer. (sauber)", correctAnswer: ["saubere"]},
+    {id: 17, german: "Ich spreche mit dem __ Mann. (alt)", correctAnswer: ["alten"]},
+    {id: 18, german: "Sie liebt die __ Katze. (süß)", correctAnswer: ["süße"]},
+    {id: 19, german: "Wir kaufen das __ Brot. (frisch)", correctAnswer: ["frische"]},
+    {id: 20, german: "Er fotografiert die __ Blumen. (bunt)", correctAnswer: ["bunten"]},
   ]}
 />
 
 ## Teil 3: Câu 21-30
 
-<Lueckentext
-  textParts={[
-    "21. Sie liest die ", { type: "blank", correctAnswer: "deutsche" }, " Zeitung. (deutsch)", "\n",
-    "22. Wir wohnen in dem ", { type: "blank", correctAnswer: "neuen" }, " Haus. (neu)", "\n",
-    "23. Ich trinke den ", { type: "blank", correctAnswer: "grünen" }, " Tee. (grün)", "\n",
-    "24. Du siehst den ", { type: "blank", correctAnswer: "spannenden" }, " Film. (spannend)", "\n",
-    "25. Wir nehmen den ", { type: "blank", correctAnswer: "kurzen" }, " Weg. (kurz)", "\n",
-    "26. Sie schreibt die ", { type: "blank", correctAnswer: "lange" }, " E-Mail. (lang)", "\n",
-    "27. Ich rufe den ", { type: "blank", correctAnswer: "wichtigen" }, " Chef an. (wichtig)", "\n",
-    "28. Sie besucht die ", { type: "blank", correctAnswer: "alte" }, " Schule. (alt)", "\n",
-    "29. Wir kennen den ", { type: "blank", correctAnswer: "freundlichen" }, " Nachbarn. (freundlich)", "\n",
-    "30. Ich gehe in die ", { type: "blank", correctAnswer: "kleine" }, " Bäckerei. (klein)", "\n",
+<ExerciseTable
+  title="Câu 21-30"
+  subtitle="Điền đuôi tính từ sau mạo từ xác định"
+  exercises={[
+    {id: 21, german: "Sie liest die __ Zeitung. (deutsch)", correctAnswer: ["deutsche"]},
+    {id: 22, german: "Wir wohnen in dem __ Haus. (neu)", correctAnswer: ["neuen"]},
+    {id: 23, german: "Ich trinke den __ Tee. (grün)", correctAnswer: ["grünen"]},
+    {id: 24, german: "Du siehst den __ Film. (spannend)", correctAnswer: ["spannenden"]},
+    {id: 25, german: "Wir nehmen den __ Weg. (kurz)", correctAnswer: ["kurzen"]},
+    {id: 26, german: "Sie schreibt die __ E-Mail. (lang)", correctAnswer: ["lange"]},
+    {id: 27, german: "Ich rufe den __ Chef an. (wichtig)", correctAnswer: ["wichtigen"]},
+    {id: 28, german: "Sie besucht die __ Schule. (alt)", correctAnswer: ["alte"]},
+    {id: 29, german: "Wir kennen den __ Nachbarn. (freundlich)", correctAnswer: ["freundlichen"]},
+    {id: 30, german: "Ich gehe in die __ Bäckerei. (klein)", correctAnswer: ["kleine"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
+<ExerciseAuthor author="Lonia" />
 
 ---
 

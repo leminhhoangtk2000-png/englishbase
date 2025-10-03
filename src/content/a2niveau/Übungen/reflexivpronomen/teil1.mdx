@@ -8,84 +8,44 @@ difficulty: "intermediate"
 tags: ["reflexivpronomen", "akkusativ", "reflexive-verbs"]
 ---
 
+import { ExerciseTable } from '@/components/exercises/exercise-table'
+import { ExerciseAuthor } from '@/components/exercises/exercise-author'
+import { ExerciseHelp } from '@/components/exercises/ExerciseHelp'
 import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from "@/components/ui/lueckentext";
-import AuthorCredit from "@/components/exercises/author-credit";
 
 # Bài tập Điền đại từ phản thân (Akkusativ)
 
-Dưới đây là bài tập luyện tập điền đại từ phản thân trong câu (Akkusativ). Hãy điền từ đúng vào chỗ trống. Sau khi hoàn thành, nhấn **Kiểm tra** để xem kết quả.
+Dưới đây là bài tập luyện tập điền đại từ phản thân trong câu (Akkusativ). Hãy điền từ đúng vào chỗ trống.
 
-<Lueckentext
+<ExerciseHelp>
+Điền **đại từ phản thân ở dạng Akkusativ** (mich, dich, sich, uns, euch) vào chỗ trống.
+</ExerciseHelp>
+
+<ExerciseTable
   title="Điền đại từ phản thân đúng (Akkusativ)"
-  textParts={[
-    "1. Ich wasche ",
-    { type: "blank", correctAnswer: "mich" },
-    " jeden Morgen.",
-    "\n",
-    "2. Du kämmst ",
-    { type: "blank", correctAnswer: "dich" },
-    " vor dem Spiegel.",
-    "\n",
-    "3. Er rasiert ",
-    { type: "blank", correctAnswer: "sich" },
-    " nicht oft.",
-    "\n",
-    "4. Sie schminkt ",
-    { type: "blank", correctAnswer: "sich" },
-    " sehr gern.",
-    "\n",
-    "5. Wir beeilen ",
-    { type: "blank", correctAnswer: "uns" },
-    " zur Schule.",
-    "\n",
-    "6. Ihr müsst ",
-    { type: "blank", correctAnswer: "euch" },
-    " heute vorbereiten.",
-    "\n",
-    "7. Die Kinder setzen ",
-    { type: "blank", correctAnswer: "sich" },
-    " ruhig hin.",
-    "\n",
-    "8. Ich entspanne ",
-    { type: "blank", correctAnswer: "mich" },
-    " am Wochenende.",
-    "\n",
-    "9. Du duschst ",
-    { type: "blank", correctAnswer: "dich" },
-    " schnell.",
-    "\n",
-    "10. Sie verletzt ",
-    { type: "blank", correctAnswer: "sich" },
-    " beim Sport.",
-    "\n",
-    "11. Wir treffen ",
-    { type: "blank", correctAnswer: "uns" },
-    " um 8 Uhr.",
-    "\n",
-    "12. Ihr langweilt ",
-    { type: "blank", correctAnswer: "euch" },
-    " manchmal im Unterricht.",
-    "\n",
-    "13. Er zieht ",
-    { type: "blank", correctAnswer: "sich" },
-    " eine Jacke an.",
-    "\n",
-    "14. Sie zieht ",
-    { type: "blank", correctAnswer: "sich" },
-    " die Schuhe aus.",
-    "\n",
-    "15. Ich erinnere ",
-    { type: "blank", correctAnswer: "mich" },
-    " nicht an seinen Namen.",
+  subtitle="Chọn đại từ phản thân phù hợp với chủ ngữ"
+  exercises={[
+    {id: 1, german: "Ich wasche __ jeden Morgen.", correctAnswer: ["mich"]},
+    {id: 2, german: "Du kämmst __ vor dem Spiegel.", correctAnswer: ["dich"]},
+    {id: 3, german: "Er rasiert __ nicht oft.", correctAnswer: ["sich"]},
+    {id: 4, german: "Sie schminkt __ sehr gern.", correctAnswer: ["sich"]},
+    {id: 5, german: "Wir beeilen __ zur Schule.", correctAnswer: ["uns"]},
+    {id: 6, german: "Ihr müsst __ heute vorbereiten.", correctAnswer: ["euch"]},
+    {id: 7, german: "Die Kinder setzen __ ruhig hin.", correctAnswer: ["sich"]},
+    {id: 8, german: "Ich entspanne __ am Wochenende.", correctAnswer: ["mich"]},
+    {id: 9, german: "Du duschst __ schnell.", correctAnswer: ["dich"]},
+    {id: 10, german: "Sie verletzt __ beim Sport.", correctAnswer: ["sich"]},
+    {id: 11, german: "Wir treffen __ um 8 Uhr.", correctAnswer: ["uns"]},
+    {id: 12, german: "Ihr langweilt __ manchmal im Unterricht.", correctAnswer: ["euch"]},
+    {id: 13, german: "Er zieht __ eine Jacke an.", correctAnswer: ["sich"]},
+    {id: 14, german: "Sie zieht __ die Schuhe aus.", correctAnswer: ["sich"]},
+    {id: 15, german: "Ich erinnere __ nicht an seinen Namen.", correctAnswer: ["mich"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
+<ExerciseAuthor author="Lonia" />
 
 ---
 

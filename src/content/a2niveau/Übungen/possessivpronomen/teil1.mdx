@@ -8,84 +8,44 @@ difficulty: "intermediate"
 tags: ["possessivpronomen", "nominativ", "possessive"]
 ---
 
+import { ExerciseTable } from '@/components/exercises/exercise-table'
+import { ExerciseAuthor } from '@/components/exercises/exercise-author'
+import { ExerciseHelp } from '@/components/exercises/ExerciseHelp'
 import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from "@/components/ui/lueckentext";
-import AuthorCredit from "@/components/exercises/author-credit";
 
 # Bài tập Điền đại từ sở hữu (Nominativ)
 
-Dưới đây là bài tập luyện tập điền đại từ sở hữu trong câu (Nominativ). Hãy điền từ đúng vào chỗ trống. Sau khi hoàn thành, nhấn **Kiểm tra** để xem kết quả.
+Dưới đây là bài tập luyện tập điền đại từ sở hữu trong câu (Nominativ). Hãy điền từ đúng vào chỗ trống.
 
-<Lueckentext
+<ExerciseHelp>
+Điền **đại từ sở hữu** phù hợp theo ngữ cảnh.
+</ExerciseHelp>
+
+<ExerciseTable
   title="Điền đại từ sở hữu đúng (Nominativ)"
-  textParts={[
-    "1. Ist das dein Koffer? – Nein, das ist nicht deiner. Das ist ",
-    { type: "blank", correctAnswer: "meiner" },
-    ".",
-    "\n",
-    "2. Das ist unser Hund. – Nein, das ist nicht eurer. Das ist ",
-    { type: "blank", correctAnswer: "unserer" },
-    ".",
-    "\n",
-    "3. Ist das sein Auto? – Nein, das ist ",
-    { type: "blank", correctAnswer: "meins" },
-    ".",
-    "\n",
-    "4. Das ist Marias Tasche. – Nein, das ist nicht deine. Das ist ",
-    { type: "blank", correctAnswer: "ihre" },
-    ".",
-    "\n",
-    "5. Das sind unsere Bücher. – Nein, das sind nicht eure. Das sind ",
-    { type: "blank", correctAnswer: "unsere" },
-    ".",
-    "\n",
-    "6. Ist das Ihre Wohnung, Frau Keller? – Nein, das ist nicht meine. Das ist ",
-    { type: "blank", correctAnswer: "Ihre" },
-    ".",
-    "\n",
-    "7. Ist das euer Ball? – Nein, das ist nicht unser. Das ist ",
-    { type: "blank", correctAnswer: "euer" },
-    ".",
-    "\n",
-    "8. Ist das meine Jacke? – Nein, das ist ",
-    { type: "blank", correctAnswer: "deine" },
-    ".",
-    "\n",
-    "9. Das ist sein Laptop. – Nein, das ist nicht ",
-    { type: "blank", correctAnswer: "seiner" },
-    ", das ist meiner.",
-    "\n",
-    "10. Das ist unser Haus. – Nein, das ist nicht ",
-    { type: "blank", correctAnswer: "unseres" },
-    ", das ist ihr Haus.",
-    "\n",
-    "11. Das ist ihr Computer. – Nein, das ist nicht ",
-    { type: "blank", correctAnswer: "ihrer" },
-    ", das ist deiner.",
-    "\n",
-    "12. Das sind meine Kinder. – Nein, das sind nicht ",
-    { type: "blank", correctAnswer: "meine" },
-    ", das sind ihre.",
-    "\n",
-    "13. Ist das eure Katze? – Nein, das ist nicht ",
-    { type: "blank", correctAnswer: "eure" },
-    ", das ist unsere.",
-    "\n",
-    "14. Das ist ihre Tasse. – Nein, das ist nicht ",
-    { type: "blank", correctAnswer: "ihre" },
-    ", das ist meine.",
-    "\n",
-    "15. Das ist euer Lehrer. – Nein, das ist nicht ",
-    { type: "blank", correctAnswer: "eurer" },
-    ", das ist unserer.",
+  subtitle="Chọn đại từ sở hữu phù hợp với ngữ cảnh"
+  exercises={[
+    {id: 1, german: "Ist das dein Koffer? – Nein, das ist nicht deiner. Das ist __.", correctAnswer: ["meiner"]},
+    {id: 2, german: "Das ist unser Hund. – Nein, das ist nicht eurer. Das ist __.", correctAnswer: ["unserer"]},
+    {id: 3, german: "Ist das sein Auto? – Nein, das ist __.", correctAnswer: ["meins"]},
+    {id: 4, german: "Das ist Marias Tasche. – Nein, das ist nicht deine. Das ist __.", correctAnswer: ["ihre"]},
+    {id: 5, german: "Das sind unsere Bücher. – Nein, das sind nicht eure. Das sind __.", correctAnswer: ["unsere"]},
+    {id: 6, german: "Ist das Ihre Wohnung, Frau Keller? – Nein, das ist nicht meine. Das ist __.", correctAnswer: ["Ihre"]},
+    {id: 7, german: "Ist das euer Ball? – Nein, das ist nicht unser. Das ist __.", correctAnswer: ["euer"]},
+    {id: 8, german: "Ist das meine Jacke? – Nein, das ist __.", correctAnswer: ["deine"]},
+    {id: 9, german: "Das ist sein Laptop. – Nein, das ist nicht __, das ist meiner.", correctAnswer: ["seiner"]},
+    {id: 10, german: "Das ist unser Haus. – Nein, das ist nicht __, das ist ihr Haus.", correctAnswer: ["unseres"]},
+    {id: 11, german: "Das ist ihr Computer. – Nein, das ist nicht __, das ist deiner.", correctAnswer: ["ihrer"]},
+    {id: 12, german: "Das sind meine Kinder. – Nein, das sind nicht __, das sind ihre.", correctAnswer: ["meine"]},
+    {id: 13, german: "Ist das eure Katze? – Nein, das ist nicht __, das ist unsere.", correctAnswer: ["eure"]},
+    {id: 14, german: "Das ist ihre Tasse. – Nein, das ist nicht __, das ist meine.", correctAnswer: ["ihre"]},
+    {id: 15, german: "Das ist euer Lehrer. – Nein, das ist nicht __, das ist unserer.", correctAnswer: ["eurer"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
+<ExerciseAuthor author="Lonia" />
 
 ---
 
