@@ -419,8 +419,13 @@ function parseExercisesArray(exercisesStr: string): any[] {
     
     // ULTRA FLEXIBLE regex - matches ANY spacing format
     // Works for: {id: 1,...}, {id:1,...}, OR multiline {\n  id: 1,\n  ...}
-    // Now also supports optional explanation field
-    const exerciseRegex = /\{\s*id\s*:\s*(\d+)\s*,\s*german\s*:\s*"([^"]+)"\s*,\s*correctAnswer\s*:\s*\[([^\]]+)\]\s*(?:,\s*explanation\s*:\s*"([^"]+)")?\s*\}/g;
+    // Now also supports optional explanation field with escaped quotes
+    // Pattern breakdown:
+    // - id: \d+
+    // - german: string (can contain escaped quotes \")
+    // - correctAnswer: array [...]
+    // - explanation: optional string (can contain escaped quotes \")
+    const exerciseRegex = /\{[^}]*?id\s*:\s*(\d+)[^}]*?german\s*:\s*"((?:[^"\\]|\\.)*)"\s*[^}]*?correctAnswer\s*:\s*\[([^\]]+)\](?:[^}]*?explanation\s*:\s*"((?:[^"\\]|\\.)*)")?\s*[^}]*?\}/g;
     const exercises = [];
     let exerciseMatch;
     let matchCount = 0;
