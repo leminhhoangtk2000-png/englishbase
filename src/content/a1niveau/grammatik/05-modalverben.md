@@ -155,3 +155,13 @@ order: 5
 - **Dùng "möchten" thay vì "wollen" khi muốn lịch sự.**
 - **Nhớ bảng chia Modalverben để sử dụng chính xác!**
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-05-modalverben"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

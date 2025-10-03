@@ -141,3 +141,13 @@ Dưới đây là các bài tập luyện tập theo thứ tự dễ đến khó
 ---
 
 Chúc bạn học tốt! 🚀
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-01-prasens"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

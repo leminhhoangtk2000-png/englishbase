@@ -108,3 +108,13 @@ Tổng Kết
 - Akkusativ → Wen? Was?
 - Dativ → Wem?
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-12-personalpronomen"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

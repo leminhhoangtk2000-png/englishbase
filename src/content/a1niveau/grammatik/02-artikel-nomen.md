@@ -129,3 +129,13 @@ Ghi nhớ nhanh
 - **Danh từ số nhiều luôn đi với quán từ xác định "die".**
 - 📌 **Học danh từ phải học kèm giống và số nhiều ngay từ đầu!**
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-02-artikel-nomen"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

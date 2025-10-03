@@ -125,3 +125,13 @@ Các **tiền tố hay gặp**: **durch-, hinter-, um-, unter-, wieder-**
 
 📌 **Học mẹo:** Không cần nhớ tất cả một lúc! Hãy **luyện tập với câu thực tế** để quen dần!
 :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-06-trennbare-verben"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

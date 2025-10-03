@@ -123,3 +123,13 @@ Thêm **"nicht"** hoặc **"kein"** để phủ định mệnh lệnh.
 - **Thêm "bitte"** để lịch sự → _Warten Sie bitte!_
 - **Phủ định**: thêm **nicht/kein** → _Geh nicht! Esst das nicht!_
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-07-imperativ"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

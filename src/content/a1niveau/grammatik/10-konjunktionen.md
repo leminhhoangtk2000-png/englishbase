@@ -132,3 +132,13 @@ Công thức: Chủ ngữ 1 + động từ + phần còn lại + od
 - **sondern** chỉ dùng khi câu trước có phủ định.
 - **denn** = bởi vì (không đảo ngữ), còn **weil** = bởi vì (có đảo ngữ).
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-10-konjunktionen"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

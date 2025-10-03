@@ -125,3 +125,13 @@ Hãy cùng tìm hiểu cách sử dụng chúng chính xác nhé! 🚀
 
 📌 **Hãy nhớ bảng biến cách của "kein" để dùng chính xác!**
 :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-09-negation"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

@@ -149,3 +149,13 @@ Có 5 loại quán từ quan trọng:
 
 📌 Nhớ bảng biến cách để dùng đúng trong mọi ngữ cảnh!
 :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-11-quan-tu-nang-cao"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

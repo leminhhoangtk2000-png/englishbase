@@ -115,3 +115,13 @@ order: 8
 - **Dativ** → vị trí cố định, diễn tả nơi chốn.
 - **Wechselpräpositionen** → chuyển động = Akkusativ, vị trí = Dativ.
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-08-prapositionen"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

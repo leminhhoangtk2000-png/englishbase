@@ -142,3 +142,13 @@ _Ví dụ:_ **Ich** _(Nom)_ gebe **dem Kind** _(Dat)_ **_das Buch_** _(Akk)_
 - **Wen/Was? → Akkusativ**
 - **Wem? → Dativ**
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-04-kasus"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>

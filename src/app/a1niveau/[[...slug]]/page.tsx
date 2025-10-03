@@ -170,11 +170,12 @@ export default async function DocPage({ params }: DocPageProps) {
     const directMarkdownContent = getMarkdownBySlug('a1niveau', section, folderSlug);
     
     if (directMarkdownContent) {
-      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
+      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz, MultipleChoiceQuizGroup)
       const hasExerciseTable = directMarkdownContent.content.includes('<ExerciseTable');
       const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
       const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
-      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz;
+      const hasMultipleChoiceQuizGroup = directMarkdownContent.content.includes('<MultipleChoiceQuizGroup');
+      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasMultipleChoiceQuizGroup;
       const isMDX = directMarkdownContent.filePath && directMarkdownContent.filePath.endsWith('.mdx');
       
       console.log('[Server] MDX Detection:', { 
@@ -184,6 +185,7 @@ export default async function DocPage({ params }: DocPageProps) {
         hasExerciseTable,
         hasFormingQuestions,
         hasMatchingQuiz,
+        hasMultipleChoiceQuizGroup,
         hasInteractiveComponents
       });
       
@@ -390,7 +392,8 @@ export default async function DocPage({ params }: DocPageProps) {
     hasExerciseTable: markdownContent.content.includes('ExerciseTable'),
     hasFormingQuestions: markdownContent.content.includes('FormingQuestions'),
     hasMatchingQuiz: markdownContent.content.includes('MatchingQuiz'),
-    hasInteractiveComponents: markdownContent.content.includes('ExerciseTable') || markdownContent.content.includes('FormingQuestions') || markdownContent.content.includes('MatchingQuiz')
+    hasMultipleChoiceQuizGroup: markdownContent.content.includes('MultipleChoiceQuizGroup'),
+    hasInteractiveComponents: markdownContent.content.includes('ExerciseTable') || markdownContent.content.includes('FormingQuestions') || markdownContent.content.includes('MatchingQuiz') || markdownContent.content.includes('MultipleChoiceQuizGroup')
   });
   console.log('[Server] Raw content passed to client:', markdownContent.content.substring(0, 300));
   console.log('[Server] Content includes FormingQuestions:', markdownContent.content.includes('<FormingQuestions'));

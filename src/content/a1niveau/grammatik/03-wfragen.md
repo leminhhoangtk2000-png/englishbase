@@ -77,3 +77,13 @@ Ja/Nein-Fragen là loại câu hỏi có thể trả lời ngắn gọn bằng "
 - **Cấu trúc W-Fragen:** 👉 **W-Frage + Động từ chia + Chủ ngữ + (Phần còn lại)**.
 - **Cấu trúc Ja/Nein-Fragen:** 👉 **Động từ chia + Chủ ngữ + (Phần còn lại)**.
   :::
+
+
+---
+
+<CommentButton 
+  exerciseId="a1-grammatik-03-wfragen"
+  currentUserId="user-123"
+  currentUserName="Học viên"
+  variant="compact"
+/>
