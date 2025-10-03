@@ -1,10 +1,15 @@
 ---
 title: "Plusquamperfekt và Präteritum Übungen"
+description: "Luyện tập kết hợp Plusquamperfekt và Präteritum với liên từ"
+level: "A2"
+topic: "Übungen"
+difficulty: "advanced"
+tags: ["plusquamperfekt", "präteritum", "conjunctions"]
 ---
 
-import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from '@site/src/components/Quiz/Lueckentext/Lueckentext';
-import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Danh sách từ vựng sẽ dùng
 beantworten, sein, nachdem, gehen, schreiben, arbeiten, anrufen, empfehlen, einsteigen, lesen, gönnen, antworten, als, kommen, stellen, bevor, essen, anfangen, beenden, machen, packen, frühstücken, erzählen, steigen, sehen, begrüßen, beginnen, bekommen
@@ -15,35 +20,32 @@ Trong phần này, bạn sẽ dùng các liên từ: bevor, nachdem, als; và c�
 - Dùng **Präteritum** cho hành động xảy ra sau.  
 - Chọn đúng liên từ: bevor, nachdem, als.
 
-<Lueckentext
-  title="Plusquamperfekt và Präteritum Übungen"
-  textParts={[
-    "1. ", { type: "blank", correctAnswer: "Bevor" }, " ich zur Arbeit ", { type: "blank", correctAnswer: "ging" }, ", ", { type: "blank", correctAnswer: "hatte" }, " ich ", { type: "blank", correctAnswer: "gefrühstückt" }, ". (gehen, frühstücken)", "\n",
-    "2. ", { type: "blank", correctAnswer: "Nachdem" }, " sie das Buch ", { type: "blank", correctAnswer: "gelesen hatte" }, ", ", { type: "blank", correctAnswer: "erzählte" }, " sie mir davon. (lesen, erzählen)", "\n",
-    "3. ", { type: "blank", correctAnswer: "Nachdem" }, " wir lange ", { type: "blank", correctAnswer: "gearbeitet" }, " ", { type: "blank", correctAnswer: "hatten" }, ", ", { type: "blank", correctAnswer: "gönnten" }, " wir uns eine Pause. (arbeiten, gönnen)", "\n",
-    "4. ", { type: "blank", correctAnswer: "Nachdem" }, " ich den Film ", { type: "blank", correctAnswer: "gesehen hatte" }, ", ", { type: "blank", correctAnswer: "empfahl" }, " ich ihn meinen Freunden. (sehen, empfehlen)", "\n",
-    "5. ", { type: "blank", correctAnswer: "Als" }, " er ", { type: "blank", correctAnswer: "angerufen hatte" }, ", ", { type: "blank", correctAnswer: "war" }, " ich noch unterwegs. (anrufen, sein)", "\n",
-    "6. ", { type: "blank", correctAnswer: "Nachdem" }, " du nach Hause ", { type: "blank", correctAnswer: "gekommen warst" }, ", ", { type: "blank", correctAnswer: "begrüßtest" }, " du deine Eltern. (kommen, begrüßen)", "\n",
-    "7. ", { type: "blank", correctAnswer: "Nachdem" }, " sie ihre Präsentation ", { type: "blank", correctAnswer: "beendet hatte" }, ", ", { type: "blank", correctAnswer: "beantwortete" }, " sie viele Fragen. (beenden, beantworten)", "\n",
-    "8. ", { type: "blank", correctAnswer: "Nachdem" }, " ich die Nachricht ", { type: "blank", correctAnswer: "bekommen hatte" }, ", ", { type: "blank", correctAnswer: "antwortete" }, " ich sofort. (bekommen, antworten)", "\n",
-    "9. ", { type: "blank", correctAnswer: "Bevor" }, " der Lehrer ins Klassenzimmer ", { type: "blank", correctAnswer: "kam" }, ", ", { type: "blank", correctAnswer: "hatten" }, " wir die Aufgabe fertig ", { type: "blank", correctAnswer: "gemacht" }, ". (kommen, machen)", "\n",
-    "10. ", { type: "blank", correctAnswer: "Als" }, " sie in den Bus ", { type: "blank", correctAnswer: "eingestiegen war" }, ", ", { type: "blank", correctAnswer: "begann" }, " der Regen. (einsteigen, beginnen)", "\n",
-    "11. ", { type: "blank", correctAnswer: "Nachdem" }, " du deine Tasche ", { type: "blank", correctAnswer: "gepackt hattest" }, ", ", { type: "blank", correctAnswer: "stiegst" }, " du ins Auto. (packen, steigen)", "\n",
-    "12. ", { type: "blank", correctAnswer: "Bevor" }, " ich zur Schule ", { type: "blank", correctAnswer: "ging" }, ", ", { type: "blank", correctAnswer: "hatte" }, " ich meinen Wecker nicht ", { type: "blank", correctAnswer: "gestellt" }, ". (gehen, stellen)", "\n",
-    "13. ", { type: "blank", correctAnswer: "Nachdem" }, " sie den Text ", { type: "blank", correctAnswer: "geschrieben hatte" }, ", ", { type: "blank", correctAnswer: "las" }, " sie ihn noch einmal. (schreiben, lesen)", "\n",
-    "14. ", { type: "blank", correctAnswer: "Nachdem" }, " wir ", { type: "blank", correctAnswer: "gegessen hatten" }, ", ", { type: "blank", correctAnswer: "gingen" }, " wir spazieren. (essen, gehen)", "\n",
-    "15. ", { type: "blank", correctAnswer: "Als" }, " der Unterricht ", { type: "blank", correctAnswer: "angefangen hatte" }, ", ", { type: "blank", correctAnswer: "waren" }, " wir noch nicht im Klassenzimmer. (anfangen, sein)"
+<ExerciseTable
+  title="Plusquamperfekt và Präteritum với liên từ"
+  subtitle="Điền liên từ (bevor/nachdem/als) và động từ đúng thì"
+  exercises={[
+    {id: 1, german: "__ ich zur Arbeit __, __ ich __. (gehen, frühstücken)", correctAnswer: ["Bevor", "ging", "hatte", "gefrühstückt"]},
+    {id: 2, german: "__ sie das Buch __, __ sie mir davon. (lesen, erzählen)", correctAnswer: ["Nachdem", "gelesen hatte", "erzählte"]},
+    {id: 3, german: "__ wir lange __ __, __ wir uns eine Pause. (arbeiten, gönnen)", correctAnswer: ["Nachdem", "gearbeitet", "hatten", "gönnten"]},
+    {id: 4, german: "__ ich den Film __, __ ich ihn meinen Freunden. (sehen, empfehlen)", correctAnswer: ["Nachdem", "gesehen hatte", "empfahl"]},
+    {id: 5, german: "__ er __, __ ich noch unterwegs. (anrufen, sein)", correctAnswer: ["Als", "angerufen hatte", "war"]},
+    {id: 6, german: "__ du nach Hause __, __ du deine Eltern. (kommen, begrüßen)", correctAnswer: ["Nachdem", "gekommen warst", "begrüßtest"]},
+    {id: 7, german: "__ sie ihre Präsentation __, __ sie viele Fragen. (beenden, beantworten)", correctAnswer: ["Nachdem", "beendet hatte", "beantwortete"]},
+    {id: 8, german: "__ ich die Nachricht __, __ ich sofort. (bekommen, antworten)", correctAnswer: ["Nachdem", "bekommen hatte", "antwortete"]},
+    {id: 9, german: "__ der Lehrer ins Klassenzimmer __, __ wir die Aufgabe fertig __. (kommen, machen)", correctAnswer: ["Bevor", "kam", "hatten", "gemacht"]},
+    {id: 10, german: "__ sie in den Bus __, __ der Regen. (einsteigen, beginnen)", correctAnswer: ["Als", "eingestiegen war", "begann"]},
+    {id: 11, german: "__ du deine Tasche __, __ du ins Auto. (packen, steigen)", correctAnswer: ["Nachdem", "gepackt hattest", "stiegst"]},
+    {id: 12, german: "__ ich zur Schule __, __ ich meinen Wecker nicht __. (gehen, stellen)", correctAnswer: ["Bevor", "ging", "hatte", "gestellt"]},
+    {id: 13, german: "__ sie den Text __, __ sie ihn noch einmal. (schreiben, lesen)", correctAnswer: ["Nachdem", "geschrieben hatte", "las"]},
+    {id: 14, german: "__ wir __, __ wir spazieren. (essen, gehen)", correctAnswer: ["Nachdem", "gegessen hatten", "gingen"]},
+    {id: 15, german: "__ der Unterricht __, __ wir noch nicht im Klassenzimmer. (anfangen, sein)", correctAnswer: ["Als", "angefangen hatte", "waren"]},
   ]}
 />
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Lonia" />
-
----
-
-### **Hỏi đáp ❓💬**
+<ExerciseAuthor author="Lonia" />
+<ExerciseHelp />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Tiếp tục luyện tập để nắm vững cách dùng liên từ và thì trong tiếng Đức nhé! 😊
