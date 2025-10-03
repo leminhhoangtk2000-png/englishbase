@@ -8,76 +8,33 @@ difficulty: "advanced"
 tags: ["passiv", "präsens", "passive-voice"]
 ---
 
+import { ExerciseTable } from '@/components/exercises/exercise-table'
+import { ExerciseAuthor } from '@/components/exercises/exercise-author'
+import { ExerciseHelp } from '@/components/exercises/ExerciseHelp'
 import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from "@/components/ui/lueckentext";
-import AuthorCredit from "@/components/exercises/author-credit";
+
+<ExerciseHelp>
+Điền **động từ "werden"** (chia) và **Partizip II** vào chỗ trống.
+</ExerciseHelp>
 
 ## Phần 1: Câu 1-10
 
 _Động từ: kochen, bringen, aufräumen, reparieren, abholen, putzen, mähen, machen, verteilen, lesen_
 
-<Lueckentext
+<ExerciseTable
   title="Câu 1-10"
-  textParts={[
-    "1. Der Müll ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " jeden Morgen ",
-    { type: "blank", correctAnswer: "abgeholt (abholen)" },
-    ".",
-    "\n",
-    "2. Die Fenster ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " von meiner Schwester ",
-    { type: "blank", correctAnswer: "geputzt (putzen)" },
-    ".",
-    "\n",
-    "3. Das Essen ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " in der Schulküche ",
-    { type: "blank", correctAnswer: "gekocht (kochen)" },
-    ".",
-    "\n",
-    "4. Die Briefe ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " vom Postboten ",
-    { type: "blank", correctAnswer: "verteilt (verteilen)" },
-    ".",
-    "\n",
-    "5. Das Paket ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " von DHL ",
-    { type: "blank", correctAnswer: "gebracht (bringen)" },
-    ".",
-    "\n",
-    "6. Der Rasen ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " am Wochenende ",
-    { type: "blank", correctAnswer: "gemäht (mähen)" },
-    ".",
-    "\n",
-    "7. Die Wohnung ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " vor dem Besuch ",
-    { type: "blank", correctAnswer: "aufgeräumt (aufräumen)" },
-    ".",
-    "\n",
-    "8. Die Bücher ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " von den Schülern ",
-    { type: "blank", correctAnswer: "gelesen (lesen)" },
-    ".",
-    "\n",
-    "9. Das Auto ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " in der Werkstatt ",
-    { type: "blank", correctAnswer: "repariert (reparieren)" },
-    ".",
-    "\n",
-    "10. Die Hausaufgaben ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " von den Kindern ",
-    { type: "blank", correctAnswer: "gemacht (machen)" },
-    ".",
+  subtitle="Chia động từ werden và thêm Partizip II"
+  exercises={[
+    {id: 1, german: "Der Müll __ jeden Morgen __. (abholen)", correctAnswer: ["wird", "abgeholt"]},
+    {id: 2, german: "Die Fenster __ von meiner Schwester __. (putzen)", correctAnswer: ["werden", "geputzt"]},
+    {id: 3, german: "Das Essen __ in der Schulküche __. (kochen)", correctAnswer: ["wird", "gekocht"]},
+    {id: 4, german: "Die Briefe __ vom Postboten __. (verteilen)", correctAnswer: ["werden", "verteilt"]},
+    {id: 5, german: "Das Paket __ von DHL __. (bringen)", correctAnswer: ["wird", "gebracht"]},
+    {id: 6, german: "Der Rasen __ am Wochenende __. (mähen)", correctAnswer: ["wird", "gemäht"]},
+    {id: 7, german: "Die Wohnung __ vor dem Besuch __. (aufräumen)", correctAnswer: ["wird", "aufgeräumt"]},
+    {id: 8, german: "Die Bücher __ von den Schülern __. (lesen)", correctAnswer: ["werden", "gelesen"]},
+    {id: 9, german: "Das Auto __ in der Werkstatt __. (reparieren)", correctAnswer: ["wird", "repariert"]},
+    {id: 10, german: "Die Hausaufgaben __ von den Kindern __. (machen)", correctAnswer: ["werden", "gemacht"]},
   ]}
 />
 
@@ -85,68 +42,20 @@ _Động từ: kochen, bringen, aufräumen, reparieren, abholen, putzen, mähen,
 
 _Động từ: bewerten, öffnen, schreiben, reinigen, waschen, füttern, bestellen, zeichnen, verschieben, senden_
 
-<Lueckentext
+<ExerciseTable
   title="Câu 11-20"
-  textParts={[
-    "11. Die Kleidung ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " in der Waschküche ",
-    { type: "blank", correctAnswer: "gewaschen (waschen)" },
-    ".",
-    "\n",
-    "12. Der Hund ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " jeden Tag ",
-    { type: "blank", correctAnswer: "gefüttert (füttern)" },
-    ".",
-    "\n",
-    "13. Die Nachrichten ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " im Fernsehen ",
-    { type: "blank", correctAnswer: "gesendet (senden)" },
-    ".",
-    "\n",
-    "14. Der Bericht ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " vom Journalisten ",
-    { type: "blank", correctAnswer: "geschrieben (schreiben)" },
-    ".",
-    "\n",
-    "15. Das Bild ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " von einem Künstler ",
-    { type: "blank", correctAnswer: "gezeichnet (zeichnen)" },
-    ".",
-    "\n",
-    "16. Die Flasche ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " mit einem Korkenzieher ",
-    { type: "blank", correctAnswer: "geöffnet (öffnen)" },
-    ".",
-    "\n",
-    "17. Die Pizza ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " von meinem Bruder ",
-    { type: "blank", correctAnswer: "bestellt (bestellen)" },
-    ".",
-    "\n",
-    "18. Die Straßen ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " nach dem Festival ",
-    { type: "blank", correctAnswer: "gereinigt (reinigen)" },
-    ".",
-    "\n",
-    "19. Der Termin ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " auf nächste Woche ",
-    { type: "blank", correctAnswer: "verschoben (verschieben)" },
-    ".",
-    "\n",
-    "20. Die Schüler ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " nach einem Test ",
-    { type: "blank", correctAnswer: "bewertet (bewerten)" },
-    ".",
+  subtitle="Chia động từ werden và thêm Partizip II"
+  exercises={[
+    {id: 11, german: "Die Kleidung __ in der Waschküche __. (waschen)", correctAnswer: ["wird", "gewaschen"]},
+    {id: 12, german: "Der Hund __ jeden Tag __. (füttern)", correctAnswer: ["wird", "gefüttert"]},
+    {id: 13, german: "Die Nachrichten __ im Fernsehen __. (senden)", correctAnswer: ["werden", "gesendet"]},
+    {id: 14, german: "Der Bericht __ vom Journalisten __. (schreiben)", correctAnswer: ["wird", "geschrieben"]},
+    {id: 15, german: "Das Bild __ von einem Künstler __. (zeichnen)", correctAnswer: ["wird", "gezeichnet"]},
+    {id: 16, german: "Die Flasche __ mit einem Korkenzieher __. (öffnen)", correctAnswer: ["wird", "geöffnet"]},
+    {id: 17, german: "Die Pizza __ von meinem Bruder __. (bestellen)", correctAnswer: ["wird", "bestellt"]},
+    {id: 18, german: "Die Straßen __ nach dem Festival __. (reinigen)", correctAnswer: ["werden", "gereinigt"]},
+    {id: 19, german: "Der Termin __ auf nächste Woche __. (verschieben)", correctAnswer: ["wird", "verschoben"]},
+    {id: 20, german: "Die Schüler __ nach einem Test __. (bewerten)", correctAnswer: ["werden", "bewertet"]},
   ]}
 />
 
@@ -154,76 +63,26 @@ _Động từ: bewerten, öffnen, schreiben, reinigen, waschen, füttern, bestel
 
 _Động từ: decken, installieren, backen, reparieren, einpacken, reservieren, beantworten, ausschalten, verpacken, begrüßen_
 
-<Lueckentext
+<ExerciseTable
   title="Câu 21-30"
-  textParts={[
-    "21. Das Hotelzimmer ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " im Voraus ",
-    { type: "blank", correctAnswer: "reserviert (reservieren)" },
-    ".",
-    "\n",
-    "22. Das Licht ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " vor dem Schlafengehen ",
-    { type: "blank", correctAnswer: "ausgeschaltet (ausschalten)" },
-    ".",
-    "\n",
-    "23. Die Heizung ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " im Winter ",
-    { type: "blank", correctAnswer: "repariert (reparieren)" },
-    ".",
-    "\n",
-    "24. Die Fragen ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " vom Lehrer ",
-    { type: "blank", correctAnswer: "beantwortet (beantworten)" },
-    ".",
-    "\n",
-    "25. Der Computer ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " von einem Techniker ",
-    { type: "blank", correctAnswer: "installiert (installieren)" },
-    ".",
-    "\n",
-    "26. Die Pakete ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " in der Fabrik ",
-    { type: "blank", correctAnswer: "verpackt (verpacken)" },
-    ".",
-    "\n",
-    "27. Das Brot ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " früh am Morgen ",
-    { type: "blank", correctAnswer: "gebacken (backen)" },
-    ".",
-    "\n",
-    "28. Die Gäste ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " am Eingang ",
-    { type: "blank", correctAnswer: "begrüßt (begrüßen)" },
-    ".",
-    "\n",
-    "29. Der Tisch ",
-    { type: "blank", correctAnswer: "wird (werden)" },
-    " zum Abendessen ",
-    { type: "blank", correctAnswer: "gedeckt (decken)" },
-    ".",
-    "\n",
-    "30. Die Geschenke ",
-    { type: "blank", correctAnswer: "werden (werden)" },
-    " zu Weihnachten ",
-    { type: "blank", correctAnswer: "eingepackt (einpacken)" },
-    ".",
+  subtitle="Chia động từ werden và thêm Partizip II"
+  exercises={[
+    {id: 21, german: "Das Hotelzimmer __ im Voraus __. (reservieren)", correctAnswer: ["wird", "reserviert"]},
+    {id: 22, german: "Das Licht __ vor dem Schlafengehen __. (ausschalten)", correctAnswer: ["wird", "ausgeschaltet"]},
+    {id: 23, german: "Die Heizung __ im Winter __. (reparieren)", correctAnswer: ["wird", "repariert"]},
+    {id: 24, german: "Die Fragen __ vom Lehrer __. (beantworten)", correctAnswer: ["werden", "beantwortet"]},
+    {id: 25, german: "Der Computer __ von einem Techniker __. (installieren)", correctAnswer: ["wird", "installiert"]},
+    {id: 26, german: "Die Pakete __ in der Fabrik __. (verpacken)", correctAnswer: ["werden", "verpackt"]},
+    {id: 27, german: "Das Brot __ früh am Morgen __. (backen)", correctAnswer: ["wird", "gebacken"]},
+    {id: 28, german: "Die Gäste __ am Eingang __. (begrüßen)", correctAnswer: ["werden", "begrüßt"]},
+    {id: 29, german: "Der Tisch __ zum Abendessen __. (decken)", correctAnswer: ["wird", "gedeckt"]},
+    {id: 30, german: "Die Geschenke __ zu Weihnachten __. (einpacken)", correctAnswer: ["werden", "eingepackt"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
+<ExerciseAuthor author="Lonia" />
 
 ---
 
