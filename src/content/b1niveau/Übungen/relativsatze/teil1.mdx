@@ -4,7 +4,8 @@ description: "Bài tập thực hành câu quan hệ và đại từ quan hệ t
 tags: ["B1", "Relativsätze", "Relativpronomen", "Grammatik", "der/die/das"]
 ---
 
-import { ExerciseComments } from "@/components/ExerciseComments";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # B1 Relativsätze - Teil 1: Relativpronomen
 
@@ -17,129 +18,25 @@ import { ExerciseComments } from "@/components/ExerciseComments";
 - **dem, der, dem** (Dativ) - tân ngữ gián tiếp
 - **dessen, deren, dessen** (Genitiv) - sở hữu
 
-<ExerciseTable>
-  <ExerciseHeader>
-    <ExerciseInstruction>
-      Hoàn thành câu với **đại từ quan hệ** đúng. Chú ý giới tính, số và biến
-      cách.
-    </ExerciseInstruction>
-  </ExerciseHeader>
+<ExerciseTable
+  title="B1 Relativsätze - Teil 1: Relativpronomen"
+  subtitle="Hoàn thành câu với **đại từ quan hệ** đúng. Chú ý giới tính, số và biến cách."
+  exercises={[{id: 1, german: "Der Mann, ___ im Garten arbeitet, ist mein Nachbar.", correctAnswer: ["der"], explanation: "\"der Mann\" → \"der\" (Nominativ, vì đóng vai chủ ngữ trong câu quan hệ:
+        \"der arbeitet\")."}, {id: 2, german: "Das ist das Buch, ___ ich gerade lese.", correctAnswer: ["das"], explanation: "\"das Buch\" → \"das\" (Akkusativ, vì là tân ngữ trực tiếp: \"ich lese das
+        Buch\")."}, {id: 3, german: "Kennst du die Frau, ___ Sohn in meiner Klasse ist?", correctAnswer: ["deren"], explanation: "\"die Frau\" → \"deren\" (Genitiv, biểu thị sở hữu: \"der Sohn der Frau\" →
+        \"deren Sohn\")."}, {id: 4, german: "Hier ist der Bus, in ___ wir zur Schule fahren.", correctAnswer: ["dem"], explanation: "\"der Bus\" → \"dem\" (Dativ, vì giới từ \"in\" đi với Dativ: \"in dem Bus\")."}, {id: 5, german: "Ich suche den Schlüssel, ___ auf dem Tisch liegt.", correctAnswer: ["der"], explanation: "\"der Schlüssel\" → \"der\" (Nominativ, vì đóng vai chủ ngữ: \"der Schlüssel
+        liegt\")."}, {id: 6, german: "Die Kinder, ___ draußen spielen, sind meine Cousins.", correctAnswer: ["die"], explanation: "\"die Kinder\" → \"die\" (Nominativ Plural, chủ ngữ: \"die Kinder spielen\")."}, {id: 7, german: "Hast du den Film gesehen, über ___ alle sprechen?", correctAnswer: ["den"], explanation: "\"der Film\" → \"den\" (Akkusativ, vì giới từ \"über\" đi với Akkusativ: \"über
+        den Film\")."}, {id: 8, german: "Das ist der Lehrer, mit ___ wir morgen eine Exkursion machen.", correctAnswer: ["dem"], explanation: "\"der Lehrer\" → \"dem\" (Dativ, vì giới từ \"mit\" đi với Dativ: \"mit dem
+        Lehrer\")."}, {id: 9, german: "Kennst du den Mann, ___ Auto vor der Tür steht?", correctAnswer: ["dessen"], explanation: "\"der Mann\" → \"dessen\" (Genitiv, biểu thị sở hữu: \"das Auto des Mannes\" →
+        \"dessen Auto\")."}, {id: 10, german: "Das ist das Haus, in ___ meine Großeltern wohnen.", correctAnswer: ["dem"], explanation: "\"das Haus\" → \"dem\" (Dativ, vì giới từ \"in\" (nơi chốn) đi với Dativ: \"in
+        dem Haus\")."}]}
+/>
 
-  <ExerciseBody>
-    <ExerciseItem>
-      <ExerciseSentence>
-        Der Mann, ___ im Garten arbeitet, ist mein Nachbar.
-      </ExerciseSentence>
-      <ExerciseAnswer>der</ExerciseAnswer>
-      <ExerciseExplanation>
-        "der Mann" → "der" (Nominativ, vì đóng vai chủ ngữ trong câu quan hệ:
-        "der arbeitet").
-      </ExerciseExplanation>
-    </ExerciseItem>
+---
 
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das ist das Buch, ___ ich gerade lese.
-      </ExerciseSentence>
-      <ExerciseAnswer>das</ExerciseAnswer>
-      <ExerciseExplanation>
-        "das Buch" → "das" (Akkusativ, vì là tân ngữ trực tiếp: "ich lese das
-        Buch").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Kennst du die Frau, ___ Sohn in meiner Klasse ist?
-      </ExerciseSentence>
-      <ExerciseAnswer>deren</ExerciseAnswer>
-      <ExerciseExplanation>
-        "die Frau" → "deren" (Genitiv, biểu thị sở hữu: "der Sohn der Frau" →
-        "deren Sohn").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Hier ist der Bus, in ___ wir zur Schule fahren.
-      </ExerciseSentence>
-      <ExerciseAnswer>dem</ExerciseAnswer>
-      <ExerciseExplanation>
-        "der Bus" → "dem" (Dativ, vì giới từ "in" đi với Dativ: "in dem Bus").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Ich suche den Schlüssel, ___ auf dem Tisch liegt.
-      </ExerciseSentence>
-      <ExerciseAnswer>der</ExerciseAnswer>
-      <ExerciseExplanation>
-        "der Schlüssel" → "der" (Nominativ, vì đóng vai chủ ngữ: "der Schlüssel
-        liegt").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Die Kinder, ___ draußen spielen, sind meine Cousins.
-      </ExerciseSentence>
-      <ExerciseAnswer>die</ExerciseAnswer>
-      <ExerciseExplanation>
-        "die Kinder" → "die" (Nominativ Plural, chủ ngữ: "die Kinder spielen").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Hast du den Film gesehen, über ___ alle sprechen?
-      </ExerciseSentence>
-      <ExerciseAnswer>den</ExerciseAnswer>
-      <ExerciseExplanation>
-        "der Film" → "den" (Akkusativ, vì giới từ "über" đi với Akkusativ: "über
-        den Film").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das ist der Lehrer, mit ___ wir morgen eine Exkursion machen.
-      </ExerciseSentence>
-      <ExerciseAnswer>dem</ExerciseAnswer>
-      <ExerciseExplanation>
-        "der Lehrer" → "dem" (Dativ, vì giới từ "mit" đi với Dativ: "mit dem
-        Lehrer").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Kennst du den Mann, ___ Auto vor der Tür steht?
-      </ExerciseSentence>
-      <ExerciseAnswer>dessen</ExerciseAnswer>
-      <ExerciseExplanation>
-        "der Mann" → "dessen" (Genitiv, biểu thị sở hữu: "das Auto des Mannes" →
-        "dessen Auto").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das ist das Haus, in ___ meine Großeltern wohnen.
-      </ExerciseSentence>
-      <ExerciseAnswer>dem</ExerciseAnswer>
-      <ExerciseExplanation>
-        "das Haus" → "dem" (Dativ, vì giới từ "in" (nơi chốn) đi với Dativ: "in
-        dem Haus").
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-  </ExerciseBody>
-</ExerciseTable>
-
-<ExerciseAuthor>Deutsch.edu.vn</ExerciseAuthor>
+## Hỏi đáp & Thảo luận 💬
 
 <ExerciseComments
   exerciseId="b1-relativsatze-teil1"
-  url="/b1niveau/Übungen/relativsatze/teil1"
+  url="/b1niveau/übungen/relativsatze/teil1"
 />

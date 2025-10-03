@@ -4,140 +4,16 @@ description: "Bài tập thực hành Doppelkonjunktionen - Cấp độ B1"
 tags: ["B1", "Doppelkonjunktionen", "Grammatik", "Übungen"]
 ---
 
+import { ExerciseTable } from "@/components/exercises/exercise-table";
 import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 # B1 Doppelkonjunktionen - Teil 3
 
-<ExerciseTable>
-  <ExerciseHeader>
-    <ExerciseInstruction>
-      sowohl...als auch, je...desto, zwar...aber
-    </ExerciseInstruction>
-  </ExerciseHeader>
-
-  <ExerciseBody>
-    <ExerciseItem>
-      <ExerciseSentence>
-        Er spricht ___ Deutsch ___ Englisch.
-      </ExerciseSentence>
-      <ExerciseAnswer>sowohl / als auch</ExerciseAnswer>
-      <ExerciseExplanation>
-        sowohl...als auch = cả...lẫn (cả hai đều có)
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        ___ mehr ich lerne, ___ besser werden meine Noten.
-      </ExerciseSentence>
-      <ExerciseAnswer>Je / desto</ExerciseAnswer>
-      <ExerciseExplanation>
-        je...desto = càng...càng (tỉ lệ thuận)
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das Haus ist ___ groß, ___ sehr teuer.
-      </ExerciseSentence>
-      <ExerciseAnswer>zwar / aber</ExerciseAnswer>
-      <ExerciseExplanation>
-        zwar...aber = tuy...nhưng (nhượng bộ)
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Sie interessiert sich ___ für Musik ___ für Sport.
-      </ExerciseSentence>
-      <ExerciseAnswer>sowohl / als auch</ExerciseAnswer>
-      <ExerciseExplanation>
-        sowohl...als auch = cả hai đều
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        ___ älter man wird, ___ weiser wird man.
-      </ExerciseSentence>
-      <ExerciseAnswer>Je / desto</ExerciseAnswer>
-      <ExerciseExplanation>
-        je...desto = tỉ lệ tăng
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Der Film ist ___ interessant, ___ zu lang.
-      </ExerciseSentence>
-      <ExerciseAnswer>zwar / aber</ExerciseAnswer>
-      <ExerciseExplanation>
-        zwar...aber = tuy thế nhưng
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        ___ Kinder ___ Erwachsene mögen dieses Spiel.
-      </ExerciseSentence>
-      <ExerciseAnswer>Sowohl / als auch</ExerciseAnswer>
-      <ExerciseExplanation>
-        sowohl...als auch = tất cả đều
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        ___ schneller du läufst, ___ schneller kommst du an.
-      </ExerciseSentence>
-      <ExerciseAnswer>Je / desto</ExerciseAnswer>
-      <ExerciseExplanation>
-        je...desto = mối quan hệ tỉ lệ
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Ich kenne ihn ___ gut, ___ nicht persönlich.
-      </ExerciseSentence>
-      <ExerciseAnswer>zwar / aber</ExerciseAnswer>
-      <ExerciseExplanation>
-        zwar...aber = biết nhưng không sâu
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Er kann ___ kochen ___ backen.
-      </ExerciseSentence>
-      <ExerciseAnswer>sowohl / als auch</ExerciseAnswer>
-      <ExerciseExplanation>
-        sowohl...als auch = cả hai kỹ năng
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        ___ mehr ich arbeite, ___ müder werde ich.
-      </ExerciseSentence>
-      <ExerciseAnswer>Je / desto</ExerciseAnswer>
-      <ExerciseExplanation>
-        je...desto = càng làm càng mệt
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-    <ExerciseItem>
-      <ExerciseSentence>
-        Das Restaurant ist ___ beliebt, ___ immer voll.
-      </ExerciseSentence>
-      <ExerciseAnswer>zwar / aber</ExerciseAnswer>
-      <ExerciseExplanation>
-        zwar...aber = phổ biến nhưng đông
-      </ExerciseExplanation>
-    </ExerciseItem>
-
-  </ExerciseBody>
-</ExerciseTable>
+<ExerciseTable
+  title="B1 Doppelkonjunktionen - Teil 3"
+  subtitle="sowohl...als auch, je...desto, zwar...aber"
+  exercises={[{id: 1, german: "Er spricht ___ Deutsch ___ Englisch.", correctAnswer: ["sowohl", "als auch"], explanation: "sowohl...als auch = cả...lẫn (cả hai đều có)"}, {id: 2, german: "___ mehr ich lerne, ___ besser werden meine Noten.", correctAnswer: ["Je", "desto"], explanation: "je...desto = càng...càng (tỉ lệ thuận)"}, {id: 3, german: "Das Haus ist ___ groß, ___ sehr teuer.", correctAnswer: ["zwar", "aber"], explanation: "zwar...aber = tuy...nhưng (nhượng bộ)"}, {id: 4, german: "Sie interessiert sich ___ für Musik ___ für Sport.", correctAnswer: ["sowohl", "als auch"], explanation: "sowohl...als auch = cả hai đều"}, {id: 5, german: "___ älter man wird, ___ weiser wird man.", correctAnswer: ["Je", "desto"], explanation: "je...desto = tỉ lệ tăng"}, {id: 6, german: "Der Film ist ___ interessant, ___ zu lang.", correctAnswer: ["zwar", "aber"], explanation: "zwar...aber = tuy thế nhưng"}, {id: 7, german: "___ Kinder ___ Erwachsene mögen dieses Spiel.", correctAnswer: ["Sowohl", "als auch"], explanation: "sowohl...als auch = tất cả đều"}, {id: 8, german: "___ schneller du läufst, ___ schneller kommst du an.", correctAnswer: ["Je", "desto"], explanation: "je...desto = mối quan hệ tỉ lệ"}, {id: 9, german: "Ich kenne ihn ___ gut, ___ nicht persönlich.", correctAnswer: ["zwar", "aber"], explanation: "zwar...aber = biết nhưng không sâu"}, {id: 10, german: "Er kann ___ kochen ___ backen.", correctAnswer: ["sowohl", "als auch"], explanation: "sowohl...als auch = cả hai kỹ năng"}, {id: 11, german: "___ mehr ich arbeite, ___ müder werde ich.", correctAnswer: ["Je", "desto"], explanation: "je...desto = càng làm càng mệt"}, {id: 12, german: "Das Restaurant ist ___ beliebt, ___ immer voll.", correctAnswer: ["zwar", "aber"], explanation: "zwar...aber = phổ biến nhưng đông"}]}
+/>
 
 ---
 
