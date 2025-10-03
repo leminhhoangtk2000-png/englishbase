@@ -8,66 +8,33 @@ difficulty: "intermediate"
 tags: ["steigerung", "komparativ", "gleichheit"]
 ---
 
-import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from "@/components/ui/lueckentext";
-import AuthorCredit from "@/components/exercises/author-credit";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Bài tập: So sánh bằng (gleich)
 
-<Lueckentext
-  textParts={[
-    "1. Mein Auto ist so ",
-    { type: "blank", correctAnswer: "schnell" },
-    " wie dein Auto. (schnell)",
-    "\n",
-    "2. Das Kleid ist so ",
-    { type: "blank", correctAnswer: "teuer" },
-    " wie der Rock. (teuer)",
-    "\n",
-    "3. Heute ist das Wetter so ",
-    { type: "blank", correctAnswer: "warm" },
-    " wie gestern. (warm)",
-    "\n",
-    "4. Anna ist so ",
-    { type: "blank", correctAnswer: "intelligent" },
-    " wie ihre Schwester. (intelligent)",
-    "\n",
-    "5. Dein Computer ist so ",
-    { type: "blank", correctAnswer: "modern" },
-    " wie meiner. (modern)",
-    "\n",
-    "6. Der Film war so ",
-    { type: "blank", correctAnswer: "interessant" },
-    " wie das Buch. (interessant)",
-    "\n",
-    "7. Deutsch ist so ",
-    { type: "blank", correctAnswer: "nützlich" },
-    " wie Englisch. (nützlich)",
-    "\n",
-    "8. Dieser Weg ist so ",
-    { type: "blank", correctAnswer: "lang" },
-    " wie der andere. (lang)",
-    "\n",
-    "9. Mein Zimmer ist so ",
-    { type: "blank", correctAnswer: "sauber" },
-    " wie dein Zimmer. (sauber)",
-    "\n",
-    "10. Der Test war so ",
-    { type: "blank", correctAnswer: "schwierig" },
-    " wie die Hausaufgaben. (schwierig)",
-    "\n",
+<ExerciseTable
+  title="So sánh bằng - Gleichheit"
+  subtitle="Điền dạng đúng của tính từ với cấu trúc so...wie"
+  exercises={[
+    {id: 1, german: "Mein Auto ist so __ wie dein Auto. (schnell)", correctAnswer: ["schnell"]},
+    {id: 2, german: "Das Kleid ist so __ wie der Rock. (teuer)", correctAnswer: ["teuer"]},
+    {id: 3, german: "Heute ist das Wetter so __ wie gestern. (warm)", correctAnswer: ["warm"]},
+    {id: 4, german: "Anna ist so __ wie ihre Schwester. (intelligent)", correctAnswer: ["intelligent"]},
+    {id: 5, german: "Dein Computer ist so __ wie meiner. (modern)", correctAnswer: ["modern"]},
+    {id: 6, german: "Der Film war so __ wie das Buch. (interessant)", correctAnswer: ["interessant"]},
+    {id: 7, german: "Deutsch ist so __ wie Englisch. (nützlich)", correctAnswer: ["nützlich"]},
+    {id: 8, german: "Dieser Weg ist so __ wie der andere. (lang)", correctAnswer: ["lang"]},
+    {id: 9, german: "Mein Zimmer ist so __ wie dein Zimmer. (sauber)", correctAnswer: ["sauber"]},
+    {id: 10, german: "Der Test war so __ wie die Hausaufgaben. (schwierig)", correctAnswer: ["schwierig"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
-
----
-
-### **Hỏi đáp ❓💬**
+<ExerciseAuthor author="Lonia" />
+<ExerciseHelp />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Hãy luyện tập để cải thiện khả năng so sánh trong tiếng Đức của bạn nhé! 😊

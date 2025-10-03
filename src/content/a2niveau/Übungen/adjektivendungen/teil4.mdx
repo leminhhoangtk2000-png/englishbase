@@ -4,115 +4,66 @@ title: 4. Adjektivendungen ohne Artikel
 description: Luyện tập điền đuôi tính từ đúng khi không có mạo từ.
 ---
 
-import ExerciseComments from "@site/src/components/exercise-comments";
-import Lueckentext from "@site/src/components/Quiz/Lueckentext/Lueckentext";
-import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Teil 1: Câu 1-10
 
-<Lueckentext
-  textParts={[
-    "1. Wir essen heute ",
-    { type: "blank", correctAnswer: "frisches" },
-    " Gemüse. (frisch)\n\n",
-    "2. Sie trägt ",
-    { type: "blank", correctAnswer: "schwarze" },
-    " Hose. (schwarz)\n\n",
-    "3. Er kauft ",
-    { type: "blank", correctAnswer: "rote" },
-    " Äpfel auf dem Markt. (rot)\n\n",
-    "4. Wir suchen ",
-    { type: "blank", correctAnswer: "günstiges" },
-    " Hotel in der Stadt. (günstig)\n\n",
-    "5. Sie fährt mit ",
-    { type: "blank", correctAnswer: "schnellem" },
-    " Zug nach Berlin. (schnell)\n\n",
-    "6. Ich sehe jeden Morgen ",
-    { type: "blank", correctAnswer: "freundliche" },
-    " Kollegen. (freundlich)\n\n",
-    "7. Wir besuchen ",
-    { type: "blank", correctAnswer: "historische" },
-    " Orte im Urlaub. (historisch)\n\n",
-    "8. Er macht gern Fotos mit ",
-    { type: "blank", correctAnswer: "kleiner" },
-    " Kamera. (klein)\n\n",
-    "9. Ich schreibe mit ",
-    { type: "blank", correctAnswer: "blauem" },
-    " Kugelschreiber. (blau)\n\n",
-    "10. Er isst jeden Tag ",
-    { type: "blank", correctAnswer: "gesunden" },
-    " Salat. (gesund)",
+<ExerciseTable
+  title="Teil 1: Adjektivendungen ohne Artikel"
+  subtitle="Điền đuôi tính từ đúng"
+  exercises={[
+    {id: 1, german: "Wir essen heute __ Gemüse. (frisch)", correctAnswer: ["frisches"]},
+    {id: 2, german: "Sie trägt __ Hose. (schwarz)", correctAnswer: ["schwarze"]},
+    {id: 3, german: "Er kauft __ Äpfel auf dem Markt. (rot)", correctAnswer: ["rote"]},
+    {id: 4, german: "Wir suchen __ Hotel in der Stadt. (günstig)", correctAnswer: ["günstiges"]},
+    {id: 5, german: "Sie fährt mit __ Zug nach Berlin. (schnell)", correctAnswer: ["schnellem"]},
+    {id: 6, german: "Ich sehe jeden Morgen __ Kollegen. (freundlich)", correctAnswer: ["freundliche"]},
+    {id: 7, german: "Wir besuchen __ Orte im Urlaub. (historisch)", correctAnswer: ["historische"]},
+    {id: 8, german: "Er macht gern Fotos mit __ Kamera. (klein)", correctAnswer: ["kleiner"]},
+    {id: 9, german: "Ich schreibe mit __ Kugelschreiber. (blau)", correctAnswer: ["blauem"]},
+    {id: 10, german: "Er isst jeden Tag __ Salat. (gesund)", correctAnswer: ["gesunden"]},
   ]}
 />
 
 ## Teil 2: Câu 11-20
 
-<Lueckentext
-  textParts={[
-    "11. Ich mache gern Urlaub in ",
-    { type: "blank", correctAnswer: "ruhiger" },
-    " Umgebung. (ruhig)\n\n",
-    "12. Sie braucht ",
-    { type: "blank", correctAnswer: "praktische" },
-    " Tasche für die Reise. (praktisch)\n\n",
-    "13. Ich trinke manchmal ",
-    { type: "blank", correctAnswer: "französischen" },
-    " Wein. (französisch)\n\n",
-    "14. Er arbeitet mit ",
-    { type: "blank", correctAnswer: "modernem" },
-    " Computer. (modern)\n\n",
-    "15. Sie sieht oft ",
-    { type: "blank", correctAnswer: "lustige" },
-    " Filme im Kino. (lustig)\n\n",
-    "16. Ich lese gern ",
-    { type: "blank", correctAnswer: "interessante" },
-    " Bücher. (interessant)\n\n",
-    "17. Wir besuchen am Wochenende ",
-    { type: "blank", correctAnswer: "alte" },
-    " Freunde. (alt)\n\n",
-    "18. Er geht gern spazieren bei ",
-    { type: "blank", correctAnswer: "schönem" },
-    " Wetter. (schön)\n\n",
-    "19. Ich nehme immer ",
-    { type: "blank", correctAnswer: "kleines" },
-    " Frühstück. (klein)\n\n",
-    "20. Sie macht Sport mit ",
-    { type: "blank", correctAnswer: "bequemer" },
-    " Kleidung. (bequem)",
+<ExerciseTable
+  title="Teil 2: Adjektivendungen ohne Artikel"
+  subtitle="Điền đuôi tính từ đúng"
+  exercises={[
+    {id: 11, german: "Ich mache gern Urlaub in __ Umgebung. (ruhig)", correctAnswer: ["ruhiger"]},
+    {id: 12, german: "Sie braucht __ Tasche für die Reise. (praktisch)", correctAnswer: ["praktische"]},
+    {id: 13, german: "Ich trinke manchmal __ Wein. (französisch)", correctAnswer: ["französischen"]},
+    {id: 14, german: "Er arbeitet mit __ Computer. (modern)", correctAnswer: ["modernem"]},
+    {id: 15, german: "Sie sieht oft __ Filme im Kino. (lustig)", correctAnswer: ["lustige"]},
+    {id: 16, german: "Ich lese gern __ Bücher. (interessant)", correctAnswer: ["interessante"]},
+    {id: 17, german: "Wir besuchen am Wochenende __ Freunde. (alt)", correctAnswer: ["alte"]},
+    {id: 18, german: "Er geht gern spazieren bei __ Wetter. (schön)", correctAnswer: ["schönem"]},
+    {id: 19, german: "Ich nehme immer __ Frühstück. (klein)", correctAnswer: ["kleines"]},
+    {id: 20, german: "Sie macht Sport mit __ Kleidung. (bequem)", correctAnswer: ["bequemer"]},
   ]}
 />
 
 ## Teil 3: Câu 21-25
 
-<Lueckentext
-  textParts={[
-    "21. Ich trinke selten ",
-    { type: "blank", correctAnswer: "kaltes" },
-    " Bier. (kalt)\n\n",
-    "22. Wir kaufen oft ",
-    { type: "blank", correctAnswer: "frische" },
-    " Brötchen. (frisch)\n\n",
-    "23. Er arbeitet in ",
-    { type: "blank", correctAnswer: "großem" },
-    " Büro. (groß)\n\n",
-    "24. Sie schreibt Briefe mit ",
-    { type: "blank", correctAnswer: "alter" },
-    " Schreibmaschine. (alt)\n\n",
-    "25. Ich sehe abends gern ",
-    { type: "blank", correctAnswer: "spannende" },
-    " Serien. (spannend)",
+<ExerciseTable
+  title="Teil 3: Adjektivendungen ohne Artikel"
+  subtitle="Điền đuôi tính từ đúng"
+  exercises={[
+    {id: 21, german: "Ich trinke selten __ Bier. (kalt)", correctAnswer: ["kaltes"]},
+    {id: 22, german: "Wir kaufen oft __ Brötchen. (frisch)", correctAnswer: ["frische"]},
+    {id: 23, german: "Er arbeitet in __ Büro. (groß)", correctAnswer: ["großem"]},
+    {id: 24, german: "Sie schreibt Briefe mit __ Schreibmaschine. (alt)", correctAnswer: ["alter"]},
+    {id: 25, german: "Ich sehe abends gern __ Serien. (spannend)", correctAnswer: ["spannende"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
-
----
-
-### **Hỏi đáp ❓💬**
+<ExerciseAuthor author="Lonia" />
+<ExerciseHelp />
 
 ---
 
