@@ -186,7 +186,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
             <CollapsibleTrigger className={cn(
               "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/50 [&[data-state=open]>svg]:rotate-90 transition-colors",
               {
-                "bg-primary/10 border-l-2 border-primary font-medium text-foreground": pathname?.startsWith(item.href || ''),
+                "bg-primary/10 font-medium text-foreground": pathname?.startsWith(item.href || '') && item.items && item.items.length > 0,
               }
             )}>
               {item.title}
@@ -201,7 +201,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                       key={subIndex}
                       href={subItem.href}
                       className={cn(
-                        "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
+                        "flex w-full items-center rounded-md p-2 text-sm hover:bg-secondary/50 hover:text-foreground transition-colors",
                         {
                           "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": isActive,
                         }
