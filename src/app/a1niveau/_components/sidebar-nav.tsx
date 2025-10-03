@@ -198,20 +198,23 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
               </CollapsibleTrigger>
               <CollapsibleContent className="pl-4 mt-1">
                 <div className="grid grid-flow-row auto-rows-max space-y-0.5">
-                  {item.items?.map((subItem, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      href={subItem.href || '#'}
-                      className={cn(
-                        "flex items-start rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-secondary/30 hover:text-foreground transition-colors",
-                        {
-                          "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === subItem.href,
-                        }
-                      )}
-                    >
-                      <span className="leading-relaxed break-words">{subItem.title}</span>
-                    </Link>
-                  ))}
+                  {item.items?.map((subItem, subIndex) => {
+                    const isActive = pathname === subItem.href;
+                    return (
+                      <Link
+                        key={subIndex}
+                        href={subItem.href || '#'}
+                        className={cn(
+                          "flex items-start rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-secondary/30 hover:text-foreground transition-colors",
+                          {
+                            "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": isActive,
+                          }
+                        )}
+                      >
+                        <span className="leading-relaxed break-words">{subItem.title}</span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </CollapsibleContent>
             </Collapsible>

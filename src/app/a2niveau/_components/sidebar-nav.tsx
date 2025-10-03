@@ -194,15 +194,16 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
             </CollapsibleTrigger>
             <CollapsibleContent className="pl-4">
               <div className="grid grid-flow-row auto-rows-max text-sm py-1">
-                {item.items.map((subItem, subIndex) => (
-                  subItem.href && !subItem.disabled ? (
+                {item.items.map((subItem, subIndex) => {
+                  const isActive = pathname === subItem.href;
+                  return subItem.href && !subItem.disabled ? (
                     <Link
                       key={subIndex}
                       href={subItem.href}
                       className={cn(
                         "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
                         {
-                          "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === subItem.href,
+                          "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": isActive,
                         }
                       )}
                       target={subItem.external ? "_blank" : ""}
@@ -217,8 +218,8 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                     >
                       {subItem.title}
                     </span>
-                  )
-                ))}
+                  );
+                })}
               </div>
             </CollapsibleContent>
           </Collapsible>
