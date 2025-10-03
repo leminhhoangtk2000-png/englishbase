@@ -23,11 +23,11 @@ const commentSection = `
 
 ---
 
-<CommentButton 
+## Hỏi đáp & Thảo luận 💬
+
+<ExerciseComments
   exerciseId="a1-grammatik-{FILE_ID}"
-  currentUserId="user-123"
-  currentUserName="Học viên"
-  variant="compact"
+  url="/a1niveau/grammatik/{FILE_ID}"
 />
 `;
 
@@ -44,9 +44,18 @@ function addCommentsToFile(fileName: string) {
   let content = fs.readFileSync(filePath, 'utf-8');
 
   // Check if already has comment
-  if (content.includes('CommentButton') || content.includes('CommentSystem')) {
+  if (content.includes('ExerciseComments') || content.includes('CommentButton') || content.includes('CommentSystem')) {
     console.log(`⏭️  Skipping ${fileName} - already has comments`);
     return;
+  }
+
+  // Add import at the top after frontmatter if not exists
+  if (!content.includes('import ExerciseComments')) {
+    const frontmatterEnd = content.indexOf('---', 3) + 3;
+    const beforeImport = content.substring(0, frontmatterEnd);
+    const afterFrontmatter = content.substring(frontmatterEnd);
+    
+    content = beforeImport + '\n\nimport ExerciseComments from "@/components/exercises/ExerciseComments";' + afterFrontmatter;
   }
 
   // Generate unique exerciseId from filename

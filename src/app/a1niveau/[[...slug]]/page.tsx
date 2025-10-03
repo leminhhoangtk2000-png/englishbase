@@ -170,12 +170,13 @@ export default async function DocPage({ params }: DocPageProps) {
     const directMarkdownContent = getMarkdownBySlug('a1niveau', section, folderSlug);
     
     if (directMarkdownContent) {
-      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz, MultipleChoiceQuizGroup)
+      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz, MultipleChoiceQuizGroup, ExerciseComments)
       const hasExerciseTable = directMarkdownContent.content.includes('<ExerciseTable');
       const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
       const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
       const hasMultipleChoiceQuizGroup = directMarkdownContent.content.includes('<MultipleChoiceQuizGroup');
-      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasMultipleChoiceQuizGroup;
+      const hasExerciseComments = directMarkdownContent.content.includes('<ExerciseComments');
+      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasMultipleChoiceQuizGroup || hasExerciseComments;
       const isMDX = directMarkdownContent.filePath && directMarkdownContent.filePath.endsWith('.mdx');
       
       console.log('[Server] MDX Detection:', { 
@@ -186,6 +187,7 @@ export default async function DocPage({ params }: DocPageProps) {
         hasFormingQuestions,
         hasMatchingQuiz,
         hasMultipleChoiceQuizGroup,
+        hasExerciseComments,
         hasInteractiveComponents
       });
       
@@ -306,6 +308,15 @@ export default async function DocPage({ params }: DocPageProps) {
       notFound();
     }
 
+    // Detect MDX and interactive components
+    const hasExerciseTable = markdownContent.content.includes('<ExerciseTable');
+    const hasFormingQuestions = markdownContent.content.includes('<FormingQuestions');
+    const hasMatchingQuiz = markdownContent.content.includes('<MatchingQuiz');
+    const hasMultipleChoiceQuizGroup = markdownContent.content.includes('<MultipleChoiceQuizGroup');
+    const hasExerciseComments = markdownContent.content.includes('<ExerciseComments');
+    const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasMultipleChoiceQuizGroup || hasExerciseComments;
+    const isMDX = markdownContent.filePath && markdownContent.filePath.endsWith('.mdx');
+
     const htmlContent = await markdownToHtml(markdownContent.content);
     const toc = extractTableOfContents(markdownContent.content);
     const breadcrumbItems = [section];
@@ -339,8 +350,12 @@ export default async function DocPage({ params }: DocPageProps) {
             )}
           </div>
           <Separator className="my-4" />
-          <div className="mdx">
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          <div className="prose max-w-none">
+            {(isMDX && hasInteractiveComponents) ? (
+              <MDXComponentsRenderer content={markdownContent.content} />
+            ) : (
+              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            )}
           </div>
         </div>
         <div className="hidden text-sm lg:block">

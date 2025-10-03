@@ -1,6 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
+import remarkHtml from 'remark-html';
+import remarkDirective from 'remark-directive';
+import { visit } from 'unist-util-visit';
+import type { Root } from 'mdast';
 import { ExerciseTable } from '@/components/exercises/exercise-table';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { MatchingQuiz } from '@/components/exercises/matching-quiz';
@@ -553,25 +559,118 @@ function parseSatzbildungProps(propsStr: string): {
 }
 
 /**
- * Simple markdown to HTML converter
+ * Remark plugin to convert directives (:::note, :::tip, etc) to styled HTML
  */
-function markdownToHtml(markdown: string): string {
-  return markdown
-    // Headers
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    // Bold and italic
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    // Line breaks
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/\n/g, '<br>')
-    // Wrap in paragraphs
-    .replace(/^(?!<[h1-6]|<p|<div)(.+)/gm, '<p>$1</p>')
-    // Clean up empty paragraphs
-    .replace(/<p><\/p>/g, '')
-    .replace(/<p><br><\/p>/g, '<br>');
+function remarkAdmonitions() {
+  return (tree: Root) => {
+    visit(tree, (node: any) => {
+      if (
+        node.type === 'textDirective' ||
+        node.type === 'leafDirective' ||
+        node.type === 'containerDirective'
+      ) {
+        const data = node.data || (node.data = {});
+        const name = node.name;
+        
+        // Get title from attributes or use default
+        const attributes = node.attributes || {};
+        const title = attributes.title || name.charAt(0).toUpperCase() + name.slice(1);
+        
+        // Map directive names to admonition types
+        const admonitionType = name; // note, tip, warning, info, etc.
+        
+        // Build the admonition HTML structure
+        const children = node.children || [];
+        
+        // Create header node
+        const headerNode = {
+          type: 'paragraph',
+          data: {
+            hName: 'div',
+            hProperties: { className: ['admonition-header'] }
+          },
+          children: [
+            {
+              type: 'html',
+              value: `<span class="admonition-icon">${getAdmonitionIcon(admonitionType)}</span>`
+            },
+            {
+              type: 'strong',
+              data: {
+                hName: 'span',
+                hProperties: { className: ['admonition-title'] }
+              },
+              children: [{ type: 'text', value: title }]
+            }
+          ]
+        };
+        
+        // Create content wrapper
+        const contentNode = {
+          type: 'paragraph',
+          data: {
+            hName: 'div',
+            hProperties: { className: ['admonition-content'] }
+          },
+          children: children
+        };
+        
+        // Replace node with styled div containing header and content
+        data.hName = 'div';
+        data.hProperties = {
+          className: ['admonition', `admonition-${admonitionType}`],
+          'data-admonition': admonitionType,
+        };
+        
+        node.children = [headerNode, contentNode];
+      }
+    });
+  };
+}
+
+/**
+ * Get icon for admonition type
+ */
+function getAdmonitionIcon(type: string): string {
+  const icons: Record<string, string> = {
+    note: '📝',
+    tip: '💡',
+    info: 'ℹ️',
+    warning: '⚠️',
+    danger: '🚨',
+    caution: '⚠️',
+  };
+  return icons[type] || 'ℹ️';
+}
+
+/**
+ * Convert markdown to HTML using remark
+ */
+async function markdownToHtmlAsync(markdown: string): Promise<string> {
+  try {
+    const file = await remark()
+      .use(remarkDirective) // Parse ::: syntax
+      .use(remarkAdmonitions) // Convert to HTML
+      .use(remarkGfm) // Support tables, strikethrough, task lists
+      .use(remarkHtml, { sanitize: false }) // Convert to HTML (don't sanitize to keep custom HTML)
+      .process(markdown);
+    
+    return String(file);
+  } catch (error) {
+    console.error('[markdownToHtml] Error processing markdown:', error);
+    // Fallback to simple conversion
+    return markdown
+      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br>')
+      .replace(/^(?!<[h1-6]|<p|<div)(.+)/gm, '<p>$1</p>')
+      .replace(/<p><\/p>/g, '')
+      .replace(/<p><br><\/p>/g, '<br>');
+  }
 }
 
 /**
@@ -1117,13 +1216,18 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
       }
     }
 
-    // Convert the remaining markdown to HTML
-    const html = markdownToHtml(processedContent);
-    
-    setComponentsCount(components.length);
-    setRenderedComponents(components);
-    setHtmlContent(html);
-    setIsProcessing(false);
+    // Convert the remaining markdown to HTML (async)
+    markdownToHtmlAsync(processedContent).then((html) => {
+      setComponentsCount(components.length);
+      setRenderedComponents(components);
+      setHtmlContent(html);
+      setIsProcessing(false);
+    }).catch((error) => {
+      console.error('[MDX Client] Error converting markdown to HTML:', error);
+      // Fallback: just set the content as-is
+      setHtmlContent(`<pre>${processedContent}</pre>`);
+      setIsProcessing(false);
+    });
     
     // Processing completed successfully
     } catch (error) {
