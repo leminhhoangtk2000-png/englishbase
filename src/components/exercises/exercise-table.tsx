@@ -11,6 +11,7 @@ interface Exercise {
   id: number;
   german: string;
   correctAnswer: string | string[]; // Support both single answer and multiple answers
+  explanation?: string; // Optional explanation in Vietnamese
 }
 
 interface ExerciseTableProps {
@@ -58,6 +59,17 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
         [exerciseId]: newAnswers
       };
     });
+  };
+
+  // Calculate input width based on content
+  const getInputWidth = (value: string, correctAnswer: string) => {
+    // Base minimum width
+    const minWidth = 80; // 80px minimum
+    // Calculate width based on longer of user input or correct answer
+    const longerText = value.length > correctAnswer.length ? value : correctAnswer;
+    // Approximate 8px per character + padding
+    const calculatedWidth = Math.max(minWidth, (longerText.length * 10) + 20);
+    return `${calculatedWidth}px`;
   };
 
   const checkAnswers = () => {
@@ -138,7 +150,13 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
                           <Input
                             value={currentAnswers[partIndex] || ''}
                             onChange={(e) => handleInputChange(exercise.id, partIndex, e.target.value)}
-                            className={`w-20 mx-1 ${
+                            style={{ 
+                              width: getInputWidth(
+                                currentAnswers[partIndex] || '', 
+                                correctAnswers[partIndex] || ''
+                              )
+                            }}
+                            className={`mx-1 transition-all duration-200 ${
                               showResults
                                 ? currentAnswers[partIndex]?.trim().toLowerCase() === correctAnswers[partIndex]?.toLowerCase()
                                   ? 'border-green-500 bg-green-50'
@@ -153,18 +171,27 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
                     ))}
                   </div>
                   {showResults && (
-                    <div className="flex items-center gap-2 text-xs">
-                      {isCorrect ? (
-                        <div className="flex items-center gap-1 text-green-600">
-                          <CheckCircle className="h-4 w-4" />
-                          <span>Đúng rồi!</span>
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2 text-red-600">
-                          <XCircle className="h-4 w-4" />
-                          <span>Đáp án đúng: {correctAnswers.join(' ')}</span>
-                        </div>
-                      )}
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2 text-xs">
+                        {isCorrect ? (
+                          <div className="flex items-center gap-1 text-green-600">
+                            <CheckCircle className="h-4 w-4" />
+                            <span>Đúng rồi!</span>
+                          </div>
+                        ) : (
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 text-red-600">
+                              <XCircle className="h-4 w-4" />
+                              <span>Đáp án đúng: {correctAnswers.join(' ')}</span>
+                            </div>
+                            {exercise.explanation && (
+                              <div className="text-xs text-muted-foreground bg-blue-50 p-2 rounded border border-blue-200 mt-1">
+                                <strong>💡 Giải thích:</strong> {exercise.explanation}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>

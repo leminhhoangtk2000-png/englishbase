@@ -419,7 +419,8 @@ function parseExercisesArray(exercisesStr: string): any[] {
     
     // ULTRA FLEXIBLE regex - matches ANY spacing format
     // Works for: {id: 1,...}, {id:1,...}, OR multiline {\n  id: 1,\n  ...}
-    const exerciseRegex = /\{\s*id\s*:\s*(\d+)\s*,\s*german\s*:\s*"([^"]+)"\s*,\s*correctAnswer\s*:\s*\[([^\]]+)\]\s*,?\s*\}/g;
+    // Now also supports optional explanation field
+    const exerciseRegex = /\{\s*id\s*:\s*(\d+)\s*,\s*german\s*:\s*"([^"]+)"\s*,\s*correctAnswer\s*:\s*\[([^\]]+)\]\s*(?:,\s*explanation\s*:\s*"([^"]+)")?\s*\}/g;
     const exercises = [];
     let exerciseMatch;
     let matchCount = 0;
@@ -429,18 +430,26 @@ function parseExercisesArray(exercisesStr: string): any[] {
       const id = parseInt(exerciseMatch[1]);
       const german = exerciseMatch[2];
       const answersStr = exerciseMatch[3];
+      const explanation = exerciseMatch[4]; // Optional field
       
       // Parse the array of answers - handle both "A", "B" and "A","B" formats
       const answerMatches = answersStr.match(/"([^"]+)"/g);
       const correctAnswer = answerMatches ? answerMatches.map(match => match.replace(/"/g, '')) : [];
       
-      console.log(`[parseExercisesArray] ✅ Match #${matchCount} - ID: ${id}, German: "${german.substring(0, 30)}...", Answers: [${correctAnswer.join(', ')}]`);
+      console.log(`[parseExercisesArray] ✅ Match #${matchCount} - ID: ${id}, German: "${german.substring(0, 30)}...", Answers: [${correctAnswer.join(', ')}]${explanation ? ', Has explanation' : ''}`);
       
-      exercises.push({
+      const exercise: any = {
         id,
         german,
         correctAnswer
-      });
+      };
+      
+      // Add explanation if present
+      if (explanation) {
+        exercise.explanation = explanation;
+      }
+      
+      exercises.push(exercise);
     }
     
     console.log(`[parseExercisesArray] 🎯 TOTAL PARSED: ${exercises.length} exercises`);
