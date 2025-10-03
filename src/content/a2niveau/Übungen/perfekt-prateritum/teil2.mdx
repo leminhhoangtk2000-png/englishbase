@@ -1,193 +1,69 @@
-## import { ExerciseComments } from '@/components/exercise-comments'
+---
+title: "Perfekt Übungen Teil 2"
+description: "Luyện tập thì Perfekt - Phần 2"
+level: "A2"
+topic: "Übungen"
+order: 2
+difficulty: "intermediate"
+tags: ["perfekt", "haben", "sein", "past-tense"]
+---
 
-## title: "Perfekt Übungen Teil 2"
-
-import { ExerciseComments } from "@/components/exercise-comments";
-import Lueckentext from "@site/src/components/Quiz/Lueckentext/Lueckentext";
-import AuthorCredit from "@site/src/components/Special/AuthorCredit/AuthorCredit";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Teil 1: Perfekt Übungen (26-35)
 
-<Lueckentext
+<ExerciseTable
   title="Teil 1: Perfekt Übungen (26-35)"
-  textParts={[
-    "26. Ihr ",
-    { type: "blank", correctAnswer: "habt" },
-    " sehr schnell ",
-    { type: "blank", correctAnswer: "geantwortet" },
-    ". (antworten)",
-    "\n",
-    "27. Wir ",
-    { type: "blank", correctAnswer: "haben" },
-    " eine neue Wohnung ",
-    { type: "blank", correctAnswer: "gesucht" },
-    ". (suchen)",
-    "\n",
-    "28. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " das Wort langsam ",
-    { type: "blank", correctAnswer: "buchstabiert" },
-    ". (buchstabieren)",
-    "\n",
-    "29. Sie ",
-    { type: "blank", correctAnswer: "ist" },
-    " sehr früh zur Arbeit ",
-    { type: "blank", correctAnswer: "gefahren" },
-    ". (fahren)",
-    "\n",
-    "30. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " meine Hausaufgaben gestern Abend ",
-    { type: "blank", correctAnswer: "gemacht" },
-    ". (machen)",
-    "\n",
-    "31. Du ",
-    { type: "blank", correctAnswer: "hast" },
-    " das Lied sehr schön ",
-    { type: "blank", correctAnswer: "gesungen" },
-    ". (singen)",
-    "\n",
-    "32. Wir ",
-    { type: "blank", correctAnswer: "sind" },
-    " durch den Park ",
-    { type: "blank", correctAnswer: "spaziert" },
-    ". (spazieren)",
-    "\n",
-    "33. Sie ",
-    { type: "blank", correctAnswer: "hat" },
-    " ihre Mutter oft ",
-    { type: "blank", correctAnswer: "angerufen" },
-    ". (anrufen)",
-    "\n",
-    "34. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " eine neue Tasche im Laden ",
-    { type: "blank", correctAnswer: "gekauft" },
-    ". (kaufen)",
-    "\n",
-    "35. Er ",
-    { type: "blank", correctAnswer: "hat" },
-    " mir eine Geschichte ",
-    { type: "blank", correctAnswer: "erzählt" },
-    ". (erzählen)",
+  subtitle="Điền trợ động từ (haben/sein) và Partizip II"
+  exercises={[
+    {id: 26, german: "Ihr __ sehr schnell __. (antworten)", correctAnswer: ["habt", "geantwortet"]},
+    {id: 27, german: "Wir __ eine neue Wohnung __. (suchen)", correctAnswer: ["haben", "gesucht"]},
+    {id: 28, german: "Ich __ das Wort langsam __. (buchstabieren)", correctAnswer: ["habe", "buchstabiert"]},
+    {id: 29, german: "Sie __ sehr früh zur Arbeit __. (fahren)", correctAnswer: ["ist", "gefahren"]},
+    {id: 30, german: "Ich __ meine Hausaufgaben gestern Abend __. (machen)", correctAnswer: ["habe", "gemacht"]},
+    {id: 31, german: "Du __ das Lied sehr schön __. (singen)", correctAnswer: ["hast", "gesungen"]},
+    {id: 32, german: "Wir __ durch den Park __. (spazieren)", correctAnswer: ["sind", "spaziert"]},
+    {id: 33, german: "Sie __ ihre Mutter oft __. (anrufen)", correctAnswer: ["hat", "angerufen"]},
+    {id: 34, german: "Ich __ eine neue Tasche im Laden __. (kaufen)", correctAnswer: ["habe", "gekauft"]},
+    {id: 35, german: "Er __ mir eine Geschichte __. (erzählen)", correctAnswer: ["hat", "erzählt"]},
   ]}
 />
 
 ## Teil 2: Perfekt Übungen (36-50)
 
-<Lueckentext
+<ExerciseTable
   title="Teil 2: Perfekt Übungen (36-50)"
-  textParts={[
-    "36. Wir ",
-    { type: "blank", correctAnswer: "haben" },
-    " zusammen einen Kuchen ",
-    { type: "blank", correctAnswer: "gebacken" },
-    ". (backen)",
-    "\n",
-    "37. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " meinen Opa im Krankenhaus ",
-    { type: "blank", correctAnswer: "besucht" },
-    ". (besuchen)",
-    "\n",
-    "38. Du ",
-    { type: "blank", correctAnswer: "hast" },
-    " dein Fahrrad vor dem Haus ",
-    { type: "blank", correctAnswer: "abgestellt" },
-    ". (abstellen)",
-    "\n",
-    "39. Ich ",
-    { type: "blank", correctAnswer: "bin" },
-    " plötzlich ins Wasser ",
-    { type: "blank", correctAnswer: "gesprungen" },
-    ". (springen)",
-    "\n",
-    "40. Sie ",
-    { type: "blank", correctAnswer: "ist" },
-    " schnell aus dem Zug ",
-    { type: "blank", correctAnswer: "ausgestiegen" },
-    ". (aussteigen)",
-    "\n",
-    "41. Ihr ",
-    { type: "blank", correctAnswer: "seid" },
-    " gestern lange im Café ",
-    { type: "blank", correctAnswer: "geblieben" },
-    ". (bleiben)",
-    "\n",
-    "42. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " meinen Computer selbst ",
-    { type: "blank", correctAnswer: "repariert" },
-    ". (reparieren)",
-    "\n",
-    "43. Wir ",
-    { type: "blank", correctAnswer: "haben" },
-    " den ganzen Abend Musik ",
-    { type: "blank", correctAnswer: "gehört" },
-    ". (hören)",
-    "\n",
-    "44. Sie ",
-    { type: "blank", correctAnswer: "haben" },
-    " mit dem Lehrer freundlich ",
-    { type: "blank", correctAnswer: "gesprochen" },
-    ". (sprechen)",
-    "\n",
-    "45. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " meine Zähne gründlich ",
-    { type: "blank", correctAnswer: "geputzt" },
-    ". (putzen)",
-    "\n",
-    "46. Du ",
-    { type: "blank", correctAnswer: "hast" },
-    " dein Handy in der Schule ",
-    { type: "blank", correctAnswer: "vergessen" },
-    ". (vergessen)",
-    "\n",
-    "47. Ich ",
-    { type: "blank", correctAnswer: "bin" },
-    " gestern sehr früh ",
-    { type: "blank", correctAnswer: "aufgestanden" },
-    ". (aufstehen)",
-    "\n",
-    "48. Wir ",
-    { type: "blank", correctAnswer: "haben" },
-    " das neue Restaurant gestern ",
-    { type: "blank", correctAnswer: "probiert" },
-    ". (probieren)",
-    "\n",
-    "49. Er ",
-    { type: "blank", correctAnswer: "hat" },
-    " eine Lampe für das Wohnzimmer ",
-    { type: "blank", correctAnswer: "gekauft" },
-    ". (kaufen)",
-    "\n",
-    "50. Ich ",
-    { type: "blank", correctAnswer: "habe" },
-    " meine Freunde zum Geburtstag ",
-    { type: "blank", correctAnswer: "eingeladen" },
-    ". (einladen)",
+  subtitle="Điền trợ động từ (haben/sein) và Partizip II"
+  exercises={[
+    {id: 36, german: "Wir __ zusammen einen Kuchen __. (backen)", correctAnswer: ["haben", "gebacken"]},
+    {id: 37, german: "Ich __ meinen Opa im Krankenhaus __. (besuchen)", correctAnswer: ["habe", "besucht"]},
+    {id: 38, german: "Du __ dein Fahrrad vor dem Haus __. (abstellen)", correctAnswer: ["hast", "abgestellt"]},
+    {id: 39, german: "Ich __ plötzlich ins Wasser __. (springen)", correctAnswer: ["bin", "gesprungen"]},
+    {id: 40, german: "Sie __ schnell aus dem Zug __. (aussteigen)", correctAnswer: ["ist", "ausgestiegen"]},
+    {id: 41, german: "Ihr __ gestern lange im Café __. (bleiben)", correctAnswer: ["seid", "geblieben"]},
+    {id: 42, german: "Ich __ meinen Computer selbst __. (reparieren)", correctAnswer: ["habe", "repariert"]},
+    {id: 43, german: "Wir __ den ganzen Abend Musik __. (hören)", correctAnswer: ["haben", "gehört"]},
+    {id: 44, german: "Sie __ mit dem Lehrer freundlich __. (sprechen)", correctAnswer: ["haben", "gesprochen"]},
+    {id: 45, german: "Ich __ meine Zähne gründlich __. (putzen)", correctAnswer: ["habe", "geputzt"]},
+    {id: 46, german: "Du __ dein Handy in der Schule __. (vergessen)", correctAnswer: ["hast", "vergessen"]},
+    {id: 47, german: "Ich __ gestern sehr früh __. (aufstehen)", correctAnswer: ["bin", "aufgestanden"]},
+    {id: 48, german: "Wir __ das neue Restaurant gestern __. (probieren)", correctAnswer: ["haben", "probiert"]},
+    {id: 49, german: "Er __ eine Lampe für das Wohnzimmer __. (kaufen)", correctAnswer: ["hat", "gekauft"]},
+    {id: 50, german: "Ich __ meine Freunde zum Geburtstag __. (einladen)", correctAnswer: ["habe", "eingeladen"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
-
----
-
-### **Hỏi đáp ❓💬**
+<ExerciseAuthor author="Lonia" />
+<ExerciseHelp />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
 Tiếp tục luyện tập để nắm vững các dạng so sánh trong tiếng Đức nhé! 😊
 :::
 
-<ExerciseComments
-  exerciseId="a2-perfekt-prateritum-teil2"
-  url="/a2niveau/Übungen/perfekt-prateritum/teil2"
-/>
 <ExerciseComments
   exerciseId="a2-perfekt-prateritum-teil2"
   url="/a2niveau/Übungen/perfekt-prateritum/teil2"
