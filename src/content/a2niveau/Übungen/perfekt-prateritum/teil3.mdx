@@ -1,64 +1,72 @@
 ---
 title: "Präteritum Übungen Teil 1"
+description: "Luyện tập thì Präteritum (quá khứ đơn)"
+level: "A2"
+topic: "Übungen"
+difficulty: "intermediate"
+tags: ["präteritum", "past-tense", "simple-past"]
 ---
 
-import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from '@site/src/components/Quiz/Lueckentext/Lueckentext';
-import AuthorCredit from '@site/src/components/Special/AuthorCredit/AuthorCredit';
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Teil 1: Präteritum Übungen (1-10)
 
-<Lueckentext
-  title="Teil 1: Präteritum Übungen (1-10)"
-  textParts={[
-    "1. Ich ", { type: "blank", correctAnswer: "war" }, " gestern wegen Kopfschmerzen zu Hause. (sein)", "\n",
-    "2. Du ", { type: "blank", correctAnswer: "hattest" }, " früher einen Hund, oder? (haben)", "\n",
-    "3. Wir ", { type: "blank", correctAnswer: "wurden" }, " sehr müde nach der langen Reise. (werden)", "\n",
-    "4. Sie ", { type: "blank", correctAnswer: "ging" }, " gestern Abend allein spazieren. (gehen)", "\n",
-    "5. Meine Eltern ", { type: "blank", correctAnswer: "kamen" }, " spät nach Hause. (kommen)", "\n",
-    "6. Der Lehrer ", { type: "blank", correctAnswer: "erklärte" }, " die Grammatik sehr gut. (erklären)", "\n",
-    "7. Ihr ", { type: "blank", correctAnswer: "spracht" }, " lange mit dem Chef über das Projekt. (sprechen)", "\n",
-    "8. Ich ", { type: "blank", correctAnswer: "dachte" }, " den ganzen Tag an den Urlaub. (denken)", "\n",
-    "9. Er ", { type: "blank", correctAnswer: "schrieb" }, " einen langen Brief an seine Freundin. (schreiben)", "\n",
-    "10. Wir ", { type: "blank", correctAnswer: "lasen" }, " im Park ein spannendes Buch. (lesen)"
+<ExerciseTable
+  title="Teil 1: Präteritum (Quá khứ đơn)"
+  subtitle="Điền dạng Präteritum đúng của động từ"
+  exercises={[
+    {id: 1, german: "Ich __ gestern wegen Kopfschmerzen zu Hause. (sein)", correctAnswer: ["war"]},
+    {id: 2, german: "Du __ früher einen Hund, oder? (haben)", correctAnswer: ["hattest"]},
+    {id: 3, german: "Wir __ sehr müde nach der langen Reise. (werden)", correctAnswer: ["wurden"]},
+    {id: 4, german: "Sie __ gestern Abend allein spazieren. (gehen)", correctAnswer: ["ging"]},
+    {id: 5, german: "Meine Eltern __ spät nach Hause. (kommen)", correctAnswer: ["kamen"]},
+    {id: 6, german: "Der Lehrer __ die Grammatik sehr gut. (erklären)", correctAnswer: ["erklärte"]},
+    {id: 7, german: "Ihr __ lange mit dem Chef über das Projekt. (sprechen)", correctAnswer: ["spracht"]},
+    {id: 8, german: "Ich __ den ganzen Tag an den Urlaub. (denken)", correctAnswer: ["dachte"]},
+    {id: 9, german: "Er __ einen langen Brief an seine Freundin. (schreiben)", correctAnswer: ["schrieb"]},
+    {id: 10, german: "Wir __ im Park ein spannendes Buch. (lesen)", correctAnswer: ["lasen"]},
   ]}
 />
 
 ## Teil 2: Präteritum Übungen (11-20)
 
-<Lueckentext
-  title="Teil 2: Präteritum Übungen (11-20)"
-  textParts={[
-    "11. Du ", { type: "blank", correctAnswer: "trankst" }, " zu viel Kaffee am Morgen. (trinken)", "\n",
-    "12. Sie ", { type: "blank", correctAnswer: "sang" }, " sehr schön bei der Hochzeit. (singen)", "\n",
-    "13. Ich ", { type: "blank", correctAnswer: "lernte" }, " fleißig für die Deutschprüfung. (lernen)", "\n",
-    "14. Ihr ", { type: "blank", correctAnswer: "saht" }, " gestern einen interessanten Film. (sehen)", "\n",
-    "15. Der Junge ", { type: "blank", correctAnswer: "fand" }, " seinen Ball im Garten. (finden)", "\n",
-    "16. Anna ", { type: "blank", correctAnswer: "kaufte" }, " ein neues Kleid im Einkaufszentrum. (kaufen)", "\n",
-    "17. Wir ", { type: "blank", correctAnswer: "spielten" }, " am Wochenende Tennis mit Freunden. (spielen)", "\n",
-    "18. Du ", { type: "blank", correctAnswer: "warst" }, " früher sehr sportlich. (sein)", "\n",
-    "19. Ich ", { type: "blank", correctAnswer: "bekam" }, " gestern ein Geschenk von meiner Tante. (bekommen)", "\n",
-    "20. Er ", { type: "blank", correctAnswer: "nahm" }, " das Buch aus dem Regal. (nehmen)"
+<ExerciseTable
+  title="Teil 2: Präteritum (Quá khứ đơn)"
+  subtitle="Điền dạng Präteritum đúng của động từ"
+  exercises={[
+    {id: 11, german: "Du __ zu viel Kaffee am Morgen. (trinken)", correctAnswer: ["trankst"]},
+    {id: 12, german: "Sie __ sehr schön bei der Hochzeit. (singen)", correctAnswer: ["sang"]},
+    {id: 13, german: "Ich __ fleißig für die Deutschprüfung. (lernen)", correctAnswer: ["lernte"]},
+    {id: 14, german: "Ihr __ gestern einen interessanten Film. (sehen)", correctAnswer: ["saht"]},
+    {id: 15, german: "Der Junge __ seinen Ball im Garten. (finden)", correctAnswer: ["fand"]},
+    {id: 16, german: "Anna __ ein neues Kleid im Einkaufszentrum. (kaufen)", correctAnswer: ["kaufte"]},
+    {id: 17, german: "Wir __ am Wochenende Tennis mit Freunden. (spielen)", correctAnswer: ["spielten"]},
+    {id: 18, german: "Du __ früher sehr sportlich. (sein)", correctAnswer: ["warst"]},
+    {id: 19, german: "Ich __ gestern ein Geschenk von meiner Tante. (bekommen)", correctAnswer: ["bekam"]},
+    {id: 20, german: "Er __ das Buch aus dem Regal. (nehmen)", correctAnswer: ["nahm"]},
   ]}
 />
 
 ## Teil 3: Präteritum Übungen (21-25)
 
-<Lueckentext
-  title="Teil 3: Präteritum Übungen (21-25)"
-  textParts={[
-    "21. Sie ", { type: "blank", correctAnswer: "blieb" }, " die ganze Nacht wach. (bleiben)", "\n",
-    "22. Wir ", { type: "blank", correctAnswer: "aßen" }, " zu Abend im Restaurant. (essen)", "\n",
-    "23. Ihr ", { type: "blank", correctAnswer: "arbeitetet" }, " früher in derselben Firma. (arbeiten)", "\n",
-    "24. Ich ", { type: "blank", correctAnswer: "fragte" }, " ihn nach dem Weg. (fragen)", "\n",
-    "25. Du ", { type: "blank", correctAnswer: "antwortetest" }, " immer sehr höflich. (antworten)"
+<ExerciseTable
+  title="Teil 3: Präteritum (Quá khứ đơn)"
+  subtitle="Điền dạng Präteritum đúng của động từ"
+  exercises={[
+    {id: 21, german: "Sie __ die ganze Nacht wach. (bleiben)", correctAnswer: ["blieb"]},
+    {id: 22, german: "Wir __ zu Abend im Restaurant. (essen)", correctAnswer: ["aßen"]},
+    {id: 23, german: "Ihr __ früher in derselben Firma. (arbeiten)", correctAnswer: ["arbeitetet"]},
+    {id: 24, german: "Ich __ ihn nach dem Weg. (fragen)", correctAnswer: ["fragte"]},
+    {id: 25, german: "Du __ immer sehr höflich. (antworten)", correctAnswer: ["antwortetest"]},
   ]}
 />
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Lonia" />
+<ExerciseAuthor author="Lonia" />
+<ExerciseHelp />
 
 ---
 
