@@ -1179,8 +1179,8 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
       }
     }
 
-    // Process ExerciseComments components  
-    const exerciseCommentsRegex = /<ExerciseComments\s+exerciseId=["']([^"']*?)["']\s*(?:url=["']([^"']*?)["'])?\s*\/>/g;
+    // Process ExerciseComments components - handle both single-line and multi-line formats
+    const exerciseCommentsRegex = /<ExerciseComments[\s\n]+exerciseId=["']([^"']*?)["'][\s\n]*(?:url=["']([^"']*?)["'])?[\s\n]*\/>/g;
     exerciseCommentsRegex.lastIndex = 0;
     
     console.log('[Debug] Looking for ExerciseComments in content:', cleanContent.includes('ExerciseComments'));
