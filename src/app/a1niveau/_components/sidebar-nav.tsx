@@ -172,7 +172,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
               <CollapsibleTrigger className={cn(
                 "flex w-full items-start justify-between rounded-md px-3 py-2.5 text-sm hover:bg-secondary/50 hover:text-foreground transition-colors [&[data-state=open]>svg]:rotate-90",
                 {
-                  "bg-secondary/80 font-medium text-foreground": pathname?.startsWith(item.href || ''),
+                  "bg-primary/10 border-l-2 border-primary font-medium text-foreground": pathname?.startsWith(item.href || ''),
                 }
               )}>
                 <span className="text-sm font-medium text-left leading-relaxed pr-2 flex-1 break-words">{item.title}</span>
@@ -187,7 +187,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                       className={cn(
                         "flex items-start rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-secondary/30 hover:text-foreground transition-colors",
                         {
-                          "bg-secondary/60 font-medium text-foreground": pathname === subItem.href,
+                          "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === subItem.href,
                         }
                       )}
                     >
@@ -207,7 +207,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
               className={cn(
                 "flex w-full items-start rounded-md px-3 py-2.5 text-sm text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
                 {
-                  "bg-secondary/80 font-medium text-foreground": pathname === item.href,
+                  "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === item.href,
                 }
               )}
               target={item.external ? "_blank" : ""}

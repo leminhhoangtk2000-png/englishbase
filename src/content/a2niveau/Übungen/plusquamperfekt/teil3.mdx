@@ -8,37 +8,108 @@ tags: ["plusquamperfekt", "präteritum", "conjunctions"]
 ---
 
 import { ExerciseTable } from "@/components/exercises/exercise-table";
-import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import {
+  ExerciseAuthor,
+  ExerciseHelp,
+} from "@/components/exercises/exercise-author";
 import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Danh sách từ vựng sẽ dùng
+
 beantworten, sein, nachdem, gehen, schreiben, arbeiten, anrufen, empfehlen, einsteigen, lesen, gönnen, antworten, als, kommen, stellen, bevor, essen, anfangen, beenden, machen, packen, frühstücken, erzählen, steigen, sehen, begrüßen, beginnen, bekommen
 
 ## Hướng dẫn
-Trong phần này, bạn sẽ dùng các liên từ: bevor, nachdem, als; và các động từ: beantworten, sein, gehen, schreiben, arbeiten, anrufen, empfehlen, einsteigen, lesen, gönnen, antworten, kommen, stellen, essen, anfangen, beenden, machen, packen, frühstücken, erzählen, steigen, sehen, begrüßen, beginnen, bekommen.  
-- Dùng **Plusquamperfekt** cho hành động xảy ra trước (ví dụ: hatte + Partizip II).  
-- Dùng **Präteritum** cho hành động xảy ra sau.  
+
+Trong phần này, bạn sẽ dùng các liên từ: bevor, nachdem, als; và các động từ: beantworten, sein, gehen, schreiben, arbeiten, anrufen, empfehlen, einsteigen, lesen, gönnen, antworten, kommen, stellen, essen, anfangen, beenden, machen, packen, frühstücken, erzählen, steigen, sehen, begrüßen, beginnen, bekommen.
+
+- Dùng **Plusquamperfekt** cho hành động xảy ra trước (ví dụ: hatte + Partizip II).
+- Dùng **Präteritum** cho hành động xảy ra sau.
 - Chọn đúng liên từ: bevor, nachdem, als.
 
 <ExerciseTable
   title="Plusquamperfekt và Präteritum với liên từ"
   subtitle="Điền liên từ (bevor/nachdem/als) và động từ đúng thì"
   exercises={[
-    {id: 1, german: "__ ich zur Arbeit __, __ ich __. (gehen, frühstücken)", correctAnswer: ["Bevor", "ging", "hatte", "gefrühstückt"]},
-    {id: 2, german: "__ sie das Buch __, __ sie mir davon. (lesen, erzählen)", correctAnswer: ["Nachdem", "gelesen hatte", "erzählte"]},
-    {id: 3, german: "__ wir lange __ __, __ wir uns eine Pause. (arbeiten, gönnen)", correctAnswer: ["Nachdem", "gearbeitet", "hatten", "gönnten"]},
-    {id: 4, german: "__ ich den Film __, __ ich ihn meinen Freunden. (sehen, empfehlen)", correctAnswer: ["Nachdem", "gesehen hatte", "empfahl"]},
-    {id: 5, german: "__ er __, __ ich noch unterwegs. (anrufen, sein)", correctAnswer: ["Als", "angerufen hatte", "war"]},
-    {id: 6, german: "__ du nach Hause __, __ du deine Eltern. (kommen, begrüßen)", correctAnswer: ["Nachdem", "gekommen warst", "begrüßtest"]},
-    {id: 7, german: "__ sie ihre Präsentation __, __ sie viele Fragen. (beenden, beantworten)", correctAnswer: ["Nachdem", "beendet hatte", "beantwortete"]},
-    {id: 8, german: "__ ich die Nachricht __, __ ich sofort. (bekommen, antworten)", correctAnswer: ["Nachdem", "bekommen hatte", "antwortete"]},
-    {id: 9, german: "__ der Lehrer ins Klassenzimmer __, __ wir die Aufgabe fertig __. (kommen, machen)", correctAnswer: ["Bevor", "kam", "hatten", "gemacht"]},
-    {id: 10, german: "__ sie in den Bus __, __ der Regen. (einsteigen, beginnen)", correctAnswer: ["Als", "eingestiegen war", "begann"]},
-    {id: 11, german: "__ du deine Tasche __, __ du ins Auto. (packen, steigen)", correctAnswer: ["Nachdem", "gepackt hattest", "stiegst"]},
-    {id: 12, german: "__ ich zur Schule __, __ ich meinen Wecker nicht __. (gehen, stellen)", correctAnswer: ["Bevor", "ging", "hatte", "gestellt"]},
-    {id: 13, german: "__ sie den Text __, __ sie ihn noch einmal. (schreiben, lesen)", correctAnswer: ["Nachdem", "geschrieben hatte", "las"]},
-    {id: 14, german: "__ wir __, __ wir spazieren. (essen, gehen)", correctAnswer: ["Nachdem", "gegessen hatten", "gingen"]},
-    {id: 15, german: "__ der Unterricht __, __ wir noch nicht im Klassenzimmer. (anfangen, sein)", correctAnswer: ["Als", "angefangen hatte", "waren"]},
+    {
+      id: 1,
+      german: "__ ich zur Arbeit __, __ ich __. (gehen, frühstücken)",
+      correctAnswer: ["Bevor", "ging", "hatte", "gefrühstückt"],
+    },
+    {
+      id: 2,
+      german: "__ sie das Buch __, __ sie mir davon. (lesen, erzählen)",
+      correctAnswer: ["Nachdem", "gelesen hatte", "erzählte"],
+    },
+    {
+      id: 3,
+      german: "__ wir lange __ __, __ wir uns eine Pause. (arbeiten, gönnen)",
+      correctAnswer: ["Nachdem", "gearbeitet", "hatten", "gönnten"],
+    },
+    {
+      id: 4,
+      german:
+        "__ ich den Film __, __ ich ihn meinen Freunden. (sehen, empfehlen)",
+      correctAnswer: ["Nachdem", "gesehen hatte", "empfahl"],
+    },
+    {
+      id: 5,
+      german: "__ er __, __ ich noch unterwegs. (anrufen, sein)",
+      correctAnswer: ["Als", "angerufen hatte", "war"],
+    },
+    {
+      id: 6,
+      german: "__ du nach Hause __, __ du deine Eltern. (kommen, begrüßen)",
+      correctAnswer: ["Nachdem", "gekommen warst", "begrüßtest"],
+    },
+    {
+      id: 7,
+      german:
+        "__ sie ihre Präsentation __, __ sie viele Fragen. (beenden, beantworten)",
+      correctAnswer: ["Nachdem", "beendet hatte", "beantwortete"],
+    },
+    {
+      id: 8,
+      german: "__ ich die Nachricht __, __ ich sofort. (bekommen, antworten)",
+      correctAnswer: ["Nachdem", "bekommen hatte", "antwortete"],
+    },
+    {
+      id: 9,
+      german:
+        "__ der Lehrer ins Klassenzimmer __, __ wir die Aufgabe fertig __. (kommen, machen)",
+      correctAnswer: ["Bevor", "kam", "hatten", "gemacht"],
+    },
+    {
+      id: 10,
+      german: "__ sie in den Bus __, __ der Regen. (einsteigen, beginnen)",
+      correctAnswer: ["Als", "eingestiegen war", "begann"],
+    },
+    {
+      id: 11,
+      german: "__ du deine Tasche __, __ du ins Auto. (packen, steigen)",
+      correctAnswer: ["Nachdem", "gepackt hattest", "stiegst"],
+    },
+    {
+      id: 12,
+      german:
+        "__ ich zur Schule __, __ ich meinen Wecker nicht __. (gehen, stellen)",
+      correctAnswer: ["Bevor", "ging", "hatte", "gestellt"],
+    },
+    {
+      id: 13,
+      german: "__ sie den Text __, __ sie ihn noch einmal. (schreiben, lesen)",
+      correctAnswer: ["Nachdem", "geschrieben hatte", "las"],
+    },
+    {
+      id: 14,
+      german: "__ wir __, __ wir spazieren. (essen, gehen)",
+      correctAnswer: ["Nachdem", "gegessen hatten", "gingen"],
+    },
+    {
+      id: 15,
+      german:
+        "__ der Unterricht __, __ wir noch nicht im Klassenzimmer. (anfangen, sein)",
+      correctAnswer: ["Als", "angefangen hatte", "waren"],
+    },
   ]}
 />
 
@@ -51,4 +122,7 @@ Trong phần này, bạn sẽ dùng các liên từ: bevor, nachdem, als; và c�
 Tiếp tục luyện tập để nắm vững cách dùng liên từ và thì trong tiếng Đức nhé! 😊
 :::
 
-<ExerciseComments exerciseId="a2-plusquamperfekt-teil3" url="/a2niveau/Übungen/plusquamperfekt/teil3" />
+<ExerciseComments
+  exerciseId="a2-plusquamperfekt-teil3"
+  url="/a2niveau/Übungen/plusquamperfekt/teil3"
+/>

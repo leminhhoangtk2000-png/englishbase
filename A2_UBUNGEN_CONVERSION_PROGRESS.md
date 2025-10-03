@@ -1,6 +1,7 @@
 # A2 Übungen Conversion Progress
 
 ## Goal
+
 Convert 21 A2 Übungen files from Lueckentext component to ExerciseTable component
 
 ## ✅ COMPLETED - ALL 21/21 FILES DONE! 🎉
@@ -28,6 +29,7 @@ Convert 21 A2 Übungen files from Lueckentext component to ExerciseTable compone
 21. **reflexivpronomen/teil5.mdx** - ✅ Converted (10 exercises, 1 blank)
 
 ## Summary
+
 - **Total Files**: 21
 - **Completed**: 21 ✅
 - **Success Rate**: 100%
@@ -38,35 +40,46 @@ Convert 21 A2 Übungen files from Lueckentext component to ExerciseTable compone
 ## Conversion Template (For Reference)
 
 ### Import Section
+
 ```tsx
 import { ExerciseTable } from "@/components/exercises/exercise-table";
-import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import {
+  ExerciseAuthor,
+  ExerciseHelp,
+} from "@/components/exercises/exercise-author";
 import ExerciseComments from "@/components/exercises/ExerciseComments";
 ```
 
 ### ExerciseTable Format (1 blank)
+
 ```tsx
 <ExerciseTable
   title="Teil X: Title"
   subtitle="Description"
   exercises={[
-    {id: 1, german: "Text __ more text. (hint)", correctAnswer: ["answer"]},
+    { id: 1, german: "Text __ more text. (hint)", correctAnswer: ["answer"] },
   ]}
 />
 ```
 
 ### ExerciseTable Format (2 blanks)
+
 ```tsx
 <ExerciseTable
   title="Teil X: Title"
   subtitle="Description"
   exercises={[
-    {id: 1, german: "Text __ more __ text. (hint)", correctAnswer: ["answer1", "answer2"]},
+    {
+      id: 1,
+      german: "Text __ more __ text. (hint)",
+      correctAnswer: ["answer1", "answer2"],
+    },
   ]}
 />
 ```
 
 ### Footer Section
+
 ```tsx
 ---
 
@@ -79,6 +92,7 @@ import ExerciseComments from "@/components/exercises/ExerciseComments";
 ```
 
 ## Notes
+
 - All files are in `/src/content/a2niveau/Übungen/`
 - ExerciseTable component supports multiple blanks via correctAnswer array
 - Always preserve complete exercise text (don't truncate)
@@ -86,6 +100,7 @@ import ExerciseComments from "@/components/exercises/ExerciseComments";
 - Test in browser after conversion
 
 ## Next Steps
+
 1. Convert plusquamperfekt files (2 files)
 2. Convert nebensatze (1 file)
 3. Convert passiv (2 files)
@@ -96,6 +111,7 @@ import ExerciseComments from "@/components/exercises/ExerciseComments";
 8. Commit and push
 
 ## Commands
+
 ```bash
 # Check progress
 git status | grep Übungen

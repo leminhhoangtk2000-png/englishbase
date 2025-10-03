@@ -16,7 +16,7 @@
 # 1. Start database
 npm run docker:up
 
-# 2. Start dev server  
+# 2. Start dev server
 npm run dev
 
 # 3. Verify everything works
@@ -36,6 +36,7 @@ npm run docker:up
 ```
 
 Lệnh này sẽ:
+
 - Start PostgreSQL container on port 5432
 - Start pgAdmin on port 5050
 - Create database nếu chưa tồn tại
@@ -50,7 +51,8 @@ npm run dev
 
 Server sẽ start tại port **9003**
 
-**Lưu ý**: 
+**Lưu ý**:
+
 - Không dùng port 3000 (đã có project khác)
 - Auto-reload khi file thay đổi
 - Hot Module Replacement (HMR) enabled
@@ -62,6 +64,7 @@ Server sẽ start tại port **9003**
 ```
 
 Script này kiểm tra:
+
 - ✅ Server đang chạy
 - ✅ Không có file page.tsx blocking
 - ✅ MDX files tồn tại
@@ -76,6 +79,7 @@ Script này kiểm tra:
 **Nguyên nhân**: Client-side component chưa render
 
 **Giải pháp**:
+
 ```bash
 # 1. Hard refresh browser
 Cmd + Shift + R (Mac) hoặc Ctrl + Shift + R (Windows)
@@ -90,6 +94,7 @@ npm run dev
 **Nguyên nhân**: MDX parsing không hoạt động
 
 **Giải pháp**:
+
 1. Check browser console (F12) xem có errors không
 2. Verify file `/src/components/mdx-components-renderer.tsx` tồn tại
 3. Restart server
@@ -99,6 +104,7 @@ npm run dev
 **Nguyên nhân**: TOC không detect được headings
 
 **Giải pháp**:
+
 1. Đảm bảo MDX file có headings (##, ###, ####)
 2. Check component `/src/components/docs-toc-client.tsx`
 3. Reload page sau vài giây (client-side detection)
@@ -153,12 +159,14 @@ src/
 Mở: http://localhost:9003/a1niveau/%C3%9Cbungen/artikel/teil-1
 
 **Expected**:
+
 - ✅ Hiển thị interactive fill-in-the-blank inputs
 - ✅ Mỗi exercise có 2 input fields
 - ✅ Có button "Check Answers"
 - ✅ Sidebar "On This Page" hiển thị sections
 
 **NOT expected**:
+
 - ❌ Raw text: `{id: 1, german: "...", correctAnswer: [...]}`
 - ❌ "Loading..." forever
 - ❌ Console errors
@@ -170,7 +178,7 @@ Mở: http://localhost:9003/a1niveau/%C3%9Cbungen/artikel/teil-1
 http://localhost:9003/a1niveau/%C3%9Cbungen/artikel/teil-1
 http://localhost:9003/a1niveau/%C3%9Cbungen/artikel/teil-2
 
-# Perfekt pages  
+# Perfekt pages
 http://localhost:9003/a1niveau/%C3%9Cbungen/perfekt-ubungen/teil1
 http://localhost:9003/a1niveau/%C3%9Cbungen/perfekt-ubungen/teil2
 ```
@@ -182,12 +190,14 @@ Tất cả phải load thành công (không có 404)
 Press F12 → Console tab
 
 **Expected logs**:
+
 ```
 [MDX Client] ✅ Extracted attributes: {...}
 [parseExercisesArray] 🎯 TOTAL PARSED: 10 exercises
 ```
 
 **NO errors về**:
+
 - Cannot find module
 - Undefined component
 - Failed to parse
@@ -255,18 +265,21 @@ Khi mọi thứ hoạt động đúng:
 ## 💡 PRO TIPS
 
 ### Tip 1: Quick Verify
+
 ```bash
 # One-liner để check mọi thứ OK
 curl -I http://localhost:9003/a1niveau/%C3%9Cbungen/artikel/teil-1 && echo "✅ Server OK"
 ```
 
 ### Tip 2: Watch Logs
+
 ```bash
 # Xem server logs real-time
 npm run dev | grep "Übungen"
 ```
 
 ### Tip 3: Clean Restart
+
 ```bash
 # Full clean restart
 lsof -ti:9003 | xargs kill -9
@@ -275,6 +288,7 @@ npm run dev
 ```
 
 ### Tip 4: Performance Check
+
 ```bash
 # Check build size
 npm run build
@@ -326,6 +340,7 @@ Nếu gặp vấn đề:
 4. Check server terminal logs
 
 **Key files to inspect**:
+
 - `/src/components/mdx-components-renderer.tsx` - Line 600-650 (bracket matching)
 - `/src/components/docs-toc-client.tsx` - Line 18-90 (TOC logic)
 - `/src/app/a1niveau/[[...slug]]/page.tsx` - Line 230-250 (rendering)

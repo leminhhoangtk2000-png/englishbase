@@ -12,12 +12,14 @@
 ## 🚀 FEATURES
 
 ### 1. Interactive Exercise System
+
 - ✅ Fill-in-the-blank exercises with real-time validation
 - ✅ Multiple exercise formats: ExerciseTable, Lueckentext, MatchingQuiz, FormingQuestions, Satzbildung
 - ✅ Automatic bracket matching for complex exercise arrays
 - ✅ Support for both single-line and multi-line MDX formats
 
 ### 2. Smart Sidebar Navigation
+
 - ✅ Automatic "On This Page" table of contents
 - ✅ Client-side heading detection with retry logic
 - ✅ DOM mutation observer for dynamic content
@@ -25,6 +27,7 @@
 - ✅ Hierarchical heading structure (H2, H3, H4)
 
 ### 3. Robust MDX Parsing
+
 - ✅ Flexible regex patterns for exercise extraction
 - ✅ Bracket counting algorithm (no greedy regex issues)
 - ✅ Comprehensive error handling with fallbacks
@@ -125,12 +128,14 @@ node scripts/test-bracket-matching.js
 ### Manual Testing Checklist
 
 1. **Exercise Rendering**
+
    - [ ] Open http://localhost:9003/a1niveau/%C3%9Cbungen/artikel/teil-1
    - [ ] See interactive input fields (not raw text)
    - [ ] Fill in answers and click "Check Answers"
    - [ ] Verify feedback appears
 
 2. **Sidebar Navigation**
+
    - [ ] Sidebar shows "On This Page" heading
    - [ ] Wait 2-3 seconds for TOC to load
    - [ ] See list of section headings (Teil 1, Teil 2, etc.)
@@ -166,11 +171,13 @@ node scripts/test-bracket-matching.js
 **Symptoms**: "On This Page" sidebar stuck on "Loading..."
 
 **Causes**:
+
 1. Headings not rendered yet
 2. No h2/h3/h4 headings in content
 3. JavaScript disabled
 
 **Solutions**:
+
 ```bash
 # 1. Wait 2-3 seconds and hard refresh
 Cmd + Shift + R
@@ -187,11 +194,13 @@ grep "^##" src/content/a1niveau/Übungen/artikel/teil-1.mdx
 **Symptoms**: See `{id: 1, german: "...", correctAnswer: [...]}`
 
 **Causes**:
+
 1. parseExercisesArray() failed
 2. Bracket matching error
 3. Component not rendered
 
 **Solutions**:
+
 ```bash
 # 1. Check browser console
 # Look for: [parseExercisesArray] ❌ FAILED
@@ -212,11 +221,13 @@ npm run dev
 **Symptoms**: "Page not found" error
 
 **Causes**:
+
 1. MDX file doesn't exist
 2. Blocking page.tsx file
 3. Wrong URL encoding
 
 **Solutions**:
+
 ```bash
 # 1. Verify MDX file exists
 ls -la src/content/a1niveau/Übungen/artikel/
@@ -262,8 +273,8 @@ These files are **STABLE and PRODUCTION-READY**. Modifications may break the sys
 1. `src/components/mdx-components-renderer.tsx` (Line 600-650)
    - Bracket matching algorithm
    - parseExercisesArray function
-   
 2. `src/components/docs-toc-client.tsx` (Line 18-100)
+
    - TOC extraction with retry logic
    - MutationObserver setup
 
@@ -274,12 +285,14 @@ These files are **STABLE and PRODUCTION-READY**. Modifications may break the sys
 ### DO NOT CREATE
 
 ❌ **Never create `page.tsx` files** in `/src/app/a1niveau/Übungen/` subdirectories
-   - These block MDX routing
-   - Use MDX files in `/src/content/a1niveau/Übungen/` instead
+
+- These block MDX routing
+- Use MDX files in `/src/content/a1niveau/Übungen/` instead
 
 ### DO NOT DELETE
 
 ⚠️ **Never delete these directories**:
+
 - `/src/content/a1niveau/Übungen/` - Contains all exercise MDX files
 - `/src/components/exercises/` - Exercise components
 - `/scripts/` - Verification and test scripts

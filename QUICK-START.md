@@ -4,7 +4,7 @@
 
 ```bash
 npm run docker:up    # Start database
-npm run dev          # Start server (port 9003)  
+npm run dev          # Start server (port 9003)
 ./scripts/verify-ubungen.sh  # Verify all OK
 ```
 
@@ -17,12 +17,12 @@ npm run dev          # Start server (port 9003)
 
 ## 🔧 Quick Fixes
 
-| Problem | Solution |
-|---------|----------|
-| Page stuck on "Loading..." | Hard refresh: `Cmd+Shift+R` |
-| Exercises show raw text | Restart: `Cmd+C` then `npm run dev` |
-| Port 9003 in use | Kill it: `lsof -ti:9003 \| xargs kill -9` |
-| Sidebar not showing | Wait 2-3 seconds, then reload |
+| Problem                    | Solution                                  |
+| -------------------------- | ----------------------------------------- |
+| Page stuck on "Loading..." | Hard refresh: `Cmd+Shift+R`               |
+| Exercises show raw text    | Restart: `Cmd+C` then `npm run dev`       |
+| Port 9003 in use           | Kill it: `lsof -ti:9003 \| xargs kill -9` |
+| Sidebar not showing        | Wait 2-3 seconds, then reload             |
 
 ## 📂 Key Files (DO NOT DELETE)
 

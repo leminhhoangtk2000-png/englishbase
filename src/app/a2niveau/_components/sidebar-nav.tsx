@@ -165,7 +165,12 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
             open={openSubSections.has(index)}
             onOpenChange={() => toggleSubSection(index)}
           >
-            <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/50 [&[data-state=open]>svg]:rotate-90">
+            <CollapsibleTrigger className={cn(
+              "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-secondary/50 [&[data-state=open]>svg]:rotate-90 transition-colors",
+              {
+                "bg-primary/10 border-l-2 border-primary font-medium text-foreground": pathname?.startsWith(item.href || ''),
+              }
+            )}>
               {item.title}
               <ChevronRight className="h-3 w-3 shrink-0 transition-transform duration-200" />
             </CollapsibleTrigger>
@@ -177,9 +182,9 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                       key={subIndex}
                       href={subItem.href}
                       className={cn(
-                        "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                        "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
                         {
-                          "bg-secondary/80 font-medium text-foreground": pathname === subItem.href,
+                          "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === subItem.href,
                         }
                       )}
                       target={subItem.external ? "_blank" : ""}
@@ -206,9 +211,9 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
               key={index}
               href={item.href}
               className={cn(
-                "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors",
                 {
-                  "bg-secondary/80 font-medium text-foreground": pathname === item.href,
+                  "bg-primary/15 border-l-2 border-primary font-semibold text-foreground": pathname === item.href,
                 }
               )}
               target={item.external ? "_blank" : ""}
