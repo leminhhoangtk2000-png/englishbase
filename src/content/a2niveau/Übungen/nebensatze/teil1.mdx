@@ -8,156 +8,65 @@ difficulty: "advanced"
 tags: ["nebensätze", "temporal", "wenn", "falls"]
 ---
 
-import { ExerciseComments } from '@/components/exercise-comments'
-import Lueckentext from "@/components/ui/lueckentext";
-import AuthorCredit from "@/components/exercises/author-credit";
+import { ExerciseTable } from "@/components/exercises/exercise-table";
+import { ExerciseAuthor, ExerciseHelp } from "@/components/exercises/exercise-author";
+import ExerciseComments from "@/components/exercises/ExerciseComments";
 
 ## Bai Tap
 
-_Hinweis: Wähle die richtige Konjunktion: „wenn“ oder „falls“._
+_Hinweis: Wähle die richtige Konjunktion: „wenn" oder „falls"._
 
-<Lueckentext
-  title="Teil 3: Konjunktion – wenn oder falls (1–15)"
-  textParts={[
-    "1. Ich helfe dir, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " du willst.",
-    "\n",
-    "2. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du Hunger hast, gibt es Pizza im Kühlschrank.",
-    "\n",
-    "3. Wir gehen spazieren, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " das Wetter schön ist.",
-    "\n",
-    "4. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du ihn nicht kennst, stelle ich ihn dir vor.",
-    "\n",
-    "5. Du darfst mitkommen, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " du leise bist.",
-    "\n",
-    "6. ",
-    { type: "blank", correctAnswer: "falls" },
-    " ich zu spät komme, fangt bitte ohne mich an.",
-    "\n",
-    "7. Wir bleiben zu Hause, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " es schneit.",
-    "\n",
-    "8. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du Fragen hast, kannst du mich anrufen.",
-    "\n",
-    "9. Ich besuche dich, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " ich in Berlin bin.",
-    "\n",
-    "10. ",
-    { type: "blank", correctAnswer: "falls" },
-    " es nötig ist, können wir den Termin verschieben.",
-    "\n",
-    "11. ",
-    { type: "blank", correctAnswer: "wenn" },
-    " ich Urlaub habe, fahre ich ans Meer.",
-    "\n",
-    "12. Ich rufe dich an, ",
-    { type: "blank", correctAnswer: "falls" },
-    " sich etwas ändert.",
-    "\n",
-    "13. ",
-    { type: "blank", correctAnswer: "wenn" },
-    " du lernst, wirst du die Prüfung bestehen.",
-    "\n",
-    "14. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du morgen nicht kommst, bin ich traurig.",
-    "\n",
-    "15. Wir grillen draußen, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " die Sonne scheint.",
+<ExerciseTable
+  title="Teil 1: Konjunktion – wenn oder falls (1–15)"
+  subtitle="Chọn liên từ đúng: wenn hoặc falls"
+  exercises={[
+    {id: 1, german: "Ich helfe dir, __ du willst.", correctAnswer: ["wenn"]},
+    {id: 2, german: "__ du Hunger hast, gibt es Pizza im Kühlschrank.", correctAnswer: ["falls"]},
+    {id: 3, german: "Wir gehen spazieren, __ das Wetter schön ist.", correctAnswer: ["wenn"]},
+    {id: 4, german: "__ du ihn nicht kennst, stelle ich ihn dir vor.", correctAnswer: ["falls"]},
+    {id: 5, german: "Du darfst mitkommen, __ du leise bist.", correctAnswer: ["wenn"]},
+    {id: 6, german: "__ ich zu spät komme, fangt bitte ohne mich an.", correctAnswer: ["falls"]},
+    {id: 7, german: "Wir bleiben zu Hause, __ es schneit.", correctAnswer: ["wenn"]},
+    {id: 8, german: "__ du Fragen hast, kannst du mich anrufen.", correctAnswer: ["falls"]},
+    {id: 9, german: "Ich besuche dich, __ ich in Berlin bin.", correctAnswer: ["wenn"]},
+    {id: 10, german: "__ es nötig ist, können wir den Termin verschieben.", correctAnswer: ["falls"]},
+    {id: 11, german: "__ ich Urlaub habe, fahre ich ans Meer.", correctAnswer: ["wenn"]},
+    {id: 12, german: "Ich rufe dich an, __ sich etwas ändert.", correctAnswer: ["falls"]},
+    {id: 13, german: "__ du lernst, wirst du die Prüfung bestehen.", correctAnswer: ["wenn"]},
+    {id: 14, german: "__ du morgen nicht kommst, bin ich traurig.", correctAnswer: ["falls"]},
+    {id: 15, german: "Wir grillen draußen, __ die Sonne scheint.", correctAnswer: ["wenn"]},
   ]}
 />
 
-<Lueckentext
-  title="Teil 3: Konjunktion – wenn oder falls (16–30)"
-  textParts={[
-    "16. ",
-    { type: "blank", correctAnswer: "falls" },
-    " er nicht antwortet, schreib ihm eine E-Mail.",
-    "\n",
-    "17. ",
-    { type: "blank", correctAnswer: "wenn" },
-    " ich Zeit finde, komme ich zur Party.",
-    "\n",
-    "18. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du Hilfe brauchst, sag mir bitte Bescheid.",
-    "\n",
-    "19. Ich fahre mit dem Fahrrad, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " es nicht regnet.",
-    "\n",
-    "20. ",
-    { type: "blank", correctAnswer: "falls" },
-    " das nicht klappt, probieren wir Plan B.",
-    "\n",
-    "21. Ich komme mit, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " ich früher fertig bin.",
-    "\n",
-    "22. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du das nicht verstehst, erkläre ich es nochmal.",
-    "\n",
-    "23. ",
-    { type: "blank", correctAnswer: "wenn" },
-    " du Lust hast, können wir ins Kino gehen.",
-    "\n",
-    "24. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du krank bist, bleib bitte zu Hause.",
-    "\n",
-    "25. Ich bringe Kuchen mit, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " ich Zeit zum Backen habe.",
-    "\n",
-    "26. ",
-    { type: "blank", correctAnswer: "falls" },
-    " das Angebot abläuft, sag mir bitte Bescheid.",
-    "\n",
-    "27. ",
-    { type: "blank", correctAnswer: "wenn" },
-    " du Hilfe brauchst, helfe ich dir gern.",
-    "\n",
-    "28. ",
-    { type: "blank", correctAnswer: "falls" },
-    " du später kommst, schreibe mir eine Nachricht.",
-    "\n",
-    "29. Ich freue mich, ",
-    { type: "blank", correctAnswer: "wenn" },
-    " du mich besuchst.",
-    "\n",
-    "30. ",
-    { type: "blank", correctAnswer: "falls" },
-    " ich morgen frei habe, mache ich einen Ausflug.",
+<ExerciseTable
+  title="Teil 2: Konjunktion – wenn oder falls (16–30)"
+  subtitle="Chọn liên từ đúng: wenn hoặc falls"
+  exercises={[
+    {id: 16, german: "__ er nicht antwortet, schreib ihm eine E-Mail.", correctAnswer: ["falls"]},
+    {id: 17, german: "__ ich Zeit finde, komme ich zur Party.", correctAnswer: ["wenn"]},
+    {id: 18, german: "__ du Hilfe brauchst, sag mir bitte Bescheid.", correctAnswer: ["falls"]},
+    {id: 19, german: "Ich fahre mit dem Fahrrad, __ es nicht regnet.", correctAnswer: ["wenn"]},
+    {id: 20, german: "__ das nicht klappt, probieren wir Plan B.", correctAnswer: ["falls"]},
+    {id: 21, german: "Ich komme mit, __ ich früher fertig bin.", correctAnswer: ["wenn"]},
+    {id: 22, german: "__ du das nicht verstehst, erkläre ich es nochmal.", correctAnswer: ["falls"]},
+    {id: 23, german: "__ du Lust hast, können wir ins Kino gehen.", correctAnswer: ["wenn"]},
+    {id: 24, german: "__ du krank bist, bleib bitte zu Hause.", correctAnswer: ["falls"]},
+    {id: 25, german: "Ich bringe Kuchen mit, __ ich Zeit zum Backen habe.", correctAnswer: ["wenn"]},
+    {id: 26, german: "__ das Angebot abläuft, sag mir bitte Bescheid.", correctAnswer: ["falls"]},
+    {id: 27, german: "__ du Hilfe brauchst, helfe ich dir gern.", correctAnswer: ["wenn"]},
+    {id: 28, german: "__ du später kommst, schreibe mir eine Nachricht.", correctAnswer: ["falls"]},
+    {id: 29, german: "Ich freue mich, __ du mich besuchst.", correctAnswer: ["wenn"]},
+    {id: 30, german: "__ ich morgen frei habe, mache ich einen Ausflug.", correctAnswer: ["falls"]},
   ]}
 />
 
 ---
 
-### **Tác giả ✍️**
-
-<AuthorCredit author="Lonia" />
-
----
-
-### **Hỏi đáp ❓💬**
+<ExerciseAuthor author="Lonia" />
+<ExerciseHelp />
 
 :::tip VITAMIN ĐỘNG LỰC 🌱
-Câu trúc Plusquamperfekt giúp bạn kể lại những hành động đã xảy ra _trước một thời điểm khác trong quá khứ_. Hãy luyện tập thật nhiều để sử dụng tự nhiên nhé! 💪📚
+Tiếp tục luyện tập với wenn và falls để sử dụng thành thạo! 💪📚
 :::
 
 <ExerciseComments exerciseId="a2-nebensatze-teil1" url="/a2niveau/Übungen/nebensatze/teil1" />
