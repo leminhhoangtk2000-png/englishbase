@@ -103,16 +103,16 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
 
   if (!mounted) {
     return (
-      <Card className="w-full max-w-4xl mx-auto my-6">
-        <CardHeader>
-          <CardTitle className="text-xl font-bold">{title}</CardTitle>
+      <Card className="w-full max-w-4xl mx-auto my-6 bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700">
+        <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b dark:border-gray-700">
+          <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100">{title}</CardTitle>
           {subtitle && (
-            <p className="text-sm text-muted-foreground">{subtitle}</p>
+            <p className="text-sm text-muted-foreground dark:text-gray-400">{subtitle}</p>
           )}
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="text-center p-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-100 mx-auto"></div>
           </div>
         </CardContent>
       </Card>
@@ -120,14 +120,14 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto my-6">
-      <CardHeader>
-        <CardTitle className="text-xl font-bold">{title}</CardTitle>
+    <Card className="w-full max-w-4xl mx-auto my-6 bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700">
+      <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b dark:border-gray-700">
+        <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100">{title}</CardTitle>
         {subtitle && (
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
+          <p className="text-sm text-muted-foreground dark:text-gray-400">{subtitle}</p>
         )}
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 p-6">
         <div className="space-y-3">
           {exercises.map((exercise) => {
             const isCorrect = checkedAnswers[exercise.id];
@@ -137,15 +137,15 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
             const correctAnswers = getCorrectAnswers(exercise);
             
             return (
-              <div key={exercise.id} className="flex items-start gap-3 p-3 border rounded-lg">
-                <Badge variant="outline" className="min-w-[30px] text-center mt-1">
+              <div key={exercise.id} className="flex items-start gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-800">
+                <Badge variant="outline" className="min-w-[30px] text-center mt-1 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300">
                   {exercise.id}
                 </Badge>
                 <div className="flex-1">
                   <div className="flex items-center flex-wrap gap-1 mb-2">
                     {sentenceParts.map((part, partIndex) => (
                       <React.Fragment key={partIndex}>
-                        <span className="text-sm">{part}</span>
+                        <span className="text-sm text-gray-900 dark:text-gray-100">{part}</span>
                         {partIndex < sentenceParts.length - 1 && (
                           <Input
                             value={currentAnswers[partIndex] || ''}
@@ -156,11 +156,11 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
                                 correctAnswers[partIndex] || ''
                               )
                             }}
-                            className={`mx-1 transition-all duration-200 ${
+                            className={`mx-1 transition-all duration-200 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 ${
                               showResults
                                 ? currentAnswers[partIndex]?.trim().toLowerCase() === correctAnswers[partIndex]?.toLowerCase()
-                                  ? 'border-green-500 bg-green-50'
-                                  : 'border-red-500 bg-red-50'
+                                  ? 'border-green-500 dark:border-green-600 bg-green-50 dark:bg-green-950'
+                                  : 'border-red-500 dark:border-red-600 bg-red-50 dark:bg-red-950'
                                 : ''
                             }`}
                             placeholder="..."
@@ -174,18 +174,18 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
                     <div className="space-y-1">
                       <div className="flex items-center gap-2 text-xs">
                         {isCorrect ? (
-                          <div className="flex items-center gap-1 text-green-600">
+                          <div className="flex items-center gap-1 text-green-600 dark:text-green-400">
                             <CheckCircle className="h-4 w-4" />
                             <span>Đúng rồi!</span>
                           </div>
                         ) : (
                           <div className="space-y-1">
-                            <div className="flex items-center gap-2 text-red-600">
+                            <div className="flex items-center gap-2 text-red-600 dark:text-red-400">
                               <XCircle className="h-4 w-4" />
                               <span>Đáp án đúng: {correctAnswers.join(' ')}</span>
                             </div>
                             {exercise.explanation && (
-                              <div className="text-xs text-muted-foreground bg-blue-50 p-2 rounded border border-blue-200 mt-1">
+                              <div className="text-xs text-muted-foreground dark:text-gray-400 bg-blue-50 dark:bg-blue-950 p-2 rounded border border-blue-200 dark:border-blue-900 mt-1">
                                 <strong>💡 Giải thích:</strong> {exercise.explanation}
                               </div>
                             )}
@@ -200,12 +200,20 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
           })}
         </div>
         
-        <div className="flex items-center justify-between pt-4 border-t">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex gap-2">
-            <Button onClick={checkAnswers} disabled={showResults}>
+            <Button 
+              onClick={checkAnswers} 
+              disabled={showResults}
+              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white"
+            >
               Kiểm tra
             </Button>
-            <Button variant="outline" onClick={resetExercise}>
+            <Button 
+              variant="outline" 
+              onClick={resetExercise}
+              className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800"
+            >
               <RotateCcw className="w-4 h-4 mr-1" />
               Làm lại
             </Button>
@@ -213,7 +221,7 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
           
           {showResults && (
             <div className="text-right">
-              <Badge variant="secondary" className="text-sm">
+              <Badge variant="secondary" className="text-sm bg-gray-100 dark:bg-slate-700 text-gray-900 dark:text-gray-100">
                 Điểm số: {calculateScore()}
               </Badge>
             </div>
