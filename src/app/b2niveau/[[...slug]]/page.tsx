@@ -50,7 +50,7 @@ export default async function DocPage({ params }: DocPageProps) {
                     
                     // Extract slug from href if no direct slug
                     const itemSlug = item.slug || (item.href ? item.href.split('/').pop() : '');
-                    const href = hasSubItems ? `/b1niveau/${section.slug}/${itemSlug}` : (item.href || '#');
+                    const href = hasSubItems ? `/b2niveau/${section.slug}/${itemSlug}` : (item.href || '#');
                     
                     return (
                       <Link
@@ -94,18 +94,18 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
 
           <div className="w-full max-w-[700px] space-y-4 mt-12">
-            <h2 className="text-2xl font-bold">Về trình độ B1</h2>
+            <h2 className="text-2xl font-bold">Về trình độ B2</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Trình độ B1 (Intermediate) là mức độ trung cấp trong hệ thống đánh giá CEFR. 
+                Trình độ B2 (Upper Intermediate) là mức độ trung cấp cao trong hệ thống đánh giá CEFR. 
                 Ở trình độ này, bạn có thể:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Hiểu những ý chính của văn bản rõ ràng về các chủ đề quen thuộc</li>
-                <li>Xử lý hầu hết các tình huống có thể xảy ra khi đi du lịch</li>
-                <li>Tạo ra văn bản đơn giản về các chủ đề quen thuộc hoặc quan tâm cá nhân</li>
-                <li>Mô tả kinh nghiệm, sự kiện, ước mơ, hy vọng và hoài bão</li>
-                <li>Đưa ra lý do và giải thích ngắn gọn cho ý kiến và kế hoạch</li>
+                <li>Hiểu nội dung chính của văn bản phức tạp về các chủ đề cụ thể và trừu tượng</li>
+                <li>Tương tác lưu loát và tự nhiên với người bản ngữ mà không gây khó khăn cho cả hai bên</li>
+                <li>Viết văn bản chi tiết, rõ ràng về nhiều chủ đề khác nhau</li>
+                <li>Giải thích quan điểm về vấn đề thời sự, nêu rõ ưu nhược điểm của các lựa chọn khác nhau</li>
+                <li>Hiểu các chương trình truyền hình và phim ảnh sử dụng ngôn ngữ chuẩn</li>
               </ul>
             </div>
           </div>
@@ -116,10 +116,10 @@ export default async function DocPage({ params }: DocPageProps) {
 
   // Handle different slug lengths
   if (slug.length === 1) {
-    // Show section overview (e.g., /b1niveau/übungen)
+    // Show section overview (e.g., /b2niveau/übungen)
     const [section] = slug;
     const decodedSection = decodeURIComponent(section);
-    const niveauContent = getNiveauContent('b1niveau');
+    const niveauContent = getNiveauContent('b2niveau');
     const currentSection = niveauContent.sections.find((s: any) => s.slug === decodedSection);
     
     if (!currentSection) {
@@ -130,7 +130,7 @@ export default async function DocPage({ params }: DocPageProps) {
       <main className="relative py-6 lg:py-8">
         <div className="mx-auto w-full min-w-0">
           <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-            <Link href="/b1niveau" className="hover:text-foreground">B1 Niveau</Link>
+            <Link href="/b2niveau" className="hover:text-foreground">B2 Niveau</Link>
             <span className="font-medium text-foreground">/</span>
             <div className="font-medium text-foreground capitalize">{currentSection.title}</div>
           </div>
@@ -147,7 +147,7 @@ export default async function DocPage({ params }: DocPageProps) {
             {currentSection.items.map((item: any) => (
               <Link
                 key={item.slug}
-                href={`/b1niveau/${section}/${item.slug}`}
+                href={`/b2niveau/${section}/${item.slug}`}
                 className="group block p-4 border rounded-lg hover:shadow-md transition-shadow"
               >
                 <h3 className="font-medium group-hover:text-primary">
@@ -174,11 +174,11 @@ export default async function DocPage({ params }: DocPageProps) {
   }
 
   if (slug.length === 2) {
-    // Could be folder overview (e.g., /b1niveau/übungen/adjektive) or direct article
+    // Could be folder overview (e.g., /b2niveau/übungen/adjektive) or direct article
     const [section, folderSlug] = slug;
     const decodedSection = decodeURIComponent(section);
     const decodedFolderSlug = decodeURIComponent(folderSlug);
-    const niveauContent = getNiveauContent('b1niveau');
+    const niveauContent = getNiveauContent('b2niveau');
     const currentSection = niveauContent.sections.find((s: any) => s.slug === decodedSection);
     
     if (!currentSection) {
@@ -186,7 +186,7 @@ export default async function DocPage({ params }: DocPageProps) {
     }
     
     // First try to get direct markdown content (for sections like grammatik)
-    const directMarkdownContent = getMarkdownBySlug('b1niveau', decodedSection, decodedFolderSlug);
+    const directMarkdownContent = getMarkdownBySlug('b2niveau', decodedSection, decodedFolderSlug);
     
     if (directMarkdownContent) {
       // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
@@ -215,14 +215,14 @@ export default async function DocPage({ params }: DocPageProps) {
         <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
           <div className="mx-auto w-full min-w-0">
             <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-              <Link href="/b1niveau" className="hover:text-foreground">B1 Niveau</Link>
+              <Link href="/b2niveau" className="hover:text-foreground">B2 Niveau</Link>
               {breadcrumbItems.map((item: any, index: number) => (
                 <React.Fragment key={item}>
                   <span className="font-medium text-foreground">/</span>
                   {index === breadcrumbItems.length - 1 ? (
                     <div className="font-medium text-foreground capitalize">{item}</div>
                   ) : (
-                    <Link href={`/b1niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                    <Link href={`/b2niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
                       {item}
                     </Link>
                   )}
@@ -268,7 +268,7 @@ export default async function DocPage({ params }: DocPageProps) {
     
     // If no direct markdown found, try to find folder/item structure (for sections like übungen)
     const currentItem = currentSection.items.find((item: any) => {
-      // Extract slug from href (e.g., "/b1niveau/übungen/adjektive" -> "adjektive")
+      // Extract slug from href (e.g., "/b2niveau/übungen/adjektive" -> "adjektive")
       if (!item.href) return false;
       const itemSlug = item.href.split('/').pop();
       return itemSlug === folderSlug;
@@ -284,9 +284,9 @@ export default async function DocPage({ params }: DocPageProps) {
         <main className="relative py-6 lg:py-8">
           <div className="mx-auto w-full min-w-0">
             <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-              <Link href="/b1niveau" className="hover:text-foreground">B1 Niveau</Link>
+              <Link href="/b2niveau" className="hover:text-foreground">B2 Niveau</Link>
               <span className="font-medium text-foreground">/</span>
-              <Link href={`/b1niveau/${section}`} className="hover:text-foreground capitalize">{currentSection.title}</Link>
+              <Link href={`/b2niveau/${section}`} className="hover:text-foreground capitalize">{currentSection.title}</Link>
               <span className="font-medium text-foreground">/</span>
               <div className="font-medium text-foreground">{currentItem.title}</div>
             </div>
@@ -318,7 +318,7 @@ export default async function DocPage({ params }: DocPageProps) {
     }
     
     // Otherwise, try to get markdown content for direct article
-    const markdownContent = getMarkdownBySlug('b1niveau', decodedSection, decodedFolderSlug);
+    const markdownContent = getMarkdownBySlug('b2niveau', decodedSection, decodedFolderSlug);
     if (!markdownContent) {
       notFound();
     }
@@ -331,14 +331,14 @@ export default async function DocPage({ params }: DocPageProps) {
       <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
         <div className="mx-auto w-full min-w-0">
           <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-            <Link href="/b1niveau" className="hover:text-foreground">B1 Niveau</Link>
+            <Link href="/b2niveau" className="hover:text-foreground">B2 Niveau</Link>
             {breadcrumbItems.map((item: any, index: number) => (
               <React.Fragment key={item}>
                 <span className="font-medium text-foreground">/</span>
                 {index === breadcrumbItems.length - 1 ? (
                   <div className="font-medium text-foreground capitalize">{item}</div>
                 ) : (
-                  <Link href={`/b1niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                  <Link href={`/b2niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
                     {item}
                   </Link>
                 )}
@@ -377,28 +377,28 @@ export default async function DocPage({ params }: DocPageProps) {
   let breadcrumbItems: string[] = [];
   
   if (slug.length === 3) {
-    // Nested content (e.g., /b1niveau/übungen/adjektive/teil1)
+    // Nested content (e.g., /b2niveau/übungen/adjektive/teil1)
     const [section, folderSlug, fileSlug] = slug;
     const decodedSection = decodeURIComponent(section);
     const decodedFolderSlug = decodeURIComponent(folderSlug);
     const decodedFileSlug = decodeURIComponent(fileSlug);
     
     // First try to get content from folder/file
-    markdownContent = getMarkdownBySlug('b1niveau', decodedSection, `${decodedFolderSlug}/${decodedFileSlug}`);
+    markdownContent = getMarkdownBySlug('b2niveau', decodedSection, `${decodedFolderSlug}/${decodedFileSlug}`);
     
     // If not found, try to get folder index
     if (!markdownContent) {
-      markdownContent = getMarkdownBySlug('b1niveau', decodedSection, `${decodedFolderSlug}/index`);
+      markdownContent = getMarkdownBySlug('b2niveau', decodedSection, `${decodedFolderSlug}/index`);
     }
     
     breadcrumbItems = [decodedSection, decodedFolderSlug];
   } else if (slug.length === 4) {
-    // Deep nested content (e.g., /b1niveau/übungen/adjektive/teil1/subtopic)
+    // Deep nested content (e.g., /b2niveau/übungen/adjektive/teil1/subtopic)
     const [section, folderSlug, , fileSlug] = slug;
     const decodedSection = decodeURIComponent(section);
     const decodedFolderSlug = decodeURIComponent(folderSlug);
     const decodedFileSlug = decodeURIComponent(fileSlug);
-    markdownContent = getMarkdownBySlug('b1niveau', decodedSection, `${decodedFolderSlug}/${decodedFileSlug}`);
+    markdownContent = getMarkdownBySlug('b2niveau', decodedSection, `${decodedFolderSlug}/${decodedFileSlug}`);
     breadcrumbItems = [decodedSection, decodedFolderSlug];
   }
   
@@ -442,14 +442,14 @@ export default async function DocPage({ params }: DocPageProps) {
     <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-          <Link href="/b1niveau" className="hover:text-foreground">B1 Niveau</Link>
+          <Link href="/b2niveau" className="hover:text-foreground">B2 Niveau</Link>
           {breadcrumbItems.map((item: any, index: number) => (
             <React.Fragment key={item}>
               <span className="font-medium text-foreground">/</span>
               {index === breadcrumbItems.length - 1 ? (
                 <div className="font-medium text-foreground capitalize">{item}</div>
               ) : (
-                <Link href={`/b1niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
+                <Link href={`/b2niveau/${breadcrumbItems.slice(0, index + 1).join('/')}`} className="hover:text-foreground capitalize">
                   {item}
                 </Link>
               )}
