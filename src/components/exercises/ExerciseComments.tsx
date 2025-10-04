@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { MessageCircle, Send, Heart, Reply } from 'lucide-react';
+import { MessageCircle, Send, Heart, Reply, Star } from 'lucide-react';
+import { StarRating } from '@/components/ui/star-rating';
 
 interface Comment {
   id: string;
@@ -33,6 +34,14 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [replyTo, setReplyTo] = useState<string | null>(null);
   const [replyContent, setReplyContent] = useState('');
+  
+  // Rating states
+  const [userRating, setUserRating] = useState(0);
+  const [ratingReason, setRatingReason] = useState('');
+  const [isSubmittingRating, setIsSubmittingRating] = useState(false);
+  const [averageRating, setAverageRating] = useState(0);
+  const [totalRatings, setTotalRatings] = useState(0);
+  const [hasRated, setHasRated] = useState(false);
 
   // Mock user - in real app this would come from auth context
   const mockUser = {
@@ -106,6 +115,31 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
     loadComments();
   }, [exerciseId]);
 
+  // Load ratings from API
+  useEffect(() => {
+    const loadRatings = async () => {
+      try {
+        const response = await fetch(`/api/exercise-ratings?exerciseId=${exerciseId}`);
+        if (response.ok) {
+          const data = await response.json();
+          setAverageRating(data.averageRating || 0);
+          setTotalRatings(data.totalRatings || 0);
+          
+          // Check if current user has rated
+          const userRatingData = data.ratings?.find((r: any) => r.userId === mockUser.id);
+          if (userRatingData) {
+            setUserRating(userRatingData.rating);
+            setHasRated(true);
+          }
+        }
+      } catch (error) {
+        console.error('Error loading ratings:', error);
+      }
+    };
+
+    loadRatings();
+  }, [exerciseId]);
+
   const handleSubmitComment = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newComment.trim()) return;
@@ -146,6 +180,51 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
       console.error('Error submitting comment:', error);
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  // Handle rating submission
+  const handleSubmitRating = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (userRating === 0) return;
+
+    setIsSubmittingRating(true);
+    try {
+      const response = await fetch('/api/exercise-ratings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          exerciseId,
+          rating: userRating,
+          reason: ratingReason.trim() || undefined,
+          userId: mockUser.id,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setAverageRating(data.averageRating);
+        setTotalRatings(data.totalRatings);
+        setHasRated(true);
+        setRatingReason('');
+      } else {
+        // Fallback to mock behavior
+        setHasRated(true);
+        setAverageRating(userRating);
+        setTotalRatings(1);
+        setRatingReason('');
+      }
+    } catch (error) {
+      console.error('Error submitting rating:', error);
+      // Fallback to mock behavior on error
+      setHasRated(true);
+      setAverageRating(userRating);
+      setTotalRatings(1);
+      setRatingReason('');
+    } finally {
+      setIsSubmittingRating(false);
     }
   };
 
@@ -211,6 +290,68 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
+        {/* Rating Section */}
+        <div className="border-b pb-6 space-y-4">
+          <div className="flex items-center justify-between">
+            <h3 className="text-base font-semibold flex items-center gap-2">
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              Đánh giá bài tập
+            </h3>
+            {totalRatings > 0 && (
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                <span className="font-medium text-yellow-500">
+                  {averageRating.toFixed(1)} ⭐
+                </span>
+                {' '}({totalRatings} đánh giá)
+              </div>
+            )}
+          </div>
+
+          {!hasRated ? (
+            <form onSubmit={handleSubmitRating} className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm text-gray-600 dark:text-gray-400">
+                  Bạn đánh giá bài tập này như thế nào?
+                </label>
+                <StarRating 
+                  rating={userRating}
+                  onRatingChange={setUserRating}
+                  size="lg"
+                  showLabel={true}
+                />
+              </div>
+
+              {userRating > 0 && (
+                <div className="space-y-2">
+                  <label className="text-sm text-gray-600 dark:text-gray-400">
+                    Lý do đánh giá (không bắt buộc)
+                  </label>
+                  <Textarea
+                    value={ratingReason}
+                    onChange={(e) => setRatingReason(e.target.value)}
+                    placeholder="Chia sẻ lý do bạn đánh giá như vậy..."
+                    className="min-h-[80px] resize-none"
+                  />
+                  <Button 
+                    type="submit"
+                    disabled={isSubmittingRating}
+                    className="bg-purple-600 hover:bg-purple-700"
+                  >
+                    {isSubmittingRating ? 'Đang gửi...' : 'Gửi đánh giá'}
+                  </Button>
+                </div>
+              )}
+            </form>
+          ) : (
+            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+              <p className="text-sm text-green-700 dark:text-green-400 flex items-center gap-2">
+                <Star className="w-4 h-4 fill-green-600 text-green-600 dark:fill-green-400 dark:text-green-400" />
+                Cảm ơn bạn đã đánh giá! Đánh giá của bạn: {userRating} sao
+              </p>
+            </div>
+          )}
+        </div>
+
         {/* Comment Form */}
         <form onSubmit={handleSubmitComment} className="space-y-4">
           <div className="flex gap-3">
