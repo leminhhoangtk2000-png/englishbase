@@ -1,34 +1,108 @@
+---
+title: "Teil 5: Relativsätze verbinden - Ghép câu"
+description: "Ghép câu chính (A) với mệnh đề quan hệ phù hợp (B)"
+level: "B1"
+topic: "Übungen"
+order: 5
+difficulty: "intermediate"
+tags: ["relativsatze", "matching", "sentence-building"]
+---
+
+import MatchingQuiz from "@/components/Quiz/MatchingQuiz/MatchingQuiz";
 import { ExerciseComments } from "@/components/ExerciseComments";
 
-Teil 5: Verbinde die Sätze aus A mit den passenden Relativsätzen aus B.
+# Teil 5: Relativsätze verbinden
 
-A
+## Hướng dẫn
 
-1. Das ist der Nachbar, …
-2. Kennst du die Frau, …
-3. Ich habe ein Buch, …
-4. Wir besuchen die Stadt, …
-5. Das ist die Lehrerin, …
-6. Ich kenne einen Mann, …
-7. Sie hat eine Tochter, …
-8. Dort ist das Café, …
-9. Ich habe einen Freund, …
-10. Kennst du den Schüler, …
+Ghép các câu chính ở cột **A** với mệnh đề quan hệ (Relativsatz) phù hợp ở cột **B**.
 
-B
-a. mit dem ich gestern lange gesprochen habe.
-b. deren Sohn in meiner Klasse ist.
-c. der ein neues Auto gekauft hat.
-d. die im Krankenhaus arbeitet.
-e. das sehr interessant ist.
-f. den du gestern im Bus getroffen hast.
-g. das direkt am Marktplatz liegt.
-h. der sehr streng ist.
-i. die viele Sehenswürdigkeiten hat.
-j. dessen Vater in Spanien lebt.
+**Lưu ý:**
+- Chú ý đại từ quan hệ: **der/die/das, dem/der/denen, dessen/deren**
+- Xác định giới từ đi kèm (mit dem, in der, am...)
+- Kiểm tra giống (Maskulinum/Femininum/Neutrum/Plural) và biến cách (Nominativ/Akkusativ/Dativ/Genitiv)
 
-Lösungsschlüssel:
-[1c], [2d], [3e], [4i], [5h], [6a], [7j], [8g], [9f], [10b]
+---
+
+## Phần 1: Câu 1-5
+
+<MatchingQuiz
+  title="Phần 1: Ghép câu 1-5"
+  questions={[
+    "Das ist der Nachbar, …",
+    "Kennst du die Frau, …",
+    "Ich habe ein Buch, …",
+    "Wir besuchen die Stadt, …",
+    "Das ist die Lehrerin, …",
+  ]}
+  answers={[
+    "der ein neues Auto gekauft hat.",
+    "die im Krankenhaus arbeitet.",
+    "das sehr interessant ist.",
+    "die viele Sehenswürdigkeiten hat.",
+    "die sehr streng ist.",
+  ]}
+  correctPairs={[
+    [0, 0], // 1 → a) der Nachbar (mask.) → der (Nom.)
+    [1, 1], // 2 → b) die Frau (fem.) → die (Nom.)
+    [2, 2], // 3 → c) ein Buch (neut.) → das (Nom.)
+    [3, 3], // 4 → d) die Stadt (fem.) → die (Nom.)
+    [4, 4], // 5 → e) die Lehrerin (fem.) → die (Nom.)
+  ]}
+/>
+
+<div className="my-16 flex justify-center">
+  <div className="w-40 h-1.5 bg-gray-500 dark:bg-gray-400 rounded-full shadow-md"></div>
+</div>
+
+## Phần 2: Câu 6-10
+
+<MatchingQuiz
+  title="Phần 2: Ghép câu 6-10"
+  questions={[
+    "Ich kenne einen Mann, …",
+    "Sie hat eine Tochter, …",
+    "Dort ist das Café, …",
+    "Ich habe einen Freund, …",
+    "Kennst du den Schüler, …",
+  ]}
+  answers={[
+    "mit dem ich gestern lange gesprochen habe.",
+    "deren Sohn in meiner Klasse ist.",
+    "das direkt am Marktplatz liegt.",
+    "den du gestern im Bus getroffen hast.",
+    "dessen Vater in Spanien lebt.",
+  ]}
+  correctPairs={[
+    [0, 0], // 6 → a) ein Mann (mask.) → mit dem (Dat.)
+    [1, 4], // 7 → e) eine Tochter (fem.) → deren (Gen.)
+    [2, 2], // 8 → c) das Café (neut.) → das (Nom.)
+    [3, 3], // 9 → d) ein Freund (mask.) → den (Akk.)
+    [4, 1], // 10 → b) der Schüler (mask.) → dessen (Gen.)
+  ]}
+/>
+
+---
+
+## Giải thích đáp án
+
+### Phần 1:
+1. **der Nachbar** (mask., Nom.) → **der** hat gekauft
+2. **die Frau** (fem., Nom.) → **die** arbeitet
+3. **ein Buch** (neut., Nom.) → **das** ist interessant
+4. **die Stadt** (fem., Nom.) → **die** hat Sehenswürdigkeiten
+5. **die Lehrerin** (fem., Nom.) → **die** ist streng
+
+### Phần 2:
+6. **ein Mann** (mask.) → **mit dem** (Dat.) ich gesprochen habe
+7. **eine Tochter** (fem.) → **deren** (Gen.) Sohn in meiner Klasse ist
+8. **das Café** (neut., Nom.) → **das** liegt am Marktplatz
+9. **ein Freund** (mask.) → **den** (Akk.) du getroffen hast
+10. **der Schüler** (mask.) → **dessen** (Gen.) Vater in Spanien lebt
+
+---
+
+## Hỏi đáp & Thảo luận 💬
 
 <ExerciseComments
   exerciseId="b1-relativsatze-teil5"
