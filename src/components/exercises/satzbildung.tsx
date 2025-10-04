@@ -52,9 +52,6 @@ export default function Satzbildung({
             <div key={index} className="p-4 border rounded-lg">
               <div className="mb-3">
                 <p className="font-medium">Câu {index + 1}:</p>
-                {exercise.instruction && (
-                  <p className="text-sm text-gray-600 mb-2">{exercise.instruction}</p>
-                )}
                 <div className="flex flex-wrap gap-2 mb-3">
                   <span className="text-sm text-gray-700">Từ cho sẵn:</span>
                   {exercise.words.map((word, wordIndex) => (
@@ -83,15 +80,27 @@ export default function Satzbildung({
               />
               
               {showResults && (
-                <div className="mt-2">
+                <div className="mt-2 space-y-2">
                   {isCorrect(index, answers[index] || '') ? (
-                    <p className="text-green-600 text-sm">✅ Chính xác!</p>
+                    <div>
+                      <p className="text-green-600 text-sm">✅ Chính xác!</p>
+                      {exercise.instruction && (
+                        <p className="text-sm text-blue-600 bg-blue-50 p-2 rounded mt-2">
+                          <strong>💡 Giải thích:</strong> {exercise.instruction}
+                        </p>
+                      )}
+                    </div>
                   ) : (
                     <div>
                       <p className="text-red-600 text-sm">❌ Chưa chính xác</p>
                       <p className="text-green-600 text-sm mt-1">
                         <strong>Đáp án:</strong> {exercise.correctSentence}
                       </p>
+                      {exercise.instruction && (
+                        <p className="text-sm text-blue-600 bg-blue-50 p-2 rounded mt-2">
+                          <strong>💡 Giải thích:</strong> {exercise.instruction}
+                        </p>
+                      )}
                     </div>
                   )}
                 </div>

@@ -18,12 +18,14 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
 **New Format**: Satzbildung with 15 sentence building exercises split into 2 sections
 
 **Content Structure**:
+
 - **Hướng dẫn section**: Explains wo(r)- and da(r)- construction rules
 - **Phần 1**: 8 exercises - creating wo(r)- questions from given sentences
 - **Phần 2**: 7 exercises - more wo(r)- questions including special cases
 - **Ghi chú quan trọng**: Notes about usage with objects vs. people
 
 **Key Features**:
+
 ```tsx
 <Satzbildung
   title="Tạo câu hỏi với Wo(r)- từ câu cho sẵn"
@@ -31,13 +33,15 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
     {
       words: ["Er", "wartet", "auf", "den", "Bus", "→", "___?"],
       correctSentence: "Worauf wartet er?",
-      instruction: "warten auf + vật → worauf (wo + r + auf vì auf bắt đầu bằng nguyên âm)"
-    }
+      instruction:
+        "warten auf + vật → worauf (wo + r + auf vì auf bắt đầu bằng nguyên âm)",
+    },
   ]}
 />
 ```
 
 **Improvements**:
+
 - ✅ Interactive typing instead of static fill-in
 - ✅ Detailed grammar hints in `instruction` field
 - ✅ Visual word hints showing the original sentence
@@ -55,12 +59,14 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
 **New Format**: Satzbildung with 15 error correction exercises split into 2 sections
 
 **Content Structure**:
+
 - **Hướng dẫn section**: Explains common error types
 - **Phần 1**: 8 error correction exercises (sentences 1-8)
 - **Phần 2**: 7 error correction exercises (sentences 9-15)
 - **Tóm tắt table**: Summary of 14 common verbs with their prepositions
 
 **Key Features**:
+
 ```tsx
 <Satzbildung
   title="Tìm và sửa lỗi trong các câu sau"
@@ -68,13 +74,15 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
     {
       words: ["❌", "Ich", "warte", "an", "den", "Bus."],
       correctSentence: "Ich warte auf den Bus.",
-      instruction: "Lỗi: 'an' → 'auf'. Động từ 'warten' đi với 'auf' (warten auf + Akkusativ)"
-    }
+      instruction:
+        "Lỗi: 'an' → 'auf'. Động từ 'warten' đi với 'auf' (warten auf + Akkusativ)",
+    },
   ]}
 />
 ```
 
 **Improvements**:
+
 - ✅ Shows incorrect sentence with ❌ marker
 - ✅ Detailed error explanation in Vietnamese
 - ✅ Grammar rule reinforcement
@@ -88,6 +96,7 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
 ### Satzbildung Component Capabilities
 
 **Visual Design**:
+
 - Blue badges for word hints
 - Large textarea for user input
 - Green (✓) / Red (✗) feedback indicators
@@ -95,15 +104,17 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
 - Score display: "Bạn đã hoàn thành x/y câu đúng"
 
 **User Interaction Flow**:
+
 1. **See hints**: Words/phrases displayed in blue badges
 2. **Type answer**: Full sentence in textarea
 3. **Check**: Click button to validate
-4. **Feedback**: 
+4. **Feedback**:
    - ✅ Green border + correct message if right
    - ❌ Red border + shows correct answer if wrong
 5. **Reset**: Try again or move to next
 
 **Smart Validation**:
+
 - Normalizes text (lowercase, trim spaces)
 - Removes punctuation for comparison
 - Accepts minor variations
@@ -112,14 +123,14 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
 
 ## 📊 Conversion Statistics
 
-| Metric | Value |
-|--------|-------|
-| Files converted | 2 |
-| Total exercises | 30 (15 + 15) |
-| Exercise sections | 4 (2 per file) |
-| Component used | `Satzbildung` |
-| Previous component | `ExerciseTable` |
-| Lines of code changed | ~200 |
+| Metric                | Value           |
+| --------------------- | --------------- |
+| Files converted       | 2               |
+| Total exercises       | 30 (15 + 15)    |
+| Exercise sections     | 4 (2 per file)  |
+| Component used        | `Satzbildung`   |
+| Previous component    | `ExerciseTable` |
+| Lines of code changed | ~200            |
 
 ---
 
@@ -128,11 +139,13 @@ Convert 2 B1 Übungen pages from ExerciseTable (fill-in-blank) to interactive Sa
 ### Import Changes
 
 **Before**:
+
 ```tsx
 import { ExerciseTable } from "@/components/exercises/exercise-table";
 ```
 
 **After**:
+
 ```tsx
 import Satzbildung from "@/components/exercises/satzbildung";
 ```
@@ -140,16 +153,18 @@ import Satzbildung from "@/components/exercises/satzbildung";
 ### Data Structure Transformation
 
 **Before (ExerciseTable)**:
+
 ```tsx
 {
-  id: 1, 
-  german: "Er wartet auf den Bus. → ___?", 
-  correctAnswer: ["Worauf wartet er?"], 
+  id: 1,
+  german: "Er wartet auf den Bus. → ___?",
+  correctAnswer: ["Worauf wartet er?"],
   explanation: "warten auf + vật → worauf..."
 }
 ```
 
 **After (Satzbildung)**:
+
 ```tsx
 {
   words: ["Er", "wartet", "auf", "den", "Bus", "→", "___?"],
@@ -159,6 +174,7 @@ import Satzbildung from "@/components/exercises/satzbildung";
 ```
 
 **Key Differences**:
+
 - `german` → `words` (array of word hints)
 - `correctAnswer` → `correctSentence` (single string)
 - `explanation` → `instruction` (grammar hint)
@@ -171,12 +187,14 @@ import Satzbildung from "@/components/exercises/satzbildung";
 ### Teil 2 Additions
 
 **Hướng dẫn section**:
+
 - Explains wo(r)- construction rules
 - Shows when to use wo- vs. wor- (consonant vs. vowel)
 - Parallel explanation for da(r)- constructions
 - Examples with different prepositions
 
 **Ghi chú quan trọng**:
+
 - Warning about wo(r)- only for objects, NOT people
 - Example: ❌ Worauf wartest du? - Auf meinen Freund (WRONG)
 - Correct: ✅ Auf wen wartest du? - Auf meinen Freund (RIGHT)
@@ -184,12 +202,14 @@ import Satzbildung from "@/components/exercises/satzbildung";
 ### Teil 3 Additions
 
 **Common Error Types**:
+
 - Wrong preposition choice
 - Wrong case (Akkusativ vs. Dativ)
 - Missing reflexive pronoun (sich)
 - Confusion between sprechen über vs. sprechen mit
 
 **Summary Table**:
+
 - 14 most common verbs with prepositions
 - Shows required case (Akkusativ/Dativ)
 - Provides example sentences
@@ -229,6 +249,7 @@ import Satzbildung from "@/components/exercises/satzbildung";
 ## 🎯 Success Criteria
 
 ✅ **All Achieved**:
+
 - [x] Both pages use Satzbildung component
 - [x] All 30 exercises converted successfully
 - [x] Grammar instructions preserved and enhanced
@@ -243,6 +264,7 @@ import Satzbildung from "@/components/exercises/satzbildung";
 ## 🚀 Next Steps (Optional)
 
 ### Future Enhancements:
+
 1. **Add hints system** - progressive hints for difficult sentences
 2. **Progress tracking** - save user progress to database
 3. **Keyboard shortcuts** - Enter to check, Ctrl+R to reset
@@ -250,6 +272,7 @@ import Satzbildung from "@/components/exercises/satzbildung";
 5. **Example sentences** - expandable section with more examples
 
 ### Potential Conversions:
+
 - Teil 1 (if exists) could also use Satzbildung
 - Other B1 grammar topics could benefit from this interactive format
 - Consider creating exercise variations (multiple correct answers)
