@@ -1,0 +1,22 @@
+
+> nextn@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.3
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./src/app/exercises/a1/einkaufen-teil-1/page.tsx
+Module not found: Can't resolve '@/content/exercises/a1/einkaufen-teil-1.mdx'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/app/exercises/a1/familie-und-freunde/page.tsx
+Module not found: Can't resolve '@/content/exercises/a1/familie-und-freunde.mdx'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors

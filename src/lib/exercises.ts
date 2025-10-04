@@ -110,7 +110,15 @@ export async function getExercisesByLevel(level: string) {
             tags: data.tags || [],
             category: relativePath || 'Allgemein',
             slug,
-            fileName: entry.name
+            fileName: entry.name,
+            difficulty: data.difficulty || 'Cơ bản',
+            image: data.image,
+            data_ai_hint: data.data_ai_hint,
+            duration: data.duration || '5 phút đọc',
+            rating: data.rating || 4.5,
+            views: data.views || Math.floor(Math.random() * 3000) + 500,
+            comments: data.comments || Math.floor(Math.random() * 30) + 5,
+            completed: data.completed || false
           });
         }
       });

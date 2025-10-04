@@ -1,0 +1,23 @@
+
+> nextn@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.3
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 18.0s
+   Linting and checking validity of types ...
+Failed to compile.
+
+./src/app/exercises/[[...slug]]/page.tsx:117:12
+Type error: Property 'component' does not exist on type 'ExerciseDoc'.
+
+[0m [90m 115 |[39m[0m
+[0m [90m 116 |[39m   [90m// Fallback to old component-based rendering[39m[0m
+[0m[31m[1m>[22m[39m[90m 117 |[39m   [36mif[39m ([33m![39mdoc[33m.[39mcomponent) {[0m
+[0m [90m     |[39m            [31m[1m^[22m[39m[0m
+[0m [90m 118 |[39m     notFound()[33m;[39m[0m
+[0m [90m 119 |[39m   }[0m
+[0m [90m 120 |[39m[0m
+Next.js build worker exited with code: 1 and signal: null

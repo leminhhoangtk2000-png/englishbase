@@ -32,13 +32,14 @@ interface Exercise {
   rating?: number;
   views?: number;
   comments?: number;
+  difficulty?: string;
 }
 
 interface ExerciseLevelPageProps {
   level: string;
 }
 
-const exercises = [
+const mockExercises = [
   {
     title: "Eine Wohnung in Leipzig finden",
     image: "https://placehold.co/600x400.png",
@@ -50,6 +51,10 @@ const exercises = [
     comments: 15,
     completed: true,
     rating: 4.8,
+    tags: ["Nghe"],
+    difficulty: "Cơ bản",
+    level: "b1",
+    slug: "eine-wohnung-in-leipzig-finden"
   },
   {
     title: "Kleine Gewohnheiten, große Wirkung",
@@ -62,6 +67,10 @@ const exercises = [
     comments: 28,
     completed: false,
     rating: 4.5,
+    tags: ["Nghe"],
+    difficulty: "Nâng cao",
+    level: "b1",
+    slug: "kleine-gewohnheiten-grosse-wirkung"
   },
   {
     title: "Mein Nebenjob im Studium",
@@ -74,6 +83,10 @@ const exercises = [
     comments: 12,
     completed: true,
     rating: 4.9,
+    tags: ["Đọc"],
+    difficulty: "Cơ bản",
+    level: "b1",
+    slug: "mein-nebenjob-im-studium"
   },
   {
     title: "Freundschaft im digitalen Zeitalter",
@@ -86,6 +99,10 @@ const exercises = [
     comments: 22,
     completed: false,
     rating: 4.6,
+    tags: ["Đọc"],
+    difficulty: "Nâng cao",
+    level: "b1",
+    slug: "freundschaft-im-digitalen-zeitalter"
   },
   {
     title: "Homeoffice – Erfahrung und Meinung",
@@ -98,6 +115,10 @@ const exercises = [
     comments: 19,
     completed: false,
     rating: 4.7,
+    tags: ["Nghe"],
+    difficulty: "Nâng cao",
+    level: "b1",
+    slug: "homeoffice-erfahrung-und-meinung"
   },
   {
     title: "Reisen als Student – mit wenig Geld die Welt entdecken",
@@ -110,6 +131,10 @@ const exercises = [
     comments: 35,
     completed: false,
     rating: 4.8,
+    tags: ["Nghe"],
+    difficulty: "Cơ bản",
+    level: "b1",
+    slug: "reisen-als-student"
   },
 ];
 
@@ -135,9 +160,14 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
         if (response.ok) {
           const data = await response.json();
           setExercises(data);
+        } else {
+          // Nếu API không có data, dùng mock data
+          setExercises(mockExercises as Exercise[]);
         }
       } catch (error) {
         console.error('Error fetching exercises:', error);
+        // Fallback to mock data
+        setExercises(mockExercises as Exercise[]);
       } finally {
         setLoading(false);
       }
@@ -150,8 +180,13 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
     router.push(`/exercises/${newLevel}`);
   };
 
-  const filteredExercises = exercises.filter(exercise => {
-    if (skillFilter !== "Tất cả" && !exercise.tags.includes(skillFilter)) {
+    const filteredExercises = exercises.filter(exercise => {
+    // Filter by skill
+    if (skillFilter !== "Tất cả" && !exercise.tags?.includes(skillFilter)) {
+      return false;
+    }
+    // Filter by difficulty
+    if (difficultyFilter !== "Tất cả" && exercise.difficulty !== difficultyFilter) {
       return false;
     }
     return true;
@@ -255,13 +290,18 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
       
       <main>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {exercises.map((exercise) => (
+          {filteredExercises.length > 0 ? (
+            filteredExercises.map((exercise) => (
             <Link href={exercise.href} key={exercise.title}>
               <Card className="h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
                  <div className="p-2">
                     <div className="relative">
                       <Image
-                        src={exercise.image || "https://placehold.co/600x400.png"}
+                        src={
+                          exercise.image 
+                            ? (exercise.image.startsWith('http') ? exercise.image : `/${exercise.image}`)
+                            : "https://placehold.co/600x400.png"
+                        }
                         alt={exercise.title}
                         width={600}
                         height={400}
@@ -304,7 +344,12 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                 </CardFooter>
               </Card>
             </Link>
-          ))}
+            ))
+          ) : (
+            <div className="col-span-full text-center py-12">
+              <p className="text-muted-foreground">Không tìm thấy bài tập phù hợp với bộ lọc.</p>
+            </div>
+          )}
         </div>
       </main>
     </div>
