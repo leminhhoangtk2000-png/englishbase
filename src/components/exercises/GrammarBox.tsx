@@ -33,13 +33,13 @@ export default function GrammarBox({
       case 'B2': return 'bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-300 border-orange-300 dark:border-orange-700';
       case 'C1': return 'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300 border-red-300 dark:border-red-700';
       case 'C2': return 'bg-purple-100 dark:bg-purple-900/20 text-purple-800 dark:text-purple-300 border-purple-300 dark:border-purple-700';
-      default: return 'bg-gray-100 dark:bg-gray-900/20 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-700';
+      default: return 'bg-gray-100 dark:bg-gray-900/20 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-800';
     }
   };
 
   return (
-    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
-      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
             <Book className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -64,7 +64,7 @@ export default function GrammarBox({
               </p>
               
               {/* Examples */}
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-700">
+              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-800">
                 <h5 className="font-medium text-gray-700 dark:text-gray-300 mb-2">Ví dụ:</h5>
                 <ul className="space-y-1">
                   {rule.examples.map((example, exIndex) => (

@@ -108,8 +108,8 @@ export default function MatchingExercise({
   };
 
   return (
-    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
-      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
           <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           {title || 'Bài tập ghép cặp'}
@@ -246,7 +246,7 @@ export default function MatchingExercise({
         )}
 
         {/* Nút điều khiển */}
-        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200 dark:border-gray-800">
           <Button
             onClick={handleCheck}
             className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white"
@@ -267,7 +267,7 @@ export default function MatchingExercise({
 
         {/* Kết quả */}
         {showFeedback && (
-          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700 mt-4">
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-800 mt-4">
             <div className="flex items-center justify-between">
               <p className="font-semibold text-gray-900 dark:text-gray-100">
                 Kết quả: <span className={getScoreColor()}>

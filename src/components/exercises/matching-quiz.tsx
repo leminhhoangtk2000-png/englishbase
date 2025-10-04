@@ -155,7 +155,7 @@ export function MatchingQuiz({ title, questions, answers, correctPairs }: Matchi
                     ${showResults && result === 'incorrect' ? 'border-red-500 bg-red-50 dark:bg-red-950 dark:border-red-400' : ''}
                     ${showResults && result === 'unanswered' ? 'border-yellow-500 bg-yellow-50 dark:bg-yellow-950 dark:border-yellow-400' : ''}
                     ${!showResults && hasAnswer ? 'border-green-400 bg-green-50 dark:bg-green-950 dark:border-green-400' : ''}
-                    ${!showResults && !isSelected && !hasAnswer ? 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-25 dark:hover:bg-blue-950' : ''}
+                    ${!showResults && !isSelected && !hasAnswer ? 'border-gray-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-25 dark:hover:bg-blue-950' : ''}
                   `}
                 >
                   <div className="flex items-start gap-2">
@@ -181,7 +181,7 @@ export function MatchingQuiz({ title, questions, answers, correctPairs }: Matchi
                   
                   {/* Show connected answer in results */}
                   {showResults && hasAnswer && (
-                    <div className="mt-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                    <div className="mt-2 pt-2 border-t border-gray-200 dark:border-gray-800">
                       <div className="text-sm">
                         <span className="text-muted-foreground">Bạn chọn: </span>
                         <span className={result === 'correct' ? 'text-green-700 dark:text-green-400 font-medium' : 'text-red-700 dark:text-red-400'}>
@@ -218,9 +218,9 @@ export function MatchingQuiz({ title, questions, answers, correctPairs }: Matchi
                     p-3 rounded-lg border cursor-pointer transition-all duration-200
                     ${showResults && result === 'correct' ? 'border-green-500 bg-green-50 dark:bg-green-950 dark:border-green-400' : ''}
                     ${showResults && result === 'incorrect' ? 'border-red-500 bg-red-50 dark:bg-red-950 dark:border-red-400' : ''}
-                    ${showResults && result === 'unused' ? 'border-gray-300 bg-gray-50 dark:bg-gray-900 dark:border-gray-700' : ''}
+                    ${showResults && result === 'unused' ? 'border-gray-300 bg-gray-50 dark:bg-gray-900 dark:border-gray-800' : ''}
                     ${!showResults && isUsed ? 'border-green-400 bg-green-50 dark:bg-green-950 dark:border-green-400' : ''}
-                    ${!showResults && !isUsed ? 'border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 hover:bg-orange-25 dark:hover:bg-orange-950' : ''}
+                    ${!showResults && !isUsed ? 'border-gray-200 dark:border-gray-800 hover:border-orange-300 dark:hover:border-orange-600 hover:bg-orange-25 dark:hover:bg-orange-950' : ''}
                     ${selectedQuestionIndex !== null && !showResults && !isUsed ? 'hover:border-orange-400 dark:hover:border-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950' : ''}
                   `}
                 >
@@ -268,7 +268,7 @@ export function MatchingQuiz({ title, questions, answers, correctPairs }: Matchi
         </div>
 
         {showResults && (
-          <div className="mt-6 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg">
+          <div className="mt-6 p-4 bg-slate-50 dark:bg-background rounded-lg">
             <h4 className="font-semibold mb-2 dark:text-gray-100">Thống kê kết quả:</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
               <div className="text-center">

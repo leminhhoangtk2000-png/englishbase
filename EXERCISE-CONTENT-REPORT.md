@@ -31,19 +31,22 @@ src/content/exercises/
 ## 🔧 What Was Fixed
 
 ### 1. **Import Statements**
+
 Changed all imports from Docusaurus format to Next.js format:
 
-| Old (Docusaurus) | New (Next.js) |
-|-----------------|---------------|
+| Old (Docusaurus)                                            | New (Next.js)                                                               |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `import MultipleChoiceQuiz from '@site/src/components/...'` | `import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz'` |
-| `import Lueckentext from '@site/src/components/...'` | `import { Lueckentext } from '@/components/ui/lueckentext'` |
-| `import TrueFalseQuiz from '@site/src/components/...'` | `import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz'` |
-| `import AuthorCredit from '@site/src/components/...'` | `import { AuthorCredit } from '@/components/ui/author-credit'` |
+| `import Lueckentext from '@site/src/components/...'`        | `import { Lueckentext } from '@/components/ui/lueckentext'`                 |
+| `import TrueFalseQuiz from '@site/src/components/...'`      | `import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz'`    |
+| `import AuthorCredit from '@site/src/components/...'`       | `import { AuthorCredit } from '@/components/ui/author-credit'`              |
 
 ### 2. **Removed Components**
+
 - ❌ `FacebookComments` - Removed all references and usage
 
 ### 3. **New Component Created**
+
 - ✅ `TrueFalseQuiz` (`src/components/exercises/true-false-quiz.tsx`)
   - Full dark theme support
   - Richtig/Falsch (True/False) questions
@@ -57,31 +60,34 @@ Changed all imports from Docusaurus format to Next.js format:
 All components now support **dark theme** and are **responsive**:
 
 ### 1. **MultipleChoiceQuiz**
+
 ```tsx
 <MultipleChoiceQuiz
   questions={[
     {
-      question: 'Was ist richtig?',
-      options: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'B',
+      question: "Was ist richtig?",
+      options: ["A", "B", "C", "D"],
+      correctAnswer: "B",
     },
   ]}
 />
 ```
 
 ### 2. **Lueckentext** (Fill-in-the-blanks)
+
 ```tsx
 <Lueckentext
   title="Bài tập đục lỗ"
   textParts={[
     "Text before ",
     { type: "blank", correctAnswer: "answer" },
-    " text after."
+    " text after.",
   ]}
 />
 ```
 
 ### 3. **TrueFalseQuiz** (NEW!)
+
 ```tsx
 <TrueFalseQuiz
   title="Richtig oder Falsch?"
@@ -93,39 +99,45 @@ All components now support **dark theme** and are **responsive**:
 ```
 
 ### 4. **Satzbildung** (Sentence construction)
+
 ```tsx
 <Satzbildung
   title="Sắp xếp từ"
   exercises={[
     {
-      words: ['Ich', 'gehe', 'heute', 'ins', 'Kino'],
-      correctSentence: 'Ich gehe heute ins Kino.',
-      instruction: 'Động từ ở vị trí 2'
+      words: ["Ich", "gehe", "heute", "ins", "Kino"],
+      correctSentence: "Ich gehe heute ins Kino.",
+      instruction: "Động từ ở vị trí 2",
     },
   ]}
 />
 ```
 
 ### 5. **MatchingQuiz** (Pair matching)
+
 ```tsx
 <MatchingQuiz
   title="Ghép cặp"
-  questions={['Q1', 'Q2']}
-  answers={['A1', 'A2']}
-  correctPairs={[[0, 0], [1, 1]]}
+  questions={["Q1", "Q2"]}
+  answers={["A1", "A2"]}
+  correctPairs={[
+    [0, 0],
+    [1, 1],
+  ]}
 />
 ```
 
 ### 6. **ExerciseTable** (Table exercises)
+
 ```tsx
 <ExerciseTable
   title="Chia động từ"
   exercises={[
     {
       id: 1,
-      german: 'Ich __ nach Berlin. (fahren)',
-      correctAnswer: 'fahre',
-      explanation: 'fahren → ich fahre'
+      german: "Ich __ nach Berlin. (fahren)",
+      correctAnswer: "fahre",
+      explanation: "fahren → ich fahre",
     },
   ]}
 />
@@ -138,6 +150,7 @@ All components now support **dark theme** and are **responsive**:
 ### A1 Level (32 files)
 
 #### Hören (16 files)
+
 - Einkaufen teil 1 & 2
 - Familie und Freunde Teil 1 & 2
 - Im Restaurant teil 1 & 2
@@ -148,6 +161,7 @@ All components now support **dark theme** and are **responsive**:
 - Zahlen und Uhrzeit Teil 1 & 2
 
 #### Lesen (16 files)
+
 - Berlin – Die Hauptstadt Deutschlands
 - Die Kaffeehaus-Kultur in Europa
 - Berühmte Festivals in Europa
@@ -168,6 +182,7 @@ All components now support **dark theme** and are **responsive**:
 ### A2 Level (27 files)
 
 #### Hören (10 files)
+
 - Wie ich Deutsch gelernt habe
 - Ein Buch oder Film, das ich empfehlen kann
 - Meine Arbeit und was mir daran gefällt
@@ -180,6 +195,7 @@ All components now support **dark theme** and are **responsive**:
 - Was ich in meiner Freizeit mache
 
 #### Lesen (17 files)
+
 - Bahnreisen in Europa
 - Berühmte Getränke in Europa
 - Berühmte Käsesorten in Europa
@@ -201,9 +217,11 @@ All components now support **dark theme** and are **responsive**:
 ### B1 Level (26 files)
 
 #### Hören (6 files)
+
 - Teil 1-7 (Advanced listening comprehension)
 
 #### Lesen (20 files)
+
 - Nachhaltiger Tourismus
 - Klimawandel und Stadtleben
 - Künstliche Intelligenz im Alltag
@@ -226,6 +244,7 @@ All components now support **dark theme** and are **responsive**:
 - Wohnen
 
 ### B2 Level (0 files)
+
 - 📂 Empty folder - ready for content
 
 ---
@@ -233,15 +252,18 @@ All components now support **dark theme** and are **responsive**:
 ## 🚀 How to Add New Exercises
 
 ### Step 1: Choose Level and Type
+
 ```bash
 # Create new file in appropriate folder
 touch src/content/exercises/a2/Horen/new-exercise.mdx
 ```
 
 ### Step 2: Use Template
+
 Copy from `TEMPLATE.mdx` or existing exercise files
 
 ### Step 3: Add Frontmatter
+
 ```yaml
 ---
 title: Exercise Title
@@ -255,9 +277,10 @@ publish: True
 ```
 
 ### Step 4: Add Content
+
 ```mdx
-import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
-import { Lueckentext } from '@/components/ui/lueckentext';
+import { MultipleChoiceQuiz } from "@/components/ui/multiple-choice-quiz";
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ## 🎯 Exercise Section
 
@@ -266,6 +289,7 @@ import { Lueckentext } from '@/components/ui/lueckentext';
 ```
 
 ### Step 5: Test
+
 ```bash
 # Open in browser
 http://localhost:9003/exercises/a2/new-exercise
@@ -276,14 +300,17 @@ http://localhost:9003/exercises/a2/new-exercise
 ## 🎯 URLs for Testing
 
 ### A1 Exercises
+
 - Hören: `http://localhost:9003/exercises/a1/Horen/Einkaufen teil 1 - A1`
 - Lesen: `http://localhost:9003/exercises/a1/Lesen/Berlin – Die Hauptstadt Deutschlands`
 
 ### A2 Exercises
+
 - Hören: `http://localhost:9003/exercises/a2/Horen/ Wie ich Deutsch gelernt habe`
 - Lesen: `http://localhost:9003/exercises/a2/Lesen/Bahnreisen in Europa`
 
 ### B1 Exercises
+
 - Hören: `http://localhost:9003/exercises/b1/Horen/Teil1`
 - Lesen: `http://localhost:9003/exercises/b1/Lesen/1. LSS Nachhaltiger Tourismus`
 
@@ -292,6 +319,7 @@ http://localhost:9003/exercises/a2/new-exercise
 ## ✨ Features
 
 ### All Components Support:
+
 - ✅ **Dark Theme** - Auto-adapts to user's theme preference
 - ✅ **Responsive Design** - Works on mobile, tablet, desktop
 - ✅ **Real-time Feedback** - Visual indicators for correct/incorrect
@@ -300,6 +328,7 @@ http://localhost:9003/exercises/a2/new-exercise
 - ✅ **Keyboard Navigation** - Accessible for all users
 
 ### Exercise Types:
+
 - 🎯 Multiple Choice Questions
 - ✏️ Fill-in-the-blanks (Lückentext)
 - ✓ True/False (Richtig/Falsch)
@@ -312,11 +341,14 @@ http://localhost:9003/exercises/a2/new-exercise
 ## 📝 Notes
 
 ### File Naming Convention
+
 Current files use mixed formats:
+
 - ✅ Good: `Einkaufen teil 1 - A1.mdx`
 - ⚠️ Spaces in filenames (acceptable but not ideal)
 
 ### Future Improvements
+
 1. **Standardize filenames** - Use kebab-case format
 2. **Add metadata** - Create `.meta.json` for each exercise
 3. **Navigation** - Improve exercise discovery and listing
@@ -324,6 +356,7 @@ Current files use mixed formats:
 5. **B2 Content** - Add B2 level exercises
 
 ### Known Issues
+
 - ⚠️ Some filenames contain special characters (–, ö, ü, ä)
 - ⚠️ No B2 content yet
 - ⚠️ Exercise routing needs testing
@@ -333,6 +366,7 @@ Current files use mixed formats:
 ## 🔗 Related Files
 
 - **Component Files:**
+
   - `/src/components/ui/multiple-choice-quiz.tsx`
   - `/src/components/ui/lueckentext.tsx`
   - `/src/components/exercises/true-false-quiz.tsx` (NEW)
@@ -341,6 +375,7 @@ Current files use mixed formats:
   - `/src/components/exercises/exercise-table.tsx`
 
 - **Documentation:**
+
   - `/EXERCISE-GUIDE.md` - Complete guide for adding exercises
   - `/src/content/exercises/TEMPLATE.mdx` - Template file
 
@@ -354,6 +389,7 @@ Current files use mixed formats:
 All exercise files have been successfully migrated from Docusaurus to Next.js format.
 
 **Next Steps:**
+
 1. Test all exercises in browser
 2. Fix any routing issues
 3. Add B2 level content
@@ -361,5 +397,5 @@ All exercise files have been successfully migrated from Docusaurus to Next.js fo
 
 ---
 
-*Last Updated: 4/10/2025*
-*Commit: 90ca2ec*
+_Last Updated: 4/10/2025_
+_Commit: 90ca2ec_

@@ -103,8 +103,8 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
 
   if (!mounted) {
     return (
-      <Card className="w-full max-w-4xl mx-auto my-6 bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700">
-        <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b dark:border-gray-700">
+      <Card className="w-full max-w-4xl mx-auto my-6 bg-white dark:bg-background border-gray-200 dark:border-gray-800">
+        <CardHeader className="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-800">
           <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100">{title}</CardTitle>
           {subtitle && (
             <p className="text-sm text-muted-foreground dark:text-gray-400">{subtitle}</p>
@@ -120,8 +120,8 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto my-6 bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700">
-      <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b dark:border-gray-700">
+    <Card className="w-full max-w-4xl mx-auto my-6 bg-white dark:bg-background border-gray-200 dark:border-gray-800">
+      <CardHeader className="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-800">
         <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100">{title}</CardTitle>
         {subtitle && (
           <p className="text-sm text-muted-foreground dark:text-gray-400">{subtitle}</p>
@@ -137,7 +137,7 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
             const correctAnswers = getCorrectAnswers(exercise);
             
             return (
-              <div key={exercise.id} className="flex items-start gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-800">
+              <div key={exercise.id} className="flex items-start gap-3 p-3 border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900">
                 <Badge variant="outline" className="min-w-[30px] text-center mt-1 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300">
                   {exercise.id}
                 </Badge>
@@ -156,7 +156,7 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
                                 correctAnswers[partIndex] || ''
                               )
                             }}
-                            className={`mx-1 transition-all duration-200 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 ${
+                            className={`mx-1 transition-all duration-200 bg-white dark:bg-background text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 ${
                               showResults
                                 ? currentAnswers[partIndex]?.trim().toLowerCase() === correctAnswers[partIndex]?.toLowerCase()
                                   ? 'border-green-500 dark:border-green-600 bg-green-50 dark:bg-green-950'
@@ -200,7 +200,7 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
           })}
         </div>
         
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
           <div className="flex gap-2">
             <Button 
               onClick={checkAnswers} 
@@ -221,7 +221,7 @@ export function ExerciseTable({ title, subtitle, exercises }: ExerciseTableProps
           
           {showResults && (
             <div className="text-right">
-              <Badge variant="secondary" className="text-sm bg-gray-100 dark:bg-slate-700 text-gray-900 dark:text-gray-100">
+              <Badge variant="secondary" className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                 Điểm số: {calculateScore()}
               </Badge>
             </div>

@@ -150,8 +150,8 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
   };
 
   return (
-    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
-      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
           <Play className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           {title || 'Bài tập điền chỗ trống'}
@@ -186,7 +186,7 @@ export default function Lueckentext({ title, textParts }: LueckentextProps) {
 
         {/* Kết quả */}
         {showFeedback && (
-          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
             <div className="flex items-center justify-between">
               <p className="font-semibold text-gray-900 dark:text-gray-100">
                 Kết quả: <span className={getScoreColor()}>

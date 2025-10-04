@@ -3,21 +3,27 @@
 import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
+import { MultipleChoiceQuizGroup } from '@/components/ui/multiple-choice-quiz-group';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
 import { AuthorCredit } from '@/components/ui/author-credit';
 import Satzbildung from '@/components/exercises/satzbildung';
 import { MatchingQuiz } from '@/components/exercises/matching-quiz';
 import { ExerciseTable } from '@/components/exercises/exercise-table';
+import { ExerciseComments } from '@/components/exercises/ExerciseComments';
+import { YouTubeEmbed } from '@/components/exercises/youtube-embed';
 
 const components = {
   MultipleChoiceQuiz,
+  MultipleChoiceQuizGroup,
   Lueckentext,
   TrueFalseQuiz,
   AuthorCredit,
   Satzbildung,
   MatchingQuiz,
   ExerciseTable,
+  ExerciseComments,
+  YouTubeEmbed,
   // Add custom HTML elements styling
   h1: (props: any) => (
     <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100" {...props} />
@@ -40,13 +46,15 @@ const components = {
   li: (props: any) => (
     <li className="ml-4" {...props} />
   ),
-  iframe: (props: any) => (
-    <div className="aspect-video w-full mb-6 rounded-lg overflow-hidden shadow-lg">
-      <iframe className="w-full h-full" {...props} />
-    </div>
-  ),
+  iframe: (props: any) => {
+    // Chỉ lấy src, bỏ qua tất cả các props HTML cũ
+    const { src } = props;
+    
+    // Sử dụng component YouTubeEmbed chuyên dụng
+    return <YouTubeEmbed src={src} />;
+  },
   hr: (props: any) => (
-    <hr className="my-8 border-gray-200 dark:border-gray-700" {...props} />
+    <hr className="my-8 border-gray-200 dark:border-gray-800" {...props} />
   ),
   img: (props: any) => (
     <img className="rounded-lg shadow-md mb-6 w-full" {...props} />

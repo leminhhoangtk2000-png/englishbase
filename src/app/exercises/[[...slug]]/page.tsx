@@ -47,7 +47,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
     // Render as independent exercise page without sidebar
     return (
-      <main className="w-full py-6 exercise-page bg-gray-50 dark:bg-slate-950 min-h-screen">
+      <main className="w-full py-6 exercise-page bg-gray-50 dark:bg-background min-h-screen">
         <div className="container mx-auto max-w-5xl px-4">
           {/* Breadcrumb */}
           <div className="mb-6">
@@ -75,7 +75,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
 
           {/* Header */}
-          <div className="mb-8 bg-white dark:bg-slate-900 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+          <div className="mb-8 bg-white dark:bg-background rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-800">
             <div className="flex items-center gap-3 mb-3">
               <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
                 {doc.level}
@@ -85,7 +85,7 @@ export default async function DocPage({ params }: DocPageProps) {
                   {doc.tags.map((tag: string, index: number) => (
                     <span 
                       key={index}
-                      className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs"
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded text-xs"
                     >
                       {tag}
                     </span>
@@ -104,7 +104,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
 
           {/* Content */}
-          <article className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+          <article className="bg-white dark:bg-background rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-800">
             <ExerciseMetadataHider />
             <ExerciseMDXRenderer source={mdxSource} />
           </article>

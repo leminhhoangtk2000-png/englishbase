@@ -169,7 +169,7 @@ export function FormingQuestions({ title, statements, correctQuestions }: Formin
                   ? 'border-green-500 bg-green-50 dark:bg-green-900/10' 
                   : isChecked && hasAnswer && !isCorrect
                   ? 'border-red-500 bg-red-50 dark:bg-red-900/10'
-                  : 'border-gray-200 dark:border-gray-700'
+                  : 'border-gray-200 dark:border-gray-800'
               }`}
             >
               {/* Original Statement */}

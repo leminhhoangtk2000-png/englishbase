@@ -22,8 +22,8 @@ Trotz der **Herausforderungen** bietet **nachhaltiger** Tourismus viele Vorteile
 
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ### Bài tập Richtig / Falsch
 
@@ -31,61 +31,80 @@ import { AuthorCredit } from '@/components/ui/author-credit';
   title="Nachhaltiger Tourismus - Wahr oder Falsch?"
   questions={[
     {
-      question: "Nachhaltiger Tourismus bedeutet, dass Touristen nur in Luxushotels übernachten sollten.",
+      question:
+        "Nachhaltiger Tourismus bedeutet, dass Touristen nur in Luxushotels übernachten sollten.",
       correctAnswer: "Falsch",
-      explanation: "Nachhaltiger Tourismus không yêu cầu ở Luxushotels, mà tập trung vào việc bảo vệ môi trường và hỗ trợ địa phương, trái ngược với ý chỉ ở khách sạn sang trọng."
+      explanation:
+        "Nachhaltiger Tourismus không yêu cầu ở Luxushotels, mà tập trung vào việc bảo vệ môi trường và hỗ trợ địa phương, trái ngược với ý chỉ ở khách sạn sang trọng.",
     },
     {
-      question: "Flugreisen sind ein großes Problem für nachhaltigen Tourismus, weil sie viel CO₂-Ausstoß verursachen.",
+      question:
+        "Flugreisen sind ein großes Problem für nachhaltigen Tourismus, weil sie viel CO₂-Ausstoß verursachen.",
       correctAnswer: "Richtig",
-      explanation: "Đoạn văn chỉ rõ rằng Flugreisen gây ra nhiều CO₂, là một vấn đề lớn cho sự bền vững, nên câu này đúng."
+      explanation:
+        "Đoạn văn chỉ rõ rằng Flugreisen gây ra nhiều CO₂, là một vấn đề lớn cho sự bền vững, nên câu này đúng.",
     },
     {
-      question: "In allen Ländern gibt es eine gute Infrastruktur für nachhaltigen Tourismus.",
+      question:
+        "In allen Ländern gibt es eine gute Infrastruktur für nachhaltigen Tourismus.",
       correctAnswer: "Falsch",
-      explanation: "Bài viết nói rằng không phải mọi quốc gia đều có cơ sở hạ tầng tốt, nên câu „tất cả các nước đều có“ là sai."
+      explanation:
+        "Bài viết nói rằng không phải mọi quốc gia đều có cơ sở hạ tầng tốt, nên câu „tất cả các nước đều có“ là sai.",
     },
     {
-      question: "Nachhaltiger Tourismus kann helfen, die lokale Wirtschaft zu unterstützen.",
+      question:
+        "Nachhaltiger Tourismus kann helfen, die lokale Wirtschaft zu unterstützen.",
       correctAnswer: "Richtig",
-      explanation: "Nachhaltiger Tourismus hỗ trợ kinh tế địa phương qua việc tạo việc làm và mua sản phẩm địa phương, nên câu này đúng."
+      explanation:
+        "Nachhaltiger Tourismus hỗ trợ kinh tế địa phương qua việc tạo việc làm và mua sản phẩm địa phương, nên câu này đúng.",
     },
     {
       question: "Städte wie Venedig haben keine Probleme mit Überfüllung.",
       correctAnswer: "Falsch",
-      explanation: "Đoạn văn nêu rõ Venedig và Barcelona bị quá tải du khách, nên câu nói không có vấn đề là sai."
+      explanation:
+        "Đoạn văn nêu rõ Venedig và Barcelona bị quá tải du khách, nên câu nói không có vấn đề là sai.",
     },
     {
-      question: "Experten meinen, dass Regierungen strengere Regeln machen sollten, um nachhaltigen Tourismus zu fördern.",
+      question:
+        "Experten meinen, dass Regierungen strengere Regeln machen sollten, um nachhaltigen Tourismus zu fördern.",
       correctAnswer: "Richtig",
-      explanation: "Các chuyên gia đề xuất quy định nghiêm ngặt hơn, như giới hạn số lượng khách, nên câu này đúng."
+      explanation:
+        "Các chuyên gia đề xuất quy định nghiêm ngặt hơn, như giới hạn số lượng khách, nên câu này đúng.",
     },
     {
-      question: "Alle Touristen sind bereit, auf Luxus zu verzichten, um nachhaltig zu reisen.",
+      question:
+        "Alle Touristen sind bereit, auf Luxus zu verzichten, um nachhaltig zu reisen.",
       correctAnswer: "Falsch",
-      explanation: "Không phải tất cả du khách đều sẵn sàng từ bỏ xa xỉ, vì một số người vẫn muốn tận hưởng nó dù nói về sự bền vững, nên câu này sai."
+      explanation:
+        "Không phải tất cả du khách đều sẵn sàng từ bỏ xa xỉ, vì một số người vẫn muốn tận hưởng nó dù nói về sự bền vững, nên câu này sai.",
     },
     {
-      question: "Hotels mit Solarenergie sind ein Beispiel für umweltfreundliche Unterkünfte.",
+      question:
+        "Hotels mit Solarenergie sind ein Beispiel für umweltfreundliche Unterkünfte.",
       correctAnswer: "Richtig",
-      explanation: "Đoạn văn đưa ví dụ cụ thể về khách sạn dùng năng lượng mặt trời là thân thiện với môi trường, nên câu này đúng."
+      explanation:
+        "Đoạn văn đưa ví dụ cụ thể về khách sạn dùng năng lượng mặt trời là thân thiện với môi trường, nên câu này đúng.",
     },
     {
-      question: "Bewusster zu reisen bedeutet, dass Touristen die Natur zerstören dürfen.",
+      question:
+        "Bewusster zu reisen bedeutet, dass Touristen die Natur zerstören dürfen.",
       correctAnswer: "Falsch",
-      explanation: "Bewusster reisen nghĩa là du lịch có ý thức để bảo vệ thiên nhiên, không phải phá hoại, nên câu này sai."
+      explanation:
+        "Bewusster reisen nghĩa là du lịch có ý thức để bảo vệ thiên nhiên, không phải phá hoại, nên câu này sai.",
     },
     {
-      question: "Höhere Steuern für umweltschädliche Aktivitäten könnten eine Lösung für nachhaltigen Tourismus sein.",
+      question:
+        "Höhere Steuern für umweltschädliche Aktivitäten könnten eine Lösung für nachhaltigen Tourismus sein.",
       correctAnswer: "Richtig",
-      explanation: "Tăng thuế cho các hoạt động gây hại môi trường được đề xuất như một giải pháp, nên câu này đúng."
-    }
+      explanation:
+        "Tăng thuế cho các hoạt động gây hại môi trường được đề xuất như một giải pháp, nên câu này đúng.",
+    },
   ]}
 />
 
 ---
 
-import { Lueckentext } from '@/components/ui/lueckentext';
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ### **Bài tập đục lỗ:**
 
@@ -120,7 +139,7 @@ Fülle die Lücken mit den richtigen Wörtern aus.
     " der Besucherzahlen.",
     "\n\nTrotz der Herausforderungen kann nachhaltiger Tourismus das Bewusstsein für ",
     { type: "blank", correctAnswer: "Umweltschutz" },
-    " fördern."
+    " fördern.",
   ]}
 />
 
@@ -128,27 +147,27 @@ Fülle die Lücken mit den richtigen Wörtern aus.
 
 ### **📖 Wichtige Vokabeln**
 
-|Từ vựng|Từ vựng số nhiều|Loại từ|Nghĩa|
-|---|---|---|---|
-|der Tourismus|-|Nomen|du lịch|
-|nachhaltig|-|Adjektiv|bền vững|
-|die Herausforderung|die Herausforderungen|Nomen|thách thức|
-|die Umwelt|-|Nomen|môi trường|
-|schonen|-|Verb|bảo vệ, giữ gìn|
-|umweltfreundlich|-|Adjektiv|thân thiện với môi trường|
-|die Solarenergie|-|Nomen|năng lượng mặt trời|
-|bewusst|-|Adjektiv|có ý thức|
-|der CO₂-Ausstoß|-|Nomen|khí thải CO₂|
-|abschrecken|-|Verb|làm e ngại, ngăn cản|
-|die Infrastruktur|-|Nomen|cơ sở hạ tầng|
-|umsetzen|-|Verb|thực hiện|
-|die Nachhaltigkeit|-|Nomen|sự bền vững|
-|die Überfüllung|-|Nomen|sự quá tải|
-|verschlechtern|-|Verb|làm xấu đi, làm tệ hơn|
-|die Begrenzung|die Begrenzungen|Nomen|sự giới hạn|
-|umweltschädlich|-|Adjektiv|gây hại cho môi trường|
-|der Umweltschutz|-|Nomen|sự bảo vệ môi trường|
-|ankurbeln|-|Verb|thúc đẩy|
+| Từ vựng             | Từ vựng số nhiều      | Loại từ  | Nghĩa                     |
+| ------------------- | --------------------- | -------- | ------------------------- |
+| der Tourismus       | -                     | Nomen    | du lịch                   |
+| nachhaltig          | -                     | Adjektiv | bền vững                  |
+| die Herausforderung | die Herausforderungen | Nomen    | thách thức                |
+| die Umwelt          | -                     | Nomen    | môi trường                |
+| schonen             | -                     | Verb     | bảo vệ, giữ gìn           |
+| umweltfreundlich    | -                     | Adjektiv | thân thiện với môi trường |
+| die Solarenergie    | -                     | Nomen    | năng lượng mặt trời       |
+| bewusst             | -                     | Adjektiv | có ý thức                 |
+| der CO₂-Ausstoß     | -                     | Nomen    | khí thải CO₂              |
+| abschrecken         | -                     | Verb     | làm e ngại, ngăn cản      |
+| die Infrastruktur   | -                     | Nomen    | cơ sở hạ tầng             |
+| umsetzen            | -                     | Verb     | thực hiện                 |
+| die Nachhaltigkeit  | -                     | Nomen    | sự bền vững               |
+| die Überfüllung     | -                     | Nomen    | sự quá tải                |
+| verschlechtern      | -                     | Verb     | làm xấu đi, làm tệ hơn    |
+| die Begrenzung      | die Begrenzungen      | Nomen    | sự giới hạn               |
+| umweltschädlich     | -                     | Adjektiv | gây hại cho môi trường    |
+| der Umweltschutz    | -                     | Nomen    | sự bảo vệ môi trường      |
+| ankurbeln           | -                     | Verb     | thúc đẩy                  |
 
 ---
 
@@ -169,26 +188,24 @@ Mặc dù có nhiều **thách thức**, **du lịch bền vững** mang lại n
 ### **📌 Wichtige Grammatik**
 
 1. **Konjunktiv II (Möglichkeitsform)**
-    
-    - "Wenn Touristen **bewusster reisen würden**, könnten sie die Natur schützen." (Nếu du khách đi du lịch có ý thức hơn, họ có thể bảo vệ thiên nhiên.)
-    - "Wenn mehr Menschen nachhaltig reisen **würden**, könnte der CO₂-Ausstoß sinken." (Nếu nhiều người đi du lịch bền vững hơn, lượng khí thải CO₂ có thể giảm.)
+
+   - "Wenn Touristen **bewusster reisen würden**, könnten sie die Natur schützen." (Nếu du khách đi du lịch có ý thức hơn, họ có thể bảo vệ thiên nhiên.)
+   - "Wenn mehr Menschen nachhaltig reisen **würden**, könnte der CO₂-Ausstoß sinken." (Nếu nhiều người đi du lịch bền vững hơn, lượng khí thải CO₂ có thể giảm.)
 
 2. **Passiv mit „werden“**
-    
-    - "Die Umwelt **wird durch nachhaltigen Tourismus geschont**." (Môi trường được bảo vệ nhờ du lịch bền vững.)
-    - "Reiseziele **werden durch Überfüllung belastet**." (Các điểm đến bị ảnh hưởng bởi sự quá tải.)
 
----
-### **Tác giả ✍️**
-
-<AuthorCredit author="Deutschvn" />
+   - "Die Umwelt **wird durch nachhaltigen Tourismus geschont**." (Môi trường được bảo vệ nhờ du lịch bền vững.)
+   - "Reiseziele **werden durch Überfüllung belastet**." (Các điểm đến bị ảnh hưởng bởi sự quá tải.)
 
 ---
 
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
 
---- 
+<ExerciseComments
+  exerciseId="b1-1.-lss-nachhaltiger-tourismus"
+  url="/exercises/b1/Lesen/1. LSS Nachhaltiger Tourismus"
+/>
+
+---

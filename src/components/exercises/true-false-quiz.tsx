@@ -46,8 +46,8 @@ export function TrueFalseQuiz({ title, questions }: TrueFalseQuizProps) {
     : 0;
 
   return (
-    <Card className="w-full bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden my-6">
-      <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="w-full bg-white dark:bg-background shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden my-6">
+      <CardHeader className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="text-base font-medium flex items-center gap-3 text-gray-800 dark:text-gray-100">
           <span className="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full w-7 h-7 flex items-center justify-center text-sm font-semibold">
             ✓
@@ -71,8 +71,8 @@ export function TrueFalseQuiz({ title, questions }: TrueFalseQuizProps) {
                       ? 'border-green-400 dark:border-green-600 bg-green-50 dark:bg-green-950'
                       : isIncorrect
                       ? 'border-red-400 dark:border-red-600 bg-red-50 dark:bg-red-950'
-                      : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800'
-                    : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 hover:border-purple-300 dark:hover:border-purple-600'
+                      : 'border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900'
+                    : 'border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 hover:border-purple-300 dark:hover:border-purple-600'
                 }`}
               >
                 <div className="flex items-start justify-between gap-4">
@@ -131,7 +131,7 @@ export function TrueFalseQuiz({ title, questions }: TrueFalseQuizProps) {
                   </div>
                 </div>
                 {showResults && isIncorrect && (
-                  <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                  <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-800">
                     <p className="text-xs text-gray-600 dark:text-gray-400">
                       <strong className="text-gray-700 dark:text-gray-300">Đúng:</strong>{' '}
                       <span className="text-green-700 dark:text-green-400 font-medium">

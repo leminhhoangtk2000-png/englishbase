@@ -23,29 +23,68 @@ Wenn man eine neue Wohnung sucht, helfen Websites wie **Immobilienscout24 oder W
 In Deutschland gilt das **Mieterschutzgesetz**, das Mieter vor ungerechten Kündigungen schützt. Trotzdem sollte man den Mietvertrag gut lesen, bevor man unterschreibt!
 
 ---
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ### Bài tập Richtig / Falsch
 
 <TrueFalseQuiz
   title="Wohnen in Deutschland - Wahr oder Falsch?"
   questions={[
-    { question: "In Deutschland leben viele Menschen in Mietwohnungen, weil Eigentumswohnungen oft teuer sind.", correctAnswer: "Richtig" },
-    { question: "Besonders in kleinen Städten wie München ist der Wohnungsmarkt angespannt.", correctAnswer: "Falsch" },
-    { question: "Die Kaution beträgt in der Regel fünf Monatsmieten.", correctAnswer: "Falsch" },
-    { question: "In der Miete sind meistens auch Nebenkosten wie Strom und Wasser enthalten.", correctAnswer: "Richtig" },
-    { question: "Jeder Haushalt in Deutschland muss den Rundfunkbeitrag zahlen.", correctAnswer: "Richtig" },
-    { question: "Deutsche Wohnungen werden oft mit einer Küche vermietet.", correctAnswer: "Falsch" },
-    { question: "Teppiche sind in deutschen Wohnungen sehr häufig.", correctAnswer: "Falsch" },
-    { question: "Studierende leben oft in Wohngemeinschaften, um Geld zu sparen.", correctAnswer: "Richtig" },
-    { question: "Auf Websites wie WG-Gesucht kann man eine Wohnung oder ein WG-Zimmer finden.", correctAnswer: "Richtig" },
-    { question: "Das Mieterschutzgesetz schützt Vermieter vor ungerechten Kündigungen.", correctAnswer: "Falsch" }
+    {
+      question:
+        "In Deutschland leben viele Menschen in Mietwohnungen, weil Eigentumswohnungen oft teuer sind.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Besonders in kleinen Städten wie München ist der Wohnungsmarkt angespannt.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question: "Die Kaution beträgt in der Regel fünf Monatsmieten.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question:
+        "In der Miete sind meistens auch Nebenkosten wie Strom und Wasser enthalten.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Jeder Haushalt in Deutschland muss den Rundfunkbeitrag zahlen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question: "Deutsche Wohnungen werden oft mit einer Küche vermietet.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question: "Teppiche sind in deutschen Wohnungen sehr häufig.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question:
+        "Studierende leben oft in Wohngemeinschaften, um Geld zu sparen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Auf Websites wie WG-Gesucht kann man eine Wohnung oder ein WG-Zimmer finden.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Das Mieterschutzgesetz schützt Vermieter vor ungerechten Kündigungen.",
+      correctAnswer: "Falsch",
+    },
   ]}
 />
 
 ---
-import { Lueckentext } from '@/components/ui/lueckentext';
+
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ### **Bài tập đục lỗ:**
 
@@ -94,7 +133,7 @@ Fülle die Lücken mit den richtigen Wörtern aus.
     { type: "blank", correctAnswer: "Mieterschutzgesetz" },
     " schützt Mieter, aber man sollte den ",
     { type: "blank", correctAnswer: "Mietvertrag" },
-    " immer gut lesen."
+    " immer gut lesen.",
   ]}
 />
 
@@ -102,29 +141,39 @@ Fülle die Lücken mit den richtigen Wörtern aus.
 
 ### **📖 Wichtige Vokabeln**
 
-|Từ vựng|Từ vựng số nhiều|Loại từ|Nghĩa|
-|---|---|---|---|
-|die Mietwohnung|die Mietwohnungen|Nomen|căn hộ thuê|
-|die Eigentumswohnung|die Eigentumswohnungen|Nomen|căn hộ sở hữu riêng|
-|die Kaution|die Kautionen|Nomen|tiền đặt cọc|
-|die Miete|die Mieten|Nomen|tiền thuê nhà|
-|die Kaltmiete|die Kaltmieten|Nomen|tiền thuê nhà chưa tính phí phụ|
-|die Nebenkosten|-|Nomen|chi phí phụ (điện, nước, sưởi, v.v.)|
-|der Rundfunkbeitrag|die Rundfunkbeiträge|Nomen|phí truyền hình và phát thanh|
-|die Wohngemeinschaft (WG)|die Wohngemeinschaften|Nomen|nhà ở chung (chia sẻ phòng)|
-|der Vormieter|die Vormieter|Nomen|người thuê trước đó|
-|das Laminat|die Laminate|Nomen|sàn gỗ công nghiệp|
-|das Parkett|die Parkette|Nomen|sàn gỗ tự nhiên|
-|der Betrüger|die Betrüger|Nomen|kẻ lừa đảo|
-|das Mieterschutzgesetz|-|Nomen|luật bảo vệ người thuê nhà|
-|vermieten|-|Verb|cho thuê|
-|mieten|-|Verb|thuê|
-|kündigen|-|Verb|hủy hợp đồng|
+| Từ vựng                   | Từ vựng số nhiều       | Loại từ | Nghĩa                                |
+| ------------------------- | ---------------------- | ------- | ------------------------------------ |
+| die Mietwohnung           | die Mietwohnungen      | Nomen   | căn hộ thuê                          |
+| die Eigentumswohnung      | die Eigentumswohnungen | Nomen   | căn hộ sở hữu riêng                  |
+| die Kaution               | die Kautionen          | Nomen   | tiền đặt cọc                         |
+| die Miete                 | die Mieten             | Nomen   | tiền thuê nhà                        |
+| die Kaltmiete             | die Kaltmieten         | Nomen   | tiền thuê nhà chưa tính phí phụ      |
+| die Nebenkosten           | -                      | Nomen   | chi phí phụ (điện, nước, sưởi, v.v.) |
+| der Rundfunkbeitrag       | die Rundfunkbeiträge   | Nomen   | phí truyền hình và phát thanh        |
+| die Wohngemeinschaft (WG) | die Wohngemeinschaften | Nomen   | nhà ở chung (chia sẻ phòng)          |
+| der Vormieter             | die Vormieter          | Nomen   | người thuê trước đó                  |
+| das Laminat               | die Laminate           | Nomen   | sàn gỗ công nghiệp                   |
+| das Parkett               | die Parkette           | Nomen   | sàn gỗ tự nhiên                      |
+| der Betrüger              | die Betrüger           | Nomen   | kẻ lừa đảo                           |
+| das Mieterschutzgesetz    | -                      | Nomen   | luật bảo vệ người thuê nhà           |
+| vermieten                 | -                      | Verb    | cho thuê                             |
+| mieten                    | -                      | Verb    | thuê                                 |
+| kündigen                  | -                      | Verb    | hủy hợp đồng                         |
 
 ---
+
 ### **Luyện nói**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ysMpwhkzZIA?si=sR74x_Oy0eO3YlCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/ysMpwhkzZIA?si=sR74x_Oy0eO3YlCE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ---
 
@@ -147,24 +196,24 @@ Khi tìm nhà mới, bạn có thể sử dụng các trang web như **Immobilie
 ### **📌 Wichtige Grammatik**
 
 1. **Nomen-Verb-Verbindungen**
-    
-    - "Man **zahlt eine Kaution** beim Einzug." (Trả tiền đặt cọc khi chuyển vào.)
-    - "Viele Menschen **suchen eine Wohnung** online." (Nhiều người tìm căn hộ trực tuyến.)
+
+   - "Man **zahlt eine Kaution** beim Einzug." (Trả tiền đặt cọc khi chuyển vào.)
+   - "Viele Menschen **suchen eine Wohnung** online." (Nhiều người tìm căn hộ trực tuyến.)
+
 2. **Passiv mit „werden“**
-    
-    - "Viele Wohnungen **werden ohne Küche vermietet**." (Nhiều căn hộ được cho thuê mà không có bếp.)
-    - "Das Mieterschutzgesetz **wird oft genutzt**, um Mieter zu schützen." (Luật bảo vệ người thuê nhà thường được sử dụng để bảo vệ người thuê.)
+
+   - "Viele Wohnungen **werden ohne Küche vermietet**." (Nhiều căn hộ được cho thuê mà không có bếp.)
+   - "Das Mieterschutzgesetz **wird oft genutzt**, um Mieter zu schützen." (Luật bảo vệ người thuê nhà thường được sử dụng để bảo vệ người thuê.)
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Deutschvn" />
-
----
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
 
---- 
+<ExerciseComments
+  exerciseId="b1-wohnen-in-deutschland-–-was-du-wissen-solltest"
+  url="/exercises/b1/Lesen/Wohnen in Deutschland – Was du wissen solltest"
+/>
+
+---

@@ -88,8 +88,8 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
                   ? 'border-green-400 dark:border-green-600 bg-green-50 dark:bg-green-950 text-green-800 dark:text-green-300' 
                   : isIncorrect 
                     ? 'border-red-400 dark:border-red-600 bg-red-50 dark:bg-red-950 text-red-800 dark:text-red-300' 
-                    : 'border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300'
-                : 'border-blue-300 dark:border-blue-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-900 hover:border-blue-400 dark:hover:border-blue-500'
+                    : 'border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300'
+                : 'border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-900 hover:border-blue-400 dark:hover:border-blue-500'
             }`}
             placeholder="___"
           />
@@ -122,8 +122,8 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
     : 0;
 
   return (
-    <Card className="w-full bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden my-6">
-      <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="w-full bg-white dark:bg-background shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden my-6">
+      <CardHeader className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="text-base font-medium flex items-center gap-3 text-gray-800 dark:text-gray-100">
           <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full w-7 h-7 flex items-center justify-center text-sm font-semibold">
             ✏️
@@ -132,7 +132,7 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-5 space-y-4">
-        <div className="text-base leading-relaxed bg-gray-50 dark:bg-slate-800 text-gray-900 dark:text-gray-100 p-4 rounded-lg border border-gray-200 dark:border-gray-700 whitespace-pre-line">
+        <div className="text-base leading-relaxed bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4 rounded-lg border border-gray-200 dark:border-gray-800 whitespace-pre-line">
           {textParts.map((part, index) => renderTextPart(part, index))}
         </div>
 
@@ -180,7 +180,7 @@ export function Lueckentext({ title, textParts }: LueckentextProps) {
               {textParts
                 .filter((part): part is BlankItem => typeof part === 'object' && part.type === 'blank')
                 .map((blank, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-white dark:bg-slate-800 p-2 rounded border border-gray-200 dark:border-gray-700">
+                  <div key={index} className="flex items-center gap-2 bg-white dark:bg-gray-900 p-2 rounded border border-gray-200 dark:border-gray-800">
                     <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded text-xs font-medium">
                       #{index + 1}
                     </span>

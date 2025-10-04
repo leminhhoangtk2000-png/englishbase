@@ -20,7 +20,7 @@ export default function AuthorCredit({
   bio 
 }: AuthorCreditProps) {
   return (
-    <Card className="my-6 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+    <Card className="my-6 border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800">
       <CardContent className="p-4">
         <div className="flex items-center gap-4">
           {/* Avatar */}

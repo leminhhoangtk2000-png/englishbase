@@ -73,8 +73,8 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
   const usedKeywords = keywordUsage.filter(k => k.used).length;
 
   return (
-    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
-      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
           <Edit3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           {title || 'Bài tập viết'}
@@ -157,7 +157,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
 
         {/* Kiểm tra từ khóa */}
         {showFeedback && prompt.keywords && prompt.keywords.length > 0 && (
-          <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-800">
             <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-2">Kiểm tra từ khóa:</h5>
             <div className="flex flex-wrap gap-2">
               {keywordUsage.map((item, index) => (
@@ -177,7 +177,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
         )}
 
         {/* Nút điều khiển */}
-        <div className="flex gap-3 mb-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex gap-3 mb-4 pt-4 border-t border-gray-200 dark:border-gray-800">
           <Button
             onClick={handleCheck}
             className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white"
@@ -209,7 +209,7 @@ export default function WritingExercise({ title, prompt }: WritingExerciseProps)
 
         {/* Đánh giá */}
         {showFeedback && (
-          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
             <h5 className="font-semibold mb-3 text-gray-900 dark:text-gray-100">Đánh giá:</h5>
             
             {/* Đánh giá độ dài */}

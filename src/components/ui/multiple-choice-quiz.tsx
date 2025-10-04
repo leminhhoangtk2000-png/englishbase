@@ -54,8 +54,8 @@ export function MultipleChoiceQuiz({ questions }: MultipleChoiceQuizProps) {
         const isCorrect = selectedAnswer === question.correctAnswer;
 
         return (
-          <Card key={questionIndex} className="w-full bg-white dark:bg-slate-900 shadow-sm border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-            <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700">
+          <Card key={questionIndex} className="w-full bg-white dark:bg-background shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+            <CardHeader className="bg-gray-50 dark:bg-background border-b border-gray-200 dark:border-gray-800">
               <CardTitle className="text-base font-medium flex items-center gap-3 text-gray-800 dark:text-gray-100">
                 <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full w-7 h-7 flex items-center justify-center text-sm font-semibold">
                   {questionIndex + 1}
@@ -78,12 +78,12 @@ export function MultipleChoiceQuiz({ questions }: MultipleChoiceQuizProps) {
                       buttonClass += " bg-red-50 dark:bg-red-950 border-red-300 dark:border-red-700 text-red-800 dark:text-red-300 hover:bg-red-50 dark:hover:bg-red-950";
                       icon = <XCircle className="w-4 h-4 text-red-600 dark:text-red-400" />;
                     } else {
-                      buttonClass += " bg-gray-50 dark:bg-slate-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400";
+                      buttonClass += " bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400";
                     }
                   } else if (selectedAnswer === option) {
                     buttonClass += " bg-blue-50 dark:bg-blue-950 border-blue-300 dark:border-blue-700 text-blue-800 dark:text-blue-300";
                   } else {
-                    buttonClass += " hover:bg-gray-50 dark:hover:bg-slate-800 hover:border-gray-300 dark:hover:border-gray-600 text-gray-700 dark:text-gray-300";
+                    buttonClass += " hover:bg-gray-50 dark:hover:bg-gray-900 hover:border-gray-300 dark:hover:border-gray-700 text-gray-700 dark:text-gray-300";
                   }
 
                   return (
@@ -116,7 +116,7 @@ export function MultipleChoiceQuiz({ questions }: MultipleChoiceQuizProps) {
                   <Button 
                     onClick={() => resetQuestion(questionIndex)}
                     variant="outline"
-                    className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 text-sm px-4 py-2 rounded-md"
+                    className="border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 text-sm px-4 py-2 rounded-md"
                   >
                     Làm lại
                   </Button>

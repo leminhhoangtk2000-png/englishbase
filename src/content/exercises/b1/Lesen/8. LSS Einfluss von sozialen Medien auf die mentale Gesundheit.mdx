@@ -20,8 +20,8 @@ Ein weiteres Problem ist die **Abhängigkeit**. Manche checken ihr Handy jede Mi
 
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ### Bài tập Richtig / Falsch
 
@@ -29,66 +29,75 @@ import { AuthorCredit } from '@/components/ui/author-credit';
   title="Soziale Medien und mentale Gesundheit - Wahr oder Falsch?"
   questions={[
     {
-      question: "Soziale Medien haben keinen Einfluss auf die mentale Gesundheit.",
+      question:
+        "Soziale Medien haben keinen Einfluss auf die mentale Gesundheit.",
       correctAnswer: "Falsch",
-      explanation: "Mạng xã hội có cả ảnh hưởng tích cực và tiêu cực đến sức khỏe tinh thần, nên nói không có ảnh hưởng là sai."
+      explanation:
+        "Mạng xã hội có cả ảnh hưởng tích cực và tiêu cực đến sức khỏe tinh thần, nên nói không có ảnh hưởng là sai.",
     },
     {
       question: "Plattformen wie Instagram können Freundschaften fördern.",
       correctAnswer: "Richtig",
-      explanation: "Mạng xã hội giúp duy trì tình bạn và kết nối mới, nên câu này đúng."
+      explanation:
+        "Mạng xã hội giúp duy trì tình bạn và kết nối mới, nên câu này đúng.",
     },
     {
-      question: "Soziale Medien sind für junge Menschen unwichtig, um ihre Identität auszudrücken.",
+      question:
+        "Soziale Medien sind für junge Menschen unwichtig, um ihre Identität auszudrücken.",
       correctAnswer: "Falsch",
-      explanation: "Giới trẻ dùng mạng xã hội để thể hiện bản sắc, nên nói chúng không quan trọng là sai."
+      explanation:
+        "Giới trẻ dùng mạng xã hội để thể hiện bản sắc, nên nói chúng không quan trọng là sai.",
     },
     {
-      question: "Vergleiche auf Instagram können das Selbstwertgefühl schädigen.",
+      question:
+        "Vergleiche auf Instagram können das Selbstwertgefühl schädigen.",
       correctAnswer: "Richtig",
-      explanation: "So sánh bản thân với hình ảnh hoàn hảo trên Instagram làm giảm lòng tự trọng, nên câu này đúng."
+      explanation:
+        "So sánh bản thân với hình ảnh hoàn hảo trên Instagram làm giảm lòng tự trọng, nên câu này đúng.",
     },
     {
       question: "Zu viel Zeit online kann Depressionen verursachen.",
       correctAnswer: "Richtig",
-      explanation: "Dành quá nhiều thời gian online có thể gây căng thẳng hoặc trầm cảm, nên câu này đúng."
+      explanation:
+        "Dành quá nhiều thời gian online có thể gây căng thẳng hoặc trầm cảm, nên câu này đúng.",
     },
     {
       question: "FOMO bedeutet, dass man Angst hat, etwas zu verpassen.",
       correctAnswer: "Richtig",
-      explanation: "FOMO là nỗi sợ bỏ lỡ điều gì đó, đúng như bài viết định nghĩa, nên câu này đúng."
+      explanation:
+        "FOMO là nỗi sợ bỏ lỡ điều gì đó, đúng như bài viết định nghĩa, nên câu này đúng.",
     },
     {
       question: "Niemand wird abhängig von sozialen Medien.",
       correctAnswer: "Falsch",
-      explanation: "Một số người nghiện mạng xã hội, liên tục kiểm tra điện thoại, nên nói không ai nghiện là sai."
+      explanation:
+        "Một số người nghiện mạng xã hội, liên tục kiểm tra điện thoại, nên nói không ai nghiện là sai.",
     },
     {
       question: "Ständiges Checken des Handys hilft der Konzentration.",
       correctAnswer: "Falsch",
-      explanation: "Kiểm tra điện thoại liên tục làm mất tập trung khi học hoặc làm việc, nên nói nó giúp tập trung là sai."
+      explanation:
+        "Kiểm tra điện thoại liên tục làm mất tập trung khi học hoặc làm việc, nên nói nó giúp tập trung là sai.",
     },
     {
-      question: "Experten empfehlen, die Nutzung von sozialen Medien zu begrenzen.",
+      question:
+        "Experten empfehlen, die Nutzung von sozialen Medien zu begrenzen.",
       correctAnswer: "Richtig",
-      explanation: "Các chuyên gia khuyên nên giới hạn thời gian dùng mạng xã hội và nghỉ ngơi có ý thức, nên câu này đúng."
+      explanation:
+        "Các chuyên gia khuyên nên giới hạn thời gian dùng mạng xã hội và nghỉ ngơi có ý thức, nên câu này đúng.",
     },
     {
       question: "Es gibt keine positiven Seiten von sozialen Medien.",
       correctAnswer: "Falsch",
-      explanation: "Mạng xã hội có mặt tích cực như kết nối bạn bè và tìm hỗ trợ, nên nói không có mặt tích cực là sai."
-    }
+      explanation:
+        "Mạng xã hội có mặt tích cực như kết nối bạn bè và tìm hỗ trợ, nên nói không có mặt tích cực là sai.",
+    },
   ]}
 />
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Deutschvn" />
-
----
-
-import { Lueckentext } from '@/components/ui/lueckentext';
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ### **Bài tập đục lỗ:**
 
@@ -120,7 +129,7 @@ Fülle die Lücken mit den richtigen Wörtern aus.
     { type: "blank", correctAnswer: "Konzentration" },
     ". Experten empfehlen, ",
     { type: "blank", correctAnswer: "bewusst" },
-    " Pausen zu machen."
+    " Pausen zu machen.",
   ]}
 />
 
@@ -128,19 +137,19 @@ Fülle die Lücken mit den richtigen Wörtern aus.
 
 ### **📖 Wichtige Vokabeln**
 
-|Từ vựng|Từ vựng số nhiều|Loại từ|Nghĩa|
-|---|---|---|---|
-|die sozialen Medien|-|Nomen (số nhiều)|mạng xã hội|
-|die mentale Gesundheit|-|Nomen|sức khỏe tinh thần|
-|die Herausforderung|die Herausforderungen|Nomen|thách thức|
-|die Identität|die Identitäten|Nomen|bản sắc|
-|die Unterstützung|-|Nomen|sự hỗ trợ|
-|das Selbstwertgefühl|-|Nomen|lòng tự trọng|
-|die Depression|die Depressionen|Nomen|trầm cảm|
-|das FOMO|-|Nomen|nỗi sợ bỏ lỡ (Fear of Missing Out)|
-|die Abhängigkeit|die Abhängigkeiten|Nomen|sự phụ thuộc, nghiện|
-|die Konzentration|-|Nomen|sự tập trung|
-|bewusst|-|Adjektiv|có ý thức|
+| Từ vựng                | Từ vựng số nhiều      | Loại từ          | Nghĩa                              |
+| ---------------------- | --------------------- | ---------------- | ---------------------------------- |
+| die sozialen Medien    | -                     | Nomen (số nhiều) | mạng xã hội                        |
+| die mentale Gesundheit | -                     | Nomen            | sức khỏe tinh thần                 |
+| die Herausforderung    | die Herausforderungen | Nomen            | thách thức                         |
+| die Identität          | die Identitäten       | Nomen            | bản sắc                            |
+| die Unterstützung      | -                     | Nomen            | sự hỗ trợ                          |
+| das Selbstwertgefühl   | -                     | Nomen            | lòng tự trọng                      |
+| die Depression         | die Depressionen      | Nomen            | trầm cảm                           |
+| das FOMO               | -                     | Nomen            | nỗi sợ bỏ lỡ (Fear of Missing Out) |
+| die Abhängigkeit       | die Abhängigkeiten    | Nomen            | sự phụ thuộc, nghiện               |
+| die Konzentration      | -                     | Nomen            | sự tập trung                       |
+| bewusst                | -                     | Adjektiv         | có ý thức                          |
 
 ---
 
@@ -159,19 +168,23 @@ Một vấn đề khác là **sự phụ thuộc**. Một số người kiểm t
 ### **📌 Wichtige Grammatik**
 
 1. **Konjunktiv II (Möglichkeitsform)**
-    - "Wenn jemand sich einsam fühlen **würde**, könnten Chats oder Videos ein Gefühl von Gemeinschaft geben." (Nếu ai đó cảm thấy cô đơn, các cuộc trò chuyện hoặc video có thể mang lại cảm giác cộng đồng.)
-    - "Wenn sie ständig online **wären**, könnten sie Schlafprobleme bekommen." (Nếu họ luôn online, họ có thể gặp vấn đề về giấc ngủ.)
+
+   - "Wenn jemand sich einsam fühlen **würde**, könnten Chats oder Videos ein Gefühl von Gemeinschaft geben." (Nếu ai đó cảm thấy cô đơn, các cuộc trò chuyện hoặc video có thể mang lại cảm giác cộng đồng.)
+   - "Wenn sie ständig online **wären**, könnten sie Schlafprobleme bekommen." (Nếu họ luôn online, họ có thể gặp vấn đề về giấc ngủ.)
 
 2. **Infinitivsätze mit „um … zu“**
-    - "Plattformen sind ein Ort, **um ihre Identität auszudrücken**." (Các nền tảng là nơi để thể hiện bản sắc của họ.)
-    - "Experten schlagen vor, die Nutzung zu begrenzen, **um die Konzentration zu verbessern**." (Các chuyên gia gợi ý giới hạn thời gian sử dụng để cải thiện sự tập trung.)
+   - "Plattformen sind ein Ort, **um ihre Identität auszudrücken**." (Các nền tảng là nơi để thể hiện bản sắc của họ.)
+   - "Experten schlagen vor, die Nutzung zu begrenzen, **um die Konzentration zu verbessern**." (Các chuyên gia gợi ý giới hạn thời gian sử dụng để cải thiện sự tập trung.)
 
 ---
 
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
 
---- 
+<ExerciseComments
+  exerciseId="b1-8.-lss-einfluss-von-sozialen-medien-auf-die-mentale-gesundheit"
+  url="/exercises/b1/Lesen/8. LSS Einfluss von sozialen Medien auf die mentale Gesundheit"
+/>
+
+---

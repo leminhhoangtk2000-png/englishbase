@@ -24,29 +24,64 @@ Wer die Regeln kennt, kann in Deutschland clever einkaufen. Also, denk an dein P
 
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ### Bài tập Richtig / Falsch
 
 <TrueFalseQuiz
   title="Einkaufen in Deutschland - Wahr oder Falsch?"
   questions={[
-    { question: "In Deutschland sind Supermärkte wie Rewe, Edeka, Aldi und Lidl sehr selten.", correctAnswer: "Falsch" },
-    { question: "Auf dem Wochenmarkt kann man frische Produkte kaufen.", correctAnswer: "Richtig" },
-    { question: "DM und Rossmann verkaufen nur Lebensmittel.", correctAnswer: "Falsch" },
-    { question: "Sonntags sind fast alle Geschäfte in Deutschland geschlossen.", correctAnswer: "Richtig" },
-    { question: "Tankstellen und Bäckereien dürfen sonntags nicht öffnen.", correctAnswer: "Falsch" },
-    { question: "In Deutschland bevorzugen viele Menschen immer noch Bargeld beim Bezahlen.", correctAnswer: "Richtig" },
-    { question: "Man kann in jedem Supermarkt mit Kreditkarte bezahlen.", correctAnswer: "Falsch" },
-    { question: "Das Pfandsystem hilft beim Recycling von Plastikflaschen.", correctAnswer: "Richtig" },
-    { question: "Discounter wie Aldi und Lidl sind teurer als andere Supermärkte.", correctAnswer: "Falsch" },
-    { question: "Wer seinen Einkauf gut plant, kann in Deutschland Geld sparen.", correctAnswer: "Richtig" }
+    {
+      question:
+        "In Deutschland sind Supermärkte wie Rewe, Edeka, Aldi und Lidl sehr selten.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question: "Auf dem Wochenmarkt kann man frische Produkte kaufen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question: "DM und Rossmann verkaufen nur Lebensmittel.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question: "Sonntags sind fast alle Geschäfte in Deutschland geschlossen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question: "Tankstellen und Bäckereien dürfen sonntags nicht öffnen.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question:
+        "In Deutschland bevorzugen viele Menschen immer noch Bargeld beim Bezahlen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question: "Man kann in jedem Supermarkt mit Kreditkarte bezahlen.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question: "Das Pfandsystem hilft beim Recycling von Plastikflaschen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Discounter wie Aldi und Lidl sind teurer als andere Supermärkte.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question:
+        "Wer seinen Einkauf gut plant, kann in Deutschland Geld sparen.",
+      correctAnswer: "Richtig",
+    },
   ]}
 />
 
 ---
-import { Lueckentext } from '@/components/ui/lueckentext';
+
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ### **Bài tập đục lỗ:**
 
@@ -87,7 +122,7 @@ Fülle die Lücken mit den richtigen Wörtern aus.
     { type: "blank", correctAnswer: "Discountern" },
     " wie Aldi und Lidl ein oder nutzen ",
     { type: "blank", correctAnswer: "Sonderangebote" },
-    "."
+    ".",
   ]}
 />
 
@@ -95,29 +130,39 @@ Fülle die Lücken mit den richtigen Wörtern aus.
 
 ### **📖 Wichtige Vokabeln**
 
-|Từ vựng|Từ vựng số nhiều|Loại từ|Nghĩa|
-|---|---|---|---|
-|der Supermarkt|die Supermärkte|Nomen|siêu thị|
-|der Wochenmarkt|die Wochenmärkte|Nomen|chợ hàng tuần|
-|die Drogerie|die Drogerien|Nomen|cửa hàng mỹ phẩm và đồ gia dụng|
-|das Ladenschlussgesetz|-|Nomen|luật đóng cửa hàng|
-|die Tankstelle|die Tankstellen|Nomen|trạm xăng|
-|die Bäckerei|die Bäckereien|Nomen|tiệm bánh|
-|das Bargeld|-|Nomen|tiền mặt|
-|die EC-Karte|die EC-Karten|Nomen|thẻ ghi nợ (thẻ ATM)|
-|die Kreditkarte|die Kreditkarten|Nomen|thẻ tín dụng|
-|das kontaktlose Bezahlen|-|Nomen|thanh toán không tiếp xúc|
-|das Pfandsystem|-|Nomen|hệ thống đặt cọc chai lọ|
-|der Pfandautomat|die Pfandautomaten|Nomen|máy hoàn tiền đặt cọc chai lọ|
-|der Discounter|die Discounter|Nomen|siêu thị giá rẻ|
-|die Sonderangebote|die Sonderangebote|Nomen|khuyến mãi, giảm giá|
-|recyceln|-|Verb|tái chế|
-|sparen|-|Verb|tiết kiệm|
+| Từ vựng                  | Từ vựng số nhiều   | Loại từ | Nghĩa                           |
+| ------------------------ | ------------------ | ------- | ------------------------------- |
+| der Supermarkt           | die Supermärkte    | Nomen   | siêu thị                        |
+| der Wochenmarkt          | die Wochenmärkte   | Nomen   | chợ hàng tuần                   |
+| die Drogerie             | die Drogerien      | Nomen   | cửa hàng mỹ phẩm và đồ gia dụng |
+| das Ladenschlussgesetz   | -                  | Nomen   | luật đóng cửa hàng              |
+| die Tankstelle           | die Tankstellen    | Nomen   | trạm xăng                       |
+| die Bäckerei             | die Bäckereien     | Nomen   | tiệm bánh                       |
+| das Bargeld              | -                  | Nomen   | tiền mặt                        |
+| die EC-Karte             | die EC-Karten      | Nomen   | thẻ ghi nợ (thẻ ATM)            |
+| die Kreditkarte          | die Kreditkarten   | Nomen   | thẻ tín dụng                    |
+| das kontaktlose Bezahlen | -                  | Nomen   | thanh toán không tiếp xúc       |
+| das Pfandsystem          | -                  | Nomen   | hệ thống đặt cọc chai lọ        |
+| der Pfandautomat         | die Pfandautomaten | Nomen   | máy hoàn tiền đặt cọc chai lọ   |
+| der Discounter           | die Discounter     | Nomen   | siêu thị giá rẻ                 |
+| die Sonderangebote       | die Sonderangebote | Nomen   | khuyến mãi, giảm giá            |
+| recyceln                 | -                  | Verb    | tái chế                         |
+| sparen                   | -                  | Verb    | tiết kiệm                       |
 
 ---
+
 ### **Luyện nói**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ZQxHSr-wZEI?si=FqQ1sDLOqG3TMqPW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/ZQxHSr-wZEI?si=FqQ1sDLOqG3TMqPW"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>>
 
 ### **🇻🇳 Tiếng Việt**
 
@@ -138,13 +183,14 @@ Nếu bạn biết các quy tắc này, bạn có thể mua sắm một cách th
 ### **📌 Wichtige Grammatik**
 
 1. **Modale Verben in der Gegenwart**
-    
-    - "Man **kann** auf den Wochenmarkt gehen."
-    - "Man **muss** Pfand für Plastikflaschen bezahlen."
+
+   - "Man **kann** auf den Wochenmarkt gehen."
+   - "Man **muss** Pfand für Plastikflaschen bezahlen."
+
 2. **Passiv mit „werden“**
-    
-    - "Kontaktloses Bezahlen **wird** beliebter."
-    - "Das Geld **wird** zurückgegeben, wenn man die Flasche abgibt."
+
+   - "Kontaktloses Bezahlen **wird** beliebter."
+   - "Das Geld **wird** zurückgegeben, wenn man die Flasche abgibt."
 
 ---
 
@@ -153,15 +199,14 @@ Nếu bạn biết các quy tắc này, bạn có thể mua sắm một cách th
 [www.einkaufen-deutschland.de](https://www.einkaufen-deutschland.de/)
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Deutschvn" />
-
----
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
 
---- 
+<ExerciseComments
+  exerciseId="b1-einkaufen-in-deutschland-–-was-du-wissen-solltest"
+  url="/exercises/b1/Lesen/Einkaufen in Deutschland – Was du wissen solltest"
+/>
+
+---

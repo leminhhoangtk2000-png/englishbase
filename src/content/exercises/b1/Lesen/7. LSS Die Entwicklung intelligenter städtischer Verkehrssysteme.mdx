@@ -20,8 +20,8 @@ Trotz der Vorteile gibt es Probleme. Nicht jede Stadt kann sich die neuen Techno
 
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ### Bài tập Richtig / Falsch
 
@@ -29,61 +29,75 @@ import { AuthorCredit } from '@/components/ui/author-credit';
   title="Intelligente Verkehrssysteme - Wahr oder Falsch?"
   questions={[
     {
-      question: "Intelligente Verkehrssysteme sollen den Verkehr in Städten verschlechtern.",
+      question:
+        "Intelligente Verkehrssysteme sollen den Verkehr in Städten verschlechtern.",
       correctAnswer: "Falsch",
-      explanation: "Hệ thống giao thông thông minh được thiết kế để cải thiện giao thông đô thị, không phải làm tệ hơn, nên câu này sai."
+      explanation:
+        "Hệ thống giao thông thông minh được thiết kế để cải thiện giao thông đô thị, không phải làm tệ hơn, nên câu này sai.",
     },
     {
-      question: "Sensoren und künstliche Intelligenz helfen, den Verkehr zu steuern.",
+      question:
+        "Sensoren und künstliche Intelligenz helfen, den Verkehr zu steuern.",
       correctAnswer: "Richtig",
-      explanation: "Cảm biến và trí tuệ nhân tạo được dùng để điều khiển giao thông, nên câu này đúng."
+      explanation:
+        "Cảm biến và trí tuệ nhân tạo được dùng để điều khiển giao thông, nên câu này đúng.",
     },
     {
       question: "Fahrradnetze und Elektrobusse erhöhen den CO₂-Ausstoß.",
       correctAnswer: "Falsch",
-      explanation: "Mạng lưới xe đạp và xe buýt điện giảm khí CO₂, không phải tăng, nên câu này sai."
+      explanation:
+        "Mạng lưới xe đạp và xe buýt điện giảm khí CO₂, không phải tăng, nên câu này sai.",
     },
     {
       question: "Selbstfahrende Autos könnten weniger Unfälle verursachen.",
       correctAnswer: "Richtig",
-      explanation: "Xe tự lái có thể giảm tai nạn nhờ phản ứng nhanh hơn con người, nên câu này đúng."
+      explanation:
+        "Xe tự lái có thể giảm tai nạn nhờ phản ứng nhanh hơn con người, nên câu này đúng.",
     },
     {
       question: "Jede Stadt hat genug Geld für intelligente Verkehrssysteme.",
       correctAnswer: "Falsch",
-      explanation: "Không phải thành phố nào cũng đủ tiền đầu tư vào công nghệ mới, nên câu này sai."
+      explanation:
+        "Không phải thành phố nào cũng đủ tiền đầu tư vào công nghệ mới, nên câu này sai.",
     },
     {
-      question: "Die Infrastruktur muss für selbstfahrende Autos angepasst werden.",
+      question:
+        "Die Infrastruktur muss für selbstfahrende Autos angepasst werden.",
       correctAnswer: "Richtig",
-      explanation: "Cơ sở hạ tầng như đường đặc biệt hay trạm sạc cần được điều chỉnh cho xe tự lái, nên câu này đúng."
+      explanation:
+        "Cơ sở hạ tầng như đường đặc biệt hay trạm sạc cần được điều chỉnh cho xe tự lái, nên câu này đúng.",
     },
     {
       question: "Es gibt keine rechtlichen Fragen bei autonomen Autos.",
       correctAnswer: "Falsch",
-      explanation: "Xe tự lái đặt ra vấn đề pháp lý như ai chịu trách nhiệm khi xảy ra tai nạn, nên nói không có vấn đề pháp lý là sai."
+      explanation:
+        "Xe tự lái đặt ra vấn đề pháp lý như ai chịu trách nhiệm khi xảy ra tai nạn, nên nói không có vấn đề pháp lý là sai.",
     },
     {
       question: "Datenschutz ist ein Problem bei intelligenten Systemen.",
       correctAnswer: "Richtig",
-      explanation: "Quyền riêng tư là vấn đề vì camera và cảm biến thu thập nhiều dữ liệu, nên câu này đúng."
+      explanation:
+        "Quyền riêng tư là vấn đề vì camera và cảm biến thu thập nhiều dữ liệu, nên câu này đúng.",
     },
     {
       question: "Alte Verkehrssysteme müssen oft modernisiert werden.",
       correctAnswer: "Richtig",
-      explanation: "Các hệ thống giao thông cũ cần được hiện đại hóa để áp dụng công nghệ mới, nên câu này đúng."
+      explanation:
+        "Các hệ thống giao thông cũ cần được hiện đại hóa để áp dụng công nghệ mới, nên câu này đúng.",
     },
     {
-      question: "Intelligente Verkehrssysteme können Städte nachhaltiger machen.",
+      question:
+        "Intelligente Verkehrssysteme können Städte nachhaltiger machen.",
       correctAnswer: "Richtig",
-      explanation: "Hệ thống thông minh có thể làm thành phố bền vững hơn nếu được lên kế hoạch tốt, nên câu này đúng."
-    }
+      explanation:
+        "Hệ thống thông minh có thể làm thành phố bền vững hơn nếu được lên kế hoạch tốt, nên câu này đúng.",
+    },
   ]}
 />
 
 ---
 
-import { Lueckentext } from '@/components/ui/lueckentext';
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ### **Bài tập đục lỗ:**
 
@@ -117,7 +131,7 @@ Fülle die Lücken mit den richtigen Wörtern aus.
     { type: "blank", correctAnswer: "Datenschutz" },
     ". Aber intelligente Systeme können Städte ",
     { type: "blank", correctAnswer: "nachhaltiger" },
-    " machen."
+    " machen.",
   ]}
 />
 
@@ -125,19 +139,19 @@ Fülle die Lücken mit den richtigen Wörtern aus.
 
 ### **📖 Wichtige Vokabeln**
 
-|Từ vựng|Từ vựng số nhiều|Loại từ|Nghĩa|
-|---|---|---|---|
-|das intelligente Verkehrssystem|die intelligenten Verkehrssysteme|Nomen|hệ thống giao thông thông minh|
-|die Herausforderung|die Herausforderungen|Nomen|thách thức|
-|die künstliche Intelligenz|-|Nomen|trí tuệ nhân tạo|
-|das Fahrradnetz|die Fahrradnetze|Nomen|mạng lưới xe đạp|
-|der Elektrobus|die Elektrobusse|Nomen|xe buýt điện|
-|der CO₂-Ausstoß|-|Nomen|khí thải CO₂|
-|die Infrastruktur|-|Nomen|cơ sở hạ tầng|
-|die Regulierung|die Regulierungen|Nomen|quy định|
-|modernisieren|-|Verb|hiện đại hóa|
-|der Datenschutz|-|Nomen|quyền riêng tư|
-|nachhaltig|-|Adjektiv|bền vững|
+| Từ vựng                         | Từ vựng số nhiều                  | Loại từ  | Nghĩa                          |
+| ------------------------------- | --------------------------------- | -------- | ------------------------------ |
+| das intelligente Verkehrssystem | die intelligenten Verkehrssysteme | Nomen    | hệ thống giao thông thông minh |
+| die Herausforderung             | die Herausforderungen             | Nomen    | thách thức                     |
+| die künstliche Intelligenz      | -                                 | Nomen    | trí tuệ nhân tạo               |
+| das Fahrradnetz                 | die Fahrradnetze                  | Nomen    | mạng lưới xe đạp               |
+| der Elektrobus                  | die Elektrobusse                  | Nomen    | xe buýt điện                   |
+| der CO₂-Ausstoß                 | -                                 | Nomen    | khí thải CO₂                   |
+| die Infrastruktur               | -                                 | Nomen    | cơ sở hạ tầng                  |
+| die Regulierung                 | die Regulierungen                 | Nomen    | quy định                       |
+| modernisieren                   | -                                 | Verb     | hiện đại hóa                   |
+| der Datenschutz                 | -                                 | Nomen    | quyền riêng tư                 |
+| nachhaltig                      | -                                 | Adjektiv | bền vững                       |
 
 ---
 
@@ -156,24 +170,23 @@ Dù có nhiều lợi ích, vẫn tồn tại các vấn đề. Không phải th
 ### **📌 Wichtige Grammatik**
 
 1. **Konjunktiv II (Möglichkeitsform)**
-    - "Wenn mehr Menschen öffentliche Verkehrsmittel nutzen **würden**, könnte das die Straßen entlasten." (Nếu nhiều người sử dụng phương tiện công cộng hơn, đường phố có thể bớt ùn tắc.)
-    - "Intelligente Systeme **könnten** die Städte nachhaltiger machen, wenn sie gut geplant sind." (Hệ thống thông minh có thể làm thành phố bền vững hơn nếu được lên kế hoạch tốt.)
+
+   - "Wenn mehr Menschen öffentliche Verkehrsmittel nutzen **würden**, könnte das die Straßen entlasten." (Nếu nhiều người sử dụng phương tiện công cộng hơn, đường phố có thể bớt ùn tắc.)
+   - "Intelligente Systeme **könnten** die Städte nachhaltiger machen, wenn sie gut geplant sind." (Hệ thống thông minh có thể làm thành phố bền vững hơn nếu được lên kế hoạch tốt.)
 
 2. **Passiv mit „werden“**
-    - "Die Infrastruktur **muss angepasst werden**, um selbstfahrende Autos zu unterstützen." (Cơ sở hạ tầng cần được điều chỉnh để hỗ trợ xe tự lái.)
-    - "Alte Systeme **müssen modernisiert werden**, um neue Technologien zu nutzen." (Các hệ thống cũ cần được hiện đại hóa để sử dụng công nghệ mới.)
-
----
-### **Tác giả ✍️**
-
-<AuthorCredit author="Deutschvn" />
+   - "Die Infrastruktur **muss angepasst werden**, um selbstfahrende Autos zu unterstützen." (Cơ sở hạ tầng cần được điều chỉnh để hỗ trợ xe tự lái.)
+   - "Alte Systeme **müssen modernisiert werden**, um neue Technologien zu nutzen." (Các hệ thống cũ cần được hiện đại hóa để sử dụng công nghệ mới.)
 
 ---
 
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
 
---- 
+<ExerciseComments
+  exerciseId="b1-7.-lss-die-entwicklung-intelligenter-städtischer-verkehrssysteme"
+  url="/exercises/b1/Lesen/7. LSS Die Entwicklung intelligenter städtischer Verkehrssysteme"
+/>
+
+---

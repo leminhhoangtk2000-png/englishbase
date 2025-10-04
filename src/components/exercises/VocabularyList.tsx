@@ -70,8 +70,8 @@ export default function VocabularyList({
   };
 
   return (
-    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm">
-      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="my-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm">
+      <CardHeader className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
             <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -140,7 +140,7 @@ export default function VocabularyList({
                   isFlipped ? 'rotate-y-180' : ''
                 }`}>
                   {/* Front Side (German) */}
-                  <Card className="absolute inset-0 backface-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-800">
+                  <Card className="absolute inset-0 backface-hidden border-2 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-800">
                     <CardContent className="p-4 h-full flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between mb-2">
@@ -181,7 +181,7 @@ export default function VocabularyList({
                   </Card>
 
                   {/* Back Side (Vietnamese) */}
-                  <Card className="absolute inset-0 backface-hidden rotate-y-180 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-800">
+                  <Card className="absolute inset-0 backface-hidden rotate-y-180 border-2 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-800">
                     <CardContent className="p-4 h-full flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between mb-2">

@@ -21,29 +21,68 @@ Am Abend schauen viele Menschen **Fernsehen, lesen Bücher oder verbringen Zeit 
 An Wochenenden sieht der Tagesablauf anders aus: Viele schlafen länger, frühstücken spät und verbringen Zeit draußen oder mit Freunden.
 
 ---
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ### Bài tập Richtig / Falsch
 
 <TrueFalseQuiz
   title="Tagesablauf in Deutschland - Wahr oder Falsch?"
   questions={[
-    { question: "Viele Menschen in Deutschland stehen zwischen 6:00 und 7:00 Uhr auf.", correctAnswer: "Richtig" },
-    { question: "Ein typisches deutsches Frühstück besteht aus Reis und Suppe.", correctAnswer: "Falsch" },
-    { question: "Die meisten Deutschen beginnen ihre Arbeit oder Schule zwischen 10:00 und 11:00 Uhr.", correctAnswer: "Falsch" },
-    { question: "Die Mittagspause dauert oft nur 30 bis 60 Minuten.", correctAnswer: "Richtig" },
-    { question: "Viele Menschen bringen ihr Mittagessen von zu Hause mit oder essen in der Kantine.", correctAnswer: "Richtig" },
-    { question: "Nach der Arbeit oder Schule gehen viele Deutsche ins Kino.", correctAnswer: "Falsch" },
-    { question: "Das Abendessen in Deutschland ist oft kalt und besteht aus Brot, Käse und Wurst.", correctAnswer: "Richtig" },
-    { question: "Viele Deutsche schauen abends Krimis oder Nachrichtensendungen.", correctAnswer: "Richtig" },
-    { question: "Unter der Woche gehen die meisten Menschen in Deutschland zwischen 22:00 und 23:00 Uhr ins Bett.", correctAnswer: "Richtig" },
-    { question: "Am Wochenende stehen alle Deutschen noch früher auf als an Werktagen.", correctAnswer: "Falsch" }
+    {
+      question:
+        "Viele Menschen in Deutschland stehen zwischen 6:00 und 7:00 Uhr auf.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question: "Ein typisches deutsches Frühstück besteht aus Reis und Suppe.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question:
+        "Die meisten Deutschen beginnen ihre Arbeit oder Schule zwischen 10:00 und 11:00 Uhr.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question: "Die Mittagspause dauert oft nur 30 bis 60 Minuten.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Viele Menschen bringen ihr Mittagessen von zu Hause mit oder essen in der Kantine.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question: "Nach der Arbeit oder Schule gehen viele Deutsche ins Kino.",
+      correctAnswer: "Falsch",
+    },
+    {
+      question:
+        "Das Abendessen in Deutschland ist oft kalt und besteht aus Brot, Käse und Wurst.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Viele Deutsche schauen abends Krimis oder Nachrichtensendungen.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Unter der Woche gehen die meisten Menschen in Deutschland zwischen 22:00 und 23:00 Uhr ins Bett.",
+      correctAnswer: "Richtig",
+    },
+    {
+      question:
+        "Am Wochenende stehen alle Deutschen noch früher auf als an Werktagen.",
+      correctAnswer: "Falsch",
+    },
   ]}
 />
 
 ---
-import { Lueckentext } from '@/components/ui/lueckentext';
+
+import { Lueckentext } from "@/components/ui/lueckentext";
 
 ### **Bài tập đục lỗ:**
 
@@ -102,7 +141,7 @@ Fülle die Lücken mit den richtigen Wörtern aus.
     { type: "blank", correctAnswer: "spät" },
     " und treffen sich mit ",
     { type: "blank", correctAnswer: "Freunden" },
-    "."
+    ".",
   ]}
 />
 
@@ -110,26 +149,36 @@ Fülle die Lücken mit den richtigen Wörtern aus.
 
 ### **📖 Wichtige Vokabeln**
 
-|Từ vựng|Từ vựng số nhiều|Loại từ|Nghĩa|
-|---|---|---|---|
-|der Tagesablauf|die Tagesabläufe|Nomen|lịch trình hàng ngày|
-|das Frühstück|die Frühstücke|Nomen|bữa sáng|
-|das Mittagessen|die Mittagessen|Nomen|bữa trưa|
-|das Abendessen|die Abendessen|Nomen|bữa tối|
-|die Kantine|die Kantinen|Nomen|căng tin|
-|der Aufschnitt|-|Nomen|đồ nguội (thịt, phô mai thái lát)|
-|das Gemüse|-|Nomen|rau củ|
-|die Nachrichtensendung|die Nachrichtensendungen|Nomen|bản tin thời sự|
-|der Krimi|die Krimis|Nomen|phim/tác phẩm trinh thám|
-|sich entspannen|-|Verb|thư giãn|
-|einkaufen|-|Verb|mua sắm|
-|frühstücken|-|Verb|ăn sáng|
-|zu Bett gehen|-|Verb|đi ngủ|
+| Từ vựng                | Từ vựng số nhiều         | Loại từ | Nghĩa                             |
+| ---------------------- | ------------------------ | ------- | --------------------------------- |
+| der Tagesablauf        | die Tagesabläufe         | Nomen   | lịch trình hàng ngày              |
+| das Frühstück          | die Frühstücke           | Nomen   | bữa sáng                          |
+| das Mittagessen        | die Mittagessen          | Nomen   | bữa trưa                          |
+| das Abendessen         | die Abendessen           | Nomen   | bữa tối                           |
+| die Kantine            | die Kantinen             | Nomen   | căng tin                          |
+| der Aufschnitt         | -                        | Nomen   | đồ nguội (thịt, phô mai thái lát) |
+| das Gemüse             | -                        | Nomen   | rau củ                            |
+| die Nachrichtensendung | die Nachrichtensendungen | Nomen   | bản tin thời sự                   |
+| der Krimi              | die Krimis               | Nomen   | phim/tác phẩm trinh thám          |
+| sich entspannen        | -                        | Verb    | thư giãn                          |
+| einkaufen              | -                        | Verb    | mua sắm                           |
+| frühstücken            | -                        | Verb    | ăn sáng                           |
+| zu Bett gehen          | -                        | Verb    | đi ngủ                            |
 
 ---
+
 Luyện nói
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/AJaW8_W5anQ?si=Qo6NBn6W6R740Mor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/AJaW8_W5anQ?si=Qo6NBn6W6R740Mor"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ---
 
@@ -150,24 +199,24 @@ Cuối tuần thì lịch trình khác một chút: Họ thường ngủ muộn 
 ### **📌 Wichtige Grammatik**
 
 1. **Trennbare Verben im Tagesablauf**
-    
-    - "Ich **stehe** um 6 Uhr **auf**." (Tôi thức dậy lúc 6 giờ.)
-    - "Er **geht** um 22 Uhr **zu Bett**." (Anh ấy đi ngủ lúc 22 giờ.)
+
+   - "Ich **stehe** um 6 Uhr **auf**." (Tôi thức dậy lúc 6 giờ.)
+   - "Er **geht** um 22 Uhr **zu Bett**." (Anh ấy đi ngủ lúc 22 giờ.)
+
 2. **Reflexive Verben**
-    
-    - "Nach der Arbeit **entspannt man sich** oft zu Hause." (Sau khi làm việc, người ta thường thư giãn ở nhà.)
-    - "Am Wochenende **trifft man sich** mit Freunden." (Cuối tuần, người ta gặp gỡ bạn bè.)
+
+   - "Nach der Arbeit **entspannt man sich** oft zu Hause." (Sau khi làm việc, người ta thường thư giãn ở nhà.)
+   - "Am Wochenende **trifft man sich** mit Freunden." (Cuối tuần, người ta gặp gỡ bạn bè.)
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Deutschvn" />
-
----
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
 
---- 
+<ExerciseComments
+  exerciseId="b1-tagesablauf-in-deutschland-–-was-du-wissen-solltest"
+  url="/exercises/b1/Lesen/Tagesablauf in Deutschland – Was du wissen solltest"
+/>
+
+---

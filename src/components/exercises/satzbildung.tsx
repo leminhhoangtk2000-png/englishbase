@@ -42,14 +42,14 @@ export default function Satzbildung({
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700">
-      <CardHeader className="bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700">
+    <Card className="w-full max-w-4xl mx-auto bg-white dark:bg-background border-gray-200 dark:border-gray-800">
+      <CardHeader className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <CardTitle className="text-gray-900 dark:text-gray-100">{title}</CardTitle>
       </CardHeader>
       <CardContent className="p-6">
         <div className="space-y-6">
           {exercises.map((exercise, index) => (
-            <div key={index} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-800">
+            <div key={index} className="p-4 border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900">
               <div className="mb-3">
                 <p className="font-medium text-gray-900 dark:text-gray-100">Câu {index + 1}:</p>
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -70,7 +70,7 @@ export default function Satzbildung({
                 value={answers[index] || ''}
                 onChange={(e) => handleAnswerChange(index, e.target.value)}
                 disabled={showResults}
-                className={`min-h-[60px] bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 ${
+                className={`min-h-[60px] bg-white dark:bg-background text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 ${
                   showResults
                     ? isCorrect(index, answers[index] || '')
                       ? 'border-green-500 dark:border-green-600 bg-green-50 dark:bg-green-950'

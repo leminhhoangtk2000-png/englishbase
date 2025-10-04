@@ -69,7 +69,7 @@ const CommentItem: React.FC<{
   };
 
   return (
-    <div className={level > 0 ? "ml-12 border-l-2 border-gray-200 dark:border-gray-700 pl-6" : ""}>
+    <div className={level > 0 ? "ml-12 border-l-2 border-gray-200 dark:border-gray-800 pl-6" : ""}>
       <div className="flex items-start gap-4 py-6">
         <Avatar className="h-12 w-12">
           <AvatarImage src={comment.authorAvatar} alt={comment.authorName} />
@@ -434,8 +434,8 @@ export default function CommentSystem({
       {/* Comments Section - Show when toggled OR when initially set to show */}
       {(showComments || showCommentsInitially) && (
         <div className="animate-in slide-in-from-top-1 duration-300">
-          <div className="border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900">
-            <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900">
+            <div className="p-6 border-b border-gray-200 dark:border-gray-800">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Responses ({getTotalCommentCount()})</h2>
             </div>
 

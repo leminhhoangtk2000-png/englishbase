@@ -8,37 +8,46 @@ image: img/blog/hr4.png
 publish: True
 ---
 
-import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
-import { Lueckentext } from '@/components/ui/lueckentext';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { MultipleChoiceQuiz } from "@/components/ui/multiple-choice-quiz";
+import { Lueckentext } from "@/components/ui/lueckentext";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ## Đoạn 1
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ybmKxKj4AO8?si=Nl66_BYV6RR74hlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/ybmKxKj4AO8?si=Nl66_BYV6RR74hlI"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### Bài tập 1: Trắc nghiệm (Multiple Choice)
 
 <MultipleChoiceQuiz
   questions={[
     {
-      question: 'Wann hat Klara Unterricht?',
+      question: "Wann hat Klara Unterricht?",
       options: [
-        'Von Montag bis Freitag',
-        'Von Montag bis Donnerstag',
-        'Von Dienstag bis Freitag',
-        'Nur am Wochenende',
+        "Von Montag bis Freitag",
+        "Von Montag bis Donnerstag",
+        "Von Dienstag bis Freitag",
+        "Nur am Wochenende",
       ],
-      correctAnswer: 'Von Montag bis Donnerstag',
+      correctAnswer: "Von Montag bis Donnerstag",
     },
     {
-      question: 'Wann beginnt Klaras Unterricht?',
-      options: ['Um 8 Uhr', 'Um 9 Uhr', 'Um 10 Uhr', 'Um 11 Uhr'],
-      correctAnswer: 'Um 9 Uhr',
+      question: "Wann beginnt Klaras Unterricht?",
+      options: ["Um 8 Uhr", "Um 9 Uhr", "Um 10 Uhr", "Um 11 Uhr"],
+      correctAnswer: "Um 9 Uhr",
     },
     {
-      question: 'Wie viele Kurse hat Klara pro Tag?',
-      options: ['2 Kurse', '3 Kurse', '4 Kurse', '5 Kurse'],
-      correctAnswer: '4 Kurse',
+      question: "Wie viele Kurse hat Klara pro Tag?",
+      options: ["2 Kurse", "3 Kurse", "4 Kurse", "5 Kurse"],
+      correctAnswer: "4 Kurse",
     },
   ]}
 />
@@ -76,31 +85,40 @@ import { AuthorCredit } from '@/components/ui/author-credit';
 
 ## Đoạn 2
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/D11reisEvWM?si=G7qDZL2EJyRKoa_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/D11reisEvWM?si=G7qDZL2EJyRKoa_E"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### Bài tập 1: Trắc nghiệm (Multiple Choice)
 
 <MultipleChoiceQuiz
   questions={[
     {
-      question: 'Wann fliegt Sam nach Berlin?',
+      question: "Wann fliegt Sam nach Berlin?",
       options: [
-        'Am 20. Oktober',
-        'Am 24. Oktober',
-        'Am 25. Oktober',
-        'Am 26. Oktober',
+        "Am 20. Oktober",
+        "Am 24. Oktober",
+        "Am 25. Oktober",
+        "Am 26. Oktober",
       ],
-      correctAnswer: 'Am 25. Oktober',
+      correctAnswer: "Am 25. Oktober",
     },
     {
-      question: 'Wann startet Sams Flug?',
-      options: ['Um 8 Uhr', 'Um 9 Uhr 30', 'Um 10 Uhr 45', 'Um 11 Uhr 15'],
-      correctAnswer: 'Um 10 Uhr 45',
+      question: "Wann startet Sams Flug?",
+      options: ["Um 8 Uhr", "Um 9 Uhr 30", "Um 10 Uhr 45", "Um 11 Uhr 15"],
+      correctAnswer: "Um 10 Uhr 45",
     },
     {
-      question: 'Wie lange bleibt Sam in Deutschland?',
-      options: ['5 Tage', '6 Tage', '7 Tage', '10 Tage'],
-      correctAnswer: '7 Tage',
+      question: "Wie lange bleibt Sam in Deutschland?",
+      options: ["5 Tage", "6 Tage", "7 Tage", "10 Tage"],
+      correctAnswer: "7 Tage",
     },
   ]}
 />
@@ -135,15 +153,14 @@ import { AuthorCredit } from '@/components/ui/author-credit';
 />
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Deutschvn" />
-
----
 ### **Hỏi đáp ❓💬**
 
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+### **Hỏi đáp ❓💬**
+
+<ExerciseComments
+  exerciseId="a1-zahlen-und-uhrzeit-teil-2---a1"
+  url="/exercises/a1/Horen/Zahlen und Uhrzeit Teil 2 - A1"
+/>
 
 ---

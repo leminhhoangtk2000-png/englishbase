@@ -8,44 +8,63 @@ image: img/blog/hr13.png
 publish: True
 ---
 
-import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
-import { Lueckentext } from '@/components/ui/lueckentext';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { MultipleChoiceQuiz } from "@/components/ui/multiple-choice-quiz";
+import { Lueckentext } from "@/components/ui/lueckentext";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ---
 
 ## 🚶 Đoạn 1: Ich frage nach dem Weg
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/CV-9U8J5ADk?si=vGGPfxqQNCgBKuKv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/CV-9U8J5ADk?si=vGGPfxqQNCgBKuKv"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### **Bài tập 1: Trắc nghiệm (Multiple Choice)**
 
 <MultipleChoiceQuiz
   questions={[
     {
-      question: 'Was hat die Person gesucht?',
-      options: ['Den Supermarkt', 'Den Bahnhof', 'Die Post', 'Das Krankenhaus'],
-      correctAnswer: 'Den Bahnhof',
+      question: "Was hat die Person gesucht?",
+      options: ["Den Supermarkt", "Den Bahnhof", "Die Post", "Das Krankenhaus"],
+      correctAnswer: "Den Bahnhof",
     },
     {
-      question: 'Was hat die Frau gesagt?',
+      question: "Was hat die Frau gesagt?",
       options: [
-        'Gehen Sie geradeaus, dann rechts',
-        'Gehen Sie geradeaus, dann links',
-        'Gehen Sie links, dann geradeaus',
-        'Gehen Sie rechts, dann links',
+        "Gehen Sie geradeaus, dann rechts",
+        "Gehen Sie geradeaus, dann links",
+        "Gehen Sie links, dann geradeaus",
+        "Gehen Sie rechts, dann links",
       ],
-      correctAnswer: 'Gehen Sie geradeaus, dann links',
+      correctAnswer: "Gehen Sie geradeaus, dann links",
     },
     {
-      question: 'Wie lange hat es gedauert, bis die Person am Bahnhof war?',
-      options: ['Fünf Minuten', 'Zehn Minuten', 'Fünfzehn Minuten', 'Zwanzig Minuten'],
-      correctAnswer: 'Zehn Minuten',
+      question: "Wie lange hat es gedauert, bis die Person am Bahnhof war?",
+      options: [
+        "Fünf Minuten",
+        "Zehn Minuten",
+        "Fünfzehn Minuten",
+        "Zwanzig Minuten",
+      ],
+      correctAnswer: "Zehn Minuten",
     },
     {
-      question: 'Wo ist der Bahnhof laut der Frau?',
-      options: ['Neben der Schule', 'Gegenüber dem Supermarkt', 'Neben der Post', 'Hinter dem Park'],
-      correctAnswer: 'Neben der Post',
+      question: "Wo ist der Bahnhof laut der Frau?",
+      options: [
+        "Neben der Schule",
+        "Gegenüber dem Supermarkt",
+        "Neben der Post",
+        "Hinter dem Park",
+      ],
+      correctAnswer: "Neben der Post",
     },
   ]}
 />
@@ -79,41 +98,55 @@ import { AuthorCredit } from '@/components/ui/author-credit';
 
 ## 🚆 Đoạn 2: Mit dem Zug
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/4UBLhz6dKtI?si=cA0t0fKUfppgA9bX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/4UBLhz6dKtI?si=cA0t0fKUfppgA9bX"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### **Bài tập 1: Trắc nghiệm (Multiple Choice)**
 
 <MultipleChoiceQuiz
   questions={[
     {
-      question: 'Wohin ist die Person gefahren?',
-      options: ['Nach Berlin', 'Nach München', 'Nach Hamburg', 'Nach Frankfurt'],
-      correctAnswer: 'Nach Hamburg',
-    },
-    {
-      question: 'Wie lange hat die Fahrt gedauert?',
-      options: ['Zwei Stunden', 'Drei Stunden', 'Vier Stunden', 'Fünf Stunden'],
-      correctAnswer: 'Drei Stunden',
-    },
-    {
-      question: 'Was hat die Person im Zug gemacht?',
+      question: "Wohin ist die Person gefahren?",
       options: [
-        'Sie hat geschlafen',
-        'Sie hat ein Buch gelesen und Musik gehört',
-        'Sie hat gegessen',
-        'Sie hat telefoniert',
+        "Nach Berlin",
+        "Nach München",
+        "Nach Hamburg",
+        "Nach Frankfurt",
       ],
-      correctAnswer: 'Sie hat ein Buch gelesen und Musik gehört',
+      correctAnswer: "Nach Hamburg",
     },
     {
-      question: 'Was denkt die Person über den Zug?',
+      question: "Wie lange hat die Fahrt gedauert?",
+      options: ["Zwei Stunden", "Drei Stunden", "Vier Stunden", "Fünf Stunden"],
+      correctAnswer: "Drei Stunden",
+    },
+    {
+      question: "Was hat die Person im Zug gemacht?",
       options: [
-        'Er ist unbequem',
-        'Er ist teuer und stressig',
-        'Er ist ein gutes Verkehrsmittel',
-        'Er fährt zu langsam',
+        "Sie hat geschlafen",
+        "Sie hat ein Buch gelesen und Musik gehört",
+        "Sie hat gegessen",
+        "Sie hat telefoniert",
       ],
-      correctAnswer: 'Er ist ein gutes Verkehrsmittel',
+      correctAnswer: "Sie hat ein Buch gelesen und Musik gehört",
+    },
+    {
+      question: "Was denkt die Person über den Zug?",
+      options: [
+        "Er ist unbequem",
+        "Er ist teuer und stressig",
+        "Er ist ein gutes Verkehrsmittel",
+        "Er fährt zu langsam",
+      ],
+      correctAnswer: "Er ist ein gutes Verkehrsmittel",
     },
   ]}
 />
@@ -146,14 +179,12 @@ import { AuthorCredit } from '@/components/ui/author-credit';
 />
 
 ---
-### **Tác giả ✍️**
 
-<AuthorCredit author="Deutschvn" />
+### **Hỏi đáp ❓💬**
 
----
-
-:::tip VITAMIN ĐỘNG LỰC 🌱
-Nếu bạn thấy việc bon mình đang làm có ý nghĩa, thử dùng ngay để lại một lời động viên nhé 😊
-:::
+<ExerciseComments
+  exerciseId="a1-unterwegs-tei-1---a1"
+  url="/exercises/a1/Horen/Unterwegs tei 1 - A1"
+/>
 
 ---

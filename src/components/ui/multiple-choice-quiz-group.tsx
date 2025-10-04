@@ -55,12 +55,12 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
   const allAnswered = questions.every((_, index) => selectedAnswers[index] !== undefined);
 
   return (
-    <Card className="my-8 border-2 shadow-lg overflow-hidden">
+    <Card className="my-8 border-2 dark:border-gray-800 shadow-lg overflow-hidden dark:bg-background">
       {/* Header with Title */}
-      <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b-2 border-blue-200">
+      <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-black border-b-2 border-blue-200 dark:border-gray-800">
         {title && (
-          <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-3">
-            <div className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold shadow-md">
+          <CardTitle className="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-3">
+            <div className="bg-blue-600 dark:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold shadow-md">
               {questions.length}
             </div>
             <span>{title}</span>
@@ -68,21 +68,21 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
         )}
       </CardHeader>
 
-      <CardContent className="p-6 space-y-6">
+      <CardContent className="p-6 space-y-6 dark:bg-background">
         {/* Progress Indicator */}
         {!showResults && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div className="bg-blue-50 dark:bg-gray-900 border border-blue-200 dark:border-gray-800 rounded-lg p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-blue-900">
+              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">
                 Đã chọn: {Object.keys(selectedAnswers).length}/{questions.length} câu
               </span>
-              <span className="text-xs text-blue-600">
+              <span className="text-xs text-blue-600 dark:text-blue-400">
                 {allAnswered ? '✓ Đã hoàn thành!' : 'Hãy chọn tất cả câu trả lời'}
               </span>
             </div>
-            <div className="w-full bg-blue-200 rounded-full h-2.5">
+            <div className="w-full bg-blue-200 dark:bg-gray-800 rounded-full h-2.5">
               <div 
-                className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
+                className="bg-blue-600 dark:bg-blue-500 h-2.5 rounded-full transition-all duration-300"
                 style={{ width: `${(Object.keys(selectedAnswers).length / questions.length) * 100}%` }}
               ></div>
             </div>
@@ -99,34 +99,34 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
             return (
               <Card 
                 key={questionIndex} 
-                className={`transition-all ${
+                className={`transition-all dark:bg-background ${
                   showResults && isAnswered 
-                    ? (isCorrect ? 'border-2 border-green-400 bg-green-50/30' : 'border-2 border-red-400 bg-red-50/30')
+                    ? (isCorrect ? 'border-2 border-green-400 dark:border-green-600 bg-green-50/30 dark:bg-green-950/30' : 'border-2 border-red-400 dark:border-red-600 bg-red-50/30 dark:bg-red-950/30')
                     : isAnswered 
-                      ? 'border-2 border-blue-300 bg-blue-50/30'
-                      : 'border border-gray-200'
+                      ? 'border-2 border-blue-300 dark:border-blue-600 bg-blue-50/30 dark:bg-blue-950/30'
+                      : 'border border-gray-200 dark:border-gray-800'
                 }`}
               >
-                <CardHeader className="bg-gray-50/50 border-b py-3 px-4">
+                <CardHeader className="bg-gray-50/50 dark:bg-background border-b dark:border-gray-800 py-3 px-4">
                   <CardTitle className="text-base font-medium flex items-center gap-3">
                     <span className={`rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold ${
                       showResults && isAnswered
-                        ? (isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700')
+                        ? (isCorrect ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300')
                         : isAnswered
-                          ? 'bg-blue-100 text-blue-700'
-                          : 'bg-gray-200 text-gray-600'
+                          ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
+                          : 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
                     }`}>
                       {questionIndex + 1}
                     </span>
-                    <span className="flex-1 text-gray-800">{question.question}</span>
+                    <span className="flex-1 text-gray-800 dark:text-gray-200">{question.question}</span>
                     {showResults && isAnswered && (
                       isCorrect 
-                        ? <CheckCircle className="w-5 h-5 text-green-600" />
-                        : <XCircle className="w-5 h-5 text-red-600" />
+                        ? <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                        : <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
                     )}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-4 space-y-2">
+                <CardContent className="p-4 space-y-2 dark:bg-background">
                   <div className="space-y-2">
                     {question.options.map((option, optionIndex) => {
                       let buttonClass = "w-full justify-start text-left h-auto p-3 border transition-all duration-200";
@@ -134,18 +134,18 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
 
                       if (showResults) {
                         if (option === question.correctAnswer) {
-                          buttonClass += " bg-green-50 border-green-400 text-green-900 hover:bg-green-50 font-semibold shadow-sm";
-                          icon = <CheckCircle className="w-4 h-4 text-green-600" />;
+                          buttonClass += " bg-green-50 dark:bg-green-950 border-green-400 dark:border-green-700 text-green-900 dark:text-green-300 hover:bg-green-50 dark:hover:bg-green-950 font-semibold shadow-sm";
+                          icon = <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />;
                         } else if (option === selectedAnswer && !isCorrect) {
-                          buttonClass += " bg-red-50 border-red-400 text-red-900 hover:bg-red-50 font-medium";
-                          icon = <XCircle className="w-4 h-4 text-red-600" />;
+                          buttonClass += " bg-red-50 dark:bg-red-950 border-red-400 dark:border-red-700 text-red-900 dark:text-red-300 hover:bg-red-50 dark:hover:bg-red-950 font-medium";
+                          icon = <XCircle className="w-4 h-4 text-red-600 dark:text-red-400" />;
                         } else {
-                          buttonClass += " bg-gray-50 border-gray-200 text-gray-500 opacity-60";
+                          buttonClass += " bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-600 opacity-60";
                         }
                       } else if (selectedAnswer === option) {
-                        buttonClass += " bg-blue-50 border-blue-400 text-blue-900 font-medium shadow-sm";
+                        buttonClass += " bg-blue-50 dark:bg-blue-950 border-blue-400 dark:border-blue-700 text-blue-900 dark:text-blue-300 font-medium shadow-sm";
                       } else {
-                        buttonClass += " hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm";
+                        buttonClass += " hover:bg-gray-50 dark:hover:bg-gray-900 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm";
                       }
 
                       return (
@@ -186,13 +186,13 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
         </div>
 
         {/* Action Buttons */}
-        <div className="sticky bottom-4 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border-2 border-gray-200">
+        <div className="sticky bottom-4 bg-white/95 dark:bg-background/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border-2 border-gray-200 dark:border-gray-800">
           {!showResults ? (
             <div className="space-y-3">
               <Button 
                 onClick={handleSubmitAll}
                 disabled={!allAnswered}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-6 rounded-lg shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-700 dark:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold py-6 rounded-lg shadow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed text-lg"
               >
                 {allAnswered 
                   ? `✓ Kiểm tra tất cả ${questions.length} câu` 
@@ -203,7 +203,7 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
                 <Button 
                   onClick={handleReset}
                   variant="outline"
-                  className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 py-4 rounded-lg"
+                  className="w-full border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 py-4 rounded-lg"
                 >
                   Xóa tất cả
                 </Button>
@@ -214,25 +214,25 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
 
         {/* Results Summary - Show at bottom after submission */}
         {showResults && score && (
-          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 shadow-xl mt-6">
-            <CardContent className="p-6">
+          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-black border-2 border-blue-300 dark:border-blue-800 shadow-xl mt-6">
+            <CardContent className="p-6 dark:bg-background">
               <div className="text-center space-y-4">
                 <div className={`text-6xl ${
-                  score.percentage >= 80 ? 'text-green-600' : 
-                  score.percentage >= 50 ? 'text-yellow-600' : 'text-red-600'
+                  score.percentage >= 80 ? 'text-green-600 dark:text-green-400' : 
+                  score.percentage >= 50 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'
                 }`}>
                   {score.percentage >= 80 ? '🎉' : score.percentage >= 50 ? '👍' : '💪'}
                 </div>
                 <div>
-                  <h4 className="text-2xl font-bold text-blue-900 mb-2">
+                  <h4 className="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-2">
                     Kết quả: {score.correct}/{score.total} câu đúng
                   </h4>
-                  <p className="text-xl text-blue-700 font-semibold">
+                  <p className="text-xl text-blue-700 dark:text-blue-400 font-semibold">
                     Điểm số: {score.percentage}%
                   </p>
                 </div>
-                <div className="pt-4 border-t border-blue-200">
-                  <p className="text-sm text-blue-800 mb-3">
+                <div className="pt-4 border-t border-blue-200 dark:border-gray-800">
+                  <p className="text-sm text-blue-800 dark:text-blue-300 mb-3">
                     {score.percentage >= 80 
                       ? '🌟 Xuất sắc! Bạn đã nắm vững kiến thức!'
                       : score.percentage >= 50
@@ -241,7 +241,7 @@ export function MultipleChoiceQuizGroup({ questions, title }: MultipleChoiceQuiz
                   </p>
                   <Button 
                     onClick={handleReset}
-                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 rounded-lg shadow-md transition-all"
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 dark:from-green-700 dark:to-emerald-700 dark:hover:from-green-600 dark:hover:to-emerald-600 text-white font-semibold py-4 rounded-lg shadow-md transition-all"
                   >
                     🔄 Làm lại bài tập
                   </Button>
