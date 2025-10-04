@@ -1,0 +1,914 @@
+
+> nextn@0.1.0 dev
+> next dev -p 9003
+
+ ⨯ Failed to start server
+Error: listen EADDRINUSE: address already in use :::9003
+    at <unknown> (Error: listen EADDRINUSE: address already in use :::9003)
+    at new Promise ○ Compiling / ...
+ ✓ Compiled / in 5.2s (1284 modules)
+ GET / 200 in 5708ms
+ ✓ Compiled in 810ms (562 modules)
+ ✓ Compiled in 69ms (547 modules)
+ ○ Compiling /b2niveau/[[...slug]] ...
+ ✓ Compiled /b2niveau/[[...slug]] in 6.6s (3494 modules)
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B1 Server] MDX Detection: {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx',
+  isMDX: true,
+  contentLength: 7988,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/%c3%9cbungen/teil1 200 in 8292ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B1 Server] MDX Detection: {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx',
+  isMDX: true,
+  contentLength: 7988,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/%c3%9cbungen/teil1 200 in 144ms
+ ✓ Compiled in 991ms (3509 modules)
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx',
+  isMDX: true,
+  contentLength: 7988,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: true,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%c3%9cbungen/teil1 200 in 631ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx',
+  isMDX: true,
+  contentLength: 7988,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: true,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%c3%9cbungen/teil1 200 in 160ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx',
+  isMDX: true,
+  contentLength: 7988,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: true,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil1 200 in 155ms
+ ✓ Compiled /api/exercise-comments in 409ms (2068 modules)
+ ✓ Compiled in 483ms (1443 modules)
+🔓 JWT: Verifying token with secret: your-super...
+✅ JWT: Token verified successfully, user ID: cmf3wfn7k0001bm5kf1qdusnk
+ GET /favicon.ico 200 in 1378ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil1 500 in 1316ms
+ GET /api/auth/me 401 in 1440ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil1 500 in 102ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil1.mdx',
+  isMDX: true,
+  contentLength: 7988,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: true,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil1 200 in 208ms
+ GET /favicon.ico 200 in 8ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil2.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil2.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil2/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil2/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil2.mdx',
+  isMDX: true,
+  contentLength: 7788,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: true,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil2 200 in 53ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil2 500 in 120ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil2 500 in 88ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx',
+  isMDX: true,
+  contentLength: 9373,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil3 200 in 81ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil3 500 in 110ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil3 500 in 100ms
+ ✓ Compiled in 820ms (3531 modules)
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx',
+  isMDX: true,
+  contentLength: 9375,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil3 200 in 334ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx',
+  isMDX: true,
+  contentLength: 9375,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil3 200 in 373ms
+ GET /favicon.ico 200 in 21ms
+ ✓ Compiled /api/auth/me in 321ms (2160 modules)
+🔓 JWT: Verifying token with secret: your-super...
+✅ JWT: Token verified successfully, user ID: cmf3wfn7k0001bm5kf1qdusnk
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil3 500 in 580ms
+ GET /api/auth/me 401 in 698ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil3 500 in 78ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/Übungen/teil3.mdx',
+  isMDX: true,
+  contentLength: 9375,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: true,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: true
+}
+ GET /b2niveau/%C3%9Cbungen/teil3 200 in 397ms
+ GET /favicon.ico 200 in 8ms
+🔓 JWT: Verifying token with secret: your-super...
+✅ JWT: Token verified successfully, user ID: cmf3wfn7k0001bm5kf1qdusnk
+ GET /api/auth/me 401 in 12ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil3 500 in 104ms
+Error fetching exercise comments: Error [PrismaClientInitializationError]: 
+Invalid `prisma.exercise_comments.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5556`
+
+Please make sure your database server is running at `localhost:5556`.
+    at async GET (src/app/api/exercise-comments/route.ts:13:21)
+  11 |     }
+  12 |
+> 13 |     const comments = await prisma.exercise_comments.findMany({
+     |                     ^
+  14 |       where: {
+  15 |         exerciseId,
+  16 |         published: true, {
+  clientVersion: '6.14.0',
+  errorCode: undefined,
+  retryable: undefined
+}
+ GET /api/exercise-comments?exerciseId=b2-ubungen-teil3 500 in 153ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: true
+[DEBUG] Alt file exists: false
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md',
+  isMDX: false,
+  contentLength: 5120,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 63ms
+ ⨯ YAMLException: end of the stream or a document separator is expected at line 4, column 1:
+    - Các cấu trúc đặc biệt: **um…zu ... 
+    ^
+    at getMarkdownFiles (src/lib/markdown.ts:69:39)
+    at getNiveauContent (src/lib/markdown.ts:588:19)
+    at DocPage (src/app/b2niveau/[[...slug]]/page.tsx:181:43)
+  67 |       const filePath = path.join(sectionPath, fileName)
+  68 |       const fileContents = fs.readFileSync(filePath, 'utf8')
+> 69 |       const { data, content } = matter(fileContents)
+     |                                       ^
+  70 |       
+  71 |       const slug = fileName.replace(/\.(md|mdx)$/, '')
+  72 |        {
+  reason: 'end of the stream or a document separator is expected',
+  mark: [Mark],
+  digest: '798702607',
+  constructor: [Function: YAMLException],
+  toString: [Function: toString]
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 500 in 114ms
+ GET /favicon.ico 200 in 7ms
+ GET /favicon.ico 200 in 34ms
+ ⨯ YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 8, column 1:
+    
+    ^
+    at getMarkdownFiles (src/lib/markdown.ts:69:39)
+    at getNiveauContent (src/lib/markdown.ts:588:19)
+    at DocPage (src/app/b2niveau/[[...slug]]/page.tsx:181:43)
+  67 |       const filePath = path.join(sectionPath, fileName)
+  68 |       const fileContents = fs.readFileSync(filePath, 'utf8')
+> 69 |       const { data, content } = matter(fileContents)
+     |                                       ^
+  70 |       
+  71 |       const slug = fileName.replace(/\.(md|mdx)$/, '')
+  72 |        {
+  reason: 'can not read a block mapping entry; a multiline key may not be an implicit key',
+  mark: [Mark],
+  digest: '2450577057',
+  constructor: [Function: YAMLException],
+  toString: [Function: toString]
+}
+ GET /b2niveau/grammatik/01-konjunktiv-ii 500 in 115ms
+ ⨯ YAMLException: end of the stream or a document separator is expected at line 4, column 1:
+    - Các cấu trúc đặc biệt: **um…zu ... 
+    ^
+    at getMarkdownFiles (src/lib/markdown.ts:69:39)
+    at getNiveauContent (src/lib/markdown.ts:588:19)
+    at DocPage (src/app/b2niveau/[[...slug]]/page.tsx:181:43)
+  67 |       const filePath = path.join(sectionPath, fileName)
+  68 |       const fileContents = fs.readFileSync(filePath, 'utf8')
+> 69 |       const { data, content } = matter(fileContents)
+     |                                       ^
+  70 |       
+  71 |       const slug = fileName.replace(/\.(md|mdx)$/, '')
+  72 |        {
+  reason: 'end of the stream or a document separator is expected',
+  mark: [Mark],
+  digest: '798702607',
+  constructor: [Function: YAMLException],
+  toString: [Function: toString]
+}
+ GET /b2niveau/grammatik/03-infinitivkonstruktionen 500 in 112ms
+ ⨯ YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 7, column 82:
+     ... ần đúng **chủ ngữ** và **thì**.n: 8
+                                         ^
+    at getMarkdownFiles (src/lib/markdown.ts:69:39)
+    at getNiveauContent (src/lib/markdown.ts:588:19)
+    at DocPage (src/app/b2niveau/[[...slug]]/page.tsx:181:43)
+  67 |       const filePath = path.join(sectionPath, fileName)
+  68 |       const fileContents = fs.readFileSync(filePath, 'utf8')
+> 69 |       const { data, content } = matter(fileContents)
+     |                                       ^
+  70 |       
+  71 |       const slug = fileName.replace(/\.(md|mdx)$/, '')
+  72 |        {
+  reason: 'can not read a block mapping entry; a multiline key may not be an implicit key',
+  mark: [Mark],
+  digest: '376841985',
+  constructor: [Function: YAMLException],
+  toString: [Function: toString]
+}
+ GET /b2niveau/grammatik/03-infinitivkonstruktionen 500 in 197ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/07-partizipien.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/07-partizipien.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/07-partizipien/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/07-partizipien/index.mdx
+[DEBUG] File exists: true
+[DEBUG] Alt file exists: false
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/07-partizipien.md',
+  isMDX: false,
+  contentLength: 5449,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/07-partizipien 200 in 217ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: true
+[DEBUG] Alt file exists: false
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md',
+  isMDX: false,
+  contentLength: 5120,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 137ms
+ GET /favicon.ico 200 in 10ms
+🔓 JWT: Verifying token with secret: your-super...
+✅ JWT: Token verified successfully, user ID: cmf3wfn7k0001bm5kf1qdusnk
+ GET /api/auth/me 401 in 14ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5299,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 123ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5299,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 113ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 128ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5236,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 132ms
+ GET /favicon.ico 200 in 10ms
+🔓 JWT: Verifying token with secret: your-super...
+✅ JWT: Token verified successfully, user ID: cmf3wfn7k0001bm5kf1qdusnk
+ GET /api/auth/me 401 in 16ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5236,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 132ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 120ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 131ms
+ GET /favicon.ico 200 in 10ms
+🔓 JWT: Verifying token with secret: your-super...
+✅ JWT: Token verified successfully, user ID: cmf3wfn7k0001bm5kf1qdusnk
+ GET /api/auth/me 401 in 12ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 116ms
+ ✓ Compiled in 789ms (3510 modules)
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 295ms
+ ✓ Compiled /favicon.ico in 279ms (2068 modules)
+ GET /favicon.ico 200 in 338ms
+ ✓ Compiled in 829ms (3526 modules)
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 255ms
+ GET /favicon.ico 200 in 26ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 286ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 135ms
+ ✓ Compiled in 769ms (3510 modules)
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 261ms
+[DEBUG] Looking for file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.md
+[DEBUG] Alt file: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx
+[DEBUG] Folder index: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.md
+[DEBUG] Folder index alt: /Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede/index.mdx
+[DEBUG] File exists: false
+[DEBUG] Alt file exists: true
+[DEBUG] Folder index exists: false
+[DEBUG] Folder index alt exists: false
+[B2 Server] MDX Detection (slug.length=2): {
+  filePath: '/Users/khoavo/Documents/GitHub/deutsch/Edu-theme/src/content/b2niveau/grammatik/05-indirekte-rede.mdx',
+  isMDX: true,
+  contentLength: 5232,
+  hasExerciseTable: false,
+  hasFormingQuestions: false,
+  hasMatchingQuiz: false,
+  hasLueckentext: false,
+  hasSatzbildung: false,
+  hasMultipleChoiceQuiz: false,
+  hasInteractiveComponents: false
+}
+ GET /b2niveau/grammatik/05-indirekte-rede 200 in 195ms

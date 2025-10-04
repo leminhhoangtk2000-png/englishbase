@@ -33,10 +33,11 @@ model exercise_comments {
 **File**: `src/app/api/exercise-comments/route.ts`
 
 **GET Request Handler**:
+
 ```typescript
 export async function GET(request: NextRequest) {
   const exerciseId = searchParams.get('exerciseId');
-  
+
   if (!exerciseId) {
     return NextResponse.json({ error: 'exerciseId is required' }, { status: 400 });
   }
@@ -53,10 +54,11 @@ export async function GET(request: NextRequest) {
 ```
 
 **POST Request Handler**:
+
 ```typescript
 export async function POST(request: NextRequest) {
   const { content, exerciseId, exerciseUrl, parentId } = await request.json();
-  
+
   const comment = await prisma.exercise_comments.create({
     data: {
       id: generateId(),
@@ -83,7 +85,9 @@ export async function POST(request: NextRequest) {
 export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
   useEffect(() => {
     const loadComments = async () => {
-      const response = await fetch(`/api/exercise-comments?exerciseId=${exerciseId}`);
+      const response = await fetch(
+        `/api/exercise-comments?exerciseId=${exerciseId}`
+      );
       // ← Fetches comments only for this exerciseId
       if (response.ok) {
         const data = await response.json();
@@ -91,7 +95,7 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
       }
     };
     loadComments();
-  }, [exerciseId]);  // ← Re-fetches when exerciseId changes
+  }, [exerciseId]); // ← Re-fetches when exerciseId changes
 }
 ```
 
@@ -103,28 +107,28 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
 
 **Sample exerciseIds from B1 Übungen**:
 
-| Page | exerciseId | Unique? |
-|------|-----------|---------|
-| relativsatze/teil2 | `b1-relativsatze-teil2` | ✅ Yes |
-| relativsatze/teil3 | `b1-relativsatze-teil3` | ✅ Yes |
-| relativsatze/teil4 | `b1-relativsatze-teil4` | ✅ Yes |
-| relativsatze/teil5 | `b1-relativsatze-teil5` | ✅ Yes |
-| verben-mit-praepositionen/teil1 | `b1-verben-mit-praepositionen-teil1` | ✅ Yes |
-| verben-mit-praepositionen/teil2 | `b1-verben-mit-praepositionen-teil2` | ✅ Yes |
-| verben-mit-praepositionen/teil3 | `b1-verben-mit-praepositionen-teil3` | ✅ Yes |
-| passiv/teil1 | `b1-passiv-teil1` | ✅ Yes |
-| passiv/teil2 | `b1-passiv-teil2` | ✅ Yes |
-| doppelkonjunktionen/teil1 | `b1-doppelkonjunktionen-teil1` | ✅ Yes |
-| doppelkonjunktionen/teil2 | `b1-doppelkonjunktionen-teil2` | ✅ Yes |
-| doppelkonjunktionen/teil6 | `b1-doppelkonjunktionen-teil6` | ✅ Yes |
-| adjektive/teil1 | `b1-adjektive-teil1` | ✅ Yes |
-| adjektive/teil2 | `b1-adjektive-teil2` | ✅ Yes |
-| adjektive/teil3 | `b1-adjektive-teil3` | ✅ Yes |
-| praepositionen/teil1 | `b1-praepositionen-teil1` | ✅ Yes |
-| praepositionen/teil2 | `b1-praepositionen-teil2` | ✅ Yes |
-| praepositionen/teil3 | `b1-praepositionen-teil3` | ✅ Yes |
-| konjunktiv-ii/teil1 | `b1-konjunktiv-ii-teil1` | ✅ Yes |
-| konjunktiv-ii/teil2 | `b1-konjunktiv-ii-teil2` | ✅ Yes |
+| Page                            | exerciseId                           | Unique? |
+| ------------------------------- | ------------------------------------ | ------- |
+| relativsatze/teil2              | `b1-relativsatze-teil2`              | ✅ Yes  |
+| relativsatze/teil3              | `b1-relativsatze-teil3`              | ✅ Yes  |
+| relativsatze/teil4              | `b1-relativsatze-teil4`              | ✅ Yes  |
+| relativsatze/teil5              | `b1-relativsatze-teil5`              | ✅ Yes  |
+| verben-mit-praepositionen/teil1 | `b1-verben-mit-praepositionen-teil1` | ✅ Yes  |
+| verben-mit-praepositionen/teil2 | `b1-verben-mit-praepositionen-teil2` | ✅ Yes  |
+| verben-mit-praepositionen/teil3 | `b1-verben-mit-praepositionen-teil3` | ✅ Yes  |
+| passiv/teil1                    | `b1-passiv-teil1`                    | ✅ Yes  |
+| passiv/teil2                    | `b1-passiv-teil2`                    | ✅ Yes  |
+| doppelkonjunktionen/teil1       | `b1-doppelkonjunktionen-teil1`       | ✅ Yes  |
+| doppelkonjunktionen/teil2       | `b1-doppelkonjunktionen-teil2`       | ✅ Yes  |
+| doppelkonjunktionen/teil6       | `b1-doppelkonjunktionen-teil6`       | ✅ Yes  |
+| adjektive/teil1                 | `b1-adjektive-teil1`                 | ✅ Yes  |
+| adjektive/teil2                 | `b1-adjektive-teil2`                 | ✅ Yes  |
+| adjektive/teil3                 | `b1-adjektive-teil3`                 | ✅ Yes  |
+| praepositionen/teil1            | `b1-praepositionen-teil1`            | ✅ Yes  |
+| praepositionen/teil2            | `b1-praepositionen-teil2`            | ✅ Yes  |
+| praepositionen/teil3            | `b1-praepositionen-teil3`            | ✅ Yes  |
+| konjunktiv-ii/teil1             | `b1-konjunktiv-ii-teil1`             | ✅ Yes  |
+| konjunktiv-ii/teil2             | `b1-konjunktiv-ii-teil2`             | ✅ Yes  |
 
 **Naming Convention**: `{level}-{topic}-{part}`  
 **Result**: ✅ All exerciseIds are unique across the platform
@@ -150,18 +154,21 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
 **Scenario**: Verify comments on 3 different pages are independent
 
 1. **Page 1**: `/b1niveau/Übungen/verben-mit-praepositionen/teil2`
+
    - exerciseId: `b1-verben-mit-praepositionen-teil2`
    - Add comment: "Comment A"
 
 2. **Page 2**: `/b1niveau/Übungen/verben-mit-praepositionen/teil3`
+
    - exerciseId: `b1-verben-mit-praepositionen-teil3`
    - Add comment: "Comment B"
 
 3. **Page 3**: `/b1niveau/Übungen/adjektive/teil2`
+
    - exerciseId: `b1-adjektive-teil2`
    - Add comment: "Comment C"
 
-4. **Verify**: 
+4. **Verify**:
    - Page 1 shows only "Comment A" ✅
    - Page 2 shows only "Comment B" ✅
    - Page 3 shows only "Comment C" ✅
@@ -187,12 +194,12 @@ export function ExerciseComments({ exerciseId, url }: ExerciseCommentsProps) {
 
 ```sql
 -- Count comments per exerciseId
-SELECT 
-  exerciseId, 
-  COUNT(*) as comment_count 
-FROM exercise_comments 
-WHERE published = true 
-GROUP BY exerciseId 
+SELECT
+  exerciseId,
+  COUNT(*) as comment_count
+FROM exercise_comments
+WHERE published = true
+GROUP BY exerciseId
 ORDER BY comment_count DESC;
 ```
 
@@ -218,6 +225,7 @@ ORDER BY comment_count DESC;
 ### System Status: ✅ **FULLY ISOLATED**
 
 **Summary**:
+
 - Each exercise page has a **unique exerciseId**
 - Database stores comments with **exerciseId** as key field
 - API **filters and saves** comments per exerciseId
@@ -227,6 +235,7 @@ ORDER BY comment_count DESC;
 **Confidence Level**: 100% ✅
 
 **Key Isolation Points**:
+
 1. **Database Level**: `WHERE exerciseId = ?`
 2. **API Level**: Query parameter filtering
 3. **Component Level**: Props-based fetching
@@ -237,6 +246,7 @@ ORDER BY comment_count DESC;
 ## 🔍 Potential Issues (None Found)
 
 **Checked for**:
+
 - ❌ Shared exerciseId between pages → Not found
 - ❌ Missing exerciseId in API call → All calls include it
 - ❌ Incorrect WHERE clause → Verified correct
@@ -251,6 +261,7 @@ ORDER BY comment_count DESC;
 ### Current Implementation: ✅ PERFECT
 
 No changes needed. The comment isolation system is:
+
 - **Well-designed**: Clear separation at all layers
 - **Properly implemented**: Follows best practices
 - **Thoroughly tested**: Multiple verification points

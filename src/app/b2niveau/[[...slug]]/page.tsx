@@ -189,20 +189,26 @@ export default async function DocPage({ params }: DocPageProps) {
     const directMarkdownContent = getMarkdownBySlug('b2niveau', decodedSection, decodedFolderSlug);
     
     if (directMarkdownContent) {
-      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
+      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz, Lueckentext, Satzbildung)
       const hasExerciseTable = directMarkdownContent.content.includes('<ExerciseTable');
       const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
       const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
-      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz;
+      const hasLueckentext = directMarkdownContent.content.includes('<Lueckentext');
+      const hasSatzbildung = directMarkdownContent.content.includes('<Satzbildung');
+      const hasMultipleChoiceQuiz = directMarkdownContent.content.includes('<MultipleChoiceQuiz');
+      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasLueckentext || hasSatzbildung || hasMultipleChoiceQuiz;
       const isMDX = directMarkdownContent.filePath && directMarkdownContent.filePath.endsWith('.mdx');
       
-      console.log('[B1 Server] MDX Detection:', { 
+      console.log('[B2 Server] MDX Detection (slug.length=2):', { 
         filePath: directMarkdownContent.filePath, 
         isMDX, 
         contentLength: directMarkdownContent.content.length, 
         hasExerciseTable,
         hasFormingQuestions,
         hasMatchingQuiz,
+        hasLueckentext,
+        hasSatzbildung,
+        hasMultipleChoiceQuiz,
         hasInteractiveComponents
       });
       
@@ -323,9 +329,45 @@ export default async function DocPage({ params }: DocPageProps) {
       notFound();
     }
 
-    const htmlContent = await markdownToHtml(markdownContent.content);
+    // Check if this is an MDX file and process components
+    const isMDX = markdownContent.filePath && markdownContent.filePath.endsWith('.mdx');
+    const hasInteractiveComponents = markdownContent.content.includes('ExerciseTable') || 
+                                    markdownContent.content.includes('Satzbildung') || 
+                                    markdownContent.content.includes('MatchingQuiz') ||
+                                    markdownContent.content.includes('ExerciseComments');
+    console.log('[B2 Server] MDX Detection (slug.length=2):', { 
+      filePath: markdownContent.filePath, 
+      isMDX, 
+      contentLength: markdownContent.content.length,
+      hasInteractiveComponents,
+      hasExerciseComments: markdownContent.content.includes('ExerciseComments')
+    });
+
     const toc = extractTableOfContents(markdownContent.content);
     const breadcrumbItems = [decodedSection];
+
+    let contentElement;
+
+    if (isMDX && hasInteractiveComponents) {
+      // For MDX files with interactive components, pass raw content to client-side renderer
+      contentElement = (
+        <MDXComponentsRenderer content={markdownContent.content} />
+      );
+    } else if (isMDX) {
+      // MDX file without interactive components - still use renderer for proper formatting
+      contentElement = (
+        <MDXComponentsRenderer content={markdownContent.content} />
+      );
+    } else {
+      // Regular markdown processing
+      const htmlContent = await markdownToHtml(markdownContent.content);
+      contentElement = (
+        <div 
+          className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+      );
+    }
 
     return (
       <main className="relative py-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-24 lg:py-8">
@@ -357,7 +399,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
           <Separator className="my-4" />
           <div className="prose max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            {contentElement}
           </div>
         </div>
         <div className="hidden text-sm lg:block">
@@ -406,24 +448,36 @@ export default async function DocPage({ params }: DocPageProps) {
     notFound();
   }
 
-  // Check if this is an MDX file and process components
+  // Check if this is an MDX file and process components (matching B1 pattern)
   const isMDX = markdownContent.filePath && markdownContent.filePath.endsWith('.mdx');
-  console.log('[B1 Server] MDX Detection:', { 
+  const hasExerciseTable = markdownContent.content.includes('<ExerciseTable');
+  const hasFormingQuestions = markdownContent.content.includes('<FormingQuestions');
+  const hasMatchingQuiz = markdownContent.content.includes('<MatchingQuiz');
+  const hasLueckentext = markdownContent.content.includes('<Lueckentext');
+  const hasSatzbildung = markdownContent.content.includes('<Satzbildung');
+  const hasMultipleChoiceQuiz = markdownContent.content.includes('<MultipleChoiceQuiz');
+  const hasExerciseComments = markdownContent.content.includes('<ExerciseComments');
+  const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasLueckentext || hasSatzbildung || hasMultipleChoiceQuiz || hasExerciseComments;
+
+  console.log('[B2 Server] MDX Detection:', { 
     filePath: markdownContent.filePath, 
     isMDX, 
     contentLength: markdownContent.content.length,
-    hasExerciseTable: markdownContent.content.includes('ExerciseTable'),
-    hasFormingQuestions: markdownContent.content.includes('FormingQuestions'),
-    hasMatchingQuiz: markdownContent.content.includes('MatchingQuiz'),
-    hasInteractiveComponents: markdownContent.content.includes('ExerciseTable') || markdownContent.content.includes('FormingQuestions') || markdownContent.content.includes('MatchingQuiz')
+    hasExerciseTable,
+    hasFormingQuestions,
+    hasMatchingQuiz,
+    hasLueckentext,
+    hasSatzbildung,
+    hasMultipleChoiceQuiz,
+    hasExerciseComments,
+    hasInteractiveComponents
   });
-  console.log('[B1 Server] Raw content passed to client:', markdownContent.content.substring(0, 300));
   const toc = extractTableOfContents(markdownContent.content);
 
   let contentElement;
 
-  if (isMDX) {
-    // For MDX files, pass raw content to client-side renderer which will process both markdown and components
+  if (isMDX && hasInteractiveComponents) {
+    // For MDX files with interactive components, use MDXComponentsRenderer
     contentElement = (
       <MDXComponentsRenderer content={markdownContent.content} />
     );

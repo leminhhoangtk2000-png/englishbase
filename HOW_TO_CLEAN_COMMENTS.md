@@ -12,6 +12,7 @@
 **Endpoint**: `DELETE /api/admin/clean-comments`
 
 **Advantages**:
+
 - ✅ Easiest to use
 - ✅ No Docker/database setup needed
 - ✅ Works while dev server is running
@@ -21,25 +22,29 @@
 **Usage**:
 
 #### Option A: Browser
+
 1. Start dev server: `npm run dev`
 2. Open: http://localhost:9003/api/admin/clean-comments
 3. Browser will send DELETE request automatically
 
 #### Option B: Curl Command
+
 ```bash
 curl -X DELETE http://localhost:9003/api/admin/clean-comments
 ```
 
 #### Option C: JavaScript Fetch
+
 ```javascript
-fetch('http://localhost:9003/api/admin/clean-comments', {
-  method: 'DELETE'
+fetch("http://localhost:9003/api/admin/clean-comments", {
+  method: "DELETE",
 })
-.then(res => res.json())
-.then(data => console.log(data));
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 ```
 
 **Response Example**:
+
 ```json
 {
   "success": true,
@@ -56,6 +61,7 @@ fetch('http://localhost:9003/api/admin/clean-comments', {
 ```
 
 **Security**:
+
 - ⚠️ Only works in `NODE_ENV=development`
 - 🔒 Returns `403 Forbidden` in production
 - ⚠️ Deletes ALL comments (irreversible!)
@@ -67,15 +73,18 @@ fetch('http://localhost:9003/api/admin/clean-comments', {
 **File**: `scripts/clean-all-comments.ts`
 
 **Prerequisites**:
+
 - Docker containers running: `npm run docker:up`
 - Database connection available
 
 **Usage**:
+
 ```bash
 npx tsx scripts/clean-all-comments.ts
 ```
 
 **Output**:
+
 ```
 🗑️  Starting to clean all exercise comments...
 
@@ -101,11 +110,13 @@ npx tsx scripts/clean-all-comments.ts
 ```
 
 **Advantages**:
+
 - ✅ Full logging
 - ✅ Verification step
 - ✅ Error handling
 
 **Disadvantages**:
+
 - ❌ Requires Docker running
 - ❌ More setup needed
 
@@ -116,11 +127,13 @@ npx tsx scripts/clean-all-comments.ts
 **File**: `scripts/clean-all-comments.sql`
 
 **Prerequisites**:
+
 - Access to database via pgAdmin or psql
 
 **Usage**:
 
 #### Option A: pgAdmin
+
 1. Open pgAdmin: http://localhost:5050
 2. Login: `admin@example.com` / `admin123`
 3. Navigate to database → Query Tool
@@ -128,11 +141,13 @@ npx tsx scripts/clean-all-comments.ts
 5. Run query
 
 #### Option B: psql Command Line
+
 ```bash
 psql postgresql://postgres:postgres@localhost:5556/nextn_db < scripts/clean-all-comments.sql
 ```
 
 **SQL Commands**:
+
 ```sql
 -- Delete all comment likes first
 DELETE FROM exercise_comment_likes;
@@ -146,11 +161,13 @@ SELECT COUNT(*) as remaining_likes FROM exercise_comment_likes;
 ```
 
 **Advantages**:
+
 - ✅ Direct database access
 - ✅ Fast execution
 - ✅ No code compilation needed
 
 **Disadvantages**:
+
 - ❌ Requires database tool
 - ❌ Manual verification
 
@@ -161,6 +178,7 @@ SELECT COUNT(*) as remaining_likes FROM exercise_comment_likes;
 ### Tables Affected
 
 1. **exercise_comment_likes**
+
    - All likes on all comments
    - Related to: exercise_comments.id
 
@@ -200,17 +218,18 @@ exercise_comment_likes
 The API endpoint includes a safety check:
 
 ```typescript
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NODE_ENV === "development";
 
 if (!isDevelopment) {
   return NextResponse.json(
-    { error: 'This endpoint is only available in development mode' },
+    { error: "This endpoint is only available in development mode" },
     { status: 403 }
   );
 }
 ```
 
 **Result**:
+
 - ✅ Works in development: `NODE_ENV=development`
 - ❌ Blocked in production: `NODE_ENV=production`
 
@@ -226,6 +245,7 @@ model exercise_comment_likes {
 ```
 
 **Result**:
+
 - Deleting a comment automatically deletes its likes
 - No orphaned records
 - Database integrity maintained
@@ -250,6 +270,7 @@ curl -X DELETE http://localhost:9003/api/admin/clean-comments
 ```
 
 Expected Response:
+
 ```json
 {
   "success": true,
@@ -288,12 +309,12 @@ Expected: Returns empty array `[]`
 
 ## 📝 Quick Reference
 
-| Method | Command | Requires |
-|--------|---------|----------|
-| API (Browser) | Open URL in browser | Dev server running |
-| API (Curl) | `curl -X DELETE ...` | Dev server running |
-| TypeScript | `npx tsx scripts/clean-all-comments.ts` | Docker running |
-| SQL | Copy-paste in pgAdmin | Database access |
+| Method        | Command                                 | Requires           |
+| ------------- | --------------------------------------- | ------------------ |
+| API (Browser) | Open URL in browser                     | Dev server running |
+| API (Curl)    | `curl -X DELETE ...`                    | Dev server running |
+| TypeScript    | `npx tsx scripts/clean-all-comments.ts` | Docker running     |
+| SQL           | Copy-paste in pgAdmin                   | Database access    |
 
 **Recommended**: Use API method (easiest and safest)
 
@@ -302,11 +323,13 @@ Expected: Returns empty array `[]`
 ## ✅ Checklist
 
 Before cleaning:
+
 - [ ] Confirm this is development environment
 - [ ] Backup important data (if any)
 - [ ] Close any applications using comments
 
 After cleaning:
+
 - [ ] Verify with API call (should return empty array)
 - [ ] Check database count is 0
 - [ ] Test adding new comments works
@@ -318,6 +341,7 @@ After cleaning:
 ### Issue: "Can't reach database server"
 
 **Solution**: Start Docker containers
+
 ```bash
 npm run docker:up
 ```
@@ -327,6 +351,7 @@ npm run docker:up
 **Cause**: Trying to use API in production mode
 
 **Solution**: Check environment
+
 ```bash
 echo $NODE_ENV  # Should be 'development'
 ```
@@ -336,6 +361,7 @@ echo $NODE_ENV  # Should be 'development'
 **Cause**: Dev server not running
 
 **Solution**: Start dev server
+
 ```bash
 npm run dev
 ```
@@ -349,6 +375,7 @@ npm run dev
 **Direct Access**: SQL script in pgAdmin
 
 **All methods delete**:
+
 - ✅ All comment likes
 - ✅ All parent comments
 - ✅ All reply comments

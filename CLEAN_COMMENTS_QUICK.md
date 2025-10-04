@@ -5,11 +5,13 @@
 **While dev server is running (`npm run dev`):**
 
 ### Option 1: Open in Browser
+
 ```
 http://localhost:9003/api/admin/clean-comments
 ```
 
 ### Option 2: Curl Command
+
 ```bash
 curl -X DELETE http://localhost:9003/api/admin/clean-comments
 ```
