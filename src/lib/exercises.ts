@@ -20,8 +20,16 @@ export async function getDocFromParams(slugs: string[]): Promise<ExerciseDoc | u
     return undefined;
   }
 
+  // Decode URI components (spaces and special characters)
+  const decodedSlugs = slugs.map(slug => decodeURIComponent(slug));
+  
+  console.log('[DEBUG] getDocFromParams - original slugs:', slugs);
+  console.log('[DEBUG] getDocFromParams - decoded slugs:', decodedSlugs);
+
   // Try to find MDX file in content/exercises directory
-  const exercisePath = path.join(process.cwd(), 'src/content/exercises', ...slugs);
+  const exercisePath = path.join(process.cwd(), 'src/content/exercises', ...decodedSlugs);
+  
+  console.log('[DEBUG] Trying exercise path:', exercisePath);
   
   // Try both with and without .mdx extension
   const possiblePaths = [
@@ -30,23 +38,28 @@ export async function getDocFromParams(slugs: string[]): Promise<ExerciseDoc | u
   ];
 
   for (const filePath of possiblePaths) {
+    console.log('[DEBUG] Checking path:', filePath);
+    console.log('[DEBUG] File exists?', fs.existsSync(filePath));
+    
     if (fs.existsSync(filePath)) {
       try {
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const { data, content } = matter(fileContent);
 
+        console.log('[DEBUG] ✅ Successfully loaded:', filePath);
+        
         return {
           title: data.title || 'Untitled',
           description: data.description || '',
-          level: data.category || slugs[0]?.toUpperCase() || 'A1',
-          category: data.category || slugs[0]?.toUpperCase() || 'A1',
+          level: data.category || decodedSlugs[0]?.toUpperCase() || 'A1',
+          category: data.category || decodedSlugs[0]?.toUpperCase() || 'A1',
           tags: data.tags || [],
           content,
-          slug: slugs,
+          slug: decodedSlugs,
           filePath,
         };
       } catch (error) {
-        console.error(`Error reading exercise file: ${filePath}`, error);
+        console.error(`[ERROR] reading exercise file: ${filePath}`, error);
       }
     }
   }
