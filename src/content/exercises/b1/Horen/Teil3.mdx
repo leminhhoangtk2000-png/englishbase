@@ -8,14 +8,24 @@ image: img/blog/hr28.png
 publish: True
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ---
 
 ### 🎧 **B1 – Hörverstehen: Kleine Gewohnheiten, große Wirkung**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/m0Y3xbpJBNo?si=rrDjduWfzwipSBjz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/m0Y3xbpJBNo?si=rrDjduWfzwipSBjz"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### ✅ **Richtig oder Falsch – 10 Aussagen zum Text**
 
@@ -23,69 +33,73 @@ import { AuthorCredit } from '@/components/ui/author-credit';
   title="Kleine Gewohnheiten – Wahr oder Falsch?"
   questions={[
     {
-      question: "Der Erzähler glaubt heute noch, dass nur große Veränderungen helfen.",
+      question:
+        "Der Erzähler glaubt heute noch, dass nur große Veränderungen helfen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Früher dachte ich… Aber mit der Zeit habe ich gemerkt: Es sind oft die kleinen Gewohnheiten…“ → Trước đây anh nghĩ phải thay đổi lớn, nhưng giờ anh tin vào thói quen nhỏ mỗi ngày."
+      explanation:
+        "❌ „Früher dachte ich… Aber mit der Zeit habe ich gemerkt: Es sind oft die kleinen Gewohnheiten…“ → Trước đây anh nghĩ phải thay đổi lớn, nhưng giờ anh tin vào thói quen nhỏ mỗi ngày.",
     },
     {
       question: "Er startet den Tag mit einer ruhigen Morgenroutine.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Diese Zeit gehört nur mir… Dieser ruhige Start verändert meine Stimmung…“ → Anh bắt đầu ngày mới một cách yên tĩnh và tích cực."
+      explanation:
+        "✅ „Diese Zeit gehört nur mir… Dieser ruhige Start verändert meine Stimmung…“ → Anh bắt đầu ngày mới một cách yên tĩnh và tích cực.",
     },
     {
       question: "Seine Dankbarkeitsliste enthält auch kleine schöne Dinge.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Es kann etwas Kleines sein – ein nettes Gespräch, gutes Wetter…“ → Danh sách biết ơn của anh bao gồm cả những điều nhỏ bé."
+      explanation:
+        "✅ „Es kann etwas Kleines sein – ein nettes Gespräch, gutes Wetter…“ → Danh sách biết ơn của anh bao gồm cả những điều nhỏ bé.",
     },
     {
       question: "Er benutzt sein Handy gerne vor dem Einschlafen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Ich versuche, es abends nicht mehr zu benutzen…“ → Anh ấy tránh dùng điện thoại vào buổi tối, không thích dùng trước khi ngủ."
+      explanation:
+        "❌ „Ich versuche, es abends nicht mehr zu benutzen…“ → Anh ấy tránh dùng điện thoại vào buổi tối, không thích dùng trước khi ngủ.",
     },
     {
-      question: "Die neue Schlafroutine hilft ihm, sich morgens fitter zu fühlen.",
+      question:
+        "Die neue Schlafroutine hilft ihm, sich morgens fitter zu fühlen.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Ich schlafe besser und fühle mich morgens ausgeruhter.“ → Thói quen mới giúp anh ngủ ngon và tỉnh táo hơn vào sáng hôm sau."
+      explanation:
+        "✅ „Ich schlafe besser und fühle mich morgens ausgeruhter.“ → Thói quen mới giúp anh ngủ ngon và tỉnh táo hơn vào sáng hôm sau.",
     },
     {
       question: "Er geht regelmäßig ins Fitnessstudio für Bewegung.",
       correctAnswer: "Falsch",
-      explanation: "❌ „…es nicht immer ein großes Sportprogramm sein muss.“ → Anh ấy không cần đi phòng gym, mà chọn vận động nhẹ nhàng."
+      explanation:
+        "❌ „…es nicht immer ein großes Sportprogramm sein muss.“ → Anh ấy không cần đi phòng gym, mà chọn vận động nhẹ nhàng.",
     },
     {
       question: "Kleine körperliche Aktivitäten sind für ihn ausreichend.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Ich nehme die Treppe… mache kleine Dehnübungen…“ → Các hoạt động nhỏ đủ để anh cảm thấy khỏe hơn."
+      explanation:
+        "✅ „Ich nehme die Treppe… mache kleine Dehnübungen…“ → Các hoạt động nhỏ đủ để anh cảm thấy khỏe hơn.",
     },
     {
       question: "Perfektion spielt für ihn eine wichtige Rolle.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Es geht nicht darum, perfekt zu sein – sondern regelmäßig aktiv zu bleiben.“ → Đều đặn quan trọng hơn sự hoàn hảo."
+      explanation:
+        "❌ „Es geht nicht darum, perfekt zu sein – sondern regelmäßig aktiv zu bleiben.“ → Đều đặn quan trọng hơn sự hoàn hảo.",
     },
     {
       question: "Er lebt jetzt achtsamer als früher.",
       correctAnswer: "Richtig",
-      explanation: "✅ „All diese kleinen Gewohnheiten geben mir Struktur, Ruhe…“ → Anh sống chậm lại, có ý thức hơn trong từng việc nhỏ."
+      explanation:
+        "✅ „All diese kleinen Gewohnheiten geben mir Struktur, Ruhe…“ → Anh sống chậm lại, có ý thức hơn trong từng việc nhỏ.",
     },
     {
-      question: "Er denkt, dass tägliche Gewohnheiten langfristig große Wirkung haben.",
+      question:
+        "Er denkt, dass tägliche Gewohnheiten langfristig große Wirkung haben.",
       correctAnswer: "Richtig",
-      explanation: "✅ „…wenn man jeden Tag nur ein bisschen bewusster lebt…“ → Anh tin rằng những thay đổi nhỏ hàng ngày có tác động lớn về lâu dài."
-    }
+      explanation:
+        "✅ „…wenn man jeden Tag nur ein bisschen bewusster lebt…“ → Anh tin rằng những thay đổi nhỏ hàng ngày có tác động lớn về lâu dài.",
+    },
   ]}
 />
 
 ---
 
-### **✍️ Tác giả**
-
-<AuthorCredit author="Deutschvn" />
-
----
-
 ### 💬 **Hỏi đáp & Bình luận**
 
-:::tip Bạn có cảm nhận gì sau khi luyện nghe bài này?
-Để lại bình luận nhé – đội ngũ rất vui khi được đồng hành cùng bạn! 🌱✨
-:::
-
+<ExerciseComments exerciseId="b1-horen-teil3" url="/exercises/b1/Horen/Teil3" />

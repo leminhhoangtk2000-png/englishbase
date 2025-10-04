@@ -8,14 +8,24 @@ image: img/blog/hr32.png
 publish: True
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ---
 
 ### 🎧 **B1+ – Hörverstehen: Reisen als Student – mit wenig Geld die Welt entdecken**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/FWtTPyINUjA?si=UJkCI7IQlzYQBKpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/FWtTPyINUjA?si=UJkCI7IQlzYQBKpA"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ---
 
@@ -27,67 +37,68 @@ import { AuthorCredit } from '@/components/ui/author-credit';
     {
       question: "Der Erzähler hatte als Student viel Geld zum Reisen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „…aber wenig Geld.“ → Là sinh viên anh ấy không có nhiều tiền, nhưng vẫn muốn đi du lịch."
+      explanation:
+        "❌ „…aber wenig Geld.“ → Là sinh viên anh ấy không có nhiều tiền, nhưng vẫn muốn đi du lịch.",
     },
     {
       question: "Er empfiehlt, Tickets frühzeitig zu kaufen.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Früh buchen! … zahlt oft nur die Hälfte.“ → Đặt vé sớm giúp tiết kiệm đáng kể."
+      explanation:
+        "✅ „Früh buchen! … zahlt oft nur die Hälfte.“ → Đặt vé sớm giúp tiết kiệm đáng kể.",
     },
     {
       question: "Große Buchungsseiten bieten immer die besten Preise.",
       correctAnswer: "Falsch",
-      explanation: "❌ „…kleine Anbieter günstiger als auf den großen Buchungsseiten.“ → Các trang nhỏ đôi khi rẻ hơn các nền tảng đặt phòng lớn."
+      explanation:
+        "❌ „…kleine Anbieter günstiger als auf den großen Buchungsseiten.“ → Các trang nhỏ đôi khi rẻ hơn các nền tảng đặt phòng lớn.",
     },
     {
       question: "Er hat durch Couchsurfing neue Menschen kennengelernt.",
       correctAnswer: "Richtig",
-      explanation: "✅ „…bei Couchsurfing übernachtet… lernt spannende Leute kennen.“ → Nhờ Couchsurfing, anh gặp được nhiều người thú vị."
+      explanation:
+        "✅ „…bei Couchsurfing übernachtet… lernt spannende Leute kennen.“ → Nhờ Couchsurfing, anh gặp được nhiều người thú vị.",
     },
     {
       question: "Studierendenausweise bringen oft Rabatte.",
       correctAnswer: "Richtig",
-      explanation: "✅ „…bieten Ermäßigungen für Studierende.“ → Nhiều nơi giảm giá cho sinh viên nếu có thẻ."
+      explanation:
+        "✅ „…bieten Ermäßigungen für Studierende.“ → Nhiều nơi giảm giá cho sinh viên nếu có thẻ.",
     },
     {
       question: "Der Erzähler isst am liebsten in teuren Restaurants.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Ich gehe gern auf lokale Märkte oder koche selbst…“ → Anh không ăn ở nhà hàng đắt tiền, mà chọn cách tiết kiệm hơn."
+      explanation:
+        "❌ „Ich gehe gern auf lokale Märkte oder koche selbst…“ → Anh không ăn ở nhà hàng đắt tiền, mà chọn cách tiết kiệm hơn.",
     },
     {
       question: "Er hat oft selbst gekocht oder auf Märkten eingekauft.",
       correctAnswer: "Richtig",
-      explanation: "✅ „…koche selbst, wenn ich Zugang zu einer Küche habe.“ → Anh ấy tự nấu ăn khi có bếp, và mua ở chợ địa phương."
+      explanation:
+        "✅ „…koche selbst, wenn ich Zugang zu einer Küche habe.“ → Anh ấy tự nấu ăn khi có bếp, và mua ở chợ địa phương.",
     },
     {
       question: "Ihm sind Erlebnisse wichtiger als Luxus.",
       correctAnswer: "Richtig",
-      explanation: "✅ „…mir geht es um das Erlebnis, die Kultur, die Begegnungen.“ → Với anh, trải nghiệm quan trọng hơn sự sang trọng."
+      explanation:
+        "✅ „…mir geht es um das Erlebnis, die Kultur, die Begegnungen.“ → Với anh, trải nghiệm quan trọng hơn sự sang trọng.",
     },
     {
       question: "Reisen als Student ist laut ihm eher langweilig.",
       correctAnswer: "Falsch",
-      explanation: "❌ „…sammelt Erinnerungen fürs Leben.“ → Du lịch sinh viên là thời gian đáng nhớ và đầy trải nghiệm."
+      explanation:
+        "❌ „…sammelt Erinnerungen fürs Leben.“ → Du lịch sinh viên là thời gian đáng nhớ và đầy trải nghiệm.",
     },
     {
       question: "Man kann mit wenig Geld viele Erfahrungen machen.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Wer klug plant, kann mit wenig Geld viel erleben.“ → Nếu lên kế hoạch hợp lý, vẫn có thể du lịch nhiều dù kinh phí hạn chế."
-    }
+      explanation:
+        "✅ „Wer klug plant, kann mit wenig Geld viel erleben.“ → Nếu lên kế hoạch hợp lý, vẫn có thể du lịch nhiều dù kinh phí hạn chế.",
+    },
   ]}
 />
 
 ---
 
-### ✍️ **Tác giả**
-
-<AuthorCredit author="Deutschvn" />
-
----
-
 ### 💬 **Hỏi đáp & Bình luận**
 
-:::tip Bạn đã từng đi du lịch tiết kiệm chưa?
-Chia sẻ trải nghiệm đáng nhớ của bạn cùng cộng đồng nhé! 🌍🎒
-:::
-
+<ExerciseComments exerciseId="b1-horen-teil7" url="/exercises/b1/Horen/Teil7" />

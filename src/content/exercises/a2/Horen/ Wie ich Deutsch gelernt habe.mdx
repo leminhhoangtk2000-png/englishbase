@@ -8,13 +8,23 @@ image: img/blog/hr18.png
 publish: True
 ---
 
-import { Lueckentext } from '@/components/ui/lueckentext';
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
+import { Lueckentext } from "@/components/ui/lueckentext";
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ## 🎧 **A2 – Bài nghe: Wie ich Deutsch gelernt habe**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/lwpgg96lBNs?si=vUhght9m71kpQdpD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/lwpgg96lBNs?si=vUhght9m71kpQdpD"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### **Bài tập 1: Lückentext – Wie ich Deutsch gelernt habe**
 
@@ -51,7 +61,7 @@ import { AuthorCredit } from '@/components/ui/author-credit';
     { type: "blank", correctAnswer: "Präsentationen" },
     " auf Deutsch halten. Mein Deutsch ist noch nicht perfekt, aber ich bin ",
     { type: "blank", correctAnswer: "stolz" },
-    " auf meinen Weg."
+    " auf meinen Weg.",
   ]}
 />
 
@@ -61,44 +71,45 @@ import { AuthorCredit } from '@/components/ui/author-credit';
   title="Wie ich Deutsch gelernt habe – Wahr oder Falsch?"
   questions={[
     {
-      question: "Die Person wollte Deutsch lernen, um in Deutschland zu arbeiten.",
+      question:
+        "Die Person wollte Deutsch lernen, um in Deutschland zu arbeiten.",
       correctAnswer: "Falsch",
-      explanation: "„Ich wollte in Deutschland studieren.“ – Mục tiêu là học đại học, không phải làm việc."
+      explanation:
+        "„Ich wollte in Deutschland studieren.“ – Mục tiêu là học đại học, không phải làm việc.",
     },
     {
       question: "Zuerst hat die Person mit einer App gelernt.",
       correctAnswer: "Richtig",
-      explanation: "„Zuerst habe ich mit einer App gelernt …“ – Người học bắt đầu bằng app."
+      explanation:
+        "„Zuerst habe ich mit einer App gelernt …“ – Người học bắt đầu bằng app.",
     },
     {
       question: "Im Sprachkurs hat die Person keine Freunde gefunden.",
       correctAnswer: "Falsch",
-      explanation: "„… sondern auch neue Freunde gefunden.“ – Người học có kết bạn ở lớp."
+      explanation:
+        "„… sondern auch neue Freunde gefunden.“ – Người học có kết bạn ở lớp.",
     },
     {
-      question: "Nach dem Umzug nach Deutschland war das Verstehen anfangs schwierig.",
+      question:
+        "Nach dem Umzug nach Deutschland war das Verstehen anfangs schwierig.",
       correctAnswer: "Richtig",
-      explanation: "„Ich konnte im Supermarkt oder im Bus oft nichts verstehen.“ – Ban đầu nghe hiểu rất khó."
+      explanation:
+        "„Ich konnte im Supermarkt oder im Bus oft nichts verstehen.“ – Ban đầu nghe hiểu rất khó.",
     },
     {
       question: "Heute kann die Person auch auf Deutsch präsentieren.",
       correctAnswer: "Richtig",
-      explanation: "„… und auch kleine Präsentationen auf Deutsch halten.“ – Giờ có thể thuyết trình bằng tiếng Đức."
-    }
+      explanation:
+        "„… und auch kleine Präsentationen auf Deutsch halten.“ – Giờ có thể thuyết trình bằng tiếng Đức.",
+    },
   ]}
 />
 
 ---
 
-### ✍️ **Tác giả**
-
-<AuthorCredit author="Deutschvn" />
-
----
-
 ### 💬 **Hỏi đáp & Bình luận**
 
-:::tip Bạn có cảm nhận gì sau khi luyện nghe bài này?
-Để lại bình luận nhé – đội ngũ rất vui khi được đồng hành cùng bạn! 🌟
-:::
-
+<ExerciseComments
+  exerciseId="a2-horen--wie-ich-deutsch-gelernt-habe"
+  url="/exercises/a2/Horen/ Wie ich Deutsch gelernt habe"
+/>

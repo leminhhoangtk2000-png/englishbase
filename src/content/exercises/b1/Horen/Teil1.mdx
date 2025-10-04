@@ -8,14 +8,24 @@ image: img/blog/hr27.png
 publish: True
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ---
 
 ### 🎧 **B1 – Hörverstehen: Eine Wohnung in Leipzig finden**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/h0NiLMx5Br4?si=K_IaH_jheBiHRIKT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/h0NiLMx5Br4?si=K_IaH_jheBiHRIKT"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ---
 
@@ -25,59 +35,64 @@ import { AuthorCredit } from '@/components/ui/author-credit';
   title="Eine Wohnung in Leipzig finden – Wahr oder Falsch?"
   questions={[
     {
-      question: "Die Erzählerin hatte von Anfang an ein soziales Netzwerk in Leipzig.",
+      question:
+        "Die Erzählerin hatte von Anfang an ein soziales Netzwerk in Leipzig.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Eine neue Stadt, keine Freunde, kein Netzwerk.“ → Cô ấy hoàn toàn không có mối quan hệ nào khi mới đến Leipzig."
+      explanation:
+        "❌ „Eine neue Stadt, keine Freunde, kein Netzwerk.“ → Cô ấy hoàn toàn không có mối quan hệ nào khi mới đến Leipzig.",
     },
     {
-      question: "Die Inserate auf Immobilienplattformen waren oft schnell vergriffen oder kostspielig.",
+      question:
+        "Die Inserate auf Immobilienplattformen waren oft schnell vergriffen oder kostspielig.",
       correctAnswer: "Richtig",
-      explanation: "✅ „...waren die guten Wohnungen meistens schon nach wenigen Stunden weg oder sehr teuer.“ → Nhà tốt thường hết nhanh hoặc đắt."
+      explanation:
+        "✅ „...waren die guten Wohnungen meistens schon nach wenigen Stunden weg oder sehr teuer.“ → Nhà tốt thường hết nhanh hoặc đắt.",
     },
     {
       question: "In Online-Gruppen hat sie brauchbare Ratschläge bekommen.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Das war mein erster guter Tipp.“ → Cô nhận được lời khuyên đầu tiên hữu ích qua nhóm Facebook."
+      explanation:
+        "✅ „Das war mein erster guter Tipp.“ → Cô nhận được lời khuyên đầu tiên hữu ích qua nhóm Facebook.",
     },
     {
-      question: "Sie blieb bei ihrer Entscheidung, nur im Stadtzentrum zu suchen.",
+      question:
+        "Sie blieb bei ihrer Entscheidung, nur im Stadtzentrum zu suchen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „...aber schließlich habe ich ein schönes WG-Zimmer etwas außerhalb gefunden...“ → Cô đã thay đổi lựa chọn."
+      explanation:
+        "❌ „...aber schließlich habe ich ein schönes WG-Zimmer etwas außerhalb gefunden...“ → Cô đã thay đổi lựa chọn.",
     },
     {
       question: "Flexibilität half ihr, eine passende Unterkunft zu finden.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Ich habe auch gelernt, dass man flexibel sein muss.“ → Cô tìm được nhà nhờ linh hoạt."
+      explanation:
+        "✅ „Ich habe auch gelernt, dass man flexibel sein muss.“ → Cô tìm được nhà nhờ linh hoạt.",
     },
     {
-      question: "Wer ohne Unterlagen zur Wohnungsbesichtigung kommt, hat bessere Chancen.",
+      question:
+        "Wer ohne Unterlagen zur Wohnungsbesichtigung kommt, hat bessere Chancen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Man sollte immer alle Unterlagen vorbereitet haben...“ → Không chuẩn bị giấy tờ thì cơ hội thấp hơn."
+      explanation:
+        "❌ „Man sollte immer alle Unterlagen vorbereitet haben...“ → Không chuẩn bị giấy tờ thì cơ hội thấp hơn.",
     },
     {
-      question: "Höflichkeit und Pünktlichkeit haben sich bei der Besichtigung positiv ausgewirkt.",
+      question:
+        "Höflichkeit und Pünktlichkeit haben sich bei der Besichtigung positiv ausgewirkt.",
       correctAnswer: "Richtig",
-      explanation: "✅ „...weil ich nett war und ehrlich gewirkt habe.“ → Chủ nhà chọn vì cô thân thiện và đúng giờ."
+      explanation:
+        "✅ „...weil ich nett war und ehrlich gewirkt habe.“ → Chủ nhà chọn vì cô thân thiện và đúng giờ.",
     },
     {
-      question: "Die Erzählerin lebt aktuell zufrieden in einer Wohngemeinschaft.",
+      question:
+        "Die Erzählerin lebt aktuell zufrieden in einer Wohngemeinschaft.",
       correctAnswer: "Richtig",
-      explanation: "✅ „...und ich bin sehr zufrieden.“ → Cô hài lòng với cuộc sống hiện tại trong WG."
-    }
+      explanation:
+        "✅ „...und ich bin sehr zufrieden.“ → Cô hài lòng với cuộc sống hiện tại trong WG.",
+    },
   ]}
 />
 
 ---
 
-### **✍️ Tác giả**
-
-<AuthorCredit author="Deutschvn" />
-
----
-
 ### **💬 Hỏi đáp & Bình luận**
 
-:::tip Bạn có cảm nhận gì sau khi luyện nghe bài này?
-Để lại bình luận nhé – đội ngũ rất vui khi được đồng hành cùng bạn! 🌟
-:::
-
+<ExerciseComments exerciseId="b1-horen-teil1" url="/exercises/b1/Horen/Teil1" />

@@ -8,14 +8,24 @@ image: img/blog/hr29.png
 publish: True
 ---
 
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
-import { AuthorCredit } from '@/components/ui/author-credit';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
+import { AuthorCredit } from "@/components/ui/author-credit";
 
 ---
 
 ### 🎧 **B1 – Hörverstehen: Mein Nebenjob im Studium**
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ydEqT16XF4s?si=_uU3qWUfeZATsDgJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="640"
+  height="360"
+  src="https://www.youtube.com/embed/ydEqT16XF4s?si=_uU3qWUfeZATsDgJ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ---
 
@@ -27,67 +37,70 @@ import { AuthorCredit } from '@/components/ui/author-credit';
     {
       question: "Der Erzähler hat den Nebenjob nur wegen des Geldes gesucht.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Nicht nur wegen des Geldes, sondern auch, um Berufserfahrung zu sammeln.“ → Anh ấy không chỉ vì tiền, mà còn muốn có kinh nghiệm nghề nghiệp."
+      explanation:
+        "❌ „Nicht nur wegen des Geldes, sondern auch, um Berufserfahrung zu sammeln.“ → Anh ấy không chỉ vì tiền, mà còn muốn có kinh nghiệm nghề nghiệp.",
     },
     {
       question: "Er entschied sich für einen Job im Bereich Marketing.",
       correctAnswer: "Richtig",
-      explanation: "✅ „…für einen Job in einer kleinen Marketingagentur entschieden.“ → Anh chọn làm việc trong một công ty marketing nhỏ."
+      explanation:
+        "✅ „…für einen Job in einer kleinen Marketingagentur entschieden.“ → Anh chọn làm việc trong một công ty marketing nhỏ.",
     },
     {
       question: "Am Anfang hatte er keine Angst, etwas falsch zu machen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Ich war unsicher – vieles war neu, und ich hatte Angst, Fehler zu machen.“ → Ban đầu anh ấy lo lắng và sợ mắc lỗi."
+      explanation:
+        "❌ „Ich war unsicher – vieles war neu, und ich hatte Angst, Fehler zu machen.“ → Ban đầu anh ấy lo lắng và sợ mắc lỗi.",
     },
     {
-      question: "Die Arbeit half ihm, theoretisches Wissen praktisch anzuwenden.",
+      question:
+        "Die Arbeit half ihm, theoretisches Wissen praktisch anzuwenden.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Ich konnte Theorie aus der Uni direkt in der Praxis anwenden.“ → Anh có thể áp dụng kiến thức lý thuyết vào thực tế."
+      explanation:
+        "✅ „Ich konnte Theorie aus der Uni direkt in der Praxis anwenden.“ → Anh có thể áp dụng kiến thức lý thuyết vào thực tế.",
     },
     {
       question: "Er fand den Job langweilig und wiederholend.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Die Arbeit war abwechslungsreich…“ → Công việc đa dạng, không hề nhàm chán."
+      explanation:
+        "❌ „Die Arbeit war abwechslungsreich…“ → Công việc đa dạng, không hề nhàm chán.",
     },
     {
       question: "In der Prüfungszeit war es manchmal stressig.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Manchmal war ich gestresst, vor allem in der Prüfungszeit.“ → Thời gian ôn thi khiến anh bị căng thẳng."
+      explanation:
+        "✅ „Manchmal war ich gestresst, vor allem in der Prüfungszeit.“ → Thời gian ôn thi khiến anh bị căng thẳng.",
     },
     {
       question: "Der Erzähler empfiehlt, einfach irgendeinen Job zu nehmen.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Sucht euch einen Nebenjob, der zu euch passt.“ → Anh khuyên nên tìm công việc phù hợp, không phải 'làm đại'."
+      explanation:
+        "❌ „Sucht euch einen Nebenjob, der zu euch passt.“ → Anh khuyên nên tìm công việc phù hợp, không phải 'làm đại'.",
     },
     {
-      question: "Er betont, dass Kommunikation mit dem Arbeitgeber wichtig ist.",
+      question:
+        "Er betont, dass Kommunikation mit dem Arbeitgeber wichtig ist.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Sprecht mit eurem Arbeitgeber offen über eure Uni-Zeiten.“ → Nên trao đổi thẳng thắn với nhà tuyển dụng về lịch học."
+      explanation:
+        "✅ „Sprecht mit eurem Arbeitgeber offen über eure Uni-Zeiten.“ → Nên trao đổi thẳng thắn với nhà tuyển dụng về lịch học.",
     },
     {
       question: "Er arbeitet heute nicht mehr in der gleichen Firma.",
       correctAnswer: "Falsch",
-      explanation: "❌ „Heute arbeite ich sogar weiterhin in der Agentur…“ → Hiện tại anh vẫn làm việc tại chỗ cũ, với ít giờ hơn."
+      explanation:
+        "❌ „Heute arbeite ich sogar weiterhin in der Agentur…“ → Hiện tại anh vẫn làm việc tại chỗ cũ, với ít giờ hơn.",
     },
     {
       question: "Der Nebenjob hatte einen positiven Einfluss auf sein Studium.",
       correctAnswer: "Richtig",
-      explanation: "✅ „Er hat mein Studium bereichert – und meinen Blick in die Zukunft verändert.“ → Công việc đã làm phong phú thêm thời sinh viên và định hướng tương lai."
-    }
+      explanation:
+        "✅ „Er hat mein Studium bereichert – und meinen Blick in die Zukunft verändert.“ → Công việc đã làm phong phú thêm thời sinh viên và định hướng tương lai.",
+    },
   ]}
 />
 
 ---
 
-### ✍️ **Tác giả**
-
-<AuthorCredit author="Deutschvn" />
-
----
-
 ### 💬 **Hỏi đáp & Bình luận**
 
-:::tip Bạn từng đi làm thêm khi học chưa?
-Chia sẻ trải nghiệm của bạn nhé – mình luôn chờ đọc bình luận của bạn! 💼📚
-:::
-
+<ExerciseComments exerciseId="b1-horen-teil4" url="/exercises/b1/Horen/Teil4" />
