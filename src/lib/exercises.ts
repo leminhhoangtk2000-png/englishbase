@@ -2,19 +2,62 @@ import { exercisesConfig } from "@/config/exercises";
 import { type NavItemWithComponent } from "@/types";
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 
-export async function getDocFromParams(slugs: string[]) {
-  const slug = slugs?.join("/") || "introduction";
+interface ExerciseDoc {
+  title: string;
+  description: string;
+  level: string;
+  category: string;
+  tags: string[];
+  content: string;
+  slug: string[];
+  filePath: string;
+}
+
+export async function getDocFromParams(slugs: string[]): Promise<ExerciseDoc | undefined> {
+  if (!slugs || slugs.length === 0) {
+    return undefined;
+  }
+
+  // Try to find MDX file in content/exercises directory
+  const exercisePath = path.join(process.cwd(), 'src/content/exercises', ...slugs);
   
-  // For now, let's handle exercise routes but return to config-based system
-  // This will be updated once we have actual MDX components registered
+  // Try both with and without .mdx extension
+  const possiblePaths = [
+    `${exercisePath}.mdx`,
+    path.join(exercisePath, 'index.mdx'),
+  ];
+
+  for (const filePath of possiblePaths) {
+    if (fs.existsSync(filePath)) {
+      try {
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const { data, content } = matter(fileContent);
+
+        return {
+          title: data.title || 'Untitled',
+          description: data.description || '',
+          level: data.category || slugs[0]?.toUpperCase() || 'A1',
+          category: data.category || slugs[0]?.toUpperCase() || 'A1',
+          tags: data.tags || [],
+          content,
+          slug: slugs,
+          filePath,
+        };
+      } catch (error) {
+        console.error(`Error reading exercise file: ${filePath}`, error);
+      }
+    }
+  }
   
   // Fallback to config-based docs
+  const slug = slugs.join("/");
   const doc = exercisesConfig.items
     .flatMap((item) => item.items ?? [])
     .find((doc) => doc.href === `/exercises/${slug}`);
 
-  return doc as NavItemWithComponent | undefined;
+  return doc as any;
 }
 
 export async function getExercisesByLevel(level: string) {
@@ -25,44 +68,42 @@ export async function getExercisesByLevel(level: string) {
       return [];
     }
     
-    const files = fs.readdirSync(exercisesPath).filter(file => file.endsWith('.mdx'));
+    const exercises: any[] = [];
     
-    const exercises = await Promise.all(
-      files.map(async (file) => {
-        const exerciseName = file.replace('.mdx', '');
-        const exercisePath = path.join(exercisesPath, file);
-        
-        // Read the frontmatter to get title and description
-        const content = fs.readFileSync(exercisePath, 'utf-8');
-        const frontmatterMatch = content.match(/---\n([\s\S]*?)\n---/);
-        
-        let title = exerciseName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        let description = `Bài tập ${level.toUpperCase()}`;
-        let tags: string[] = [];
-        
-        if (frontmatterMatch) {
-          const frontmatter = frontmatterMatch[1];
-          const titleMatch = frontmatter.match(/title:\s*(.+)/);
-          const descMatch = frontmatter.match(/description:\s*(.+)/);
-          const tagsMatch = frontmatter.match(/tags:\s*\[(.*?)\]/);
+    // Recursively scan subdirectories (Horen, Lesen, etc.)
+    function scanDirectory(dirPath: string, relativePath: string = '') {
+      const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+      
+      entries.forEach(entry => {
+        if (entry.isDirectory()) {
+          // Recursively scan subdirectories
+          scanDirectory(
+            path.join(dirPath, entry.name),
+            relativePath ? `${relativePath}/${entry.name}` : entry.name
+          );
+        } else if (entry.name.endsWith('.mdx')) {
+          const fullPath = path.join(dirPath, entry.name);
+          const content = fs.readFileSync(fullPath, 'utf-8');
+          const { data } = matter(content);
           
-          if (titleMatch) title = titleMatch[1].replace(/['"]/g, '');
-          if (descMatch) description = descMatch[1].replace(/['"]/g, '');
-          if (tagsMatch) {
-            tags = tagsMatch[1].split(',').map(tag => tag.trim().replace(/['"]/g, ''));
-          }
+          const exerciseName = entry.name.replace('.mdx', '');
+          const slug = relativePath ? `${relativePath}/${exerciseName}` : exerciseName;
+          
+          exercises.push({
+            title: data.title || exerciseName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+            description: data.description || `Bài tập ${level.toUpperCase()}`,
+            href: `/exercises/${level}/${slug}`,
+            level: level.toUpperCase(),
+            tags: data.tags || [],
+            category: relativePath || 'Allgemein',
+            slug,
+            fileName: entry.name
+          });
         }
-        
-        return {
-          title,
-          description,
-          href: `/exercises/${level}/${exerciseName}`,
-          level: level.toUpperCase(),
-          tags,
-          slug: exerciseName
-        };
-      })
-    );
+      });
+    }
+    
+    scanDirectory(exercisesPath);
     
     return exercises;
   } catch (error) {
