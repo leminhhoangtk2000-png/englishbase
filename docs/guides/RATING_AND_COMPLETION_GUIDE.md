@@ -8,12 +8,10 @@
    - Mỗi user chỉ có thể đánh giá **1 lần** cho mỗi bài tập
    - Rating từ **1 đến 5 sao**
    - Nếu đánh giá lại, rating cũ sẽ được **cập nhật**
-   
 2. **Hiển Thị Trên Card**
    - Hiển thị **trung bình** tất cả ratings
    - Hiển thị **số lượng** người đã đánh giá
    - Format: `⭐ 4.7 (3)` = 4.7 sao từ 3 người
-   
 3. **Tính Trung Bình**
    - Ví dụ: Có 3 ratings: 5⭐, 4⭐, 5⭐
    - Trung bình: (5 + 4 + 5) / 3 = **4.7 sao**
@@ -45,8 +43,8 @@
   "stats": {
     "views": 0,
     "comments": 0,
-    "rating": 4.666666666666667,  // Trung bình
-    "totalRatings": 3               // Tổng số đánh giá
+    "rating": 4.666666666666667, // Trung bình
+    "totalRatings": 3 // Tổng số đánh giá
   }
 }
 ```
@@ -54,11 +52,9 @@
 ### Component Usage
 
 ```tsx
-import { ExerciseStatsDisplay } from '@/components/exercises/ExerciseStatsDisplay';
+import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
 
-<ExerciseStatsDisplay 
-  exerciseId="Horen/Einkaufen teil 1 - A1" 
-/>
+<ExerciseStatsDisplay exerciseId="Horen/Einkaufen teil 1 - A1" />;
 
 // Hiển thị: 👁️ 0  💬 0  ⭐ 4.7 (3)
 ```
@@ -70,11 +66,13 @@ import { ExerciseStatsDisplay } from '@/components/exercises/ExerciseStatsDispla
 ### Cách Hoạt Động
 
 1. **Thủ Công 100%**
+
    - Người dùng **tự click** icon để đánh dấu
    - **Không tự động** khi scroll hay đọc lâu
    - Đơn giản, rõ ràng
 
 2. **Toggle On/Off**
+
    - Click 1 lần: ✅ Đánh dấu hoàn thành
    - Click lại: ⭕ Bỏ đánh dấu
    - Lưu vào database ngay lập tức
@@ -89,13 +87,11 @@ import { ExerciseStatsDisplay } from '@/components/exercises/ExerciseStatsDispla
 #### 1. Icon trên Card (Minimal)
 
 ```tsx
-<ExerciseCompletionBadge 
-  exerciseId="exercise-slug"
-  variant="icon"
-/>
+<ExerciseCompletionBadge exerciseId="exercise-slug" variant="icon" />
 ```
 
 **Hiển thị:**
+
 - ⭕ Chưa hoàn thành (xám, rỗng)
 - ✅ Đã hoàn thành (xanh, đầy)
 - Tooltip hiển thị thông tin chi tiết
@@ -103,26 +99,22 @@ import { ExerciseStatsDisplay } from '@/components/exercises/ExerciseStatsDispla
 #### 2. Button trên Exercise Page
 
 ```tsx
-<ExerciseCompletionBadge 
-  exerciseId="exercise-slug"
-  variant="button"
-/>
+<ExerciseCompletionBadge exerciseId="exercise-slug" variant="button" />
 ```
 
 **Hiển thị:**
+
 - Button: "Đánh dấu hoàn thành"
 - Sau khi click: "Đã hoàn thành" (xanh)
 
 #### 3. Badge Full Info
 
 ```tsx
-<ExerciseCompletionBadge 
-  exerciseId="exercise-slug"
-  variant="badge"
-/>
+<ExerciseCompletionBadge exerciseId="exercise-slug" variant="badge" />
 ```
 
 **Hiển thị:**
+
 - Badge: "Hoàn thành" / "Chưa hoàn thành"
 - Với icon và màu sắc rõ ràng
 
@@ -134,11 +126,11 @@ model exercise_completions {
   userId      String
   exerciseId  String
   completedAt DateTime @default(now())
-  
+
   timeSpent   Int?     // seconds
   score       Int?     // 0-100
   attempts    Int      @default(1)
-  
+
   @@unique([userId, exerciseId])
 }
 ```
@@ -146,6 +138,7 @@ model exercise_completions {
 ### API Endpoints
 
 #### Check Status
+
 ```bash
 GET /api/exercise-completion?exerciseId=exercise-slug
 
@@ -158,6 +151,7 @@ Response:
 ```
 
 #### Mark Completed
+
 ```bash
 POST /api/exercise-completion
 {
@@ -166,6 +160,7 @@ POST /api/exercise-completion
 ```
 
 #### Unmark
+
 ```bash
 DELETE /api/exercise-completion?exerciseId=exercise-slug
 ```
@@ -250,6 +245,7 @@ console.log(completions);
 ### Rating không hiển thị
 
 1. **Check exerciseId format:**
+
    ```bash
    # Phải match với API
    Đúng:  "Horen/Einkaufen teil 1 - A1"
@@ -257,6 +253,7 @@ console.log(completions);
    ```
 
 2. **Check database:**
+
    ```bash
    npx tsx scripts/cleanup-ratings.ts
    ```
@@ -269,10 +266,12 @@ console.log(completions);
 ### Completion không save
 
 1. **Check authentication:**
+
    - User phải đăng nhập
    - Check `getCurrentUser()`
 
 2. **Check API:**
+
    ```bash
    curl -X POST http://localhost:9003/api/exercise-completion \
      -H "Content-Type: application/json" \
@@ -289,18 +288,21 @@ console.log(completions);
 ## 📝 Notes
 
 ### Rating System
+
 - ✅ Mỗi user 1 rating/bài
 - ✅ Tự động tính trung bình
 - ✅ Update được rating cũ
 - ✅ Hiển thị số lượng đánh giá
 
 ### Completion System
+
 - ✅ 100% manual (click to toggle)
 - ✅ Lưu vào database instant
 - ✅ Persistent across sessions
 - ✅ Track attempts & time
 
 ### Performance
+
 - ⚡ Cache exercise stats
 - ⚡ Lazy load completion state
 - ⚡ Optimistic UI updates
@@ -308,4 +310,4 @@ console.log(completions);
 
 ---
 
-*Last Updated: October 5, 2025*
+_Last Updated: October 5, 2025_

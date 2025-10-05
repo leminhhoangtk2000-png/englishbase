@@ -5,13 +5,31 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres  
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: edu_theme_db
     ports:
-      - "5556:5432"
+      - "5555:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - edu-network
+
+  prisma-studio:
+    image: node:20-alpine
+    container_name: edu-theme-prisma-studio
+    restart: always
+    working_dir: /app
+    command: sh -c "npm install -g prisma@latest && prisma studio --hostname 0.0.0.0 --port 5556"
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/edu_theme_db?schema=public"
+    ports:
+      - "5556:5556"
+    volumes:
+      - ./prisma:/app/prisma
+      - ./node_modules/.prisma:/app/node_modules/.prisma
+    depends_on:
+      - postgres
     networks:
       - edu-network
 
@@ -31,7 +49,6 @@ services:
 
 volumes:
   postgres_data:
-
 
 networks:
   edu-network:

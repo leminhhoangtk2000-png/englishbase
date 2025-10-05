@@ -46,17 +46,6 @@ export function ExerciseStatsDisplay({
         <span>{stats.comments}</span>
         {showLabels && <span className="hidden sm:inline">comments</span>}
       </span>
-      
-      {stats.totalRatings > 0 && (
-        <span 
-          className="flex items-center gap-1.5" 
-          title={`${stats.rating.toFixed(1)} sao (${stats.totalRatings} đánh giá)`}
-        >
-          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-          <span className="font-medium">{stats.rating.toFixed(1)}</span>
-          <span className="text-xs text-gray-500 dark:text-gray-500">({stats.totalRatings})</span>
-        </span>
-      )}
     </div>
   );
 }

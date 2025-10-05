@@ -6,6 +6,8 @@ import { ExerciseLevelPage } from "../_components/exercise-level-page";
 import { ExerciseMetadataHider } from "@/components/exercise-metadata-hider";
 import { serialize } from 'next-mdx-remote/serialize';
 import { ExerciseMDXRenderer } from "@/components/exercises/exercise-mdx-renderer";
+import { ExercisePageCompletion } from "@/components/exercises/ExercisePageCompletion";
+import { ExerciseRating } from "@/components/exercises/ExerciseRating";
 import { ChevronRight, Home } from "lucide-react";
 
 interface DocPageProps {
@@ -38,6 +40,9 @@ export default async function DocPage({ params }: DocPageProps) {
         development: process.env.NODE_ENV === 'development',
       },
     });
+
+    // Generate exerciseId from slug
+    const exerciseId = slug.join('/');
 
     return (
       <main className="w-full py-6 exercise-page bg-gray-50 dark:bg-background min-h-screen">
@@ -99,6 +104,9 @@ export default async function DocPage({ params }: DocPageProps) {
             <ExerciseMDXRenderer source={mdxSource} />
           </article>
         </div>
+
+        {/* Exercise Completion Tracker */}
+        <ExercisePageCompletion exerciseId={exerciseId} minTimeForCompletion={45} autoMarkOnTime={true} />
       </main>
     );
   }

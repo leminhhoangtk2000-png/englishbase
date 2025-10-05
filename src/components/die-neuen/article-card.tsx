@@ -11,6 +11,7 @@ import { LikeDisplay } from '@/components/ui/like-display';
 import { ThemedBadge } from '@/components/ui/themed-badge';
 import { useTheme } from '@/hooks/use-theme';
 import { getUITheme } from '@/config/themes';
+import { ArticleCompletionBadge } from '@/components/articles/ArticleCompletionBadge';
 
 interface ArticleCardProps {
   article: NewsArticle;
@@ -68,11 +69,17 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
           {/* Content */}
           <div className={`flex-1 p-5 flex flex-col justify-between ${styles.content}`}>
-            {/* Badges */}
-            <div className="flex gap-2 mb-3">
+            {/* Badges and Completion Icon */}
+            <div className="flex gap-2 mb-3 items-center">
               <ThemedBadge variant="themed" className="text-xs font-medium shadow-sm">
                 {article.category}
               </ThemedBadge>
+              <div className="ml-auto" onClick={(e) => e.preventDefault()}>
+                <ArticleCompletionBadge 
+                  articleId={article.id} 
+                  variant="icon"
+                />
+              </div>
             </div>
 
             {/* Title */}

@@ -15,20 +15,8 @@ export async function GET(request: NextRequest) {
       where: { exerciseId }
     });
 
-    // Get comments count (including replies)
-    const comments = await prisma.exercise_comments.findMany({
-      where: { exerciseId },
-      select: {
-        id: true,
-        other_exercise_comments: {
-          select: { id: true }
-        }
-      }
-    });
-
-    const commentsCount = comments.reduce((total, comment) => {
-      return total + 1 + comment.other_exercise_comments.length;
-    }, 0);
+    // Get comments count - table doesn't exist yet, use 0 for now
+    const commentsCount = 0;
 
     // Get ratings stats
     const ratings = await prisma.exercise_ratings.findMany({
@@ -54,7 +42,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Error fetching exercise stats:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch exercise stats' },
+      { error: 'Failed to fetch exercise stats', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

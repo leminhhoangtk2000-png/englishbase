@@ -20,6 +20,7 @@ import { ReadingExerciseComponent } from '@/components/reading-exercise/reading-
 import { getExerciseByArticleId } from '@/data/reading-exercises'
 import { VocabularySidebar } from '@/components/vocabulary-search/vocabulary-sidebar'
 import { VocabularyMobileToggle } from '@/components/vocabulary-search/vocabulary-mobile-toggle'
+import { ArticlePageCompletion } from '@/components/articles/ArticlePageCompletion'
 import { useTheme } from '@/hooks/use-theme'
 import { getUITheme } from '@/config/themes'
 
@@ -240,7 +241,6 @@ export default function ArticlePage() {
     
     if (!foundArticle) {
       notFound()
-      return
     }
 
     setArticle(foundArticle)
@@ -473,6 +473,9 @@ export default function ArticlePage() {
       
       {/* Mobile Vocabulary Toggle */}
       <VocabularyMobileToggle />
+      
+      {/* Article Completion Tracker */}
+      <ArticlePageCompletion articleId={params.id as string} minTimeForCompletion={30} />
     </div>
   )
 }

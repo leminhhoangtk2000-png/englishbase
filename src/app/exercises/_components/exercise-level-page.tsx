@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
 import { ExerciseCompletionBadge } from "@/components/exercises/ExerciseCompletionBadge";
+import { ExerciseRating } from "@/components/exercises/ExerciseRating";
 
 interface Exercise {
   title: string;
@@ -326,7 +327,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <h4 className="font-semibold font-headline flex-1">{exercise.title}</h4>
                     <ExerciseCompletionBadge 
-                      exerciseId={exercise.slug} 
+                      exerciseId={`${level}/${exercise.slug}`}
                       variant="icon"
                       className="flex-shrink-0"
                     />
@@ -339,8 +340,12 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                             <Clock className="w-3 h-3 mr-1.5" />
                             <span>{exercise.duration}</span>
                         </div>
+                        <ExerciseRating 
+                          exerciseId={`${level}/${exercise.slug}`} 
+                          variant="inline" 
+                        />
                     </div>
-                    <ExerciseStatsDisplay exerciseId={exercise.slug} />
+                    <ExerciseStatsDisplay exerciseId={`${level}/${exercise.slug}`} />
                 </CardFooter>
               </Card>
             </Link>

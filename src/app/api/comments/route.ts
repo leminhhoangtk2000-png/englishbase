@@ -1,176 +1,201 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
+import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { getCurrentUser } from '@/lib/auth-server';
 
+export const dynamic = 'force-dynamic';
+
+// GET /api/comments?type=article&id=a1/Grammatik/wfragen
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url)
-    const exerciseId = searchParams.get('exerciseId')
+    const { searchParams } = new URL(request.url);
+    const commentableType = searchParams.get('type');
+    const commentableId = searchParams.get('id');
 
-    if (!exerciseId) {
+    if (!commentableType || !commentableId) {
       return NextResponse.json(
-        { error: 'Exercise ID is required' },
+        { error: 'Missing type or id parameter' },
         { status: 400 }
-      )
+      );
     }
 
-    // Get comments for the exercise
-    const comments = await prisma.comment.findMany({
-      where: {
-        postId: exerciseId, // Using postId field for exerciseId
-        parentId: null // Only top-level comments
-      },
-      include: {
-        author: {
-          select: {
-            id: true,
-            name: true,
-            username: true,
-            avatar: true
-          }
-        },
-        replies: {
-          include: {
-            author: {
-              select: {
-                id: true,
-                name: true,
-                username: true,
-                avatar: true
-              }
-            }
-          },
-          orderBy: {
-            createdAt: 'asc'
-          }
-        }
-      },
-      orderBy: {
-        createdAt: 'desc'
-      }
-    })
+    // Validate commentableType
+    const validTypes = ['article', 'exercise', 'vocabulary', 'news', 'post'];
+    if (!validTypes.includes(commentableType)) {
+      return NextResponse.json(
+        { error: `Invalid type. Must be one of: ${validTypes.join(', ')}` },
+        { status: 400 }
+      );
+    }
 
-    // Transform the data to match our CommentSystem interface
-    const transformedComments = comments.map(comment => ({
-      id: comment.id,
-      content: comment.content,
-      authorId: comment.author.id,
-      authorName: comment.author.name || comment.author.username || 'Unknown User',
-      authorAvatar: comment.author.avatar,
-      createdAt: comment.createdAt,
-      likes: 0, // TODO: Add likes system
-      isLiked: false, // TODO: Check if current user liked
-      replies: comment.replies.map(reply => ({
-        id: reply.id,
-        content: reply.content,
-        authorId: reply.author.id,
-        authorName: reply.author.name || reply.author.username || 'Unknown User',
-        authorAvatar: reply.author.avatar,
-        createdAt: reply.createdAt,
-        likes: 0,
-        isLiked: false,
-        replies: [],
-        parentId: reply.parentId
-      })),
-      parentId: comment.parentId
-    }))
+    // Fetch comments using raw SQL
+    const comments = await prisma.$queryRaw<any[]>`
+      SELECT 
+        c.id,
+        c."userId",
+        c."commentableType",
+        c."commentableId",
+        c.content,
+        c."parentId",
+        c."isApproved",
+        c."isEdited",
+        c."editedAt",
+        c."createdAt",
+        c."updatedAt",
+        u.id as "user_id",
+        u.name as "user_name",
+        u.username as "user_username",
+        u.avatar as "user_avatar",
+        (
+          SELECT COUNT(*)::int
+          FROM comments r
+          WHERE r."parentId" = c.id AND r."isApproved" = TRUE
+        ) as "replyCount"
+      FROM comments c
+      LEFT JOIN users u ON c."userId" = u.id
+      WHERE 
+        c."commentableType" = ${commentableType}
+        AND c."commentableId" = ${commentableId}
+        AND c."isApproved" = TRUE
+        AND c."parentId" IS NULL
+      ORDER BY c."createdAt" DESC
+    `;
+
+    // Transform response
+    const transformedComments = comments.map(c => ({
+      id: c.id,
+      userId: c.userId,
+      commentableType: c.commentableType,
+      commentableId: c.commentableId,
+      content: c.content,
+      parentId: c.parentId,
+      isApproved: c.isApproved,
+      isEdited: c.isEdited,
+      editedAt: c.editedAt,
+      createdAt: c.createdAt,
+      updatedAt: c.updatedAt,
+      user: {
+        id: c.user_id,
+        name: c.user_name,
+        username: c.user_username,
+        avatar: c.user_avatar,
+      },
+      replyCount: c.replyCount
+    }));
 
     return NextResponse.json({
-      success: true,
-      comments: transformedComments
-    })
+      comments: transformedComments,
+      total: transformedComments.length
+    });
 
   } catch (error) {
-    console.error('Error fetching comments:', error)
+    console.error('Error fetching comments:', error);
     return NextResponse.json(
       { error: 'Failed to fetch comments' },
       { status: 500 }
-    )
+    );
   }
 }
 
+// POST /api/comments - Create new comment
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
-    const { exerciseId, content, authorId, parentId } = body
+    const currentUser = await getCurrentUser();
+    
+    // 🔧 TEMPORARY: Use test user if not logged in
+    const userId = currentUser?.id || 'user_test_1';
+    
+    const body = await request.json();
+    const { commentableType, commentableId, content, parentId } = body;
 
-    if (!exerciseId || !content || !authorId) {
+    // Validation
+    if (!commentableType || !commentableId || !content) {
       return NextResponse.json(
-        { error: 'Exercise ID, content, and author ID are required' },
+        { error: 'Missing required fields: commentableType, commentableId, content' },
         { status: 400 }
-      )
+      );
     }
 
-    // For now, we'll use a mock user since we don't have auth system yet
-    // In the future, this would be replaced with actual user from session
-    let author
-    try {
-      author = await prisma.user.findUnique({
-        where: { id: authorId }
-      })
-    } catch (error) {
-      author = null
+    const validTypes = ['article', 'exercise', 'vocabulary', 'news', 'post'];
+    if (!validTypes.includes(commentableType)) {
+      return NextResponse.json(
+        { error: `Invalid type. Must be one of: ${validTypes.join(', ')}` },
+        { status: 400 }
+      );
     }
 
-    // If user doesn't exist, create a test user for demo
-    if (!author) {
-      author = await prisma.user.upsert({
-        where: { email: 'demo@edu-theme.com' },
-        update: {},
-        create: {
-          email: 'demo@edu-theme.com',
-          name: 'Demo User',
-          username: 'demo_user',
-          password: 'hashed_password', // In real app, this would be properly hashed
-          role: 'USER'
-        }
-      })
+    if (content.trim().length < 3) {
+      return NextResponse.json(
+        { error: 'Comment must be at least 3 characters' },
+        { status: 400 }
+      );
     }
 
-    // Create the comment
-    const comment = await prisma.comment.create({
-      data: {
-        content,
-        authorId: author.id,
-        postId: exerciseId, // Using postId field for exerciseId
-        parentId: parentId || null,
-        published: true
-      },
-      include: {
-        author: {
-          select: {
-            id: true,
-            name: true,
-            username: true,
-            avatar: true
-          }
-        }
+    if (content.length > 1000) {
+      return NextResponse.json(
+        { error: 'Comment must be less than 1000 characters' },
+        { status: 400 }
+      );
+    }
+
+    // If parentId exists, verify parent comment
+    if (parentId) {
+      const [parentComment] = await prisma.$queryRaw<any[]>`
+        SELECT id FROM comments WHERE id = ${parentId}
+      `;
+      
+      if (!parentComment) {
+        return NextResponse.json(
+          { error: 'Parent comment not found' },
+          { status: 404 }
+        );
       }
-    })
-
-    // Transform the response
-    const transformedComment = {
-      id: comment.id,
-      content: comment.content,
-      authorId: comment.author.id,
-      authorName: comment.author.name || comment.author.username || 'Unknown User',
-      authorAvatar: comment.author.avatar,
-      createdAt: comment.createdAt,
-      likes: 0,
-      isLiked: false,
-      replies: [],
-      parentId: comment.parentId
     }
+
+    // Create comment
+    const commentId = `cmt_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
+    await prisma.$executeRaw`
+      INSERT INTO comments (
+        id, "userId", "commentableType", "commentableId", 
+        content, "parentId", "isApproved", "createdAt", "updatedAt"
+      )
+      VALUES (
+        ${commentId}, ${userId}, ${commentableType}, ${commentableId},
+        ${content}, ${parentId || null}, FALSE, NOW(), NOW()
+      )
+    `;
+
+    // Fetch created comment
+    const [newComment] = await prisma.$queryRaw<any[]>`
+      SELECT 
+        c.*,
+        u.name as "user_name",
+        u.username as "user_username",
+        u.avatar as "user_avatar"
+      FROM comments c
+      LEFT JOIN users u ON c."userId" = u.id
+      WHERE c.id = ${commentId}
+    `;
 
     return NextResponse.json({
       success: true,
-      comment: transformedComment
-    })
+      comment: {
+        ...newComment,
+        user: {
+          id: newComment.userId,
+          name: newComment.user_name,
+          username: newComment.user_username,
+          avatar: newComment.user_avatar,
+        }
+      },
+      message: 'Comment submitted successfully. It will appear after admin approval.'
+    }, { status: 201 });
 
   } catch (error) {
-    console.error('Error creating comment:', error)
+    console.error('Error creating comment:', error);
     return NextResponse.json(
       { error: 'Failed to create comment' },
       { status: 500 }
-    )
+    );
   }
 }
