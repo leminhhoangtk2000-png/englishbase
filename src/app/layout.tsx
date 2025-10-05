@@ -80,10 +80,10 @@ export default function RootLayout({
         <script src="/hide-admonitions.js" />
         <script src="/check-dark-mode.js" />
       </head>
-      <body className={cn('font-body antialiased flex flex-col min-h-screen')}>
+      <body className={cn('font-body antialiased flex flex-col min-h-screen bg-background text-foreground')}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

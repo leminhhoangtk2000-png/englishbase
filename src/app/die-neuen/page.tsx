@@ -29,44 +29,12 @@ export default function DieNeuen() {
   const { theme } = useTheme();
   const currentTheme = getUITheme(theme);
 
-  const getThemeBackground = () => {
-    // Use theme-specific background colors matching the theme palette
-    switch (theme) {
-      case 'light':
-        return '#ffffff'; // pure white
-      case 'dark':
-        return '#020617'; // slate-950
-      case 'nude':
-        return '#fffbeb'; // amber-50
-      default:
-        return '#ffffff';
-    }
-  };
-
   const getThemeClasses = () => {
     // Use theme-specific classes for better visual consistency
-    switch (theme) {
-      case 'light':
-        return {
-          page: "min-h-screen bg-white",
-          container: "container mx-auto px-4 py-8 max-w-7xl"
-        };
-      case 'dark':
-        return {
-          page: "min-h-screen bg-slate-950",
-          container: "container mx-auto px-4 py-8 max-w-7xl"
-        };
-      case 'nude':
-        return {
-          page: "min-h-screen bg-amber-50",
-          container: "container mx-auto px-4 py-8 max-w-7xl"
-        };
-      default:
-        return {
-          page: "min-h-screen bg-background",
-          container: "container mx-auto px-4 py-8 max-w-7xl"
-        };
-    }
+    return {
+      page: "min-h-screen",
+      container: "container mx-auto px-4 py-8 max-w-7xl"
+    };
   };
 
   const themeClasses = getThemeClasses();
@@ -74,15 +42,6 @@ export default function DieNeuen() {
   useEffect(() => {
     fetchArticles();
   }, []);
-
-  useEffect(() => {
-    // Set body background using semantic color that updates when theme changes
-    document.body.style.backgroundColor = getThemeBackground();
-    
-    return () => {
-      document.body.style.backgroundColor = '';
-    };
-  }, [theme]);
 
   useEffect(() => {
     // Keyboard shortcut for search (Ctrl/Cmd + K)
