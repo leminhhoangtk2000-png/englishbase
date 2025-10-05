@@ -30,16 +30,16 @@ export default function DieNeuen() {
   const currentTheme = getUITheme(theme);
 
   const getThemeBackground = () => {
-    // Use theme-specific background colors
+    // Use theme-specific background colors matching the theme palette
     switch (theme) {
       case 'light':
-        return 'hsl(var(--background))'; // white
+        return '#ffffff'; // pure white
       case 'dark':
-        return 'rgb(17, 24, 39)'; // gray-900
+        return '#020617'; // slate-950
       case 'nude':
-        return 'rgb(250, 245, 240)'; // stone-100
+        return '#fffbeb'; // amber-50
       default:
-        return 'hsl(var(--background))';
+        return '#ffffff';
     }
   };
 
@@ -48,17 +48,17 @@ export default function DieNeuen() {
     switch (theme) {
       case 'light':
         return {
-          page: "min-h-screen bg-background",
+          page: "min-h-screen bg-white",
           container: "container mx-auto px-4 py-8 max-w-7xl"
         };
       case 'dark':
         return {
-          page: "min-h-screen bg-gray-900",
+          page: "min-h-screen bg-slate-950",
           container: "container mx-auto px-4 py-8 max-w-7xl"
         };
       case 'nude':
         return {
-          page: "min-h-screen bg-stone-100",
+          page: "min-h-screen bg-amber-50",
           container: "container mx-auto px-4 py-8 max-w-7xl"
         };
       default:
@@ -73,8 +73,10 @@ export default function DieNeuen() {
 
   useEffect(() => {
     fetchArticles();
-    
-    // Set body background using semantic color
+  }, []);
+
+  useEffect(() => {
+    // Set body background using semantic color that updates when theme changes
     document.body.style.backgroundColor = getThemeBackground();
     
     return () => {
