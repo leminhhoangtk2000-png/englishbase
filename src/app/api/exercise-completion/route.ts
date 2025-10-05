@@ -7,8 +7,17 @@ export async function GET(request: NextRequest) {
   try {
     const currentUser = await getCurrentUser();
     
-    // 🔧 TEMPORARY: Use test user if not logged in (for development only)
-    const userId = currentUser?.id || 'user_test_1'; // user@edu-theme.com
+    // 🔧 TEMPORARY: Use first available user if not logged in (for development only)
+    let userId = currentUser?.id;
+    
+    if (!userId) {
+      // Find any user from database to use as default
+      const defaultUser = await prisma.user.findFirst({
+        where: { email: 'user@edu-theme.com' }
+      });
+      userId = defaultUser?.id || 'user_test_1';
+      console.log('🔧 Using default user:', userId);
+    }
     
     const { searchParams } = new URL(request.url);
     const exerciseId = searchParams.get('exerciseId');
@@ -49,8 +58,26 @@ export async function POST(request: NextRequest) {
   try {
     const currentUser = await getCurrentUser();
     
-    // 🔧 TEMPORARY: Use test user if not logged in (for development only)
-    const userId = currentUser?.id || 'user_test_1'; // user@edu-theme.com
+    // 🔧 TEMPORARY: Use first available user if not logged in (for development only)
+    let userId = currentUser?.id;
+    
+    if (!userId) {
+      // Find any user from database to use as default
+      const defaultUser = await prisma.user.findFirst({
+        where: { email: 'user@edu-theme.com' }
+      });
+      userId = defaultUser?.id;
+      
+      if (!userId) {
+        console.log('🔴 No user found in database');
+        return NextResponse.json(
+          { error: 'No user available' },
+          { status: 401 }
+        );
+      }
+      
+      console.log('🔧 Using default user:', userId);
+    }
     
     console.log('🟦 User ID:', userId);
 
