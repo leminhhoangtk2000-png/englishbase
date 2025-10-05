@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   
+  // Fix OpenTelemetry vendor chunk issue in Next.js 15
+  serverExternalPackages: ['@opentelemetry/api', '@opentelemetry/instrumentation'],
+  
   // Performance optimizations
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
@@ -19,6 +22,15 @@ const nextConfig: NextConfig = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Disable webpack caching to prevent snapshot errors
     config.cache = false;
+    
+    // Fix OpenTelemetry vendor chunk issue
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        '@opentelemetry/api': 'commonjs @opentelemetry/api',
+        '@opentelemetry/instrumentation': 'commonjs @opentelemetry/instrumentation',
+      });
+    }
     
     // Add fallbacks for Node.js modules
     config.resolve.fallback = {
