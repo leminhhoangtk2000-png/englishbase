@@ -5,34 +5,13 @@ import { useTheme } from '@/hooks/use-theme';
 export function LoadingSpinner() {
   const { theme } = useTheme();
 
-  // Theme-specific styles
+  // Theme-specific styles using semantic tokens
   const getThemeStyles = () => {
-    switch (theme) {
-      case 'light':
-        return {
-          background: "min-h-screen bg-white",
-          spinner: "animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600",
-          text: "text-gray-600"
-        };
-      case 'dark':
-        return {
-          background: "min-h-screen bg-gray-900", 
-          spinner: "animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400",
-          text: "text-gray-300"
-        };
-      case 'nude':
-        return {
-          background: "min-h-screen bg-stone-100",
-          spinner: "animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600",
-          text: "text-stone-600"
-        };
-      default:
-        return {
-          background: "min-h-screen bg-white",
-          spinner: "animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600", 
-          text: "text-gray-600"
-        };
-    }
+    return {
+      background: "min-h-screen bg-background",
+      spinner: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary",
+      text: "text-muted-foreground"
+    };
   };
 
   const styles = getThemeStyles();
@@ -50,38 +29,14 @@ export function LoadingSpinner() {
 export function LoadingGrid() {
   const { theme } = useTheme();
 
-  // Theme-specific styles for grid loading
+  // Theme-specific styles for grid loading using semantic tokens
   const getGridThemeStyles = () => {
-    switch (theme) {
-      case 'light':
-        return {
-          container: "space-y-4",
-          card: "bg-white border border-gray-200 rounded-lg overflow-hidden",
-          image: "w-24 h-full bg-gray-100 animate-pulse flex-shrink-0",
-          placeholder: "bg-gray-200 animate-pulse rounded"
-        };
-      case 'dark':
-        return {
-          container: "space-y-4",
-          card: "bg-gray-800 border border-gray-700 rounded-lg overflow-hidden",
-          image: "w-24 h-full bg-gray-700 animate-pulse flex-shrink-0", 
-          placeholder: "bg-gray-600 animate-pulse rounded"
-        };
-      case 'nude':
-        return {
-          container: "space-y-4",
-          card: "bg-stone-50 border border-stone-200 rounded-lg overflow-hidden",
-          image: "w-24 h-full bg-stone-200 animate-pulse flex-shrink-0",
-          placeholder: "bg-stone-300 animate-pulse rounded"
-        };
-      default:
-        return {
-          container: "space-y-4",
-          card: "bg-white border border-gray-200 rounded-lg overflow-hidden",
-          image: "w-24 h-full bg-gray-100 animate-pulse flex-shrink-0",
-          placeholder: "bg-gray-200 animate-pulse rounded"
-        };
-    }
+    return {
+      container: "space-y-4",
+      card: "bg-card border border-border rounded-lg overflow-hidden",
+      image: "w-24 h-full bg-muted animate-pulse flex-shrink-0",
+      placeholder: "bg-muted animate-pulse rounded"
+    };
   };
 
   const gridStyles = getGridThemeStyles();
