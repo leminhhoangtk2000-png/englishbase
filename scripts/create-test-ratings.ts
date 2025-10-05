@@ -20,21 +20,20 @@ async function main() {
 
   console.log(`✅ Found user: ${user.name} (${user.email})\n`);
 
-  // Test exercise IDs (slugs from your images)
+  // Test exercise IDs (slugs matching API format)
   const testExercises = [
     {
-      id: 'lektion-4-einkaufen-teil-1-a1',
+      id: 'Horen/Einkaufen teil 1 - A1',
       title: 'Lektion 4 - Einkaufen teil 1 - A1',
       rating: 5
     },
     {
-      id: 'lektion-4-einkaufen-teil-2-a1',
+      id: 'Horen/Einkaufen teil 2 - A1',
       title: 'Lektion 4 - Einkaufen teil 2 - A1',
       rating: 5
     },
-    // Add more if needed
     {
-      id: 'lektion-3-familie-und-freunde-teil-1-a1',
+      id: 'Horen/Familie und Freunde Teil 1 - A1',
       title: 'Lektion 3 - Familie und Freunde Teil 1 - A1',
       rating: 4
     }
