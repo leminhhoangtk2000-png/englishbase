@@ -16,7 +16,6 @@ import { LoadingSpinner, LoadingGrid } from '@/components/die-neuen/loading';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
 import { getUITheme } from '@/config/themes';
-import { ThemeSwitcher } from '@/components/theme-switcher';
 
 export default function DieNeuen() {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
@@ -199,8 +198,6 @@ export default function DieNeuen() {
           />
         </div>
       </div>
-      
-      <ThemeSwitcher />
       </div>
     </div>
   );

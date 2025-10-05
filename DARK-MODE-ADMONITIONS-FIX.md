@@ -1,7 +1,9 @@
 # Dark Mode Admonitions Fix
 
 ## Problem
+
 Admonitions (:::note, :::tip, :::warning, etc.) had inconsistent styling in dark mode:
+
 - Not using Tailwind's `.dark` class selector
 - Colors were not harmonious across different admonition types
 - Text contrast was suboptimal in dark theme
@@ -10,11 +12,13 @@ Admonitions (:::note, :::tip, :::warning, etc.) had inconsistent styling in dark
 ## Solution Applied
 
 ### Updated Dark Mode Selectors
+
 Changed from `@media (prefers-color-scheme: dark)` to `.dark` class selector to properly integrate with Tailwind's dark mode system.
 
 ### Improved Color Scheme
 
 **Background Colors:**
+
 - Used semi-transparent backgrounds (rgba with 0.1 alpha) for better layering
 - Base dark background: `#1e293b` (slate-800)
 - Border color: `#334155` (slate-700)
@@ -22,6 +26,7 @@ Changed from `@media (prefers-color-scheme: dark)` to `.dark` class selector to 
 **Type-Specific Colors:**
 
 1. **Note (Blue):**
+
    - Background: `rgba(59, 130, 246, 0.1)`
    - Border: `#60a5fa`
    - Header: `#93c5fd`
@@ -29,6 +34,7 @@ Changed from `@media (prefers-color-scheme: dark)` to `.dark` class selector to 
    - Code bg: `rgba(59, 130, 246, 0.2)`
 
 2. **Tip (Green):**
+
    - Background: `rgba(16, 185, 129, 0.1)`
    - Border: `#34d399`
    - Header: `#6ee7b7`
@@ -36,6 +42,7 @@ Changed from `@media (prefers-color-scheme: dark)` to `.dark` class selector to 
    - Code bg: `rgba(16, 185, 129, 0.2)`
 
 3. **Warning (Yellow):**
+
    - Background: `rgba(245, 158, 11, 0.1)`
    - Border: `#fbbf24`
    - Header: `#fcd34d`
@@ -43,6 +50,7 @@ Changed from `@media (prefers-color-scheme: dark)` to `.dark` class selector to 
    - Code bg: `rgba(245, 158, 11, 0.2)`
 
 4. **Info (Cyan):**
+
    - Background: `rgba(6, 182, 212, 0.1)`
    - Border: `#22d3ee`
    - Header: `#67e8f9`
@@ -50,6 +58,7 @@ Changed from `@media (prefers-color-scheme: dark)` to `.dark` class selector to 
    - Code bg: `rgba(6, 182, 212, 0.2)`
 
 5. **Caution (Orange):**
+
    - Background: `rgba(234, 88, 12, 0.1)`
    - Border: `#fb923c`
    - Header: `#fdba74`
