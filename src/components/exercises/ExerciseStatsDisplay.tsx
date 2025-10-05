@@ -53,8 +53,8 @@ export function ExerciseStatsDisplay({
           title={`${stats.rating.toFixed(1)} sao (${stats.totalRatings} đánh giá)`}
         >
           <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-          <span>{stats.rating.toFixed(1)}</span>
-          {showLabels && <span className="hidden sm:inline">({stats.totalRatings})</span>}
+          <span className="font-medium">{stats.rating.toFixed(1)}</span>
+          <span className="text-xs text-gray-500 dark:text-gray-500">({stats.totalRatings})</span>
         </span>
       )}
     </div>
