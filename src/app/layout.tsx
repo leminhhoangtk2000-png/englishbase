@@ -78,6 +78,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <script src="/hide-admonitions.js" />
+        <script src="/check-dark-mode.js" />
       </head>
       <body className={cn('font-body antialiased flex flex-col min-h-screen')}>
         <ThemeProvider
