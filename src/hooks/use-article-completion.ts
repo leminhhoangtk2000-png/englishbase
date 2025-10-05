@@ -52,6 +52,20 @@ export function useArticleCompletion(articleId: string) {
     };
 
     fetchCompletion();
+    
+    // Refetch when tab becomes visible (user comes back from detail page)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        console.log('🟣 Tab became visible, refetching article completion...');
+        fetchCompletion();
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, [articleId]);
 
   // Mark as completed
