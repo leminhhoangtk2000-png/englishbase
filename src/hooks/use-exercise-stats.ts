@@ -20,31 +20,46 @@ export function useExerciseStats(exerciseId: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!exerciseId) return;
+    // Skip if no exerciseId or if running on server
+    if (!exerciseId || typeof window === 'undefined') {
+      setLoading(false);
+      return;
+    }
 
     const fetchStats = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/exercise-stats?exerciseId=${exerciseId}`);
+        setError(null);
+        
+        const response = await fetch(`/api/exercise-stats?exerciseId=${encodeURIComponent(exerciseId)}`, {
+          cache: 'no-store' // Don't cache to get fresh stats
+        });
         
         if (!response.ok) {
-          throw new Error('Failed to fetch stats');
+          // Don't throw error - just log and use default stats
+          console.log(`Exercise stats API returned ${response.status} for ${exerciseId}`);
+          setLoading(false);
+          return;
         }
 
         const data = await response.json();
         
-        if (data.success) {
+        if (data.success && data.stats) {
           setStats(data.stats);
         }
       } catch (err) {
-        console.error('Error fetching exercise stats:', err);
-        setError(err instanceof Error ? err.message : 'Unknown error');
+        // Silent fail - just log the error
+        console.log('Error fetching exercise stats (using defaults):', err);
+        // Don't set error state to avoid UI errors
       } finally {
         setLoading(false);
       }
     };
 
-    fetchStats();
+    // Add small delay to avoid blocking initial render
+    const timeoutId = setTimeout(fetchStats, 100);
+    
+    return () => clearTimeout(timeoutId);
   }, [exerciseId]);
 
   return { stats, loading, error };
