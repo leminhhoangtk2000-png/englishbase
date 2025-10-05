@@ -18,6 +18,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
+import { ExerciseCompletionBadge } from "@/components/exercises/ExerciseCompletionBadge";
 
 interface Exercise {
   title: string;
@@ -322,7 +323,14 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                     </div>
                 </div>
                 <CardContent className="px-4 pb-4 pt-2 flex flex-col flex-grow">
-                  <h4 className="font-semibold mb-2 font-headline">{exercise.title}</h4>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h4 className="font-semibold font-headline flex-1">{exercise.title}</h4>
+                    <ExerciseCompletionBadge 
+                      exerciseId={exercise.slug} 
+                      variant="icon"
+                      className="flex-shrink-0"
+                    />
+                  </div>
                   <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
                 </CardContent>
                 <CardFooter className="px-4 pb-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">

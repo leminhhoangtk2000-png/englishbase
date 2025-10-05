@@ -28,6 +28,7 @@ model User {
   comments               Comment[]
   exercise_comment_likes exercise_comment_likes[]
   exercise_comments      exercise_comments[]
+  exercise_completions   exercise_completions[]
   posts                  Post[]
   reviews                Review[]
   exercises              UserExercise[]
@@ -423,6 +424,26 @@ model exercise_ratings {
   @@unique([exerciseId, userId])
   @@index([exerciseId])
   @@map("exercise_ratings")
+}
+
+model exercise_completions {
+  id          String   @id @default(cuid())
+  userId      String
+  exerciseId  String   // slug of the exercise
+  completedAt DateTime @default(now())
+  
+  // Progress tracking
+  timeSpent   Int?     // seconds spent on exercise
+  score       Int?     // if applicable (0-100)
+  attempts    Int      @default(1)
+  
+  // Relations
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, exerciseId])
+  @@index([userId])
+  @@index([exerciseId])
+  @@map("exercise_completions")
 }
 
 enum Role {
