@@ -1,0 +1,27 @@
+{
+  "name": "Deutsch.vn - Học tiếng Đức Online",
+  "short_name": "Deutsch.vn",
+  "description": "Nền tảng học tiếng Đức trực tuyến với từ vựng phân cấp theo CEFR, bài tập thực hành và AI hỗ trợ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/avt.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/avt.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "vi",
+  "dir": "ltr"
+}

@@ -19,6 +19,18 @@ export const metadata: Metadata = {
   authors: [{ name: 'Deutsch.vn Team' }],
   creator: 'Deutsch.vn',
   publisher: 'Deutsch.vn',
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/avt.png', sizes: 'any' },
+      { url: '/avt.png', sizes: '32x32', type: 'image/png' },
+      { url: '/avt.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/avt.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/avt.png',
+  },
   robots: {
     index: true,
     follow: true,
@@ -30,11 +42,20 @@ export const metadata: Metadata = {
     title: 'Deutsch.vn - Học tiếng Đức Online',
     description: 'Nền tảng học tiếng Đức trực tuyến với từ vựng phân cấp theo CEFR, bài tập thực hành và AI hỗ trợ.',
     siteName: 'Deutsch.vn',
+    images: [
+      {
+        url: '/avt.png',
+        width: 1200,
+        height: 630,
+        alt: 'Deutsch.vn Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Deutsch.vn - Học tiếng Đức Online',
     description: 'Nền tảng học tiếng Đức trực tuyến với từ vựng phân cấp theo CEFR.',
+    images: ['/avt.png'],
   },
 };
 
@@ -46,6 +67,9 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/avt.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/avt.png" />
+        <meta name="theme-color" content="#6366f1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
