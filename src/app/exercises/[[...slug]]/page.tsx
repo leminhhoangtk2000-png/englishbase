@@ -106,7 +106,7 @@ export default async function DocPage({ params }: DocPageProps) {
         </div>
 
         {/* Exercise Completion Tracker */}
-        <ExercisePageCompletion exerciseId={exerciseId} minTimeForCompletion={45} autoMarkOnTime={true} />
+        <ExercisePageCompletion exerciseId={exerciseId} />
       </main>
     );
   }
