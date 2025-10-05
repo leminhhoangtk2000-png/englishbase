@@ -457,11 +457,11 @@ export default function ArticlePage() {
                 </div>
               </section>
             )}
-          </div>
         </div>
+      </div>
       
       {/* Article Completion Tracker */}
-      <ArticlePageCompletion articleId={params.id as string} minTimeForCompletion={30} />
+      <ArticlePageCompletion articleId={params.id as string} />
     </div>
   )
 }
