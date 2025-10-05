@@ -420,15 +420,159 @@ div.admonition-content,
   color: #991b1b;
 }
 
-/* Dark mode support */
+/* Dark mode support - Using Tailwind's dark class */
+.dark .admonition {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+/* Note - Blue theme (Dark) */
+.dark .admonition-note {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left-color: #60a5fa;
+}
+
+.dark .admonition-note .admonition-header {
+  color: #93c5fd;
+}
+
+.dark .admonition-note .admonition-content {
+  color: #dbeafe;
+}
+
+.dark .admonition-note .admonition-content code {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: #bfdbfe;
+}
+
+/* Tip - Green theme (Dark) */
+.dark .admonition-tip {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left-color: #34d399;
+}
+
+.dark .admonition-tip .admonition-header {
+  color: #6ee7b7;
+}
+
+.dark .admonition-tip .admonition-content {
+  color: #d1fae5;
+}
+
+.dark .admonition-tip .admonition-content code {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  color: #a7f3d0;
+}
+
+/* Warning - Yellow theme (Dark) */
+.dark .admonition-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left-color: #fbbf24;
+}
+
+.dark .admonition-warning .admonition-header {
+  color: #fcd34d;
+}
+
+.dark .admonition-warning .admonition-content {
+  color: #fef3c7;
+}
+
+.dark .admonition-warning .admonition-content code {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fde68a;
+}
+
+/* Info - Cyan theme (Dark) */
+.dark .admonition-info {
+  background-color: rgba(6, 182, 212, 0.1);
+  border-left-color: #22d3ee;
+}
+
+.dark .admonition-info .admonition-header {
+  color: #67e8f9;
+}
+
+.dark .admonition-info .admonition-content {
+  color: #cffafe;
+}
+
+.dark .admonition-info .admonition-content code {
+  background-color: rgba(6, 182, 212, 0.2) !important;
+  color: #a5f3fc;
+}
+
+/* Caution - Orange theme (Dark) */
+.dark .admonition-caution {
+  background-color: rgba(234, 88, 12, 0.1);
+  border-left-color: #fb923c;
+}
+
+.dark .admonition-caution .admonition-header {
+  color: #fdba74;
+}
+
+.dark .admonition-caution .admonition-content {
+  color: #ffedd5;
+}
+
+.dark .admonition-caution .admonition-content code {
+  background-color: rgba(234, 88, 12, 0.2) !important;
+  color: #fed7aa;
+}
+
+/* Danger - Red theme (Dark) */
+.dark .admonition-danger {
+  background-color: rgba(220, 38, 38, 0.1);
+  border-left-color: #f87171;
+}
+
+.dark .admonition-danger .admonition-header {
+  color: #fca5a5;
+}
+
+.dark .admonition-danger .admonition-content {
+  color: #fee2e2;
+}
+
+.dark .admonition-danger .admonition-content code {
+  background-color: rgba(220, 38, 38, 0.2) !important;
+  color: #fecaca;
+}
+
+/* Ensure proper contrast for all text elements in dark mode */
+.dark .admonition-content strong,
+.dark .admonition-content b {
+  color: inherit;
+  font-weight: 700;
+}
+
+.dark .admonition-content em,
+.dark .admonition-content i {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.dark .admonition-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  opacity: 0.9;
+}
+
+.dark .admonition-content a:hover {
+  opacity: 1;
+}
+
+/* System preference dark mode fallback */
 @media (prefers-color-scheme: dark) {
   .admonition {
-    background-color: #1f2937;
-    border-color: #4b5563;
+    background-color: #1e293b;
+    border-color: #334155;
   }
   
   .admonition-note {
-    background-color: #172554;
+    background-color: rgba(59, 130, 246, 0.1);
     border-left-color: #60a5fa;
   }
   
@@ -437,11 +581,11 @@ div.admonition-content,
   }
   
   .admonition-note .admonition-content {
-    color: #bfdbfe;
+    color: #dbeafe;
   }
   
   .admonition-tip {
-    background-color: #064e3b;
+    background-color: rgba(16, 185, 129, 0.1);
     border-left-color: #34d399;
   }
   
@@ -450,11 +594,11 @@ div.admonition-content,
   }
   
   .admonition-tip .admonition-content {
-    color: #a7f3d0;
+    color: #d1fae5;
   }
   
   .admonition-warning {
-    background-color: #451a03;
+    background-color: rgba(245, 158, 11, 0.1);
     border-left-color: #fbbf24;
   }
   
@@ -463,11 +607,11 @@ div.admonition-content,
   }
   
   .admonition-warning .admonition-content {
-    color: #fde68a;
+    color: #fef3c7;
   }
   
   .admonition-info {
-    background-color: #164e63;
+    background-color: rgba(6, 182, 212, 0.1);
     border-left-color: #22d3ee;
   }
   
@@ -476,11 +620,11 @@ div.admonition-content,
   }
   
   .admonition-info .admonition-content {
-    color: #a5f3fc;
+    color: #cffafe;
   }
   
   .admonition-caution {
-    background-color: #431407;
+    background-color: rgba(234, 88, 12, 0.1);
     border-left-color: #fb923c;
   }
   
@@ -489,11 +633,11 @@ div.admonition-content,
   }
   
   .admonition-caution .admonition-content {
-    color: #fed7aa;
+    color: #ffedd5;
   }
   
   .admonition-danger {
-    background-color: #450a0a;
+    background-color: rgba(220, 38, 38, 0.1);
     border-left-color: #f87171;
   }
   
@@ -502,7 +646,7 @@ div.admonition-content,
   }
   
   .admonition-danger .admonition-content {
-    color: #fecaca;
+    color: #fee2e2;
   }
 }
 
