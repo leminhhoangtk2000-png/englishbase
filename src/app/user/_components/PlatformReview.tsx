@@ -72,6 +72,8 @@ export function PlatformReview() {
         setLoading(true);
         
         try {
+            console.log('Submitting review:', { rating, comment: review });
+            
             const response = await fetch('/api/reviews', {
                 method: 'POST',
                 headers: {
@@ -84,8 +86,10 @@ export function PlatformReview() {
             });
 
             const data = await response.json();
+            console.log('Review response:', { status: response.status, data });
 
             if (response.ok) {
+                console.log('✅ Review submitted successfully!');
                 setSubmitted(true);
                 setExistingReview(data.review);
                 
@@ -100,7 +104,8 @@ export function PlatformReview() {
                     });
                 }
             } else {
-                alert(data.error || 'Có lỗi xảy ra khi gửi đánh giá');
+                console.error('❌ Review submission failed:', data);
+                alert(data.error || data.message || 'Có lỗi xảy ra khi gửi đánh giá');
             }
         } catch (error) {
             console.error('Error submitting review:', error);

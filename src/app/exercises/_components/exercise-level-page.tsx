@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
 
 interface Exercise {
   title: string;
@@ -295,7 +296,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
             <Link href={exercise.href} key={exercise.title}>
               <Card className="h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
                  <div className="p-2">
-                    <div className="relative">
+                    <div className="relative h-56 rounded-md overflow-hidden">
                       <Image
                         src={
                           exercise.image 
@@ -310,7 +311,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                         width={600}
                         height={400}
                         data-ai-hint={exercise.data_ai_hint || exercise.title}
-                        className="object-cover w-full h-40 rounded-md"
+                        className="object-cover w-full h-full"
                       />
                       {exercise.completed && (
                          <Badge className="absolute top-2 right-2 bg-green-600/90 text-white border-green-600">
@@ -330,21 +331,8 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                             <Clock className="w-3 h-3 mr-1.5" />
                             <span>{exercise.duration}</span>
                         </div>
-                         <div className="flex items-center">
-                            <Star className="w-3 h-3 mr-1.5 text-yellow-400 fill-yellow-400" />
-                            <span>{exercise.rating}</span>
-                        </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <div className="flex items-center">
-                            <Eye className="w-3 h-3 mr-1.5" />
-                            <span>{((exercise.views || 0) / 1000).toFixed(1)}k</span>
-                        </div>
-                        <div className="flex items-center">
-                            <MessageCircle className="w-3 h-3 mr-1.5" />
-                            <span>{exercise.comments}</span>
-                        </div>
-                    </div>
+                    <ExerciseStatsDisplay exerciseId={exercise.slug} />
                 </CardFooter>
               </Card>
             </Link>

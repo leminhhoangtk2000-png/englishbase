@@ -12,12 +12,14 @@ Successfully updated all exercise image paths from old `img/blog/` format to new
 ## 🎯 Problem
 
 **Before**:
+
 ```yaml
 # In MDX frontmatter
 image: img/blog/hr7.png
 ```
 
-**Issue**: 
+**Issue**:
+
 - Files actually located in `public/excersises/hr7.png`
 - Wrong path caused images not to display on exercise cards
 - Inconsistency between MDX metadata and actual file location
@@ -27,12 +29,14 @@ image: img/blog/hr7.png
 ## ✅ Solution
 
 **After**:
+
 ```yaml
 # In MDX frontmatter
 image: /excersises/hr7.png
 ```
 
 **Fix**:
+
 - Updated all 85 exercise MDX files
 - Changed `img/blog/` → `/excersises/`
 - Path now correctly points to `public/excersises/` folder
@@ -43,6 +47,7 @@ image: /excersises/hr7.png
 ## 📦 Files Updated
 
 ### Summary
+
 - **Total files scanned**: 87 MDX files
 - **Files updated**: 85 files
 - **Files skipped**: 2 files (TEMPLATE.mdx, modal-verben.mdx - no image field)
@@ -50,14 +55,17 @@ image: /excersises/hr7.png
 ### Breakdown by Level
 
 **A1 Level** (32 files):
+
 - ✅ Horen: 16 files updated
 - ✅ Lesen: 16 files updated
 
 **A2 Level** (27 files):
+
 - ✅ Horen: 10 files updated
 - ✅ Lesen: 17 files updated
 
 **B1 Level** (26 files):
+
 - ✅ Horen: 6 files updated
 - ✅ Lesen: 20 files updated
 
@@ -66,9 +74,11 @@ image: /excersises/hr7.png
 ## 🛠️ Implementation
 
 ### Script Created
+
 **File**: `scripts/fix-exercise-images.sh`
 
 **Features**:
+
 - Automatic batch update of all MDX files
 - Progress counter (shows X/87 for each file)
 - Skip files without changes
@@ -76,12 +86,14 @@ image: /excersises/hr7.png
 - Summary commands for verification
 
 **Usage**:
+
 ```bash
 chmod +x scripts/fix-exercise-images.sh
 ./scripts/fix-exercise-images.sh
 ```
 
 ### Command Used
+
 ```bash
 sed -i '' 's|image: img/blog/|image: /excersises/|g' [file]
 ```
@@ -91,6 +103,7 @@ sed -i '' 's|image: img/blog/|image: /excersises/|g' [file]
 ## 📊 Verification
 
 ### Check Updated Files
+
 ```bash
 # Count files with new path
 grep -r 'image: /excersises/' src/content/exercises | wc -l
@@ -104,6 +117,7 @@ git status
 ```
 
 ### Build Test
+
 ```bash
 npm run build
 # Result: ✓ Compiled successfully ✅
@@ -118,14 +132,17 @@ npm run build
 ### Files in public/excersises/
 
 **Horen (Listening) exercises**:
+
 - Format: `hr1.png`, `hr2.png`, ..., `hr32.png`
 - Total: 32 images
 
 **Lesen (Reading) exercises**:
+
 - Format: `blog1.png`, `blog2.png`, ..., `blog54.png`
 - Total: 54 images
 
 **Special files**:
+
 - `1.png`, `Blog1.jpg`, `Blog2.jpg`, etc.
 - Various formats (png, jpg)
 - Mixed naming (uppercase/lowercase)
@@ -137,24 +154,28 @@ npm run build
 ### Before & After
 
 **A1 Horen Example**:
+
 ```diff
 - image: img/blog/hr7.png
 + image: /excersises/hr7.png
 ```
 
 **A1 Lesen Example**:
+
 ```diff
 - image: img/blog/blog14.png
 + image: /excersises/blog14.png
 ```
 
 **A2 Horen Example**:
+
 ```diff
 - image: img/blog/hr24.png
 + image: /excersises/hr24.png
 ```
 
 **B1 Lesen Example**:
+
 ```diff
 - image: img/blog/blog42.png
 + image: /excersises/blog42.png
@@ -169,14 +190,15 @@ npm run build
 **File**: `src/app/exercises/_components/exercise-level-page.tsx`
 
 **Logic**:
+
 ```tsx
 <Image
   src={
-    exercise.image 
-      ? (exercise.image.startsWith('http') 
-          ? exercise.image 
-          : `/${exercise.image}`)
-      : 'https://placehold.co/600x400.png'
+    exercise.image
+      ? exercise.image.startsWith("http")
+        ? exercise.image
+        : `/${exercise.image}`
+      : "https://placehold.co/600x400.png"
   }
   alt={exercise.title}
   width={600}
@@ -186,11 +208,13 @@ npm run build
 ```
 
 **Path Resolution**:
+
 1. If image path starts with `http` → use as-is (external URL)
 2. If image path starts with `/` → already absolute path from public
 3. Otherwise → prepend `/` to make absolute path
 
 **Our case**:
+
 - Frontmatter: `image: /excersises/hr7.png`
 - Resolved to: `/excersises/hr7.png`
 - Final path: `public/excersises/hr7.png` ✅
@@ -233,9 +257,11 @@ src/
 ## ✅ Results
 
 ### Visual Verification
+
 After this update, exercise cards should now display images correctly:
 
 **Exercise Listing Page**:
+
 ```
 ┌────────────────────────────────┐
 │ [🖼️ Image from /excersises/] │
@@ -248,6 +274,7 @@ After this update, exercise cards should now display images correctly:
 ```
 
 ### Build Status
+
 ```bash
 ✓ Compiled successfully in 15.0s
 ✓ 62 routes generated
@@ -302,6 +329,7 @@ git push origin main
 When adding new exercises, use correct image path format:
 
 **Correct ✅**:
+
 ```yaml
 ---
 image: /excersises/hr33.png
@@ -309,6 +337,7 @@ image: /excersises/hr33.png
 ```
 
 **Incorrect ❌**:
+
 ```yaml
 ---
 image: img/blog/hr33.png
@@ -327,16 +356,20 @@ image: img/blog/hr33.png
 ## 📚 Related Files
 
 **Script**:
+
 - `scripts/fix-exercise-images.sh` - Batch update tool
 
 **Components**:
+
 - `src/app/exercises/_components/exercise-level-page.tsx` - Image display logic
 - `src/lib/exercises.ts` - Exercise data fetching
 
 **Content**:
+
 - `src/content/exercises/**/*.mdx` - All exercise files
 
 **Images**:
+
 - `public/excersises/*.png` - Exercise images
 
 ---
@@ -346,6 +379,7 @@ image: img/blog/hr33.png
 ### Images Still Not Showing
 
 **Check**:
+
 1. File exists in `public/excersises/`
 2. Filename matches exactly (case-sensitive)
 3. Path starts with `/excersises/` (not `excersises/`)
@@ -353,6 +387,7 @@ image: img/blog/hr33.png
 5. Restart dev server
 
 **Verify**:
+
 ```bash
 # Check file exists
 ls public/excersises/hr7.png
@@ -367,6 +402,7 @@ npm run dev
 ### Build Errors
 
 **If errors occur**:
+
 ```bash
 # Clean build
 rm -rf .next
@@ -381,12 +417,14 @@ grep -r "image: /excersises" src/content/exercises | grep -v ".png"
 ## 📈 Impact
 
 ### Before Fix
+
 - ❌ Images not displaying on exercise cards
 - ❌ Broken image placeholders
 - ❌ Poor user experience
 - ❌ Inconsistent paths
 
 ### After Fix
+
 - ✅ All images display correctly
 - ✅ Professional appearance
 - ✅ Better user experience
@@ -398,12 +436,14 @@ grep -r "image: /excersises" src/content/exercises | grep -v ".png"
 ## 🎉 Summary
 
 **Successfully completed**:
+
 - ✅ 85 exercise files updated
 - ✅ Image paths corrected
 - ✅ Build passing
 - ✅ Ready for deployment
 
 **Next steps**:
+
 1. Start dev server: `npm run dev`
 2. Verify images display: `http://localhost:9003/exercises/a1`
 3. Test across all levels (A1, A2, B1)

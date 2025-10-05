@@ -7,7 +7,10 @@ export async function POST(request: NextRequest) {
     // Kiểm tra authentication
     const currentUser = await getCurrentUser();
     
+    console.log('Review POST request - User:', currentUser?.id, currentUser?.name);
+    
     if (!currentUser) {
+      console.log('❌ Unauthorized - No user found');
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
@@ -15,9 +18,11 @@ export async function POST(request: NextRequest) {
     }
 
     const { rating, comment } = await request.json();
+    console.log('Review data:', { rating, commentLength: comment?.length });
 
     // Validate rating
     if (!rating || rating < 1 || rating > 5) {
+      console.log('❌ Invalid rating:', rating);
       return NextResponse.json(
         { error: 'Rating must be between 1 and 5' },
         { status: 400 }
@@ -26,6 +31,7 @@ export async function POST(request: NextRequest) {
 
     // Validate comment
     if (!comment || comment.trim().length < 10) {
+      console.log('❌ Invalid comment length:', comment?.trim().length);
       return NextResponse.json(
         { error: 'Comment must be at least 10 characters' },
         { status: 400 }
@@ -92,6 +98,7 @@ export async function POST(request: NextRequest) {
           rating,
           content: comment.trim(),
           nextAllowedDate,
+          isApproved: true, // Auto-approve new reviews
         },
         include: {
           user: {
@@ -104,6 +111,8 @@ export async function POST(request: NextRequest) {
           }
         }
       });
+
+      console.log('✅ Review created successfully:', newReview.id);
 
       return NextResponse.json({
         message: 'Review created successfully',
@@ -145,9 +154,12 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ review: userReview });
     }
 
-    // Get public reviews for display
+    // Get public and approved reviews for display
     const reviews = await prisma.review.findMany({
-      where: { isPublic: true },
+      where: { 
+        isPublic: true,
+        isApproved: true // Only show approved reviews
+      },
       include: {
         user: {
           select: {

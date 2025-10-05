@@ -398,6 +398,33 @@ model exercise_comments {
   other_exercise_comments exercise_comments[]      @relation("exercise_commentsToexercise_comments")
 }
 
+model exercise_views {
+  id         String   @id @default(cuid())
+  exerciseId String
+  userId     String?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+
+  @@index([exerciseId])
+  @@index([exerciseId, createdAt])
+  @@map("exercise_views")
+}
+
+model exercise_ratings {
+  id         String   @id @default(cuid())
+  exerciseId String
+  userId     String
+  rating     Int
+  reason     String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([exerciseId, userId])
+  @@index([exerciseId])
+  @@map("exercise_ratings")
+}
+
 enum Role {
   ADMIN
   USER

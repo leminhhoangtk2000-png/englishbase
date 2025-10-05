@@ -60,3 +60,21 @@ test-*.sh
 debug-*.js
 auto-save-reload.sh
 *.sql
+
+# logs
+*.log
+build-output*.log
+dev.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# Editor temp files
+*~
+.swp
+.swo
+*.swn
