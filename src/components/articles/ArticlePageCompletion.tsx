@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArticleCompletionBadge } from './ArticleCompletionBadge';
 import { useArticleCompletion } from '@/hooks/use-article-completion';
 import { Card, CardContent } from '@/components/ui/card';
@@ -17,12 +17,34 @@ export function ArticlePageCompletion({
   const { completion, markCompleted } = useArticleCompletion(articleId);
   const [isShaking, setIsShaking] = useState(false);
 
+  // Debug: Log articleId when component mounts
+  useEffect(() => {
+    console.log('🔵 ArticlePageCompletion mounted');
+    console.log('🔵 articleId prop:', articleId);
+    console.log('🔵 completion state:', completion);
+  }, [articleId, completion]);
+
+  // Debug: Log when completion.completed changes
+  useEffect(() => {
+    console.log('🔵 completion.completed changed to:', completion.completed);
+    if (completion.completed) {
+      console.log('✅ Component should hide now!');
+    }
+  }, [completion.completed]);
+
   const handleComplete = async () => {
+    console.log('🔵 handleComplete called');
+    console.log('🔵 articleId:', articleId);
+    console.log('🔵 current completion state:', completion);
+    
     // Trigger shake animation
     setIsShaking(true);
     
     // Mark as completed
-    await markCompleted(0);
+    const success = await markCompleted(0);
+    
+    console.log('🔵 markCompleted result:', success);
+    console.log('🔵 new completion state:', completion);
     
     // Remove shake after animation
     setTimeout(() => {

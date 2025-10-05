@@ -67,11 +67,16 @@ export async function GET(request: NextRequest) {
 
 // POST - Mark article as completed
 export async function POST(request: NextRequest) {
+  console.log('🟦 POST /api/article-completion - Request received');
+  
   try {
     const body = await request.json();
     const { articleId, timeSpent } = body;
+    
+    console.log('🟦 Request body:', { articleId, timeSpent });
 
     if (!articleId) {
+      console.log('🔴 Missing articleId');
       return NextResponse.json(
         { error: 'articleId is required' },
         { status: 400 }
@@ -82,8 +87,11 @@ export async function POST(request: NextRequest) {
     const testUser = await prisma.user.findFirst({
       where: { email: 'user@edu-theme.com' }
     });
+    
+    console.log('🟦 User ID:', testUser?.id);
 
     if (!testUser) {
+      console.log('🔴 No user found in database');
       return NextResponse.json(
         { error: 'User not authenticated' },
         { status: 401 }
@@ -104,6 +112,7 @@ export async function POST(request: NextRequest) {
 
     if (existing) {
       // Update existing completion (increment attempts)
+      console.log('🟦 Updating existing completion...');
       completion = await prisma.articleCompletion.update({
         where: {
           userId_articleId: {
@@ -119,6 +128,7 @@ export async function POST(request: NextRequest) {
       });
     } else {
       // Create new completion
+      console.log('🟦 Creating new completion...');
       completion = await prisma.articleCompletion.create({
         data: {
           userId: testUser.id,
@@ -128,6 +138,8 @@ export async function POST(request: NextRequest) {
         }
       });
     }
+    
+    console.log('🟢 Completion saved:', completion);
 
     return NextResponse.json({
       success: true,
@@ -139,7 +151,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error marking article completion:', error);
+    console.error('🔴 Error marking article completion:', error);
     return NextResponse.json(
       { error: 'Failed to mark completion' },
       { status: 500 }
