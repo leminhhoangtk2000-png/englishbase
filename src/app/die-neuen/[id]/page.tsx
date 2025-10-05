@@ -18,8 +18,6 @@ import { ThemedButton } from '@/components/ui/themed-button'
 import { ThemedBadge } from '@/components/ui/themed-badge'
 import { ReadingExerciseComponent } from '@/components/reading-exercise/reading-exercise'
 import { getExerciseByArticleId } from '@/data/reading-exercises'
-import { VocabularySidebar } from '@/components/vocabulary-search/vocabulary-sidebar'
-import { VocabularyMobileToggle } from '@/components/vocabulary-search/vocabulary-mobile-toggle'
 import { ArticlePageCompletion } from '@/components/articles/ArticlePageCompletion'
 import { useTheme } from '@/hooks/use-theme'
 import { getUITheme } from '@/config/themes'
@@ -310,9 +308,8 @@ export default function ArticlePage() {
       
       {/* Main Layout with Sidebar */}
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="flex gap-8">
-          {/* Main Content */}
-          <div className="flex-1 max-w-4xl max-h-[80vh] overflow-y-auto">
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto max-h-[80vh] overflow-y-auto">
             {/* Back Button */}
             <div className="mb-8">
               <Link href="/die-neuen">
@@ -461,18 +458,7 @@ export default function ArticlePage() {
               </section>
             )}
           </div>
-          
-          {/* Vocabulary Sidebar */}
-          <div className="w-80 hidden lg:block">
-            <div className="sticky top-[calc(50vh-350px)]">
-              <VocabularySidebar />
-            </div>
-          </div>
         </div>
-      </div>
-      
-      {/* Mobile Vocabulary Toggle */}
-      <VocabularyMobileToggle />
       
       {/* Article Completion Tracker */}
       <ArticlePageCompletion articleId={params.id as string} minTimeForCompletion={30} />
