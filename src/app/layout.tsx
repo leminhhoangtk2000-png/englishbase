@@ -10,6 +10,7 @@ import { TTSProvider } from '@/hooks/use-tts';
 import { VocabularyProvider } from '@/hooks/use-vocabulary';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:9003'),
   title: {
     default: 'Deutsch.vn - Học tiếng Đức Online',
     template: '%s | Deutsch.vn'

@@ -49,7 +49,6 @@ export async function POST(request: NextRequest) {
     
     // 🔧 TEMPORARY: Use test user if not logged in (for development only)
     const userId = currentUser?.id || 'user_test_1'; // user@edu-theme.com
-    console.log('🔧 [TEMP] Marking completion for user:', userId, currentUser ? '(logged in)' : '(fallback user)');
 
     const body = await request.json();
     const { exerciseId, timeSpent } = body;
@@ -83,8 +82,6 @@ export async function POST(request: NextRequest) {
         attempts: 1
       }
     });
-
-    console.log('✅ Completion saved:', { exerciseId, userId, attempts: completion.attempts });
 
     return NextResponse.json({
       success: true,

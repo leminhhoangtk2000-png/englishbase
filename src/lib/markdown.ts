@@ -120,15 +120,6 @@ export function getMarkdownBySlug(
     const folderIndexPath = path.join(contentDirectory, niveau, section, decodedSlug, 'index.md')
     const folderIndexAltPath = path.join(contentDirectory, niveau, section, decodedSlug, 'index.mdx')
     
-    console.log(`[DEBUG] Looking for file:`, filePath)
-    console.log(`[DEBUG] Alt file:`, altFilePath)
-    console.log(`[DEBUG] Folder index:`, folderIndexPath)
-    console.log(`[DEBUG] Folder index alt:`, folderIndexAltPath)
-    console.log(`[DEBUG] File exists:`, fs.existsSync(filePath))
-    console.log(`[DEBUG] Alt file exists:`, fs.existsSync(altFilePath))
-    console.log(`[DEBUG] Folder index exists:`, fs.existsSync(folderIndexPath))
-    console.log(`[DEBUG] Folder index alt exists:`, fs.existsSync(folderIndexAltPath))
-    
     let actualPath = filePath
     
     // Priority: direct file > alt extension > folder index > folder index alt
