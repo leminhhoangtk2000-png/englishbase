@@ -299,7 +299,11 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                       <Image
                         src={
                           exercise.image 
-                            ? (exercise.image.startsWith('http') ? exercise.image : `/${exercise.image}`)
+                            ? (exercise.image.startsWith('http') 
+                                ? exercise.image 
+                                : exercise.image.startsWith('/') 
+                                  ? exercise.image 
+                                  : `/${exercise.image}`)
                             : "https://placehold.co/600x400.png"
                         }
                         alt={exercise.title}
