@@ -1,12 +1,14 @@
 # 📚 Chuẩn Hóa Bài Tập Hören - A1
 
 ## 🎯 File Chuẩn (Reference)
+
 **File**: `Einkaufen teil 1 - A1.mdx`  
 **URL**: http://localhost:9003/exercises/a1/Horen/Einkaufen%20teil%201%20-%20A1
 
 ## ✅ Cấu Trúc Chuẩn
 
 ### 1. **Frontmatter**
+
 ```yaml
 ---
 title: Lektion X - [Tên bài] - A1
@@ -20,6 +22,7 @@ publish: True
 ```
 
 ### 2. **Imports**
+
 ```tsx
 import { MultipleChoiceQuiz } from "@/components/ui/multiple-choice-quiz";
 import { Lueckentext } from "@/components/ui/lueckentext";
@@ -27,11 +30,13 @@ import { AuthorCredit } from "@/components/ui/author-credit";
 ```
 
 **Khuyến nghị**: Thêm `MultipleChoiceQuizGroup` để gộp câu hỏi:
+
 ```tsx
 import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-group";
 ```
 
 ### 3. **Video Section**
+
 ```mdx
 ## 🛍️ Đoạn 1: [Tên đoạn]
 
@@ -48,6 +53,7 @@ import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-gr
 ```
 
 **Theme Applied**:
+
 - ✅ Video căn giữa (CSS global)
 - ✅ Bo góc 20px (CSS global)
 - ✅ Dark mode: `background: hsl(240, 10%, 3.9%)`
@@ -56,6 +62,7 @@ import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-gr
 ### 4. **Bài Tập Trắc Nghiệm**
 
 **Cách 1: Riêng lẻ (Hiện tại)**
+
 ```tsx
 ### **Bài tập 1: Trắc nghiệm (Multiple Choice)**
 
@@ -71,6 +78,7 @@ import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-gr
 ```
 
 **Cách 2: Gộp nhóm (Khuyến nghị) ✨**
+
 ```tsx
 ### **Bài tập 1: Trắc nghiệm (Multiple Choice)**
 
@@ -92,12 +100,14 @@ import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-gr
 ```
 
 **Lợi ích**:
+
 - ✅ Tính điểm tổng thể
 - ✅ Progress bar
 - ✅ Phải làm hết mới nộp bài
 - ✅ UX tốt hơn
 
 ### 5. **Bài Tập Đục Lỗ**
+
 ```tsx
 ### **Bài tập 2: Đục lỗ (Lückentext)**
 
@@ -125,6 +135,7 @@ import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-gr
 ## 🎨 Theme Specifications
 
 ### Colors (Dark Mode)
+
 ```css
 --background: 240 10% 3.9%;        /* Main background */
 --foreground: 0 0% 98%;            /* Text color */
@@ -133,6 +144,7 @@ import { MultipleChoiceQuizGroup } from "@/components/ui/multiple-choice-quiz-gr
 ```
 
 ### Video Styling
+
 ```css
 border-radius: 20px;
 display: block;
@@ -141,6 +153,7 @@ max-width: 100%;
 ```
 
 ### Quiz Components
+
 ```css
 Card background: dark:bg-background
 Headers: dark:bg-background
@@ -170,13 +183,16 @@ Buttons hover: dark:hover:bg-gray-900
 ## 🔧 Quick Fixes
 
 ### Fix 1: Add MultipleChoiceQuizGroup Import
+
 ```bash
 # Add import to all files
 find src/content/exercises/a1/Horen -name "*.mdx" -exec sed -i '' 's/import { Lueckentext }/import { MultipleChoiceQuizGroup } from "@\/components\/ui\/multiple-choice-quiz-group";\nimport { Lueckentext }/' {} \;
 ```
 
 ### Fix 2: Verify Theme Consistency
+
 All files should automatically use the global CSS and Tailwind config for:
+
 - ✅ Dark background: `hsl(240, 10%, 3.9%)`
 - ✅ Video centering and 20px border-radius
 - ✅ Component styling from `dark:bg-background`

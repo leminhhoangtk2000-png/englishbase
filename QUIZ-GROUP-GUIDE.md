@@ -3,6 +3,7 @@
 ## ✨ Tính Năng Mới
 
 Component `MultipleChoiceQuizGroup` cho phép bạn:
+
 - ✅ Gộp nhiều câu hỏi trắc nghiệm thành 1 bài tập
 - ✅ Tính điểm tổng thể cho toàn bộ bài tập
 - ✅ Hiển thị progress bar (đã làm bao nhiêu câu)
@@ -23,9 +24,9 @@ Component `MultipleChoiceQuizGroup` cho phép bạn:
         "Jeden Freitag",
         "Jeden Samstag",
         "Jeden Sonntag",
-        "Jeden Montag"
+        "Jeden Montag",
       ],
-      correctAnswer: "Jeden Freitag"
+      correctAnswer: "Jeden Freitag",
     },
     {
       question: "Was macht die Person oft im Supermarkt?",
@@ -33,9 +34,9 @@ Component `MultipleChoiceQuizGroup` cho phép bạn:
         "Sie kauft nur Brot",
         "Sie vergleicht die Preise",
         "Sie geht schnell einkaufen",
-        "Sie kauft teure Dinge"
+        "Sie kauft teure Dinge",
       ],
-      correctAnswer: "Sie vergleicht die Preise"
+      correctAnswer: "Sie vergleicht die Preise",
     },
     {
       question: "Warum vergleicht die Person die Preise?",
@@ -43,10 +44,10 @@ Component `MultipleChoiceQuizGroup` cho phép bạn:
         "Weil sie reich ist",
         "Weil manche Dinge teuer sind",
         "Weil sie Zeit hat",
-        "Weil es Spaß macht"
+        "Weil es Spaß macht",
       ],
-      correctAnswer: "Weil manche Dinge teuer sind"
-    }
+      correctAnswer: "Weil manche Dinge teuer sind",
+    },
   ]}
 />
 ```
@@ -64,7 +65,12 @@ Component `MultipleChoiceQuizGroup` cho phép bạn:
 
 <MultipleChoiceQuiz
   question="Was macht die Person oft im Supermarkt?"
-  options={["Sie kauft nur Brot", "Sie vergleicht die Preise", "Sie geht schnell einkaufen", "Sie kauft teure Dinge"]}
+  options={[
+    "Sie kauft nur Brot",
+    "Sie vergleicht die Preise",
+    "Sie geht schnell einkaufen",
+    "Sie kauft teure Dinge",
+  ]}
   correctAnswer="Sie vergleicht die Preise"
 />
 ```
@@ -77,14 +83,24 @@ Component `MultipleChoiceQuizGroup` cho phép bạn:
   questions={[
     {
       question: "Wann geht die Person einkaufen?",
-      options: ["Jeden Freitag", "Jeden Samstag", "Jeden Sonntag", "Jeden Montag"],
-      correctAnswer: "Jeden Freitag"
+      options: [
+        "Jeden Freitag",
+        "Jeden Samstag",
+        "Jeden Sonntag",
+        "Jeden Montag",
+      ],
+      correctAnswer: "Jeden Freitag",
     },
     {
       question: "Was macht die Person oft im Supermarkt?",
-      options: ["Sie kauft nur Brot", "Sie vergleicht die Preise", "Sie geht schnell einkaufen", "Sie kauft teure Dinge"],
-      correctAnswer: "Sie vergleicht die Preise"
-    }
+      options: [
+        "Sie kauft nur Brot",
+        "Sie vergleicht die Preise",
+        "Sie geht schnell einkaufen",
+        "Sie kauft teure Dinge",
+      ],
+      correctAnswer: "Sie vergleicht die Preise",
+    },
   ]}
 />
 ```
@@ -92,25 +108,30 @@ Component `MultipleChoiceQuizGroup` cho phép bạn:
 ## 🎨 Giao Diện
 
 ### 1. Header
+
 - Hiển thị số lượng câu hỏi
 - Tiêu đề bài tập
 
 ### 2. Progress Bar
+
 - Hiển thị số câu đã chọn / tổng số câu
 - Thanh tiến trình màu xanh
 - Thông báo "✓ Đã hoàn thành!" khi chọn đủ
 
 ### 3. Câu Hỏi
+
 - Số thứ tự câu hỏi
 - Các đáp án dạng button
 - Highlight câu đã chọn
 
 ### 4. Nút Nộp Bài
+
 - Chỉ hiện khi chọn đủ tất cả câu
 - Button "Nộp bài" màu xanh gradient
 - Button "Xóa tất cả" để làm lại
 
 ### 5. Kết Quả
+
 - Emoji động theo điểm số:
   - 🎉 Điểm ≥ 80%: Xuất sắc
   - 👍 Điểm ≥ 50%: Tốt
@@ -135,8 +156,8 @@ order: 4
 
 # 🛍️ Đoạn 1: Ich gehe einkaufen
 
-<YouTubeEmbed 
-  src="https://www.youtube.com/embed/xyz" 
+<YouTubeEmbed
+  src="https://www.youtube.com/embed/xyz"
   title="4.1 Luyện nghe tiếng Đức mỗi ngày | Deutsch.vn"
 />
 
@@ -149,11 +170,11 @@ order: 4
       question: "Wann geht die Person einkaufen?",
       options: [
         "Jeden Freitag",
-        "Jeden Samstag", 
+        "Jeden Samstag",
         "Jeden Sonntag",
-        "Jeden Montag"
+        "Jeden Montag",
       ],
-      correctAnswer: "Jeden Freitag"
+      correctAnswer: "Jeden Freitag",
     },
     {
       question: "Was macht die Person oft im Supermarkt?",
@@ -161,9 +182,9 @@ order: 4
         "Sie kauft nur Brot",
         "Sie vergleicht die Preise",
         "Sie geht schnell einkaufen",
-        "Sie kauft teure Dinge"
+        "Sie kauft teure Dinge",
       ],
-      correctAnswer: "Sie vergleicht die Preise"
+      correctAnswer: "Sie vergleicht die Preise",
     },
     {
       question: "Warum vergleicht die Person die Preise?",
@@ -171,10 +192,10 @@ order: 4
         "Weil sie reich ist",
         "Weil manche Dinge teuer sind",
         "Weil sie Zeit hat",
-        "Weil es Spaß macht"
+        "Weil es Spaß macht",
       ],
-      correctAnswer: "Weil manche Dinge teuer sind"
-    }
+      correctAnswer: "Weil manche Dinge teuer sind",
+    },
   ]}
 />
 ```
@@ -199,11 +220,13 @@ order: 4
 ## 🎯 Khi Nào Dùng Cái Nào?
 
 ### Dùng `MultipleChoiceQuiz` (câu đơn):
+
 - Khi có 1 câu hỏi độc lập
 - Muốn tính điểm riêng cho từng câu
 - Bài tập nhỏ, nhanh
 
 ### Dùng `MultipleChoiceQuizGroup` (gộp câu):
+
 - ✅ Khi có từ 2 câu trở lên
 - ✅ Muốn tính điểm tổng cho bài tập
 - ✅ Muốn học sinh làm hết mới xem kết quả

@@ -5,6 +5,7 @@
 ### 📝 Thay Đổi
 
 #### 1. **Global CSS** (`src/app/globals.css`)
+
 Thêm CSS toàn cục cho tất cả video và iframe:
 
 ```css
@@ -54,6 +55,7 @@ iframe[src*="youtu.be"] {
 ```
 
 #### 2. **YouTubeEmbed Component** (`src/components/exercises/youtube-embed.tsx`)
+
 Cập nhật từ 15px → 20px:
 
 ```tsx
@@ -69,12 +71,14 @@ style={{ border: 0, borderRadius: '20px' }}
 ### ✨ Tất Cả Video Bây Giờ:
 
 1. **Căn Giữa Hoàn Hảo**
+
    - ✅ `margin-left: auto`
    - ✅ `margin-right: auto`
    - ✅ `display: block`
    - ✅ Flexbox centering trong containers
 
 2. **Bo Góc 20px**
+
    - ✅ `border-radius: 20px`
    - ✅ `overflow: hidden` để bo góc hoạt động
    - ✅ Áp dụng cho cả iframe và container
@@ -87,20 +91,26 @@ style={{ border: 0, borderRadius: '20px' }}
 ## 📍 Áp Dụng Cho
 
 ### ✅ Global (Tất Cả Trang)
+
 - Bất kỳ `<iframe>` nào
 - Bất kỳ `<video>` nào
 - YouTube embeds
 - Video embeds khác
 
 ### ✅ Exercise Pages
+
 - Tất cả video trong bài tập
 - Video trong markdown content
 - Video trong `.prose` content
 
 ### ✅ Body Class Support
+
 Hoạt động với:
+
 ```html
-<body class="date-20251004 vi_VN ltr site-center-aligned site-as-giant-card webkit webkit-537">
+<body
+  class="date-20251004 vi_VN ltr site-center-aligned site-as-giant-card webkit webkit-537"
+></body>
 ```
 
 ## 🎨 Visual Example
@@ -129,6 +139,7 @@ Hoạt động với:
 ## 🔍 Test Cases
 
 ### ✅ Đã Test:
+
 - [x] YouTube iframe trong MDX
 - [x] Video trong `.prose` content
 - [x] Video trong exercise pages
@@ -143,16 +154,19 @@ Hoạt động với:
 ## 🚀 Usage
 
 ### Trong MDX:
+
 ```mdx
 <iframe src="https://youtube.com/embed/..." />
 ```
 
 ### Trong Component:
+
 ```tsx
 <YouTubeEmbed src="https://youtube.com/embed/..." />
 ```
 
 ### HTML Trực Tiếp:
+
 ```html
 <iframe src="https://youtube.com/embed/..." />
 ```

@@ -19,22 +19,24 @@ Thêm các field bổ sung vào response:
 
 ```typescript
 exercises.push({
-  title: data.title || exerciseName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+  title:
+    data.title ||
+    exerciseName.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
   description: data.description || `Bài tập ${level.toUpperCase()}`,
   href: `/exercises/${level}/${slug}`,
   level: level.toUpperCase(),
   tags: data.tags || [],
-  category: relativePath || 'Allgemein',
+  category: relativePath || "Allgemein",
   slug,
   fileName: entry.name,
-  difficulty: data.difficulty || 'Cơ bản',          // ✅ THÊM
-  image: data.image,                                 // ✅ THÊM
-  data_ai_hint: data.data_ai_hint,                   // ✅ THÊM
-  duration: data.duration || '5 phút đọc',           // ✅ THÊM
-  rating: data.rating || 4.5,                        // ✅ THÊM
-  views: data.views || Math.floor(Math.random() * 3000) + 500,  // ✅ THÊM
+  difficulty: data.difficulty || "Cơ bản", // ✅ THÊM
+  image: data.image, // ✅ THÊM
+  data_ai_hint: data.data_ai_hint, // ✅ THÊM
+  duration: data.duration || "5 phút đọc", // ✅ THÊM
+  rating: data.rating || 4.5, // ✅ THÊM
+  views: data.views || Math.floor(Math.random() * 3000) + 500, // ✅ THÊM
   comments: data.comments || Math.floor(Math.random() * 30) + 5, // ✅ THÊM
-  completed: data.completed || false                 // ✅ THÊM
+  completed: data.completed || false, // ✅ THÊM
 });
 ```
 
@@ -43,13 +45,16 @@ exercises.push({
 Thêm logic filter cho difficulty:
 
 ```typescript
-const filteredExercises = exercises.filter(exercise => {
+const filteredExercises = exercises.filter((exercise) => {
   // Filter by skill (Nghe/Đọc)
   if (skillFilter !== "Tất cả" && !exercise.tags?.includes(skillFilter)) {
     return false;
   }
   // Filter by difficulty (Cơ bản/Nâng cao) ✅ THÊM
-  if (difficultyFilter !== "Tất cả" && exercise.difficulty !== difficultyFilter) {
+  if (
+    difficultyFilter !== "Tất cả" &&
+    exercise.difficulty !== difficultyFilter
+  ) {
     return false;
   }
   return true;
@@ -61,6 +66,7 @@ const filteredExercises = exercises.filter(exercise => {
 Đổi `authors` thành `difficulty` trong tất cả file:
 
 **Trước:**
+
 ```yaml
 ---
 title: Lektion 4 - Einkaufen teil 1 - A1
@@ -71,6 +77,7 @@ tags: [Nghe]
 ```
 
 **Sau:**
+
 ```yaml
 ---
 title: Lektion 4 - Einkaufen teil 1 - A1
@@ -94,6 +101,7 @@ find src/content/exercises/a1/Horen -name "*.mdx" -exec sed -i '' 's/difficulty:
 ## 📊 Files Đã Cập Nhật
 
 ### A1 Horen (16 files)
+
 - ✅ Einkaufen teil 1, 2
 - ✅ Familie und Freunde Teil 1, 2
 - ✅ Im Restaurant teil 1, 2
@@ -104,6 +112,7 @@ find src/content/exercises/a1/Horen -name "*.mdx" -exec sed -i '' 's/difficulty:
 - ✅ Zahlen und Uhrzeit Teil 1, 2
 
 ### A1 Lesen (16 files)
+
 - ✅ Berlin – Die Hauptstadt Deutschlands
 - ✅ Die Kaffeehaus-Kultur in Europa
 - ✅ Reisen in Deutschland
@@ -130,14 +139,14 @@ Bây giờ bộ lọc hoạt động hoàn hảo với:
 
 ### Test Cases
 
-| Filter Kỹ Năng | Filter Cấp Độ | Kết Quả |
-|----------------|---------------|---------|
-| Tất cả | Tất cả | Hiển thị tất cả 32 bài |
-| Nghe | Tất cả | Chỉ hiển thị bài Horen (16) |
-| Đọc | Tất cả | Chỉ hiển thị bài Lesen (16) |
-| Tất cả | Cơ bản | Chỉ hiển thị bài cơ bản (~28) |
-| Tất cả | Nâng cao | Chỉ hiển thị bài nâng cao (~4) |
-| Nghe | Nâng cao | Chỉ Tagesablauf teil 1, 2 |
+| Filter Kỹ Năng | Filter Cấp Độ | Kết Quả                        |
+| -------------- | ------------- | ------------------------------ |
+| Tất cả         | Tất cả        | Hiển thị tất cả 32 bài         |
+| Nghe           | Tất cả        | Chỉ hiển thị bài Horen (16)    |
+| Đọc            | Tất cả        | Chỉ hiển thị bài Lesen (16)    |
+| Tất cả         | Cơ bản        | Chỉ hiển thị bài cơ bản (~28)  |
+| Tất cả         | Nâng cao      | Chỉ hiển thị bài nâng cao (~4) |
+| Nghe           | Nâng cao      | Chỉ Tagesablauf teil 1, 2      |
 
 ## 📝 Interface TypeScript
 
@@ -147,7 +156,7 @@ interface Exercise {
   description: string;
   href: string;
   level: string;
-  tags: string[];          // ["Nghe"] hoặc ["Đọc"]
+  tags: string[]; // ["Nghe"] hoặc ["Đọc"]
   slug: string;
   image?: string;
   data_ai_hint?: string;
@@ -156,7 +165,7 @@ interface Exercise {
   rating?: number;
   views?: number;
   comments?: number;
-  difficulty?: string;     // "Cơ bản" hoặc "Nâng cao" ✅
+  difficulty?: string; // "Cơ bản" hoặc "Nâng cao" ✅
 }
 ```
 

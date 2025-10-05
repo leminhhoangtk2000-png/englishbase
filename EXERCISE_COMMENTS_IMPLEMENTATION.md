@@ -12,13 +12,13 @@ Thêm ExerciseComments component vào tất cả bài exercises A2 và B1 với 
 
 ### Files Updated
 
-| Level | Category | Files | Status |
-|-------|----------|-------|--------|
-| **A2** | Horen | 10 | ✅ Complete |
-| **A2** | Lesen | 17 | ✅ Complete |
-| **B1** | Horen | 6 | ✅ Complete |
-| **B1** | Lesen | 20 | ✅ Complete |
-| **Total** | - | **53** | ✅ Complete |
+| Level     | Category | Files  | Status      |
+| --------- | -------- | ------ | ----------- |
+| **A2**    | Horen    | 10     | ✅ Complete |
+| **A2**    | Lesen    | 17     | ✅ Complete |
+| **B1**    | Horen    | 6      | ✅ Complete |
+| **B1**    | Lesen    | 20     | ✅ Complete |
+| **Total** | -        | **53** | ✅ Complete |
 
 ## 🔧 Implementation Details
 
@@ -27,14 +27,14 @@ Thêm ExerciseComments component vào tất cả bài exercises A2 và B1 với 
 Each exercise now has:
 
 ```jsx
-import { ExerciseComments } from '@/components/exercises/ExerciseComments';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
 
 // ... exercise content ...
 
 <ExerciseComments
   exerciseId="[level]-[category]-[exercise-name]"
   url="/exercises/[level]/[category]/[filename]"
-/>
+/>;
 ```
 
 ### 2. ExerciseId Format
@@ -42,18 +42,19 @@ import { ExerciseComments } from '@/components/exercises/ExerciseComments';
 Format: `{level}-{category}-{exercise-name}`
 
 **Pattern Rules:**
+
 - Level: `a2` or `b1` (lowercase)
 - Category: `horen` or `lesen` (lowercase)
 - Exercise name: filename converted to lowercase, spaces → hyphens, special chars removed
 
 **Examples:**
 
-| File | ExerciseId |
-|------|-----------|
-| `Ein Tag ohne Internet – meine Erfahrung.mdx` | `a2-horen-ein-tag-ohne-internet-meine-erfahrung` |
+| File                                                | ExerciseId                                            |
+| --------------------------------------------------- | ----------------------------------------------------- |
+| `Ein Tag ohne Internet – meine Erfahrung.mdx`       | `a2-horen-ein-tag-ohne-internet-meine-erfahrung`      |
 | `5 A2 – Meine Arbeit und was mir daran gefällt.mdx` | `a2-horen-5-a2-meine-arbeit-und-was-mir-daran-gefllt` |
-| `Teil1.mdx` | `b1-horen-teil1` |
-| `Wetter und Klima in Deutschland.mdx` | `b1-lesen-wetter-und-klima-in-deutschland` |
+| `Teil1.mdx`                                         | `b1-horen-teil1`                                      |
+| `Wetter und Klima in Deutschland.mdx`               | `b1-lesen-wetter-und-klima-in-deutschland`            |
 
 ### 3. URL Format
 
@@ -61,10 +62,10 @@ Format: `/exercises/{level}/{category}/{filename}`
 
 **Examples:**
 
-| File | URL |
-|------|-----|
+| File                        | URL                                         |
+| --------------------------- | ------------------------------------------- |
 | `Ein Tag ohne Internet.mdx` | `/exercises/a2/Horen/Ein Tag ohne Internet` |
-| `Teil1.mdx` | `/exercises/b1/Horen/Teil1` |
+| `Teil1.mdx`                 | `/exercises/b1/Horen/Teil1`                 |
 
 ## 🛠️ Scripts Created
 
@@ -73,12 +74,14 @@ Format: `/exercises/{level}/{category}/{filename}`
 Adds ExerciseComments component to end of each file.
 
 **Features:**
+
 - Auto-generates exerciseId from file path
 - Auto-generates URL from file path
 - Skips files that already have comments
 - Processes all A2 and B1 exercises
 
 **Usage:**
+
 ```bash
 bash scripts/add-exercise-comments.sh
 ```
@@ -88,11 +91,13 @@ bash scripts/add-exercise-comments.sh
 Adds import statement for ExerciseComments.
 
 **Features:**
+
 - Detects files with component but no import
 - Adds import after frontmatter
 - Preserves file structure
 
 **Usage:**
+
 ```bash
 bash scripts/add-exercise-comments-import.sh
 ```
@@ -102,6 +107,7 @@ bash scripts/add-exercise-comments-import.sh
 ### A2 Exercises (27 files)
 
 **Horen (10 files):**
+
 1. ` Wie ich Deutsch gelernt habe.mdx`
 2. `10 A2 – Ein Buch oder Film, das - die ich empfehlen kann.mdx`
 3. `5 A2 – Meine Arbeit und was mir daran gefällt.mdx`
@@ -114,6 +120,7 @@ bash scripts/add-exercise-comments-import.sh
 10. `Was ich in meiner Freizeit mache und warum.mdx`
 
 **Lesen (17 files):**
+
 1. `Bahnreisen in Europa.mdx`
 2. `Berühmte Getränke in Europa.mdx`
 3. `Berühmte Käsesorten in Europa.mdx`
@@ -135,6 +142,7 @@ bash scripts/add-exercise-comments-import.sh
 ### B1 Exercises (26 files)
 
 **Horen (6 files):**
+
 1. `Teil1.mdx`
 2. `Teil3.mdx`
 3. `Teil4.mdx`
@@ -143,6 +151,7 @@ bash scripts/add-exercise-comments-import.sh
 6. `Teil7.mdx`
 
 **Lesen (20 files):**
+
 1. `1. LSS Nachhaltiger Tourismus.mdx`
 2. `2. LSS Klimawandel und seine Auswirkungen auf das Stadtleben.mdx`
 3. `3. LSS Künstliche Intelligenz im Alltag.mdx`
@@ -167,21 +176,25 @@ bash scripts/add-exercise-comments-import.sh
 ## 🧪 Validation
 
 ### Import Statements
+
 - ✅ All 53 files have ExerciseComments import
 - ✅ Imports placed after frontmatter
 - ✅ No duplicate imports
 
 ### Component Placement
+
 - ✅ All 53 files have ExerciseComments component
 - ✅ Components placed at end of file
 - ✅ No duplicate components
 
 ### ExerciseId Uniqueness
+
 - ✅ Each file has unique exerciseId
 - ✅ IDs follow consistent naming pattern
 - ✅ No conflicts with existing IDs
 
 ### Build Status
+
 - ✅ Build successful: `npm run build`
 - ✅ No TypeScript errors
 - ✅ No import errors
@@ -192,6 +205,7 @@ bash scripts/add-exercise-comments-import.sh
 ### Independent Comments System
 
 Each exercise has its own comment section with:
+
 - Unique exerciseId for database storage
 - Separate URL for routing
 - Independent comment threads
@@ -201,6 +215,7 @@ Each exercise has its own comment section with:
 ### Comment Component Features
 
 From `ExerciseComments.tsx`:
+
 - User authentication check
 - Comment posting with user info
 - Comment listing
@@ -222,9 +237,9 @@ difficulty: Cơ Bản
 tags: [Nghe]
 ---
 
-import { ExerciseComments } from '@/components/exercises/ExerciseComments';
-import { Lueckentext } from '@/components/ui/lueckentext';
-import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
+import { ExerciseComments } from "@/components/exercises/ExerciseComments";
+import { Lueckentext } from "@/components/ui/lueckentext";
+import { TrueFalseQuiz } from "@/components/exercises/true-false-quiz";
 
 ## 🎧 **Bài 4: Ein Tag ohne Internet – meine Erfahrung**
 
@@ -251,10 +266,11 @@ import { TrueFalseQuiz } from '@/components/exercises/true-false-quiz';
 ## 📦 Database Schema
 
 Comments are stored with:
+
 ```typescript
 {
-  exerciseId: string;  // e.g., "a2-horen-ein-tag-ohne-internet"
-  url: string;         // e.g., "/exercises/a2/Horen/Ein Tag ohne Internet"
+  exerciseId: string; // e.g., "a2-horen-ein-tag-ohne-internet"
+  url: string; // e.g., "/exercises/a2/Horen/Ein Tag ohne Internet"
   userId: string;
   content: string;
   createdAt: Date;
@@ -267,6 +283,7 @@ Comments are stored with:
 **Ready for Production**: ✅ YES
 
 All changes tested and validated:
+
 - Build successful
 - No breaking changes
 - Backward compatible
@@ -275,11 +292,13 @@ All changes tested and validated:
 ## 📊 Impact
 
 ### Before
+
 - No comments on A2/B1 exercises
 - Users couldn't discuss exercises
 - No engagement tracking
 
 ### After
+
 - 53 exercises with comment system
 - Users can discuss each exercise independently
 - Better user engagement
@@ -291,7 +310,7 @@ All changes tested and validated:
 ✅ **Unique exerciseId** for each file  
 ✅ **Independent comment sections** for each exercise  
 ✅ **Build successful** with no errors  
-✅ **Ready for production** deployment  
+✅ **Ready for production** deployment
 
 ---
 

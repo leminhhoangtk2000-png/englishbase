@@ -16,18 +16,21 @@ rgb(9, 9, 11)
 ## 📝 Thay Đổi Đã Thực Hiện
 
 ### ✅ Phase 1: Loại Bỏ Màu Xanh Đen (Slate)
+
 - ❌ `dark:bg-slate-950` → ✅ `dark:bg-background`
 - ❌ `dark:bg-slate-900` → ✅ `dark:bg-background`
 - ❌ `dark:bg-slate-800` → ✅ `dark:bg-gray-900`
 - ❌ `dark:bg-slate-700` → ✅ `dark:bg-gray-800`
 
 ### ✅ Phase 2: Sử dụng CSS Variable
+
 - ❌ `dark:bg-black` → ✅ `dark:bg-background`
 - ✅ Sử dụng `hsl(var(--background))` từ Tailwind config
 
 ## 📂 Files Đã Cập Nhật
 
 ### 1. **Exercise Page Layout**
+
 - ✅ `src/app/exercises/[[...slug]]/page.tsx`
   - Nền chính: `dark:bg-background`
   - Header card: `dark:bg-background`
@@ -36,7 +39,9 @@ rgb(9, 9, 11)
   - Borders: `dark:border-gray-800`
 
 ### 2. **Quiz Components**
+
 - ✅ `src/components/ui/multiple-choice-quiz.tsx`
+
   - Card: `dark:bg-background`
   - Header: `dark:bg-background`
   - Buttons hover: `dark:hover:bg-gray-900`
@@ -52,6 +57,7 @@ rgb(9, 9, 11)
   - Results card: `dark:bg-background`
 
 ### 3. **Exercise Components**
+
 - ✅ `src/components/ui/lueckentext.tsx`
 - ✅ `src/components/exercises/true-false-quiz.tsx`
 - ✅ `src/components/exercises/exercise-table.tsx`
@@ -59,6 +65,7 @@ rgb(9, 9, 11)
 - ✅ `src/components/exercises/matching-quiz.tsx`
 
 ### 4. **Video Component**
+
 - ✅ `src/components/exercises/youtube-embed.tsx`
   - Background: `bg-black` (thuần đen cho video loading)
   - Rounded: `15px`
@@ -113,11 +120,13 @@ colors: {
 ## ✨ Kết Quả
 
 ### Trước:
+
 - ❌ Nhiều màu khác nhau: black, slate-950, slate-900, slate-800
 - ❌ Không đồng nhất
 - ❌ Xanh đen lẫn đen thuần
 
 ### Sau:
+
 - ✅ **Một màu duy nhất**: `hsl(240, 10%, 3.9%)`
 - ✅ **Đồng nhất hoàn toàn**
 - ✅ **Sử dụng CSS variable**
@@ -149,7 +158,7 @@ colors: {
 ```css
 /* Chỉ cần thay đổi 1 chỗ */
 .dark {
-  --background: 240 10% 3.9%;  /* Đổi màu này */
+  --background: 240 10% 3.9%; /* Đổi màu này */
 }
 ```
 

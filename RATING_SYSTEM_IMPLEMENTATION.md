@@ -1,14 +1,17 @@
 # 5-Star Rating System Implementation
 
 ## Overview
+
 Successfully implemented a comprehensive 5-star rating system for all exercises. Users can now rate exercise quality and optionally provide feedback, helping improve content based on user experience.
 
 ## Implementation Date
+
 January 21, 2025
 
 ## Features Implemented
 
 ### 1. Star Rating Component (`src/components/ui/star-rating.tsx`)
+
 - **Interactive 5-star display** with hover effects
 - **Size variants**: sm, md, lg
 - **Vietnamese labels**: "Rất tệ", "Tệ", "Bình thường", "Tốt", "Xuất sắc"
@@ -17,32 +20,37 @@ January 21, 2025
 - **Dark mode support**
 
 **Component Props:**
+
 ```typescript
 interface StarRatingProps {
-  rating: number;              // Current rating (1-5)
-  onRatingChange?: (rating: number) => void;  // Callback when rating changes
-  readonly?: boolean;          // Display only, no interaction
-  size?: 'sm' | 'md' | 'lg';  // Star size
-  showLabel?: boolean;         // Show rating label (e.g., "Xuất sắc")
+  rating: number; // Current rating (1-5)
+  onRatingChange?: (rating: number) => void; // Callback when rating changes
+  readonly?: boolean; // Display only, no interaction
+  size?: "sm" | "md" | "lg"; // Star size
+  showLabel?: boolean; // Show rating label (e.g., "Xuất sắc")
 }
 ```
 
 ### 2. Enhanced ExerciseComments Component
+
 Added rating section **above** the comments area with:
 
 **Rating Form (before user rates):**
+
 - Star selector with real-time label preview
 - Optional textarea for rating reason/feedback
 - Submit button (disabled until star is selected)
 - Visual feedback on hover
 
 **After Rating Submitted:**
+
 - Success message in green box
 - Shows user's rating
 - Prevents duplicate ratings
 - Updates aggregate statistics
 
 **Rating Statistics Display:**
+
 - Average rating (e.g., "4.5 ⭐")
 - Total rating count (e.g., "(23 đánh giá)")
 - Shown in header when ratings exist
@@ -50,6 +58,7 @@ Added rating section **above** the comments area with:
 ### 3. API Endpoint (`/api/exercise-ratings`)
 
 **GET Request:**
+
 ```typescript
 GET /api/exercise-ratings?exerciseId={exerciseId}
 
@@ -62,6 +71,7 @@ Response:
 ```
 
 **POST Request:**
+
 ```typescript
 POST /api/exercise-ratings
 Body: {
@@ -80,6 +90,7 @@ Response:
 ```
 
 **Features:**
+
 - Validates rating is between 1-5
 - Prevents duplicate ratings per user (updates existing)
 - Calculates real-time average
@@ -88,16 +99,18 @@ Response:
 ## Component State Management
 
 ### New State Variables Added:
+
 ```typescript
-const [userRating, setUserRating] = useState(0);           // User's selected rating
-const [ratingReason, setRatingReason] = useState('');      // Optional feedback
+const [userRating, setUserRating] = useState(0); // User's selected rating
+const [ratingReason, setRatingReason] = useState(""); // Optional feedback
 const [isSubmittingRating, setIsSubmittingRating] = useState(false);
-const [averageRating, setAverageRating] = useState(0);     // Aggregate average
-const [totalRatings, setTotalRatings] = useState(0);       // Total count
-const [hasRated, setHasRated] = useState(false);           // Prevents duplicates
+const [averageRating, setAverageRating] = useState(0); // Aggregate average
+const [totalRatings, setTotalRatings] = useState(0); // Total count
+const [hasRated, setHasRated] = useState(false); // Prevents duplicates
 ```
 
 ### Data Flow:
+
 1. **Component Mount** → Load existing ratings via API
 2. **User Selects Stars** → Update `userRating` state → Show label
 3. **User Writes Reason** → Update `ratingReason` state
@@ -107,6 +120,7 @@ const [hasRated, setHasRated] = useState(false);           // Prevents duplicate
 ## UI/UX Design
 
 ### Visual Hierarchy:
+
 ```
 ┌─────────────────────────────────────┐
 │ 💬 Bình luận (5)                    │ ← Header
@@ -126,13 +140,16 @@ const [hasRated, setHasRated] = useState(false);           // Prevents duplicate
 ```
 
 ### Color Scheme:
+
 - **Stars**: Yellow (`text-yellow-400`, `fill-yellow-400`)
 - **Submit Button**: Purple (`bg-purple-600 hover:bg-purple-700`)
 - **Success Message**: Green (`bg-green-50 dark:bg-green-900/20`)
 - **Border**: Gray (`border-b`)
 
 ### Dark Mode Support:
+
 All components have dark mode variants:
+
 - `text-gray-600 dark:text-gray-400`
 - `bg-green-50 dark:bg-green-900/20`
 - `border-green-200 dark:border-green-800`
@@ -140,7 +157,9 @@ All components have dark mode variants:
 ## Files Created/Modified
 
 ### New Files:
+
 1. **`src/components/ui/star-rating.tsx`**
+
    - Reusable star rating component
    - 72 lines
    - Fully typed with TypeScript
@@ -152,6 +171,7 @@ All components have dark mode variants:
    - In-memory storage (ready for DB)
 
 ### Modified Files:
+
 1. **`src/components/exercises/ExerciseComments.tsx`**
    - Added rating UI section
    - Added rating state management
@@ -160,6 +180,7 @@ All components have dark mode variants:
    - Increased from 365 to 503 lines
 
 ## Build Results
+
 ```bash
 ✓ Compiled successfully in 19.0s
 ✓ Linting and checking validity of types
@@ -189,6 +210,7 @@ Bundle size impact: Minimal (StarRating component ~2kB)
 ## User Experience Flow
 
 ### First-Time Rating:
+
 1. User scrolls to exercise bottom
 2. Sees "⭐ Đánh giá bài tập" section above comments
 3. Hovers over stars → sees preview and label
@@ -201,6 +223,7 @@ Bundle size impact: Minimal (StarRating component ~2kB)
 10. Can still scroll down to comment
 
 ### Viewing Existing Ratings:
+
 - If other users rated → Shows "4.5 ⭐ (23 đánh giá)" in header
 - If no ratings yet → Header shows only exercise title
 - User's own rating persists across page reloads
@@ -208,11 +231,13 @@ Bundle size impact: Minimal (StarRating component ~2kB)
 ## Integration with Existing Features
 
 ### Complements Exercise System:
+
 1. **Filter System** ✅ → Users find exercises
 2. **Rating System** ✅ (NEW) → Users evaluate quality
 3. **Comment System** ✅ → Users discuss content
 
 ### Data Model Alignment:
+
 - Uses same `exerciseId` pattern as comments
 - Works with existing `mockUser` authentication
 - API pattern matches comment API structure
@@ -221,22 +246,26 @@ Bundle size impact: Minimal (StarRating component ~2kB)
 ## Next Steps (Optional Enhancements)
 
 ### Phase 1 - Database Integration:
+
 - [ ] Create `Rating` model in Prisma schema
 - [ ] Migrate in-memory storage to PostgreSQL
 - [ ] Add indexes on `exerciseId` and `userId`
 
 ### Phase 2 - Analytics Dashboard:
+
 - [ ] Admin view to see lowest-rated exercises
 - [ ] Track rating trends over time
 - [ ] Export rating data for content improvement
 
 ### Phase 3 - Advanced Features:
+
 - [ ] Edit rating (change stars after submission)
 - [ ] Rating distribution chart (how many 5★, 4★, etc.)
 - [ ] Sort exercises by rating in filter page
 - [ ] Email notifications to admins for low ratings
 
 ### Phase 4 - User Engagement:
+
 - [ ] Show user's rating history in profile
 - [ ] Gamification: Badge for rating 10 exercises
 - [ ] Display top-rated exercises on landing page
@@ -244,11 +273,12 @@ Bundle size impact: Minimal (StarRating component ~2kB)
 ## Code Examples
 
 ### Using StarRating Component:
+
 ```tsx
 import { StarRating } from '@/components/ui/star-rating';
 
 // Interactive rating
-<StarRating 
+<StarRating
   rating={userRating}
   onRatingChange={setUserRating}
   size="lg"
@@ -256,7 +286,7 @@ import { StarRating } from '@/components/ui/star-rating';
 />
 
 // Display-only rating
-<StarRating 
+<StarRating
   rating={4.5}
   readonly={true}
   size="sm"
@@ -264,21 +294,24 @@ import { StarRating } from '@/components/ui/star-rating';
 ```
 
 ### API Usage:
+
 ```typescript
 // Submit rating
-const response = await fetch('/api/exercise-ratings', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+const response = await fetch("/api/exercise-ratings", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    exerciseId: 'a1-Horen-einkaufen-teil-1',
-    userId: 'current-user',
+    exerciseId: "a1-Horen-einkaufen-teil-1",
+    userId: "current-user",
     rating: 5,
-    reason: 'Bài tập rất hay và dễ hiểu!'
-  })
+    reason: "Bài tập rất hay và dễ hiểu!",
+  }),
 });
 
 // Get ratings
-const response = await fetch('/api/exercise-ratings?exerciseId=a1-Horen-einkaufen-teil-1');
+const response = await fetch(
+  "/api/exercise-ratings?exerciseId=a1-Horen-einkaufen-teil-1"
+);
 const data = await response.json();
 console.log(data.averageRating, data.totalRatings);
 ```
@@ -286,18 +319,21 @@ console.log(data.averageRating, data.totalRatings);
 ## Technical Decisions
 
 ### Why In-Memory Storage First?
+
 - Fast prototype and testing
 - No database schema changes needed yet
 - Easy migration path to Prisma later
 - Consistent with existing comment API pattern
 
 ### Why Separate from Comments?
+
 - Different data structures (rating vs. text)
 - Different UI patterns (stars vs. textarea)
 - Allows independent querying/analytics
 - Cleaner separation of concerns
 
 ### Why Optional Reason Field?
+
 - Lower barrier to rating (just click stars)
 - Still captures valuable qualitative feedback
 - Matches common UX patterns (App Store, Google Play)
