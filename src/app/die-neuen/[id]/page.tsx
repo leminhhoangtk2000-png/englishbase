@@ -309,7 +309,7 @@ export default function ArticlePage() {
       {/* Main Layout with Sidebar */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Main Content */}
-        <div className="max-w-4xl mx-auto max-h-[80vh] overflow-y-auto">
+        <div className="max-w-4xl mx-auto">
             {/* Back Button */}
             <div className="mb-8">
               <Link href="/die-neuen">
