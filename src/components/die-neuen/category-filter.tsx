@@ -26,7 +26,7 @@ export default function CategoryFilter({ selectedCategory, setSelectedCategory }
   // Use semantic theme colors like blog
   const getThemeStyles = () => {
     return {
-      container: "border-b border-border",
+      container: "border-b-2 border-border pb-8 pt-4",
       button: "text-muted-foreground hover:text-foreground font-semibold",
       activeButton: "text-foreground border-b-2 border-primary",
       badge: "bg-secondary text-secondary-foreground",
@@ -39,7 +39,7 @@ export default function CategoryFilter({ selectedCategory, setSelectedCategory }
   return (
     <div className={styles.container}>
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-2">
           {categories.map((category) => (
             <Button
               key={category.id}
