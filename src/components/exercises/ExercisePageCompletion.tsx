@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useExerciseCompletion } from '@/hooks/use-exercise-completion';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
@@ -16,12 +16,34 @@ export function ExercisePageCompletion({
   const { completion, markCompleted } = useExerciseCompletion(exerciseId);
   const [isShaking, setIsShaking] = useState(false);
 
+  // Debug: Log exerciseId when component mounts
+  useEffect(() => {
+    console.log('🔵 ExercisePageCompletion mounted');
+    console.log('🔵 exerciseId prop:', exerciseId);
+    console.log('🔵 completion state:', completion);
+  }, [exerciseId, completion]);
+
+  // Debug: Log when completion.completed changes
+  useEffect(() => {
+    console.log('🔵 completion.completed changed to:', completion.completed);
+    if (completion.completed) {
+      console.log('✅ Component should hide now!');
+    }
+  }, [completion.completed]);
+
   const handleComplete = async () => {
+    console.log('🔵 handleComplete called');
+    console.log('🔵 exerciseId:', exerciseId);
+    console.log('🔵 current completion state:', completion);
+    
     // Trigger shake animation
     setIsShaking(true);
     
     // Mark as completed
-    await markCompleted(0);
+    const success = await markCompleted(0);
+    
+    console.log('🔵 markCompleted result:', success);
+    console.log('🔵 new completion state:', completion);
     
     // Remove shake after animation
     setTimeout(() => {

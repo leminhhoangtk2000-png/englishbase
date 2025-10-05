@@ -44,16 +44,23 @@ export async function GET(request: NextRequest) {
 
 // POST: Mark exercise as completed
 export async function POST(request: NextRequest) {
+  console.log('🟦 POST /api/exercise-completion - Request received');
+  
   try {
     const currentUser = await getCurrentUser();
     
     // 🔧 TEMPORARY: Use test user if not logged in (for development only)
     const userId = currentUser?.id || 'user_test_1'; // user@edu-theme.com
+    
+    console.log('🟦 User ID:', userId);
 
     const body = await request.json();
     const { exerciseId, timeSpent } = body;
+    
+    console.log('🟦 Request body:', { exerciseId, timeSpent });
 
     if (!exerciseId) {
+      console.log('🔴 Missing exerciseId');
       return NextResponse.json(
         { error: 'exerciseId is required' },
         { status: 400 }
@@ -82,6 +89,8 @@ export async function POST(request: NextRequest) {
         attempts: 1
       }
     });
+    
+    console.log('🟢 Completion saved:', completion);
 
     return NextResponse.json({
       success: true,
@@ -89,7 +98,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error marking completion:', error);
+    console.error('🔴 Error marking completion:', error);
     console.error('Error details:', error instanceof Error ? error.message : String(error));
     console.error('Stack:', error instanceof Error ? error.stack : 'No stack');
     return NextResponse.json(

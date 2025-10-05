@@ -19,21 +19,34 @@ export function useExerciseCompletion(exerciseId: string) {
 
   // Fetch completion status
   useEffect(() => {
+    console.log('🟣 useExerciseCompletion: useEffect triggered');
+    console.log('🟣 exerciseId:', exerciseId);
+    
     if (!exerciseId || typeof window === 'undefined') {
+      console.log('🔴 useExerciseCompletion: No exerciseId or not in browser');
       setLoading(false);
       return;
     }
 
     const fetchCompletion = async () => {
+      console.log('🟣 Fetching completion for:', exerciseId);
+      
       try {
-        const response = await fetch(`/api/exercise-completion?exerciseId=${encodeURIComponent(exerciseId)}`);
+        const url = `/api/exercise-completion?exerciseId=${encodeURIComponent(exerciseId)}`;
+        console.log('🟣 Fetch URL:', url);
+        
+        const response = await fetch(url);
+        console.log('🟣 Response status:', response.status);
         
         if (response.ok) {
           const data = await response.json();
+          console.log('🟣 Completion data:', data);
           setCompletion(data);
+        } else {
+          console.log('🔴 Response not OK:', response.status);
         }
       } catch (error) {
-        console.log('Error fetching completion:', error);
+        console.log('🔴 Error fetching completion:', error);
       } finally {
         setLoading(false);
       }
@@ -44,8 +57,13 @@ export function useExerciseCompletion(exerciseId: string) {
 
   // Mark as completed
   const markCompleted = useCallback(async (timeSpent?: number, score?: number) => {
-    if (!exerciseId) return;
+    if (!exerciseId) {
+      console.log('🔴 markCompleted: No exerciseId');
+      return false;
+    }
 
+    console.log('🟡 markCompleted: Starting...', { exerciseId, timeSpent, score });
+    
     setMarking(true);
     try {
       const response = await fetch('/api/exercise-completion', {
@@ -60,8 +78,12 @@ export function useExerciseCompletion(exerciseId: string) {
         }),
       });
 
+      console.log('🟡 markCompleted: Response status', response.status);
+      
       if (response.ok) {
         const data = await response.json();
+        console.log('🟢 markCompleted: Success!', data);
+        
         setCompletion({
           completed: true,
           completedAt: data.completion.completedAt,
@@ -70,9 +92,12 @@ export function useExerciseCompletion(exerciseId: string) {
           attempts: data.completion.attempts
         });
         return true;
+      } else {
+        const errorText = await response.text();
+        console.log('🔴 markCompleted: Failed', response.status, errorText);
       }
     } catch (error) {
-      console.error('Error marking completion:', error);
+      console.error('🔴 markCompleted: Error', error);
     } finally {
       setMarking(false);
     }
