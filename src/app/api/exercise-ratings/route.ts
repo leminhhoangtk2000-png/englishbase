@@ -3,7 +3,21 @@ import { prisma } from '@/lib/prisma';
 
 // Helper function to slugify exerciseId to match database format
 function slugifyExerciseId(id: string): string {
-  return id
+  // First decode any URL encoding (e.g., %20 or -20 for spaces)
+  let decoded = id;
+  try {
+    // Try to decode URI component (handles %20, %E2%80%93, etc.)
+    decoded = decodeURIComponent(id);
+  } catch (e) {
+    // If decoding fails, try to handle common patterns
+    decoded = id
+      .replace(/-20/g, ' ')           // Replace -20 with space
+      .replace(/-2D/g, '-')           // Replace -2D with hyphen
+      .replace(/-E2-80-93/g, '-');    // Replace -E2-80-93 with en-dash
+  }
+  
+  // Then slugify to match exercises_master format
+  return decoded
     .toLowerCase()
     .replace(/\//g, '-')            // slashes to hyphens  
     .replace(/\s+/g, '-')           // spaces to hyphens
