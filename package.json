@@ -19,6 +19,7 @@
     "db:studio:local": "prisma studio --port 5557",
     "db:seed": "tsx prisma/seed-new.ts",
     "db:reset": "prisma migrate reset --force && npm run db:seed",
+    "db:update-counts": "tsx scripts/update-exercise-counts.ts",
     "test:users": "tsx scripts/create-test-users.ts",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",

@@ -471,3 +471,4 @@ GROUP BY "exerciseId"
 ---
 
 **Hệ thống giờ đã hoàn toàn optimized và production-ready!** 🚀
+ exe

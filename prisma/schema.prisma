@@ -414,18 +414,23 @@ model exercise_views {
 }
 
 model exercises_master {
-  id        String   @id @default(cuid())
-  slug      String   @unique // Original path: a1/Horen/Im Restaurant teil 2 - A1
-  slugId    String   @unique // Clean ID: a1-horen-im-restaurant-teil-2-a1
-  title     String // Exercise title
-  level     String // A1, A2, B1, B2
-  category  String // Horen, Lesen, Grammatik, etc
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String   @id @default(cuid())
+  slug          String   @unique // Original path: a1/Horen/Im Restaurant teil 2 - A1
+  slugId        String   @unique // Clean ID: a1-horen-im-restaurant-teil-2-a1
+  title         String // Exercise title
+  level         String // A1, A2, B1, B2
+  category      String // Horen, Lesen, Grammatik, etc
+  likesCount    Int      @default(0) // Cached count from exercise_likes
+  viewsCount    Int      @default(0) // Cached count from exercise_views
+  commentsCount Int      @default(0) // Cached count from exercise_comments
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   @@index([level])
   @@index([category])
   @@index([slugId])
+  @@index([likesCount])
+  @@index([viewsCount])
   @@map("exercises_master")
 }
 

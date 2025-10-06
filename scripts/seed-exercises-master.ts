@@ -308,6 +308,46 @@ async function migrateExistingData() {
   console.log(`  Completions: ${completionUpdates} updated`);
 }
 
+async function updateExerciseCounts() {
+  console.log('\n📊 Updating exercise counts...\n');
+
+  const exercises = await prisma.exercises_master.findMany({
+    select: { id: true, slugId: true }
+  });
+
+  let updatedCount = 0;
+  let totalLikes = 0;
+  let totalViews = 0;
+  let totalComments = 0;
+
+  for (const exercise of exercises) {
+    const likesCount = await prisma.exercise_likes.count({
+      where: { exerciseId: exercise.slugId, isLiked: true }
+    });
+
+    const viewsCount = await prisma.exercise_views.count({
+      where: { exerciseId: exercise.slugId }
+    });
+
+    const commentsCount = await prisma.exercise_comments.count({
+      where: { exerciseId: exercise.slugId, published: true }
+    });
+
+    await prisma.exercises_master.update({
+      where: { id: exercise.id },
+      data: { likesCount, viewsCount, commentsCount }
+    });
+
+    updatedCount++;
+    totalLikes += likesCount;
+    totalViews += viewsCount;
+    totalComments += commentsCount;
+  }
+
+  console.log(`✅ Updated counts for ${updatedCount} exercises`);
+  console.log(`   Total: ❤️ ${totalLikes} | 👁️ ${totalViews} | 💬 ${totalComments}\n`);
+}
+
 async function main() {
   try {
     // Step 1: Scan and seed exercises
@@ -315,6 +355,9 @@ async function main() {
 
     // Step 2: Migrate existing data
     await migrateExistingData();
+
+    // Step 3: Update counts
+    await updateExerciseCounts();
 
   } catch (error) {
     console.error('❌ Fatal error:', error);
