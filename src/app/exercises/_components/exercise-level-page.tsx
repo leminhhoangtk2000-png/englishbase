@@ -327,7 +327,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <h4 className="font-semibold font-headline flex-1">{exercise.title}</h4>
                     <ExerciseCompletionBadge 
-                      exerciseId={`${level}/${exercise.slug}`}
+                      exerciseId={exercise.href.replace('/exercises/', '')}
                       variant="icon"
                       className="flex-shrink-0"
                     />
@@ -341,11 +341,11 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                             <span>{exercise.duration}</span>
                         </div>
                         <ExerciseRating 
-                          exerciseId={`${level}/${exercise.slug}`} 
+                          exerciseId={exercise.href.replace('/exercises/', '')} 
                           variant="inline" 
                         />
                     </div>
-                    <ExerciseStatsDisplay exerciseId={`${level}/${exercise.slug}`} />
+                    <ExerciseStatsDisplay exerciseId={exercise.href.replace('/exercises/', '')} />
                 </CardFooter>
               </Card>
             </Link>
