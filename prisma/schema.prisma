@@ -413,6 +413,22 @@ model exercise_views {
   @@map("exercise_views")
 }
 
+model exercises_master {
+  id        String   @id @default(cuid())
+  slug      String   @unique // Original path: a1/Horen/Im Restaurant teil 2 - A1
+  slugId    String   @unique // Clean ID: a1-horen-im-restaurant-teil-2-a1
+  title     String // Exercise title
+  level     String // A1, A2, B1, B2
+  category  String // Horen, Lesen, Grammatik, etc
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([level])
+  @@index([category])
+  @@index([slugId])
+  @@map("exercises_master")
+}
+
 model exercise_likes {
   id         String   @id @default(cuid())
   exerciseId String
