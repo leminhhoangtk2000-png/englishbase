@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+// Helper function to slugify exerciseId to match database format
+function slugifyExerciseId(id: string): string {
+  return id
+    .toLowerCase()
+    .replace(/\//g, '-')            // slashes to hyphens  
+    .replace(/\s+/g, '-')           // spaces to hyphens
+    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
+    .replace(/-+/g, '-')            // multiple hyphens to single
+    .replace(/^-+|-+$/g, '');       // trim hyphens
+}
+
 /**
  * Analytics API - Track detailed engagement metrics
  * 
@@ -12,14 +23,17 @@ import { prisma } from '@/lib/prisma';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { exerciseId, readingTime, scrollDepth } = body;
+    const { exerciseId: rawExerciseId, readingTime, scrollDepth } = body;
 
-    if (!exerciseId) {
+    if (!rawExerciseId) {
       return NextResponse.json(
         { error: 'exerciseId is required' },
         { status: 400 }
       );
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     console.log('🟦 [Analytics API] Recording analytics:', {
       exerciseId,

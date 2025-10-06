@@ -1,15 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+// Helper function to slugify exerciseId to match database format
+function slugifyExerciseId(id: string): string {
+  return id
+    .toLowerCase()
+    .replace(/\//g, '-')            // slashes to hyphens  
+    .replace(/\s+/g, '-')           // spaces to hyphens
+    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
+    .replace(/-+/g, '-')            // multiple hyphens to single
+    .replace(/^-+|-+$/g, '');       // trim hyphens
+}
+
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
-    const exerciseId = searchParams.get('exerciseId');
+    const rawExerciseId = searchParams.get('exerciseId');
     const userId = searchParams.get('userId');
 
-    if (!exerciseId) {
+    if (!rawExerciseId) {
       return NextResponse.json({ error: 'exerciseId is required' }, { status: 400 });
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     // Get all ratings for this exercise
     const exerciseRatings = await prisma.exercise_ratings.findMany({
@@ -60,10 +74,10 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { exerciseId, userId, rating, reason } = body;
+    const { exerciseId: rawExerciseId, userId, rating, reason } = body;
 
     // Validation
-    if (!exerciseId || !userId || !rating) {
+    if (!rawExerciseId || !userId || !rating) {
       return NextResponse.json(
         { error: 'exerciseId, userId, and rating are required' },
         { status: 400 }
@@ -76,6 +90,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     // Upsert rating (create or update)
     const newRating = await prisma.exercise_ratings.upsert({

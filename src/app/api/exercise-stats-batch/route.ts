@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+// Helper function to slugify exerciseId to match database format
+function slugifyExerciseId(id: string): string {
+  return id
+    .toLowerCase()
+    .replace(/\//g, '-')            // slashes to hyphens  
+    .replace(/\s+/g, '-')           // spaces to hyphens
+    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
+    .replace(/-+/g, '-')            // multiple hyphens to single
+    .replace(/^-+|-+$/g, '');       // trim hyphens
+}
+
 /**
  * Batch Stats API - Fetch stats for multiple exercises in one request
  * 
@@ -11,11 +22,14 @@ import { prisma } from '@/lib/prisma';
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
-    const ids = searchParams.getAll('ids');
+    const rawIds = searchParams.getAll('ids');
 
-    if (!ids || ids.length === 0) {
+    if (!rawIds || rawIds.length === 0) {
       return NextResponse.json({ error: 'At least one exercise ID is required' }, { status: 400 });
     }
+
+    // Slugify all IDs to match database format
+    const ids = rawIds.map(id => slugifyExerciseId(id));
 
     console.log('🟦 [Batch Stats API] Fetching stats for', ids.length, 'exercises');
 

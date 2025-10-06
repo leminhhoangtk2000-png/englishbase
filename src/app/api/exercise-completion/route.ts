@@ -2,6 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getCurrentUser } from '@/lib/auth-server';
 
+// Helper function to slugify exerciseId to match database format
+function slugifyExerciseId(id: string): string {
+  return id
+    .toLowerCase()
+    .replace(/\//g, '-')            // slashes to hyphens  
+    .replace(/\s+/g, '-')           // spaces to hyphens
+    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
+    .replace(/-+/g, '-')            // multiple hyphens to single
+    .replace(/^-+|-+$/g, '');       // trim hyphens
+}
+
 // GET: Check if exercise is completed
 export async function GET(request: NextRequest) {
   try {
@@ -20,11 +31,14 @@ export async function GET(request: NextRequest) {
     }
     
     const { searchParams } = new URL(request.url);
-    const exerciseId = searchParams.get('exerciseId');
+    const rawExerciseId = searchParams.get('exerciseId');
 
-    if (!exerciseId) {
+    if (!rawExerciseId) {
       return NextResponse.json({ error: 'exerciseId is required' }, { status: 400 });
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     const completion = await prisma.exercise_completions.findUnique({
       where: {
@@ -82,17 +96,20 @@ export async function POST(request: NextRequest) {
     console.log('🟦 User ID:', userId);
 
     const body = await request.json();
-    const { exerciseId, timeSpent } = body;
+    const { exerciseId: rawExerciseId, timeSpent } = body;
     
-    console.log('🟦 Request body:', { exerciseId, timeSpent });
+    console.log('🟦 Request body:', { exerciseId: rawExerciseId, timeSpent });
 
-    if (!exerciseId) {
+    if (!rawExerciseId) {
       console.log('🔴 Missing exerciseId');
       return NextResponse.json(
         { error: 'exerciseId is required' },
         { status: 400 }
       );
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     // Upsert completion (create or increment attempts)
     const completion = await prisma.exercise_completions.upsert({

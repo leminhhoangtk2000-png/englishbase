@@ -1,14 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+// Helper function to slugify exerciseId to match database format
+function slugifyExerciseId(id: string): string {
+  return id
+    .toLowerCase()
+    .replace(/\//g, '-')            // slashes to hyphens  
+    .replace(/\s+/g, '-')           // spaces to hyphens
+    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
+    .replace(/-+/g, '-')            // multiple hyphens to single
+    .replace(/^-+|-+$/g, '');       // trim hyphens
+}
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const exerciseId = searchParams.get('exerciseId');
+    const rawExerciseId = searchParams.get('exerciseId');
     
-    if (!exerciseId) {
+    if (!rawExerciseId) {
       return NextResponse.json({ error: 'exerciseId is required' }, { status: 400 });
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     const comments = await prisma.exercise_comments.findMany({
       where: {
@@ -79,11 +93,14 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { content, exerciseId, exerciseUrl, parentId } = body;
+    const { content, exerciseId: rawExerciseId, exerciseUrl, parentId } = body;
 
-    if (!content || !exerciseId) {
+    if (!content || !rawExerciseId) {
       return NextResponse.json({ error: 'Content and exerciseId are required' }, { status: 400 });
     }
+
+    // Slugify to match database format
+    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     // TODO: Get current user from auth
     // For now, use a default user
