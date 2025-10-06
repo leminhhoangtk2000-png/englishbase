@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get('userId');
 
-    let targetUserId = userId;
+    let targetUserId: string;
 
     // If no userId provided, get current user
     if (!userId) {
@@ -25,6 +25,8 @@ export async function GET(request: NextRequest) {
         );
       }
       targetUserId = currentUser.id;
+    } else {
+      targetUserId = userId;
     }
 
     // Fetch user with stats

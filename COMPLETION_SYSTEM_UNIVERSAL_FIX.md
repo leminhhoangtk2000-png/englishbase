@@ -3,6 +3,7 @@
 ## 📋 Overview
 
 Applied consistent completion tracking logic across **ALL** content types:
+
 - ✅ **Exercise Pages** (`/exercises/*`)
 - ✅ **Article Pages** (`/die-neuen/*`)
 
@@ -11,12 +12,14 @@ Applied consistent completion tracking logic across **ALL** content types:
 ### 1. Exercise Completion System
 
 #### Files Updated:
+
 - `src/components/exercises/ExercisePageCompletion.tsx`
 - `src/hooks/use-exercise-completion.ts`
 - `src/app/api/exercise-completion/route.ts`
 - `scripts/clear-exercise-completion.sh`
 
 #### Key Fixes:
+
 - Fixed userId lookup from database instead of hardcoded value
 - Added comprehensive debug logging
 - Fixed Prisma model name (`prisma.user` not `prisma.users`)
@@ -25,12 +28,14 @@ Applied consistent completion tracking logic across **ALL** content types:
 ### 2. Article Completion System
 
 #### Files Updated:
+
 - `src/components/articles/ArticlePageCompletion.tsx`
 - `src/hooks/use-article-completion.ts`
 - `src/app/api/article-completion/route.ts`
 - `scripts/clear-article-completion.sh`
 
 #### Key Fixes:
+
 - Added debug logging (same pattern as exercises)
 - Ensured consistent API response format
 - Confirmed userId lookup working correctly
@@ -41,6 +46,7 @@ Applied consistent completion tracking logic across **ALL** content types:
 Both systems now follow the same pattern:
 
 1. **Component Behavior:**
+
    - Shows green button in bottom-right corner
    - Button text: "Đánh dấu hoàn thành" (exercises) or "Đánh dấu hoàn thành" (articles)
    - Shake animation on click
@@ -48,16 +54,18 @@ Both systems now follow the same pattern:
    - Does not reappear on page refresh
 
 2. **State Management:**
+
    - Fetches completion status on mount
    - Updates local state after successful POST
    - Component re-renders and hides when `completed: true`
 
 3. **API Pattern:**
+
    ```typescript
    // GET: Check completion
    GET /api/[type]-completion?[type]Id=xxx
    Returns: { completed: boolean, completedAt?: string, ... }
-   
+
    // POST: Mark complete
    POST /api/[type]-completion
    Body: { [type]Id: string, timeSpent?: number }
@@ -118,6 +126,7 @@ curl -X POST "http://localhost:9003/api/article-completion" \
 Both systems now output consistent debug logs:
 
 ### Browser Console Logs
+
 ```
 🔵 [Component] mounted, props, state changes
 🟣 [Hook] fetch requests, data updates
@@ -128,6 +137,7 @@ Both systems now output consistent debug logs:
 ```
 
 ### Server Logs (Terminal)
+
 ```
 🟦 [API] Request received, body, userId
 🟢 [API] Completion saved
@@ -137,6 +147,7 @@ Both systems now output consistent debug logs:
 ## 📊 Database Tables
 
 ### exercise_completions
+
 ```sql
 CREATE TABLE exercise_completions (
   id              TEXT PRIMARY KEY,
@@ -150,6 +161,7 @@ CREATE TABLE exercise_completions (
 ```
 
 ### articleCompletion
+
 ```sql
 CREATE TABLE articleCompletion (
   id              TEXT PRIMARY KEY,
@@ -165,6 +177,7 @@ CREATE TABLE articleCompletion (
 ## 🎨 UI Components
 
 Both completion buttons have:
+
 - Green border and background
 - CheckCircle2 icon
 - "Đã xem xong..." message
@@ -176,46 +189,55 @@ Both completion buttons have:
 ## 📝 Code Examples
 
 ### Using Exercise Completion
-```tsx
-import { ExercisePageCompletion } from '@/components/exercises/ExercisePageCompletion';
 
-<ExercisePageCompletion exerciseId="a1/Grammatik/Verben" />
+```tsx
+import { ExercisePageCompletion } from "@/components/exercises/ExercisePageCompletion";
+
+<ExercisePageCompletion exerciseId="a1/Grammatik/Verben" />;
 ```
 
 ### Using Article Completion
-```tsx
-import { ArticlePageCompletion } from '@/components/articles/ArticlePageCompletion';
 
-<ArticlePageCompletion articleId="article-123" />
+```tsx
+import { ArticlePageCompletion } from "@/components/articles/ArticlePageCompletion";
+
+<ArticlePageCompletion articleId="article-123" />;
 ```
 
 ### Using Hooks Directly
-```tsx
-import { useExerciseCompletion } from '@/hooks/use-exercise-completion';
-import { useArticleCompletion } from '@/hooks/use-article-completion';
 
-const { completion, markCompleted, unmarkCompleted } = useExerciseCompletion(exerciseId);
-const { completion, markCompleted, unmarkCompleted } = useArticleCompletion(articleId);
+```tsx
+import { useExerciseCompletion } from "@/hooks/use-exercise-completion";
+import { useArticleCompletion } from "@/hooks/use-article-completion";
+
+const { completion, markCompleted, unmarkCompleted } =
+  useExerciseCompletion(exerciseId);
+const { completion, markCompleted, unmarkCompleted } =
+  useArticleCompletion(articleId);
 ```
 
 ## 🚀 Future Enhancements
 
 1. **Authentication Integration**
+
    - Replace test user with real auth
    - Use session/JWT tokens
    - Implement NextAuth
 
 2. **Progress Tracking**
+
    - Add percentage of completed exercises
    - Show completion badges
    - Generate certificates
 
 3. **Analytics**
+
    - Track time spent per exercise
    - Completion rates
    - User learning patterns
 
 4. **Notifications**
+
    - Toast on completion
    - Email summaries
    - Achievement unlocks

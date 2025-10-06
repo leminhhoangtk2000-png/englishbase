@@ -95,6 +95,11 @@ export function ExerciseRating({
           }
         });
         setShowRatingForm(false);
+        
+        // 🔥 Broadcast event để listing page refetch stats
+        window.dispatchEvent(new CustomEvent('exercise-rating-updated', {
+          detail: { exerciseId, averageRating: data.averageRating, totalRatings: data.totalRatings }
+        }));
       }
     } catch (error) {
       console.error('Error submitting rating:', error);

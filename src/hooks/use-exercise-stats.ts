@@ -5,16 +5,14 @@ import { useState, useEffect } from 'react';
 interface ExerciseStats {
   views: number;
   comments: number;
-  rating: number;
-  totalRatings: number;
+  likes: number;
 }
 
-export function useExerciseStats(exerciseId: string) {
+export function useExerciseStats(exerciseId: string | null) {
   const [stats, setStats] = useState<ExerciseStats>({
     views: 0,
     comments: 0,
-    rating: 0,
-    totalRatings: 0
+    likes: 0
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

@@ -105,6 +105,12 @@ export function useExerciseCompletion(exerciseId: string) {
           score: data.completion.score,
           attempts: data.completion.attempts
         });
+        
+        // 🔥 Broadcast event để listing page refetch completion status
+        window.dispatchEvent(new CustomEvent('exercise-completion-updated', {
+          detail: { exerciseId, completed: true }
+        }));
+        
         return true;
       } else {
         const errorText = await response.text();
@@ -130,6 +136,12 @@ export function useExerciseCompletion(exerciseId: string) {
 
       if (response.ok) {
         setCompletion({ completed: false });
+        
+        // 🔥 Broadcast event để listing page refetch completion status
+        window.dispatchEvent(new CustomEvent('exercise-completion-updated', {
+          detail: { exerciseId, completed: false }
+        }));
+        
         return true;
       }
     } catch (error) {

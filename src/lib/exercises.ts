@@ -115,9 +115,10 @@ export async function getExercisesByLevel(level: string) {
             image: data.image,
             data_ai_hint: data.data_ai_hint,
             duration: data.duration || '5 phút đọc',
-            rating: data.rating || 4.5,
-            views: data.views || Math.floor(Math.random() * 3000) + 500,
-            comments: data.comments || Math.floor(Math.random() * 30) + 5,
+            // ✅ REMOVED FAKE DATA - stats now come from real database via batch API
+            rating: data.rating || 0,
+            views: data.views || 0,
+            comments: data.comments || 0,
             completed: data.completed || false
           });
         }

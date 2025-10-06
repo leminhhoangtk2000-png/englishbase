@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     const exerciseId = 'a1/einkaufen-teil-1';
     console.log('Looking for exerciseId:', exerciseId);
     
-    const ratings = await prisma.exercise_ratings.findMany({
+    const ratings = await prisma.exercise_likes.findMany({
       where: { exerciseId }
     });
     

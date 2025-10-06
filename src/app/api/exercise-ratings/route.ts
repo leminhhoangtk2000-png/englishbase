@@ -25,28 +25,18 @@ export async function GET(request: NextRequest) {
     // Slugify to match database format
     const exerciseId = slugifyExerciseId(rawExerciseId);
 
-    // Get all ratings for this exercise
-    const exerciseRatings = await prisma.exercise_ratings.findMany({
-      where: { exerciseId },
-      select: {
-        id: true,
-        userId: true,
-        rating: true,
-        reason: true,
-        createdAt: true
+    // Get total likes count (only where isLiked = true)
+    const totalLikes = await prisma.exercise_likes.count({
+      where: { 
+        exerciseId,
+        isLiked: true 
       }
     });
 
-    // Calculate average
-    const totalRatings = exerciseRatings.length;
-    const averageRating = totalRatings > 0
-      ? exerciseRatings.reduce((sum, r) => sum + r.rating, 0) / totalRatings
-      : 0;
-
-    // Get user's rating if userId provided
-    let userRating = null;
+    // Get user's like status if userId provided
+    let userLiked = false;
     if (userId) {
-      userRating = await prisma.exercise_ratings.findUnique({
+      const userRating = await prisma.exercise_likes.findUnique({
         where: {
           exerciseId_userId: {
             exerciseId,
@@ -54,18 +44,17 @@ export async function GET(request: NextRequest) {
           }
         }
       });
+      userLiked = userRating?.isLiked || false;
     }
 
     return NextResponse.json({
-      averageRating,
-      totalRatings,
-      ratings: exerciseRatings,
-      userRating
+      totalLikes,
+      userLiked
     });
   } catch (error) {
-    console.error('Error fetching ratings:', error);
+    console.error('Error fetching likes:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch ratings' },
+      { error: 'Failed to fetch likes' },
       { status: 500 }
     );
   }
@@ -74,19 +63,12 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { exerciseId: rawExerciseId, userId, rating, reason } = body;
+    const { exerciseId: rawExerciseId, userId, isLiked } = body;
 
     // Validation
-    if (!rawExerciseId || !userId || !rating) {
+    if (!rawExerciseId || !userId || typeof isLiked !== 'boolean') {
       return NextResponse.json(
-        { error: 'exerciseId, userId, and rating are required' },
-        { status: 400 }
-      );
-    }
-
-    if (rating < 1 || rating > 5) {
-      return NextResponse.json(
-        { error: 'Rating must be between 1 and 5' },
+        { error: 'exerciseId, userId, and isLiked are required' },
         { status: 400 }
       );
     }
@@ -94,44 +76,51 @@ export async function POST(request: NextRequest) {
     // Slugify to match database format
     const exerciseId = slugifyExerciseId(rawExerciseId);
 
-    // Upsert rating (create or update)
-    const newRating = await prisma.exercise_ratings.upsert({
-      where: {
-        exerciseId_userId: {
+    if (isLiked) {
+      // Create or update to liked
+      await prisma.exercise_likes.upsert({
+        where: {
+          exerciseId_userId: {
+            exerciseId,
+            userId
+          }
+        },
+        create: {
+          exerciseId,
+          userId,
+          isLiked: true
+        },
+        update: {
+          isLiked: true,
+          updatedAt: new Date()
+        }
+      });
+    } else {
+      // Unlike: delete the record
+      await prisma.exercise_likes.deleteMany({
+        where: {
           exerciseId,
           userId
         }
-      },
-      create: {
+      });
+    }
+
+    // Get updated like count
+    const totalLikes = await prisma.exercise_likes.count({
+      where: { 
         exerciseId,
-        userId,
-        rating,
-        reason: reason || null
-      },
-      update: {
-        rating,
-        reason: reason || null,
-        updatedAt: new Date()
+        isLiked: true 
       }
     });
 
-    // Recalculate average
-    const exerciseRatings = await prisma.exercise_ratings.findMany({
-      where: { exerciseId }
-    });
-
-    const totalRatings = exerciseRatings.length;
-    const averageRating = exerciseRatings.reduce((sum, r) => sum + r.rating, 0) / totalRatings;
-
     return NextResponse.json({
-      rating: newRating,
-      averageRating,
-      totalRatings
+      totalLikes,
+      userLiked: isLiked
     });
   } catch (error) {
-    console.error('Error submitting rating:', error);
+    console.error('Error toggling like:', error);
     return NextResponse.json(
-      { error: 'Failed to submit rating' },
+      { error: 'Failed to toggle like' },
       { status: 500 }
     );
   }

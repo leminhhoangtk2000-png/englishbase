@@ -56,14 +56,12 @@ export async function GET(request: NextRequest) {
       }
     });
 
-    // Fetch all ratings in one query
-    const ratings = await prisma.exercise_ratings.groupBy({
+    // Fetch all ratings (likes) in one query
+    const likes = await prisma.exercise_likes.groupBy({
       by: ['exerciseId'],
       where: {
-        exerciseId: { in: ids }
-      },
-      _avg: {
-        rating: true
+        exerciseId: { in: ids },
+        isLiked: true
       },
       _count: {
         id: true
@@ -89,8 +87,7 @@ export async function GET(request: NextRequest) {
       statsMap[id] = {
         views: 0,
         comments: 0,
-        rating: 0,
-        totalRatings: 0,
+        likes: 0,
         completions: 0
       };
     });
@@ -105,10 +102,9 @@ export async function GET(request: NextRequest) {
       statsMap[item.exerciseId].comments = item._count.id;
     });
 
-    // Populate ratings
-    ratings.forEach(item => {
-      statsMap[item.exerciseId].rating = item._avg.rating || 0;
-      statsMap[item.exerciseId].totalRatings = item._count.id;
+    // Populate likes
+    likes.forEach(item => {
+      statsMap[item.exerciseId].likes = item._count.id;
     });
 
     // Populate completions

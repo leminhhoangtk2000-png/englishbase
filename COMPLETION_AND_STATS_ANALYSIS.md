@@ -31,6 +31,7 @@ Card Exercise:
 #### A. Component: `ExerciseCompletionBadge.tsx`
 
 **Props:**
+
 ```typescript
 {
   exerciseId: string;           // VD: "a1/Horen/Familie und Freunde Teil 1 - A1"
@@ -43,12 +44,14 @@ Card Exercise:
 **3 Variants:**
 
 1. **Icon Variant** (Dùng trên listing page):
+
    - Hiển thị: `<CheckCircle2>` (xanh) hoặc `<Circle>` (xám)
    - Kích thước: 5x5 (w-5 h-5)
    - Click để toggle completed
    - Có tooltip
 
 2. **Badge Variant** (Dùng trên các card):
+
    - Hiển thị: Text "Hoàn thành" / "Chưa hoàn thành"
    - Màu: Xanh lá (completed) / Xám (not completed)
    - Click để toggle
@@ -61,12 +64,13 @@ Card Exercise:
 #### B. Hook: `use-exercise-completion.ts`
 
 **State Management:**
+
 ```typescript
 interface CompletionData {
-  completed: boolean;           // Đã hoàn thành chưa?
-  completedAt?: string;         // Thời gian hoàn thành
-  timeSpent?: number;           // Thời gian làm bài (giây)
-  attempts?: number;            // Số lần làm
+  completed: boolean; // Đã hoàn thành chưa?
+  completedAt?: string; // Thời gian hoàn thành
+  timeSpent?: number; // Thời gian làm bài (giây)
+  attempts?: number; // Số lần làm
 }
 ```
 
@@ -85,16 +89,18 @@ interface CompletionData {
 ```
 
 **Auto-Refresh Feature (Mới):**
+
 ```typescript
 // Listen visibility change
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') {
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
     fetchCompletion(); // Refetch khi user quay lại tab
   }
 });
 ```
 
 **Flow khi user click:**
+
 ```
 User Click Icon
    ↓
@@ -114,6 +120,7 @@ Component re-render → Show green checkmark
 #### C. API Endpoint: `/api/exercise-completion`
 
 **GET - Check Completion:**
+
 ```typescript
 GET /api/exercise-completion?exerciseId=a1/Horen/Test
 
@@ -127,6 +134,7 @@ Response:
 ```
 
 **POST - Mark Complete:**
+
 ```typescript
 POST /api/exercise-completion
 Body: { exerciseId: "a1/Horen/Test", timeSpent: 0 }
@@ -207,15 +215,17 @@ UNIQUE CONSTRAINT: (userId, exerciseId)
 #### B. Hook: `use-exercise-stats.ts`
 
 **Fetch Stats:**
+
 ```typescript
 useEffect(() => {
   fetch(`/api/exercise-stats?exerciseId=${exerciseId}`)
-    .then(res => res.json())
-    .then(data => setStats(data.stats));
+    .then((res) => res.json())
+    .then((data) => setStats(data.stats));
 }, [exerciseId]);
 ```
 
 **State:**
+
 ```typescript
 {
   views: 120,        // Tổng số lượt xem
@@ -228,6 +238,7 @@ useEffect(() => {
 #### C. API: `/api/exercise-stats`
 
 **GET - Fetch Stats:**
+
 ```typescript
 GET /api/exercise-stats?exerciseId=a1/Horen/Test
 
@@ -251,6 +262,7 @@ Response:
 #### D. View Tracking API: `/api/exercise-views`
 
 **POST - Record View:**
+
 ```typescript
 POST /api/exercise-views
 Body: { exerciseId: "a1/Horen/Test", userId: "xxx" }
@@ -307,6 +319,7 @@ Option 3: Manual Track
 ```
 
 **Anti-Spam Logic:**
+
 ```
 1. User A xem bài lúc 10:00 → View recorded
 2. User A xem lại bài lúc 10:30 → KHÔNG record (trong 24h)
@@ -355,6 +368,7 @@ TABLE: exercise_comments (TÊN GIẢ ĐỊNH)
 #### C. TODO: Implement Comments
 
 **1. API Endpoints Cần Tạo:**
+
 ```typescript
 // Lấy comments
 GET /api/exercise-comments?exerciseId=xxx
@@ -373,6 +387,7 @@ Body: { content }
 ```
 
 **2. Component Cần Tạo:**
+
 ```typescript
 // Comment list component
 <ExerciseComments exerciseId="..." />
@@ -384,10 +399,11 @@ Body: { content }
 ```
 
 **3. Update Stats API:**
+
 ```typescript
 // Trong /api/exercise-stats
 const commentsCount = await prisma.exercise_comments.count({
-  where: { exerciseId }
+  where: { exerciseId },
 });
 ```
 
@@ -395,16 +411,16 @@ const commentsCount = await prisma.exercise_comments.count({
 
 ## 4. 📊 SO SÁNH CÁC HỆ THỐNG
 
-| Feature         | Completion Badge | View Count     | Comment Count  |
-|-----------------|------------------|----------------|----------------|
-| **Status**      | ✅ Hoàn chỉnh    | ✅ Hoàn chỉnh  | 🚧 Chưa làm    |
-| **Database**    | ✅ exercise_completions | ✅ exercise_views | ❌ Chưa có bảng |
-| **API**         | ✅ GET/POST/DELETE | ✅ GET/POST | ❌ Chưa có      |
-| **Component**   | ✅ 3 variants    | ✅ Display     | ❌ Chưa có      |
-| **Hook**        | ✅ use-exercise-completion | ✅ use-exercise-stats | ❌ Cần tạo |
-| **Auto-refresh**| ✅ Visibility API | ❌ No auto-refresh | N/A |
-| **Anti-spam**   | N/A              | ✅ 24h window  | N/A            |
-| **User Action** | ✅ Click toggle  | 🔄 Auto track  | N/A            |
+| Feature          | Completion Badge           | View Count            | Comment Count   |
+| ---------------- | -------------------------- | --------------------- | --------------- |
+| **Status**       | ✅ Hoàn chỉnh              | ✅ Hoàn chỉnh         | 🚧 Chưa làm     |
+| **Database**     | ✅ exercise_completions    | ✅ exercise_views     | ❌ Chưa có bảng |
+| **API**          | ✅ GET/POST/DELETE         | ✅ GET/POST           | ❌ Chưa có      |
+| **Component**    | ✅ 3 variants              | ✅ Display            | ❌ Chưa có      |
+| **Hook**         | ✅ use-exercise-completion | ✅ use-exercise-stats | ❌ Cần tạo      |
+| **Auto-refresh** | ✅ Visibility API          | ❌ No auto-refresh    | N/A             |
+| **Anti-spam**    | N/A                        | ✅ 24h window         | N/A             |
+| **User Action**  | ✅ Click toggle            | 🔄 Auto track         | N/A             |
 
 ---
 
@@ -413,12 +429,14 @@ const commentsCount = await prisma.exercise_comments.count({
 ### ✅ Điểm Mạnh
 
 1. **Completion System:**
+
    - ✅ Auto-refresh khi quay lại tab
    - ✅ Data persist trong database
    - ✅ Multiple variants cho flexibility
    - ✅ Comprehensive debug logging
 
 2. **View Tracking:**
+
    - ✅ Anti-spam với 24h window
    - ✅ Track IP + User Agent
    - ✅ Support anonymous users
@@ -431,15 +449,18 @@ const commentsCount = await prisma.exercise_comments.count({
 ### ⚠️ Hạn Chế & Cần Cải Thiện
 
 1. **Comments:**
+
    - ❌ Chưa implement
    - 📝 TODO: Tạo API, component, database schema
 
 2. **View Tracking:**
+
    - ⚠️ Chưa có auto-track khi mở detail page
    - ⚠️ Stats không real-time update
    - 📝 Cần thêm tracking call ở detail page
 
 3. **Performance:**
+
    - ⚠️ Mỗi card fetch riêng (N+1 problem)
    - 💡 Có thể optimize: Fetch tất cả stats 1 lần cho listing page
 
@@ -452,6 +473,7 @@ const commentsCount = await prisma.exercise_comments.count({
 ## 6. 🚀 KẾ HOẠCH PHÁT TRIỂN
 
 ### Phase 1: Hoàn thiện Comments (HIGH PRIORITY)
+
 ```
 ✅ Create database schema
 ✅ Build API endpoints
@@ -460,6 +482,7 @@ const commentsCount = await prisma.exercise_comments.count({
 ```
 
 ### Phase 2: Optimize Performance
+
 ```
 ✅ Batch fetch stats for listing page
 ✅ Implement caching strategy
@@ -467,6 +490,7 @@ const commentsCount = await prisma.exercise_comments.count({
 ```
 
 ### Phase 3: Enhanced Tracking
+
 ```
 ✅ Auto-track views on detail page
 ✅ Track time spent on exercises
@@ -474,6 +498,7 @@ const commentsCount = await prisma.exercise_comments.count({
 ```
 
 ### Phase 4: Authentication
+
 ```
 ✅ Implement NextAuth
 ✅ Remove hardcoded user fallback
@@ -490,15 +515,15 @@ const commentsCount = await prisma.exercise_comments.count({
 // Card component
 <Card>
   <CardHeader>
-    <ExerciseCompletionBadge 
+    <ExerciseCompletionBadge
       exerciseId="a1/Horen/Test"
-      variant="icon"  // Icon ở góc phải
+      variant="icon" // Icon ở góc phải
     />
   </CardHeader>
-  
+
   <CardFooter>
-    <ExerciseStatsDisplay 
-      exerciseId="a1/Horen/Test"  // Views + Comments
+    <ExerciseStatsDisplay
+      exerciseId="a1/Horen/Test" // Views + Comments
     />
   </CardFooter>
 </Card>
@@ -507,7 +532,7 @@ const commentsCount = await prisma.exercise_comments.count({
 ### Cách Track View Manually
 
 ```typescript
-import { trackExerciseView } from '@/hooks/use-exercise-stats';
+import { trackExerciseView } from "@/hooks/use-exercise-stats";
 
 // Trong detail page component
 useEffect(() => {
@@ -519,12 +544,12 @@ useEffect(() => {
 
 ```sql
 -- Tổng views của 1 bài tập
-SELECT COUNT(*) FROM exercise_views 
+SELECT COUNT(*) FROM exercise_views
 WHERE exerciseId = 'a1/Horen/Test';
 
 -- Unique viewers (24h)
-SELECT COUNT(DISTINCT ipAddress) FROM exercise_views 
-WHERE exerciseId = 'a1/Horen/Test' 
+SELECT COUNT(DISTINCT ipAddress) FROM exercise_views
+WHERE exerciseId = 'a1/Horen/Test'
 AND createdAt > NOW() - INTERVAL '24 hours';
 
 -- Top viewed exercises

@@ -2,7 +2,7 @@
 
 **Date**: December 2024  
 **Status**: ✅ COMPLETE  
-**Impact**: ALL exercise APIs  
+**Impact**: ALL exercise APIs
 
 ---
 
@@ -28,27 +28,31 @@ Result:          No match → Returns 0
 ### Data Flow
 
 1. **Listing Page** (`exercise-level-page.tsx`):
+
    ```tsx
    exerciseId={exercise.href.replace('/exercises/', '')}
    // Result: "a1/Horen/Einkaufen teil 2 - A1"
    ```
 
 2. **Component** calls API with raw ID:
+
    ```tsx
    <ExerciseRating exerciseId="a1/Horen/Einkaufen teil 2 - A1" />
    ```
 
 3. **API** queries database with raw ID:
+
    ```typescript
    // BEFORE (WRONG):
    const ratings = await prisma.exercise_ratings.findMany({
-     where: { exerciseId } // "a1/Horen/Einkaufen teil 2 - A1"
+     where: { exerciseId }, // "a1/Horen/Einkaufen teil 2 - A1"
    });
    ```
 
 4. **Database** has slugified ID:
+
    ```sql
-   SELECT * FROM exercise_ratings 
+   SELECT * FROM exercise_ratings
    WHERE exerciseId = 'a1-horen-einkaufen-teil-2-a1';
    -- Returns: 1 row (rating: 5)
    ```
@@ -75,68 +79,81 @@ Added to **ALL** exercise APIs:
 function slugifyExerciseId(id: string): string {
   return id
     .toLowerCase()
-    .replace(/\//g, '-')            // slashes to hyphens  
-    .replace(/\s+/g, '-')           // spaces to hyphens
-    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
-    .replace(/-+/g, '-')            // multiple hyphens to single
-    .replace(/^-+|-+$/g, '');       // trim hyphens
+    .replace(/\//g, "-") // slashes to hyphens
+    .replace(/\s+/g, "-") // spaces to hyphens
+    .replace(/[^\w\-]/g, "-") // special chars to hyphens
+    .replace(/-+/g, "-") // multiple hyphens to single
+    .replace(/^-+|-+$/g, ""); // trim hyphens
 }
 ```
 
 ### Transformation Examples
 
-| Input | Output |
-|-------|--------|
-| `a1/Horen/Einkaufen teil 2 - A1` | `a1-horen-einkaufen-teil-2-a1` |
-| `a2/Lesen/Übung 1 - Test` | `a2-lesen-ubung-1-test` |
+| Input                               | Output                            |
+| ----------------------------------- | --------------------------------- |
+| `a1/Horen/Einkaufen teil 2 - A1`    | `a1-horen-einkaufen-teil-2-a1`    |
+| `a2/Lesen/Übung 1 - Test`           | `a2-lesen-ubung-1-test`           |
 | `b1/Grammatik/Perfekt & Präteritum` | `b1-grammatik-perfekt-prateritum` |
 
 ### Applied To All APIs
 
 ✅ **exercise-stats** (GET)
+
 ```typescript
-const rawExerciseId = searchParams.get('exerciseId');
+const rawExerciseId = searchParams.get("exerciseId");
 const exerciseId = slugifyExerciseId(rawExerciseId);
 // Query database with slugified ID
 ```
 
 ✅ **exercise-ratings** (GET/POST)
+
 ```typescript
 // GET
 const exerciseId = slugifyExerciseId(rawExerciseId);
-const ratings = await prisma.exercise_ratings.findMany({ where: { exerciseId } });
+const ratings = await prisma.exercise_ratings.findMany({
+  where: { exerciseId },
+});
 
 // POST
 const exerciseId = slugifyExerciseId(rawExerciseId);
-await prisma.exercise_ratings.upsert({ where: { exerciseId_userId: { exerciseId, userId } } });
+await prisma.exercise_ratings.upsert({
+  where: { exerciseId_userId: { exerciseId, userId } },
+});
 ```
 
 ✅ **exercise-stats-batch** (GET)
+
 ```typescript
-const rawIds = searchParams.getAll('ids');
-const ids = rawIds.map(id => slugifyExerciseId(id));
+const rawIds = searchParams.getAll("ids");
+const ids = rawIds.map((id) => slugifyExerciseId(id));
 // Batch query with slugified IDs
 ```
 
 ✅ **exercise-completion** (GET/POST)
+
 ```typescript
 const exerciseId = slugifyExerciseId(rawExerciseId);
-await prisma.exercise_completions.upsert({ where: { userId_exerciseId: { userId, exerciseId } } });
+await prisma.exercise_completions.upsert({
+  where: { userId_exerciseId: { userId, exerciseId } },
+});
 ```
 
 ✅ **exercise-comments** (GET/POST)
+
 ```typescript
 const exerciseId = slugifyExerciseId(rawExerciseId);
 await prisma.exercise_comments.findMany({ where: { exerciseId } });
 ```
 
 ✅ **exercise-views** (POST)
+
 ```typescript
 const exerciseId = slugifyExerciseId(rawExerciseId);
 await prisma.exercise_views.create({ data: { exerciseId, userId, ipAddress } });
 ```
 
 ✅ **exercise-analytics** (POST)
+
 ```typescript
 const exerciseId = slugifyExerciseId(rawExerciseId);
 // Log analytics with slugified ID
@@ -164,11 +181,11 @@ curl "http://localhost:9003/api/exercise-stats?exerciseId=a1/Horen/Einkaufen%20t
 
 ```sql
 -- Check existing ratings
-SELECT "exerciseId", rating, "userId" 
+SELECT "exerciseId", rating, "userId"
 FROM exercise_ratings;
 
 -- Result:
---        exerciseId        | rating |    userId    
+--        exerciseId        | rating |    userId
 -- --------------------------+--------+--------------
 --  a1-horen-einkaufen-teil-2-a1 |      5 | current-user
 ```
@@ -204,7 +221,7 @@ Total: 7 files, +129 insertions, -22 deletions
 ✅ **Scalability**: Works for ANY exercise path structure  
 ✅ **Future-proof**: New exercises automatically work  
 ✅ **No frontend changes**: Components send raw IDs as before  
-✅ **Database agnostic**: Works with existing slugified records  
+✅ **Database agnostic**: Works with existing slugified records
 
 ---
 
@@ -214,24 +231,24 @@ Total: 7 files, +129 insertions, -22 deletions
 1. Component:
    exerciseId = "a1/Horen/Einkaufen teil 2 - A1"
    ↓
-   
+
 2. API Receives:
    rawExerciseId = "a1/Horen/Einkaufen teil 2 - A1"
    ↓
-   
+
 3. API Slugifies:
    exerciseId = slugifyExerciseId(rawExerciseId)
    exerciseId = "a1-horen-einkaufen-teil-2-a1"
    ↓
-   
+
 4. Database Query:
    WHERE exerciseId = 'a1-horen-einkaufen-teil-2-a1'
    ↓
-   
+
 5. Match Found! ✅
    Returns: { rating: 5, totalRatings: 1 }
    ↓
-   
+
 6. Component Displays:
    ⭐ 5.0 (1)
 ```
@@ -241,14 +258,17 @@ Total: 7 files, +129 insertions, -22 deletions
 ## 🚀 Future Considerations
 
 ### Option 1: Keep Current Approach (RECOMMENDED)
+
 - **Pros**: No frontend changes, works with all existing code
 - **Cons**: Slugification happens on every API call (minimal overhead)
 
 ### Option 2: Slugify at Frontend
+
 - **Pros**: API receives pre-slugified IDs
 - **Cons**: Need to update all components, more frontend logic
 
 ### Option 3: Store Both Formats in DB
+
 - **Pros**: Support both raw and slugified lookups
 - **Cons**: Data duplication, more complex schema
 

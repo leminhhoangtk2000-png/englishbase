@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Eye, MessageCircle, Star, TrendingUp } from 'lucide-react';
+import { Eye, MessageCircle, Heart, TrendingUp } from 'lucide-react';
 import { useExerciseStats } from '@/hooks/use-exercise-stats';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
@@ -98,17 +98,17 @@ export function DetailedExerciseStats({
           </div>
         </div>
 
-        {/* Ratings */}
-        <div className="flex items-center justify-between p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800">
+        {/* Likes */}
+        <div className="flex items-center justify-between p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-full bg-yellow-100 dark:bg-yellow-900">
-              <Star className="w-5 h-5 text-yellow-600 dark:text-yellow-400 fill-yellow-600 dark:fill-yellow-400" />
+            <div className="p-2 rounded-full bg-red-100 dark:bg-red-900">
+              <Heart className="w-5 h-5 text-red-600 dark:text-red-400 fill-red-600 dark:fill-red-400" />
             </div>
             <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Đánh giá</p>
-              {stats.totalRatings > 0 ? (
-                <p className={`text-2xl font-bold ${getRatingColor(stats.rating)}`}>
-                  {stats.rating.toFixed(1)} ⭐
+              <p className="text-sm text-gray-600 dark:text-gray-400">Lượt thích</p>
+              {stats.likes > 0 ? (
+                <p className="text-2xl font-bold text-red-600 dark:text-red-400">
+                  {stats.likes} ❤️
                 </p>
               ) : (
                 <p className="text-lg text-gray-400">Chưa có</p>
@@ -118,7 +118,7 @@ export function DetailedExerciseStats({
           <div className="text-right">
             <p className="text-xs text-gray-500 dark:text-gray-400">Tổng</p>
             <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              {stats.totalRatings} đánh giá
+              {stats.likes} likes
             </p>
           </div>
         </div>
@@ -132,11 +132,11 @@ export function DetailedExerciseStats({
                 {((stats.comments / stats.views) * 100).toFixed(2)}%
               </span>
             </div>
-            {stats.totalRatings > 0 && (
+            {stats.likes > 0 && (
               <div className="flex justify-between items-center mt-2">
-                <span className="text-sm text-gray-600 dark:text-gray-400">Tỷ lệ đánh giá</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">Tỷ lệ thích</span>
                 <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
-                  {((stats.totalRatings / stats.views) * 100).toFixed(2)}%
+                  {((stats.likes / stats.views) * 100).toFixed(2)}%
                 </span>
               </div>
             )}

@@ -3,14 +3,17 @@
 ## 📅 Date: January 5, 2025
 
 ## 🎯 Objective
+
 Simplified all completion tracking systems from automatic time-based to manual user-controlled completion.
 
 ## 🔧 Changes Made
 
 ### 1. ArticlePageCompletion Component
+
 **File**: `src/components/articles/ArticlePageCompletion.tsx`
 
 **Before** (118 lines):
+
 - ❌ Automatic time tracking with `setInterval`
 - ❌ Scroll detection to bottom (90% threshold)
 - ❌ `minTimeForCompletion` prop (default 30s)
@@ -20,6 +23,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 - ❌ Complex state management
 
 **After** (67 lines):
+
 - ✅ Single manual button: "Đánh dấu hoàn thành"
 - ✅ Shake animation on click for feedback
 - ✅ Auto-hide after completion
@@ -31,9 +35,11 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ---
 
 ### 2. ExercisePageCompletion Component
+
 **File**: `src/components/exercises/ExercisePageCompletion.tsx`
 
 **Before** (160 lines):
+
 - ❌ Time tracker with countdown: "0:07 / 0:45"
 - ❌ `minTimeForCompletion` prop (default 45s)
 - ❌ `autoMarkOnTime` prop for auto-completion
@@ -43,6 +49,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 - ❌ Multiple completion paths (auto + manual)
 
 **After** (67 lines):
+
 - ✅ Single manual button: "Đã xem xong bài học?"
 - ✅ Shake animation on click
 - ✅ Auto-hide after completion
@@ -56,7 +63,9 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ### 3. Page Integration Updates
 
 #### Article Pages
+
 **File**: `src/app/die-neuen/[id]/page.tsx`
+
 ```tsx
 // Before
 <ArticlePageCompletion articleId={params.id} minTimeForCompletion={30} />
@@ -66,7 +75,9 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ```
 
 #### Exercise Pages
+
 **File**: `src/app/exercises/[[...slug]]/page.tsx`
+
 ```tsx
 // Before
 <ExercisePageCompletion exerciseId={exerciseId} minTimeForCompletion={45} autoMarkOnTime={true} />
@@ -78,14 +89,30 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ---
 
 ### 4. Animation Enhancement
+
 **File**: `src/app/globals.css`
 
 **Added**:
+
 ```css
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 .animate-shake {
@@ -98,12 +125,14 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ## 📊 Overall Impact
 
 ### Code Metrics
+
 - **Total lines removed**: 144 lines of complex timing logic
 - **Components simplified**: 2 major completion components
 - **Props removed**: `minTimeForCompletion`, `autoMarkOnTime`
 - **State variables removed**: `timeSpent`, `showCompletionPrompt`, `hasScrolledToBottom`, `isAutoCompleting`, etc.
 
 ### User Experience
+
 - ✅ **Simpler**: No more confusing timers and countdowns
 - ✅ **User Control**: User decides when content is complete
 - ✅ **Consistent**: Articles and exercises work the same way
@@ -111,6 +140,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 - ✅ **Clear Feedback**: Shake animation confirms action
 
 ### Developer Experience
+
 - ✅ **Less Code**: 144 fewer lines to maintain
 - ✅ **Easier to Understand**: Simple button click logic
 - ✅ **No Edge Cases**: No timer race conditions
@@ -121,6 +151,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ## 🧪 Testing Checklist
 
 ### Articles (`/die-neuen/[id]`)
+
 - [ ] Button appears at bottom-right
 - [ ] Click triggers shake animation
 - [ ] Completion marks successfully
@@ -128,6 +159,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 - [ ] Badge ✓ appears on article card
 
 ### Exercises (`/exercises/[...slug]`)
+
 - [ ] Button appears at bottom-right
 - [ ] Click triggers shake animation
 - [ ] Completion marks successfully
@@ -139,6 +171,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 ## 🔄 Migration Notes
 
 ### For New Developers
+
 - All completion tracking is now **manual only**
 - Users click "Đánh dấu hoàn thành" when ready
 - No automatic time tracking or scroll detection
@@ -146,6 +179,7 @@ Simplified all completion tracking systems from automatic time-based to manual u
 - Hooks still accept `timeSpent` parameter but we pass `0`
 
 ### Future Considerations
+
 - If analytics on reading time is needed, implement separate passive tracking
 - Current hooks still support `timeSpent` for future use if needed
 - Database schema unchanged - `timeSpent` field still exists
@@ -157,10 +191,12 @@ Simplified all completion tracking systems from automatic time-based to manual u
 These components work with completion system but don't have timing logic:
 
 ### Badge Components (Display Only)
+
 - `ArticleCompletionBadge.tsx` - Shows completion status on cards
 - `ExerciseCompletionBadge.tsx` - Shows completion status on cards
 
 ### Hooks (Backend Integration)
+
 - `use-article-completion.ts` - API integration (still accepts timeSpent)
 - `use-exercise-completion.ts` - API integration (still accepts timeSpent)
 

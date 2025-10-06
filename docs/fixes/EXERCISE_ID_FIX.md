@@ -25,32 +25,34 @@ Exercise cards on listing pages showed 0 for all stats (rating, views, comments)
 ### Changed: Exercise ID Construction
 
 **Before**:
+
 ```tsx
-<ExerciseCompletionBadge 
+<ExerciseCompletionBadge
   exerciseId={`${level}/${exercise.slug}`}
 />
 
-<ExerciseRating 
-  exerciseId={`${level}/${exercise.slug}`} 
+<ExerciseRating
+  exerciseId={`${level}/${exercise.slug}`}
 />
 
-<ExerciseStatsDisplay 
-  exerciseId={`${level}/${exercise.slug}`} 
+<ExerciseStatsDisplay
+  exerciseId={`${level}/${exercise.slug}`}
 />
 ```
 
 **After**:
+
 ```tsx
-<ExerciseCompletionBadge 
+<ExerciseCompletionBadge
   exerciseId={exercise.href.replace('/exercises/', '')}
 />
 
-<ExerciseRating 
-  exerciseId={exercise.href.replace('/exercises/', '')} 
+<ExerciseRating
+  exerciseId={exercise.href.replace('/exercises/', '')}
 />
 
-<ExerciseStatsDisplay 
-  exerciseId={exercise.href.replace('/exercises/', '')} 
+<ExerciseStatsDisplay
+  exerciseId={exercise.href.replace('/exercises/', '')}
 />
 ```
 
@@ -69,6 +71,7 @@ The `exercise.href` already contains the full path from the API:
 ```
 
 By using `exercise.href.replace('/exercises/', '')`, we get:
+
 - `a1/Horen/Einkaufen teil 2 - A1` ✅
 
 This matches the URL structure and ensures proper slugification in the API.
@@ -78,6 +81,7 @@ This matches the URL structure and ensures proper slugification in the API.
 ## 📊 Data Flow
 
 ### 1. File Structure
+
 ```
 src/content/exercises/
   a1/
@@ -86,6 +90,7 @@ src/content/exercises/
 ```
 
 ### 2. API Scans Files
+
 ```typescript
 // getExercisesByLevel() scans recursively
 scanDirectory(exercisesPath);
@@ -99,12 +104,14 @@ scanDirectory(exercisesPath);
 ```
 
 ### 3. Card Extracts Exercise ID
+
 ```typescript
-const exerciseId = exercise.href.replace('/exercises/', '');
+const exerciseId = exercise.href.replace("/exercises/", "");
 // Result: 'a1/Horen/Einkaufen teil 2 - A1'
 ```
 
 ### 4. Stats API Slugifies
+
 ```typescript
 // In exercise-stats/route.ts
 const slugifiedId = slugify(exerciseId);
@@ -112,8 +119,9 @@ const slugifiedId = slugify(exerciseId);
 ```
 
 ### 5. Database Query
+
 ```sql
-SELECT * FROM exercise_ratings 
+SELECT * FROM exercise_ratings
 WHERE "exerciseId" = 'a1-horen-einkaufen-teil-2---a1'
 ```
 
@@ -123,11 +131,12 @@ WHERE "exerciseId" = 'a1-horen-einkaufen-teil-2---a1'
 
 ## 🔧 Files Modified
 
-### src/app/exercises/_components/exercise-level-page.tsx
+### src/app/exercises/\_components/exercise-level-page.tsx
 
 **Lines changed**: ~330-350
 
 **Changes**:
+
 - Updated `ExerciseCompletionBadge` exerciseId
 - Updated `ExerciseRating` exerciseId
 - Updated `ExerciseStatsDisplay` exerciseId
@@ -148,6 +157,7 @@ All now use: `exercise.href.replace('/exercises/', '')`
 ## 🧪 Testing
 
 ### Before Fix:
+
 ```bash
 # Card was fetching with wrong ID
 GET /api/exercise-stats?exerciseId=a1/einkaufen-teil-2
@@ -155,6 +165,7 @@ GET /api/exercise-stats?exerciseId=a1/einkaufen-teil-2
 ```
 
 ### After Fix:
+
 ```bash
 # Card now fetches with correct ID
 GET /api/exercise-stats?exerciseId=a1/Horen/Einkaufen%20teil%202%20-%20A1
@@ -162,6 +173,7 @@ GET /api/exercise-stats?exerciseId=a1/Horen/Einkaufen%20teil%202%20-%20A1
 ```
 
 ### Verify:
+
 1. Navigate to http://localhost:9003/exercises/a1
 2. Find "Lektion 4 - Einkaufen (teil 2)" card
 3. Check that rating shows: ⭐ 5.0 (1) instead of 0.0 (0)
@@ -171,27 +183,33 @@ GET /api/exercise-stats?exerciseId=a1/Horen/Einkaufen%20teil%202%20-%20A1
 ## 📝 Future Considerations
 
 ### If Adding More Levels:
+
 The fix automatically works for:
+
 - A1, A2, B1, B2 levels
 - Any category (Horen, Lesen, Schreiben, etc.)
 - Any exercise name
 
 ### If Changing URL Structure:
+
 If you ever change from `/exercises/${level}/${category}/${name}` to something else, you only need to update:
+
 1. `getExercisesByLevel()` in `src/lib/exercises.ts` (href construction)
 2. The card will automatically adapt
 
 ### API Structure:
+
 The `exercise` object from API already has all needed fields:
+
 ```typescript
 interface Exercise {
   title: string;
   description: string;
-  href: string;           // ✅ Full path
+  href: string; // ✅ Full path
   level: string;
   tags: string[];
-  category: string;       // ✅ Available if needed separately
-  slug: string;           // ✅ Includes category path
+  category: string; // ✅ Available if needed separately
+  slug: string; // ✅ Includes category path
   difficulty: string;
   // ...
 }

@@ -37,24 +37,20 @@ export async function GET(request: NextRequest) {
       }
     });
 
-    // Get ratings stats
-    const ratings = await prisma.exercise_ratings.findMany({
-      where: { exerciseId: slugifiedId },
-      select: { rating: true }
+    // Get likes stats
+    const likesCount = await prisma.exercise_likes.count({
+      where: { 
+        exerciseId: slugifiedId,
+        isLiked: true 
+      }
     });
-
-    const totalRatings = ratings.length;
-    const averageRating = totalRatings > 0
-      ? ratings.reduce((sum, r) => sum + r.rating, 0) / totalRatings
-      : 0;
 
     return NextResponse.json({
       success: true,
       stats: {
         views: viewsCount,
         comments: commentsCount,
-        rating: averageRating,
-        totalRatings
+        likes: likesCount
       }
     });
 

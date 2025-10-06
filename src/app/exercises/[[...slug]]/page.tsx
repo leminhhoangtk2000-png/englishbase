@@ -7,7 +7,8 @@ import { ExerciseMetadataHider } from "@/components/exercise-metadata-hider";
 import { serialize } from 'next-mdx-remote/serialize';
 import { ExerciseMDXRenderer } from "@/components/exercises/exercise-mdx-renderer";
 import { ExercisePageCompletion } from "@/components/exercises/ExercisePageCompletion";
-import { ExerciseRating } from "@/components/exercises/ExerciseRating";
+import { ExerciseLikes } from "@/components/exercises/ExerciseLikes";
+import { ExerciseViewTracker } from "@/components/exercises/ExerciseViewTracker";
 import { ChevronRight, Home } from "lucide-react";
 
 interface DocPageProps {
@@ -103,8 +104,20 @@ export default async function DocPage({ params }: DocPageProps) {
             <ExerciseMetadataHider />
             <ExerciseMDXRenderer source={mdxSource} />
           </article>
+
+          {/* ❤️ Exercise Likes - Đặt sau content, trước comments */}
+          <div className="mt-6">
+            <ExerciseLikes 
+              exerciseId={exerciseId} 
+              variant="full" 
+              showButton={true}
+            />
+          </div>
         </div>
 
+        {/* 👁️ View Tracking - Tự động track khi user xem bài */}
+        <ExerciseViewTracker exerciseId={exerciseId} />
+        
         {/* Exercise Completion Tracker */}
         <ExercisePageCompletion exerciseId={exerciseId} />
       </main>

@@ -19,7 +19,18 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
 import { ExerciseCompletionBadge } from "@/components/exercises/ExerciseCompletionBadge";
-import { ExerciseRating } from "@/components/exercises/ExerciseRating";
+import { ExerciseLikes } from "@/components/exercises/ExerciseLikes";
+
+// 🔧 Helper function to slugify exercise ID (same logic as API)
+function slugifyExerciseId(id: string): string {
+  return id
+    .toLowerCase()
+    .replace(/\//g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
 interface Exercise {
   title: string;
@@ -153,7 +164,29 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
   const [skillFilter, setSkillFilter] = React.useState("Tất cả");
   const [difficultyFilter, setDifficultyFilter] = React.useState("Tất cả");
   const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [exerciseStats, setExerciseStats] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
+
+  // 🔄 Function to fetch batch stats
+  const fetchBatchStats = React.useCallback(async (exerciseList: Exercise[]) => {
+    if (!exerciseList || exerciseList.length === 0) return;
+    
+    const exerciseIds = exerciseList.map((ex: Exercise) => ex.href);
+    const idsParam = exerciseIds.map((id: string) => `ids=${encodeURIComponent(id)}`).join('&');
+    
+    try {
+      const statsResponse = await fetch(`/api/exercise-stats-batch?${idsParam}`);
+      if (statsResponse.ok) {
+        const statsData = await statsResponse.json();
+        if (statsData.success && statsData.stats) {
+          setExerciseStats(statsData.stats);
+          console.log('✅ Loaded stats for', Object.keys(statsData.stats).length, 'exercises');
+        }
+      }
+    } catch (statsError) {
+      console.error('⚠️ Error fetching batch stats:', statsError);
+    }
+  }, []);
 
   useEffect(() => {
     // Fetch exercises for the current level
@@ -163,6 +196,9 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
         if (response.ok) {
           const data = await response.json();
           setExercises(data);
+          
+          // 🚀 BATCH FETCH: Lấy stats cho TẤT CẢ exercises trong 1 call duy nhất
+          await fetchBatchStats(data);
         } else {
           // Nếu API không có data, dùng mock data
           setExercises(mockExercises as Exercise[]);
@@ -177,7 +213,32 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
     };
 
     fetchExercises();
-  }, [level]);
+  }, [level, fetchBatchStats]);
+
+  // 🔥 Listen for rating/completion updates from detail pages
+  useEffect(() => {
+    const handleRatingUpdate = () => {
+      console.log('🔔 Rating updated, refetching stats...');
+      if (exercises.length > 0) {
+        fetchBatchStats(exercises);
+      }
+    };
+
+    const handleCompletionUpdate = () => {
+      console.log('🔔 Completion updated, refetching stats...');
+      if (exercises.length > 0) {
+        fetchBatchStats(exercises);
+      }
+    };
+
+    window.addEventListener('exercise-rating-updated', handleRatingUpdate);
+    window.addEventListener('exercise-completion-updated', handleCompletionUpdate);
+
+    return () => {
+      window.removeEventListener('exercise-rating-updated', handleRatingUpdate);
+      window.removeEventListener('exercise-completion-updated', handleCompletionUpdate);
+    };
+  }, [exercises, fetchBatchStats]);
 
   const handleLevelChange = (newLevel: string) => {
     router.push(`/exercises/${newLevel}`);
@@ -340,12 +401,15 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                             <Clock className="w-3 h-3 mr-1.5" />
                             <span>{exercise.duration}</span>
                         </div>
-                        <ExerciseRating 
+                        <ExerciseLikes 
                           exerciseId={exercise.href.replace('/exercises/', '')} 
                           variant="inline" 
                         />
                     </div>
-                    <ExerciseStatsDisplay exerciseId={exercise.href.replace('/exercises/', '')} />
+                    <ExerciseStatsDisplay 
+                      exerciseId={exercise.href.replace('/exercises/', '')} 
+                      preloadedStats={exerciseStats[slugifyExerciseId(exercise.href.replace('/exercises/', ''))]}
+                    />
                 </CardFooter>
               </Card>
             </Link>

@@ -3,6 +3,7 @@
 ## 🐛 Problem
 
 When clicking the "Đánh dấu hoàn thành" button on exercise pages:
+
 - Button would shake (animation worked)
 - But component would NOT hide
 - Completion was NOT saved to database
@@ -13,10 +14,11 @@ The API was using a hardcoded `userId = 'user_test_1'` that **did not exist** in
 
 ```typescript
 // ❌ OLD CODE (BROKEN)
-const userId = currentUser?.id || 'user_test_1';
+const userId = currentUser?.id || "user_test_1";
 ```
 
 Database error:
+
 ```
 Foreign key constraint violated on the constraint: `exercise_completions_userId_fkey`
 ```
@@ -32,7 +34,7 @@ let userId = currentUser?.id;
 if (!userId) {
   // Find any user from database to use as default
   const defaultUser = await prisma.user.findFirst({
-    where: { email: 'user@edu-theme.com' }
+    where: { email: "user@edu-theme.com" },
   });
   userId = defaultUser?.id;
 }
@@ -41,10 +43,12 @@ if (!userId) {
 ### Additional Fixes
 
 1. **Correct Prisma Model Name**
+
    - Changed from `prisma.users` → `prisma.user`
    - Schema uses `model User` not `model users`
 
 2. **Better Error Handling**
+
    - Added check if no user found in database
    - Returns 401 error instead of failing silently
 
@@ -55,22 +59,26 @@ if (!userId) {
 ## 📋 Files Changed
 
 ### 1. `/src/app/api/exercise-completion/route.ts`
+
 - Fixed GET endpoint to lookup user
 - Fixed POST endpoint to lookup user
 - Added debug logging
 - Better error messages
 
 ### 2. `/src/components/exercises/ExercisePageCompletion.tsx`
+
 - Added debug logs on mount
 - Added debug logs when completion state changes
 - Added debug logs in handleComplete
 
 ### 3. `/src/hooks/use-exercise-completion.ts`
+
 - Added debug logs in useEffect
 - Added debug logs in markCompleted
 - Better error handling
 
 ### 4. `/scripts/clear-exercise-completion.sh`
+
 - New helper script to clear completions for testing
 
 ## 🧪 Testing
@@ -78,6 +86,7 @@ if (!userId) {
 ### Test Completion Flow
 
 1. Go to any exercise page:
+
    ```
    http://localhost:9003/exercises/a1/Horen/Einkaufen%20teil%202%20-%20A1
    ```
@@ -87,6 +96,7 @@ if (!userId) {
 3. Click "Đánh dấu hoàn thành"
 
 4. **Expected behavior:**
+
    - Button shakes for 0.5s
    - Component disappears
    - Console shows success logs
@@ -121,6 +131,7 @@ docker exec -it edu-theme-postgres psql -U postgres -d edu_theme_db \
 When completion button is clicked, you should see these logs:
 
 ### Browser Console
+
 ```
 🔵 handleComplete called
 🔵 exerciseId: a1/Horen/Test
@@ -133,6 +144,7 @@ When completion button is clicked, you should see these logs:
 ```
 
 ### Server Terminal (npm run dev)
+
 ```
 🟦 POST /api/exercise-completion - Request received
 🔧 Using default user: cmgdj0vio000246ypb4b2kagd
@@ -144,11 +156,13 @@ When completion button is clicked, you should see these logs:
 ## 📊 Database Schema
 
 ### Users Table
+
 ```sql
 SELECT id, email, name, role FROM "User" LIMIT 3;
 ```
 
 Result:
+
 ```
 id                        | email                 | name         | role
 --------------------------+-----------------------+--------------+-------------
@@ -158,6 +172,7 @@ cmgdj0vio000246ypb4b2kagd | user@edu-theme.com    | Regular User | USER
 ```
 
 ### Exercise Completions Table
+
 ```sql
 SELECT * FROM exercise_completions LIMIT 5;
 ```
@@ -165,15 +180,18 @@ SELECT * FROM exercise_completions LIMIT 5;
 ## 🚀 Future Improvements
 
 1. **Add Authentication**
+
    - Currently using fallback user for development
    - Should implement proper auth system
    - Use NextAuth or similar
 
 2. **Add User Context**
+
    - Create React Context for current user
    - Pass userId from context instead of API lookup
 
 3. **Add Loading States**
+
    - Show spinner while marking complete
    - Disable button during API call
 

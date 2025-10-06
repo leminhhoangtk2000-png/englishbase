@@ -413,18 +413,17 @@ model exercise_views {
   @@map("exercise_views")
 }
 
-model exercise_ratings {
+model exercise_likes {
   id         String   @id @default(cuid())
   exerciseId String
   userId     String
-  rating     Int
-  reason     String?
+  isLiked    Boolean  @default(true) // Like/unlike functionality
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
   @@unique([exerciseId, userId])
   @@index([exerciseId])
-  @@map("exercise_ratings")
+  @@map("exercise_likes")
 }
 
 model exercise_completions {
