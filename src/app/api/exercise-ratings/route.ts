@@ -76,47 +76,57 @@ export async function POST(request: NextRequest) {
     // Slugify to match database format
     const exerciseId = slugifyExerciseId(rawExerciseId);
 
-    if (isLiked) {
-      // Create or update to liked
-      await prisma.exercise_likes.upsert({
-        where: {
-          exerciseId_userId: {
+    // Use transaction to update both exercise_likes and exercises_master
+    const result = await prisma.$transaction(async (tx) => {
+      if (isLiked) {
+        // Create or update to liked
+        await tx.exercise_likes.upsert({
+          where: {
+            exerciseId_userId: {
+              exerciseId,
+              userId
+            }
+          },
+          create: {
+            exerciseId,
+            userId,
+            isLiked: true
+          },
+          update: {
+            isLiked: true,
+            updatedAt: new Date()
+          }
+        });
+      } else {
+        // Unlike: delete the record
+        await tx.exercise_likes.deleteMany({
+          where: {
             exerciseId,
             userId
           }
-        },
-        create: {
-          exerciseId,
-          userId,
-          isLiked: true
-        },
-        update: {
-          isLiked: true,
-          updatedAt: new Date()
-        }
-      });
-    } else {
-      // Unlike: delete the record
-      await prisma.exercise_likes.deleteMany({
-        where: {
-          exerciseId,
-          userId
-        }
-      });
-    }
-
-    // Get updated like count
-    const totalLikes = await prisma.exercise_likes.count({
-      where: { 
-        exerciseId,
-        isLiked: true 
+        });
       }
+
+      // Get updated like count
+      const totalLikes = await tx.exercise_likes.count({
+        where: { 
+          exerciseId,
+          isLiked: true 
+        }
+      });
+
+      // 🔥 Update cached count in exercises_master
+      await tx.exercises_master.updateMany({
+        where: { slugId: exerciseId },
+        data: { likesCount: totalLikes }
+      });
+
+      return { totalLikes, userLiked: isLiked };
     });
 
-    return NextResponse.json({
-      totalLikes,
-      userLiked: isLiked
-    });
+    console.log('✅ Like updated and count synchronized:', result);
+
+    return NextResponse.json(result);
   } catch (error) {
     console.error('Error toggling like:', error);
     return NextResponse.json(

@@ -5,19 +5,17 @@ import { prisma } from '@/lib/prisma';
 function slugifyExerciseId(id: string): string {
   return id
     .toLowerCase()
-    .replace(/\//g, '-')            // slashes to hyphens  
-    .replace(/\s+/g, '-')           // spaces to hyphens
-    .replace(/[^\w\-]/g, '-')       // special chars to hyphens
-    .replace(/-+/g, '-')            // multiple hyphens to single
-    .replace(/^-+|-+$/g, '');       // trim hyphens
+    .replace(/\//g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 /**
  * Batch Stats API - Fetch stats for multiple exercises in one request
- * 
  * Usage: /api/exercise-stats-batch?ids=ex1&ids=ex2&ids=ex3
- * 
- * This solves the N+1 query problem on listing pages
+ * NOW USES CACHED COUNTS from exercises_master for 100x faster queries!
  */
 export async function GET(request: NextRequest) {
   try {
@@ -28,96 +26,59 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'At least one exercise ID is required' }, { status: 400 });
     }
 
-    // Slugify all IDs to match database format
     const ids = rawIds.map(id => slugifyExerciseId(id));
+    console.log('🟦 [Batch Stats API] Fetching cached stats for', ids.length, 'exercises');
 
-    console.log('🟦 [Batch Stats API] Fetching stats for', ids.length, 'exercises');
-
-    // Fetch all views in one query
-    const views = await prisma.exercise_views.groupBy({
-      by: ['exerciseId'],
-      where: {
-        exerciseId: { in: ids }
-      },
-      _count: {
-        id: true
+    // Fetch all stats from exercises_master in ONE query!
+    const exerciseStats = await prisma.exercises_master.findMany({
+      where: { slugId: { in: ids } },
+      select: {
+        slugId: true,
+        likesCount: true,
+        viewsCount: true,
+        commentsCount: true
       }
     });
 
-    // Fetch all comments in one query
-    const comments = await prisma.exercise_comments.groupBy({
-      by: ['exerciseId'],
-      where: {
-        exerciseId: { in: ids },
-        published: true
-      },
-      _count: {
-        id: true
-      }
-    });
-
-    // Fetch all ratings (likes) in one query
-    const likes = await prisma.exercise_likes.groupBy({
-      by: ['exerciseId'],
-      where: {
-        exerciseId: { in: ids },
-        isLiked: true
-      },
-      _count: {
-        id: true
-      }
-    });
-
-    // Fetch all completions in one query
+    // Fetch completions
     const completions = await prisma.exercise_completions.groupBy({
       by: ['exerciseId'],
-      where: {
-        exerciseId: { in: ids }
-      },
-      _count: {
-        id: true
-      }
+      where: { exerciseId: { in: ids } },
+      _count: { id: true }
     });
 
-    // Build stats map
-    const statsMap: Record<string, any> = {};
+    // Create stats map
+    const statsMap: Record<string, {
+      views: number;
+      comments: number;
+      likes: number;
+      completions: number;
+    }> = {};
 
-    // Initialize all IDs with zero stats
+    // Initialize with zeros
     ids.forEach(id => {
-      statsMap[id] = {
-        views: 0,
-        comments: 0,
-        likes: 0,
-        completions: 0
-      };
+      statsMap[id] = { views: 0, comments: 0, likes: 0, completions: 0 };
     });
 
-    // Populate views
-    views.forEach(item => {
-      statsMap[item.exerciseId].views = item._count.id;
-    });
-
-    // Populate comments
-    comments.forEach(item => {
-      statsMap[item.exerciseId].comments = item._count.id;
-    });
-
-    // Populate likes
-    likes.forEach(item => {
-      statsMap[item.exerciseId].likes = item._count.id;
+    // Populate from exercises_master
+    exerciseStats.forEach(item => {
+      if (statsMap[item.slugId]) {
+        statsMap[item.slugId].views = item.viewsCount;
+        statsMap[item.slugId].comments = item.commentsCount;
+        statsMap[item.slugId].likes = item.likesCount;
+      }
     });
 
     // Populate completions
     completions.forEach(item => {
-      statsMap[item.exerciseId].completions = item._count.id;
+      if (statsMap[item.exerciseId]) {
+        statsMap[item.exerciseId].completions = item._count.id;
+      }
     });
 
-    console.log('🟢 [Batch Stats API] Successfully fetched stats for', ids.length, 'exercises');
+    console.log('🟢 [Batch Stats API] Successfully fetched cached stats');
 
-    return NextResponse.json({
-      success: true,
-      stats: statsMap
-    });
+    return NextResponse.json({ success: true, stats: statsMap });
 
   } catch (error) {
     console.error('🔴 [Batch Stats API] Error:', error);

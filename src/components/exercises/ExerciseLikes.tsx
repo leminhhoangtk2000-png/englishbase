@@ -99,7 +99,7 @@ export function ExerciseLikes({
     return (
       <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
         <Heart 
-          className={`w-4 h-4 ${likeData.userLiked ? 'fill-red-500 text-red-500' : ''}`}
+          className={`w-4 h-4 ${likeData.totalLikes > 0 ? 'fill-red-500 text-red-500' : ''}`}
         />
         <span className="text-sm">{likeData.totalLikes}</span>
       </div>
