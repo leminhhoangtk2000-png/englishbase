@@ -15,8 +15,13 @@ export async function GET(request: NextRequest) {
       where: { exerciseId }
     });
 
-    // Get comments count - table doesn't exist yet, use 0 for now
-    const commentsCount = 0;
+    // Get comments count from database
+    const commentsCount = await prisma.exercise_comments.count({
+      where: { 
+        exerciseId,
+        published: true 
+      }
+    });
 
     // Get ratings stats
     const ratings = await prisma.exercise_ratings.findMany({

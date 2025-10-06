@@ -8,6 +8,7 @@ import { AuthProvider } from '@/lib/auth-context';
 import { Footer } from '@/components/footer';
 import { TTSProvider } from '@/hooks/use-tts';
 import { VocabularyProvider } from '@/hooks/use-vocabulary';
+import { QueryProvider } from '@/components/providers/query-provider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:9003'),
@@ -87,16 +88,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TTSProvider>
-            <VocabularyProvider>
-              <AuthProvider>
-                <div className="flex-1">{children}</div>
-                <Toaster />
-                <SonnerToaster />
-                <Footer />
-              </AuthProvider>
-            </VocabularyProvider>
-          </TTSProvider>
+          <QueryProvider>
+            <TTSProvider>
+              <VocabularyProvider>
+                <AuthProvider>
+                  <div className="flex-1">{children}</div>
+                  <Toaster />
+                  <SonnerToaster />
+                  <Footer />
+                </AuthProvider>
+              </VocabularyProvider>
+            </TTSProvider>
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>
