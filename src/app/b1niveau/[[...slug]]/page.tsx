@@ -189,12 +189,11 @@ export default async function DocPage({ params }: DocPageProps) {
     const directMarkdownContent = getMarkdownBySlug('b1niveau', decodedSection, decodedFolderSlug);
     
     if (directMarkdownContent) {
-      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz, ExerciseComments)
+      // Check if content has MDX components (like ExerciseTable, FormingQuestions, MatchingQuiz)
       const hasExerciseTable = directMarkdownContent.content.includes('<ExerciseTable');
       const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
       const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
-      const hasExerciseComments = directMarkdownContent.content.includes('<ExerciseComments');
-      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasExerciseComments;
+      const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz;
       const isMDX = directMarkdownContent.filePath && directMarkdownContent.filePath.endsWith('.mdx');
       
       console.log('[B1 Server] MDX Detection:', { 
@@ -204,7 +203,6 @@ export default async function DocPage({ params }: DocPageProps) {
         hasExerciseTable,
         hasFormingQuestions,
         hasMatchingQuiz,
-        hasExerciseComments,
         hasInteractiveComponents
       });
       

@@ -236,37 +236,6 @@ async function migrateExistingData() {
 
   console.log(`✅ Updated ${viewUpdates} view records\n`);
 
-  // Update exercise_comments
-  console.log('📝 Updating exercise_comments...');
-  let commentUpdates = 0;
-  
-  for (const ex of exercises) {
-    const oldFormats = [
-      slugifyExerciseId(ex.slug),
-      ex.slug.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-20'),
-      ex.slug.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-')
-    ];
-
-    for (const oldFormat of oldFormats) {
-      try {
-        const result = await prisma.$executeRaw`
-          UPDATE exercise_comments 
-          SET "exerciseId" = ${ex.slugId}
-          WHERE "exerciseId" = ${oldFormat}
-            AND "exerciseId" != ${ex.slugId}
-        `;
-        if (result > 0) {
-          commentUpdates += result;
-          console.log(`  ✅ Updated ${result} comments: ${oldFormat} → ${ex.slugId}`);
-        }
-      } catch (error: any) {
-        console.error(`  ❌ Error updating comments:`, error.message);
-      }
-    }
-  }
-
-  console.log(`✅ Updated ${commentUpdates} comment records\n`);
-
   // Update exercise_completions
   console.log('📝 Updating exercise_completions...');
   let completionUpdates = 0;
@@ -304,7 +273,6 @@ async function migrateExistingData() {
   console.log('Summary:');
   console.log(`  Ratings: ${ratingUpdates} updated`);
   console.log(`  Views: ${viewUpdates} updated`);
-  console.log(`  Comments: ${commentUpdates} updated`);
   console.log(`  Completions: ${completionUpdates} updated`);
 }
 
@@ -318,7 +286,6 @@ async function updateExerciseCounts() {
   let updatedCount = 0;
   let totalLikes = 0;
   let totalViews = 0;
-  let totalComments = 0;
 
   for (const exercise of exercises) {
     const likesCount = await prisma.exercise_likes.count({
@@ -329,23 +296,18 @@ async function updateExerciseCounts() {
       where: { exerciseId: exercise.slugId }
     });
 
-    const commentsCount = await prisma.exercise_comments.count({
-      where: { exerciseId: exercise.slugId, published: true }
-    });
-
     await prisma.exercises_master.update({
       where: { id: exercise.id },
-      data: { likesCount, viewsCount, commentsCount }
+      data: { likesCount, viewsCount }
     });
 
     updatedCount++;
     totalLikes += likesCount;
     totalViews += viewsCount;
-    totalComments += commentsCount;
   }
 
   console.log(`✅ Updated counts for ${updatedCount} exercises`);
-  console.log(`   Total: ❤️ ${totalLikes} | 👁️ ${totalViews} | 💬 ${totalComments}\n`);
+  console.log(`   Total: ❤️ ${totalLikes} | 👁️ ${totalViews}\n`);
 }
 
 async function main() {

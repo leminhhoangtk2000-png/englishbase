@@ -45,7 +45,7 @@ export default async function DocPage({ params }: DocPageProps) {
     const exerciseId = slug.join('/');
 
     return (
-      <main className="w-full py-6 exercise-page bg-gray-50 dark:bg-background min-h-screen">
+      <main className="w-full py-6 exercise-page dark:bg-background min-h-screen">
         <div className="container mx-auto max-w-5xl px-4">
           <div className="mb-6">
             <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">

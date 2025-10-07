@@ -118,7 +118,6 @@ export async function getExercisesByLevel(level: string) {
             // ✅ REMOVED FAKE DATA - stats now come from real database via batch API
             rating: data.rating || 0,
             views: data.views || 0,
-            comments: data.comments || 0,
             completed: data.completed || false
           });
         }

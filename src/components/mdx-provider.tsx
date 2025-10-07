@@ -13,8 +13,7 @@ import {
   WritingExercise,
   GrammarBox,
   VocabularyList,
-  AuthorCredit,
-  CommentSystem
+  AuthorCredit
 } from './exercise-registry'
 
 // Standard MDX components with Tailwind styling
@@ -27,7 +26,6 @@ const mdxComponents: MDXComponents = {
   GrammarBox,
   VocabularyList,
   AuthorCredit,
-  CommentSystem,
   
   // HTML elements with Tailwind classes
   h1: (props) => (
@@ -211,7 +209,6 @@ export const exerciseComponents = {
   GrammarBox,
   VocabularyList,
   AuthorCredit,
-  CommentSystem,
 }
 
 export const htmlComponents = {

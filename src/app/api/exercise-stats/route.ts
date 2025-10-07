@@ -29,14 +29,6 @@ export async function GET(request: NextRequest) {
       where: { exerciseId: slugifiedId }
     });
 
-    // Get comments count from database
-    const commentsCount = await prisma.exercise_comments.count({
-      where: { 
-        exerciseId: slugifiedId,
-        published: true 
-      }
-    });
-
     // Get likes stats
     const likesCount = await prisma.exercise_likes.count({
       where: { 
@@ -49,7 +41,6 @@ export async function GET(request: NextRequest) {
       success: true,
       stats: {
         views: viewsCount,
-        comments: commentsCount,
         likes: likesCount
       }
     });

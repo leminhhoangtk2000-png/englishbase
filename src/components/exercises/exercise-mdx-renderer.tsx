@@ -10,7 +10,6 @@ import { AuthorCredit } from '@/components/ui/author-credit';
 import Satzbildung from '@/components/exercises/satzbildung';
 import { MatchingQuiz } from '@/components/exercises/matching-quiz';
 import { ExerciseTable } from '@/components/exercises/exercise-table';
-import { ExerciseComments } from '@/components/exercises/ExerciseComments';
 import { YouTubeEmbed } from '@/components/exercises/youtube-embed';
 
 const components = {
@@ -22,7 +21,6 @@ const components = {
   Satzbildung,
   MatchingQuiz,
   ExerciseTable,
-  ExerciseComments,
   YouTubeEmbed,
   // Add custom HTML elements styling
   h1: (props: any) => (

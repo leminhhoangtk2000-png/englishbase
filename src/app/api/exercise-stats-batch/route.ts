@@ -49,8 +49,7 @@ export async function GET(request: NextRequest) {
       select: {
         slugId: true,
         likesCount: true,
-        viewsCount: true,
-        commentsCount: true
+        viewsCount: true
       }
     });
 
@@ -64,21 +63,19 @@ export async function GET(request: NextRequest) {
     // Create stats map
     const statsMap: Record<string, {
       views: number;
-      comments: number;
       likes: number;
       completions: number;
     }> = {};
 
     // Initialize with zeros
     ids.forEach(id => {
-      statsMap[id] = { views: 0, comments: 0, likes: 0, completions: 0 };
+      statsMap[id] = { views: 0, likes: 0, completions: 0 };
     });
 
     // Populate from exercises_master
     exerciseStats.forEach(item => {
       if (statsMap[item.slugId]) {
         statsMap[item.slugId].views = item.viewsCount;
-        statsMap[item.slugId].comments = item.commentsCount;
         statsMap[item.slugId].likes = item.likesCount;
       }
     });

@@ -14,7 +14,6 @@ export const rolePermissions = {
         canManageContent: true,
         canAccessPremiumFeatures: true,
         canViewAnalytics: true,
-        canModerateComments: true,
         canCreateExercises: true,
         canManageVocabulary: true
     },
@@ -23,7 +22,6 @@ export const rolePermissions = {
         canManageContent: false,
         canAccessPremiumFeatures: true,
         canViewAnalytics: false,
-        canModerateComments: false,
         canCreateExercises: false,
         canManageVocabulary: false
     },
@@ -32,7 +30,6 @@ export const rolePermissions = {
         canManageContent: false,
         canAccessPremiumFeatures: false,
         canViewAnalytics: false,
-        canModerateComments: false,
         canCreateExercises: false,
         canManageVocabulary: false
     }

@@ -16,8 +16,6 @@ import { FormingQuestions } from '@/components/exercises/forming-questions';
 import { FormingQuestionsSimple } from '@/components/exercises/forming-questions-simple';
 import Satzbildung from '@/components/exercises/satzbildung';
 import AuthorCredit from '@/components/exercises/author-credit';
-import ExerciseComments from '@/components/exercises/ExerciseComments';
-import CommentButton from '@/components/exercises/CommentButton';
 
 interface MDXComponentsRendererProps {
   content: string;
@@ -751,7 +749,6 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
     const formingQuestionsRegex = /<FormingQuestions\s+([\s\S]*?)(?:\s*\/>|>\s*<\/FormingQuestions>)/g;
     const satzbildungRegex = /<Satzbildung\s+([\s\S]*?)\s*\/>/g;
     const authorCreditRegex = /<AuthorCredit\s+author=["']([^"']*?)["']\s*\/>/g;
-    const commentButtonRegex = /<CommentButton\s+([\s\S]*?)\s*\/>/g;
     
     console.log('[MDX Client] Full content length:', cleanContent.length);
     console.log('[MDX Client] First 500 chars:', cleanContent.substring(0, 500));
@@ -1140,93 +1137,6 @@ export function MDXComponentsRenderer({ content }: MDXComponentsRendererProps) {
         
       } catch (error) {
         console.error('Error processing AuthorCredit:', error);
-      }
-    }
-
-    // Process CommentButton components
-    commentButtonRegex.lastIndex = 0;
-    
-    console.log('[Debug] Looking for CommentButton in content:', cleanContent.includes('CommentButton'));
-    
-    const commentButtonMatches = Array.from(cleanContent.matchAll(commentButtonRegex));
-    console.log('[Debug] CommentButton matches found:', commentButtonMatches.length);
-    
-    for (const match of commentButtonMatches) {
-      const [fullMatch, propsStr] = match;
-      
-      console.log('[Debug] Processing CommentButton:', { fullMatch, propsStr: propsStr.substring(0, 100) });
-      
-      try {
-        // Extract props
-        const exerciseIdMatch = propsStr.match(/exerciseId=["']([^"']*?)["']/);
-        const currentUserIdMatch = propsStr.match(/currentUserId=["']([^"']*?)["']/);
-        const currentUserNameMatch = propsStr.match(/currentUserName=["']([^"']*?)["']/);
-        const currentUserAvatarMatch = propsStr.match(/currentUserAvatar=["']([^"']*?)["']/);
-        const variantMatch = propsStr.match(/variant=["']([^"']*?)["']/);
-        
-        const exerciseId = exerciseIdMatch ? exerciseIdMatch[1] : '';
-        const currentUserId = currentUserIdMatch ? currentUserIdMatch[1] : undefined;
-        const currentUserName = currentUserNameMatch ? currentUserNameMatch[1] : 'Học viên';
-        const currentUserAvatar = currentUserAvatarMatch ? currentUserAvatarMatch[1] : undefined;
-        const variant = variantMatch ? variantMatch[1] as 'compact' | 'floating' | 'inline' : 'compact';
-        
-        const commentButtonComponent = (
-          <CommentButton
-            key={`comment-button-${componentIndex}`}
-            exerciseId={exerciseId}
-            currentUserId={currentUserId}
-            currentUserName={currentUserName}
-            currentUserAvatar={currentUserAvatar}
-            variant={variant}
-          />
-        );
-        
-        components.push(commentButtonComponent);
-        
-        // Replace the MDX syntax with a placeholder
-        const placeholder = `\n\n[EXERCISE_PLACEHOLDER_${componentIndex}]\n\n`;
-        processedContent = processedContent.replace(fullMatch, placeholder);
-        componentIndex++;
-        
-      } catch (error) {
-        console.error('Error processing CommentButton:', error);
-      }
-    }
-
-    // Process ExerciseComments components - handle both single-line and multi-line formats
-    const exerciseCommentsRegex = /<ExerciseComments[\s\n]+exerciseId=["']([^"']*?)["'][\s\n]*(?:url=["']([^"']*?)["'])?[\s\n]*\/>/g;
-    exerciseCommentsRegex.lastIndex = 0;
-    
-    console.log('[Debug] Looking for ExerciseComments in content:', cleanContent.includes('ExerciseComments'));
-    console.log('[Debug] ExerciseComments regex test:', exerciseCommentsRegex.test(cleanContent));
-    exerciseCommentsRegex.lastIndex = 0; // Reset after test
-    
-    const exerciseCommentsMatches = Array.from(cleanContent.matchAll(exerciseCommentsRegex));
-    console.log('[Debug] ExerciseComments matches found:', exerciseCommentsMatches.length);
-    
-    for (const match of exerciseCommentsMatches) {
-      const [fullMatch, exerciseId, url] = match;
-      
-      console.log('[Debug] Processing ExerciseComments:', { fullMatch, exerciseId, url });
-      
-      try {
-        const exerciseCommentsComponent = (
-          <ExerciseComments
-            key={`exercise-comments-${componentIndex}`}
-            exerciseId={exerciseId}
-            url={url}
-          />
-        );
-        
-        components.push(exerciseCommentsComponent);
-        
-        // Replace the MDX syntax with a placeholder
-        const placeholder = `\n\n[EXERCISE_PLACEHOLDER_${componentIndex}]\n\n`;
-        processedContent = processedContent.replace(fullMatch, placeholder);
-        componentIndex++;
-        
-      } catch (error) {
-        console.error('Error processing ExerciseComments:', error);
       }
     }
 

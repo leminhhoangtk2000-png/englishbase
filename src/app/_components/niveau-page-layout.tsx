@@ -111,17 +111,14 @@ export async function NiveauPageLayout({ niveau, niveauTitle, niveauDescription,
   const hasFormingQuestions = directMarkdownContent.content.includes('<FormingQuestions');
   const hasMatchingQuiz = directMarkdownContent.content.includes('<MatchingQuiz');
   const hasMultipleChoiceQuizGroup = directMarkdownContent.content.includes('<MultipleChoiceQuizGroup');
-  const hasExerciseComments = directMarkdownContent.content.includes('<ExerciseComments');
   const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || 
-                                   hasMatchingQuiz || hasMultipleChoiceQuizGroup || 
-                                   hasExerciseComments;
+                                   hasMatchingQuiz || hasMultipleChoiceQuizGroup;
 
   console.log(`[${niveau.toUpperCase()}] Interactive components detected:`, {
     hasExerciseTable,
     hasFormingQuestions,
     hasMatchingQuiz,
     hasMultipleChoiceQuizGroup,
-    hasExerciseComments,
     hasInteractiveComponents
   });
 

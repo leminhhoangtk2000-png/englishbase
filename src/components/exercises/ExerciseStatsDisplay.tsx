@@ -12,7 +12,6 @@ interface ExerciseStatsDisplayProps {
   showLabels?: boolean;
   preloadedStats?: {
     views: number;
-    comments: number;
     likes: number;
   };
 }
@@ -55,12 +54,6 @@ export function ExerciseStatsDisplay({
         <Eye className="w-4 h-4" />
         <span>{formatNumber(stats.views)}</span>
         {showLabels && <span className="hidden sm:inline">views</span>}
-      </span>
-      
-      <span className="flex items-center gap-1.5" title={`${stats.comments} bình luận`}>
-        <MessageCircle className="w-4 h-4" />
-        <span>{stats.comments}</span>
-        {showLabels && <span className="hidden sm:inline">comments</span>}
       </span>
 
       <span className="flex items-center gap-1.5" title={`${stats.likes} lượt thích`}>

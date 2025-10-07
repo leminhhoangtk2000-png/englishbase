@@ -333,14 +333,12 @@ export default async function DocPage({ params }: DocPageProps) {
     const isMDX = markdownContent.filePath && markdownContent.filePath.endsWith('.mdx');
     const hasInteractiveComponents = markdownContent.content.includes('ExerciseTable') || 
                                     markdownContent.content.includes('Satzbildung') || 
-                                    markdownContent.content.includes('MatchingQuiz') ||
-                                    markdownContent.content.includes('ExerciseComments');
+                                    markdownContent.content.includes('MatchingQuiz');
     console.log('[B2 Server] MDX Detection (slug.length=2):', { 
       filePath: markdownContent.filePath, 
       isMDX, 
       contentLength: markdownContent.content.length,
-      hasInteractiveComponents,
-      hasExerciseComments: markdownContent.content.includes('ExerciseComments')
+      hasInteractiveComponents
     });
 
     const toc = extractTableOfContents(markdownContent.content);
@@ -456,8 +454,7 @@ export default async function DocPage({ params }: DocPageProps) {
   const hasLueckentext = markdownContent.content.includes('<Lueckentext');
   const hasSatzbildung = markdownContent.content.includes('<Satzbildung');
   const hasMultipleChoiceQuiz = markdownContent.content.includes('<MultipleChoiceQuiz');
-  const hasExerciseComments = markdownContent.content.includes('<ExerciseComments');
-  const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasLueckentext || hasSatzbildung || hasMultipleChoiceQuiz || hasExerciseComments;
+  const hasInteractiveComponents = hasExerciseTable || hasFormingQuestions || hasMatchingQuiz || hasLueckentext || hasSatzbildung || hasMultipleChoiceQuiz;
 
   console.log('[B2 Server] MDX Detection:', { 
     filePath: markdownContent.filePath, 
@@ -469,7 +466,6 @@ export default async function DocPage({ params }: DocPageProps) {
     hasLueckentext,
     hasSatzbildung,
     hasMultipleChoiceQuiz,
-    hasExerciseComments,
     hasInteractiveComponents
   });
   const toc = extractTableOfContents(markdownContent.content);

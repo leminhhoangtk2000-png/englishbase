@@ -51,7 +51,6 @@ import VocabularyList from './exercises/VocabularyList'
 
 // Content & Social Components
 import AuthorCredit from './exercises/AuthorCredit'
-import CommentSystem from './exercises/CommentSystem'
 
 // Re-export for easy import
 export { 
@@ -61,8 +60,7 @@ export {
   WritingExercise,
   GrammarBox,
   VocabularyList,
-  AuthorCredit,
-  CommentSystem
+  AuthorCredit
 }
 
 // Export icons for easy access
@@ -141,8 +139,7 @@ export const LearningSupportComponents = {
 
 // Content Management Components  
 export const ContentComponents = {
-  AuthorCredit,
-  CommentSystem
+  AuthorCredit
 } as const
 
 // =============================================================================

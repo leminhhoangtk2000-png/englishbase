@@ -12,8 +12,7 @@ import {
   MultipleChoice, 
   MatchingExercise, 
   WritingExercise, 
-  AuthorCredit, 
-  CommentSystem 
+  AuthorCredit 
 } from '@/components/exercises'
 
 // MDX components mapping
@@ -23,7 +22,6 @@ const components = {
   MatchingExercise,
   WritingExercise,
   AuthorCredit,
-  CommentSystem,
   // Các components HTML cơ bản
   h1: (props: any) => <h1 className="text-3xl font-bold mb-6" {...props} />,
   h2: (props: any) => <h2 className="text-2xl font-semibold mb-4 mt-8" {...props} />,

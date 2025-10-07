@@ -25,9 +25,6 @@ model User {
   threads                String?
   tiktok                 String?
   website                String?
-  comments               Comment[]
-  exercise_comment_likes exercise_comment_likes[]
-  exercise_comments      exercise_comments[]
   exercise_completions   exercise_completions[]
   articleCompletions     ArticleCompletion[]
   posts                  Post[]
@@ -52,7 +49,6 @@ model Post {
   categoryId String?
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
-  comments   Comment[]
   tags       PostTag[]
   author     User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
   category   Category? @relation(fields: [categoryId], references: [id])
@@ -88,23 +84,6 @@ model PostTag {
 
   @@id([postId, tagId])
   @@map("post_tags")
-}
-
-model Comment {
-  id        String    @id @default(cuid())
-  content   String
-  authorId  String
-  postId    String
-  parentId  String?
-  published Boolean   @default(true)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  parent    Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
-  replies   Comment[] @relation("CommentReplies")
-  post      Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
-
-  @@map("comments")
 }
 
 model VocabularyLevel {
@@ -372,34 +351,6 @@ model AIVocabularyConfig {
   @@map("ai_vocabulary_config")
 }
 
-model exercise_comment_likes {
-  id                String            @id
-  userId            String
-  commentId         String
-  createdAt         DateTime          @default(now())
-  exercise_comments exercise_comments @relation(fields: [commentId], references: [id], onDelete: Cascade)
-  users             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, commentId])
-}
-
-model exercise_comments {
-  id                      String                   @id
-  content                 String
-  authorId                String
-  exerciseId              String
-  exerciseUrl             String?
-  parentId                String?
-  likes                   Int                      @default(0)
-  published               Boolean                  @default(true)
-  createdAt               DateTime                 @default(now())
-  updatedAt               DateTime
-  exercise_comment_likes  exercise_comment_likes[]
-  users                   User                     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  exercise_comments       exercise_comments?       @relation("exercise_commentsToexercise_comments", fields: [parentId], references: [id])
-  other_exercise_comments exercise_comments[]      @relation("exercise_commentsToexercise_comments")
-}
-
 model exercise_views {
   id         String   @id @default(cuid())
   exerciseId String
@@ -422,7 +373,6 @@ model exercises_master {
   category      String // Horen, Lesen, Grammatik, etc
   likesCount    Int      @default(0) // Cached count from exercise_likes
   viewsCount    Int      @default(0) // Cached count from exercise_views
-  commentsCount Int      @default(0) // Cached count from exercise_comments
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 

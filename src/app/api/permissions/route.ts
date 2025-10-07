@@ -57,7 +57,6 @@ export async function GET(request: NextRequest) {
                 canManageUsers: hasPermission(userForPermissions, 'canManageUsers'),
                 canManageContent: hasPermission(userForPermissions, 'canManageContent'),
                 canViewAnalytics: hasPermission(userForPermissions, 'canViewAnalytics'),
-                canModerateComments: hasPermission(userForPermissions, 'canModerateComments'),
                 canCreateExercises: hasPermission(userForPermissions, 'canCreateExercises'),
                 canManageVocabulary: hasPermission(userForPermissions, 'canManageVocabulary')
             }

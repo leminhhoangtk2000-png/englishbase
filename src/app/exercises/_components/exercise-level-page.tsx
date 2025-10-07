@@ -45,7 +45,6 @@ interface Exercise {
   duration?: string;
   rating?: number;
   views?: number;
-  comments?: number;
   difficulty?: string;
 }
 
@@ -62,7 +61,6 @@ const mockExercises = [
     description: "Bài tập nghe về tìm nhà ở Leipzig, trình độ B1",
     href: "#",
     views: 1200,
-    comments: 15,
     completed: true,
     rating: 4.8,
     tags: ["Nghe"],
@@ -78,7 +76,6 @@ const mockExercises = [
     description: "Bài tập nghe về thói quen hàng ngày và ý nghĩa lâu dài, trình độ B1",
     href: "#",
     views: 2300,
-    comments: 28,
     completed: false,
     rating: 4.5,
     tags: ["Nghe"],
@@ -94,7 +91,6 @@ const mockExercises = [
     description: "Bài tập nghe về kinh nghiệm đi làm thêm khi đang học đại học, trình độ B1",
     href: "#",
     views: 980,
-    comments: 12,
     completed: true,
     rating: 4.9,
     tags: ["Đọc"],
@@ -110,7 +106,6 @@ const mockExercises = [
     description: "Bài tập nghe về tình bạn trong thời đại số, trình độ B1",
     href: "#",
     views: 1500,
-    comments: 22,
     completed: false,
     rating: 4.6,
     tags: ["Đọc"],
@@ -126,7 +121,6 @@ const mockExercises = [
     description: "Bài tập nghe về kinh nghiệm làm việc tại nhà, trình độ B1+",
     href: "#",
     views: 1800,
-    comments: 19,
     completed: false,
     rating: 4.7,
     tags: ["Nghe"],
@@ -142,7 +136,6 @@ const mockExercises = [
     description: "Bài tập nghe về kinh nghiệm du lịch tiết kiệm thời sinh viên, trình độ B1+",
     href: "#",
     views: 2100,
-    comments: 35,
     completed: false,
     rating: 4.8,
     tags: ["Nghe"],

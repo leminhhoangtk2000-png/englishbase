@@ -1,6 +1,6 @@
 /**
  * Update exercise counts in exercises_master table
- * This script calculates and updates likesCount, viewsCount, and commentsCount
+ * This script calculates and updates likesCount and viewsCount
  * for all exercises based on their related tables.
  */
 
@@ -37,31 +37,22 @@ async function updateExerciseCounts() {
         }
       });
 
-      // Count comments (only published)
-      const commentsCount = await prisma.exercise_comments.count({
-        where: {
-          exerciseId: exercise.slugId,
-          published: true
-        }
-      });
-
       // Update exercise with counts
       await prisma.exercises_master.update({
         where: { id: exercise.id },
         data: {
           likesCount,
-          viewsCount,
-          commentsCount
+          viewsCount
         }
       });
 
       updatedCount++;
 
       // Log progress for exercises with activity
-      if (likesCount > 0 || viewsCount > 0 || commentsCount > 0) {
+      if (likesCount > 0 || viewsCount > 0) {
         console.log(
           `✅ ${exercise.title.substring(0, 40)}... | ` +
-          `❤️ ${likesCount} | 👁️ ${viewsCount} | 💬 ${commentsCount}`
+          `❤️ ${likesCount} | 👁️ ${viewsCount}`
         );
       }
     }
@@ -72,23 +63,19 @@ async function updateExerciseCounts() {
     const stats = await prisma.exercises_master.aggregate({
       _sum: {
         likesCount: true,
-        viewsCount: true,
-        commentsCount: true
+        viewsCount: true
       },
       _max: {
         likesCount: true,
-        viewsCount: true,
-        commentsCount: true
+        viewsCount: true
       }
     });
 
     console.log('\n📈 Summary Statistics:');
     console.log(`   Total Likes: ${stats._sum.likesCount || 0}`);
     console.log(`   Total Views: ${stats._sum.viewsCount || 0}`);
-    console.log(`   Total Comments: ${stats._sum.commentsCount || 0}`);
     console.log(`   Max Likes per Exercise: ${stats._max.likesCount || 0}`);
     console.log(`   Max Views per Exercise: ${stats._max.viewsCount || 0}`);
-    console.log(`   Max Comments per Exercise: ${stats._max.commentsCount || 0}`);
 
     // Show top 5 most liked exercises
     const topLiked = await prisma.exercises_master.findMany({
