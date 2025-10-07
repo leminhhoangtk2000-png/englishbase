@@ -16,6 +16,8 @@ interface DocPageProps {
   }>;
 }
 
+import { ExerciseCompletionStatus } from "@/components/exercises/exercise-completion-status";
+import { SimpleCompletionButton } from "@/components/exercises/simple-completion-button";
 import remarkGfm from 'remark-gfm';
 
 export default async function DocPage({ params }: DocPageProps) {
@@ -102,9 +104,25 @@ export default async function DocPage({ params }: DocPageProps) {
             )}
           </div>
 
+          {/* Completion Status */}
+          <ExerciseCompletionStatus exerciseId={exerciseId} className="mb-6" />
+
           <article className="bg-white dark:bg-background rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-800">
             <ExerciseMetadataHider />
             <ClientMDXWrapper source={mdxSource} />
+            
+            {/* Completion Button tại cuối bài tập */}
+            <div className="flex flex-col items-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="text-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  Đã xem xong bài học?
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Đánh dấu hoàn thành để theo dõi tiến độ học tập của bạn
+                </p>
+              </div>
+              <SimpleCompletionButton exerciseId={exerciseId} size="lg" />
+            </div>
           </article>
         </div>
 
