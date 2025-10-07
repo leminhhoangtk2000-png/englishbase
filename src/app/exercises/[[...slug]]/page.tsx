@@ -106,7 +106,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </div>
 
           {/* Completion Badge */}
-          <CompletionProgressBadge exerciseId={exerciseId} className="mb-6" />
+          <CompletionProgressBadge exerciseId={exerciseId} />
 
           <article className="bg-white dark:bg-background rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-800">
             <ExerciseMetadataHider />
