@@ -9,7 +9,6 @@ import { ClientMDXWrapper } from "@/components/exercises/client-mdx-wrapper";
 import { ExerciseActions } from "@/components/exercises/ExerciseActions";
 import { ExerciseViewTracker } from "@/components/exercises/ExerciseViewTracker";
 import { ChevronRight, Home } from "lucide-react";
-import { CompletionProgressBadge } from "@/components/exercises/completion-progress-badge";
 
 interface DocPageProps {
   params: Promise<{
@@ -105,25 +104,9 @@ export default async function DocPage({ params }: DocPageProps) {
             )}
           </div>
 
-          {/* Completion Badge */}
-          <CompletionProgressBadge exerciseId={exerciseId} />
-
           <article className="bg-white dark:bg-background rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-800">
             <ExerciseMetadataHider />
             <ClientMDXWrapper source={mdxSource} />
-            
-            {/* Completion Badge tại cuối bài tập */}
-            <div className="flex flex-col items-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <div className="text-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  Hoàn thành bài học
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Click để đánh dấu bạn đã đọc xong bài này
-                </p>
-              </div>
-              <CompletionProgressBadge exerciseId={exerciseId} />
-            </div>
           </article>
         </div>
 
