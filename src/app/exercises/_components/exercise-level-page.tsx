@@ -173,6 +173,26 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
     cacheInfo 
   } = useCachedExerciseStats(exerciseIds);
 
+  // 🎯 Auto-track completion when user clicks on card
+  const handleExerciseClick = async (exerciseId: string) => {
+    try {
+      // Auto-mark as completed when user clicks to view exercise
+      await fetch('/api/exercise-completion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          exerciseId,
+          timeSpent: 0
+        }),
+      });
+      console.log('✅ Auto-completed:', exerciseId);
+    } catch (error) {
+      console.error('❌ Error auto-completing exercise:', error);
+    }
+  };
+
   useEffect(() => {
     // Fetch exercises for the current level
     const fetchExercises = async () => {
@@ -318,8 +338,15 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {filteredExercises.length > 0 ? (
             filteredExercises.map((exercise) => (
-            <Link href={exercise.href} key={exercise.title}>
-              <Card className="h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <Card 
+                key={exercise.title}
+                className="h-full flex flex-col group transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+                onClick={() => {
+                  const exerciseId = exercise.href.replace('/exercises/', '');
+                  handleExerciseClick(exerciseId);
+                  router.push(exercise.href);
+                }}
+              >
                  <div className="p-2">
                     <div className="relative h-56 rounded-md overflow-hidden">
                       <Image
@@ -374,7 +401,6 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                     />
                 </CardFooter>
               </Card>
-            </Link>
             ))
           ) : (
             <div className="col-span-full text-center py-12">

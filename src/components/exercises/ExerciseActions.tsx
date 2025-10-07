@@ -132,9 +132,14 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
     }
   };
 
-  // Don't show anything if both are done or showing congrats
-  if ((isLiked && isCompleted) || showCompletionCongrats) {
-    return showCompletionCongrats ? (
+  // Don't show anything if both are done (permanent hide)
+  if (isLiked && isCompleted) {
+    return null;
+  }
+
+  // Also hide if currently showing congratulations
+  if (showCompletionCongrats) {
+    return (
       <div className="fixed bottom-4 right-4 z-50">
         <Card className="shadow-lg border-2 border-green-600 bg-green-100 dark:bg-green-900/50 animate-bounce">
           <CardContent className="p-6">
@@ -150,7 +155,7 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
           </CardContent>
         </Card>
       </div>
-    ) : null;
+    );
   }
 
   return (
