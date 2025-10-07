@@ -16,8 +16,6 @@ interface DocPageProps {
   }>;
 }
 
-import { ExerciseCompletionStatus } from "@/components/exercises/exercise-completion-status";
-import { SimpleCompletionButton } from "@/components/exercises/simple-completion-button";
 import remarkGfm from 'remark-gfm';
 
 export default async function DocPage({ params }: DocPageProps) {
