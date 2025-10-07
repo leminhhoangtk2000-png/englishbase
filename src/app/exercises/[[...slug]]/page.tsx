@@ -5,7 +5,7 @@ import { ExercisesLandingPage } from "../_components/exercises-landing-page";
 import { ExerciseLevelPage } from "../_components/exercise-level-page";
 import { ExerciseMetadataHider } from "@/components/exercise-metadata-hider";
 import { serialize } from 'next-mdx-remote/serialize';
-import { ExerciseMDXRenderer } from "@/components/exercises/exercise-mdx-renderer";
+import { ClientMDXWrapper } from "@/components/exercises/client-mdx-wrapper";
 import { ExerciseActions } from "@/components/exercises/ExerciseActions";
 import { ExerciseViewTracker } from "@/components/exercises/ExerciseViewTracker";
 import { ChevronRight, Home } from "lucide-react";
@@ -101,7 +101,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
           <article className="bg-white dark:bg-background rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-800">
             <ExerciseMetadataHider />
-            <ExerciseMDXRenderer source={mdxSource} />
+            <ClientMDXWrapper source={mdxSource} />
           </article>
         </div>
 
