@@ -11,6 +11,7 @@ import Satzbildung from '@/components/exercises/satzbildung';
 import { MatchingQuiz } from '@/components/exercises/matching-quiz';
 import { ExerciseTable } from '@/components/exercises/exercise-table';
 import { YouTubeEmbed } from '@/components/exercises/youtube-embed';
+import { VocabularyTable, MDXVocabularyTable } from '@/components/exercises/vocabulary-table';
 
 const components = {
   MultipleChoiceQuiz,
@@ -22,6 +23,8 @@ const components = {
   MatchingQuiz,
   ExerciseTable,
   YouTubeEmbed,
+  VocabularyTable,
+  MDXVocabularyTable,
   // Add custom HTML elements styling
   h1: (props: any) => (
     <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100" {...props} />
@@ -78,6 +81,27 @@ const components = {
   ),
   em: (props: any) => (
     <em className="italic text-gray-800 dark:text-gray-200" {...props} />
+  ),
+  // Table components with beautiful styling
+  table: (props: any) => (
+    <div className="overflow-x-auto my-8 shadow-lg rounded-lg border border-gray-200 dark:border-gray-700">
+      <table className="min-w-full bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700" {...props} />
+    </div>
+  ),
+  thead: (props: any) => (
+    <thead className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600" {...props} />
+  ),
+  tbody: (props: any) => (
+    <tbody className="divide-y divide-gray-200 dark:divide-gray-600 bg-white dark:bg-gray-800" {...props} />
+  ),
+  tr: (props: any) => (
+    <tr className="hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-200" {...props} />
+  ),
+  th: (props: any) => (
+    <th className="px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider" {...props} />
+  ),
+  td: (props: any) => (
+    <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100 whitespace-nowrap" {...props} />
   ),
 };
 
