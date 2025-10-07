@@ -1,0 +1,57 @@
+---
+title: "Demo - Universal Comments System"
+description: "Test page for the new universal comments component"
+---
+
+# Universal Comments Demo
+
+Đây là trang demo để test hệ thống bình luận universal mới. Component này có thể được nhúng vào bất kỳ trang MDX/MD nào.
+
+## Tính năng chính:
+
+- ✅ **Hoạt động độc lập** - Không cần đăng nhập
+- ✅ **Guest comments** - Người dùng chỉ cần nhập tên
+- ✅ **Nested replies** - Trả lời bình luận (đang phát triển)
+- ✅ **Local storage** - Ghi nhớ tên người dùng
+- ✅ **Real-time updates** - Cập nhật ngay lập tức
+- ✅ **Responsive design** - Tương thích mobile
+
+## Test Component:
+
+<UniversalComments 
+  contentId="demo-page-comments" 
+  title="Bình luận cho trang Demo"
+  showCount={true}
+  minLength={3}
+/>
+
+## Cách sử dụng trong MD/MDX:
+
+```jsx
+<UniversalComments 
+  contentId="unique-page-identifier" 
+  title="Bình luận tùy chỉnh"
+  showCount={true}
+  minLength={5}
+/>
+```
+
+### Props có thể sử dụng:
+
+- `contentId` (required): ID duy nhất cho nội dung
+- `title` (optional): Tiêu đề section, mặc định "Bình luận"
+- `showCount` (optional): Hiển thị số lượng bình luận, mặc định true
+- `minLength` (optional): Độ dài tối thiểu bình luận, mặc định 3
+- `className` (optional): CSS class tùy chỉnh
+
+### API Endpoints:
+
+- `GET /api/page-comments?contentId=xxx` - Lấy bình luận
+- `POST /api/page-comments` - Tạo bình luận mới
+
+## Ưu điểm so với hệ thống cũ:
+
+1. **Đơn giản hơn** - Không cần authentication phức tạp
+2. **Linh hoạt hơn** - Có thể dùng cho bất kỳ content nào
+3. **Dễ maintain** - Code tách biệt và độc lập
+4. **User-friendly** - Chỉ cần tên, không cần tạo tài khoản

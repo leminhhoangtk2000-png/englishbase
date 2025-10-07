@@ -3,6 +3,7 @@ import { MultipleChoiceQuiz } from '@/components/ui/multiple-choice-quiz';
 import { Lueckentext } from '@/components/ui/lueckentext';
 import { AuthorCredit } from '@/components/ui/author-credit';
 import { Comments } from '@/components/ui/comments';
+import { UniversalComments } from '@/components/UniversalComments';
 import { ExerciseMetadataHider } from '@/components/exercise-metadata-hider';
 import { AdmonitionCleaner } from '@/components/admonition-cleaner';
 import { GermanExampleList } from '@/components/ui/german-example-list';
@@ -85,6 +86,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Lueckentext,
     AuthorCredit,
     Comments,
+    UniversalComments,
     GermanExampleList,
     
     // Deprecated - kept for backward compatibility

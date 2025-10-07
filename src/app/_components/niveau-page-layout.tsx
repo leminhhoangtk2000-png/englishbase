@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
 import { MDXComponentsRenderer } from '@/components/mdx-components-renderer';
 import { DocsTOC } from "@/components/docs-toc-client";
+import { UniversalComments } from "@/components/UniversalComments";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -161,6 +162,13 @@ export async function NiveauPageLayout({ niveau, niveauTitle, niveauDescription,
               content={directMarkdownContent.content}
             />
           </div>
+
+          {/* Universal Comments Section */}
+          <div className="mt-12">
+            <UniversalComments 
+              contentId={`${niveau}-${topic}-${lessonSlug || 'index'}`}
+            />
+          </div>
         </div>
 
         {toc.items && toc.items.length > 0 && (
@@ -213,6 +221,13 @@ export async function NiveauPageLayout({ niveau, niveauTitle, niveauDescription,
           className="prose prose-slate dark:prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
+
+        {/* Universal Comments Section */}
+        <div className="mt-12">
+          <UniversalComments 
+            contentId={`${niveau}-${topic}-${lessonSlug || 'index'}`}
+          />
+        </div>
       </div>
 
       {toc.items && toc.items.length > 0 && (

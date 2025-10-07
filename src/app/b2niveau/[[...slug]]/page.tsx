@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getMarkdownBySlug, markdownToHtml, getNiveauContent, extractTableOfContents } from "@/lib/markdown";
 import { MDXComponentsRenderer } from '@/components/mdx-components-renderer';
 import { DocsTOC } from "@/components/docs-toc-client";
+import { UniversalComments } from "@/components/UniversalComments";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -262,6 +263,13 @@ export default async function DocPage({ params }: DocPageProps) {
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
               )}
             </div>
+
+            {/* Universal Comments Section */}
+            <div className="mt-12">
+              <UniversalComments 
+                contentId={`b2niveau-${section}-${folderSlug}`}
+              />
+            </div>
           </div>
           <div className="hidden text-sm lg:block">
             <div className="sticky top-16 -mt-10 pt-10">
@@ -399,6 +407,13 @@ export default async function DocPage({ params }: DocPageProps) {
           <div className="prose max-w-none">
             {contentElement}
           </div>
+
+          {/* Universal Comments Section */}
+          <div className="mt-12">
+            <UniversalComments 
+              contentId={`b2niveau-${decodedSection}-${decodedFolderSlug}`}
+            />
+          </div>
         </div>
         <div className="hidden text-sm lg:block">
           <div className="sticky top-16 -mt-10 pt-10">
@@ -528,6 +543,13 @@ export default async function DocPage({ params }: DocPageProps) {
         <Separator className="my-4 md:my-6" />
         <div className="prose prose-stone dark:prose-invert max-w-none prose-p:leading-7 prose-h2:font-headline prose-h2:tracking-tight prose-h2:font-semibold prose-h2:text-2xl prose-a:text-primary hover:prose-a:underline prose-a:no-underline prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-h5:text-foreground prose-h6:text-foreground prose-h1:no-underline prose-h2:no-underline prose-h3:no-underline prose-h4:no-underline prose-h5:no-underline prose-h6:no-underline">
           {contentElement}
+        </div>
+
+        {/* Universal Comments Section */}
+        <div className="mt-12">
+          <UniversalComments 
+            contentId={`b2niveau-${slug.join('-')}`}
+          />
         </div>
       </div>
       <div className="hidden text-sm lg:block">
