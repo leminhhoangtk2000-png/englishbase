@@ -45,11 +45,27 @@ const components = {
     <li className="ml-4" {...props} />
   ),
   iframe: (props: any) => {
-    // Chỉ lấy src, bỏ qua tất cả các props HTML cũ
-    const { src } = props;
+    // Extract only safe props for React
+    const { src, width, height, title, allow } = props;
     
-    // Sử dụng component YouTubeEmbed chuyên dụng
-    return <YouTubeEmbed src={src} />;
+    // Use YouTubeEmbed component for YouTube videos
+    if (src && src.includes('youtube.com')) {
+      return <YouTubeEmbed src={src} title={title} />;
+    }
+    
+    // For other iframes, use safe React props
+    return (
+      <iframe
+        src={src}
+        width={width}
+        height={height}
+        title={title || 'Embedded content'}
+        allow={allow}
+        allowFullScreen={true}
+        className="w-full rounded-lg"
+        style={{ border: 0 }}
+      />
+    );
   },
   hr: (props: any) => (
     <hr className="my-8 border-gray-200 dark:border-gray-800" {...props} />
