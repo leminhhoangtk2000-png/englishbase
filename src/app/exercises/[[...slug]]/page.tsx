@@ -16,6 +16,8 @@ interface DocPageProps {
   }>;
 }
 
+import remarkGfm from 'remark-gfm';
+
 export default async function DocPage({ params }: DocPageProps) {
   const { slug } = await params;
   
@@ -37,6 +39,7 @@ export default async function DocPage({ params }: DocPageProps) {
     const mdxSource = await serialize(doc.content, {
       parseFrontmatter: true,
       mdxOptions: {
+        remarkPlugins: [remarkGfm],
         development: process.env.NODE_ENV === 'development',
       },
     });

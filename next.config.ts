@@ -1,6 +1,7 @@
 import type {NextConfig} from 'next';
 import createMDX from '@next/mdx';
 import remarkDirective from 'remark-directive';
+import remarkGfm from 'remark-gfm';
 import { remarkAdmonitionDirective } from './src/lib/remark-admonition-directive';
 
 const nextConfig: NextConfig = {
@@ -118,6 +119,7 @@ const withMDX = createMDX({
   // Add markdown plugins here, as desired
   options: {
     remarkPlugins: [
+      remarkGfm, // Enable GitHub Flavored Markdown (tables, strikethrough, etc.)
       remarkDirective,
       remarkAdmonitionDirective,
     ],
