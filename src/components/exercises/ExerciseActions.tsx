@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useExerciseCompletion } from '@/hooks/use-exercise-completion';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle2, Heart } from 'lucide-react';
+import { CheckCircle2, Heart, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ExerciseActionsProps {
@@ -11,19 +10,36 @@ interface ExerciseActionsProps {
 }
 
 export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
-  const { completion, markCompleted } = useExerciseCompletion(exerciseId);
-  const [isShaking, setIsShaking] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [isCompletionLoading, setIsCompletionLoading] = useState(false);
+  const [showCompletionCongrats, setShowCompletionCongrats] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const [isLikeLoading, setIsLikeLoading] = useState(false);
 
   // TODO: Get real userId from auth session
-  const userId = 'cmf3wfn7m0002bm5kgb1zg7dk';
+  const userId = 'cmggnm8tn00024618h2imexga'; // Use real user ID from database
 
-  // Check if user already liked this exercise
+  // Check if user already liked and completed this exercise
   useEffect(() => {
     checkLikeStatus();
+    checkCompletionStatus();
   }, [exerciseId]);
+
+  const checkCompletionStatus = async () => {
+    try {
+      const response = await fetch(
+        `/api/exercise-completion?exerciseId=${encodeURIComponent(exerciseId)}`
+      );
+      
+      if (response.ok) {
+        const data = await response.json();
+        setIsCompleted(data.completed || false);
+      }
+    } catch (error) {
+      console.error('Error checking completion status:', error);
+    }
+  };
 
   const checkLikeStatus = async () => {
     try {
@@ -75,17 +91,66 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const handleComplete = async () => {
-    setIsShaking(true);
-    await markCompleted(0);
-    setTimeout(() => setIsShaking(false), 500);
+    console.log('🔍 handleComplete called with exerciseId:', exerciseId);
+    setIsCompletionLoading(true);
+    
+    try {
+      const response = await fetch('/api/exercise-completion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          exerciseId,
+          timeSpent: 0
+        }),
+      });
+
+      console.log('📡 Response status:', response.status);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('✅ Response data:', data);
+        
+        setIsCompleted(true);
+        setShowCompletionCongrats(true);
+        
+        // Hide the congratulations after 3 seconds
+        setTimeout(() => {
+          setShowCompletionCongrats(false);
+        }, 3000);
+        
+        console.log('✅ Exercise marked as completed');
+      } else {
+        const errorData = await response.text();
+        console.error('❌ API Error:', response.status, errorData);
+      }
+    } catch (error) {
+      console.error('❌ Network Error marking exercise as completed:', error);
+    } finally {
+      setIsCompletionLoading(false);
+    }
   };
 
-  // Don't show completion button if already completed
-  const showCompletion = !completion.completed;
-
-  // Don't show anything if both are done
-  if (!showCompletion && isLiked) {
-    return null;
+  // Don't show anything if both are done or showing congrats
+  if ((isLiked && isCompleted) || showCompletionCongrats) {
+    return showCompletionCongrats ? (
+      <div className="fixed bottom-4 right-4 z-50">
+        <Card className="shadow-lg border-2 border-green-600 bg-green-100 dark:bg-green-900/50 animate-bounce">
+          <CardContent className="p-6">
+            <div className="flex flex-col items-center gap-3 text-center">
+              <div className="text-4xl">🎉</div>
+              <div className="text-lg font-bold text-green-800 dark:text-green-200">
+                Chúc mừng!
+              </div>
+              <div className="text-sm text-green-700 dark:text-green-300">
+                Bạn đã hoàn thành bài học! 🌟
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    ) : null;
   }
 
   return (
@@ -124,14 +189,9 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
         </Card>
       )}
 
-      {/* ✅ Completion Button - Below Like */}
-      {showCompletion && (
-        <Card 
-          className={`
-            shadow-lg border-2 border-green-500 bg-green-50 dark:bg-green-950/30
-            ${isShaking ? 'animate-shake' : ''}
-          `}
-        >
+      {/* ✅ Completion Button - Show completion status with checkmark */}
+      {!isCompleted && !showCompletionCongrats && (
+        <Card className="shadow-lg border-2 border-green-500 bg-green-50 dark:bg-green-950/30">
           <CardContent className="p-4">
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2 text-sm font-medium text-green-700 dark:text-green-400">
@@ -140,11 +200,24 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
               </div>
               <Button
                 onClick={handleComplete}
+                disabled={isCompletionLoading}
                 className="w-full bg-green-600 hover:bg-green-700 text-white"
                 size="sm"
               >
-                Đánh dấu hoàn thành
+                {isCompletionLoading ? 'Đang xử lý...' : 'Đánh dấu hoàn thành'}
               </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* ✅ Completed Status - Show tick when completed (hidden during congrats) */}
+      {isCompleted && !showCompletionCongrats && (
+        <Card className="shadow-lg border-2 border-green-600 bg-green-100 dark:bg-green-900/50">
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-green-800 dark:text-green-300">
+              <Check className="w-5 h-5 bg-green-600 text-white rounded-full p-1" />
+              <span>Đã hoàn thành ✓</span>
             </div>
           </CardContent>
         </Card>
