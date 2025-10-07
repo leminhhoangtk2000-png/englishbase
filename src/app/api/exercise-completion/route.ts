@@ -31,14 +31,13 @@ export async function GET(request: NextRequest) {
     }
     
     const { searchParams } = new URL(request.url);
-    const rawExerciseId = searchParams.get('exerciseId');
+    const exerciseId = searchParams.get('exerciseId');
 
-    if (!rawExerciseId) {
+    if (!exerciseId) {
       return NextResponse.json({ error: 'exerciseId is required' }, { status: 400 });
     }
 
-    // Slugify to match database format
-    const exerciseId = slugifyExerciseId(rawExerciseId);
+    console.log('🔍 GET completion check for exerciseId:', exerciseId);
 
     const completion = await prisma.exercise_completions.findUnique({
       where: {
@@ -96,20 +95,17 @@ export async function POST(request: NextRequest) {
     console.log('🟦 User ID:', userId);
 
     const body = await request.json();
-    const { exerciseId: rawExerciseId, timeSpent } = body;
+    const { exerciseId, timeSpent } = body;
     
-    console.log('🟦 Request body:', { exerciseId: rawExerciseId, timeSpent });
+    console.log('🟦 Request body:', { exerciseId, timeSpent });
 
-    if (!rawExerciseId) {
+    if (!exerciseId) {
       console.log('🔴 Missing exerciseId');
       return NextResponse.json(
         { error: 'exerciseId is required' },
         { status: 400 }
       );
     }
-
-    // Slugify to match database format
-    const exerciseId = slugifyExerciseId(rawExerciseId);
 
     // Upsert completion (create or increment attempts)
     const completion = await prisma.exercise_completions.upsert({
