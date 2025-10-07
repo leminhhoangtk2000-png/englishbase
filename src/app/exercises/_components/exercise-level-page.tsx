@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
 import { ExerciseCompletionBadge } from "@/components/exercises/ExerciseCompletionBadge";
 import { ExerciseLikes } from "@/components/exercises/ExerciseLikes";
 import { useCachedExerciseStats } from "@/hooks/useCachedExerciseStats";
@@ -384,7 +383,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                   </div>
                   <p className="text-sm text-muted-foreground flex-grow">{exercise.description}</p>
                 </CardContent>
-                <CardFooter className="px-4 pb-4 pt-0 text-xs text-muted-foreground flex justify-between items-center">
+                <CardFooter className="px-4 pb-4 pt-0 text-xs text-muted-foreground">
                     <div className="flex items-center gap-4">
                         <div className="flex items-center">
                             <Clock className="w-3 h-3 mr-1.5" />
@@ -395,10 +394,6 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                           variant="inline" 
                         />
                     </div>
-                    <ExerciseStatsDisplay 
-                      exerciseId={exercise.href.replace('/exercises/', '')} 
-                      preloadedStats={batchStats[exercise.href.replace('/exercises/', '')]}
-                    />
                 </CardFooter>
               </Card>
             ))
