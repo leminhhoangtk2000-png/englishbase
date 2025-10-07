@@ -61,9 +61,10 @@ interface CacheResponse {
 
 class ExerciseStatsCache {
   private static instance: ExerciseStatsCache;
-  private readonly CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 tiếng
+  private readonly CHECK_INTERVAL = 2 * 60 * 60 * 1000; // 2 tiếng - interval để check updates
   private readonly CACHE_COOKIE_NAME = 'exercise-stats-cache';
   private readonly VERSION_COOKIE_NAME = 'exercise-stats-version';
+  private readonly LAST_CHECK_COOKIE_NAME = 'exercise-stats-last-check';
   
   private memoryCache: Map<string, CacheData> = new Map();
   private pendingRequests: Map<string, Promise<CacheResponse>> = new Map();
@@ -83,10 +84,34 @@ class ExerciseStatsCache {
   }
 
   /**
-   * Kiểm tra cache còn valid không
+   * Kiểm tra có cần check update không (mỗi 2 tiếng)
+   */
+  private shouldCheckForUpdates(): boolean {
+    const lastCheckStr = getCookie(this.LAST_CHECK_COOKIE_NAME);
+    if (!lastCheckStr) {
+      return true; // Chưa từng check
+    }
+    
+    const lastCheck = parseInt(lastCheckStr, 10);
+    return Date.now() - lastCheck > this.CHECK_INTERVAL;
+  }
+
+  /**
+   * Cập nhật thời gian check cuối cùng
+   */
+  private updateLastCheckTime(): void {
+    setCookie(this.LAST_CHECK_COOKIE_NAME, Date.now().toString(), {
+      maxAge: 365 * 24 * 60 * 60, // 1 năm
+      path: '/',
+      sameSite: 'lax'
+    });
+  }
+
+  /**
+   * Cache luôn valid - không bao giờ expire
    */
   private isCacheValid(timestamp: number): boolean {
-    return Date.now() - timestamp < this.CACHE_DURATION;
+    return true; // Cache lưu mãi mãi
   }
 
   /**
@@ -112,15 +137,15 @@ class ExerciseStatsCache {
       // Save to memory cache
       this.memoryCache.set('global', cacheData);
       
-      // Save to cookie
+      // Save to cookie - lưu mãi mãi (1 năm)
       setCookie(this.CACHE_COOKIE_NAME, encodeURIComponent(JSON.stringify(cacheData)), {
-        maxAge: this.CACHE_DURATION / 1000,
+        maxAge: 365 * 24 * 60 * 60, // 1 năm
         path: '/',
         sameSite: 'lax'
       });
 
       setCookie(this.VERSION_COOKIE_NAME, cacheData.version.toString(), {
-        maxAge: this.CACHE_DURATION / 1000,
+        maxAge: 365 * 24 * 60 * 60, // 1 năm
         path: '/',
         sameSite: 'lax'
       });
@@ -170,14 +195,14 @@ class ExerciseStatsCache {
       return stats as Record<string, ExerciseStats>;
     }
 
-    // Check valid cache
+    // Check valid cache (luôn luôn valid vì không expire)
     const validCache = this.getValidCache();
     
-    // If we have valid cache and not forcing check, return cached data
-    if (validCache && !forceCheck) {
-      console.log('⚡ Using cached data (valid for', 
-        Math.round((this.CACHE_DURATION - (Date.now() - validCache.timestamp)) / 1000 / 60), 
-        'more minutes)');
+    // Nếu có cache và chưa đến lúc check (mỗi 2 tiếng), return cached data  
+    if (validCache && !forceCheck && !this.shouldCheckForUpdates()) {
+      console.log('⚡ Using cached data (next auto-check in', 
+        Math.round((this.CHECK_INTERVAL - (Date.now() - parseInt(getCookie(this.LAST_CHECK_COOKIE_NAME) || '0', 10))) / 1000 / 60), 
+        'minutes)');
       
       const result: Record<string, ExerciseStats> = {};
       exerciseIds.forEach(id => {
@@ -186,9 +211,12 @@ class ExerciseStatsCache {
       return result;
     }
 
-    // If we have cache but want to check for updates (incremental update)
-    if (validCache && forceCheck) {
-      console.log('🔍 Checking for incremental updates...');
+    // Nếu có cache và đến lúc auto-check HOẶC force check
+    if (validCache && (forceCheck || this.shouldCheckForUpdates())) {
+      console.log('🔍 Auto-checking for incremental updates...');
+      
+      // Update last check time
+      this.updateLastCheckTime();
       
       const incrementalPromise = this.checkAndUpdateIncremental(exerciseIds, validCache);
       this.pendingRequests.set(cacheKey, incrementalPromise);
@@ -441,14 +469,17 @@ class ExerciseStatsCache {
       return { status: 'no-cache' };
     }
 
-    const remainingTime = this.CACHE_DURATION - (Date.now() - cache.timestamp);
+    const lastCheckStr = getCookie(this.LAST_CHECK_COOKIE_NAME);
+    const lastCheck = lastCheckStr ? parseInt(lastCheckStr, 10) : cache.timestamp;
+    const nextCheckTime = this.CHECK_INTERVAL - (Date.now() - lastCheck);
     
     return {
       status: 'cached',
       lastUpdated: cache.lastUpdated,
-      remainingMinutes: Math.round(remainingTime / 1000 / 60),
+      nextCheckMinutes: Math.round(Math.max(0, nextCheckTime) / 1000 / 60),
       totalExercises: Object.keys(cache.data).length,
-      version: cache.version
+      version: cache.version,
+      isPermanent: true // Cache lưu mãi mãi
     };
   }
 

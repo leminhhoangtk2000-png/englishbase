@@ -17,9 +17,9 @@ interface UseCachedExerciseStatsReturn {
 }
 
 /**
- * Hook thông minh để fetch exercise stats với cache system
- * - Tự động cache data trong 2 tiếng
- * - Chỉ fetch từ database khi cần thiết
+ * Hook thông minh để fetch exercise stats với permanent cache system
+ * - Cache lưu mãi mãi, tự động check updates mỗi 2 tiếng
+ * - Chỉ fetch incremental changes khi có thay đổi
  * - Support refresh và clear cache thủ công
  */
 export function useCachedExerciseStats(exerciseIds: string[]): UseCachedExerciseStatsReturn {
@@ -31,6 +31,7 @@ export function useCachedExerciseStats(exerciseIds: string[]): UseCachedExercise
   // Ref để track exercise IDs và prevent unnecessary calls
   const exerciseIdsRef = useRef<string>('');
   const mountedRef = useRef(true);
+  const autoCheckTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   /**
    * Fetch stats với cache intelligence
@@ -134,15 +135,32 @@ export function useCachedExerciseStats(exerciseIds: string[]): UseCachedExercise
     }
   }, [exerciseIds]);
 
-  // Effect để fetch data khi exerciseIds thay đổi
+  // Effect để fetch data khi exerciseIds thay đổi và setup auto-check
   useEffect(() => {
     const currentIdsString = exerciseIds.sort().join(',');
     
     // Chỉ fetch nếu exerciseIds thực sự thay đổi
     if (exerciseIdsRef.current !== currentIdsString) {
       fetchStats();
+      exerciseIdsRef.current = currentIdsString;
     }
-  }, [exerciseIds, fetchStats]);
+
+    // Setup auto-check timer (mỗi 2 tiếng)
+    if (exerciseIds.length > 0) {
+      autoCheckTimerRef.current = setInterval(() => {
+        console.log('⏰ Auto-checking for updates (2-hour interval)');
+        checkForUpdates();
+      }, 2 * 60 * 60 * 1000); // 2 tiếng
+    }
+
+    // Cleanup timer khi component unmount hoặc exerciseIds thay đổi
+    return () => {
+      if (autoCheckTimerRef.current) {
+        clearInterval(autoCheckTimerRef.current);
+        autoCheckTimerRef.current = null;
+      }
+    };
+  }, [exerciseIds, fetchStats, checkForUpdates]);
 
   // Effect để update cache info
   useEffect(() => {
@@ -154,6 +172,11 @@ export function useCachedExerciseStats(exerciseIds: string[]): UseCachedExercise
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
+      // Cleanup auto-check timer
+      if (autoCheckTimerRef.current) {
+        clearInterval(autoCheckTimerRef.current);
+        autoCheckTimerRef.current = null;
+      }
     };
   }, []);
 
