@@ -20,6 +20,8 @@ import { Badge } from "@/components/ui/badge";
 import { ExerciseStatsDisplay } from "@/components/exercises/ExerciseStatsDisplay";
 import { ExerciseCompletionBadge } from "@/components/exercises/ExerciseCompletionBadge";
 import { ExerciseLikes } from "@/components/exercises/ExerciseLikes";
+import { useCachedExerciseStats } from "@/hooks/useCachedExerciseStats";
+import { CacheDebugPanel } from "@/components/cache-debug-panel";
 
 // 🔧 Helper function to slugify exercise ID (same logic as API)
 function slugifyExerciseId(id: string): string {
@@ -157,48 +159,35 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
   const [skillFilter, setSkillFilter] = React.useState("Tất cả");
   const [difficultyFilter, setDifficultyFilter] = React.useState("Tất cả");
   const [exercises, setExercises] = useState<Exercise[]>([]);
-  const [exerciseStats, setExerciseStats] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
 
-  // 🔄 Function to fetch batch stats
-  const fetchBatchStats = React.useCallback(async (exerciseList: Exercise[]) => {
-    if (!exerciseList || exerciseList.length === 0) return;
-    
-    const exerciseIds = exerciseList.map((ex: Exercise) => ex.href);
-    const idsParam = exerciseIds.map((id: string) => `ids=${encodeURIComponent(id)}`).join('&');
-    
-    try {
-      const statsResponse = await fetch(`/api/exercise-stats-batch?${idsParam}`);
-      if (statsResponse.ok) {
-        const statsData = await statsResponse.json();
-        if (statsData.success && statsData.stats) {
-          setExerciseStats(statsData.stats);
-          console.log('✅ Loaded stats for', Object.keys(statsData.stats).length, 'exercises');
-        }
-      }
-    } catch (statsError) {
-      console.error('⚠️ Error fetching batch stats:', statsError);
-    }
-  }, []);
+  // � Extract exercise IDs for batch fetch
+  const exerciseIds = exercises.map(ex => ex.href.replace('/exercises/', ''));
+  
+  // 🚀 UPGRADED: Sử dụng intelligent cache system mới với incremental updates
+  const { 
+    stats: batchStats, 
+    loading: statsLoading, 
+    checkForUpdates: refreshStats, 
+    clearCache: clearStatsCache,
+    cacheInfo 
+  } = useCachedExerciseStats(exerciseIds);
 
   useEffect(() => {
     // Fetch exercises for the current level
     const fetchExercises = async () => {
       try {
+        setLoading(true);
         const response = await fetch(`/api/exercises/${level}`);
         if (response.ok) {
           const data = await response.json();
           setExercises(data);
-          
-          // 🚀 BATCH FETCH: Lấy stats cho TẤT CẢ exercises trong 1 call duy nhất
-          await fetchBatchStats(data);
         } else {
-          // Nếu API không có data, dùng mock data
+          // Fallback to mock data if API fails
           setExercises(mockExercises as Exercise[]);
         }
       } catch (error) {
         console.error('Error fetching exercises:', error);
-        // Fallback to mock data
         setExercises(mockExercises as Exercise[]);
       } finally {
         setLoading(false);
@@ -206,32 +195,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
     };
 
     fetchExercises();
-  }, [level, fetchBatchStats]);
-
-  // 🔥 Listen for rating/completion updates from detail pages
-  useEffect(() => {
-    const handleRatingUpdate = () => {
-      console.log('🔔 Rating updated, refetching stats...');
-      if (exercises.length > 0) {
-        fetchBatchStats(exercises);
-      }
-    };
-
-    const handleCompletionUpdate = () => {
-      console.log('🔔 Completion updated, refetching stats...');
-      if (exercises.length > 0) {
-        fetchBatchStats(exercises);
-      }
-    };
-
-    window.addEventListener('exercise-rating-updated', handleRatingUpdate);
-    window.addEventListener('exercise-completion-updated', handleCompletionUpdate);
-
-    return () => {
-      window.removeEventListener('exercise-rating-updated', handleRatingUpdate);
-      window.removeEventListener('exercise-completion-updated', handleCompletionUpdate);
-    };
-  }, [exercises, fetchBatchStats]);
+  }, [level]);
 
   const handleLevelChange = (newLevel: string) => {
     router.push(`/exercises/${newLevel}`);
@@ -345,6 +309,11 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
         </CardContent>
       </Card>
       
+      {/* 🔧 Cache Debug Panel (only in development) */}
+      {process.env.NODE_ENV === 'development' && (
+        <CacheDebugPanel className="mb-6" />
+      )}
+      
       <main>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {filteredExercises.length > 0 ? (
@@ -401,7 +370,7 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
                     </div>
                     <ExerciseStatsDisplay 
                       exerciseId={exercise.href.replace('/exercises/', '')} 
-                      preloadedStats={exerciseStats[slugifyExerciseId(exercise.href.replace('/exercises/', ''))]}
+                      preloadedStats={batchStats[exercise.href.replace('/exercises/', '')]}
                     />
                 </CardFooter>
               </Card>

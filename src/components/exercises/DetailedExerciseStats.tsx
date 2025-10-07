@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Eye, MessageCircle, Heart, TrendingUp } from 'lucide-react';
-import { useExerciseStats } from '@/hooks/use-exercise-stats';
+import { useCachedExerciseStats } from '@/hooks/useCachedExerciseStats';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
 import { formatNumber, formatRating, getRatingColor, getTrendingStatus } from '@/lib/exercise-stats-utils';
@@ -19,7 +19,8 @@ export function DetailedExerciseStats({
   title = "Thống kê",
   className = '' 
 }: DetailedExerciseStatsProps) {
-  const { stats, loading, error } = useExerciseStats(exerciseId);
+  const { stats: cachedStats, loading } = useCachedExerciseStats([exerciseId]);
+  const stats = cachedStats[exerciseId] || { views: 0, likes: 0 };
 
   if (loading) {
     return (
@@ -34,10 +35,6 @@ export function DetailedExerciseStats({
         </CardContent>
       </Card>
     );
-  }
-
-  if (error) {
-    return null;
   }
 
   const trendingStatus = getTrendingStatus(stats.views);
@@ -77,27 +74,6 @@ export function DetailedExerciseStats({
           </div>
         </div>
 
-        {/* Comments */}
-        <div className="flex items-center justify-between p-3 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-full bg-green-100 dark:bg-green-900">
-              <MessageCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Bình luận</p>
-              <p className="text-2xl font-bold text-green-600 dark:text-green-400">
-                {stats.comments}
-              </p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-xs text-gray-500 dark:text-gray-400">Tổng</p>
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              {stats.comments} phản hồi
-            </p>
-          </div>
-        </div>
-
         {/* Likes */}
         <div className="flex items-center justify-between p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
           <div className="flex items-center gap-3">
@@ -124,22 +100,14 @@ export function DetailedExerciseStats({
         </div>
 
         {/* Engagement Rate */}
-        {stats.views > 0 && (
+        {stats.views > 0 && stats.likes > 0 && (
           <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600 dark:text-gray-400">Tỷ lệ tương tác</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">Tỷ lệ thích</span>
               <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
-                {((stats.comments / stats.views) * 100).toFixed(2)}%
+                {((stats.likes / stats.views) * 100).toFixed(2)}%
               </span>
             </div>
-            {stats.likes > 0 && (
-              <div className="flex justify-between items-center mt-2">
-                <span className="text-sm text-gray-600 dark:text-gray-400">Tỷ lệ thích</span>
-                <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
-                  {((stats.likes / stats.views) * 100).toFixed(2)}%
-                </span>
-              </div>
-            )}
           </div>
         )}
       </CardContent>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Eye, MessageCircle, Heart } from 'lucide-react';
-import { useExerciseStats } from '@/hooks/use-exercise-stats';
+import { useCachedExerciseStats } from '@/hooks/useCachedExerciseStats';
 import { Skeleton } from '@/components/ui/skeleton';
 import { formatNumber } from '@/lib/exercise-stats-utils';
 
@@ -22,15 +22,13 @@ export function ExerciseStatsDisplay({
   showLabels = false,
   preloadedStats
 }: ExerciseStatsDisplayProps) {
-  // 🚀 Nếu có preloadedStats từ batch API, dùng luôn không cần fetch
-  const shouldFetch = !preloadedStats;
-  const { stats: fetchedStats, loading, error } = useExerciseStats(
-    shouldFetch ? exerciseId : null
-  );
+  // 🚀 Sử dụng cache system mới thay vì useExerciseStats cũ
+  const { stats: cachedStats, loading, checkForUpdates } = useCachedExerciseStats([exerciseId]);
   
-  const stats = preloadedStats || fetchedStats;
+  // Ưu tiên preloadedStats, nếu không có thì dùng cached stats
+  const stats = preloadedStats || cachedStats[exerciseId] || { views: 0, likes: 0 };
 
-  if (shouldFetch && loading) {
+  if (loading && !preloadedStats) {
     return (
       <div className={`flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 ${className}`}>
         <Skeleton className="h-4 w-16" />
@@ -38,14 +36,6 @@ export function ExerciseStatsDisplay({
         <Skeleton className="h-4 w-16" />
       </div>
     );
-  }
-
-  if (shouldFetch && error) {
-    return null; // Silently fail, don't break the UI
-  }
-
-  if (!stats) {
-    return null;
   }
 
   return (
