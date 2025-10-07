@@ -9,6 +9,7 @@ import { ClientMDXWrapper } from "@/components/exercises/client-mdx-wrapper";
 import { ExerciseActions } from "@/components/exercises/ExerciseActions";
 import { ExerciseViewTracker } from "@/components/exercises/ExerciseViewTracker";
 import { ChevronRight, Home } from "lucide-react";
+import { CompletionProgressBadge } from "@/components/exercises/completion-progress-badge";
 
 interface DocPageProps {
   params: Promise<{
@@ -104,24 +105,24 @@ export default async function DocPage({ params }: DocPageProps) {
             )}
           </div>
 
-          {/* Completion Status */}
-          <ExerciseCompletionStatus exerciseId={exerciseId} className="mb-6" />
+          {/* Completion Badge */}
+          <CompletionProgressBadge exerciseId={exerciseId} className="mb-6" />
 
           <article className="bg-white dark:bg-background rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-800">
             <ExerciseMetadataHider />
             <ClientMDXWrapper source={mdxSource} />
             
-            {/* Completion Button tại cuối bài tập */}
+            {/* Completion Badge tại cuối bài tập */}
             <div className="flex flex-col items-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="text-center mb-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  Đã xem xong bài học?
+                  Hoàn thành bài học
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Đánh dấu hoàn thành để theo dõi tiến độ học tập của bạn
+                  Click để đánh dấu bạn đã đọc xong bài này
                 </p>
               </div>
-              <SimpleCompletionButton exerciseId={exerciseId} size="lg" />
+              <CompletionProgressBadge exerciseId={exerciseId} />
             </div>
           </article>
         </div>
