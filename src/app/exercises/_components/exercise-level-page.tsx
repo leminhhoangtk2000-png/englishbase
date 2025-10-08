@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExerciseCompletionBadge } from "@/components/exercises/ExerciseCompletionBadge";
 import { ExerciseLikes } from "@/components/exercises/ExerciseLikes";
 import { useCachedExerciseStats } from "@/hooks/useCachedExerciseStats";
-import { CacheDebugPanel } from "@/components/cache-debug-panel";
+// import { CacheDebugPanel } from "@/components/cache-debug-panel"; // Hidden debug panel
 
 // 🔧 Helper function to slugify exercise ID (same logic as API)
 function slugifyExerciseId(id: string): string {
@@ -328,10 +328,10 @@ export function ExerciseLevelPage({ level = "b1" }: { level: string }) {
         </CardContent>
       </Card>
       
-      {/* 🔧 Cache Debug Panel (only in development) */}
-      {process.env.NODE_ENV === 'development' && (
+      {/* 🔧 Cache Debug Panel (only in development) - Hidden */}
+      {/* {process.env.NODE_ENV === 'development' && (
         <CacheDebugPanel className="mb-6" />
-      )}
+      )} */}
       
       <main>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

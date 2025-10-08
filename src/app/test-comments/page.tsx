@@ -1,6 +1,6 @@
 'use client'
 
-import { UniversalComments } from '@/components/universal-comments'
+import { UniversalComments } from '@/components/UniversalComments'
 
 export default function TestCommentsPage() {
   return (
@@ -19,7 +19,7 @@ export default function TestCommentsPage() {
       </div>
 
       <div className="border-t pt-8">
-        <UniversalComments pageId="test-comments-page" />
+        <UniversalComments contentId="test-comments-page" />
       </div>
     </div>
   )

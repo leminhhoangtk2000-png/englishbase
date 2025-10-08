@@ -22,18 +22,30 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   useEffect(() => {
     const getUserId = async () => {
       try {
+        console.log('🔍 Fetching user ID...');
         const response = await fetch('/api/auth/me');
+        console.log('📡 Auth response status:', response.status);
+        
         if (response.ok) {
           const user = await response.json();
-          setUserId(user.id);
+          console.log('👤 User data received:', user);
+          if (user && user.id) {
+            setUserId(user.id);
+            console.log('✅ User ID set:', user.id);
+          } else {
+            console.log('⚠️ No user ID in response, using fallback');
+            setUserId('cmf3wfn7m0002bm5kgb1zg7dk');
+          }
         } else {
+          console.log('⚠️ Auth failed, using fallback user');
           // Fallback to default user for development
-          setUserId('cmgdj0vim000146yp9nshd7lw');
+          setUserId('cmf3wfn7m0002bm5kgb1zg7dk');
         }
       } catch (error) {
-        console.error('Error getting user:', error);
+        console.error('❌ Error getting user:', error);
+        console.log('🔄 Using fallback user ID');
         // Fallback to default user for development
-        setUserId('cmgdj0vim000146yp9nshd7lw');
+        setUserId('cmf3wfn7m0002bm5kgb1zg7dk');
       }
     };
     getUserId();
@@ -80,33 +92,45 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const handleLike = async () => {
-    if (!userId) return;
+    console.log('🔄 Like button clicked!', { userId, exerciseId, isLiked });
+    
+    if (!userId) {
+      console.error('User ID not available');
+      return;
+    }
     
     setIsLikeLoading(true);
     
     try {
-      const response = await fetch('/api/exercise-ratings', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          exerciseId,
-          userId,
-          isLiked: true // Always set to true on first click
-        }),
-      });
-
-      if (response.ok) {
-        setIsLiked(true);
-        setShowThanks(true);
+      if (!isLiked) {
+        console.log('📤 Sending like request...');
+        // Mark as liked  
+        const response = await fetch('/api/exercise-ratings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            exerciseId,
+            userId,
+            isLiked: true
+          }),
+        });
         
-        // Hide the card after 2 seconds
-        setTimeout(() => {
-          setShowThanks(false);
-        }, 2000);
+        if (response.ok) {
+          setIsLiked(true);
+          setShowThanks(true);
+          
+          // Hide thanks message after 2 seconds
+          setTimeout(() => {
+            setShowThanks(false);
+          }, 2000);
 
-        console.log('✅ Like recorded successfully');
+          console.log('✅ Like recorded successfully');
+        } else {
+          const errorData = await response.text();
+          console.error('❌ Like request failed:', response.status, errorData);
+        }
       }
     } catch (error) {
       console.error('Error liking exercise:', error);
@@ -116,39 +140,44 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const handleComplete = async () => {
-    console.log('🔍 handleComplete called with exerciseId:', exerciseId);
+    console.log('🔄 Complete button clicked!', { userId, exerciseId, isCompleted });
+    
+    if (!userId) {
+      console.error('User ID not available');
+      return;
+    }
+    
     setIsCompletionLoading(true);
     
     try {
-      const response = await fetch('/api/exercise-completion', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          exerciseId,
-          timeSpent: 0
-        }),
-      });
-
-      console.log('📡 Response status:', response.status);
-      
-      if (response.ok) {
-        const data = await response.json();
-        console.log('✅ Response data:', data);
+      if (!isCompleted) {
+        console.log('📤 Sending completion request...');
+        // Mark as completed
+        const response = await fetch('/api/exercise-completion', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            exerciseId,
+            timeSpent: null
+          }),
+        });
         
-        setIsCompleted(true);
-        setShowCompletionCongrats(true);
-        
-        // Hide the congratulations after 3 seconds
-        setTimeout(() => {
-          setShowCompletionCongrats(false);
-        }, 3000);
-        
-        console.log('✅ Exercise marked as completed');
-      } else {
-        const errorData = await response.text();
-        console.error('❌ API Error:', response.status, errorData);
+        if (response.ok) {
+          setIsCompleted(true);
+          setShowCompletionCongrats(true);
+          
+          // Hide the congratulations after 3 seconds
+          setTimeout(() => {
+            setShowCompletionCongrats(false);
+          }, 3000);
+          
+          console.log('✅ Exercise marked as completed');
+        } else {
+          const errorData = await response.text();
+          console.error('❌ Completion request failed:', response.status, errorData);
+        }
       }
     } catch (error) {
       console.error('❌ Network Error marking exercise as completed:', error);
@@ -156,6 +185,11 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
       setIsCompletionLoading(false);
     }
   };
+
+  // Don't show anything if no userId yet (loading)
+  if (!userId) {
+    return null;
+  }
 
   // Don't show anything if both are done (permanent hide)
   if (isLiked && isCompleted) {
