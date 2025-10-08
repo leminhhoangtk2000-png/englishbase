@@ -16,15 +16,36 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const [isLikeLoading, setIsLikeLoading] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
 
-  // TODO: Get real userId from auth session
-  const userId = 'cmggnm8tn00024618h2imexga'; // Use real user ID from database
+  // Get userId from auth session
+  useEffect(() => {
+    const getUserId = async () => {
+      try {
+        const response = await fetch('/api/auth/me');
+        if (response.ok) {
+          const user = await response.json();
+          setUserId(user.id);
+        } else {
+          // Fallback to default user for development
+          setUserId('cmgdj0vim000146yp9nshd7lw');
+        }
+      } catch (error) {
+        console.error('Error getting user:', error);
+        // Fallback to default user for development
+        setUserId('cmgdj0vim000146yp9nshd7lw');
+      }
+    };
+    getUserId();
+  }, []);
 
   // Check if user already liked and completed this exercise
   useEffect(() => {
-    checkLikeStatus();
-    checkCompletionStatus();
-  }, [exerciseId]);
+    if (userId) {
+      checkLikeStatus();
+      checkCompletionStatus();
+    }
+  }, [exerciseId, userId]);
 
   const checkCompletionStatus = async () => {
     try {
@@ -42,6 +63,8 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const checkLikeStatus = async () => {
+    if (!userId) return;
+    
     try {
       const response = await fetch(
         `/api/exercise-ratings?exerciseId=${encodeURIComponent(exerciseId)}&userId=${userId}`
@@ -57,6 +80,8 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const handleLike = async () => {
+    if (!userId) return;
+    
     setIsLikeLoading(true);
     
     try {
