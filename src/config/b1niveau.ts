@@ -631,8 +631,28 @@ export const docsConfig: DocsConfig = {
           href: "/b1niveau/Übungen/konjunktiv-ii",
           items: [
             {
-              title: "Teil 1 - Lý thuyết và thực hành",
+              title: "Teil 1 - Ứng dụng tổng hợp",
               href: "/b1niveau/Übungen/konjunktiv-ii/teil1",
+            },
+            {
+              title: "Teil 2 - Câu điều kiện và ước muốn",
+              href: "/b1niveau/Übungen/konjunktiv-ii/teil2",
+            },
+            {
+              title: "Teil 3 - Động từ khiếm khuyết",
+              href: "/b1niveau/Übungen/konjunktiv-ii/teil3",
+            },
+            {
+              title: "Teil 4 - Lời yêu cầu lịch sự",
+              href: "/b1niveau/Übungen/konjunktiv-ii/teil4",
+            },
+            {
+              title: "Teil 5 - als ob/als wenn",
+              href: "/b1niveau/Übungen/konjunktiv-ii/teil5",
+            },
+            {
+              title: "Teil 6 - Câu ước muốn",
+              href: "/b1niveau/Übungen/konjunktiv-ii/teil6",
             },
           ],
         },
