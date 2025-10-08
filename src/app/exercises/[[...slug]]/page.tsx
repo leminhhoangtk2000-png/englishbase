@@ -4,7 +4,7 @@ import React from "react";
 import { ExercisesLandingPage } from "../_components/exercises-landing-page";
 import { ExerciseLevelPage } from "../_components/exercise-level-page";
 import { ExerciseMetadataHider } from "@/components/exercise-metadata-hider";
-import { UniversalComments } from "@/components/UniversalComments";
+// import { UniversalComments } from "@/components/UniversalComments"; // Hidden comments
 import { serialize } from 'next-mdx-remote/serialize';
 import { ClientMDXWrapper } from "@/components/exercises/client-mdx-wrapper";
 import { ExerciseActions } from "@/components/exercises/ExerciseActions";
@@ -108,12 +108,12 @@ export default async function DocPage({ params }: DocPageProps) {
             <ClientMDXWrapper source={mdxSource} />
           </article>
 
-          {/* Universal Comments Section */}
-          <div className="mt-8">
+          {/* Universal Comments Section - Hidden */}
+          {/* <div className="mt-8">
             <UniversalComments 
               contentId={`exercise-${exerciseId}`}
             />
-          </div>
+          </div> */}
         </div>
 
         {/* 👁️ View Tracking - Tự động track khi user xem bài */}

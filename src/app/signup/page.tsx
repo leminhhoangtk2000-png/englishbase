@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useState, Suspense } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,7 +18,7 @@ import Link from "next/link"
 import { MainNav } from "@/components/main-nav"
 import { Loader2, AlertCircle } from "lucide-react"
 
-export default function SignupPage() {
+function SignupForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -27,6 +27,19 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false)
   const { signup } = useAuth()
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const returnUrl = searchParams.get('returnUrl')
+
+  // Validate return URL to prevent open redirect attacks
+  const isValidReturnUrl = (url: string | null): boolean => {
+    if (!url) return false
+    try {
+      // Must start with / and not contain protocol or domain
+      return url.startsWith('/') && !url.startsWith('//') && !url.includes('://')
+    } catch {
+      return false
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,8 +57,12 @@ export default function SignupPage() {
       const result = await signup(name, email, password)
       
       if (result.success) {
-        // Redirect to home page
-        router.push('/')
+        // Redirect to return URL if provided and valid, otherwise to home page
+        if (isValidReturnUrl(returnUrl)) {
+          router.push(returnUrl!)
+        } else {
+          router.push('/')
+        }
       } else {
         setError(result.error || "Đăng ký thất bại")
       }
@@ -152,5 +169,13 @@ export default function SignupPage() {
         </Card>
       </div>
     </>
+  )
+}
+
+export default function SignupPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignupForm />
+    </Suspense>
   )
 }

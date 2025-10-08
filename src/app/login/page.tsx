@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useState, useEffect, Suspense } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
 import { getDashboardPath } from "@/lib/auth"
 import { Button } from "@/components/ui/button"
@@ -19,13 +19,26 @@ import Link from "next/link"
 import { MainNav } from "@/components/main-nav"
 import { Loader2, AlertCircle } from "lucide-react"
 
-export default function LoginPage() {
+function LoginForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const { login } = useAuth()
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const returnUrl = searchParams.get('returnUrl')
+
+  // Validate return URL to prevent open redirect attacks
+  const isValidReturnUrl = (url: string | null): boolean => {
+    if (!url) return false
+    try {
+      // Must start with / and not contain protocol or domain
+      return url.startsWith('/') && !url.startsWith('//') && !url.includes('://')
+    } catch {
+      return false
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,16 +49,21 @@ export default function LoginPage() {
       const result = await login(email, password)
       
       if (result.success) {
-        // Get user info and redirect to appropriate dashboard
-        const response = await fetch('/api/auth/me', {
-          credentials: 'include', // Important for cookies
-        })
-        if (response.ok) {
-          const { user } = await response.json()
-          const dashboardPath = getDashboardPath(user.role)
-          router.push(dashboardPath)
+        // Redirect to return URL if provided and valid, otherwise to dashboard
+        if (isValidReturnUrl(returnUrl)) {
+          router.push(returnUrl!)
         } else {
-          router.push('/')
+          // Get user info and redirect to appropriate dashboard
+          const response = await fetch('/api/auth/me', {
+            credentials: 'include', // Important for cookies
+          })
+          if (response.ok) {
+            const { user } = await response.json()
+            const dashboardPath = getDashboardPath(user.role)
+            router.push(dashboardPath)
+          } else {
+            router.push('/')
+          }
         }
       } else {
         setError(result.error || "Đăng nhập thất bại")
@@ -128,5 +146,13 @@ export default function LoginPage() {
         </Card>
       </div>
     </>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginForm />
+    </Suspense>
   )
 }

@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-
-// Helper function to generate simple user ID from IP
-function generateGuestId(ip: string): string {
-  return `guest_${Buffer.from(ip).toString('base64').slice(0, 8)}`;
-}
+import { getCurrentUser } from '@/lib/auth-server';
 
 export async function GET(request: NextRequest) {
   try {
@@ -22,56 +18,92 @@ export async function GET(request: NextRequest) {
     // Use contentId or pageUrl as identifier
     const identifier = contentId || pageUrl;
 
-    // For now, return mock data - can be replaced with real database later
-    const mockComments = [
-      {
-        id: `${identifier}_1`,
-        content: 'Bài viết rất hay và bổ ích! Cảm ơn tác giả đã chia sẻ.',
-        author: {
-          id: 'guest_1',
-          name: 'Người đọc A',
-          avatar: null,
-          isGuest: true
-        },
-        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-        likes: 3,
-        isLiked: false,
-        replies: [
-          {
-            id: `${identifier}_1_1`,
-            content: 'Đồng ý! Tôi cũng học được nhiều điều mới.',
-            author: {
-              id: 'guest_2',
-              name: 'Người đọc B',
-              avatar: null,
-              isGuest: true
-            },
-            createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
-            likes: 1,
-            isLiked: false
-          }
-        ]
+    // Check if identifier exists
+    if (!identifier) {
+      return NextResponse.json(
+        { error: 'Missing contentId or pageUrl parameter' },
+        { status: 400 }
+      );
+    }
+
+    // Fetch real comments from database
+    const comments = await prisma.pageComment.findMany({
+      where: {
+        contentId: identifier,
+        isDeleted: false,
+        isApproved: true,
+        parentId: null, // Only top-level comments
       },
-      {
-        id: `${identifier}_2`,
-        content: 'Có thể giải thích thêm về phần này không ạ? Tôi chưa hiểu lắm.',
+      include: {
         author: {
-          id: 'guest_3',
-          name: 'Học viên C',
-          avatar: null,
-          isGuest: true
+          select: {
+            id: true,
+            name: true,
+            avatar: true,
+          },
         },
-        createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-        likes: 0,
+        replies: {
+          where: {
+            isDeleted: false,
+            isApproved: true,
+          },
+          include: {
+            author: {
+              select: {
+                id: true,
+                name: true,
+                avatar: true,
+              },
+            },
+          },
+          orderBy: {
+            createdAt: 'asc',
+          },
+        },
+        _count: {
+          select: {
+            likes_records: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+
+    // Transform to match frontend interface
+    const transformedComments = comments.map(comment => ({
+      id: comment.id,
+      content: comment.content,
+      author: {
+        id: comment.author?.id || comment.guestId || 'guest',
+        name: comment.author?.name || comment.authorName,
+        avatar: comment.author?.avatar || null,
+        isGuest: comment.isGuest,
+      },
+      createdAt: comment.createdAt.toISOString(),
+      likes: comment._count.likes_records,
+      isLiked: false, // TODO: Check if current user liked this comment
+      parentId: comment.parentId,
+      replies: comment.replies.map(reply => ({
+        id: reply.id,
+        content: reply.content,
+        author: {
+          id: reply.author?.id || reply.guestId || 'guest',
+          name: reply.author?.name || reply.authorName,
+          avatar: reply.author?.avatar || null,
+          isGuest: reply.isGuest,
+        },
+        createdAt: reply.createdAt.toISOString(),
+        likes: 0, // Replies don't show likes for now
         isLiked: false,
-        replies: []
-      }
-    ];
+      })),
+    }));
 
     return NextResponse.json({
       success: true,
-      comments: mockComments,
-      total: mockComments.length
+      comments: transformedComments,
+      total: transformedComments.length
     });
 
   } catch (error) {
@@ -85,8 +117,18 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Check authentication first
+    const currentUser = await getCurrentUser();
+    
+    if (!currentUser) {
+      return NextResponse.json(
+        { error: 'Authentication required. Please login to post comments.' },
+        { status: 401 }
+      );
+    }
+
     const body = await request.json();
-    const { pageUrl, contentId, content, authorName, parentId } = body;
+    const { pageUrl, contentId, content, parentId } = body;
 
     // Validation
     if (!pageUrl && !contentId) {
@@ -103,40 +145,54 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!authorName || authorName.trim().length < 2) {
-      return NextResponse.json(
-        { error: 'Author name must be at least 2 characters' },
-        { status: 400 }
-      );
-    }
-
-    // Get IP address for guest ID
-    const forwardedFor = request.headers.get('x-forwarded-for');
-    const ip = forwardedFor ? forwardedFor.split(',')[0] : '127.0.0.1';
-    
     const identifier = contentId || pageUrl;
-    const guestId = generateGuestId(ip);
 
-    // Create new comment (mock for now)
-    const newComment = {
-      id: `${identifier}_${Date.now()}`,
-      content: content.trim(),
-      author: {
-        id: guestId,
-        name: authorName.trim(),
-        avatar: null,
-        isGuest: true
+    // Create comment in database
+    const newComment = await prisma.pageComment.create({
+      data: {
+        contentId: identifier,
+        content: content.trim(),
+        authorId: currentUser.id,
+        authorName: currentUser.name || currentUser.username || 'User',
+        isGuest: false,
+        parentId: parentId || null,
       },
-      createdAt: new Date().toISOString(),
-      likes: 0,
+      include: {
+        author: {
+          select: {
+            id: true,
+            name: true,
+            avatar: true,
+          },
+        },
+        _count: {
+          select: {
+            likes_records: true,
+          },
+        },
+      },
+    });
+
+    // Transform to match frontend interface
+    const transformedComment = {
+      id: newComment.id,
+      content: newComment.content,
+      author: {
+        id: newComment.author?.id || currentUser.id,
+        name: newComment.author?.name || currentUser.name || 'User',
+        avatar: newComment.author?.avatar || null,
+        isGuest: false,
+      },
+      createdAt: newComment.createdAt.toISOString(),
+      likes: newComment._count.likes_records,
       isLiked: false,
-      parentId: parentId || null,
-      replies: []
+      parentId: newComment.parentId,
+      replies: [],
     };
 
     return NextResponse.json({
       success: true,
-      comment: newComment,
+      comment: transformedComment,
       message: 'Comment posted successfully!'
     });
 
