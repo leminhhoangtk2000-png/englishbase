@@ -75,6 +75,7 @@ export default function AIManagementPage() {
     name: '',
     displayName: '',
     apiKey: '',
+    baseUrl: '',
     models: [] as string[],
     defaultModel: '',
     temperature: 0.7
@@ -84,6 +85,7 @@ export default function AIManagementPage() {
   const providerModels = {
     openai: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-4', 'gpt-3.5-turbo'],
     gemini: ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-pro', 'gemini-pro-vision'],
+    deepseek: ['deepseek-chat', 'deepseek-coder'],
     claude: ['claude-3.5-sonnet-20241022', 'claude-3-opus-20240229', 'claude-3-sonnet-20240229', 'claude-3-haiku-20240307'],
     custom: []
   };
@@ -165,9 +167,30 @@ export default function AIManagementPage() {
 
   const handleProviderSelect = (providerName: string) => {
     const models = providerModels[providerName as keyof typeof providerModels] || [];
+    
+    // Set default baseUrl for each provider
+    let baseUrl = '';
+    switch (providerName) {
+      case 'openai':
+        baseUrl = 'https://api.openai.com/v1';
+        break;
+      case 'gemini':
+        baseUrl = 'https://generativelanguage.googleapis.com/v1beta';
+        break;
+      case 'deepseek':
+        baseUrl = 'https://api.deepseek.com/v1';
+        break;
+      case 'claude':
+        baseUrl = 'https://api.anthropic.com/v1';
+        break;
+      default:
+        baseUrl = '';
+    }
+    
     setFormData({
       ...formData,
       name: providerName,
+      baseUrl,
       models,
       defaultModel: models[0] || ''
     });
@@ -232,6 +255,7 @@ export default function AIManagementPage() {
       name: '',
       displayName: '',
       apiKey: '',
+      baseUrl: '',
       models: [],
       defaultModel: '',
       temperature: 0.7
@@ -285,6 +309,7 @@ export default function AIManagementPage() {
                       <SelectContent>
                         <SelectItem value="openai">OpenAI</SelectItem>
                         <SelectItem value="gemini">Google Gemini</SelectItem>
+                        <SelectItem value="deepseek">DeepSeek</SelectItem>
                         <SelectItem value="claude">Anthropic Claude</SelectItem>
                         <SelectItem value="custom">Custom Provider</SelectItem>
                       </SelectContent>

@@ -123,6 +123,30 @@ export async function POST(
         apiResponse = data.content?.[0]?.text || 'No response';
         tokensUsed = data.usage?.input_tokens + data.usage?.output_tokens || 0;
         
+      } else if (provider.name === 'deepseek') {
+        response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${provider.apiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: provider.defaultModel || 'deepseek-chat',
+            messages: [{ role: 'user', content: testPrompt }],
+            max_tokens: 100,
+            temperature: provider.temperature || 0.7,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`DeepSeek API error: ${response.status} - ${errorText}`);
+        }
+
+        const data = await response.json();
+        apiResponse = data.choices[0]?.message?.content || 'No response';
+        tokensUsed = data.usage?.total_tokens || 0;
+        
       } else {
         throw new Error(`Provider type '${provider.name}' not supported for testing`);
       }
@@ -141,6 +165,9 @@ export async function POST(
       } else if (provider.name === 'claude') {
         // Claude pricing
         cost = tokensUsed * 0.000008;
+      } else if (provider.name === 'deepseek') {
+        // DeepSeek pricing (very competitive - $0.00042 per 1K tokens)
+        cost = tokensUsed * 0.00000042;
       }
 
       testResult = {

@@ -10,39 +10,15 @@ export interface TempUser {
   avatar: string | null
 }
 
-// Temporary users for development
+// ⚠️ PRODUCTION NOTE: This file is for development only
+// In production, all user authentication is handled via database
+// These temp users are not used when database is available
+
+// Temporary users for development (disabled for production)
 export const tempUsers: TempUser[] = [
-  {
-    id: 'admin-001',
-    email: 'admin@edu-theme.com',
-    password: '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LeU/UY3E2wOsYkVB2', // 123456
-    name: 'Admin User',
-    username: 'admin',
-    role: 'ADMIN',
-    isPremium: true,
-    avatar: null
-  },
-  {
-    id: 'premium-001',
-    email: 'premium@edu-theme.com',
-    password: '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LeU/UY3E2wOsYkVB2', // 123456
-    name: 'Premium User',
-    username: 'premium_user',
-    role: 'USER_PREMIUM',
-    isPremium: true,
-    avatar: null
-  },
-  {
-    id: 'user-001',
-    email: 'user@edu-theme.com',
-    password: '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LeU/UY3E2wOsYkVB2', // 123456
-    name: 'Regular User',
-    username: 'regular_user',
-    role: 'USER',
-    isPremium: false,
-    avatar: null
-  }
-]
+  // Development users removed for production deployment
+  // Only database users are used in production
+];
 
 export function findTempUserByEmail(email: string): TempUser | null {
   return tempUsers.find(user => user.email.toLowerCase() === email.toLowerCase()) || null

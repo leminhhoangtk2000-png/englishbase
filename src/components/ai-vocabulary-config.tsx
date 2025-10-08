@@ -62,11 +62,14 @@ export default function AIVocabularyConfig() {
       setLoading(true);
       const response = await fetch('/api/admin/ai-vocabulary-config');
       if (response.ok) {
-        const data = await response.json();
-        setConfigData(data.data);
-        setFormData(data.data.config);
+        const result = await response.json();
+        console.log('AI Config API Response:', result);
+        setConfigData(result.data);
+        setFormData(result.data.config);
       } else {
-        throw new Error('Failed to fetch configuration');
+        const errorText = await response.text();
+        console.error('API Error:', response.status, errorText);
+        throw new Error(`Failed to fetch configuration: ${response.status}`);
       }
     } catch (error) {
       console.error('Error fetching config:', error);

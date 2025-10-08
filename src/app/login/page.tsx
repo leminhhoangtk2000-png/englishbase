@@ -100,7 +100,7 @@ function LoginForm() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@edu-theme.com"
+                  placeholder="your.email@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -126,15 +126,6 @@ function LoginForm() {
                 Đăng nhập
               </Button>
             </form>
-            
-            <div className="mt-4 p-3 bg-muted rounded-lg">
-              <p className="text-sm font-medium mb-2">🧪 Test Accounts:</p>
-              <div className="space-y-1 text-xs">
-                <div>👑 <strong>Admin:</strong> admin@edu-theme.com / 123456</div>
-                <div>💎 <strong>Premium:</strong> premium@edu-theme.com / 123456</div>
-                <div>👤 <strong>User:</strong> user@edu-theme.com / 123456</div>
-              </div>
-            </div>
             
             <div className="mt-4 text-center text-sm">
               Chưa có tài khoản?{" "}
