@@ -15,10 +15,115 @@ import { ExerciseTable } from "@/components/exercises/exercise-table";
 <ExerciseTable
   title="Teil 1: Verben mit Präpositionen"
   subtitle="Điền giới từ và biến cách đúng vào chỗ trống"
-  exercises={[{id: 1, german: "Ich warte schon lange ___ (der Bus).", correctAnswer: ["auf den Bus"], explanation: "warten auf + Akkusativ = chờ đợi ai/cái gì. Der Bus → den Bus (Akkusativ)."}, {id: 2, german: "Wir freuen uns ___ (die Ferien).", correctAnswer: ["auf die Ferien"], explanation: "sich freuen auf + Akkusativ = mong chờ, háo hức về cái gì. Die Ferien → die Ferien (Akkusativ)."}, {id: 3, german: "Er freut sich sehr ___ (das Geschenk).", correctAnswer: ["über das Geschenk"], explanation: "sich freuen über + Akkusativ = vui mừng về cái gì (đã có). Das Geschenk → das Geschenk (Akkusativ)."}, {id: 4, german: "Maria interessiert sich ___ (Musik).", correctAnswer: ["für Musik"], explanation: "sich interessieren für + Akkusativ = quan tâm, thích thú về cái gì."}, {id: 5, german: "Wir sprechen heute ___ (das Wetter).", correctAnswer: ["über das Wetter"], explanation: "sprechen über + Akkusativ = nói về chủ đề gì. Das Wetter → das Wetter (Akkusativ)."}, {id: 6, german: "Er denkt oft ___ (seine Familie).", correctAnswer: ["an seine Familie"], explanation: "denken an + Akkusativ = nghĩ về ai/cái gì. Seine Familie → seine Familie (Akkusativ)."}, {id: 7, german: "Sie nimmt ___ (der Kurs) teil.", correctAnswer: ["an dem Kurs"], explanation: "teilnehmen an + Dativ = tham gia vào cái gì. Der Kurs → dem Kurs (Dativ)."}, {id: 8, german: "Ich erinnere mich gern ___ (der Urlaub).", correctAnswer: ["an den Urlaub"], explanation: "sich erinnern an + Akkusativ = nhớ về cái gì. Der Urlaub → den Urlaub (Akkusativ)."}, {id: 9, german: "Peter träumt ___ (ein Haus) am Meer.", correctAnswer: ["von einem Haus"], explanation: "träumen von + Dativ = mơ về cái gì. Ein Haus → einem Haus (Dativ)."}, {id: 10, german: "Sie kümmert sich ___ (die Kinder).", correctAnswer: ["um die Kinder"], explanation: "sich kümmern um + Akkusativ = chăm sóc ai/cái gì. Die Kinder → die Kinder (Akkusativ)."}, {id: 11, german: "Der Mann ärgert sich ___ (der Lärm).", correctAnswer: ["über den Lärm"], explanation: "sich ärgern über + Akkusativ = bực tức về cái gì. Der Lärm → den Lärm (Akkusativ)."}, {id: 12, german: "Er bewirbt sich ___ (die Stelle).", correctAnswer: ["um die Stelle"], explanation: "sich bewerben um + Akkusativ = ứng tuyển vào vị trí gì. Die Stelle → die Stelle (Akkusativ)."}, {id: 13, german: "Alles hängt ___ (das Wetter) ab.", correctAnswer: ["vom Wetter"], explanation: "abhängen von + Dativ = phụ thuộc vào cái gì. Das Wetter → vom Wetter (von + dem = vom)."}, {id: 14, german: "Ich spreche morgen ___ (mein Lehrer).", correctAnswer: ["mit meinem Lehrer"], explanation: "sprechen mit + Dativ = nói chuyện với ai. Mein Lehrer → meinem Lehrer (Dativ)."}, {id: 15, german: "Ich bedanke mich ___ (die Hilfe).", correctAnswer: ["für die Hilfe"], explanation: "sich bedanken für + Akkusativ = cảm ơn về cái gì. Die Hilfe → die Hilfe (Akkusativ)."}]}
+  exercises={[
+    {
+      id: 1,
+      german: "Ich warte schon lange ___ (der Bus).",
+      correctAnswer: ["auf den Bus"],
+      explanation:
+        "warten auf + Akkusativ = chờ đợi ai/cái gì. Der Bus → den Bus (Akkusativ).",
+    },
+    {
+      id: 2,
+      german: "Wir freuen uns ___ (die Ferien).",
+      correctAnswer: ["auf die Ferien"],
+      explanation:
+        "sich freuen auf + Akkusativ = mong chờ, háo hức về cái gì. Die Ferien → die Ferien (Akkusativ).",
+    },
+    {
+      id: 3,
+      german: "Er freut sich sehr ___ (das Geschenk).",
+      correctAnswer: ["über das Geschenk"],
+      explanation:
+        "sich freuen über + Akkusativ = vui mừng về cái gì (đã có). Das Geschenk → das Geschenk (Akkusativ).",
+    },
+    {
+      id: 4,
+      german: "Maria interessiert sich ___ (Musik).",
+      correctAnswer: ["für Musik"],
+      explanation:
+        "sich interessieren für + Akkusativ = quan tâm, thích thú về cái gì.",
+    },
+    {
+      id: 5,
+      german: "Wir sprechen heute ___ (das Wetter).",
+      correctAnswer: ["über das Wetter"],
+      explanation:
+        "sprechen über + Akkusativ = nói về chủ đề gì. Das Wetter → das Wetter (Akkusativ).",
+    },
+    {
+      id: 6,
+      german: "Er denkt oft ___ (seine Familie).",
+      correctAnswer: ["an seine Familie"],
+      explanation:
+        "denken an + Akkusativ = nghĩ về ai/cái gì. Seine Familie → seine Familie (Akkusativ).",
+    },
+    {
+      id: 7,
+      german: "Sie nimmt ___ (der Kurs) teil.",
+      correctAnswer: ["an dem Kurs"],
+      explanation:
+        "teilnehmen an + Dativ = tham gia vào cái gì. Der Kurs → dem Kurs (Dativ).",
+    },
+    {
+      id: 8,
+      german: "Ich erinnere mich gern ___ (der Urlaub).",
+      correctAnswer: ["an den Urlaub"],
+      explanation:
+        "sich erinnern an + Akkusativ = nhớ về cái gì. Der Urlaub → den Urlaub (Akkusativ).",
+    },
+    {
+      id: 9,
+      german: "Peter träumt ___ (ein Haus) am Meer.",
+      correctAnswer: ["von einem Haus"],
+      explanation:
+        "träumen von + Dativ = mơ về cái gì. Ein Haus → einem Haus (Dativ).",
+    },
+    {
+      id: 10,
+      german: "Sie kümmert sich ___ (die Kinder).",
+      correctAnswer: ["um die Kinder"],
+      explanation:
+        "sich kümmern um + Akkusativ = chăm sóc ai/cái gì. Die Kinder → die Kinder (Akkusativ).",
+    },
+    {
+      id: 11,
+      german: "Der Mann ärgert sich ___ (der Lärm).",
+      correctAnswer: ["über den Lärm"],
+      explanation:
+        "sich ärgern über + Akkusativ = bực tức về cái gì. Der Lärm → den Lärm (Akkusativ).",
+    },
+    {
+      id: 12,
+      german: "Er bewirbt sich ___ (die Stelle).",
+      correctAnswer: ["um die Stelle"],
+      explanation:
+        "sich bewerben um + Akkusativ = ứng tuyển vào vị trí gì. Die Stelle → die Stelle (Akkusativ).",
+    },
+    {
+      id: 13,
+      german: "Alles hängt ___ (das Wetter) ab.",
+      correctAnswer: ["vom Wetter"],
+      explanation:
+        "abhängen von + Dativ = phụ thuộc vào cái gì. Das Wetter → vom Wetter (von + dem = vom).",
+    },
+    {
+      id: 14,
+      german: "Ich spreche morgen ___ (mein Lehrer).",
+      correctAnswer: ["mit meinem Lehrer"],
+      explanation:
+        "sprechen mit + Dativ = nói chuyện với ai. Mein Lehrer → meinem Lehrer (Dativ).",
+    },
+    {
+      id: 15,
+      german: "Ich bedanke mich ___ (die Hilfe).",
+      correctAnswer: ["für die Hilfe"],
+      explanation:
+        "sich bedanken für + Akkusativ = cảm ơn về cái gì. Die Hilfe → die Hilfe (Akkusativ).",
+    },
+  ]}
 />
 
 ---
 
-## Hỏi đáp & Thảo luận 💬
-
+##

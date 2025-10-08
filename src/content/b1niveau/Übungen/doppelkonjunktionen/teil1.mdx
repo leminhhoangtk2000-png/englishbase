@@ -11,10 +11,130 @@ import { ExerciseTable } from "@/components/exercises/exercise-table";
 <ExerciseTable
   title="B1 Doppelkonjunktionen - Teil 1"
   subtitle="obwohl, trotzdem, falls, da, deshalb"
-  exercises={[{id: 1, german: "___ er viel gelernt hat, hat er die Prüfung nicht bestanden.", correctAnswer: ["Obwohl"], explanation: "Obwohl (mặc dù) - dùng để diễn tả sự tương phản"}, {id: 2, german: "Es regnet, ___ gehen wir spazieren.", correctAnswer: ["trotzdem"], explanation: "trotzdem (dù vậy) - liên từ nối hai mệnh đề tương phản"}, {id: 3, german: "___ ich krank bin, bleibe ich zu Hause.", correctAnswer: ["Da"], explanation: "Da (vì, do) - liên từ chỉ nguyên nhân"}, {id: 4, german: "Ruf mich an, ___ du Hilfe brauchst.", correctAnswer: ["falls"], explanation: "falls (nếu như, trong trường hợp) - diễn tả điều kiện"}, {id: 5, german: "Er hat kein Geld, ___ kann er das Auto nicht kaufen.", correctAnswer: ["deshalb"], explanation: "deshalb (vì vậy) - liên từ chỉ kết quả"}, {id: 6, german: "___ wir keine Zeit haben, gehen wir nicht ins Kino.", correctAnswer: ["Da"], explanation: "Da (vì) - chỉ nguyên nhân"}, {id: 7, german: "Sie ist müde, ___ arbeitet sie weiter.", correctAnswer: ["trotzdem"], explanation: "trotzdem (dù vậy) - sự tương phản"}, {id: 8, german: "___ es sehr kalt ist, tragen wir nur dünne Jacken.", correctAnswer: ["Obwohl"], explanation: "Obwohl (mặc dù) - sự tương phản"}, {id: 9, german: "Ich rufe dich an, ___ ich später komme.", correctAnswer: ["falls"], explanation: "falls (nếu như) - điều kiện"}, {id: 10, german: "Es ist schon spät, ___ müssen wir uns beeilen.", correctAnswer: ["deshalb"], explanation: "deshalb (vì vậy) - kết quả"}, {id: 11, german: "___ es regnet, machen wir ein Picknick.", correctAnswer: ["Falls"], explanation: "Falls (nếu như) - điều kiện"}, {id: 12, german: "Wir gehen heute nicht schwimmen, ___ das Wasser zu kalt ist.", correctAnswer: ["da"], explanation: "da (vì) - nguyên nhân"}, {id: 13, german: "___ er sehr krank war, ging er zur Arbeit.", correctAnswer: ["Obwohl"], explanation: "Obwohl (mặc dù) - tương phản"}, {id: 14, german: "Sie hat viel Arbeit, ___ nimmt sie sich Zeit für ihre Familie.", correctAnswer: ["trotzdem"], explanation: "trotzdem (dù vậy) - tương phản"}, {id: 15, german: "Wir haben den Zug verpasst, ___ mussten wir ein Taxi nehmen.", correctAnswer: ["deshalb"], explanation: "deshalb (vì vậy) - kết quả"}, {id: 16, german: "___ du Zeit hast, komm bitte morgen vorbei.", correctAnswer: ["Falls"], explanation: "Falls (nếu như) - điều kiện"}, {id: 17, german: "Ich esse Schokolade, ___ ich abnehmen möchte.", correctAnswer: ["obwohl"], explanation: "obwohl (mặc dù) - tương phản"}, {id: 18, german: "___ er krank war, blieb er im Bett.", correctAnswer: ["Da"], explanation: "Da (vì) - nguyên nhân"}, {id: 19, german: "Sie hat keine Zeit, ___ hilft sie uns.", correctAnswer: ["trotzdem"], explanation: "trotzdem (dù vậy) - tương phản"}, {id: 20, german: "Er ist zu jung, ___ darf er nicht allein fahren.", correctAnswer: ["deshalb"], explanation: "deshalb (vì vậy) - kết quả"}]}
+  exercises={[
+    {
+      id: 1,
+      german: "___ er viel gelernt hat, hat er die Prüfung nicht bestanden.",
+      correctAnswer: ["Obwohl"],
+      explanation: "Obwohl (mặc dù) - dùng để diễn tả sự tương phản",
+    },
+    {
+      id: 2,
+      german: "Es regnet, ___ gehen wir spazieren.",
+      correctAnswer: ["trotzdem"],
+      explanation: "trotzdem (dù vậy) - liên từ nối hai mệnh đề tương phản",
+    },
+    {
+      id: 3,
+      german: "___ ich krank bin, bleibe ich zu Hause.",
+      correctAnswer: ["Da"],
+      explanation: "Da (vì, do) - liên từ chỉ nguyên nhân",
+    },
+    {
+      id: 4,
+      german: "Ruf mich an, ___ du Hilfe brauchst.",
+      correctAnswer: ["falls"],
+      explanation: "falls (nếu như, trong trường hợp) - diễn tả điều kiện",
+    },
+    {
+      id: 5,
+      german: "Er hat kein Geld, ___ kann er das Auto nicht kaufen.",
+      correctAnswer: ["deshalb"],
+      explanation: "deshalb (vì vậy) - liên từ chỉ kết quả",
+    },
+    {
+      id: 6,
+      german: "___ wir keine Zeit haben, gehen wir nicht ins Kino.",
+      correctAnswer: ["Da"],
+      explanation: "Da (vì) - chỉ nguyên nhân",
+    },
+    {
+      id: 7,
+      german: "Sie ist müde, ___ arbeitet sie weiter.",
+      correctAnswer: ["trotzdem"],
+      explanation: "trotzdem (dù vậy) - sự tương phản",
+    },
+    {
+      id: 8,
+      german: "___ es sehr kalt ist, tragen wir nur dünne Jacken.",
+      correctAnswer: ["Obwohl"],
+      explanation: "Obwohl (mặc dù) - sự tương phản",
+    },
+    {
+      id: 9,
+      german: "Ich rufe dich an, ___ ich später komme.",
+      correctAnswer: ["falls"],
+      explanation: "falls (nếu như) - điều kiện",
+    },
+    {
+      id: 10,
+      german: "Es ist schon spät, ___ müssen wir uns beeilen.",
+      correctAnswer: ["deshalb"],
+      explanation: "deshalb (vì vậy) - kết quả",
+    },
+    {
+      id: 11,
+      german: "___ es regnet, machen wir ein Picknick.",
+      correctAnswer: ["Falls"],
+      explanation: "Falls (nếu như) - điều kiện",
+    },
+    {
+      id: 12,
+      german: "Wir gehen heute nicht schwimmen, ___ das Wasser zu kalt ist.",
+      correctAnswer: ["da"],
+      explanation: "da (vì) - nguyên nhân",
+    },
+    {
+      id: 13,
+      german: "___ er sehr krank war, ging er zur Arbeit.",
+      correctAnswer: ["Obwohl"],
+      explanation: "Obwohl (mặc dù) - tương phản",
+    },
+    {
+      id: 14,
+      german: "Sie hat viel Arbeit, ___ nimmt sie sich Zeit für ihre Familie.",
+      correctAnswer: ["trotzdem"],
+      explanation: "trotzdem (dù vậy) - tương phản",
+    },
+    {
+      id: 15,
+      german: "Wir haben den Zug verpasst, ___ mussten wir ein Taxi nehmen.",
+      correctAnswer: ["deshalb"],
+      explanation: "deshalb (vì vậy) - kết quả",
+    },
+    {
+      id: 16,
+      german: "___ du Zeit hast, komm bitte morgen vorbei.",
+      correctAnswer: ["Falls"],
+      explanation: "Falls (nếu như) - điều kiện",
+    },
+    {
+      id: 17,
+      german: "Ich esse Schokolade, ___ ich abnehmen möchte.",
+      correctAnswer: ["obwohl"],
+      explanation: "obwohl (mặc dù) - tương phản",
+    },
+    {
+      id: 18,
+      german: "___ er krank war, blieb er im Bett.",
+      correctAnswer: ["Da"],
+      explanation: "Da (vì) - nguyên nhân",
+    },
+    {
+      id: 19,
+      german: "Sie hat keine Zeit, ___ hilft sie uns.",
+      correctAnswer: ["trotzdem"],
+      explanation: "trotzdem (dù vậy) - tương phản",
+    },
+    {
+      id: 20,
+      german: "Er ist zu jung, ___ darf er nicht allein fahren.",
+      correctAnswer: ["deshalb"],
+      explanation: "deshalb (vì vậy) - kết quả",
+    },
+  ]}
 />
 
 ---
 
-## Hỏi đáp & Thảo luận 💬
-
+##
