@@ -117,14 +117,9 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  let contentId = 'unknown';
-  let authorName = 'unknown';
-  
   try {
     const body = await request.json();
-    const { content, authorEmail, parentId } = body;
-    contentId = body.contentId;
-    authorName = body.authorName;
+    const { contentId, content, authorName, authorEmail, parentId } = body;
 
     if (!contentId || !content || !authorName) {
       return NextResponse.json(
@@ -180,14 +175,8 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Error creating comment:', error);
-    console.error('Error details:', {
-      message: (error as any).message,
-      stack: (error as any).stack,
-      contentId: contentId || 'unknown',
-      authorName: authorName || 'unknown'
-    });
     return NextResponse.json(
-      { error: 'Failed to create comment', details: (error as any).message },
+      { error: 'Failed to create comment' },
       { status: 500 }
     );
   }

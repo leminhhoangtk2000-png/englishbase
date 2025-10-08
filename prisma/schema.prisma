@@ -8,34 +8,34 @@ datasource db {
 }
 
 model User {
-  id                     String                   @id @default(cuid())
-  email                  String                   @unique
-  username               String?                  @unique
-  name                   String?
-  password               String
-  avatar                 String?
-  role                   Role                     @default(USER)
-  isPremium              Boolean                  @default(false)
-  createdAt              DateTime                 @default(now())
-  updatedAt              DateTime                 @updatedAt
-  bio                    String?
-  facebook               String?
-  instagram              String?
-  skillLevel             String?
-  threads                String?
-  tiktok                 String?
-  website                String?
-  exercise_completions   exercise_completions[]
-  articleCompletions     ArticleCompletion[]
-  posts                  Post[]
-  reviews                Review[]
-  exercises              UserExercise[]
-  progress               UserProgress[]
-  vocabulary             UserVocabulary[]
-  
+  id                   String                 @id @default(cuid())
+  email                String                 @unique
+  username             String?                @unique
+  name                 String?
+  password             String
+  avatar               String?
+  role                 Role                   @default(USER)
+  isPremium            Boolean                @default(false)
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+  bio                  String?
+  facebook             String?
+  instagram            String?
+  skillLevel           String?
+  threads              String?
+  tiktok               String?
+  website              String?
+  exercise_completions exercise_completions[]
+  articleCompletions   ArticleCompletion[]
+  posts                Post[]
+  reviews              Review[]
+  exercises            UserExercise[]
+  progress             UserProgress[]
+  vocabulary           UserVocabulary[]
+
   // Universal Comments Relations
-  comments               PageComment[] @relation("UserComments")
-  commentLikes           CommentLike[] @relation("UserCommentLikes")
+  comments     PageComment[] @relation("UserComments")
+  commentLikes CommentLike[] @relation("UserCommentLikes")
 
   @@map("users")
 }
@@ -369,16 +369,16 @@ model exercise_views {
 }
 
 model exercises_master {
-  id            String   @id @default(cuid())
-  slug          String   @unique // Original path: a1/Horen/Im Restaurant teil 2 - A1
-  slugId        String   @unique // Clean ID: a1-horen-im-restaurant-teil-2-a1
-  title         String // Exercise title
-  level         String // A1, A2, B1, B2
-  category      String // Horen, Lesen, Grammatik, etc
-  likesCount    Int      @default(0) // Cached count from exercise_likes
-  viewsCount    Int      @default(0) // Cached count from exercise_views
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id         String   @id @default(cuid())
+  slug       String   @unique // Original path: a1/Horen/Im Restaurant teil 2 - A1
+  slugId     String   @unique // Clean ID: a1-horen-im-restaurant-teil-2-a1
+  title      String // Exercise title
+  level      String // A1, A2, B1, B2
+  category   String // Horen, Lesen, Grammatik, etc
+  likesCount Int      @default(0) // Cached count from exercise_likes
+  viewsCount Int      @default(0) // Cached count from exercise_views
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   @@index([level])
   @@index([category])
@@ -492,26 +492,26 @@ enum CrawlJobStatus {
 // Universal Comments System Models
 model PageComment {
   id          String   @id @default(cuid())
-  contentId   String   // Unique identifier for each page/lesson (e.g., "a1niveau-grammatik-artikel")
-  content     String   // Comment content
-  authorId    String?  // Optional - for registered users
-  authorName  String   // Display name (for guests or registered users)
-  authorEmail String?  // Optional email for guest users
-  guestId     String?  // For guest users (IP-based or localStorage ID)
+  contentId   String // Unique identifier for each page/lesson (e.g., "a1niveau-grammatik-artikel")
+  content     String // Comment content
+  authorId    String? // Optional - for registered users
+  authorName  String // Display name (for guests or registered users)
+  authorEmail String? // Optional email for guest users
+  guestId     String? // For guest users (IP-based or localStorage ID)
   isGuest     Boolean  @default(true)
   likes       Int      @default(0)
-  parentId    String?  // For nested replies
+  parentId    String? // For nested replies
   isDeleted   Boolean  @default(false) // Soft delete
-  isApproved  Boolean  @default(true)  // For moderation
+  isApproved  Boolean  @default(true) // For moderation
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  
+
   // Relations
-  author        User?           @relation("UserComments", fields: [authorId], references: [id], onDelete: SetNull)
-  parent        PageComment?    @relation("CommentReplies", fields: [parentId], references: [id])
-  replies       PageComment[]   @relation("CommentReplies")
+  author        User?         @relation("UserComments", fields: [authorId], references: [id], onDelete: SetNull)
+  parent        PageComment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies       PageComment[] @relation("CommentReplies")
   likes_records CommentLike[]
-  
+
   // Indexes for performance
   @@index([contentId])
   @@index([createdAt])
@@ -523,14 +523,14 @@ model PageComment {
 model CommentLike {
   id        String   @id @default(cuid())
   commentId String
-  userId    String?  // For registered users
-  guestId   String?  // For guest users
+  userId    String? // For registered users
+  guestId   String? // For guest users
   createdAt DateTime @default(now())
-  
+
   // Relations
   comment PageComment @relation(fields: [commentId], references: [id], onDelete: Cascade)
   user    User?       @relation("UserCommentLikes", fields: [userId], references: [id], onDelete: Cascade)
-  
+
   // Ensure one like per user/guest per comment
   @@unique([commentId, userId])
   @@unique([commentId, guestId])

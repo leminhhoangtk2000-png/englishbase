@@ -7,12 +7,14 @@ Universal Comments System là một hệ thống bình luận độc lập có t
 ## ✅ **Đã hoàn thành**
 
 ### **1. API Endpoints**
+
 - ✅ `GET /api/page-comments` - Lấy comments cho content
 - ✅ `POST /api/page-comments` - Tạo comment mới
 - ✅ Mock data system với guest users
 - ✅ IP-based guest identification
 
 ### **2. UniversalComments Component**
+
 - ✅ **Location**: `/src/components/UniversalComments.tsx`
 - ✅ Responsive design với dark mode support
 - ✅ Guest commenting với localStorage cho tên
@@ -21,6 +23,7 @@ Universal Comments System là một hệ thống bình luận độc lập có t
 - ✅ Input validation và error handling
 
 ### **3. MDX Integration**
+
 - ✅ Đã thêm vào `mdx-components.tsx`
 - ✅ Đã thêm vào `/mdx/` router
 - ✅ Test page tại `/mdx/demo/universal-comments`
@@ -28,14 +31,16 @@ Universal Comments System là một hệ thống bình luận độc lập có t
 ## 🚀 **Cách sử dụng**
 
 ### **Basic Usage**
+
 ```jsx
 <UniversalComments contentId="unique-page-id" />
 ```
 
 ### **Advanced Usage**
+
 ```jsx
-<UniversalComments 
-  contentId="article-123" 
+<UniversalComments
+  contentId="article-123"
   title="Bình luận bài viết"
   showCount={true}
   minLength={10}
@@ -45,17 +50,18 @@ Universal Comments System là một hệ thống bình luận độc lập có t
 
 ### **Props Reference**
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `contentId` | string | **required** | ID duy nhất cho content |
-| `title` | string | "Bình luận" | Tiêu đề section |
-| `showCount` | boolean | true | Hiển thị số lượng comments |
-| `minLength` | number | 3 | Độ dài tối thiểu comment |
-| `className` | string | "" | CSS class tùy chỉnh |
+| Prop        | Type    | Default      | Description                |
+| ----------- | ------- | ------------ | -------------------------- |
+| `contentId` | string  | **required** | ID duy nhất cho content    |
+| `title`     | string  | "Bình luận"  | Tiêu đề section            |
+| `showCount` | boolean | true         | Hiển thị số lượng comments |
+| `minLength` | number  | 3            | Độ dài tối thiểu comment   |
+| `className` | string  | ""           | CSS class tùy chỉnh        |
 
 ## 📄 **Examples**
 
 ### **1. Blog Post Comments**
+
 ```mdx
 ---
 title: "Bài viết về tiếng Đức"
@@ -65,13 +71,14 @@ title: "Bài viết về tiếng Đức"
 
 Nội dung bài viết...
 
-<UniversalComments 
-  contentId="blog-hoc-tieng-duc-hieu-qua" 
+<UniversalComments
+  contentId="blog-hoc-tieng-duc-hieu-qua"
   title="Thảo luận về bài viết"
 />
 ```
 
 ### **2. Exercise Page Comments**
+
 ```mdx
 ---
 title: "Bài tập A1 - Artikel"
@@ -81,17 +88,18 @@ title: "Bài tập A1 - Artikel"
 
 <Lueckentext exercises={...} />
 
-<UniversalComments 
-  contentId="a1-artikel-uebungen" 
+<UniversalComments
+  contentId="a1-artikel-uebungen"
   title="Hỏi đáp về bài tập"
   minLength={5}
 />
 ```
 
 ### **3. Documentation Comments**
+
 ```mdx
-<UniversalComments 
-  contentId="docs-installation-guide" 
+<UniversalComments
+  contentId="docs-installation-guide"
   title="Feedback & Questions"
   showCount={false}
 />
@@ -102,10 +110,12 @@ title: "Bài tập A1 - Artikel"
 ### **GET /api/page-comments**
 
 **Query Parameters:**
+
 - `contentId` (required): ID của content
 - `pageUrl` (optional): Alternative identifier
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -132,6 +142,7 @@ title: "Bài tập A1 - Artikel"
 ### **POST /api/page-comments**
 
 **Request Body:**
+
 ```json
 {
   "contentId": "unique-content-id",
@@ -142,10 +153,13 @@ title: "Bài tập A1 - Artikel"
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
-  "comment": { /* New comment object */ },
+  "comment": {
+    /* New comment object */
+  },
   "message": "Comment posted successfully!"
 }
 ```
@@ -153,17 +167,19 @@ title: "Bài tập A1 - Artikel"
 ## 🎨 **Customization**
 
 ### **Styling**
+
 Component sử dụng Tailwind CSS và tự động adapt dark mode:
 
 ```tsx
-<UniversalComments 
+<UniversalComments
   contentId="custom-page"
   className="bg-blue-50 dark:bg-blue-900 p-6 rounded-xl"
 />
 ```
 
 ### **Theme Colors**
-- Primary: Blue-600 
+
+- Primary: Blue-600
 - Success: Green-600
 - Error: Red-600
 - Background: Gray-50/Gray-800 (dark mode)
@@ -171,6 +187,7 @@ Component sử dụng Tailwind CSS và tự động adapt dark mode:
 ## 🔄 **Migration từ hệ thống cũ**
 
 ### **Từ Comments component cũ:**
+
 ```jsx
 // OLD
 <Comments url="/page/url" exerciseId="exercise-123" />
@@ -180,17 +197,19 @@ Component sử dụng Tailwind CSS và tự động adapt dark mode:
 ```
 
 ### **Từ FacebookComments component:**
+
 ```jsx
 // OLD
 <FacebookComments url="/page/url" />
 
-// NEW  
+// NEW
 <UniversalComments contentId="page-unique-id" />
 ```
 
 ## 🚧 **Roadmap - Tính năng sắp tới**
 
 ### **Phase 2: Advanced Features**
+
 - [ ] **Real database integration** (thay thế mock data)
 - [ ] **Reply system** (nested comments)
 - [ ] **Like/Unlike comments**
@@ -198,12 +217,14 @@ Component sử dụng Tailwind CSS và tự động adapt dark mode:
 - [ ] **Email notifications**
 
 ### **Phase 3: Enhanced UX**
+
 - [ ] **Rich text editor** (markdown support)
 - [ ] **Image uploads** in comments
 - [ ] **@mentions** and notifications
 - [ ] **Comment threading** (better nested view)
 
 ### **Phase 4: Integration**
+
 - [ ] **User authentication** integration
 - [ ] **Admin dashboard** for comment management
 - [ ] **Analytics** (comment engagement)
@@ -212,16 +233,19 @@ Component sử dụng Tailwind CSS và tự động adapt dark mode:
 ## 🐛 **Troubleshooting**
 
 ### **Component không hiển thị**
+
 1. Kiểm tra import trong `mdx-components.tsx`
 2. Verify `contentId` prop được truyền
 3. Check console errors
 
 ### **API errors**
+
 1. Verify server đang chạy port 9003
 2. Check network tab trong dev tools
 3. Validate request body format
 
 ### **Styling issues**
+
 1. Ensure Tailwind CSS được load
 2. Check dark mode configuration
 3. Verify component className prop
@@ -234,4 +258,4 @@ Component sử dụng Tailwind CSS và tự động adapt dark mode:
 
 ---
 
-*Last updated: 2025-10-07*
+_Last updated: 2025-10-07_

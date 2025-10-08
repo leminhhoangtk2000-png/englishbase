@@ -121,12 +121,12 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('❌ Error updating exercise completion:', error);
     console.error('❌ Error details:', {
-      name: error?.name,
-      message: error?.message,
-      stack: error?.stack,
+      name: (error as any)?.name,
+      message: (error as any)?.message,
+      stack: (error as any)?.stack,
     });
     return NextResponse.json(
-      { error: 'Internal server error', details: error?.message },
+      { error: 'Internal server error', details: (error as any)?.message },
       { status: 500 }
     );
   }
