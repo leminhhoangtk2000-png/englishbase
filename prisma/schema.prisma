@@ -536,3 +536,15 @@ model CommentLike {
   @@unique([commentId, guestId])
   @@map("comment_likes")
 }
+
+model WebhookConfig {
+  id        String   @id
+  name      String
+  url       String
+  levels    String   // Comma-separated levels (A1,A2,B1,B2)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("webhook_configs")
+}
