@@ -6,8 +6,6 @@ import { CheckCircle2, Heart, Check, User, LogIn, UserPlus, X } from 'lucide-rea
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
-import { GoogleAuthButton } from '@/components/auth/GoogleAuthButton'
-
 interface ExerciseActionsProps {
   exerciseId: string;
 }
@@ -348,10 +346,14 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
                 Chọn cách đăng nhập:
               </div>
               
-              <GoogleAuthButton action="login" className="w-full text-lg py-6">
+              <Button 
+                onClick={() => window.location.href = '/login'}
+                className="w-full text-lg py-6"
+                size="lg"
+              >
                 <LogIn className="w-5 h-5 mr-2" />
-                Đăng nhập với Google
-              </GoogleAuthButton>
+                Đăng nhập
+              </Button>
               
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
