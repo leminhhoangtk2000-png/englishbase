@@ -8,13 +8,11 @@ interface DocsLayoutProps {
 }
 
 export default async function DocsLayout({ children }: DocsLayoutProps) {
-  // Omit the 'component' property before passing to client components
+  // Pass nav items to client components
   const navItems: NavItem[] = exercisesConfig.items.map(item => ({
     ...item,
-    items: item.items?.map(({ component, ...subItem }) => subItem),
-  }));
-
-  const allDocs: Doc[] = exercisesConfig.items.flatMap(item => item.items ?? []).map(doc => ({
+    items: item.items?.map(subItem => subItem),
+  }));  const allDocs: Doc[] = exercisesConfig.items.flatMap(item => item.items ?? []).map(doc => ({
       title: doc.title,
       href: doc.href ?? '',
       content: doc.description ?? '',

@@ -7,14 +7,15 @@ import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Volume2, Heart, Clock, BookOpen, Bookmark, Star } from 'lucide-react';
 import { VocabularyEntry } from '@/types/vocabulary';
+import { cn } from '@/lib/utils';
 
 interface VocabularyCardProps {
   entry: VocabularyEntry;
-  onSave: (entry: VocabularyEntry) => void;
-  isSaved: boolean;
+  onSave?: (entry: VocabularyEntry) => void;
+  isSaved?: boolean;
 }
 
-export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) {
+export default function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) {
   const handleSpeak = (text: string) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
@@ -64,14 +65,23 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
         {/* Header với level và type badges */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
+            {/* Level badge with forced styling */}
             <Badge 
-              className={`${getLevelColor(entry.level || 'A1')} font-bold px-4 py-1.5 text-sm shadow-md`}
+              variant="outline"
+              className={cn(
+                "font-bold px-4 py-1.5 text-sm shadow-md border-0 text-white",
+                getLevelColor(entry.level || 'A1')
+              )}
             >
               <Star className="w-3 h-3 mr-1" />
               {entry.level || 'A1'}
             </Badge>
             <Badge 
-              className={`${getTypeColor(entry.partOfSpeech || 'NOMEN')} px-3 py-1.5 text-sm font-medium shadow-md`}
+              variant="outline" 
+              className={cn(
+                "px-3 py-1.5 text-sm font-medium shadow-md border-0 text-white",
+                getTypeColor(entry.partOfSpeech || 'NOMEN')
+              )}
             >
               {entry.partOfSpeech || 'NOMEN'}
             </Badge>
@@ -79,7 +89,7 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => onSave(entry)}
+            onClick={() => onSave?.(entry)}
             className={`transition-all duration-200 hover:scale-110 ${isSaved 
               ? 'text-pink-500 hover:text-pink-600 bg-pink-50 hover:bg-pink-100' 
               : 'text-gray-400 hover:text-pink-500 hover:bg-pink-50'
@@ -232,6 +242,40 @@ export function VocabularyCard({ entry, onSave, isSaved }: VocabularyCardProps) 
                   <Badge key={index} variant="outline" className="text-sm bg-red-50 text-red-700 border-red-200 hover:bg-red-100 transition-colors">
                     {antonym}
                   </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Alternative meanings */}
+          {(entry as any).alternatives && (entry as any).alternatives.length > 0 && (
+            <div className="space-y-3 border-t border-slate-200 pt-4">
+              <h5 className="text-sm font-semibold text-slate-600 flex items-center gap-2">
+                <span className="text-blue-500">🔍</span>
+                Nghĩa khác của từ này
+              </h5>
+              <div className="space-y-3">
+                {(entry as any).alternatives.slice(0, 3).map((alt: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-r from-blue-50 to-slate-50 p-3 rounded-lg border border-blue-200">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge className={`${getLevelColor(alt.level)} font-bold px-2 py-1 text-xs`}>
+                        {alt.level}
+                      </Badge>
+                      <Badge className={`${getTypeColor(alt.type)} px-2 py-1 text-xs`}>
+                        {alt.type}
+                      </Badge>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-medium text-gray-900">{alt.word}</p>
+                      <p className="text-purple-600 text-sm">{alt.vietnamese}</p>
+                      {alt.examples && alt.examples[0] && (
+                        <div className="text-xs text-gray-600 italic mt-2">
+                          <p>"{alt.examples[0].german}"</p>
+                          <p className="text-purple-500">"{alt.examples[0].vietnamese}"</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

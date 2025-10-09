@@ -12,7 +12,7 @@ Bộ sưu tập **118 từ vựng** quan trọng về các hoạt động và kh
 ## Chủ đề chính
 
 - **Hoạt động hàng ngày** - Tägliche Aktivitäten
-- **Thời gian và lịch trình** - Zeit und Termine  
+- **Thời gian và lịch trình** - Zeit und Termine
 - **Mua sắm và dịch vụ** - Einkaufen und Dienstleistungen
 - **Giao thông và di chuyển** - Verkehr und Transport
 - **Sinh hoạt gia đình** - Familienleben

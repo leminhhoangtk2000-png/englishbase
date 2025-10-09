@@ -278,7 +278,29 @@ export function useVocabularySearch() {
     setIsLoading(true);
 
     try {
-      // First, search in local database
+      // First, search in real database via AI search API
+      const realSearchResponse = await fetch('/api/vocabulary/ai-search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ word: word.trim() }),
+      });
+
+      if (realSearchResponse.ok) {
+        const realSearchResult = await realSearchResponse.json();
+        if (realSearchResult.success && realSearchResult.data) {
+          // Add to search history
+          setSearchHistory(prev => {
+            const newHistory = [word, ...prev.filter(h => h !== word)].slice(0, 10);
+            return newHistory;
+          });
+
+          return { found: true, entry: realSearchResult.data };
+        }
+      }
+
+      // Fallback: search in local mock database
       const normalizedWord = word.toLowerCase().trim();
       const found = mockVocabularyDatabase.find(
         entry => entry.word.toLowerCase() === normalizedWord

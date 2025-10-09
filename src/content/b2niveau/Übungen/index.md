@@ -13,12 +13,15 @@ Chào mừng bạn đến với phần bài tập cho cấp độ B2. Đây là 
 ## 📚 Danh sách bài tập có sẵn:
 
 ### Teil 1: Doppelkonnektoren
+
 Luyện tập điền đúng các Doppelkonnektoren như "sowohl...als auch", "nicht nur...sondern auch", "zwar...aber"
 
-### Teil 2: Modale Ergänzungen  
+### Teil 2: Modale Ergänzungen
+
 Luyện tập hoàn thành câu với các từ bổ nghĩa chỉ cách thức
 
 ### Teil 3: Passiv
+
 Luyện tập chuyển câu từ chủ động sang bị động
 
 ---

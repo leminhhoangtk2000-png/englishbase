@@ -28,7 +28,7 @@ export function Footer() {
             <div>
               <h4 className="font-semibold mb-4">Thông tin</h4>
               <ul className="space-y-3">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary">Dự án</Link></li>
+                <li><Link href="/about" className="text-muted-foreground hover:text-primary">Về dự án</Link></li>
                 <li><Link href="#" className="text-muted-foreground hover:text-primary">Lộ trình</Link></li>
                 <li><Link href="#" className="text-muted-foreground hover:text-primary">Đội nhóm</Link></li>
                 <li><Link href="#" className="text-muted-foreground hover:text-primary">Liên hệ</Link></li>

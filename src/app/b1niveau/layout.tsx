@@ -28,10 +28,10 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
     );
   }
 
-  // Omit the 'component' property before passing to client components
+  // Pass nav items to client components
   const navItems: NavItem[] = docsConfig.items.map(item => ({
     ...item,
-    items: item.items?.map(({ component, ...subItem }) => subItem),
+    items: item.items?.map(subItem => subItem),
   }));
 
   const allDocs: Doc[] = [

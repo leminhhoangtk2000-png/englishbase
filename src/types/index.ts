@@ -14,10 +14,15 @@ export interface NavItem {
 
 export type NavItemWithComponent = NavItem & {
   component?: React.ComponentType<any>;
+  items?: NavItemWithComponent[];
 };
 
 export type DocsConfig = {
   items: NavItem[];
+};
+
+export type DocsConfigWithComponent = {
+  items: NavItemWithComponent[];
 };
 
 export type Doc = {

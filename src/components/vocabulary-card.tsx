@@ -8,6 +8,7 @@ import { SpeechButton } from '@/components/speech-button';
 import { SaveButton } from '@/components/save-button';
 import { VocabularyEntry } from '@/hooks/use-vocabulary';
 import { GenderBadge } from '@/components/gender-badge';
+import { formatVocabularyExample } from '@/lib/text-formatting';
 
 interface VocabularyCardProps {
   word: VocabularyEntry;
@@ -89,12 +90,12 @@ export function VocabularyCard({
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <p className="text-sm text-gray-700 dark:text-gray-300 italic">
-                  "{word.exampleGerman}"
+                  "{formatVocabularyExample(word.exampleGerman)}"
                 </p>
                 <SpeechButton text={word.exampleGerman} size="sm" />
               </div>
               <p className="text-sm text-purple-600 italic">
-                "{word.exampleVietnamese}"
+                "{formatVocabularyExample(word.exampleVietnamese)}"
               </p>
             </div>
           </>

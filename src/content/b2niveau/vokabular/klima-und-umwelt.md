@@ -12,7 +12,7 @@ Bộ sưu tập **101 từ vựng** chuyên sâu về khí hậu, thời tiết 
 ## Chủ đề chính
 
 - **Thời tiết và khí hậu** - Wetter und Klima
-- **Thiên nhiên và động vật** - Natur und Tiere  
+- **Thiên nhiên và động vật** - Natur und Tiere
 - **Ô nhiễm môi trường** - Umweltverschmutzung
 - **Năng lượng tái tạo** - Erneuerbare Energien
 - **Bảo vệ môi trường** - Umweltschutz

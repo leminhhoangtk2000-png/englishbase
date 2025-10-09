@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
@@ -8,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { MainNav } from '@/components/main-nav'
 import { CheckCircle2, BookOpen, Heart, Target } from 'lucide-react'
 
-export default function WelcomePage() {
+function WelcomeContent() {
   const { user, loading } = useAuth()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -132,5 +133,13 @@ export default function WelcomePage() {
         </Card>
       </div>
     </>
+  )
+}
+
+export default function WelcomePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WelcomeContent />
+    </Suspense>
   )
 }

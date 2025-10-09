@@ -217,48 +217,69 @@ export async function POST(request: NextRequest) {
     }
     
     // First check if word already exists in database
-    const existingWord = await prisma.vocabularyEntry.findFirst({
+    const existingWords = await prisma.vocabularyEntry.findMany({
       where: {
         OR: [
-          { german: { equals: word, mode: 'insensitive' } },
-          { vietnamese: { equals: word, mode: 'insensitive' } }
+          { german: { contains: word, mode: 'insensitive' } },
+          { vietnamese: { contains: word, mode: 'insensitive' } }
         ]
       },
       include: {
         level: true,
         topic: true
-      }
+      },
+      orderBy: [
+        { level: { order: 'asc' } },
+        { frequency: 'desc' }
+      ]
     })
     
-    if (existingWord) {
-      // Check if existing word has incomplete information
-      const hasIncompleteInfo = 
-        existingWord.vietnamese === 'chưa có nghĩa' ||
-        existingWord.vietnamese === 'Từ mới (cần bổ sung)' ||
-        existingWord.phonetic === '/không xác định/' ||
-        existingWord.phonetic === '' ||
-        !existingWord.phonetic;
+    let existingWord = null;
+    
+    if (existingWords.length > 0) {
+      // Check if any existing word has complete information
+      const completeWords = existingWords.filter(word => 
+        word.vietnamese !== 'chưa có nghĩa' &&
+        word.vietnamese !== 'Từ mới (cần bổ sung)' &&
+        word.phonetic !== '/không xác định/' &&
+        word.phonetic !== '' &&
+        word.phonetic
+      );
       
-      // If data is complete, return it
-      if (!hasIncompleteInfo) {
+      // If we have complete words, return the first one (best match)
+      if (completeWords.length > 0) {
+        const bestMatch = completeWords[0];
+        
         // Transform database model to match VocabularyEntry interface
         const transformedEntry = {
-          id: existingWord.id,
-          word: existingWord.german,
-          pronunciation: existingWord.phonetic,
-          partOfSpeech: existingWord.type,
-          level: existingWord.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
+          id: bestMatch.id,
+          word: bestMatch.german,
+          pronunciation: bestMatch.phonetic,
+          partOfSpeech: bestMatch.type,
+          level: bestMatch.level.name as 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2',
           definitions: {
-            german: existingWord.german,
-            vietnamese: existingWord.vietnamese,
+            german: bestMatch.german,
+            vietnamese: bestMatch.vietnamese,
           },
-          examples: existingWord.exampleGerman && existingWord.exampleVietnamese ? [{
-            german: existingWord.exampleGerman,
-            vietnamese: existingWord.exampleVietnamese
+          examples: bestMatch.exampleGerman && bestMatch.exampleVietnamese ? [{
+            german: bestMatch.exampleGerman,
+            vietnamese: bestMatch.exampleVietnamese
           }] : [],
-          createdAt: existingWord.createdAt.toISOString(),
-          updatedAt: existingWord.updatedAt.toISOString(),
-          source: 'database' as const
+          createdAt: bestMatch.createdAt.toISOString(),
+          updatedAt: bestMatch.updatedAt.toISOString(),
+          source: 'database' as const,
+          // Add alternative entries for context
+          alternatives: completeWords.slice(1, 5).map(alt => ({
+            id: alt.id,
+            word: alt.german,
+            vietnamese: alt.vietnamese,
+            level: alt.level.name,
+            type: alt.type,
+            examples: alt.exampleGerman && alt.exampleVietnamese ? [{
+              german: alt.exampleGerman,
+              vietnamese: alt.exampleVietnamese
+            }] : []
+          }))
         }
 
         return NextResponse.json({
@@ -268,7 +289,8 @@ export async function POST(request: NextRequest) {
         })
       }
       
-      // If data is incomplete, continue to AI generation to update it
+      // If only incomplete data exists, continue to AI generation to update
+      existingWord = existingWords[0];
       console.log('Found existing word with incomplete data, updating with AI:', existingWord.german);
     }
     

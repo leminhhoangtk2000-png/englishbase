@@ -14,7 +14,7 @@ Bộ sưu tập **171 từ vựng ngữ pháp** quan trọng giúp bạn hiểu 
 ### 📚 Các chủ đề ngữ pháp
 
 - **Konjunktiv II** - Thể giả định II
-- **Passiv** - Thể bị động  
+- **Passiv** - Thể bị động
 - **Partizipien** - Phân từ
 - **Relativsätze** - Mệnh đề quan hệ
 - **Indirekte Rede** - Câu gián tiếp
@@ -48,7 +48,7 @@ Sử dụng công cụ tìm kiếm phía dưới để khám phá 171 từ vựn
 
 ## Lưu ý quan trọng
 
-> **Tip**: Nhiều từ vựng ngữ pháp có ký hiệu đặc biệt (**, [], ()) để chỉ cấu trúc hoặc ví dụ. Hãy chú ý đến các chi tiết này để hiểu đúng nghĩa.
+> **Tip**: Nhiều từ vựng ngữ pháp có ký hiệu đặc biệt (\*\*, [], ()) để chỉ cấu trúc hoặc ví dụ. Hãy chú ý đến các chi tiết này để hiểu đúng nghĩa.
 
 ---
 

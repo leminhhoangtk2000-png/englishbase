@@ -1,10 +1,10 @@
 
-import type { DocsConfig } from "@/types";
+import type { DocsConfigWithComponent } from "@/types";
 import { IntroductionPage } from "@/app/exercises/_pages/introduction";
 import { InstallationPage } from "@/app/exercises/_pages/installation";
 import { ExerciseLevelPage } from "@/app/exercises/_components/exercise-level-page";
 
-export const exercisesConfig: DocsConfig = {
+export const exercisesConfig: DocsConfigWithComponent = {
   items: [
     {
       title: "Trình độ",

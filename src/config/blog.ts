@@ -1,8 +1,8 @@
-import type { DocsConfig } from "@/types";
+import type { DocsConfigWithComponent } from "@/types";
 import { IntroductionPage } from "@/app/blog/_pages/introduction";
 import { InstallationPage } from "@/app/blog/_pages/installation";
 
-export const blogConfig: DocsConfig = {
+export const blogConfig: DocsConfigWithComponent = {
   items: [
     {
       title: "Getting Started",

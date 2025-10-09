@@ -6,11 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, User, ThumbsUp, Bookmark, MessageCircle, Tag } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Button }             {post.tags.map((tag, tagIndex) => (
-              <Badge key={`${tag}-${tagIndex}`} variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                {tag}
-              </Badge>
-            ))}'@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MainNav } from '@/components/main-nav';
 import { Comments } from '@/components/ui/comments';

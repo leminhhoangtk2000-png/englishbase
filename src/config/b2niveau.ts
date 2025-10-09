@@ -191,12 +191,6 @@ export const docsConfig: DocsConfig = {
           ],
         },
         {
-          title: "Grammatik Wortschatz",
-          description: "171 từ vựng ngữ pháp B2 - Grammatische Begriffe und Strukturen",
-          href: "/b2niveau/vokabular/grammatik",
-          tags: ["grammar", "vocabulary", "B2"],
-        },
-        {
           title: "Alltag und tägliches Leben",
           description: "118 từ vựng về cuộc sống hàng ngày",
           href: "/b2niveau/vokabular/alltag",

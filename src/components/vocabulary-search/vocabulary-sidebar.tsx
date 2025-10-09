@@ -16,7 +16,7 @@ import {
   Sparkles,
   Trash2 
 } from 'lucide-react';
-import { VocabularyCard } from './vocabulary-card';
+import VocabularyCard from './vocabulary-card';
 import { useVocabularySearch } from '@/hooks/use-vocabulary-search';
 import { useVocabulary, VocabularyEntry as SavedVocabularyEntry } from '@/hooks/use-vocabulary';
 import { VocabularyEntry } from '@/types/vocabulary';

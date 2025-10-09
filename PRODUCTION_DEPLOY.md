@@ -49,17 +49,20 @@ npm start
 ## 🔧 Platform-specific Deploy
 
 ### Vercel (Recommended)
+
 1. Connect GitHub repo
 2. Add environment variables in Vercel dashboard
 3. Auto-deploy on push to main branch
 
 ### Railway/Render
-1. Connect GitHub repo  
+
+1. Connect GitHub repo
 2. Add environment variables
 3. Set build command: `npm run build`
 4. Set start command: `npm start`
 
 ### VPS/Server
+
 1. Clone repo
 2. Install dependencies: `npm install`
 3. Create `.env` file with production values
@@ -69,11 +72,13 @@ npm start
 ## 🗄️ Database Options
 
 ### Option 1: PostgreSQL Cloud
+
 - **Neon** (free tier): https://neon.tech
 - **Supabase** (free tier): https://supabase.com
 - **Railway PostgreSQL**: https://railway.app
 
 ### Option 2: Own PostgreSQL
+
 - Setup PostgreSQL on VPS
 - Configure connection string in DATABASE_URL
 
@@ -95,6 +100,7 @@ npm start
 ## 🧪 Pre-deploy Testing
 
 1. Test locally with production build:
+
    ```bash
    npm run build
    npm start

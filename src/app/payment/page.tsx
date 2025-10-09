@@ -5,52 +5,69 @@ import { Button } from "@/components/ui/button";
 import { Crown, Check, Heart, Star, Coffee, Rocket } from "lucide-react";
 import Link from 'next/link';
 import * as React from 'react';
+import { MainNav } from "@/components/main-nav";
 
 const supporterTiers = [
   {
-    id: 'bronze',
-    name: 'Người hỗ trợ Đồng',
+    id: 'monthly',
+    name: 'Premium 1 tháng',
     price: '25.000đ',
     icon: <Coffee className="w-12 h-12" />,
+    duration: '1 tháng',
     features: [
-      'Huy hiệu "Người hỗ trợ" đặc biệt.',
-      'Bạn đang giúp đỡ 20 bạn học.'
+      'Theo dõi tiến độ học tập chi tiết',
+      'Đặt mục tiêu học tập cá nhân',
+      'Xem lại lịch sử hoạt động',
+      'Thống kê học tập nâng cao',
+      'Bạn đang giúp đỡ 20 bạn học khác'
     ]
   },
   {
-    id: 'silver',
-    name: 'Người hỗ trợ Bạc',
-    price: '49.000đ',
+    id: 'yearly',
+    name: 'Premium 1 năm',
+    price: '300.000đ',
     icon: <Heart className="w-12 h-12" />,
+    duration: '12 tháng',
     features: [
-      'Huy hiệu "Người hỗ trợ" đặc biệt.',
-      'Bạn đang giúp đỡ 116 bạn học.'
+      'Theo dõi tiến độ học tập chi tiết',
+      'Đặt mục tiêu học tập cá nhân', 
+      'Xem lại lịch sử hoạt động',
+      'Thống kê học tập nâng cao',
+      'Bạn đang giúp đỡ 240 bạn học khác'
+    ]
+  },
+  {
+    id: 'lifetime',
+    name: 'Premium vĩnh viễn',
+    price: '500.000đ',
+    icon: <Rocket className="w-12 h-12" />,
+    duration: 'Vĩnh viễn',
+    savings: 'Đầu tư tốt nhất!',
+    features: [
+      'Theo dõi tiến độ học tập chi tiết',
+      'Đặt mục tiêu học tập cá nhân',
+      'Xem lại lịch sử hoạt động', 
+      'Thống kê học tập nâng cao',
+      'Huy hiệu "Lifetime Supporter" đặc biệt',
+      'Bạn đang giúp đỡ 400+ bạn học khác'
     ],
     popular: true
-  },
-  {
-    id: 'gold',
-    name: 'Người hỗ trợ Vàng',
-    price: '99.000đ',
-    icon: <Rocket className="w-12 h-12" />,
-    features: [
-      'Huy hiệu "Người hỗ trợ" đặc biệt.',
-      'Bạn đang giúp đỡ 316 bạn học khác và cả team Deutsch.vn.'
-    ]
   }
 ];
 
 export default function PaymentPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <>
+      <MainNav />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header Section */}
       <div className="text-center mb-12">
         <div className="flex justify-center mb-4">
           <Crown className="w-16 h-16 text-yellow-500" />
         </div>
-        <h1 className="text-4xl font-bold font-headline mb-4">Mở khóa tính năng Premium</h1>
+        <h1 className="text-4xl font-bold font-headline mb-4">Nâng cấp Premium</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Nâng cấp tài khoản để theo dõi tiến độ học tập, đặt mục tiêu và xem lại lịch sử hoạt động của bạn.
+          Mở khóa tính năng theo dõi tiến độ học tập, đặt mục tiêu cá nhân và xem thống kê chi tiết để học hiệu quả hơn.
         </p>
       </div>
 
@@ -60,7 +77,7 @@ export default function PaymentPage() {
           <CardContent className="p-8">
             <div className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Chào các bạn, Về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong>250đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình một bạn cũng chỉ tiêu tốn hết <strong>20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
+                Chào các bạn, về cơ bản bọn mình tính được chi phí cho mỗi người dùng trên tháng là <strong>250đ</strong> thôi. Nhưng để tăng cao trải nghiệm bọn mình có tạo thêm một phần tracking việc học của các bạn. Việc này sẽ tốn khá nhiều dung lượng và dữ liệu máy chủ. Nhưng trung bình một bạn cũng chỉ tiêu tốn hết <strong>20.000đ</strong> chi phí sử dụng nếu sử dụng thêm phần mở rộng.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Do là ý do bọn mình có gói người hỗ trợ <strong>25.000đ</strong>. Nếu các bạn sử dụng gói hỗ trợ này, đồng nghĩa với việc các bạn đang giúp bọn mình <strong>cover chi phí cho một 20 bạn học khác</strong>.
@@ -79,7 +96,7 @@ export default function PaymentPage() {
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
         {supporterTiers.map((tier) => (
-          <Card key={tier.id} className={`relative ${tier.popular ? 'border-primary shadow-lg scale-105' : ''}`}>
+          <Card key={tier.id} className={`relative flex flex-col h-full ${tier.popular ? 'border-primary shadow-lg scale-105' : ''}`}>
             {tier.popular && (
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
@@ -92,11 +109,20 @@ export default function PaymentPage() {
             <CardHeader className="text-center pb-2">
               <div className="flex justify-center mb-4">{tier.icon}</div>
               <CardTitle className="text-xl">{tier.name}</CardTitle>
-              <div className="text-3xl font-bold text-primary">{tier.price}</div>
-              <CardDescription className="text-sm text-muted-foreground">/ một lần</CardDescription>
+              <div className="space-y-1">
+                <div className="text-3xl font-bold text-primary">{tier.price}</div>
+                {tier.savings && (
+                  <div className="text-sm text-green-600 font-medium">
+                    {tier.savings}
+                  </div>
+                )}
+              </div>
+              <CardDescription className="text-sm text-muted-foreground">
+                / {tier.duration}
+              </CardDescription>
             </CardHeader>
             
-            <CardContent className="text-center pb-2">
+            <CardContent className="text-center pb-2 flex-grow">
               <ul className="space-y-2 text-sm text-left">
                 {tier.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
@@ -107,13 +133,18 @@ export default function PaymentPage() {
               </ul>
             </CardContent>
             
-            <CardFooter className="pt-4">
+            <CardFooter className="pt-4 mt-auto">
               <Button 
-                className="w-full bg-black text-white hover:bg-gray-800" 
+                className={`w-full ${
+                  tier.id === 'lifetime' 
+                    ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg animate-pulse' 
+                    : 'bg-black text-white hover:bg-gray-800'
+                }`}
                 asChild
               >
                 <Link href={`#`}>
-                  Hỗ trợ
+                  {tier.id === 'lifetime' ? '🚀 Mua ngay - Đầu tư tốt nhất!' : 
+                   tier.id === 'yearly' ? 'Đăng ký 1 năm' : 'Dùng thử 1 tháng'}
                 </Link>
               </Button>
             </CardFooter>
@@ -132,6 +163,7 @@ export default function PaymentPage() {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
