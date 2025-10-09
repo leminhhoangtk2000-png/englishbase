@@ -55,7 +55,7 @@ function SignupForm() {
     }
 
     try {
-      const result = await signup(name, email, password)
+      const result = await signup(email, password, name)
       
       if (result.success) {
         // Redirect to return URL if provided and valid, otherwise to home page

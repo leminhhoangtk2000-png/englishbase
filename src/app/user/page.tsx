@@ -24,13 +24,24 @@ import { blogPosts } from "./_components/data";
 
 export default function UserPage() {
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
+
+  console.log('UserPage - Auth state:', { user, loading });
 
   React.useEffect(() => {
-    if (!user) {
+    if (!loading && !user) {
+      console.log('UserPage - Redirecting to login because no user');
       router.push('/login');
     }
-  }, [user, router]);
+  }, [user, loading, router]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   if (!user) {
     return null;

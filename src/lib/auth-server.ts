@@ -18,8 +18,17 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
       return null
     }
 
+    console.log('🔍 getCurrentUser - Decoded JWT:', decoded);
+
+    // Handle both 'id' and 'userId' for backward compatibility
+    const userId = decoded.userId || decoded.id;
+    if (!userId) {
+      console.log('❌ getCurrentUser - No user ID in token');
+      return null;
+    }
+
     const user = await prisma.user.findUnique({
-      where: { id: decoded.id },
+      where: { id: userId },
       select: {
         id: true,
         email: true,

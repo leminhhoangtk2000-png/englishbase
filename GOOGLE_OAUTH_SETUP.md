@@ -12,15 +12,13 @@
 2. Click **Create Credentials** > **OAuth client ID**
 3. Chọn **Web application**
 4. Điền thông tin:
-   - **Name**: Edu Theme OAuth
+   - **Name**: deutsch.vn
    - **Authorized JavaScript origins**:
      - `http://localhost:9003`
-     - `https://yourdomain.com` (cho production)
+     - `https://deutsch.vn`
    - **Authorized redirect URIs**:
      - `http://localhost:9003/api/auth/google/callback`
-     - `https://yourdomain.com/api/auth/google/callback` (cho production)
-
-## 3. Cập nhật Environment Variables
+     - `https://deutsch.vn/api/auth/google/callback`## 3. Cập nhật Environment Variables
 
 Thêm vào file `.env`:
 

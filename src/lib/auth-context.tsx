@@ -19,27 +19,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   const refreshUser = async () => {
+    console.log('AuthContext - refreshUser called')
     try {
       const response = await fetch('/api/auth/me', {
         credentials: 'include', // Important for cookies
       })
+      console.log('AuthContext - /api/auth/me response:', response.status, response.ok)
+      
       if (response.ok) {
         const data = await response.json()
+        console.log('AuthContext - User data from API:', data.user)
         setUser(data.user)
         // Store user in localStorage as backup
         if (typeof window !== 'undefined') {
           localStorage.setItem('auth-user', JSON.stringify(data.user))
         }
       } else {
+        console.log('AuthContext - API failed, trying localStorage')
         // Try to get user from localStorage
         if (typeof window !== 'undefined') {
           const storedUser = localStorage.getItem('auth-user')
           if (storedUser) {
             try {
               const user = JSON.parse(storedUser)
+              console.log('AuthContext - User from localStorage:', user)
               setUser(user)
               return
             } catch (e) {
+              console.log('AuthContext - localStorage parse error:', e)
               localStorage.removeItem('auth-user')
             }
           }
@@ -47,6 +54,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(null)
       }
     } catch (error) {
+      console.log('AuthContext - refreshUser error:', error)
       // Try to get user from localStorage as fallback
       if (typeof window !== 'undefined') {
         const storedUser = localStorage.getItem('auth-user')

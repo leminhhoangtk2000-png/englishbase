@@ -22,6 +22,13 @@ export async function GET(request: NextRequest) {
     const code = searchParams.get('code')
     const state = searchParams.get('state') // Contains action: 'login' or 'signup'
     
+    console.log('🔍 OAuth Callback Debug:')
+    console.log('- Code:', code ? 'present' : 'missing')
+    console.log('- State:', state)
+    console.log('- Client ID:', process.env.GOOGLE_CLIENT_ID ? 'present' : 'missing')
+    console.log('- Client Secret:', process.env.GOOGLE_CLIENT_SECRET ? 'present' : 'missing')
+    console.log('- Redirect URI:', `${process.env.NEXTAUTH_URL}/api/auth/google/callback`)
+    
     if (!code) {
       return NextResponse.redirect(`${process.env.NEXTAUTH_URL}/login?error=no_code`)
     }
@@ -136,6 +143,13 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Google OAuth callback error:', error)
+    console.error('Full error details:', JSON.stringify(error, null, 2))
+    
+    // Try to get more specific error details
+    if (error && typeof error === 'object' && 'response' in error) {
+      console.error('Error response:', (error as any).response?.data)
+    }
+    
     return NextResponse.redirect(`${process.env.NEXTAUTH_URL}/login?error=oauth_error`)
   }
 }

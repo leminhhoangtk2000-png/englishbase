@@ -18,17 +18,26 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check email format - must be Gmail
+    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
+    const trimmedEmail = email.toLowerCase().trim()
+    
+    console.log('Debug - Email validation:', {
+      originalEmail: email,
+      trimmedEmail,
+      regexTest: emailRegex.test(trimmedEmail),
+      isGmail: trimmedEmail.endsWith('@gmail.com')
+    })
+    
+    if (!emailRegex.test(trimmedEmail)) {
       return NextResponse.json(
-        { error: 'Email không hợp lệ' },
+        { error: 'Định dạng email không hợp lệ' },
         { status: 400 }
       )
     }
 
     // Check if email is Gmail
-    if (!email.toLowerCase().endsWith('@gmail.com')) {
+    if (!trimmedEmail.endsWith('@gmail.com')) {
       return NextResponse.json(
         { error: 'Chỉ chấp nhận địa chỉ Gmail (@gmail.com)' },
         { status: 400 }
@@ -46,7 +55,7 @@ export async function POST(request: NextRequest) {
     try {
       // Create user
       const user = await createUser({
-        email: email.toLowerCase().trim(),
+        email: trimmedEmail,
         password,
         name: name.trim(),
         role: 'USER' // Default role
