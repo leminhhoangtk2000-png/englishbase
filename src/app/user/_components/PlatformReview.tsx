@@ -9,7 +9,11 @@ import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
 import React from 'react';
 
-export function PlatformReview() {
+interface PlatformReviewProps {
+  onReviewSubmitted?: () => void;
+}
+
+export function PlatformReview({ onReviewSubmitted }: PlatformReviewProps) {
     const { user } = useAuth();
     const [rating, setRating] = React.useState(0);
     const [hoverRating, setHoverRating] = React.useState(0);
@@ -92,6 +96,9 @@ export function PlatformReview() {
                 console.log('✅ Review submitted successfully!');
                 setSubmitted(true);
                 setExistingReview(data.review);
+                
+                // Call callback to notify parent component
+                onReviewSubmitted?.();
                 
                 // Set new cooldown
                 if (data.review.nextAllowedDate) {

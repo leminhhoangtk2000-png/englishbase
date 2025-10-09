@@ -16,9 +16,9 @@ Bài tập về thì Plusquamperfekt - **Thì phức tạp nhất trong tiếng 
 
 ### 3 bài tập chính:
 
-1. **Teil 1: Grundlagen** - Cơ bản về Plusquamperfekt
-2. **Teil 2: Mit haben und sein** - Sử dụng với haben và sein
-3. **Teil 3: Erweiterte Übungen** - Bài tập mở rộng và phức hợp
+1. **[Teil 1: Grundlagen](plusquamperfekt/teil1)** - Cơ bản về Plusquamperfekt
+2. **[Teil 2: Mit haben und sein](plusquamperfekt/teil2)** - Sử dụng với haben và sein
+3. **[Teil 3: Erweiterte Übungen](plusquamperfekt/teil3)** - Bài tập mở rộng và phức hợp
 
 ## 🎯 Mục tiêu học tập
 

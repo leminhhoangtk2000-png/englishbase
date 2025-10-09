@@ -108,6 +108,14 @@ export function getMarkdownBySlug(
     // Decode URL-encoded slug first
     const decodedSlug = decodeURIComponent(slug)
     
+    console.log('[getMarkdownBySlug] Debug:', {
+      niveau,
+      section,
+      slug,
+      decodedSlug,
+      contentDirectory
+    });
+    
     // Check if slug already has extension
     const slugWithExtension = decodedSlug.endsWith('.md') || decodedSlug.endsWith('.mdx') ? decodedSlug : `${decodedSlug}.md`
     const altSlugWithExtension = decodedSlug.endsWith('.md') ? decodedSlug.replace('.md', '.mdx') : `${decodedSlug}.mdx`
@@ -119,6 +127,17 @@ export function getMarkdownBySlug(
     // Also check for folder-based content with index files
     const folderIndexPath = path.join(contentDirectory, niveau, section, decodedSlug, 'index.md')
     const folderIndexAltPath = path.join(contentDirectory, niveau, section, decodedSlug, 'index.mdx')
+    
+    console.log('[getMarkdownBySlug] Trying paths:', {
+      filePath,
+      altFilePath,
+      folderIndexPath,
+      folderIndexAltPath,
+      'filePath exists': fs.existsSync(filePath),
+      'altFilePath exists': fs.existsSync(altFilePath),
+      'folderIndexPath exists': fs.existsSync(folderIndexPath),
+      'folderIndexAltPath exists': fs.existsSync(folderIndexAltPath)
+    });
     
     let actualPath = filePath
     

@@ -16,11 +16,11 @@ Bài tập về thì quá khứ Perfekt và Präteritum - **Học phân biệt v
 
 ### 5 bài tập chính:
 
-1. **Teil 1: Perfekt Grundlagen** - Cơ bản về thì Perfekt
-2. **Teil 2: Präteritum Formen** - Các dạng của thì Präteritum
-3. **Teil 3: Perfekt vs Präteritum** - So sánh và phân biệt 2 thì
-4. **Teil 4: Irregular Verbs** - Động từ bất quy tắc
-5. **Teil 5: Advanced Exercises** - Bài tập nâng cao
+1. **[Teil 1: Perfekt Grundlagen](perfekt-prateritum/teil1)** - Cơ bản về thì Perfekt
+2. **[Teil 2: Präteritum Formen](perfekt-prateritum/teil2)** - Các dạng của thì Präteritum
+3. **[Teil 3: Perfekt vs Präteritum](perfekt-prateritum/teil3)** - So sánh và phân biệt 2 thì
+4. **[Teil 4: Irregular Verbs](perfekt-prateritum/teil4)** - Động từ bất quy tắc
+5. **[Teil 5: Advanced Exercises](perfekt-prateritum/teil5)** - Bài tập nâng cao
 
 ## 🎯 Mục tiêu học tập
 

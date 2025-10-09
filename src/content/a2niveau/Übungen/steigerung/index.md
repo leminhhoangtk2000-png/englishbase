@@ -16,9 +16,9 @@ Bài tập về so sánh (Komparativ và Superlativ) trong tiếng Đức
 
 ### 3 bài tập chính:
 
-1. **Teil 1: So sánh bằng** - Gleichheit (so...wie, genauso...wie)
-2. **Teil 2: So sánh hơn (Komparativ)** - schöner als, größer als
-3. **Teil 3: So sánh nhất (Superlativ)** - am schönsten, der größte
+1. **[Teil 1: So sánh bằng](steigerung/teil1)** - Gleichheit (so...wie, genauso...wie)
+2. **[Teil 2: So sánh hơn (Komparativ)](steigerung/teil2)** - schöner als, größer als
+3. **[Teil 3: So sánh nhất (Superlativ)](steigerung/teil3)** - am schönsten, der größte
 
 ## 🎯 Mục tiêu học tập
 

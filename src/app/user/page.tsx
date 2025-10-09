@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 // Import components
 import { ContributionGraph } from "./_components/ContributionGraph";
 import { UserActivity } from "./_components/UserActivity";
-import { PlatformReview } from "./_components/PlatformReview";
+import { PlatformReviewForm } from "./_components/PlatformReviewForm";
 import { LearningGoal } from "./_components/LearningGoal";
 import { SavedPosts } from "./_components/SavedPosts";
 import { ProfileEditModal } from "@/components/profile-edit-modal";
@@ -25,8 +25,33 @@ import { blogPosts } from "./_components/data";
 export default function UserPage() {
   const router = useRouter();
   const { user, loading } = useAuth();
+  const [hasReviewed, setHasReviewed] = React.useState(false);
+  const [reviewLoading, setReviewLoading] = React.useState(true);
 
   console.log('UserPage - Auth state:', { user, loading });
+
+  // Check if user has already reviewed
+  React.useEffect(() => {
+    const checkUserReview = async () => {
+      if (user) {
+        try {
+          const response = await fetch(`/api/reviews?userId=${user.id}`);
+          if (response.ok) {
+            const data = await response.json();
+            setHasReviewed(!!data.review);
+          }
+        } catch (error) {
+          console.error('Error checking user review:', error);
+        } finally {
+          setReviewLoading(false);
+        }
+      }
+    };
+
+    if (user) {
+      checkUserReview();
+    }
+  }, [user]);
 
   React.useEffect(() => {
     if (!loading && !user) {
@@ -179,9 +204,7 @@ export default function UserPage() {
                 )}
               </div>
               
-              <div className="mt-8">
-                <PlatformReview />
-              </div>
+              {/* Remove PlatformReview from sidebar */}
             </CardContent>
           </Card>
         </div>
@@ -294,6 +317,23 @@ export default function UserPage() {
           </Tabs>
         </div>
       </div>
+
+      {/* Platform Review Section - Only show if user hasn't reviewed yet */}
+      {!reviewLoading && !hasReviewed && (
+        <div className="mt-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Đánh giá nền tảng</CardTitle>
+              <CardDescription>
+                Chia sẻ ý kiến của bạn để giúp chúng tôi cải thiện
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <PlatformReviewForm onReviewSubmitted={() => setHasReviewed(true)} />
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
