@@ -44,6 +44,10 @@ model User {
   comments     PageComment[] @relation("UserComments")
   commentLikes CommentLike[] @relation("UserCommentLikes")
 
+  // Payment Relations
+  payments     Payment[]
+  orders       Order[]
+
   @@map("users")
 }
 
@@ -253,12 +257,35 @@ model UserProgress {
 model Payment {
   id            String        @id @default(cuid())
   userId        String?
+  user          User?         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Enhanced fields for SePay
+  orderId       String?       @unique
+  order         Order?        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
   amount        Decimal
   currency      String        @default("VND")
   status        PaymentStatus @default(PENDING)
   method        String?
   transactionId String?       @unique
   description   String?
+  
+  // SePay specific fields
+  sepayId          Int?       @unique // SePay transaction ID
+  gateway          String?    // Bank name (Vietcombank, ACB, etc.)
+  accountNumber    String?    // Bank account number
+  transferAmount   Int?       // Amount transferred (in VND)
+  transferType     String?    @default("in") // "in" or "out"
+  transactionDate  DateTime?  // Bank transaction timestamp
+  referenceCode    String?    // Bank reference code (MBVCB.xxx)
+  content          String?    // Transfer content/description
+  sepayCode        String?    // Extracted payment code
+  
+  // Verification
+  isVerified       Boolean    @default(false)
+  verifiedAt       DateTime?
+  processedAt      DateTime?  // When payment was processed
+  
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 
@@ -554,4 +581,55 @@ model WebhookConfig {
   updatedAt DateTime @updatedAt
 
   @@map("webhook_configs")
+}
+
+// Payment System Models for SePay Integration
+model Order {
+  id           String      @id @default(cuid())
+  userId       String
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  orderNumber  String      @unique // Order tracking number
+  productType  ProductType // COURSE, PREMIUM_MEMBERSHIP, TUTORING
+  productId    String?     // Course ID, membership plan ID, etc.
+  productName  String      // Human readable product name
+  
+  amount       Int         // Amount in VND (500000 = 500,000 VND)
+  currency     String      @default("VND")
+  
+  status       OrderStatus @default(PENDING)
+  
+  // SePay specific fields
+  sepayCode    String?     @unique // Payment code for SePay identification
+  description  String?     // Order description
+  
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  expiresAt    DateTime?   // Payment expiration time
+  
+  // Relations
+  payments     Payment[]
+
+  // Customer information for order tracking
+  customerName  String?
+  customerEmail String?
+  customerPhone String?
+
+  @@map("orders")
+}
+
+// Enums for Payment System
+enum ProductType {
+  COURSE            // Specific course purchase
+  PREMIUM_MEMBERSHIP // Premium subscription
+  TUTORING          // 1-on-1 tutoring sessions
+  MATERIALS         // Learning materials
+}
+
+enum OrderStatus {
+  PENDING    // Waiting for payment
+  PAID       // Payment confirmed
+  EXPIRED    // Payment window expired
+  CANCELLED  // Order cancelled
+  REFUNDED   // Order refunded
 }
