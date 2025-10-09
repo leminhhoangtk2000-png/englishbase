@@ -21,6 +21,7 @@ export default {
         headline: ['Inter', 'sans-serif'],
         serif: ['Lora', 'serif'],
         code: ['monospace'],
+        itim: ['Itim', 'cursive'],
       },
       colors: {
         background: 'hsl(var(--background))',

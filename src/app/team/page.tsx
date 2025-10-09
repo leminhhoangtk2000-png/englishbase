@@ -19,54 +19,27 @@ export default function TeamPage() {
           </div>
 
           {/* Main Content Grid - Avatar and Text Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start mb-8">
             {/* Left Column - Avatar */}
             <div className="flex justify-center lg:justify-start">
-              <div className="w-64 h-64 bg-black dark:bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
-                {/* Simple avatar matching the reference image */}
-                <svg width="240" height="240" viewBox="0 0 240 240" className="text-white">
-                  {/* Face */}
-                  <circle cx="120" cy="120" r="110" fill="currentColor"/>
-                  
-                  {/* Hair */}
-                  <path d="M60 80 Q120 40 180 80 Q180 100 160 110 Q140 100 120 100 Q100 100 80 110 Q60 100 60 80" fill="currentColor"/>
-                  
-                  {/* Hair bangs */}
-                  <path d="M85 85 Q95 75 105 85 Q115 75 125 85 Q135 75 145 85 Q155 75 165 85" stroke="currentColor" strokeWidth="3" fill="none"/>
-                  
-                  {/* Eyes */}
-                  <circle cx="95" cy="105" r="3" fill="currentColor"/>
-                  <circle cx="145" cy="105" r="3" fill="currentColor"/>
-                  
-                  {/* Eye lines */}
-                  <path d="M85 100 Q95 95 105 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M135 100 Q145 95 155 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  
-                  {/* Nose */}
-                  <line x1="120" y1="115" x2="120" y2="125" stroke="currentColor" strokeWidth="2"/>
-                  
-                  {/* Mouth */}
-                  <path d="M105 145 Q120 155 135 145" stroke="currentColor" strokeWidth="3" fill="none"/>
-                  
-                  {/* Ears */}
-                  <ellipse cx="65" cy="120" rx="8" ry="15" fill="currentColor"/>
-                  <ellipse cx="175" cy="120" rx="8" ry="15" fill="currentColor"/>
-                  
-                  {/* Neck */}
-                  <rect x="105" y="210" width="30" height="30" fill="currentColor"/>
-                </svg>
+              <div className="w-80 h-80 rounded-xl flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/team/khoa.png"
+                  alt="Khoa Võ - Founder"
+                  className="w-full h-full object-contain object-center"
+                />
               </div>
             </div>
 
-            {/* Right Column - Content (spans 2 columns) */}
-            <div className="lg:col-span-2">
+            {/* Right Column - Content */}
+            <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                 Khoa Võ
               </h2>
               <p className="text-gray-500 italic mb-6">Founder</p>
               
-              <div className="prose prose-gray dark:prose-invert max-w-none">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <div className="max-w-none">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base font-itim">
                   Mình phụ trách nội dung, thiết kế và chiến lược marketing. Mình đã khởi nghiệp được hơn 5 năm với rất nhiều dự án. Trong quá trình khởi nghiệp, mình đã học rất nhiều chứng chỉ về nghiệp vụ kế toán và quản trị. Qua quá trình làm hồ sơ đi du học, mình nhận ra rằng thị trường du học đang tồn tại rất nhiều rủi ro. Những rủi ro này đều đổ dồn về phía người sử dụng dịch vụ. Mình hiểu rất rõ nguồn gốc cũng như nguyên nhân của những rủi ro đó. Chính vì vậy, mình muốn tạo ra một giải pháp có thể giúp bảo vệ quyền lợi của người sử dụng dịch vụ trong lĩnh vực này.
                 </p>
               </div>
@@ -126,39 +99,36 @@ export default function TeamPage() {
           </div>
 
           {/* Main Content Grid - Avatar and Text Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start mb-8">
             {/* Left Column - Avatar */}
             <div className="flex justify-center lg:justify-start">
-              <div className="w-64 h-64 bg-gray-900 dark:bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
-                <svg width="200" height="200" viewBox="0 0 200 200" className="text-white dark:text-gray-900">
-                  <circle cx="100" cy="75" r="20" fill="currentColor"/>
-                  <path d="M100 100 Q90 110 90 125 L110 125 Q110 110 100 100" fill="currentColor"/>
-                  <path d="M75 120 Q100 140 125 120" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <circle cx="85" cy="60" r="2" fill="currentColor"/>
-                  <circle cx="115" cy="60" r="2" fill="currentColor"/>
-                  <path d="M70 150 L130 150 L125 170 L75 170 Z" fill="currentColor"/>
-                </svg>
+              <div className="w-80 h-80 rounded-xl flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/team/lonia.png"
+                  alt="Lonia - Người trẻ năng kài"
+                  className="w-full h-full object-contain object-center"
+                />
               </div>
             </div>
 
-            {/* Right Column - Content (spans 2 columns) */}
-            <div className="lg:col-span-2">
+            {/* Right Column - Content */}
+            <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                 Lonia
               </h2>
               <p className="text-gray-500 italic mb-6">Người trẻ năng kài</p>
               
-              <div className="prose prose-gray dark:prose-invert max-w-none">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              <div className="max-w-none">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-base font-itim">
                   Hallo zusammen! 👋
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-base font-itim">
                   Mình là một Gen Z đang đồng hành cùng các bạn trên hành trình chinh phục tiếng Đức 🇩🇪
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-base font-itim">
                   Hồi mới bắt đầu, mình cũng từng hoang mang không biết nên học ở đâu, trang tâm nào uy tín, học phí có ổn không... Thấm chí đã sơn sài chỗ vài phải đôi giữa chúng 😭
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base font-itim">
                   May mắn là sau đó mình tìm được nơi phù hợp học. Và mình ở đây — để chia sẻ kinh nghiệm, giúp bạn tránh lạc hướng như mình từng trải qua!
                 </p>
               </div>
@@ -205,35 +175,33 @@ export default function TeamPage() {
         {/* Third Section - Vũ Nhật Nam */}
         <div className="max-w-4xl mx-auto">
           {/* Main Content Grid - Avatar and Text Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start mb-8">
             {/* Left Column - Avatar */}
             <div className="flex justify-center lg:justify-start">
-              <div className="w-64 h-64 bg-gray-900 dark:bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
-                <svg width="200" height="200" viewBox="0 0 200 200" className="text-white dark:text-gray-900">
-                  <circle cx="100" cy="75" r="22" fill="currentColor"/>
-                  <rect x="85" y="65" width="30" height="20" rx="10" fill="none" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M100 100 Q90 110 90 125 L110 125 Q110 110 100 100" fill="currentColor"/>
-                  <path d="M75 120 Q100 140 125 120" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M70 150 L130 150 L125 170 L75 170 Z" fill="currentColor"/>
-                </svg>
+              <div className="w-80 h-80 rounded-xl flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/team/nam.png"
+                  alt="Vũ Nhật Nam - der Mighty Vermittler"
+                  className="w-full h-full object-contain object-center"
+                />
               </div>
             </div>
 
-            {/* Right Column - Content (spans 2 columns) */}
-            <div className="lg:col-span-2">
+            {/* Right Column - Content */}
+            <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                 Vũ Nhật Nam
               </h2>
               <p className="text-gray-500 italic mb-6">der Mighty Vermittler</p>
               
-              <div className="prose prose-gray dark:prose-invert max-w-none">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              <div className="max-w-none">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-base font-itim">
                   Hallochen. 👋
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-base font-itim">
                   Mình là Nam và mình thích việc chia sẻ lại những kiến thức tiếng Đức mình học được cho mọi người. Mình hy vọng thông qua những bài chia sẻ của mình trên này, mọi người sẽ học thêm được gì đó và yêu tiếng Đức hơn. 🇩🇪❤️ Mong được đón nhận những feedback góp ý của mọi người, để mình một hoàn thiện hơn!! 🙏
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base font-itim">
                   Viel Spass beim Deutschlernen! 😊
                 </p>
               </div>

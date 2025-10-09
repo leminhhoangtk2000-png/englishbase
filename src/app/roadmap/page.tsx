@@ -206,18 +206,14 @@ export default function RoadmapPage() {
 
                 {/* Illustration */}
                 <div className={`${index % 2 === 0 ? 'lg:order-2 lg:pl-8' : 'lg:order-1 lg:pr-8'}`}>
-                  <Card className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
-                    <CardContent className="p-6 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-6xl mb-3 opacity-80">
-                          {phase.illustration}
-                        </div>
-                        <div className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
-                          {phase.title}
-                        </div>
-                        <div className="opacity-50 scale-75">
-                          {phase.icon}
-                        </div>
+                  <Card className="bg-white border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <CardContent className="p-4">
+                      <div className="w-full h-48 bg-white rounded-lg overflow-hidden">
+                        <img 
+                          src={`/roadmap/${phase.id}.jpg`}
+                          alt={`${phase.title} illustration`}
+                          className="w-full h-full object-contain object-center"
+                        />
                       </div>
                     </CardContent>
                   </Card>

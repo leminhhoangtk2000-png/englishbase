@@ -143,7 +143,7 @@ export default function AboutPage() {
 
         {/* Đội ngũ sáng lập */}
         <div className="text-center mt-20">
-          <Card className="p-8 bg-gradient-to-r from-blue-50 to-purple-50 border-0">
+          <Card className="p-8 border-0">
             <h3 className="text-2xl font-bold mb-6">Đội ngũ sáng lập</h3>
             <div className="max-w-2xl mx-auto text-left">
               <p className="text-muted-foreground mb-4">
