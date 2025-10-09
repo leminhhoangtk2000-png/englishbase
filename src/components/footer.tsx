@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { MapPin, Mail, Youtube, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Mail, Youtube, Instagram, Facebook, AtSign } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -11,9 +11,18 @@ export function Footer() {
               <h3 className="font-bold text-lg mb-2">Deutsch.vn</h3>
               <p className="text-muted-foreground mb-4">Cùng nhau xây dựng một cộng đồng học tiếng Đức cởi mở, thân thiện và hiệu quả cho người Việt.</p>
               <div className="flex gap-4">
-                <Link href="#"><Facebook className="w-6 h-6 text-muted-foreground hover:text-primary" /></Link>
-                <Link href="#"><Instagram className="w-6 h-6 text-muted-foreground hover:text-primary" /></Link>
-                <Link href="#"><Youtube className="w-6 h-6 text-muted-foreground hover:text-primary" /></Link>
+                <Link href="https://www.facebook.com/deutschvie" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
+                <Link href="https://www.instagram.com/deutschvn/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
+                <Link href="https://www.youtube.com/@deutsch-vn" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
+                <Link href="https://www.threads.com/@deutschvn" target="_blank" rel="noopener noreferrer">
+                  <AtSign className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
               </div>
             </div>
 
@@ -29,16 +38,16 @@ export function Footer() {
               <h4 className="font-semibold mb-4">Thông tin</h4>
               <ul className="space-y-3">
                 <li><Link href="/about" className="text-muted-foreground hover:text-primary">Về dự án</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary">Lộ trình</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary">Đội nhóm</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary">Liên hệ</Link></li>
+                <li><Link href="/roadmap" className="text-muted-foreground hover:text-primary">Lộ trình</Link></li>
+                <li><Link href="/team" className="text-muted-foreground hover:text-primary">Đội nhóm</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Partner</h4>
               <ul className="space-y-3">
-                 <li><Link href="#" className="text-muted-foreground hover:text-primary">Deutsche Ecke</Link></li>
+                 <li><Link href="https://dek.edu.vn/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">Deutsche Ecke</Link></li>
+                 <li><Link href="https://deutschhub.vn/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">Deutschhub.vn</Link></li>
               </ul>
             </div>
           </div>

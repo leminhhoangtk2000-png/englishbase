@@ -204,7 +204,6 @@ export default function BlogPostPage() {
     
     if (!foundPost) {
       notFound();
-      return;
     }
 
     setPost(foundPost);
