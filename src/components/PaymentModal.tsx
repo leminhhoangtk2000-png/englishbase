@@ -36,14 +36,22 @@ interface OrderData {
   deeplink?: string;
   status: string;
   timeRemaining?: number;
-  bankInfo: {
+  paymentInfo?: {
+    bankName: string;
+    accountNumber: string;
+    accountName: string;
+    transferContent: string;
+    amount: number;
+    instructions: string[];
+  };
+  bankInfo?: {
     bankName: string;
     accountNumber: string;
     accountName: string;
     transferContent: string;
     amount: number;
   };
-  paymentInstructions: {
+  paymentInstructions?: {
     step1: string;
     step2: string;
     step3: string;
@@ -171,6 +179,17 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
     }).format(amount);
   };
 
+  // Helper function to get bank info from any available source
+  const getBankInfo = () => {
+    return {
+      bankName: orderData?.paymentInfo?.bankName || orderData?.bankInfo?.bankName || 'MBBank (Ngân hàng Quân đội)',
+      accountNumber: orderData?.paymentInfo?.accountNumber || orderData?.bankInfo?.accountNumber || '0776161075',
+      accountName: orderData?.paymentInfo?.accountName || orderData?.bankInfo?.accountName || 'TRAN QUOC BAO',
+      transferContent: orderData?.paymentInfo?.transferContent || orderData?.bankInfo?.transferContent || `${orderData?.sepayCode || 'DTV'} Payment`,
+      amount: orderData?.paymentInfo?.amount || orderData?.bankInfo?.amount || orderData?.amount || 0
+    };
+  };
+
   const openBankingApp = () => {
     if (orderData?.deeplink) {
       window.open(orderData.deeplink, '_blank');
@@ -183,6 +202,9 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="sm:max-w-[600px]">
+          <DialogHeader>
+            <DialogTitle>Đang tải thông tin thanh toán</DialogTitle>
+          </DialogHeader>
           <div className="flex items-center justify-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
             <span className="ml-2">Đang tải thông tin thanh toán...</span>
@@ -280,21 +302,39 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
             {paymentStatus === 'pending' && (
               <>
                 {/* QR Code Section */}
-                {orderData.qrCode && (
-                  <Card>
-                    <CardContent className="p-6 text-center">
-                      <div className="flex items-center justify-center mb-4">
-                        <QrCode className="w-5 h-5 mr-2" />
-                        <span className="font-medium">Quét mã QR để thanh toán</span>
-                      </div>
-                      
-                      <div className="bg-white p-4 rounded-lg inline-block border">
+                <Card>
+                  <CardContent className="p-6 text-center">
+                    <div className="flex items-center justify-center mb-4">
+                      <QrCode className="w-5 h-5 mr-2" />
+                      <span className="font-medium">Quét mã QR để thanh toán</span>
+                    </div>
+                    
+                    <div className="bg-white p-4 rounded-lg inline-block border">
+                      {orderData?.qrCode ? (
                         <img 
                           src={orderData.qrCode} 
                           alt="QR Code thanh toán"
                           className="w-48 h-48 mx-auto"
+                          onLoad={() => console.log('QR Code loaded successfully:', orderData.qrCode)}
+                          onError={(e) => {
+                            console.error('QR Code failed to load:', orderData.qrCode);
+                            console.error('Error details:', e);
+                          }}
                         />
-                      </div>
+                      ) : (
+                        <div className="w-48 h-48 mx-auto flex items-center justify-center border-2 border-dashed border-gray-300 rounded">
+                          <div className="text-center">
+                            <QrCode className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+                            <p className="text-sm text-gray-500">QR Code đang tải...</p>
+                            {orderData?.sepayCode && (
+                              <p className="text-xs text-gray-400 mt-1 break-all">
+                                Manual URL: https://qr.sepay.vn/img?acc=0776161075&bank=MBBank&amount={getBankInfo().amount}&des={encodeURIComponent(getBankInfo().transferContent)}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                       
                       <div className="mt-4 space-y-2">
                         <Button 
@@ -318,7 +358,6 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
                       </div>
                     </CardContent>
                   </Card>
-                )}
 
                 <Separator />
 
@@ -333,17 +372,24 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
                     <div className="space-y-3">
                       <div className="grid grid-cols-3 gap-2 text-sm">
                         <span className="text-gray-500">Ngân hàng:</span>
-                        <span className="col-span-2 font-medium">{orderData.bankInfo.bankName}</span>
+                        <span className="col-span-2 font-medium">
+                          {orderData.paymentInfo?.bankName || orderData.bankInfo?.bankName || 'MBBank (Ngân hàng Quân đội)'}
+                        </span>
                       </div>
                       
                       <div className="grid grid-cols-3 gap-2 text-sm">
                         <span className="text-gray-500">Số tài khoản:</span>
                         <div className="col-span-2 flex items-center">
-                          <span className="font-medium mr-2">{orderData.bankInfo.accountNumber}</span>
+                          <span className="font-medium mr-2">
+                            {orderData.paymentInfo?.accountNumber || orderData.bankInfo?.accountNumber || '0776161075'}
+                          </span>
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => copyToClipboard(orderData.bankInfo.accountNumber, 'số tài khoản')}
+                            onClick={() => copyToClipboard(
+                              orderData.paymentInfo?.accountNumber || orderData.bankInfo?.accountNumber || '0776161075', 
+                              'số tài khoản'
+                            )}
                           >
                             <Copy className="w-3 h-3" />
                           </Button>
@@ -352,19 +398,19 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
                       
                       <div className="grid grid-cols-3 gap-2 text-sm">
                         <span className="text-gray-500">Chủ tài khoản:</span>
-                        <span className="col-span-2 font-medium">{orderData.bankInfo.accountName}</span>
+                        <span className="col-span-2 font-medium">{getBankInfo().accountName}</span>
                       </div>
                       
                       <div className="grid grid-cols-3 gap-2 text-sm">
                         <span className="text-gray-500">Số tiền:</span>
                         <div className="col-span-2 flex items-center">
                           <span className="font-bold text-blue-600 mr-2">
-                            {formatCurrency(orderData.bankInfo.amount)}
+                            {formatCurrency(getBankInfo().amount)}
                           </span>
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => copyToClipboard(orderData.bankInfo.amount.toString(), 'số tiền')}
+                            onClick={() => copyToClipboard(getBankInfo().amount.toString(), 'số tiền')}
                           >
                             <Copy className="w-3 h-3" />
                           </Button>
@@ -375,12 +421,12 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
                         <span className="text-gray-500">Nội dung CK:</span>
                         <div className="col-span-2 flex items-center">
                           <span className="font-medium mr-2 bg-yellow-100 px-2 py-1 rounded text-xs">
-                            {orderData.bankInfo.transferContent}
+                            {getBankInfo().transferContent}
                           </span>
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => copyToClipboard(orderData.bankInfo.transferContent, 'nội dung chuyển khoản')}
+                            onClick={() => copyToClipboard(getBankInfo().transferContent, 'nội dung chuyển khoản')}
                           >
                             <Copy className="w-3 h-3" />
                           </Button>
@@ -395,11 +441,11 @@ export default function PaymentModal({ isOpen, onClose, orderId, onPaymentSucces
                   <CardContent className="p-4">
                     <h4 className="font-medium mb-3">Hướng dẫn thanh toán:</h4>
                     <ol className="list-decimal list-inside space-y-2 text-sm text-gray-600">
-                      <li>{orderData.paymentInstructions.step1}</li>
-                      <li>{orderData.paymentInstructions.step2}</li>
-                      <li>{orderData.paymentInstructions.step3}</li>
-                      <li>{orderData.paymentInstructions.step4}</li>
-                      <li>{orderData.paymentInstructions.step5}</li>
+                      <li>{orderData?.paymentInstructions?.step1 || orderData?.paymentInfo?.instructions?.[0] || 'Mở ứng dụng ngân hàng của bạn'}</li>
+                      <li>{orderData?.paymentInstructions?.step2 || orderData?.paymentInfo?.instructions?.[1] || 'Quét mã QR hoặc chuyển khoản thủ công'}</li>
+                      <li>{orderData?.paymentInstructions?.step3 || orderData?.paymentInfo?.instructions?.[2] || `Nhập nội dung: ${getBankInfo().transferContent}`}</li>
+                      <li>{orderData?.paymentInstructions?.step4 || orderData?.paymentInfo?.instructions?.[3] || 'Xác nhận giao dịch'}</li>
+                      <li>{orderData?.paymentInstructions?.step5 || orderData?.paymentInfo?.instructions?.[4] || 'Hệ thống sẽ tự động xử lý trong 1-2 phút'}</li>
                     </ol>
                   </CardContent>
                 </Card>

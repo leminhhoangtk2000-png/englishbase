@@ -122,6 +122,10 @@ export async function GET(
               'Hệ thống sẽ tự động xử lý trong 1-2 phút'
             ]
           };
+          
+          // Add QR Code for pending orders
+          responseData.qrCode = `https://qr.sepay.vn/img?acc=${process.env.SEPAY_ACCOUNT_NUMBER || '0776161075'}&bank=MBBank&amount=${order.amount}&des=${encodeURIComponent(`${order.sepayCode} ${order.productName}`)}`;
+          responseData.deeplink = `banking://transfer?amount=${order.amount}&receiver=${process.env.SEPAY_ACCOUNT_NUMBER || '0776161075'}&note=${encodeURIComponent(`${order.sepayCode} ${order.productName}`)}`;
         }
         break;
 

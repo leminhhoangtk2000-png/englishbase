@@ -5,6 +5,9 @@ import { verifyToken } from '@/lib/auth';
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
+  // Force middleware logging to stderr to ensure visibility
+  process.stderr.write(`🛡️  MIDDLEWARE: Checking route: ${pathname}\n`);
+  
   // Public routes that don't require authentication
   const publicRoutes = [
     '/',
@@ -37,14 +40,17 @@ export async function middleware(request: NextRequest) {
   );
   
   if (isPublicRoute) {
+    process.stderr.write(`✅ MIDDLEWARE: Public route, allowing access: ${pathname}\n`);
     return NextResponse.next();
   }
+  
+  process.stderr.write(`🔒 MIDDLEWARE: Protected route, checking authentication: ${pathname}\n`);
   
   // Get token from cookie
   const token = request.cookies.get('auth-token')?.value;
   
   if (!token) {
-    // Redirect to login if no token
+    console.log('❌ Middleware: No token found, redirecting to login');
     return NextResponse.redirect(new URL('/login', request.url));
   }
   
@@ -53,51 +59,66 @@ export async function middleware(request: NextRequest) {
     const payload = verifyToken(token);
     
     if (!payload) {
+      console.log('❌ Middleware: Invalid token, redirecting to login');
       return NextResponse.redirect(new URL('/login', request.url));
     }
+    
+    console.log('👤 Middleware: User authenticated:', payload.email, 'Role:', payload.role);
     
     // Check role-based access
     const userRole = payload.role;
     
     // Admin routes - only ADMIN can access
     if (pathname.startsWith('/admin')) {
+      console.log('🔑 Middleware: Admin route detected, checking admin permission');
       if (userRole !== 'ADMIN') {
+        console.log('🚫 Middleware: Access denied - user role:', userRole, 'required: ADMIN');
         return NextResponse.redirect(new URL('/user', request.url));
       }
+      console.log('✅ Middleware: Admin access granted');
     }
     
     // User Premium routes - only USER_PREMIUM and ADMIN can access
     if (pathname.startsWith('/user-premium')) {
+      console.log('🔑 Middleware: Premium route detected, checking premium permission');
       if (userRole !== 'USER_PREMIUM' && userRole !== 'ADMIN') {
+        console.log('🚫 Middleware: Access denied - user role:', userRole, 'required: USER_PREMIUM or ADMIN');
         return NextResponse.redirect(new URL('/user', request.url));
       }
+      console.log('✅ Middleware: Premium access granted');
     }
     
     // User routes - any authenticated user can access
     if (pathname.startsWith('/user')) {
-      // Already authenticated, allow access
+      console.log('✅ Middleware: User route access granted');
     }
     
     // API Routes protection
     if (pathname.startsWith('/api/')) {
       // Admin API routes
-      if (pathname.startsWith('/api/users') && userRole !== 'ADMIN') {
+      if (pathname.startsWith('/api/admin') && userRole !== 'ADMIN') {
+        console.log('🚫 Middleware: API Admin access denied');
         return NextResponse.json(
           { error: 'Forbidden - Admin access required' },
           { status: 403 }
         );
       }
       
-      // Profile API - any authenticated user
-      if (pathname.startsWith('/api/profile')) {
-        // Already authenticated, allow access
+      // Users API routes - admin only
+      if (pathname.startsWith('/api/users') && userRole !== 'ADMIN') {
+        console.log('🚫 Middleware: API Users access denied');
+        return NextResponse.json(
+          { error: 'Forbidden - Admin access required' },
+          { status: 403 }
+        );
       }
     }
     
+    console.log('✅ Middleware: Access granted for route:', pathname);
     return NextResponse.next();
     
   } catch (error) {
-    console.error('Middleware error:', error);
+    console.error('❌ Middleware error:', error);
     return NextResponse.redirect(new URL('/login', request.url));
   }
 }

@@ -1,59 +1,96 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { loginUser } from '@/lib/auth'
-import { cookies } from 'next/headers'
+import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
-    const { email, password } = body
+    const { email, password } = await request.json();
 
     if (!email || !password) {
       return NextResponse.json(
-        { error: 'Email và password là bắt buộc' },
+        { success: false, message: 'Email và mật khẩu là bắt buộc' },
         { status: 400 }
-      )
+      );
     }
 
-    const result = await loginUser(email, password)
+    // Find user by email
+    const user = await prisma.user.findUnique({
+      where: { email: email.toLowerCase() },
+      select: {
+        id: true,
+        email: true,
+        name: true,
+        password: true,
+        role: true,
+        isPremium: true,
+        provider: true
+      }
+    });
 
-    if (!result) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'Email hoặc password không đúng' },
+        { success: false, message: 'Email hoặc mật khẩu không đúng' },
         { status: 401 }
-      )
+      );
     }
 
-    const { user, token } = result
+    // Check if user has password (not OAuth only)
+    if (!user.password) {
+      return NextResponse.json(
+        { success: false, message: 'Tài khoản này sử dụng đăng nhập bằng Google' },
+        { status: 401 }
+      );
+    }
 
-    // Set cookie
-    const cookieStore = await cookies()
-    cookieStore.set('auth-token', token, {
-      httpOnly: true,
-      secure: false, // Set to false for localhost development
-      sameSite: 'lax',
-      maxAge: 60 * 60 * 24 * 7, // 7 days
-      path: '/',
-    })
+    // Verify password
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return NextResponse.json(
+        { success: false, message: 'Email hoặc mật khẩu không đúng' },
+        { status: 401 }
+      );
+    }
 
-    console.log('🍪 Login: Cookie set successfully with token:', token.substring(0, 20) + '...')
+    // Generate JWT token
+    const token = jwt.sign(
+      {
+        id: user.id,
+        email: user.email,
+        role: user.role
+      },
+      process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production',
+      { expiresIn: '7d' }
+    );
 
-    return NextResponse.json({
+    // Create response
+    const response = NextResponse.json({
+      success: true,
       message: 'Đăng nhập thành công',
       user: {
         id: user.id,
         email: user.email,
         name: user.name,
-        username: user.username,
         role: user.role,
-        isPremium: user.isPremium,
-        avatar: user.avatar,
+        isPremium: user.isPremium
       }
-    })
+    });
+
+    // Set cookie
+    response.cookies.set('auth-token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60 // 7 days
+    });
+
+    return response;
+
   } catch (error) {
-    console.error('Login error:', error)
+    console.error('Login error:', error);
     return NextResponse.json(
-      { error: 'Có lỗi xảy ra khi đăng nhập' },
+      { success: false, message: 'Lỗi hệ thống' },
       { status: 500 }
-    )
+    );
   }
 }

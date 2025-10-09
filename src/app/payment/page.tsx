@@ -3,15 +3,18 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Crown, Check, Heart, Star, Coffee, Rocket } from "lucide-react";
-import Link from 'next/link';
 import * as React from 'react';
 import { MainNav } from "@/components/main-nav";
+import PaymentConfirmationDialog from '@/components/PaymentConfirmationDialog';
+import PaymentModal from '@/components/PaymentModal';
+import { toast } from 'sonner';
 
 const supporterTiers = [
   {
-    id: 'monthly',
+    id: 'premium-1month',
     name: 'Premium 1 tháng',
-    price: '25.000đ',
+    price: 25000,
+    displayPrice: '25.000đ',
     icon: <Coffee className="w-12 h-12" />,
     duration: '1 tháng',
     features: [
@@ -23,9 +26,10 @@ const supporterTiers = [
     ]
   },
   {
-    id: 'yearly',
+    id: 'premium-1year',
     name: 'Premium 1 năm',
-    price: '300.000đ',
+    price: 300000,
+    displayPrice: '300.000đ',
     icon: <Heart className="w-12 h-12" />,
     duration: '12 tháng',
     features: [
@@ -37,9 +41,10 @@ const supporterTiers = [
     ]
   },
   {
-    id: 'lifetime',
+    id: 'premium-lifetime',
     name: 'Premium vĩnh viễn',
-    price: '500.000đ',
+    price: 500000,
+    displayPrice: '500.000đ',
     icon: <Rocket className="w-12 h-12" />,
     duration: 'Vĩnh viễn',
     savings: 'Đầu tư tốt nhất!',
@@ -56,6 +61,84 @@ const supporterTiers = [
 ];
 
 export default function PaymentPage() {
+  const [selectedTier, setSelectedTier] = React.useState<any>(null);
+  const [confirmationDialogOpen, setConfirmationDialogOpen] = React.useState(false);
+  const [paymentModalOpen, setPaymentModalOpen] = React.useState(false);
+  const [orderId, setOrderId] = React.useState<string | null>(null);
+  const [loading, setLoading] = React.useState(false);
+
+  // Generate consistent guest user ID based on session
+  const currentUserId = React.useMemo(() => {
+    if (typeof window !== 'undefined') {
+      let guestId = localStorage.getItem('guest-user-id');
+      if (!guestId) {
+        guestId = `guest-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        localStorage.setItem('guest-user-id', guestId);
+      }
+      return guestId;
+    }
+    return `guest-${Date.now()}`;
+  }, []);
+
+  const handleSelectTier = (tier: any) => {
+    setSelectedTier(tier);
+    setConfirmationDialogOpen(true);
+  };
+
+  const handleConfirmPayment = async () => {
+    if (!selectedTier || !currentUserId) {
+      toast.error('Vui lòng thử lại sau');
+      return;
+    }
+    
+    setConfirmationDialogOpen(false);
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/sepay/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: currentUserId,
+          productType: 'PREMIUM_MEMBERSHIP',
+          productId: selectedTier.id,
+          productName: selectedTier.name,
+          amount: selectedTier.price,
+          currency: 'VND',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setOrderId(result.data.orderId);
+        setPaymentModalOpen(true);
+        toast.success('Đã tạo đơn hàng thành công!');
+      } else {
+        toast.error(result.message || 'Không thể tạo đơn hàng');
+      }
+    } catch (error) {
+      console.error('Create order error:', error);
+      toast.error('Lỗi hệ thống, vui lòng thử lại');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePaymentSuccess = () => {
+    setPaymentModalOpen(false);
+    setOrderId(null);
+    setSelectedTier(null);
+    toast.success('Nâng cấp Premium thành công! 🎉');
+    // Optionally redirect or reload user data
+  };
+
+  const handleCloseConfirmation = () => {
+    setConfirmationDialogOpen(false);
+    setSelectedTier(null);
+  };
   return (
     <>
       <MainNav />
@@ -110,7 +193,7 @@ export default function PaymentPage() {
               <div className="flex justify-center mb-4">{tier.icon}</div>
               <CardTitle className="text-xl">{tier.name}</CardTitle>
               <div className="space-y-1">
-                <div className="text-3xl font-bold text-primary">{tier.price}</div>
+                <div className="text-3xl font-bold text-primary">{tier.displayPrice}</div>
                 {tier.savings && (
                   <div className="text-sm text-green-600 font-medium">
                     {tier.savings}
@@ -135,17 +218,23 @@ export default function PaymentPage() {
             
             <CardFooter className="pt-4 mt-auto">
               <Button 
+                onClick={() => handleSelectTier(tier)}
+                disabled={loading && selectedTier?.id === tier.id}
                 className={`w-full ${
-                  tier.id === 'lifetime' 
-                    ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg animate-pulse' 
+                  tier.id === 'premium-lifetime' 
+                    ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg' 
                     : 'bg-black text-white hover:bg-gray-800'
                 }`}
-                asChild
               >
-                <Link href={`#`}>
-                  {tier.id === 'lifetime' ? '🚀 Mua ngay - Đầu tư tốt nhất!' : 
-                   tier.id === 'yearly' ? 'Đăng ký 1 năm' : 'Dùng thử 1 tháng'}
-                </Link>
+                {loading && selectedTier?.id === tier.id ? (
+                  <div className="flex items-center">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Đang xử lý...
+                  </div>
+                ) : (
+                  tier.id === 'premium-lifetime' ? '🚀 Mua ngay - Đầu tư tốt nhất!' : 
+                  tier.id === 'premium-1year' ? 'Đăng ký 1 năm' : 'Dùng thử 1 tháng'
+                )}
               </Button>
             </CardFooter>
           </Card>
@@ -163,6 +252,23 @@ export default function PaymentPage() {
           </p>
         </div>
       </div>
+
+      {/* Confirmation Dialog */}
+      <PaymentConfirmationDialog
+        isOpen={confirmationDialogOpen}
+        onClose={handleCloseConfirmation}
+        onConfirm={handleConfirmPayment}
+        productName={selectedTier?.name || ''}
+        amount={selectedTier?.price || 0}
+      />
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={paymentModalOpen}
+        onClose={() => setPaymentModalOpen(false)}
+        orderId={orderId || undefined}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
       </div>
     </>
   );

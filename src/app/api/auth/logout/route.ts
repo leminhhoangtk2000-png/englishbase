@@ -1,19 +1,27 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server';
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
-    const cookieStore = await cookies()
-    cookieStore.delete('auth-token')
-
-    return NextResponse.json({
+    const response = NextResponse.json({
+      success: true,
       message: 'Đăng xuất thành công'
-    })
+    });
+
+    // Clear the auth cookie
+    response.cookies.set('auth-token', '', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 0 // Expire immediately
+    });
+
+    return response;
+
   } catch (error) {
-    console.error('Logout error:', error)
+    console.error('Logout error:', error);
     return NextResponse.json(
-      { error: 'Có lỗi xảy ra khi đăng xuất' },
+      { success: false, message: 'Lỗi hệ thống' },
       { status: 500 }
-    )
+    );
   }
 }

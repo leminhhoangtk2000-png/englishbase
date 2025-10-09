@@ -41,16 +41,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate user exists
-    const user = await prisma.user.findUnique({
+    // Validate or create user
+    let user = await prisma.user.findUnique({
       where: { id: body.userId }
     });
 
     if (!user) {
-      return NextResponse.json(
-        { success: false, message: 'User not found' },
-        { status: 404 }
-      );
+      // Auto-create guest user if not exists
+      user = await prisma.user.create({
+        data: {
+          id: body.userId,
+          email: `${body.userId}@guest.local`,
+          name: body.customerInfo?.name || `Guest User ${Date.now().toString().slice(-4)}`,
+          role: 'USER',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        }
+      });
     }
 
     // Generate unique payment code and order number
@@ -82,6 +89,7 @@ export async function POST(request: NextRequest) {
 
     // Generate QR code via SePay API
     const qrData = await generateSepayQR(sepayCode, body.amount, body.productName);
+    console.log('QR Data:', qrData);
 
     // Prepare bank transfer information
     const bankInfo = {
@@ -101,8 +109,8 @@ export async function POST(request: NextRequest) {
         currency: order.currency,
         expiresAt: expiresAt.toISOString(),
         expiresIn: 30 * 60, // 30 minutes in seconds
-        qrCode: qrData?.qr,
-        deeplink: qrData?.deeplink,
+        qrCode: qrData?.qr || `https://qr.sepay.vn/img?acc=0776161075&bank=MBBank&amount=${body.amount}&des=${encodeURIComponent(`${sepayCode} ${body.productName}`)}`,
+        deeplink: qrData?.deeplink || `banking://transfer?amount=${body.amount}&receiver=0776161075&note=${encodeURIComponent(`${sepayCode} ${body.productName}`)}`,
         bankInfo: bankInfo,
         paymentInstructions: {
           step1: 'Mở ứng dụng ngân hàng của bạn',
@@ -230,8 +238,15 @@ async function generateSepayQR(
     const accountNumber = process.env.SEPAY_ACCOUNT_NUMBER;
 
     if (!sepayApiKey || !accountNumber) {
-      console.warn('SePay credentials not configured');
-      return null;
+      console.warn('SePay credentials not configured, using SePay QR format');
+      // Use SePay QR format as per documentation - correct bank code for MBBank
+      const bankCode = 'MBBank'; // Correct code for MBBank (Ngân hàng TMCP Quân đội)
+      const qrUrl = `https://qr.sepay.vn/img?acc=${accountNumber || '0776161075'}&bank=${bankCode}&amount=${amount}&des=${encodeURIComponent(`${paymentCode} ${description}`)}`;
+      
+      return {
+        qr: qrUrl,
+        deeplink: `banking://transfer?amount=${amount}&receiver=${accountNumber || '0776161075'}&note=${encodeURIComponent(`${paymentCode} ${description}`)}`
+      };
     }
 
     const response = await fetch('https://my.sepay.vn/userapi/transactions/create-qr-code', {

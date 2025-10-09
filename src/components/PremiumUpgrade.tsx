@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import PaymentModal from './PaymentModal';
+import PaymentConfirmationDialog from './PaymentConfirmationDialog';
 
 interface PremiumUpgradeProps {
   userId?: string;
@@ -94,6 +95,7 @@ const pricingTiers: PricingTier[] = [
 export default function PremiumUpgrade({ userId, currentPlan = 'free', onUpgradeSuccess }: PremiumUpgradeProps) {
   const [selectedTier, setSelectedTier] = useState<PricingTier | null>(null);
   const [loading, setLoading] = useState(false);
+  const [confirmationDialogOpen, setConfirmationDialogOpen] = useState(false);
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   const [orderId, setOrderId] = useState<string | null>(null);
 
@@ -103,7 +105,15 @@ export default function PremiumUpgrade({ userId, currentPlan = 'free', onUpgrade
       return;
     }
 
+    // Show confirmation dialog first
     setSelectedTier(tier);
+    setConfirmationDialogOpen(true);
+  };
+
+  const handleConfirmPayment = async () => {
+    if (!selectedTier) return;
+    
+    setConfirmationDialogOpen(false);
     setLoading(true);
 
     try {
@@ -115,9 +125,9 @@ export default function PremiumUpgrade({ userId, currentPlan = 'free', onUpgrade
         body: JSON.stringify({
           userId: userId,
           productType: 'PREMIUM_MEMBERSHIP',
-          productId: tier.id,
-          productName: tier.name,
-          amount: tier.price,
+          productId: selectedTier.id,
+          productName: selectedTier.name,
+          amount: selectedTier.price,
           currency: 'VND',
         }),
       });
@@ -145,6 +155,11 @@ export default function PremiumUpgrade({ userId, currentPlan = 'free', onUpgrade
     setSelectedTier(null);
     toast.success('Nâng cấp Premium thành công! 🎉');
     onUpgradeSuccess?.();
+  };
+
+  const handleCloseConfirmation = () => {
+    setConfirmationDialogOpen(false);
+    setSelectedTier(null);
   };
 
   const formatPrice = (price: number) => {
@@ -314,7 +329,7 @@ export default function PremiumUpgrade({ userId, currentPlan = 'free', onUpgrade
         ))}
       </div>
 
-      {/* Guarantee */}
+      {/* Support Info */}
       <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
         <CardContent className="p-6 text-center">
           <div className="flex items-center justify-center mb-4">
@@ -322,13 +337,22 @@ export default function PremiumUpgrade({ userId, currentPlan = 'free', onUpgrade
               <Clock className="w-6 h-6 text-blue-600" />
             </div>
           </div>
-          <h3 className="font-semibold mb-2">Cam kết hoàn tiền 100%</h3>
+          <h3 className="font-semibold mb-2">Hỗ trợ tận tâm</h3>
           <p className="text-gray-600 text-sm max-w-2xl mx-auto">
-            Nếu không hài lòng với chất lượng khóa học trong 7 ngày đầu, 
-            chúng tôi sẽ hoàn tiền 100% không điều kiện.
+            Đây là khoản thanh toán nhằm hỗ trợ team phát triển nền tảng giáo dục. 
+            Chúng tôi cam kết mang đến trải nghiệm học tập tốt nhất cho bạn.
           </p>
         </CardContent>
       </Card>
+
+      {/* Confirmation Dialog */}
+      <PaymentConfirmationDialog
+        isOpen={confirmationDialogOpen}
+        onClose={handleCloseConfirmation}
+        onConfirm={handleConfirmPayment}
+        productName={selectedTier?.name || ''}
+        amount={selectedTier?.price || 0}
+      />
 
       {/* Payment Modal */}
       <PaymentModal

@@ -2,6 +2,8 @@ import { Separator } from "@/components/ui/separator";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";
 import { MainNav } from "@/components/main-nav";
+import { redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth-server";
 
 const sidebarNavItems = [
   {
@@ -46,7 +48,19 @@ interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
-export default function AdminLayout({ children }: AdminLayoutProps) {
+export default async function AdminLayout({ children }: AdminLayoutProps) {
+  // Check authentication
+  const user = await getCurrentUser();
+  
+  if (!user) {
+    redirect('/login');
+  }
+  
+  // Only allow ADMIN access
+  if (user.role !== 'ADMIN') {
+    redirect('/user'); // Redirect to user dashboard if not admin
+  }
+
   return (
     <>
       <MainNav />
