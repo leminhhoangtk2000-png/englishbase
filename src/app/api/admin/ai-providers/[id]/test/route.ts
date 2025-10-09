@@ -55,7 +55,7 @@ export async function POST(
           body: JSON.stringify({
             model: provider.defaultModel || 'gpt-3.5-turbo',
             messages: [{ role: 'user', content: testPrompt }],
-            max_tokens: 100,
+            max_tokens: 5000,
             temperature: provider.temperature || 0.7,
           }),
         });
@@ -84,7 +84,7 @@ export async function POST(
             }],
             generationConfig: {
               temperature: provider.temperature || 0.7,
-              maxOutputTokens: 100,
+              maxOutputTokens: 5000,
             }
           }),
         });
@@ -108,7 +108,7 @@ export async function POST(
           },
           body: JSON.stringify({
             model: provider.defaultModel || 'claude-3-haiku-20240307',
-            max_tokens: 100,
+            max_tokens: 5000,
             messages: [{ role: 'user', content: testPrompt }],
             temperature: provider.temperature || 0.7,
           }),
@@ -133,7 +133,7 @@ export async function POST(
           body: JSON.stringify({
             model: provider.defaultModel || 'deepseek-chat',
             messages: [{ role: 'user', content: testPrompt }],
-            max_tokens: 100,
+            max_tokens: 5000,
             temperature: provider.temperature || 0.7,
           }),
         });

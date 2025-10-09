@@ -26,39 +26,62 @@ import { Input } from "@/components/ui/input";
 import { MoreHorizontal, Search, Users, CreditCard, Activity, Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import { prisma } from "@/lib/prisma";
 
-const users = [
-    {
-        name: "Khoa Võ",
-        email: "khoa.vo@example.com",
-        avatar: "https://placehold.co/32x32.png",
-        role: "Admin",
-        joined: "2023-01-15",
-    },
-    {
-        name: "Siêu nhân hồng",
-        email: "sieunhan.hong@example.com",
-        avatar: "https://placehold.co/32x32.png",
-        role: "Member",
-        joined: "2023-02-20",
-    },
-    {
-        name: "Siêu nhân đỏ",
-        email: "sieunhan.do@example.com",
-        avatar: "https://placehold.co/32x32.png",
-        role: "Member",
-        joined: "2023-03-10",
-    },
-    {
-        name: "Siêu nhân vàng",
-        email: "sieunhan.vang@example.com",
-        avatar: "https://placehold.co/32x32.png",
-        role: "Guest",
-        joined: "2023-04-05",
-    },
-];
+async function getAdminStats() {
+  const [
+    totalUsers,
+    premiumUsers,
+    newUsersThisMonth,
+    allUsers
+  ] = await Promise.all([
+    prisma.user.count(),
+    prisma.user.count({ where: { isPremium: true } }),
+    prisma.user.count({
+      where: {
+        createdAt: {
+          gte: new Date(new Date().getFullYear(), new Date().getMonth(), 1)
+        }
+      }
+    }),
+    prisma.user.findMany({
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        avatar: true,
+        role: true,
+        isPremium: true,
+        createdAt: true
+      },
+      orderBy: { createdAt: 'desc' }
+    })
+  ]);
 
-export default function AdminPage() {
+  return {
+    totalUsers,
+    premiumUsers,
+    newUsersThisMonth,
+    allUsers
+  };
+}
+
+function getRoleDisplay(role: string) {
+  switch (role) {
+    case 'ADMIN':
+      return { label: 'Admin', variant: 'default' as const };
+    case 'USER_PREMIUM':
+      return { label: 'Premium', variant: 'secondary' as const };
+    case 'USER':
+      return { label: 'User', variant: 'outline' as const };
+    default:
+      return { label: 'Unknown', variant: 'outline' as const };
+  }
+}
+
+export default async function AdminPage() {
+  const stats = await getAdminStats();
+  
   return (
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -80,9 +103,9 @@ export default function AdminPage() {
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{users.length}</div>
+            <div className="text-2xl font-bold">{stats.totalUsers}</div>
             <p className="text-xs text-muted-foreground">
-              +20.1% so với tháng trước
+              Tổng người dùng trong hệ thống
             </p>
           </CardContent>
         </Card>
@@ -94,9 +117,9 @@ export default function AdminPage() {
             <Star className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">5</div>
+            <div className="text-2xl font-bold">{stats.premiumUsers}</div>
             <p className="text-xs text-muted-foreground">
-              +2 so với tháng trước
+              Số tài khoản Premium
             </p>
           </CardContent>
         </Card>
@@ -106,9 +129,9 @@ export default function AdminPage() {
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+12</div>
+            <div className="text-2xl font-bold">{stats.newUsersThisMonth}</div>
             <p className="text-xs text-muted-foreground">
-              +19% so với tháng trước
+              Đăng ký tháng này
             </p>
           </CardContent>
         </Card>
@@ -118,9 +141,9 @@ export default function AdminPage() {
             <Activity className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+573</div>
+            <div className="text-2xl font-bold">0</div>
             <p className="text-xs text-muted-foreground">
-              +201 since last hour
+              Chưa theo dõi hoạt động
             </p>
           </CardContent>
         </Card>
@@ -130,7 +153,7 @@ export default function AdminPage() {
         <CardHeader>
           <CardTitle>Danh sách người dùng</CardTitle>
           <CardDescription>
-            Tổng cộng có {users.length} người dùng.
+            Tổng cộng có {stats.totalUsers} người dùng.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -144,61 +167,77 @@ export default function AdminPage() {
                   />
               </div>
           </div>
-          <div className="rounded-md border">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Tên</TableHead>
-                  <TableHead className="hidden md:table-cell">Vai trò</TableHead>
-                  <TableHead className="hidden md:table-cell">Ngày tham gia</TableHead>
-                  <TableHead>
-                    <span className="sr-only">Actions</span>
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {users.map((user) => (
-                  <TableRow key={user.email}>
-                    <TableCell>
-                      <div className="flex items-center gap-3">
-                          <Avatar>
-                              <AvatarImage src={user.avatar} alt={user.name} />
-                              <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-                          </Avatar>
-                          <div className="font-medium">
-                              <p>{user.name}</p>
-                              <p className="text-sm text-muted-foreground md:hidden">{user.email}</p>
-                          </div>
-                      </div>
-                    </TableCell>
-                    <TableCell className="hidden md:table-cell">
-                      <Badge variant={user.role === 'Admin' ? 'default' : 'secondary'}>{user.role}</Badge>
-                    </TableCell>
-                    <TableCell className="hidden md:table-cell">{user.joined}</TableCell>
-                    <TableCell>
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button
-                            aria-haspopup="true"
-                            size="icon"
-                            variant="ghost"
-                          >
-                            <MoreHorizontal className="h-4 w-4" />
-                            <span className="sr-only">Toggle menu</span>
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                          <DropdownMenuItem>Chỉnh sửa</DropdownMenuItem>
-                          <DropdownMenuItem>Xóa</DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    </TableCell>
+          {stats.allUsers.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">Chưa có người dùng nào.</p>
+            </div>
+          ) : (
+            <div className="rounded-md border">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Tên</TableHead>
+                    <TableHead className="hidden md:table-cell">Vai trò</TableHead>
+                    <TableHead className="hidden md:table-cell">Ngày tham gia</TableHead>
+                    <TableHead>
+                      <span className="sr-only">Actions</span>
+                    </TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+                </TableHeader>
+                <TableBody>
+                  {stats.allUsers.map((user) => {
+                    const roleInfo = getRoleDisplay(user.role);
+                    return (
+                      <TableRow key={user.id}>
+                        <TableCell>
+                          <div className="flex items-center gap-3">
+                              <Avatar>
+                                  <AvatarImage src={user.avatar || ''} alt={user.name || ''} />
+                                  <AvatarFallback>
+                                    {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                                  </AvatarFallback>
+                              </Avatar>
+                              <div className="font-medium">
+                                  <p>{user.name || 'Không có tên'}</p>
+                                  <p className="text-sm text-muted-foreground md:hidden">{user.email}</p>
+                              </div>
+                          </div>
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                          <div className="flex items-center gap-2">
+                            <Badge variant={roleInfo.variant}>{roleInfo.label}</Badge>
+                            {user.isPremium && <Badge variant="outline">Premium</Badge>}
+                          </div>
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                          {user.createdAt.toLocaleDateString('vi-VN')}
+                        </TableCell>
+                        <TableCell>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button
+                                aria-haspopup="true"
+                                size="icon"
+                                variant="ghost"
+                              >
+                                <MoreHorizontal className="h-4 w-4" />
+                                <span className="sr-only">Toggle menu</span>
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                              <DropdownMenuItem>Chỉnh sửa</DropdownMenuItem>
+                              <DropdownMenuItem>Xóa</DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

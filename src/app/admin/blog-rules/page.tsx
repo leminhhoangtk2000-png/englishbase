@@ -20,10 +20,10 @@ export default function BlogRulesPage() {
     "- Không được seeding trong bài viết.\n- Không mang tính chất chống phá, xuyên tạc.\n- Không phân biệt chủng tộc, tôn giáo.\n- Nội dung phải liên quan đến tiếng Đức và văn hóa Đức."
   );
   const [aiApiUrl, setAiApiUrl] = React.useState(
-    "https://api.example.com/ai-moderator"
+    ""
   );
   const [errorWebhookUrl, setErrorWebhookUrl] = React.useState(
-    "https://discord.com/api/webhooks/....../......."
+    ""
   );
 
   return (
@@ -73,7 +73,7 @@ export default function BlogRulesPage() {
               id="ai-api-url"
               value={aiApiUrl}
               onChange={(e) => setAiApiUrl(e.target.value)}
-              placeholder="https://api.example.com/ai-moderator"
+              placeholder="https://api.your-ai-service.com/moderate"
             />
             <Button variant="outline">Kiểm tra</Button>
           </div>

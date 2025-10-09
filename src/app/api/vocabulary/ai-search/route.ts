@@ -149,13 +149,26 @@ async function getOrCreateTopic(topicSlug: string, levelId: string) {
     'familie': 'Gia đình',
     'koerper': 'Cơ thể',
     'essen-trinken': 'Ăn uống',
+    'wohnen': 'Nhà ở',
+    'kleidung': 'Quần áo',
     'farben': 'Màu sắc',
     'zahlen': 'Số đếm',
     'zeit': 'Thời gian',
     'verben': 'Động từ',
     'adjektive': 'Tính từ',
+    'beruf': 'Nghề nghiệp',
+    'verkehr': 'Giao thông',
+    'schule': 'Trường học',
     'allgemein': 'Tổng quát'
   }
+  
+  // Get the highest order for this level to avoid conflicts
+  const maxOrderTopic = await prisma.vocabularyTopic.findFirst({
+    where: { levelId },
+    orderBy: { order: 'desc' }
+  })
+  
+  const nextOrder = (maxOrderTopic?.order || 0) + 1
   
   return await prisma.vocabularyTopic.create({
     data: {
@@ -163,7 +176,7 @@ async function getOrCreateTopic(topicSlug: string, levelId: string) {
       displayName: topicNames[topicSlug] || 'Tổng quát',
       slug: topicSlug,
       levelId,
-      order: Object.keys(topicNames).indexOf(topicSlug) + 1,
+      order: nextOrder,
       isActive: true
     }
   })
@@ -475,8 +488,12 @@ Word: "${word}"`
       // Normalize type field
       if (aiData.type) {
         aiData.type = aiData.type.toUpperCase();
+        // Map PHRASE to OTHER since it's not in our enum
+        if (aiData.type === 'PHRASE') {
+          aiData.type = 'OTHER';
+        }
         if (!['NOMEN', 'VERB', 'ADJEKTIV', 'ADVERB', 'PRONOUN', 'PREPOSITION', 'CONJUNCTION', 'OTHER'].includes(aiData.type)) {
-          aiData.type = 'NOMEN'; // Default fallback
+          aiData.type = 'OTHER'; // Default fallback for unsupported types
         }
       }
       

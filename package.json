@@ -21,6 +21,8 @@
     "test:auth": "tsx scripts/test-authentication.ts",
     "test:login": "tsx scripts/test-login.ts",
     "test:signup": "tsx scripts/test-signup.ts",
+    "test:admin": "tsx scripts/test-admin.ts",
+    "audit:admin": "tsx scripts/audit-admin.ts",
     "test:users": "tsx scripts/create-test-users.ts",
     "auth:summary": "tsx scripts/auth-summary.ts",
     "production:cleanup": "tsx scripts/cleanup-for-production.ts",

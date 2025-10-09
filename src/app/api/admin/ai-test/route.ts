@@ -107,7 +107,7 @@ async function testOpenAI(provider: any, prompt: string, model?: string, tempera
       model: model || provider.defaultModel || 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
       temperature: temperature ?? provider.temperature ?? 0.7,
-      max_tokens: 1000 // Fixed limit
+      max_tokens: 5000 // Fixed limit
     })
   });
 
@@ -143,7 +143,7 @@ async function testGemini(provider: any, prompt: string, model?: string, tempera
       }],
       generationConfig: {
         temperature: temperature ?? provider.temperature ?? 0.7,
-        maxOutputTokens: 1000 // Fixed limit
+        maxOutputTokens: 5000 // Fixed limit
       }
     })
   });
@@ -175,7 +175,7 @@ async function testClaude(provider: any, prompt: string, model?: string, tempera
       model: model || provider.defaultModel || 'claude-3-sonnet-20240229',
       messages: [{ role: 'user', content: prompt }],
       temperature: temperature ?? provider.temperature ?? 0.7,
-      max_tokens: 1000 // Fixed limit
+      max_tokens: 5000 // Fixed limit
     })
   });
 
