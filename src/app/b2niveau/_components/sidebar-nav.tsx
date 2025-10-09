@@ -30,7 +30,10 @@ export function SidebarNav({ items }: SidebarNavProps) {
       } catch (e) {
         const newOpenSections = new Set<number>();
         items.forEach((item, index) => {
-          if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+          if (item.items && item.items.some(subItem => 
+            pathname === subItem.href || 
+            (subItem.items && subItem.items.some(nestedItem => pathname === nestedItem.href))
+          )) {
             newOpenSections.add(index);
           }
         });
@@ -39,7 +42,10 @@ export function SidebarNav({ items }: SidebarNavProps) {
     } else {
       const newOpenSections = new Set<number>();
       items.forEach((item, index) => {
-        if (item.items && item.items.some(subItem => pathname === subItem.href)) {
+        if (item.items && item.items.some(subItem => 
+          pathname === subItem.href || 
+          (subItem.items && subItem.items.some(nestedItem => pathname === nestedItem.href))
+        )) {
           newOpenSections.add(index);
         }
       });
@@ -152,7 +158,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
         item.items && item.items.length > 0 ? (
           // If item has sub-items, render as collapsible
           <Collapsible 
-            key={index} 
+            key={item.href || item.title || index} 
             className="w-full"
             open={openSubSections.has(index)}
             onOpenChange={() => toggleSubSection(index)}
@@ -166,7 +172,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                 {item.items.map((subItem, subIndex) => (
                   subItem.href && !subItem.disabled ? (
                     <Link
-                      key={subIndex}
+                      key={subItem.href || subItem.title || subIndex}
                       href={subItem.href}
                       className={cn(
                         "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
@@ -181,7 +187,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                     </Link>
                   ) : (
                     <span
-                      key={subIndex}
+                      key={subItem.title || subIndex}
                       className="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground opacity-60"
                     >
                       {subItem.title}
@@ -195,7 +201,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
           // If no sub-items, render as regular link
           item.href && !item.disabled ? (
             <Link
-              key={index}
+              key={item.href || item.title || index}
               href={item.href}
               className={cn(
                 "flex w-full items-center rounded-md p-2 text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
@@ -210,7 +216,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
             </Link>
           ) : (
             <span
-              key={index}
+              key={item.title || index}
               className="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground opacity-60"
             >
               {item.title}

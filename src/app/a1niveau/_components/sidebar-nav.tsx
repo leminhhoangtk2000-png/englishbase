@@ -83,7 +83,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
     <div className="w-full">
       {items.map((item, index) => (
         <Collapsible 
-          key={index} 
+          key={item.href || item.title || index} 
           className="w-full" 
           open={openSections.has(index)}
           onOpenChange={() => toggleSection(index)}
@@ -202,7 +202,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                     const isActive = pathname === subItem.href;
                     return (
                       <Link
-                        key={subIndex}
+                        key={subItem.href || subItem.title || subIndex}
                         href={subItem.href || '#'}
                         className={cn(
                           "flex items-start rounded-md px-3 py-1.5 text-sm hover:bg-secondary/30 hover:text-foreground transition-colors",

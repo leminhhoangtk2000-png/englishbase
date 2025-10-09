@@ -83,7 +83,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
     <div className="w-full">
       {items.map((item, index) => (
         <Collapsible 
-          key={index} 
+          key={item.href || item.title || index} 
           className="w-full" 
           open={openSections.has(index)}
           onOpenChange={() => toggleSection(index)}
@@ -198,7 +198,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                   const isActive = pathname === subItem.href;
                   return subItem.href && !subItem.disabled ? (
                     <Link
-                      key={subIndex}
+                      key={subItem.href || subItem.title || subIndex}
                       href={subItem.href}
                       className={cn(
                         "flex w-full items-center rounded-md p-2 text-sm hover:bg-secondary/50 hover:text-foreground transition-colors",
@@ -213,7 +213,7 @@ export function SidebarNavItems({ items, pathname }: SidebarNavItemsProps) {
                     </Link>
                   ) : (
                     <span
-                      key={subIndex}
+                      key={subItem.title || subIndex}
                       className="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground opacity-60"
                     >
                       {subItem.title}

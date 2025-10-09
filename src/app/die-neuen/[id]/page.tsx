@@ -8,7 +8,11 @@ import { format } from 'date-fns'
 import { de } from 'date-fns/locale'
 import { ArrowLeft, Calendar, User, Clock, Tag, Share2, Bookmark, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { Bad                {article.tags?.map((tag, tagIndex) => (
+                  <Badge key={`${tag}-${tagIndex}`} variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                    {tag}
+                  </Badge>
+                ))}from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { MainNav } from '@/components/main-nav'
@@ -403,8 +407,8 @@ export default function ArticlePage() {
             {/* Tags */}
             <div className={`${styles.content} mt-12 pt-8 border-t border-border`}>
               <div className="flex flex-wrap gap-2">
-                {article.tags.map((tag: string) => (
-                  <Badge key={tag} variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                {article.tags.map((tag: string, tagIndex: number) => (
+                  <Badge key={`${tag}-${tagIndex}`} variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-secondary/80">
                     {tag}
                   </Badge>
                 ))}

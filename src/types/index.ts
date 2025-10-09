@@ -1,14 +1,16 @@
 import type React from 'react';
 
-export type NavItem = {
-  title: string;
-  href?: string;
-  disabled?: boolean;
-  external?: boolean;
-  items?: NavItemWithComponent[];
-  description?: string;
-  component?: React.ComponentType<any>;
-};
+export interface NavItem {
+  title: string
+  href?: string
+  disabled?: boolean
+  external?: boolean
+  description?: string
+  items?: NavItem[]
+  tags?: string[]
+  collapsible?: boolean
+  collapsed?: boolean
+}
 
 export type NavItemWithComponent = NavItem & {
   component?: React.ComponentType<any>;

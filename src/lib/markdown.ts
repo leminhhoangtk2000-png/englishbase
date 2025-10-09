@@ -582,7 +582,7 @@ export function getNiveauContent(niveau: string) {
               description: item.description,
               slug: item.href ? item.href.split('/').pop() : '',
               href: item.href,
-              tags: [],
+              tags: item.tags || [],
               order: 0,
               items: item.items || [], // Preserve sub-items for folder structure
             })),
@@ -591,6 +591,37 @@ export function getNiveauContent(niveau: string) {
       }
     } catch (error) {
       console.warn('Could not load b1niveau config, falling back to file scanning')
+    }
+  }
+  
+  // For b2niveau, use the static config instead of dynamic file scanning
+  if (niveau === 'b2niveau') {
+    try {
+      const configPath = path.join(process.cwd(), 'src', 'config', 'b2niveau.ts')
+      if (fs.existsSync(configPath)) {
+        // Use the static config
+        const { docsConfig } = require('@/config/b2niveau')
+        return {
+          niveau,
+          sections: docsConfig.items.map((section: any) => ({
+            name: section.title.toLowerCase(),
+            title: section.title,
+            slug: section.href.split('/').pop(),
+            itemCount: section.items.length,
+            items: section.items.map((item: any) => ({
+              title: item.title,
+              description: item.description,
+              slug: item.href ? item.href.split('/').pop() : '',
+              href: item.href,
+              tags: item.tags || [],
+              order: 0,
+              items: item.items || [], // Preserve sub-items for folder structure
+            })),
+          })),
+        }
+      }
+    } catch (error) {
+      console.warn('Could not load b2niveau config, falling back to file scanning')
     }
   }
   

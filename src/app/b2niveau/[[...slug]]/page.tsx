@@ -79,8 +79,8 @@ export default async function DocPage({ params }: DocPageProps) {
                         )}
                         {item.tags && item.tags.length > 0 && (
                           <div className="flex flex-wrap gap-1 mt-2">
-                            {item.tags.map((tag: any) => (
-                              <Badge key={tag} variant="secondary" className="text-xs">
+                            {item.tags.map((tag: any, tagIndex: number) => (
+                              <Badge key={`${tag}-${tagIndex}`} variant="secondary" className="text-xs">
                                 {tag}
                               </Badge>
                             ))}
@@ -159,8 +159,8 @@ export default async function DocPage({ params }: DocPageProps) {
                 </p>
                 {item.tags && item.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {item.tags.map((tag: any) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
+                    {item.tags.map((tag: any, tagIndex: number) => (
+                      <Badge key={`${tag}-${tagIndex}`} variant="secondary" className="text-xs">
                         {tag}
                       </Badge>
                     ))}
@@ -247,8 +247,8 @@ export default async function DocPage({ params }: DocPageProps) {
               )}
               {directMarkdownContent.meta?.tags && directMarkdownContent.meta.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {directMarkdownContent.meta.tags.map((tag: any) => (
-                    <Badge key={tag} variant="outline">
+                  {directMarkdownContent.meta.tags.map((tag: any, tagIndex: number) => (
+                    <Badge key={`${tag}-${tagIndex}`} variant="outline">
                       {tag}
                     </Badge>
                   ))}
@@ -532,8 +532,8 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
           {markdownContent.meta?.tags && markdownContent.meta.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
-              {markdownContent.meta.tags.map((tag: any) => (
-                <Badge key={tag} variant="outline">
+              {markdownContent.meta.tags.map((tag: any, tagIndex: number) => (
+                <Badge key={`${tag}-${tagIndex}`} variant="outline">
                   {tag}
                 </Badge>
               ))}
