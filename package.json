@@ -78,6 +78,7 @@
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.9.1",
     "genkit": "^1.14.1",
+    "google-auth-library": "^10.4.0",
     "gray-matter": "^4.0.3",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",

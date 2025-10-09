@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { GoogleAuthButton } from "@/components/auth/GoogleAuthButton"
 import Link from "next/link"
 import { MainNav } from "@/components/main-nav"
 import { Loader2, AlertCircle } from "lucide-react"
@@ -108,11 +109,11 @@ function SignupForm() {
               </div>
               
               <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Email (chỉ Gmail)</Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="m@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -157,6 +158,21 @@ function SignupForm() {
                   "Tạo tài khoản"
                 )}
               </Button>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-background px-2 text-muted-foreground">
+                    Hoặc
+                  </span>
+                </div>
+              </div>
+
+              <GoogleAuthButton action="signup" className="w-full">
+                Đăng ký với Google
+              </GoogleAuthButton>
             </form>
             
             <div className="mt-4 text-center text-sm">

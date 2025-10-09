@@ -65,12 +65,14 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
 
 export async function createUser(userData: {
   email: string
-  password: string
+  password?: string
   name: string
   role?: 'USER' | 'USER_PREMIUM' | 'ADMIN'
+  googleId?: string
+  provider?: string
 }) {
-  // Hash password
-  const hashedPassword = await bcrypt.hash(userData.password, 12)
+  // Hash password only if provided
+  const hashedPassword = userData.password ? await bcrypt.hash(userData.password, 12) : ''
   
   // Create user in database
   const user = await prisma.user.create({
@@ -80,6 +82,8 @@ export async function createUser(userData: {
       name: userData.name,
       role: userData.role || 'USER',
       username: userData.email.split('@')[0], // Default username from email
+      googleId: userData.googleId,
+      provider: userData.provider || 'local',
     }
   })
 

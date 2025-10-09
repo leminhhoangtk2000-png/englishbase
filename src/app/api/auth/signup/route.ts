@@ -18,11 +18,19 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check email format
+    // Check email format - must be Gmail
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Email không hợp lệ' },
+        { status: 400 }
+      )
+    }
+
+    // Check if email is Gmail
+    if (!email.toLowerCase().endsWith('@gmail.com')) {
+      return NextResponse.json(
+        { error: 'Chỉ chấp nhận địa chỉ Gmail (@gmail.com)' },
         { status: 400 }
       )
     }

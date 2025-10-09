@@ -63,8 +63,14 @@ export async function loginUser(email: string, password: string): Promise<{ user
       })
 
       if (user) {
-        const isValidPassword = await verifyPassword(password, user.password)
-        if (!isValidPassword) {
+        // Check if user has password (local auth) or is OAuth user
+        if (user.password && user.password.length > 0) {
+          const isValidPassword = await verifyPassword(password, user.password)
+          if (!isValidPassword) {
+            return null
+          }
+        } else {
+          // OAuth user trying to login with password
           return null
         }
 

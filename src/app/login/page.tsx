@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { GoogleAuthButton } from "@/components/auth/GoogleAuthButton"
 import Link from "next/link"
 import { MainNav } from "@/components/main-nav"
 import { Loader2, AlertCircle } from "lucide-react"
@@ -28,6 +29,32 @@ function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const returnUrl = searchParams.get('returnUrl')
+
+  // Check for OAuth errors in URL
+  useEffect(() => {
+    const error = searchParams.get('error')
+    if (error) {
+      switch (error) {
+        case 'not_gmail':
+          setError('Chỉ chấp nhận địa chỉ Gmail (@gmail.com)')
+          break
+        case 'user_not_found':
+          setError('Tài khoản không tồn tại. Vui lòng đăng ký trước.')
+          break
+        case 'oauth_error':
+          setError('Lỗi đăng nhập Google. Vui lòng thử lại.')
+          break
+        case 'no_code':
+          setError('Lỗi xác thực. Vui lòng thử lại.')
+          break
+        case 'invalid_token':
+          setError('Token không hợp lệ. Vui lòng thử lại.')
+          break
+        default:
+          setError('Có lỗi xảy ra khi đăng nhập')
+      }
+    }
+  }, [searchParams])
 
   // Validate return URL to prevent open redirect attacks
   const isValidReturnUrl = (url: string | null): boolean => {
@@ -96,11 +123,11 @@ function LoginForm() {
               )}
               
               <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Email (chỉ Gmail)</Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="your.email@example.com"
+                  placeholder="your.email@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -125,6 +152,21 @@ function LoginForm() {
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 Đăng nhập
               </Button>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-background px-2 text-muted-foreground">
+                    Hoặc
+                  </span>
+                </div>
+              </div>
+
+              <GoogleAuthButton action="login" className="w-full">
+                Đăng nhập với Google
+              </GoogleAuthButton>
             </form>
             
             <div className="mt-4 text-center text-sm">
