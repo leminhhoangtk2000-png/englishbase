@@ -31,11 +31,11 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
         console.log('📡 Auth response status:', response.status);
         
         if (response.ok) {
-          const user = await response.json();
-          console.log('👤 User data received:', user);
-          if (user && user.id) {
-            setUserId(user.id);
-            console.log('✅ User ID set:', user.id);
+          const data = await response.json();
+          console.log('👤 User data received:', data);
+          if (data && data.user && data.user.id) {
+            setUserId(data.user.id);
+            console.log('✅ User ID set:', data.user.id);
           } else {
             console.log('⚠️ No user ID in response, using fallback');
             setUserId('cmf3wfn7m0002bm5kgb1zg7dk');
@@ -96,9 +96,18 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const handleComplete = async () => {
+    console.log('✅ handleComplete called, userId:', userId);
+    
+    if (!userId) {
+      console.log('❌ No userId, showing login modal');
+      setShowLoginModal(true);
+      return;
+    }
+    
     setIsCompletionLoading(true);
 
     try {
+      console.log('📤 Sending completion request for exerciseId:', exerciseId);
       const response = await fetch('/api/exercise-completion', {
         method: 'POST',
         headers: {
@@ -140,8 +149,17 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
   };
 
   const handleLike = async () => {
+    console.log('🎯 handleLike called, userId:', userId);
+    
+    if (!userId) {
+      console.log('❌ No userId, showing login modal');
+      setShowLoginModal(true);
+      return;
+    }
+    
     setIsLikeLoading(true);
     try {
+      console.log('📤 Sending like request for exerciseId:', exerciseId);
       const response = await fetch('/api/exercise-ratings', {
         method: 'POST',
         headers: {
@@ -149,7 +167,7 @@ export function ExerciseActions({ exerciseId }: ExerciseActionsProps) {
         },
         body: JSON.stringify({
           exerciseId,
-          liked: true
+          isLiked: true
         }),
       });
       

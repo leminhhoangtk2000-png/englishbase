@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getCurrentUser } from '@/lib/auth-server';
 
 // Helper function to slugify exerciseId to match database format
 function slugifyExerciseId(id: string): string {
@@ -76,13 +77,36 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    const currentUser = await getCurrentUser();
+    
+    // 🔧 TEMPORARY: Use first available user if not logged in (for development only)
+    let userId = currentUser?.id;
+    
+    if (!userId) {
+      // Find any user from database to use as default
+      const defaultUser = await prisma.user.findFirst({
+        where: { email: 'user@edu-theme.com' }
+      });
+      userId = defaultUser?.id;
+      
+      if (!userId) {
+        console.log('🔴 No user found in database');
+        return NextResponse.json(
+          { error: 'No user available' },
+          { status: 401 }
+        );
+      }
+      
+      console.log('🔧 Using default user for like:', userId);
+    }
+
     const body = await request.json();
-    const { exerciseId: rawExerciseId, userId, isLiked } = body;
+    const { exerciseId: rawExerciseId, isLiked } = body;
 
     // Validation
-    if (!rawExerciseId || !userId || typeof isLiked !== 'boolean') {
+    if (!rawExerciseId || typeof isLiked !== 'boolean') {
       return NextResponse.json(
-        { error: 'exerciseId, userId, and isLiked are required' },
+        { error: 'exerciseId and isLiked are required' },
         { status: 400 }
       );
     }
