@@ -93,8 +93,12 @@ const nextConfig: NextConfig = {
   
   // Headers for security and performance
   async headers() {
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const allowedOrigin = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:9003';
+
     return [
       {
+        // Security headers for all routes
         source: '/(.*)',
         headers: [
           {
@@ -108,6 +112,40 @@ const nextConfig: NextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
+      {
+        // CORS headers for API routes
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: isDevelopment ? '*' : allowedOrigin,
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization, X-Requested-With',
+          },
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true',
+          },
+          {
+            key: 'Access-Control-Max-Age',
+            value: '86400',
           },
         ],
       },

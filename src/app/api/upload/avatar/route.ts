@@ -4,6 +4,36 @@ import { getCurrentUser } from '@/lib/auth-server';
 import { writeFile, mkdir } from 'fs/promises';
 import { join } from 'path';
 
+/**
+ * Validate image file by checking magic bytes (file signature)
+ * This prevents file type spoofing attacks
+ */
+function validateImageMagicBytes(buffer: Buffer): boolean {
+  // Check minimum buffer size
+  if (buffer.length < 12) {
+    return false;
+  }
+
+  // JPEG magic bytes: FF D8 FF
+  if (buffer[0] === 0xFF && buffer[1] === 0xD8 && buffer[2] === 0xFF) {
+    return true;
+  }
+
+  // PNG magic bytes: 89 50 4E 47 0D 0A 1A 0A
+  if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47 &&
+      buffer[4] === 0x0D && buffer[5] === 0x0A && buffer[6] === 0x1A && buffer[7] === 0x0A) {
+    return true;
+  }
+
+  // WebP magic bytes: RIFF ... WEBP
+  if (buffer[0] === 0x52 && buffer[1] === 0x49 && buffer[2] === 0x46 && buffer[3] === 0x46 &&
+      buffer[8] === 0x57 && buffer[9] === 0x45 && buffer[10] === 0x42 && buffer[11] === 0x50) {
+    return true;
+  }
+
+  return false;
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Kiểm tra authentication
@@ -43,9 +73,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create unique filename
+    // Read file buffer for magic byte validation
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    // Validate magic bytes (file signature) to prevent file type spoofing
+    const isValidImage = validateImageMagicBytes(buffer);
+    if (!isValidImage) {
+      return NextResponse.json(
+        { error: 'Invalid image file. File content does not match image format.' },
+        { status: 400 }
+      );
+    }
+
+    // Create unique filename with sanitized extension
     const timestamp = Date.now();
-    const extension = file.name.split('.').pop();
+    const mimeToExt: Record<string, string> = {
+      'image/jpeg': 'jpg',
+      'image/jpg': 'jpg',
+      'image/png': 'png',
+      'image/webp': 'webp',
+    };
+    const extension = mimeToExt[file.type] || 'jpg';
     const filename = `avatar-${currentUser.id}-${timestamp}.${extension}`;
 
     // Create uploads directory if it doesn't exist
@@ -56,9 +105,7 @@ export async function POST(request: NextRequest) {
       // Directory already exists
     }
 
-    // Save file
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
+    // Save file (buffer already created above for validation)
     const filepath = join(uploadDir, filename);
     await writeFile(filepath, buffer);
 

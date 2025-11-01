@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { checkRateLimit, getClientIdentifier, createRateLimitResponse, rateLimits } from '@/lib/rate-limit';
 
 // SePay Webhook Data Interface
 interface SepayWebhookData {
@@ -19,6 +20,17 @@ interface SepayWebhookData {
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting for webhook endpoint
+    const identifier = getClientIdentifier(request);
+    const rateLimitResult = checkRateLimit({
+      ...rateLimits.webhook,
+      identifier,
+    });
+
+    if (!rateLimitResult.success) {
+      return createRateLimitResponse(rateLimitResult);
+    }
+
     // Verify SePay webhook authentication
     const authorization = request.headers.get('authorization');
     const expectedApiKey = process.env.SEPAY_API_TOKEN;

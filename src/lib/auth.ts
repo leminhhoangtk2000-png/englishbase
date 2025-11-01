@@ -3,7 +3,12 @@ import bcrypt from 'bcryptjs'
 import { prisma } from './prisma'
 import { User } from '@prisma/client'
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production'
+// Validate JWT_SECRET exists in production
+if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
+  throw new Error('CRITICAL: JWT_SECRET environment variable must be set in production!')
+}
+
+const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-key-only-for-development'
 
 export interface AuthUser {
   id: string
@@ -44,12 +49,15 @@ export function generateToken(user: AuthUser): string {
 
 export function verifyToken(token: string): any {
   try {
-    console.log('🔓 JWT: Verifying token with secret:', JWT_SECRET.substring(0, 10) + '...')
     const decoded = jwt.verify(token, JWT_SECRET)
-    console.log('✅ JWT: Token verified successfully, user ID:', (decoded as any).id)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('✅ JWT: Token verified successfully, user ID:', (decoded as any).id)
+    }
     return decoded
   } catch (error) {
-    console.error('❌ JWT: Token verification failed:', error instanceof Error ? error.message : error)
+    if (process.env.NODE_ENV === 'development') {
+      console.error('❌ JWT: Token verification failed:', error instanceof Error ? error.message : error)
+    }
     return null
   }
 }

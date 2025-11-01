@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { sanitizeMdxContent } from '@/lib/sanitize';
 
 interface ExerciseRendererProps {
   htmlContent: string;
@@ -9,9 +10,9 @@ interface ExerciseRendererProps {
 export function ExerciseRenderer({ htmlContent }: ExerciseRendererProps) {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  // Decode HTML entities that may have been escaped
+  // Decode HTML entities and sanitize to prevent XSS
   const decodedHtml = React.useMemo(() => {
-    return htmlContent
+    const decoded = htmlContent
       .replace(/&#x3C;/g, '<')
       .replace(/&#x3E;/g, '>')
       .replace(/&#x26;/g, '&')
@@ -22,6 +23,9 @@ export function ExerciseRenderer({ htmlContent }: ExerciseRendererProps) {
       .replace(/&amp;/g, '&')
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, "'");
+    
+    // Sanitize HTML to prevent XSS attacks
+    return sanitizeMdxContent(decoded);
   }, [htmlContent]);
 
   React.useEffect(() => {
@@ -30,20 +34,22 @@ export function ExerciseRenderer({ htmlContent }: ExerciseRendererProps) {
     // Initialize exercise functionality manually without eval
     const container = containerRef.current;
     
-    // Look for script tags with exercise initialization code
+    // SECURITY: Removed dynamic script execution to prevent XSS attacks
+    // Previously used new Function() which is a security vulnerability
+    // Script tags in HTML content are now ignored for security reasons
+    // If interactive exercises are needed, they should be implemented as React components
+    
+    /*
+    // REMOVED - SECURITY VULNERABILITY
     const scripts = container.querySelectorAll('script:not([type="application/json"])');
     scripts.forEach(script => {
-      try {
-        // Execute the script content to initialize exercises
-        const scriptContent = script.textContent || script.innerHTML;
-        if (scriptContent.includes('interactive-exercise')) {
-          const func = new Function(scriptContent);
-          func();
-        }
-      } catch (error) {
-        console.error('Error executing script:', error);
+      const scriptContent = script.textContent || script.innerHTML;
+      if (scriptContent.includes('interactive-exercise')) {
+        const func = new Function(scriptContent); // XSS VULNERABILITY
+        func();
       }
     });
+    */
 
     function createInteractiveExercise(data: any) {
       const { title, subtitle, exercises } = data;

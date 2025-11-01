@@ -17,10 +17,20 @@ export async function GET(request: NextRequest) {
     // Verify JWT token
     let decoded: any;
     try {
-      decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production');
-      console.log('✅ JWT: Token verified successfully, user ID:', decoded.id);
+      const JWT_SECRET = process.env.JWT_SECRET;
+      if (!JWT_SECRET) {
+        return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+      }
+      decoded = jwt.verify(token, JWT_SECRET);
+      // Only log in development for debugging
+      if (process.env.NODE_ENV === 'development') {
+        console.log('✅ JWT: Token verified, user ID:', decoded.id);
+      }
     } catch (jwtError) {
-      console.log('❌ JWT: Token verification failed:', jwtError);
+      // Don't log sensitive token errors in production
+      if (process.env.NODE_ENV === 'development') {
+        console.log('❌ JWT: Token verification failed');
+      }
       return NextResponse.json(
         { success: false, message: 'Token không hợp lệ' },
         { status: 401 }

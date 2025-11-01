@@ -2,9 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { checkRateLimit, getClientIdentifier, createRateLimitResponse, rateLimits } from '@/lib/rate-limit';
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting to prevent brute force attacks
+    const identifier = getClientIdentifier(request);
+    const rateLimitResult = checkRateLimit({
+      ...rateLimits.auth,
+      identifier,
+    });
+
+    if (!rateLimitResult.success) {
+      return createRateLimitResponse(rateLimitResult);
+    }
+
     const { email, password } = await request.json();
 
     if (!email || !password) {
@@ -52,6 +64,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate JWT_SECRET
+    const JWT_SECRET = process.env.JWT_SECRET;
+    if (!JWT_SECRET) {
+      console.error('CRITICAL: JWT_SECRET not configured');
+      return NextResponse.json(
+        { success: false, message: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
     // Generate JWT token
     const token = jwt.sign(
       {
@@ -59,7 +81,7 @@ export async function POST(request: NextRequest) {
         email: user.email,
         role: user.role
       },
-      process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production',
+      JWT_SECRET,
       { expiresIn: '7d' }
     );
 
@@ -76,12 +98,13 @@ export async function POST(request: NextRequest) {
       }
     });
 
-    // Set cookie
+    // Set cookie with enhanced security
     response.cookies.set('auth-token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 7 * 24 * 60 * 60 // 7 days
+      httpOnly: true, // Prevent XSS access to cookie
+      secure: process.env.NODE_ENV === 'production', // Only send over HTTPS in production
+      sameSite: 'strict', // Prevent CSRF attacks (changed from 'lax' to 'strict')
+      maxAge: 7 * 24 * 60 * 60, // 7 days
+      path: '/', // Cookie available for entire site
     });
 
     return response;
