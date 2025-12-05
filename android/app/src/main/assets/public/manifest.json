@@ -1,0 +1,77 @@
+{
+  "name": "Deutsch.vn - Học tiếng Đức Online",
+  "short_name": "Deutsch.vn",
+  "description": "Nền tảng học tiếng Đức trực tuyến với từ vựng phân cấp theo CEFR, bài tập thực hành và AI hỗ trợ",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/avt.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/avt.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "vi",
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-chat.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/desktop-dashboard.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI Chat",
+      "short_name": "Chat",
+      "description": "Trò chuyện với AI học tiếng Đức",
+      "url": "/chat",
+      "icons": [{ "src": "/avt.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Vocabulary",
+      "short_name": "Từ vựng",
+      "description": "Học từ vựng tiếng Đức",
+      "url": "/vocabulary",
+      "icons": [{ "src": "/avt.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Xem tiến độ học tập",
+      "url": "/dashboard",
+      "icons": [{ "src": "/avt.png", "sizes": "192x192" }]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
