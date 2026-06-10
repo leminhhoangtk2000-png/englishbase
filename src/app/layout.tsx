@@ -87,16 +87,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TTSProvider>
-            <VocabularyProvider>
-              <AuthProvider>
+          <AuthProvider>
+            <TTSProvider>
+              <VocabularyProvider>
                 <div className="flex-1">{children}</div>
                 <Toaster />
                 <SonnerToaster />
                 <Footer />
-              </AuthProvider>
-            </VocabularyProvider>
-          </TTSProvider>
+              </VocabularyProvider>
+            </TTSProvider>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -58,7 +58,7 @@ export function sanitizeHtml(
   };
 
   try {
-    return DOMPurify.sanitize(html, config);
+    return DOMPurify.sanitize(html, config) as unknown as string;
   } catch (error) {
     console.error('Error sanitizing HTML:', error);
     // Return empty string if sanitization fails to be safe

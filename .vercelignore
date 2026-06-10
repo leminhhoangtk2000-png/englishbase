@@ -1,0 +1,29 @@
+# Ignore all dotfiles/directories by default
+.*
+
+# Unignore necessary dotfiles
+!.vercel
+!.env.example
+
+# Ignore mobile directories
+android
+ios
+
+# Ignore dependency and build directories
+node_modules
+.next
+out
+build
+dist
+
+# Ignore other assets and docs
+docs
+scripts
+skills
+cookies.txt
+docker-compose.yml
+test-webhooks-ui.html
+middleware-test.ts
+*.log
+*.sql
+*.md

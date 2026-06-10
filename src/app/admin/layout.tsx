@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { Separator } from "@/components/ui/separator";
 import { SidebarNav } from "./_components/sidebar-nav";
 import React from "react";
